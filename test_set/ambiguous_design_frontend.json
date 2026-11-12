@@ -1,0 +1,60 @@
+{
+  "persona_id": "ambiguous_design_frontend",
+  "goal": "Get better at design",
+  "time_budget_minutes": 180,
+  "user_context": {
+    "background": "Frontend developer, 2 years, React and CSS",
+    "known": [
+      "CSS",
+      "React",
+      "Flexbox and Grid"
+    ],
+    "unknown": [],
+    "constraints": "Make it practical: include at least one real redesign or critique of an existing UI. Nothing older than 2020."
+  },
+  "expectations": {
+    "notes": "Ambiguous goal: should pick the UI/visual-design interpretation that fits a frontend developer, say so in assumptions, and not mix in system design or graphic-design software tutorials.",
+    "pick_count": [
+      2,
+      6
+    ],
+    "min_utilisation": 0.6,
+    "forbidden_title_regex": "(?i)system design|photoshop|illustrator|logo design",
+    "forbidden_flags": [
+      "off_topic",
+      "too_basic_for_learner"
+    ],
+    "unknown_synonyms": {
+      "visual hierarchy": [
+        "hierarchy"
+      ],
+      "typography": [
+        "typography",
+        "font",
+        "type scale"
+      ],
+      "color": [
+        "color",
+        "colour",
+        "palette",
+        "contrast"
+      ],
+      "spacing and layout": [
+        "spacing",
+        "whitespace",
+        "layout",
+        "alignment",
+        "grid"
+      ]
+    },
+    "known_topics": [
+      "css basics",
+      "flexbox",
+      "react basics"
+    ],
+    "expect_assumptions": true,
+    "required_language": "en",
+    "require_project_based": true,
+    "min_upload_year": 2020
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "persona_id": "weekend_react_dev",
+  "goal": "Build a small React app this weekend, something like a habit tracker with local storage",
+  "budget_minutes": 360,
+  "total_minutes": 185.2,
+  "interpretation": "In a weekend, go from zero React to a working habit tracker (add, toggle and delete habits, persisted in localStorage) built with Vite and modern hooks.",
+  "assumptions": [
+    "The habit tracker is a variation of the to-do and favorites apps in the videos: habits are items you add, toggle done and delete, with daily check-offs added on your own.",
+    "JavaScript with JSX is fine. Some videos use TypeScript, which you can ignore.",
+    "I could not see upload dates. I picked videos that show Vite and hooks, and left out the one flagged outdated_tooling."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "vite",
+      "title": "Vite tooling and project structure",
+      "why": "Replaces create-react-app. You need to scaffold, run and understand the project layout.",
+      "prereqs": [],
+      "minutes_share": 20.0
+    },
+    {
+      "id": "state",
+      "title": "Components, JSX, props and useState",
+      "why": "These are the core React mental model. State is what the habits list lives in.",
+      "prereqs": [
+        "vite"
+      ],
+      "minutes_share": 10.0
+    },
+    {
+      "id": "project",
+      "title": "Guided React project: lists, events, useEffect, context",
+      "why": "Applies the basics in a full app with list rendering, conditional rendering and effects.",
+      "prereqs": [
+        "state"
+      ],
+      "minutes_share": 45.0
+    },
+    {
+      "id": "persist",
+      "title": "localStorage persistence and custom hooks",
+      "why": "The key feature of the habit tracker. A reusable useLocalStorage hook is the idiomatic way to do it.",
+      "prereqs": [
+        "project"
+      ],
+      "minutes_share": 10.0
+    },
+    {
+      "id": "build",
+      "title": "Build a CRUD tracker with local storage and a stats dashboard",
+      "why": "A second, smaller build close to the habit tracker, with forms, a dashboard and persistence.",
+      "prereqs": [
+        "persist"
+      ],
+      "minutes_share": 15.0
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "do62-z3z6FM",
+      "title": "Vite Crash Course – Frontend Build Tool",
+      "channel": "freeCodeCamp.org",
+      "url": "https://www.youtube.com/watch?v=do62-z3z6FM",
+      "duration_min": 40.2,
+      "minutes_counted": 40.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "vite"
+      ],
+      "reason": "Covers Vite scaffolding, project structure, hot module replacement and production builds, which are the tooling gaps you named. The boilerplate it builds is a React app, so it gets you set up for the weekend.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Vit is a next generation build tool that offers instant project startup and real-time updates",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "02:04",
+          "quote": "We learned how to build React apps with Vit, how to work with static assets, using environment variables, TypeScript",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "It is a tooling crash course rather than a project, but it is the only substantial Vite coverage I found.",
+      "level": "beginner",
+      "format": "crash_course"
+    },
+    {
+      "rank": 2,
+      "video_id": "V9i3cGD-mts",
+      "title": "Learn React Hooks: useState - Simply Explained!",
+      "channel": "Cosden Solutions",
+      "url": "https://www.youtube.com/watch?v=V9i3cGD-mts",
+      "duration_min": 8.1,
+      "minutes_counted": 8.1,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "state"
+      ],
+      "reason": "A short, focused explanation of useState (state as data that changes over time, destructuring, setters in event handlers). It prepares you for the project builds.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:20",
+          "quote": "state the simplest way that you can think about this is data that changes with time",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "02:07",
+          "quote": "useState is the hook that you use in React to manipulate state",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "06:47",
+          "quote": "setCount and we're using this function to manipulate the state",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Concept explainer, but short and beginner-level, and it feeds straight into the projects.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "G6D9cBaLViA",
+      "title": "Learn React With This ONE Project",
+      "channel": "Tech With Tim",
+      "url": "https://www.youtube.com/watch?v=G6D9cBaLViA",
+      "duration_min": 99.5,
+      "minutes_counted": 99.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "state",
+        "project"
+      ],
+      "reason": "A project build that teaches components, JSX, useState, useEffect, lists, conditional rendering, context and localStorage-backed favorites. The favorites add/remove logic maps closely onto habit management.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "03:37",
+          "quote": "Everything revolves around something called a component. Now a component is really just a part of your application",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "12:55",
+          "quote": "JSX simply means kind of a combination of JavaScript and HTML. And you'll see that we have some things that look like HTML",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "46:53",
+          "quote": "When a state change occurs, the entire component is reran or rerendered. So if we just define something as a normal variable",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "1:21:15",
+          "quote": "A context will allow state to be globally available to anything that's within the provided context",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "The movie API part is not needed for your app, but the rest is directly relevant.",
+      "level": "beginner",
+      "format": "project_build"
+    },
+    {
+      "rank": 4,
+      "video_id": "1uiNxQIpcLU",
+      "title": "React Custom Hooks: useLocalStorage - Simply Explained!",
+      "channel": "Cosden Solutions",
+      "url": "https://www.youtube.com/watch?v=1uiNxQIpcLU",
+      "duration_min": 10.4,
+      "minutes_counted": 10.4,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "persist"
+      ],
+      "reason": "Builds a reusable useLocalStorage custom hook with JSON serialization and try/catch. This is the component pattern to use for habit persistence.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:21",
+          "quote": "we are going to create a hook called use local storage that is going to expose to us three different functions",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "03:13",
+          "quote": "window local storage set item we're going to give it the key that we have here and then we're going to do json stringify",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "09:55",
+          "quote": "any component that wants to make use of the local storage can just use this hook directly and get access to all of these functions",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Uses TypeScript typing, which is a small hurdle. It is the second Cosden video, within the two-per-creator limit.",
+      "level": "intermediate",
+      "format": "project_build"
+    },
+    {
+      "rank": 5,
+      "video_id": "X92kk5iT8CM",
+      "title": "Build a Complete To-Do List App with React + Vite | Dashboard, Reminders & Local Storage Tutorial",
+      "channel": "DevCrafted Learn-Build-Deploy",
+      "url": "https://www.youtube.com/watch?v=X92kk5iT8CM",
+      "duration_min": 27.0,
+      "minutes_counted": 27.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "build",
+        "persist"
+      ],
+      "reason": "A Vite + React to-do build with add, edit and delete, a stats dashboard and local storage. It is the closest match to the habit tracker and works as a template for your own build.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "we are going to build a to-do list app using React plus white",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "we have a dashboard for showing our total task completed task pending task and overdue",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "20:26",
+          "quote": "use local storage so I'll copy this and I'll paste this",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q5",
+          "t": "26:19",
+          "quote": "you can see the things are getting added and once you click on this it is incomplete",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Short and fast-paced. It uses Tailwind, which is extra to learn but optional.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [],
+  "near_duplicates": [],
+  "warnings": [
+    "Only about 185 of the 360 minutes are used. The remaining time is for building your own habit tracker, which is the real test. I did not pad with weak or redundant videos.",
+    "No video builds an actual habit tracker. The to-do and favorites builds are the closest, and you will need to add the daily check-off and streak logic yourself.",
+    "Dropped Mosh's React tutorial: it is lecture-style with TypeScript, and the Tech With Tim project covers the same basics.",
+    "Dropped Dawid's Todo App: it is flagged outdated_tooling, and the other project builds cover the same ground.",
+    "Dropped Max Programming's localStorage video: it is a surface intro, and Cosden's hook video covers the same sub-topic in more depth.",
+    "Dropped the 2–3 minute Vite setup clips and the 'React in 8/12 minutes' summaries: they are surface intros."
+  ],
+  "pool_size": 29,
+  "models": {
+    "agent_loop": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.15702,
+  "latency_s": 64.5,
+  "mode": "agent_loop"
+}

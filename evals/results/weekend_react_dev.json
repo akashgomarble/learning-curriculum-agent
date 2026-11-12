@@ -1,0 +1,817 @@
+{
+ "persona_id": "weekend_react_dev",
+ "budget": 360,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 4,
+    "total_min": 189.0,
+    "utilisation": 0.53,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 4,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "React": true,
+     "JSX": true,
+     "Vite tooling": true,
+     "React hooks": true,
+     "Component patterns": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.25,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.79,
+    "cost_usd": 0.11451,
+    "latency_s": 52.9,
+    "hard_failures": [],
+    "soft_misses": [
+     "utilisation_ok"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "do62-z3z6FM",
+    "G6D9cBaLViA",
+    "5uHikv1oBEI",
+    "X92kk5iT8CM"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum leverages the learner's existing JS knowledge, deliberately skips TypeScript since it wasn't requested, and focuses heavily on local storage and custom hooks to enable their specific habit tracker goal.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, noting specific details like Video 2's movie API context and Video 4's task dashboard.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "Video 4 builds a Vite-based to-do list with a dashboard and local storage, which serves as a highly accurate structural analogue to a habit tracker.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The progression is highly logical: it starts with Vite tooling setup, moves to a large fundamentals project, isolates the local storage custom hook pattern, and ends with a structurally similar project build.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum completely avoids pure theory and surface intros, focusing heavily on project-based content and modern Vite/hooks while successfully avoiding create-react-app.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "It uses 189 out of 360 minutes, which is an excellent choice for a weekend project builder, leaving them half their time to actually write code for their own app.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped list clearly and accurately explains why candidates were skipped, explicitly invoking the learner's constraints against create-react-app, pure theory, and surface-level intros.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is a highly practical, well-paced, and tightly constrained curriculum that perfectly prepares a backend engineer for a weekend React project.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "do62-z3z6FM",
+      "critique": "Provides the necessary Vite boilerplate context specifically requested by the learner without bogging them down in unwanted TypeScript config.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "G6D9cBaLViA",
+      "critique": "An excellent project-based backbone that teaches modern React fundamentals in context, fitting the learner's project-based constraint perfectly.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "5uHikv1oBEI",
+      "critique": "Directly addresses the need for local storage state persistence through custom hooks, which is essential for the habit tracker goal.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "X92kk5iT8CM",
+      "critique": "Provides a near-perfect structural analogue to the final goal, combining Vite, React, and local storage in a dashboard format.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.89,
+    "claims": {
+     "do62-z3z6FM": [
+      {
+       "claim": "The video covers scaffolding a React project with npm create vite.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers running the dev server and hot module replacement (HMR).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers creating components.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers using useEffect.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers TypeScript configuration.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Vite internals.",
+       "supported": true
+      }
+     ],
+     "G6D9cBaLViA": [
+      {
+       "claim": "The video provides a project-based Vite build teaching JSX, components and props, useState re-rendering, mapping lists, useEffect, and React Context.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers localStorage persistence for a favorites list.",
+       "supported": true
+      },
+      {
+       "claim": "The favorites list is structurally close to tracking habits.",
+       "supported": false
+      },
+      {
+       "claim": "The project serves as the main backbone for learning core React concepts.",
+       "supported": true
+      }
+     ],
+     "5uHikv1oBEI": [
+      {
+       "claim": "Builds a reusable useLocalStorage custom hook in an expense tracker.",
+       "supported": true
+      },
+      {
+       "claim": "Swaps useState for useLocalStorage across several form fields.",
+       "supported": true
+      },
+      {
+       "claim": "Fixes an infinite render loop with useEffect.",
+       "supported": false
+      }
+     ],
+     "X92kk5iT8CM": [
+      {
+       "claim": "The video builds a complete React + Vite to-do app with add, edit, and delete functionality.",
+       "supported": true
+      },
+      {
+       "claim": "The app features task completion state.",
+       "supported": true
+      },
+      {
+       "claim": "The app includes localStorage persistence.",
+       "supported": true
+      },
+      {
+       "claim": "The app features a statistics dashboard.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers styling using Tailwind CSS.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 5,
+    "total_min": 185.2,
+    "utilisation": 0.51,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 5,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "React": true,
+     "JSX": true,
+     "Vite tooling": true,
+     "React hooks": true,
+     "Component patterns": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.25,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.78,
+    "cost_usd": 0.15702,
+    "latency_s": 64.5,
+    "hard_failures": [],
+    "soft_misses": [
+     "utilisation_ok",
+     "has_dropped_list"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "do62-z3z6FM",
+    "V9i3cGD-mts",
+    "G6D9cBaLViA",
+    "1uiNxQIpcLU",
+    "X92kk5iT8CM"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum directly addresses the learner's background as a backend engineer needing modern React tooling (Vite, hooks) and focuses on practical, project-based content to prepare them for their weekend build.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, highlighting specific features taught in the videos like Vite scaffolding, useState destructuring, and localStorage integration.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "Video 5 builds a To-Do list app with local storage, which is structurally identical to the core of a habit tracker, providing a perfect template for the learner's goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order introduces Vite tooling first, then a basic hook, then a comprehensive React project to learn the fundamentals, followed by a specific custom hook pattern, and finally a template project. This is a logical and smooth progression.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum avoids theory-heavy lectures, ensures modern tooling (Vite/Hooks) is used, focuses on project-based content, and does not exceed the two-video-per-creator limit (videos 2 and 4 appear to be from the same creator, which is allowed).",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "Using roughly half the time budget for video tutorials and explicitly leaving the rest for the actual weekend build is a highly effective strategy for an experienced developer looking to build a project.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons perfectly align with the learner's constraints, avoiding outdated tooling and lecture-style formats.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is a highly effective, well-structured curriculum that perfectly balances instruction with hands-on building time for an experienced developer learning a new stack.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "do62-z3z6FM",
+      "critique": "Provides the exact modern tooling setup (Vite) the learner requested to get started.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "V9i3cGD-mts",
+      "critique": "A brief, practical introduction to the most important React hook before diving into larger projects.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "G6D9cBaLViA",
+      "critique": "A comprehensive project build that covers all the React fundamentals (JSX, components, hooks) the learner lacks.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "1uiNxQIpcLU",
+      "critique": "Teaches a highly relevant custom hook pattern for the exact persistence mechanism (localStorage) the learner needs.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "X92kk5iT8CM",
+      "critique": "Serves as a perfect structural template for the learner's final habit tracker goal.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 1.0,
+    "claims": {
+     "do62-z3z6FM": [
+      {
+       "claim": "The video covers Vite scaffolding.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers project structure.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers hot module replacement.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers production builds.",
+       "supported": true
+      },
+      {
+       "claim": "The boilerplate it builds is a React app.",
+       "supported": true
+      }
+     ],
+     "V9i3cGD-mts": [
+      {
+       "claim": "The video provides an explanation of useState.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains state as data that changes over time.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers array destructuring with useState.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to use state setters inside event handlers.",
+       "supported": true
+      }
+     ],
+     "G6D9cBaLViA": [
+      {
+       "claim": "The video is a project build that teaches components, JSX, useState, useEffect, lists, conditional rendering, context, and localStorage-backed favorites.",
+       "supported": true
+      }
+     ],
+     "1uiNxQIpcLU": [
+      {
+       "claim": "The video builds a reusable useLocalStorage custom hook with JSON serialization and try/catch.",
+       "supported": true
+      }
+     ],
+     "X92kk5iT8CM": [
+      {
+       "claim": "The video demonstrates building a to-do app using React and Vite.",
+       "supported": true
+      },
+      {
+       "claim": "The to-do app includes add, edit, and delete functionality.",
+       "supported": true
+      },
+      {
+       "claim": "The app includes a stats dashboard.",
+       "supported": true
+      },
+      {
+       "claim": "The app implements local storage.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 13,
+    "total_min": 359.3,
+    "utilisation": 1.0,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 13,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "SqcY0GlETPk: red flags ['pure_theory']",
+     "wIyHSOugGGw: red flags ['pure_theory', 'surface_intro']",
+     "uvEAvxWvwOs: red flags ['pure_theory']",
+     "VZ6Qpe3sjhM: red flags ['surface_intro']",
+     "V1PxgjIhTw0: red flags ['pure_theory', 'surface_intro']",
+     "QdTHUv79EZc: red flags ['outdated_tooling']",
+     "N7rs5F4f6FA: red flags ['surface_intro']",
+     "8bsG5Xg9PaI: red flags ['pure_theory']",
+     "b6dnwttsdTo: red flags ['outdated_tooling']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "React": true,
+     "JSX": true,
+     "Vite tooling": true,
+     "React hooks": true,
+     "Component patterns": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.57,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "SqcY0GlETPk",
+     "wIyHSOugGGw",
+     "G6D9cBaLViA",
+     "uvEAvxWvwOs",
+     "V9i3cGD-mts",
+     "do62-z3z6FM",
+     "VZ6Qpe3sjhM",
+     "V1PxgjIhTw0",
+     "1uiNxQIpcLU",
+     "QdTHUv79EZc",
+     "N7rs5F4f6FA",
+     "8bsG5Xg9PaI",
+     "b6dnwttsdTo"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [
+     "8bsG5Xg9PaI",
+     "b6dnwttsdTo"
+    ],
+    "recency_ok": false,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified",
+     "recency_ok"
+    ],
+    "soft_misses": [
+     "pick_count_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "SqcY0GlETPk",
+    "wIyHSOugGGw",
+    "G6D9cBaLViA",
+    "uvEAvxWvwOs",
+    "V9i3cGD-mts",
+    "do62-z3z6FM",
+    "VZ6Qpe3sjhM",
+    "V1PxgjIhTw0",
+    "1uiNxQIpcLU",
+    "QdTHUv79EZc",
+    "N7rs5F4f6FA",
+    "8bsG5Xg9PaI",
+    "b6dnwttsdTo"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum shows no signs of being customized for this specific learner, ignoring their Python background and reading like an uncurated list of generic search results.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons rely entirely on search popularity and view counts rather than describing the actual educational content of the videos.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The curriculum includes a 62-minute Todo App build with localStorage, which is structurally very similar to the learner's goal of building a habit tracker.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The sequence is chaotic, introducing basic concepts like Vite setup and useState long after the learner has supposedly completed complex, 100-minute project builds that rely on them.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum blatantly violates almost all stated constraints by including pure-theory lectures, surface-level introductions, and tutorials with outdated tooling.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "While it mathematically fills the time, the budget is squandered on redundant, out-of-order, and constraint-violating videos.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped list of considered but rejected videos is provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "This is a low-effort aggregation of search results that fails to respect the learner's constraints, prior knowledge, or need for a logical learning progression.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "SqcY0GlETPk",
+      "critique": "Flagged as pure theory, which directly violates the learner's explicit constraint for project-based content.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "wIyHSOugGGw",
+      "critique": "A rapid surface-level intro that violates the constraint against 'in 100 seconds' style overviews.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "G6D9cBaLViA",
+      "critique": "A solid, modern project build using Vite that matches the learner's desire for practical application.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "uvEAvxWvwOs",
+      "critique": "Another pure-theory lecture that ignores the learner's preference for project-based learning.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "V9i3cGD-mts",
+      "critique": "Teaches the basic useState hook far too late, well after the learner has already built apps requiring it.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "do62-z3z6FM",
+      "critique": "While this is a good Vite crash course, it is placed nonsensically after several tutorials that already require Vite.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "VZ6Qpe3sjhM",
+      "critique": "A brief surface intro to Vite setup that is both redundant here and violates the constraint against shallow overviews.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "V1PxgjIhTw0",
+      "critique": "Flagged as both pure theory and a surface intro, violating two of the learner's constraints at once.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "1uiNxQIpcLU",
+      "critique": "A focused, practical project building a useLocalStorage hook, which is directly applicable to the habit tracker goal.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "QdTHUv79EZc",
+      "critique": "Flagged for outdated tooling, which violates the constraint against pre-2022 workflows like create-react-app.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "N7rs5F4f6FA",
+      "critique": "A surface-level introduction that fails to meet the learner's requirement for in-depth, hands-on learning.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "8bsG5Xg9PaI",
+      "critique": "Flagged as pure theory, violating constraints, and appears to be in Hindi which is inappropriate for an English-language profile.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "b6dnwttsdTo",
+      "critique": "Uses outdated tooling, ignoring the learner's strict requirement for modern React and Vite.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 3,
+    "total_min": 105.4,
+    "utilisation": 0.29,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 3,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "QdTHUv79EZc: red flags ['outdated_tooling']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "React": true,
+     "JSX": true,
+     "Vite tooling": true,
+     "React hooks": true,
+     "Component patterns": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.23,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "X92kk5iT8CM",
+     "QdTHUv79EZc",
+     "wKjsnUIfGHI"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.65,
+    "cost_usd": 0.08267,
+    "latency_s": 38.5,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "utilisation_ok",
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "X92kk5iT8CM",
+    "QdTHUv79EZc",
+    "wKjsnUIfGHI"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum explicitly considers the learner's Python background, acknowledges their request for a habit tracker, and structures the picks around their preference for project-based learning.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, noting the specific technologies (Vite, hooks, localStorage) and app features (Todo list, add/delete, persistence) taught in the videos.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner wants to build a habit tracker. The curriculum includes Todo list builds, which share a nearly identical structural pattern (managing a list of items, toggling states, and persisting to localStorage), and explicitly warns the learner about writing their own streak logic.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The curriculum starts with a foundational project using Vite and basic hooks, follows up with another practice project, and ends with an intermediate custom hook pattern, which is a logical progression.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The learner explicitly stated they want Vite and modern hooks, not create-react-app or pre-2022 tooling. However, the second video is flagged for outdated tooling, violating this strict constraint.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "While the curriculum leaves a significant portion of the budget unused, it is honest about why (lack of quality candidates that fit the constraints) rather than padding the list with weak or irrelevant material.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped list accurately references flags like pure_theory, surface_intro, and off-stack technologies (Redux, TypeScript) to justify exclusions, which a learner would find completely reasonable.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "Despite good goal mirroring and sound dropped reasons, the curriculum generator hallucinated that the second video was unflagged. Including a video with outdated tooling directly violates the learner's explicit constraint against older toolchains like create-react-app.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "X92kk5iT8CM",
+      "critique": "A Vite-based React project that covers state, effects, and local storage serves as an excellent structural foundation for the habit tracker.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "QdTHUv79EZc",
+      "critique": "This video is flagged for outdated tooling, which directly violates the learner's strict constraint for Vite and against older setups like create-react-app.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "wKjsnUIfGHI",
+      "critique": "Learning to build a custom useLocalStorage hook perfectly addresses the persistence requirement for the habit tracker using modern React patterns.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.67,
+    "claims": {
+     "X92kk5iT8CM": [
+      {
+       "claim": "The video is a project-based React + Vite build.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Vite setup.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers JSX components.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers useState.",
+       "supported": false
+      },
+      {
+       "claim": "The video covers event handling.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers useEffect.",
+       "supported": false
+      },
+      {
+       "claim": "The video covers localStorage.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers lists and keys.",
+       "supported": false
+      }
+     ],
+     "QdTHUv79EZc": [
+      {
+       "claim": "The video is an hour-long build of a hooks-based todo app using useState, useEffect, localStorage, and CSS animations.",
+       "supported": true
+      },
+      {
+       "claim": "The app includes features to add, delete, toggle, and persist items.",
+       "supported": true
+      }
+     ],
+     "wKjsnUIfGHI": [
+      {
+       "claim": "Builds a custom useLocalStorage hook",
+       "supported": true
+      },
+      {
+       "claim": "The useLocalStorage hook combines useState and useEffect",
+       "supported": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "tie",
+   "orders": [
+    "a",
+    "b"
+   ],
+   "critiques": [
+    "Curriculum A does a better job tailoring to the learner's background. As an experienced backend engineer, the learner can grasp `useState` directly from its application in a project, making Curriculum B's 8-minute concept explainer redundant and a borderline violation of the 'no pure-theory' constraint. Curriculum A also smartly slices the Vite crash course to just the relevant setup parts, saving time, and uses a more robust 44-minute project-based video for the custom hook pattern rather than Curriculum B's 10-minute mini-app. Both curricula successfully focus on project-based tutorials that use Vite and modern hooks.",
+    "Curriculum A is better tailored for an experienced backend engineer. It uses a concise, standalone 10-minute video to teach the `useLocalStorage` pattern, which is highly efficient. In contrast, Curriculum B selects a 44-minute video that is Episode 41 of a longer course, which will likely drag on and rely heavily on code from the previous 40 episodes. While Curriculum B smartly clips the Vite tutorial to save time, Curriculum A's full Vite video and quick 8-minute `useState` primer provide a solid foundation and still leave almost half the time budget open for actually building the app."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A perfectly respects the learner's constraints. It provides project-based tutorials that teach React, Vite, and localStorage persistence, which are exactly the skills needed to build a habit tracker. It avoids pure theory and surface-level introductions, leaving plenty of time in the budget for the learner to actually build their project. Curriculum B, on the other hand, completely ignores the negative constraints, padding the playlist with numerous videos flagged as 'pure_theory', 'surface_intro', and 'outdated_tooling'.",
+    "Curriculum A ignores almost all of the learner's negative constraints. It fills the time budget with numerous videos flagged as 'pure_theory', 'surface_intro', and 'outdated_tooling', resulting in a disjointed and repetitive learning experience. Curriculum B respects the constraints perfectly. It avoids theory-only and surface-level videos, instead focusing on high-quality, project-based content using modern Vite tooling and hooks. It directly addresses the goal of building a habit tracker by including projects like a To-Do app with local storage, and wisely stops at 189 minutes rather than padding the curriculum with violating content."
+   ]
+  },
+  "no_transcript": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A perfectly respects the learner's constraints, providing modern, Vite-based, project-focused tutorials that cover all the requested topics (React, JSX, Vite, hooks, and local storage). Curriculum B violates a strict negative constraint by including a video flagged for outdated tooling (likely Create-React-App), which the learner explicitly wanted to avoid. Curriculum A also makes better use of the time budget to provide a comprehensive learning path for a backend engineer transitioning to React.",
+    "Curriculum B is much better because it respects the negative constraint against outdated tooling (Create React App), whereas Curriculum A includes a video flagged for outdated tooling. Curriculum B also provides a much more robust learning path for a backend engineer new to React, covering Vite explicitly, foundational React concepts (JSX, state, context) through a larger project, and then narrowing into the exact custom hook (useLocalStorage) and project structure (To-Do List) needed for a habit tracker."
+   ]
+  }
+ }
+}

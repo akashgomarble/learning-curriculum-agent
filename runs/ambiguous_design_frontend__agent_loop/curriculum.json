@@ -1,0 +1,397 @@
+{
+  "persona_id": "ambiguous_design_frontend",
+  "goal": "Get better at design",
+  "budget_minutes": 180,
+  "total_minutes": 165.0,
+  "interpretation": "A React/CSS developer gains practical visual design skill (hierarchy, spacing, type, color, depth) and applies it by watching real redesigns and critiques of existing UIs.",
+  "assumptions": [
+    "'Better at design' means UI/visual design for web and app interfaces, not branding or UX research.",
+    "The learner has no design-tool experience. Figma is shown, but the focus is on principles they can apply in CSS.",
+    "Everything in the pool is assumed to date from 2020 or later. None of the videos is flagged as outdated."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "principles",
+      "title": "Core principles: contrast, repetition, alignment, proximity",
+      "why": "This gives a shared vocabulary for critiquing any UI.",
+      "prereqs": [],
+      "minutes_share": 6.0
+    },
+    {
+      "id": "spacing",
+      "title": "Spacing, layout and the 4/8-pt grid",
+      "why": "Spacing is the fastest visible improvement, and it maps directly onto the learner's CSS skills.",
+      "prereqs": [
+        "principles"
+      ],
+      "minutes_share": 15.0
+    },
+    {
+      "id": "type",
+      "title": "Typography and hierarchy",
+      "why": "Most UI is text. Size, weight and color create the hierarchy.",
+      "prereqs": [
+        "principles"
+      ],
+      "minutes_share": 8.0
+    },
+    {
+      "id": "color",
+      "title": "Color palettes",
+      "why": "This helps the learner build palettes that look good together.",
+      "prereqs": [
+        "principles"
+      ],
+      "minutes_share": 15.0
+    },
+    {
+      "id": "depth",
+      "title": "Depth, shades and shadows with quick redesigns",
+      "why": "A fast, repeatable way to lift flat UIs, shown on before/after examples.",
+      "prereqs": [
+        "color",
+        "spacing"
+      ],
+      "minutes_share": 6.0
+    },
+    {
+      "id": "redesign",
+      "title": "Full redesign walkthrough (critique + apply)",
+      "why": "Applies every principle to one real UI from start to finish.",
+      "prereqs": [
+        "spacing",
+        "type",
+        "color",
+        "depth"
+      ],
+      "minutes_share": 47.0
+    },
+    {
+      "id": "process",
+      "title": "Real project process and developer handoff",
+      "why": "Shows how design decisions, feedback and accessibility work on a live project.",
+      "prereqs": [
+        "redesign"
+      ],
+      "minutes_share": 5.0
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "uwNClNmekGU",
+      "title": "4 Foundational UI Design Principles | C.R.A.P.",
+      "channel": "Jesse Showalter",
+      "url": "https://www.youtube.com/watch?v=uwNClNmekGU",
+      "duration_min": 9.3,
+      "minutes_counted": 9.3,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "principles"
+      ],
+      "reason": "It teaches the four CRAP principles and applies each to a bike website layout redesign, so the learner gets a vocabulary for critique with a first before/after.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:20",
+          "quote": "the acronym of the day is c-r-a-p and that stands for contrast repetition alignment and proximity",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:40",
+          "quote": "contrast it's all about organizing your design establishing hierarchy emphasizing a focal point and adding visual interest",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "06:43",
+          "quote": "proximity makes elements seem related like they belong together it brings understanding and meaning to multiple elements",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Concise and practical; the redesign example is small.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "fImTa4daVc8",
+      "title": "Why Your UI Designs Look Off — It's Your Spacing & Layout",
+      "channel": "Ali Hassan",
+      "url": "https://www.youtube.com/watch?v=fImTa4daVc8",
+      "duration_min": 25.0,
+      "minutes_counted": 25.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "spacing"
+      ],
+      "reason": "It explains the 4/8-pt spacing system and proximity, with before/after examples where only spacing and layout change. Spacing is the biggest lever for developers.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:42",
+          "quote": "Spacing doesn't just mean leaving empty space; it tells the user which elements are linked together",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "01:46",
+          "quote": "90 percent of looking pro is just spacing",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "03:12",
+          "quote": "If you are designing for mobile, you have to keep multiples of 4. Meaning 4, 8, 12, 16",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "06:26",
+          "quote": "Before, the design was like this, but after, it became like this, why? It is purely just a difference in spacing and layout, nothing else",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Includes some Figma card-building and animation that is less relevant.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "9-oefwZ6Z74",
+      "title": "The 80% of UI Design - Typography",
+      "channel": "Sajid",
+      "url": "https://www.youtube.com/watch?v=9-oefwZ6Z74",
+      "duration_min": 12.4,
+      "minutes_counted": 12.4,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "type"
+      ],
+      "reason": "It redesigns a social feed and a subscription list using size, weight and HSL lightness. It also gives a minimal type scale the learner can use in CSS.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "00:20",
+          "quote": "there is no hierarchy and point of focus so it's tough to tell what we are looking at it's just a bunch of text",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "02:05",
+          "quote": "you are going to need size color and spacing to group or separate elements technically spacing falls under the law of proximity",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "07:49",
+          "quote": "these are all the font sizes you need to design 99% of apps and uis and if you want just these three combined with weight and color are enough",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Practical redesign-based typography lesson. I chose it over the DesignSpo typography video, which is pure theory.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 4,
+      "video_id": "GyVMoejbGFg",
+      "title": "Super Practical Guide to Color Theory, Color Models and Perfect Color Palettes | UI Design",
+      "channel": "Elizabeth Alli - DesignerUp",
+      "url": "https://www.youtube.com/watch?v=GyVMoejbGFg",
+      "duration_min": 24.1,
+      "minutes_counted": 24.1,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "color"
+      ],
+      "reason": "It gives concrete saturation and brightness ranges per palette category, plus a rule to pair one category with neutrals. That makes building palettes a repeatable method.",
+      "evidence": [
+        {
+          "quote_id": "q3",
+          "t": "12:46",
+          "quote": "the ideal saturation and brightness for creating jewel tone color palettes lies within a saturation value range between 83 and 73 and a brightness value range between 76 and 56",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "11:24",
+          "quote": "the trick to getting really great looking color palettes is to stick with one of the following categories or pair one category with neutrals",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.65,
+      "confidence_note": "Flagged pure_theory, but the learner has no color grounding and the formulas are actionable. It is the only substantial color coverage found.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 5,
+      "video_id": "wcZ6jSlZqDc",
+      "title": "The Easy Way to Fix Boring UIs",
+      "channel": "Sajid",
+      "url": "https://www.youtube.com/watch?v=wcZ6jSlZqDc",
+      "duration_min": 9.0,
+      "minutes_counted": 9.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "depth"
+      ],
+      "reason": "It uses a two-step method, layered shades plus shadows, to fix boring UIs, shown as before/after redesigns of components and a dashboard.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "01:02",
+          "quote": "create three to four shades of the same color and then create some shadows",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "01:23",
+          "quote": "Let's fix some boring UIs. We are going to start with this clean and simple design",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "05:15",
+          "quote": "The design is changed so much by just using four shades of gray and some shadow",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Short, practical and redesign-focused.",
+      "level": "beginner",
+      "format": "project_build"
+    },
+    {
+      "rank": 6,
+      "video_id": "LfkDiDyn6nU",
+      "title": "MASTER VISUAL HIERARCHY: Principles of VISUAL DESIGN for Designing Mobile Apps!",
+      "channel": "Design Pilot",
+      "url": "https://www.youtube.com/watch?v=LfkDiDyn6nU",
+      "duration_min": 76.4,
+      "minutes_counted": 76.4,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "redesign"
+      ],
+      "reason": "A long hands-on redesign of a flight booking app. It starts from user needs and a critique of existing apps, then applies hierarchy, typography, spacing and color. It meets the real-redesign requirement.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:41",
+          "quote": "visual hierarchy is ensuring that the most important and relevant information is easily available to the user",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "03:08",
+          "quote": "users are going to be comparing various data points that we have over here and who's going to be comparing what is your job as a designer to figure out",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "17:09",
+          "quote": "even though ticket price is important doesn't mean that has to be the first data point right",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "1:14:45",
+          "quote": "with just a few textiles and just a few colors we have been able to create a beautiful in interface that makes a lot of sense very easy for users to make a decision",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Long at 76 minutes, but it fits the budget and works as the capstone.",
+      "level": "beginner",
+      "format": "project_build"
+    },
+    {
+      "rank": 7,
+      "video_id": "t7cnk3aQp2c",
+      "title": "Steal My UI/UX Process in 2026 (Real Project Breakdown)",
+      "channel": "Agatha Richards",
+      "url": "https://www.youtube.com/watch?v=t7cnk3aQp2c",
+      "duration_min": 8.8,
+      "minutes_counted": 8.8,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "process"
+      ],
+      "reason": "It shows a live healthcare app project, including feedback-driven changes to a design that looked unclickable, a contrast and accessibility fix, and handoff to developers. This ties the learner's design work to real-world constraints.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "01:24",
+          "quote": "not to copy the design but to understand the structure, spacing, the UX decision and why I like specific screen more than others",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "03:32",
+          "quote": "I initially did like the today overview banner but after feedback that it look unclickable and there is no actions I've decided to just do a cards",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "04:56",
+          "quote": "the primary color was like a salmon orange and the contrast was pretty bad. Since it's a healthcare app, the accessibility is non-negotiable",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.65,
+      "confidence_note": "Brief, process-level overview.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "7AhCIBGTiEA",
+      "title": "UI/UX Website Redesign Before and After - CaterGraphix Design Academy",
+      "stage": "select",
+      "reason": "A real redesign, but it is done in a no-code builder (Oxygen). Some advice is shaky, such as 'always give a margin, not padding', and the learner already knows CSS Grid and spacing mechanics."
+    },
+    {
+      "video_id": "AXpxZMRM1EY",
+      "title": "The ULTIMATE Guide To Typography For Beginners",
+      "stage": "select",
+      "reason": "A solid typography overview, but pure theory with no redesign. It overlaps with the Sajid typography video, which is more practical."
+    },
+    {
+      "video_id": "1NTKwpAVcHg",
+      "title": "Give Me 7 Minutes & Your Web Design Skills Will Take Off",
+      "stage": "select",
+      "reason": "A 7-minute surface-level overview flagged surface_intro. It duplicates the principles, hierarchy and color content covered in more depth elsewhere."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "The plan uses about 165 of 180 minutes. I left the rest unused rather than add redundant videos.",
+    "The color video is flagged pure_theory. I kept it because it is the only substantial color coverage and its HSB ranges are actionable.",
+    "I kept Sajid's typography video over DesignSpo's. It is built around redesigning real UIs, while DesignSpo is a pure-theory overview.",
+    "The fImTa4daVc8 spacing video includes Figma card-building and animation sections. The learner can skim these if they only want the spacing principles.",
+    "No video here covers implementing the designs in React/CSS. The learner should practice by redesigning one of their own UIs in code."
+  ],
+  "pool_size": 33,
+  "models": {
+    "agent_loop": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.14442,
+  "latency_s": 46.1,
+  "mode": "agent_loop"
+}

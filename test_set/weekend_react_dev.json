@@ -1,0 +1,80 @@
+{
+  "persona_id": "weekend_react_dev",
+  "goal": "Build a small React app this weekend, something like a habit tracker with local storage",
+  "time_budget_minutes": 360,
+  "user_context": {
+    "background": "Python backend engineer, 5 years experience",
+    "known": [
+      "JavaScript fundamentals",
+      "HTTP, REST, JSON",
+      "Git, npm"
+    ],
+    "unknown": [
+      "React",
+      "JSX",
+      "Vite tooling",
+      "React hooks",
+      "Component patterns"
+    ],
+    "constraints": "I prefer project-based content. Avoid pure-theory lectures and 'in 100 seconds' surface intros. Nothing made before 2022 (I want Vite and modern hooks, not create-react-app). At most two videos from any one creator."
+  },
+  "expectations": {
+    "notes": "Reference persona from the brief. Good output per the brief: 4-6 videos, React/Vite setup first, then a project build that mirrors a habit tracker, no JS intros, no '100 seconds' content, ~5 hours.",
+    "pick_count": [
+      4,
+      6
+    ],
+    "min_utilisation": 0.7,
+    "forbidden_title_regex": "(?i)100 seconds|javascript (for beginners|crash course|tutorial for beginners)",
+    "forbidden_flags": [
+      "surface_intro",
+      "pure_theory",
+      "outdated_tooling",
+      "too_basic_for_learner"
+    ],
+    "unknown_synonyms": {
+      "React": [
+        "react",
+        "component",
+        "jsx",
+        "hook",
+        "usestate"
+      ],
+      "JSX": [
+        "jsx"
+      ],
+      "Vite tooling": [
+        "vite"
+      ],
+      "React hooks": [
+        "hook",
+        "usestate",
+        "useeffect",
+        "usereducer",
+        "useref",
+        "usecontext"
+      ],
+      "Component patterns": [
+        "component",
+        "props",
+        "composition",
+        "lifting state",
+        "children",
+        "custom hook"
+      ]
+    },
+    "known_topics": [
+      "javascript fundamentals",
+      "javascript basics",
+      "http",
+      "rest api",
+      "json",
+      "git",
+      "npm"
+    ],
+    "require_project_based": true,
+    "required_language": "en",
+    "min_upload_year": 2022,
+    "max_per_channel": 2
+  }
+}

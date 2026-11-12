@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="data:,"><title>Evaluation</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--muted:#5d6472;--line:#e3e6eb;--accent:#2f6fde;--accent-soft:#e8f0fd;
+--warn:#8a5a00;--warn-bg:#fff6e0;--bad:#b42318;--bad-bg:#fdecea;--ok:#18794e;--ok-bg:#e6f6ee;--chip:#eef1f5;--mark:#fff1a8;
+--shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#e8eaee;--muted:#9aa3b2;--line:#272c36;--accent:#7aa7ff;
+--accent-soft:#1c2740;--warn:#f5c26b;--warn-bg:#2a2214;--bad:#ff8a80;--bad-bg:#2c1716;--ok:#5fd39a;--ok-bg:#122a1f;--chip:#222733;
+--mark:#4a4214;--shadow:none}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+nav div{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;gap:18px;align-items:center;font-size:14px}
+nav b{margin-right:auto}nav a.on{font-weight:600;color:var(--ink)}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:26px;line-height:1.25;margin:4px 0 6px}h2{font-size:18px;margin:34px 0 12px}h3{font-size:17px;line-height:1.35;margin:0}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:14px 0 6px}
+.crumb{font-size:13px;color:var(--muted)}.muted{color:var(--muted)}.small{font-size:13px}
+code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:4px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:120px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--muted)}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--chip);margin:6px 0 4px}
+.bar i{display:block;height:100%;border-right:2px solid var(--card)}
+.legend{font-size:12px;color:var(--muted)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:760px){.two{grid-template-columns:1fr}}
+.warn{background:var(--warn-bg);color:var(--ink);border-radius:10px;padding:10px 14px;margin:8px 0;font-size:14px}
+.warn b{color:var(--warn)}.bad{border-left:4px solid var(--bad)}
+.plan{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.plan li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 48px;position:relative}
+.plan li:before{content:counter(s);position:absolute;left:14px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:13px;text-align:center;line-height:22px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--muted)}
+.chip.c{background:var(--accent-soft);color:var(--accent)}.chip.ok{background:var(--ok-bg);color:var(--ok)}
+.chip.no{background:var(--bad-bg);color:var(--bad)}.chip.w{background:var(--warn-bg);color:var(--warn)}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 18px;box-shadow:var(--shadow)}
+.pick header{display:flex;gap:12px;padding:14px 16px 10px;align-items:flex-start}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;text-align:center;line-height:30px}
+.meta{font-size:13px;color:var(--muted);margin-top:3px}
+.body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;padding:0 16px 12px}
+.body>div:first-child{align-self:start;position:sticky;top:56px}
+@media (max-width:760px){.body{grid-template-columns:1fr}.body>div:first-child{position:static}}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}
+.player iframe,.player button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.player button{cursor:pointer;padding:0;background:#000 center/cover no-repeat}
+.player button:after{content:"";position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(0,0,0,.72)}
+.player button:before{content:"";position:absolute;left:50%;top:50%;margin:-11px 0 0 -7px;border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff;z-index:1}
+.player button:hover:after{background:#e62117}
+.range{font-size:12px;color:var(--muted);margin-top:6px}
+.reason{margin:0 0 10px}
+.conf{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:10px}
+.conf .m{flex:1;height:6px;border-radius:3px;background:var(--chip);overflow:hidden}.conf .m i{display:block;height:100%}
+blockquote{margin:0 0 8px;padding:6px 10px;border-left:3px solid var(--line);font-size:14px}
+.ts{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);color:var(--accent);border:0;border-radius:5px;padding:1px 6px;cursor:pointer;margin-right:6px}
+blockquote small{color:var(--muted)}
+.note{font-size:13px;color:var(--muted);font-style:italic;margin-top:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}
+.pick details{margin:0 16px 14px;background:var(--bg)}
+summary{cursor:pointer;font-weight:600}details ul{margin:8px 0 0;padding-left:18px}details li{margin:4px 0;font-size:14px}
+.extract{max-height:420px;overflow:auto;margin-top:10px;font-size:13px;line-height:1.5}
+.extract p{margin:0 0 6px}.extract .ch{color:var(--muted);font-weight:600}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
+.gap{color:var(--muted);text-align:center;font-size:12px;margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.grid .box h3{margin-bottom:6px}.grid .box p{margin:6px 0;font-size:14px}
+.card-tc{display:flex;flex-direction:column}.card-tc>p:last-of-type{margin-bottom:10px}
+.cardbtns{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+.btn-ghost,.btn-soft{font-size:13px;font-weight:600;padding:7px 13px;border-radius:9px;border:1px solid var(--line);white-space:nowrap}
+.btn-ghost{color:var(--ink);background:var(--bg)}.btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+.btn-soft{color:#fff;background:var(--accent);border-color:var(--accent)}.btn-soft:hover{text-decoration:none;opacity:.92}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);background:var(--bg)}
+td:first-child{min-width:130px}tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.y{color:var(--ok);font-weight:600}.x{color:var(--bad);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:14px 0}
+.steps div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px}
+.steps b{display:block;font-size:14px;margin-bottom:2px}
+.wk-list{display:grid;gap:10px}
+.wk{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.wk-n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.wk-b{min-width:0}.wk-h{font-weight:600;margin-bottom:4px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.why{margin-top:6px;font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px}
+.why b{color:var(--ink)}
+.tryform{display:grid;gap:10px;margin:14px 0}
+.tryform label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+.tryform .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:600px){.tryform .row{grid-template-columns:1fr}}
+.tryform input{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+.tryform button{justify-self:start;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.tryform button:disabled{opacity:.6;cursor:default}
+.run-stages{display:grid;gap:8px;margin:16px 0}
+.run-stages div{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.run-stages .dot{width:12px;height:12px;border-radius:50%;background:var(--chip);flex:none}
+.run-stages .done .dot{background:var(--ok)}.run-stages .active .dot{background:var(--accent);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.4}}
+footer{margin-top:36px;font-size:12px;color:var(--muted)}
+</style></head><body><nav><div><b>Learning Curriculum Builder</b><a href="index.html" class="">Test cases</a><a href="how-it-works.html" class="">How it works</a><a href="evaluation.html" class="on">Evaluation</a><a href="/chat" class="">Chat ✨</a></div></nav><main><h1>Evaluation</h1><div class='muted'>Every test case is scored three ways: automatic checks in code (hard checks gate a pass), an AI grader from a different model family than the agent, and head-to-head comparisons in both orders. The agent is measured against two baselines on the same candidate pools — the same agent denied transcripts (does reading the content actually matter?), and the top videos by view count (is popularity enough?).</div><h2>By system</h2><div class='tbl'><table><tr><th>System</th><th class='n'>Pass hard checks</th><th class='n'>Learning gaps covered</th><th class='n'>Budget used</th><th class='n'>Quotes verified</th><th class='n'>Redundancy</th><th class='n'>Grader pick pass</th><th class='n'>Faithfulness</th></tr><tr><td>The agent</td><td class='n'>5/8</td><td class='n'>100%</td><td class='n'>74%</td><td class='n'>100%</td><td class='n'>26%</td><td class='n'>100%</td><td class='n'>93%</td></tr><tr><td>Without transcripts</td><td class='n'>0/8</td><td class='n'>100%</td><td class='n'>67%</td><td class='n'>0%</td><td class='n'>29%</td><td class='n'>93%</td><td class='n'>79%</td></tr><tr><td>Top videos by views</td><td class='n'>0/8</td><td class='n'>90%</td><td class='n'>93%</td><td class='n'>0%</td><td class='n'>42%</td><td class='n'>23%</td><td class='n'>–</td></tr></table></div><div class='muted small' style='margin-top:6px'>Transcripts earn their place: denied them, faithfulness and the grader's pick-pass fall sharply. Picking by views alone passes almost nothing the grader accepts.</div><div class='box small' style='margin-top:10px'><b>Hard checks failed in at least one test case</b><div style='margin-top:6px'>The agent: <span class='chip no'>constraint violations</span><span class='chip no'>recency ok</span></div><div style='margin-top:6px'>Without transcripts: <span class='chip no'>constraint violations</span><span class='chip no'>evidence verified</span></div><div style='margin-top:6px'>Top videos by views: <span class='chip no'>assumptions stated</span><span class='chip no'>constraint violations</span><span class='chip no'>creators ok</span><span class='chip no'>evidence verified</span><span class='chip no'>infeasibility flagged</span><span class='chip no'>language</span><span class='chip no'>level floor</span><span class='chip no'>near dup respected</span><span class='chip no'>recency ok</span></div></div><h2>Cost & shape of a run</h2><div class='tbl'><table><tr><th class='n'>Videos read (median)</th><th class='n'>Turns (median)</th><th class='n'>Cost per run (median)</th></tr><tr><td class='n'>9</td><td class='n'>5</td><td class='n'>$0.142</td></tr></table></div><div class='muted small' style='margin-top:6px'>The agent reads only what it needs to decide, not the whole pool. Cost here reuses cached per-video assessments; a from-cold run pays once to assess each video it reads — see the cost note in EVAL.md.</div><h2>Per test case</h2><div class='muted small'>Pass/fail is the automatic hard checks, per system.</div><div class='tbl'><table><tr><th>Test case</th><th>The agent</th><th>Without transcripts</th><th>Top videos by views</th></tr><tr><td><a href='ambiguous_design_frontend__agent_loop/curriculum.html'>ambiguous_design_frontend</a></td><td><span class='y'>pass</span></td><td><span class='x'>fail</span><div class='muted small'>evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>evidence verified, assumptions stated, recency ok</div></td></tr><tr><td><a href='career_switch_ml_foundations__agent_loop/curriculum.html'>career_switch_ml_foundations</a></td><td><span class='x'>fail</span><div class='muted small'>constraint violations</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified, language</div></td></tr><tr><td><a href='go_dev_rust_ownership__agent_loop/curriculum.html'>go_dev_rust_ownership</a></td><td><span class='x'>fail</span><div class='muted small'>constraint violations</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified, level floor</div></td></tr><tr><td><a href='hindi_excel_pivots__agent_loop/curriculum.html'>hindi_excel_pivots</a></td><td><span class='y'>pass</span></td><td><span class='x'>fail</span><div class='muted small'>evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>evidence verified</div></td></tr><tr><td><a href='impossible_k8s_in_45__agent_loop/curriculum.html'>impossible_k8s_in_45</a></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, recency ok</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified, infeasibility flagged, recency ok</div></td></tr><tr><td><a href='lunch_break_sql_windows__agent_loop/curriculum.html'>lunch_break_sql_windows</a></td><td><span class='y'>pass</span></td><td><span class='x'>fail</span><div class='muted small'>evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified</div></td></tr><tr><td><a href='sourdough_first_loaf__agent_loop/curriculum.html'>sourdough_first_loaf</a></td><td><span class='y'>pass</span></td><td><span class='x'>fail</span><div class='muted small'>evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified, near dup respected, creators ok</div></td></tr><tr><td><a href='weekend_react_dev__agent_loop/curriculum.html'>weekend_react_dev</a></td><td><span class='y'>pass</span></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified</div></td><td><span class='x'>fail</span><div class='muted small'>constraint violations, evidence verified, recency ok</div></td></tr></table></div><h2>AI grader pass rate per criterion</h2><div class='tbl'><table><tr><th>Criterion</th><th class='n'>The agent</th><th class='n'>Without transcripts</th><th class='n'>Top videos by views</th></tr><tr><td>tailored</td><td class='n'>100%</td><td class='n'>100%</td><td class='n'>12%</td></tr><tr><td>content grounded reasons</td><td class='n'>100%</td><td class='n'>88%</td><td class='n'>0%</td></tr><tr><td>goal mirroring</td><td class='n'>100%</td><td class='n'>100%</td><td class='n'>75%</td></tr><tr><td>prereq order sensible</td><td class='n'>100%</td><td class='n'>88%</td><td class='n'>12%</td></tr><tr><td>constraints respected</td><td class='n'>100%</td><td class='n'>75%</td><td class='n'>25%</td></tr><tr><td>budget well used</td><td class='n'>100%</td><td class='n'>88%</td><td class='n'>0%</td></tr><tr><td>dropped reasons sound</td><td class='n'>88%</td><td class='n'>88%</td><td class='n'>0%</td></tr><tr><td>overall</td><td class='n'>88%</td><td class='n'>75%</td><td class='n'>0%</td></tr></table></div><h2>AI grader vs human labels</h2><div class='box small'>Every curriculum was also labelled pass/fail by a human from a blind sheet (32 labels). Grader and human agree on <b>91%</b> of them (Cohen's κ <b>0.80</b>, 95% CI 0.55–1.00; TPR 90%, TNR 92%). Of the disagreements, the grader was too lenient on 1 and too strict on 2; the full disagreement table is in evals/results/RESULTS.md.</div><footer>Full method and caveats: EVAL.md in the repository. Numbers from evals/results/.</footer></main><script>
+function play(el, start){
+  const p = el.closest('.pick').querySelector('.player');
+  const id = (p.dataset.id || '').replace(/[^A-Za-z0-9_-]/g, ''), end = p.dataset.end;
+  const s = start ?? p.dataset.start;
+  const q = new URLSearchParams({autoplay:'1', rel:'0', modestbranding:'1'});
+  if (s) q.set('start', s); if (end && (start == null || +start < +end)) q.set('end', end);
+  p.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?${q}" title="${(p.dataset.title || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c])}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  p.scrollIntoView({block:'nearest', behavior:'smooth'});
+}
+</script></body></html>

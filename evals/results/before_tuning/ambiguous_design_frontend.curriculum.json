@@ -1,0 +1,670 @@
+{
+  "persona_id": "ambiguous_design_frontend",
+  "goal": "Get better at design",
+  "budget_minutes": 180,
+  "total_minutes": 160.3,
+  "interpretation": "A frontend developer can make their UIs look polished and professional by applying core visual design principles (hierarchy, spacing, typography, color) and critiquing and improving real interfaces without a designer.",
+  "assumptions": [
+    "'Design' means UI/visual design for web interfaces, not graphic design, UX research, or branding.",
+    "The learner wants practical design skills to improve the apps they build, rather than becoming a professional designer.",
+    "Because no specific tools were mentioned, Figma is optional and the focus is on principles that can be applied directly in code.",
+    "No constraints were given, so any video format and length is acceptable."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "visual_hierarchy",
+      "title": "Visual hierarchy and layout principles",
+      "why": "They can already build layouts with Flexbox and Grid; now they need to know what to emphasize and how to guide the eye so pages don't look flat or cluttered.",
+      "prereqs": [],
+      "minutes_share": 0.17
+    },
+    {
+      "id": "spacing_alignment",
+      "title": "Spacing, alignment and consistent spacing scales",
+      "why": "Inconsistent spacing is the most common reason developer-made UIs look amateur, and it's easy to fix in CSS once they know a systematic scale.",
+      "prereqs": [
+        "visual_hierarchy"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "typography",
+      "title": "Typography for interfaces",
+      "why": "Font choice, size scales, weight, line height and line length have a huge effect on polish and readability.",
+      "prereqs": [
+        "visual_hierarchy"
+      ],
+      "minutes_share": 0.17
+    },
+    {
+      "id": "color_theory",
+      "title": "Color: palettes, contrast and accessibility",
+      "why": "They need to build usable palettes, shades and accessible contrast rather than guess hex values.",
+      "prereqs": [
+        "visual_hierarchy"
+      ],
+      "minutes_share": 0.17
+    },
+    {
+      "id": "ui_details",
+      "title": "UI details: shadows, borders, depth and components",
+      "why": "Small refinements like shadows, radius and states make components feel professional, and these are directly implementable in CSS.",
+      "prereqs": [
+        "spacing_alignment",
+        "typography",
+        "color_theory"
+      ],
+      "minutes_share": 0.14
+    },
+    {
+      "id": "redesign_process",
+      "title": "Critiquing and redesigning a real UI",
+      "why": "Seeing a before/after redesign teaches how to apply all the principles together and build a design eye.",
+      "prereqs": [
+        "ui_details"
+      ],
+      "minutes_share": 0.2
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "uwNClNmekGU",
+      "title": "4 Foundational UI Design Principles | C.R.A.P.",
+      "channel": "Jesse Showalter",
+      "url": "https://www.youtube.com/watch?v=uwNClNmekGU",
+      "duration_min": 9.3,
+      "minutes_counted": 9.3,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "visual_hierarchy",
+        "spacing_alignment"
+      ],
+      "reason": "Redesigns a sample bike website live and applies contrast, repetition, alignment and proximity one at a time, giving a visual vocabulary for hierarchy and grouping before the deeper modules. The edits to headline size, weight and card alignment are concrete enough to reproduce in CSS.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:40",
+          "quote": "it's all about organizing your design establishing hierarchy emphasizing a focal point and adding visual interest",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "04:36",
+          "quote": "alignment organizes and groups elements together it creates rhythm it brings order to chaos",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "06:43",
+          "quote": "proximity makes elements seem related like they belong together it brings understanding and meaning",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Clear, practical demos at the right level; short, so the principles are introduced rather than explored in depth.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "kK1TOpI948o",
+      "title": "The Beginner's Guide To Visual Hierarchy",
+      "channel": "DesignSpo",
+      "url": "https://www.youtube.com/watch?v=kK1TOpI948o",
+      "duration_min": 15.5,
+      "minutes_counted": 15.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "visual_hierarchy"
+      ],
+      "reason": "Goes deeper on how contrast (size, weight, color, imagery), uniformity and composition patterns control the order in which elements are noticed. It also touches on the 4.5 contrast ratio and consistent card titles, which a developer can apply directly.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:41",
+          "quote": "Hierarchy is designed to lead the viewer. Now, we rank things by primacy because if everything was equally important",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "05:33",
+          "quote": "we want to aim for a contrast ratio of 4.5 or higher if you want one element to pop against the background",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "10:45",
+          "quote": "Each card title should use the same font with the same font size and the same font weight.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "Conceptual only with no build; it fills the depth the shorter hierarchy videos lack. Confidence would rise if it included a worked UI critique.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "fImTa4daVc8",
+      "title": "Why Your UI Designs Look Off — It's Your Spacing & Layout",
+      "channel": "Ali Hassan",
+      "url": "https://www.youtube.com/watch?v=fImTa4daVc8",
+      "duration_min": 25.0,
+      "minutes_counted": 25.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "spacing_alignment"
+      ],
+      "reason": "Teaches the 8-point spacing scale, proximity of related elements and padding and gaps by fixing a before/after product card. This addresses the learner's gap in consistent spacing, which CSS knowledge alone doesn't give them.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "03:33",
+          "quote": "Make every gap a multiple of 8, no more random 13-pixel or 27-pixel guesses.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:42",
+          "quote": "keep related elements close and provide more space between unrelated elements",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Strong on spacing, but demonstrated in Figma; the Figma-specific parts (auto layout shortcuts, hover prototype) are less relevant, though the 8-point reasoning transfers to CSS.",
+      "level": "beginner",
+      "format": "project_build"
+    },
+    {
+      "rank": 4,
+      "video_id": "AXpxZMRM1EY",
+      "title": "The ULTIMATE Guide To Typography For Beginners",
+      "channel": "DesignSpo",
+      "url": "https://www.youtube.com/watch?v=AXpxZMRM1EY",
+      "duration_min": 13.5,
+      "minutes_counted": 13.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "typography"
+      ],
+      "reason": "Covers font categories, rem/em units, weight, line height, letter spacing and building a typographic hierarchy with rules per text type. The CSS-friendly units and line-height guidance map straight onto the learner's existing skills.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "09:02",
+          "quote": "the rule of thumb for line height is that it's inversely proportional to the size of your font",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "06:33",
+          "quote": "so if I set my root em to something bigger than 16 pixels every part of my design that uses REM gets bigger",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "11:27",
+          "quote": "the basis of our system is typographical hierarchy the idea is to create rules for each text type in our design",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Lecture with no hands-on build, but the content is accurate and complete for UI typography fundamentals.",
+      "level": "beginner",
+      "format": "lecture"
+    },
+    {
+      "rank": 5,
+      "video_id": "9-oefwZ6Z74",
+      "title": "The 80% of UI Design - Typography",
+      "channel": "Sajid",
+      "url": "https://www.youtube.com/watch?v=9-oefwZ6Z74",
+      "duration_min": 12.4,
+      "minutes_counted": 12.4,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "typography",
+        "visual_hierarchy"
+      ],
+      "reason": "Applies typography to a real video-feed UI, using size, weight, color and line height as implicit spacing, with a CSS-variable type scale and rem units. It turns the typography theory into a working redesign a React/CSS developer can copy.",
+      "evidence": [
+        {
+          "quote_id": "q3",
+          "t": "08:33",
+          "quote": "for your project just pick a base font size either 14 or 16 pixels regular weight and 100% lightness",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "09:36",
+          "quote": "first convert the pixel unit to a rem value we want our apt to follow accessibility guidelines",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Practical and code-friendly; includes a sponsor segment and some HSL content that overlaps with the color video.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 6,
+      "video_id": "l6LqaAs4hWs",
+      "title": "UI/UX Design Color Theory CRASH COURSE | Color Theory For Beginners | Saptarshi Prakash",
+      "channel": "Saptarshi Prakash",
+      "url": "https://www.youtube.com/watch?v=l6LqaAs4hWs",
+      "duration_min": 26.0,
+      "minutes_counted": 26.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "color_theory"
+      ],
+      "reason": "Gives the most complete color grounding in the pool: the 60-30-10 rule, color wheel and harmonies, HSL/hex models, semantic colors, WCAG contrast, color blindness and state color scales. It covers the accessibility and contrast part of the color sub-topic.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "If there is one rule that will instantly make your designs look more intentional, it is this one, the 60-30-10 rule.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "15:37",
+          "quote": "About 8% men and 0.5% women have some form of color vision deficiency.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q5",
+          "t": "22:31",
+          "quote": "Every interactive element has at least four states: default, hover, active or pressed, and disabled.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Lecture-style with no build, but rules are concrete and cover palettes, contrast and accessibility in one place.",
+      "level": "beginner",
+      "format": "crash_course"
+    },
+    {
+      "rank": 7,
+      "video_id": "vvPklRN0Tco",
+      "title": "The Easy Way to Pick UI Colors",
+      "channel": "Sajid",
+      "url": "https://www.youtube.com/watch?v=vvPklRN0Tco",
+      "duration_min": 9.6,
+      "minutes_counted": 9.6,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "color_theory",
+        "ui_details"
+      ],
+      "reason": "Shows how to build a neutral HSL palette as CSS variables for dark and light mode, adding borders, gradients and layered shadows. It turns color theory into a theme the learner can paste into a project.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "01:43",
+          "quote": "Saturation can stay at zero because we are creating a neutral palette.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "02:26",
+          "quote": "Start by subtracting the lightness value by 100. That'll give you a good starting point.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "06:34",
+          "quote": "Always mix a darker and shorter shadow with a lighter and longer one to achieve a more realistic",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Creator matches the typography pick, so the style carries over; short, with a brief sponsor aside.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 8,
+      "video_id": "wcZ6jSlZqDc",
+      "title": "The Easy Way to Fix Boring UIs",
+      "channel": "Sajid",
+      "url": "https://www.youtube.com/watch?v=wcZ6jSlZqDc",
+      "duration_min": 9.0,
+      "minutes_counted": 9.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "ui_details",
+        "redesign_process"
+      ],
+      "reason": "Shows how layered shades of one color, combined soft and dark shadows, and inset shadows lift flat cards, dropdowns and dashboards. Each redesign turns an average UI into a better one with depth.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "all we need is a few shades of the same color and then layer them like this",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:20",
+          "quote": "Combining soft and dark shadows gives a much more realistic feel than one basic shadow",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "08:04",
+          "quote": "The idea is very simple. You can turn an average design to good design just by using depth",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.78,
+      "confidence_note": "Directly on target for shadows, depth and components; includes a sponsor break and some clickbait framing, and the examples are shown rather than coded step by step.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 9,
+      "video_id": "LfkDiDyn6nU",
+      "title": "MASTER VISUAL HIERARCHY: Principles of VISUAL DESIGN for Designing Mobile Apps!",
+      "channel": "Design Pilot",
+      "url": "https://www.youtube.com/watch?v=LfkDiDyn6nU",
+      "duration_min": 76.4,
+      "minutes_counted": 40.0,
+      "watch_from": "11:00",
+      "watch_until": "51:00",
+      "covers": [
+        "redesign_process",
+        "visual_hierarchy"
+      ],
+      "reason": "Walks through redesigning a flight-results screen step by step, iterating on type hierarchy, spacing, dividers, surface colors and multiple layout options for the card and header. It is the only candidate that shows a full critique-and-iterate workflow, which pulls together the earlier modules.",
+      "evidence": [
+        {
+          "quote_id": "q3",
+          "t": "42:24",
+          "quote": "it's a standard practice to have a maximum of six headings but doesn't mean that you need to have six headings",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "The selected window (11:00-51:00) covers the card redesign and most of the header iteration; skipping the user-research intro and final variant comparison saves time. Pace is slow and the tool is Figma.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "w5EsyQ-zhAI",
+      "title": "Perfect shadows in UI design: Figma tutorial",
+      "stage": "prefilter",
+      "reason": "too short (32s)"
+    },
+    {
+      "video_id": "09I_RiHjnZE",
+      "title": "Typography Explained!  – For Logo, Graphic & UI/UX Designers",
+      "stage": "prefilter",
+      "reason": "too short (56s)"
+    },
+    {
+      "video_id": "_PKq1Uoy2qY",
+      "title": "Master Modern CSS Depth: Build an Interactive 3D Shadow Generator",
+      "stage": "prefilter",
+      "reason": "too short (29s)"
+    },
+    {
+      "video_id": "ORT58-_mpwg",
+      "title": "University Website Makeover 🔥 | Before vs After Redesign of CSKHPKV Website (Responsive & Modern UI)",
+      "stage": "prefilter",
+      "reason": "too short (75s)"
+    },
+    {
+      "video_id": "wELfwQmtnvo",
+      "title": "12 UI/UX Laws You MUST KNOW 🧠 | Become a UI/UX Designer in 2024 | Saptarshi Prakash",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "yNDgFK2Jj1E",
+      "title": "Understanding Visual Design Principles | Google UX Design Certificate",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "PP4w_M427W4",
+      "title": "Layout Space Grids UI UX | Design Fundamentals pt 1",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "3hkGjY7pN3E",
+      "title": "How to choose fonts (typefaces) as a UX/UI designer",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "-4lMJ4is2pE",
+      "title": "Color Theory in UI Design",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "fYs2Mdyasuc",
+      "title": "The Laws of UX - 19 Psychological Design Principles",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "FEfrWXOWkVE",
+      "title": "Complete Website Redesign Process (8 Years of Conversion Secrets in 4 Minutes)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "onyB_X3zk6o",
+      "title": "How to Become a UI/UX designer in 2025 | Without Degree | Complete Guide in Hindi, English Captions",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "DKwSrMYt15g",
+      "title": "Master Layout Design In 8 Minutes! (IMPORTANT)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "pbhLsV-Dyho",
+      "title": "6 EASY Tips to 10x Any Site's Design",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "TqsYDUBoIxQ",
+      "title": "Color Theory In UI Design | How To Choose Colors ? | UI Design Color Theory | Simplilearn",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "uI6TFF_YO3M",
+      "title": "Graphic Design Hierarchy Explained | Make Your Designs Easy to Read",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "eEWRbpDu6CU",
+      "title": "5 laws of design layout & composition *golden rules*",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "agbh1wbfJt8",
+      "title": "Typography for Developers Tutorial - Full Course",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "wuZuvhF4u6U",
+      "title": "UI Design | How to choose colors and color palettes",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "9xhBZFh6iuQ",
+      "title": "Figma Shadow and Blur Tutorial in Urdu/Hindi - Adding Depth and Dimension to Your Designs!",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "bM6_zhvTcXk",
+      "title": "Website Redesign Guide For WordPress - FULL PROCESS",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "-jVC6oc6VP8",
+      "title": "Color Theory for UI Design | How to Choose Colors for Better User Interfaces",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "VVjSjbfYu30",
+      "title": "Visual Hierarchy in UI Design | Control Attention and Improve Interface Design",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "gQ31YGZmFAU",
+      "title": "UI Layout and Spacing Explained | Build Clean and Organized Interfaces",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "7Ba7hI1yAqc",
+      "title": "UI Colour Systems in Hindi | Full UX Design Course for Beginners by Cutting Edge School",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "-HUPKHmp_Y0",
+      "title": "Typography in UI Design | Visual Hierarchy and Readability Explained",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "truRwcI7-kg",
+      "title": "UI/UX Design Full Course for Beginners 2025 | Lets Uncover",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "8N_TW6q5-Bw",
+      "title": "Color Theory Masterclass 2026 | Full Free Course for UI/UX Designers | Saurabh Saini",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "sVkxXbCpbig",
+      "title": "How to Redesign Website Using Claude AI | Complete Website + SEO Tutorial",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "rtHptMWCGPc",
+      "title": "Web Design mein 12 Column Layout | Figma Tutorial in Hindi | Design Systems | Ansh Mehra UX",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "GVmmyDpOTpo",
+      "title": "Typography in UI Designing by graphics guruji | UI Skills in Hindi part 7",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "KMS3VwGh3HY",
+      "title": "How to Choose Colors (Easy 3-Step Process)",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "OqAdmfRztds",
+      "title": "Visual Hierarchy in UI/UX — Why NOBODY can READ your DESIGNS",
+      "stage": "select",
+      "reason": "Hierarchy levers and a few critiques are mostly pointing at images; it largely repeats the CRAP and DesignSpo hierarchy picks."
+    },
+    {
+      "video_id": "dtRGlxI0TL8",
+      "title": "Industry-Standard Shadow System | Shadow Design System Tutorial for Product & UI/UX Designers",
+      "stage": "select",
+      "reason": "A 50-minute Figma tutorial on shadow tokens and Material elevation; too long and tool-specific for a shadows sub-topic that the Sajid depth video already covers. Flagged as outdated tooling."
+    },
+    {
+      "video_id": "c9Wg6Cb_YlU",
+      "title": "UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma",
+      "stage": "select",
+      "reason": "An 86-minute wireframe-to-mockup build with much iPad wireframing; it would consume the budget with lower density on the target principles."
+    },
+    {
+      "video_id": "GyVMoejbGFg",
+      "title": "Super Practical Guide to Color Theory, Color Models and Perfect Color Palettes | UI Design",
+      "stage": "select",
+      "reason": "Good on tint, tone and palette formulas, but it does not cover contrast or accessibility and is built around Sketch/Figma; the color crash course and HSL video give more usable coverage."
+    },
+    {
+      "video_id": "EcbgbKtOELY",
+      "title": "Every UI/UX Concept Explained in Under 10 Minutes",
+      "stage": "select",
+      "reason": "A survey that is flagged too basic for this learner; each concept gets only a minute or two and there is no critique."
+    },
+    {
+      "video_id": "PKfZ1gnVJ44",
+      "title": "The FULL 2026 Guide To Layout & Composition For Designers!",
+      "stage": "select",
+      "reason": "A graphic-design lecture on grids and composition theory with no UI or software; not applicable to a developer's interface work."
+    },
+    {
+      "video_id": "HQvOF7TK7hg",
+      "title": "UI Typography | Full UX Design Course for Beginners by Cutting Edge School",
+      "stage": "select",
+      "reason": "Mostly Figma text-style naming and plugin housekeeping rather than typography design decisions."
+    },
+    {
+      "video_id": "7AhCIBGTiEA",
+      "title": "UI/UX Website Redesign Before and After - CaterGraphix Design Academy",
+      "stage": "select",
+      "reason": "Tool-specific no-code builder fix session focused on padding, margin and breakpoints, which the learner already knows from CSS."
+    },
+    {
+      "video_id": "oIX5vfuegZI",
+      "title": "Your Figma Drop Shadows Look Cheap (Fix This in 2 Minutes)",
+      "stage": "select",
+      "reason": "A single useful tip (negative shadow spread in Figma) that adds a creator for 2.5 minutes; the layered-shadow guidance in the Sajid videos covers the same ground."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "Total viewing time is about 160 of 180 minutes (roughly 89%); no weak material was added to fill the rest.",
+    "The Design Pilot flight-screen video is used in part (11:00-51:00, 40 minutes). It is the main redesign exercise, so pause and try the redesign yourself rather than only watching.",
+    "Several picks use Figma; the learner only needs the reasoning (8-point scale, hierarchy, shadows), which can be applied in CSS.",
+    "No candidate offers a full end-to-end redesign of a real web app in code. The redesign sub-topic relies on a Figma mobile screen plus the Sajid before/after redesigns, so apply the ideas to one of your own UIs afterward.",
+    "Typography and color coverage is largely lecture-based; the Sajid videos supply the hands-on CSS side. Dark-mode and OKLCH details are only touched on."
+  ],
+  "pool_size": 33,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-5.5",
+    "select": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.15786,
+  "latency_s": 137.8,
+  "mode": "agent"
+}

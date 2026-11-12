@@ -1,0 +1,489 @@
+{
+  "persona_id": "sourdough_first_loaf",
+  "goal": "Bake my first sourdough loaf this weekend; my starter is already active",
+  "budget_minutes": 120,
+  "total_minutes": 100.6,
+  "interpretation": "The learner bakes a decent first sourdough boule this weekend with their active starter, understanding each step (levain, hydration, bulk, shaping, cold proof, scoring, Dutch oven bake) from at most two consistent bakers.",
+  "assumptions": [
+    "The 'weekend' bake means mixing Friday/Saturday, a cold retard overnight, and baking the next day, so a 1-2 day timeline is acceptable.",
+    "The learner owns or can get a Dutch oven, a kitchen scale, and a banneton or a bowl with a towel.",
+    "The learner wants a standard country-style white or lightly whole-wheat boule at around 70-75% hydration, not an advanced high-hydration loaf.",
+    "Since 'at most two bakers' methods' is required, the plan favors one primary full bake-along baker plus one optional secondary for troubleshooting."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "levain_hydration",
+      "title": "Hydration and building a levain from an active starter",
+      "why": "They know yeasted dough but not baker's percentages or how to turn a starter into a levain that fits the weekend schedule.",
+      "prereqs": [],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "mixing_bulk",
+      "title": "Mixing, autolyse, and bulk fermentation with stretch-and-folds",
+      "why": "Yeast timing cues do not apply; they must learn to read dough (volume increase, bubbles, jiggle) instead of the clock, and replace kneading with folds.",
+      "prereqs": [
+        "levain_hydration"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "shaping_boule",
+      "title": "Pre-shaping and shaping a boule with surface tension",
+      "why": "Sandwich-loaf shaping is different; wetter sourdough needs tension-building technique to hold its shape.",
+      "prereqs": [
+        "mixing_bulk"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "cold_retard",
+      "title": "Final proof and cold retard in the fridge",
+      "why": "Makes the weekend schedule workable and develops flavor; they need to know how to judge proofing with the poke test and avoid overproofing.",
+      "prereqs": [
+        "shaping_boule"
+      ],
+      "minutes_share": 0.1
+    },
+    {
+      "id": "scoring_dutch_oven",
+      "title": "Scoring and baking in a preheated Dutch oven",
+      "why": "Dutch oven steam and scoring control oven spring and crust, which they have never done with sandwich bread.",
+      "prereqs": [
+        "cold_retard"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "full_bakealong",
+      "title": "Follow a full beginner sourdough bake-along from start to finish",
+      "why": "Ties all steps together into one consistent method so the learner can follow along at the counter.",
+      "prereqs": [
+        "levain_hydration"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "beginner_mistakes",
+      "title": "Common beginner sourdough mistakes and fixes",
+      "why": "Helps diagnose dense crumb, flat loaves, sticking dough, and underproofing/overproofing on a first bake.",
+      "prereqs": [
+        "scoring_dutch_oven"
+      ],
+      "minutes_share": 0.1
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "msqU-ylXWUs",
+      "title": "Your First Sourdough Bread (FULL COURSE in 30 minutes)",
+      "channel": "The Bread Code",
+      "url": "https://www.youtube.com/watch?v=msqU-ylXWUs",
+      "duration_min": 30.9,
+      "minutes_counted": 30.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "levain_hydration",
+        "mixing_bulk",
+        "shaping_boule",
+        "cold_retard",
+        "scoring_dutch_oven",
+        "full_bakealong",
+        "beginner_mistakes"
+      ],
+      "reason": "This is a full beginner bake-along that goes from levain and hydration through bulk with stretch-and-folds, shaping, cold retard, scoring and the Dutch oven bake. It explains the why of each step and ends with crumb troubleshooting. It works as the single recipe to follow this weekend, and it suits a yeast baker who needs the sourdough-specific steps.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "you will learn how to make the perfect sourdough bread at home. It has nice oven spring, it features a crisp crust, it's soft on the inside.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "11:09",
+          "quote": "with slightly wet hands, I am checking the dough now. And see this, exactly what I promised you. You developed this amazing gluten network simply by waiting.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "16:42",
+          "quote": "I'm going to be using a banneton like this, but you could also just use a bowl with a kitchen towel inside.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Content and level fit well. The segment timestamps run past the stated duration, so the exact timing of sections is uncertain.",
+      "level": "beginner",
+      "format": "full_course"
+    },
+    {
+      "rank": 2,
+      "video_id": "9fWzWpL5g6w",
+      "title": "18 Sourdough Basics YOU Should Know",
+      "channel": "The Bread Code",
+      "url": "https://www.youtube.com/watch?v=9fWzWpL5g6w",
+      "duration_min": 21.9,
+      "minutes_counted": 21.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "levain_hydration",
+        "mixing_bulk"
+      ],
+      "reason": "The same baker explains hydration levels, water ratios, fermentolyse, stretch-and-fold timing and how to know bulk fermentation is done. This fills in the hydration and fermentation concepts you lack, using the same method as the main bake-along. It is flagged surface_intro, but the unflagged course gives less depth on these concepts and no other creator is needed.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "06:23",
+          "quote": "less water equals happier yeast and happier baker when you're making a sourdough starter",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "13:02",
+          "quote": "knowing when your fermentation is done is the secret to mastering sourdough bread",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "Lower confidence because of the surface_intro flag and overlap with the course. Raise it if you want extra depth on hydration and bulk readiness; skip it if you feel confident after the course.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "h7eqwYLv2tI",
+      "title": "The ONLY SOURDOUGH BREAD SHAPING Tutorial You Will Ever Need",
+      "channel": "The Bread Code",
+      "url": "https://www.youtube.com/watch?v=h7eqwYLv2tI",
+      "duration_min": 7.9,
+      "minutes_counted": 7.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "shaping_boule"
+      ],
+      "reason": "A dedicated demo of shaping with surface tension, including banneton prep with rice flour and a simple beginner roll-and-pull method. Shaping is hard to learn from a fast bake-along, so this adds a closer look from the same baker without changing methods.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "01:25",
+          "quote": "you're trying to pull your dough together to create a lot of tension this tension will later on result in oven spring",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:20",
+          "quote": "rice flour is advised it's going to absorb a lot more humidity so sprinkle your banneton with a little bit of rice flour",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Clear, on-topic and from the same creator. It carries a surface_intro flag, but a short focused technique demo is what is wanted here.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 4,
+      "video_id": "02WlZa_N-vI",
+      "title": "What creates the BEST OPEN CRUMB? Cold proofing or Room temperature?",
+      "channel": "The Bread Code",
+      "url": "https://www.youtube.com/watch?v=02WlZa_N-vI",
+      "duration_min": 16.9,
+      "minutes_counted": 16.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "cold_retard",
+        "scoring_dutch_oven"
+      ],
+      "reason": "Shows pre-shaping, the finger poke test, and baking with the lid on in a Dutch oven for steam, then compares a cold-retarded loaf with a room-temperature one. This gives the cold retard and scoring detail the course covers only briefly. It is the same baker, so there are no contradictions.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "04:31",
+          "quote": "letting this one sit at room temperature until it passes the finger poke test",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "08:52",
+          "quote": "baking now for 25 minutes at 230 degrees celsius lid covered so that there's a lot of steam",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "The video is tagged intermediate, and its segment map runs past the stated duration. Follow the cold-retard branch, not the room-temperature loaf.",
+      "level": "intermediate",
+      "format": "project_build"
+    },
+    {
+      "rank": 5,
+      "video_id": "5ZvYuz6mDRs",
+      "title": "10 Mistakes Beginner Sourdough Bakers Make",
+      "channel": "Keep it Sweet Kitchen",
+      "url": "https://www.youtube.com/watch?v=5ZvYuz6mDRs",
+      "duration_min": 23.0,
+      "minutes_counted": 23.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "beginner_mistakes"
+      ],
+      "reason": "Walks through ten beginner mistakes, including bulk fermentation errors, weak shaping, scoring and oven temperature, and says to skip the cold ferment only at the cost of flavor. It is the second baker and is used only for troubleshooting, not as a second recipe. It addresses the steps beginners get wrong.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "03:57",
+          "quote": "Bulk fermentation is probably the hardest step for most new bakers, and it's honestly just takes a little bit of time and understanding how your dough should feel",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "08:59",
+          "quote": "Shaping isn't about making your dough pretty. It's about giving it the structure to spring up in the oven instead of spreading out flat",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "15:07",
+          "quote": "The cold ferment or cold proof is one of the easiest ways to really level up your bread. This happens after we have completed bulk fermentation",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "Strong match for the mistakes slot. Some of its advice may differ from the first baker's method; where it does, stay with the first baker.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "rCeNF71RkU0",
+      "title": "Visual cues to read your sourdough during bulk fermentation | How to know when your dough is ready!",
+      "stage": "prefilter",
+      "reason": "too short (87s)"
+    },
+    {
+      "video_id": "Q3g_UsIoLHg",
+      "title": "3 Easy Fixes for Common Sourdough Starter Problems",
+      "stage": "prefilter",
+      "reason": "too short (16s)"
+    },
+    {
+      "video_id": "IWA0RAAsBHg",
+      "title": "Easiest way to shape a boule (round) for bread",
+      "stage": "prefilter",
+      "reason": "too short (32s)"
+    },
+    {
+      "video_id": "TfGK5IaOiqE",
+      "title": "You can make great bread without all the gadgets! No Dutch oven required",
+      "stage": "prefilter",
+      "reason": "too short (118s)"
+    },
+    {
+      "video_id": "LiC12MT8bQQ",
+      "title": "The Most Common Sourdough Mistakes (And How to Fix Them)",
+      "stage": "prefilter",
+      "reason": "too short (17s)"
+    },
+    {
+      "video_id": "aFYi6s3KSA4",
+      "title": "How to bake your sourdough bread in a Dutch oven. This method works! No burnt bread!",
+      "stage": "prefilter",
+      "reason": "too short (15s)"
+    },
+    {
+      "video_id": "a521426XFso",
+      "title": "Easy Homemade Sourdough Bread Recipe | Beginner Friendly | Crispy Crust & Soft Inside 🍞",
+      "stage": "prefilter",
+      "reason": "too short (60s)"
+    },
+    {
+      "video_id": "seR20J8tFEg",
+      "title": "What is a levain and how do you use one? #sourdough",
+      "stage": "prefilter",
+      "reason": "too short (100s)"
+    },
+    {
+      "video_id": "k286724Q-WY",
+      "title": "For Beginners: Shaping A Round Sourdough Boule",
+      "stage": "prefilter",
+      "reason": "too short (62s)"
+    },
+    {
+      "video_id": "TlL3r1n-gK0",
+      "title": "Poke test|sourdough baking",
+      "stage": "prefilter",
+      "reason": "too short (16s)"
+    },
+    {
+      "video_id": "iGXtU6mDam4",
+      "title": "Exactly how to bake your sourdough bread in a Dutch oven, including time and temp.",
+      "stage": "prefilter",
+      "reason": "too short (113s)"
+    },
+    {
+      "video_id": "M3Ewya5l9yM",
+      "title": "Sticky dough doesn’t mean bad bread! This is what I do when my sourdough is super sticky!",
+      "stage": "prefilter",
+      "reason": "too short (29s)"
+    },
+    {
+      "video_id": "lBEQ_YEYgIA",
+      "title": "The best tips for proofing sourdough! Foolproof Sourdough recipe",
+      "stage": "prefilter",
+      "reason": "too short (79s)"
+    },
+    {
+      "video_id": "suxa7XvKjqI",
+      "title": "Top Mistakes Beginner Sourdough Bakers Make #baking #bread #sourdough #food",
+      "stage": "prefilter",
+      "reason": "too short (60s)"
+    },
+    {
+      "video_id": "EbEL-IPV_Fs",
+      "title": "Sourdough bulk fermentation tips",
+      "stage": "prefilter",
+      "reason": "too short (82s)"
+    },
+    {
+      "video_id": "I2epRt1x4Z8",
+      "title": "Cold Proofing Sourdough",
+      "stage": "prefilter",
+      "reason": "too short (20s)"
+    },
+    {
+      "video_id": "1SJFivA73-0",
+      "title": "Sourdough beginners… DON’T MAKE THIS MISTAKE! #sourdoughstarter #beginnertips #homebaker",
+      "stage": "prefilter",
+      "reason": "too short (58s)"
+    },
+    {
+      "video_id": "mwA-Eq-FbUg",
+      "title": "Sourdough cold retard not so cold 😳 #bread #sourdough",
+      "stage": "prefilter",
+      "reason": "too short (16s)"
+    },
+    {
+      "video_id": "VdF6wLVE5vI",
+      "title": "How to Make No Knead Sourdough Bread - Baked in a Dutch Oven",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "DiI-1PF_Mr0",
+      "title": "Amazing Sourdough Bread Recipe",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "vy5uidPMgP4",
+      "title": "How To Make Sourdough Bread in A Loaf Pan - No Dutch Oven Needed! Easy Beginner Sourdough Recipe",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "XIyMvbaxR6c",
+      "title": "PERFECT Sourdough Beginners Guide: Just Flour, Water & Salt!",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "rHJMA2fMxQ8",
+      "title": "168: How to bake SOURDOUGH in a DUTCH OVEN - Bake with Jack",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "ILspgfZXgCA",
+      "title": "Fix Flat Sourdough: What to Do [and What Not to Do]",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "esJ2bTDeizI",
+      "title": "Simple Sourdough Bread: Step by Step 🍞🍞75% Hydration",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "4gEoh3sk2AE",
+      "title": "Bake the Perfect Sourdough Bread: A Step-by-Step Guide",
+      "stage": "select",
+      "reason": "A good short bake-along, but it comes from a third creator and the learner allows at most two bakers; the course already covers the same topics in more depth."
+    },
+    {
+      "video_id": "VEtU4Co08yY",
+      "title": "YOUR FIRST SOURDOUGH (Sourdough Bread For Complete Beginners)",
+      "stage": "select",
+      "reason": "A strong beginner bake-along, but it has no cold retard, which the learner wants, and it would add a third creator."
+    },
+    {
+      "video_id": "epnjX9gn5kY",
+      "title": "The Complete Beginners Guide to Baking Perfect Sourdough",
+      "stage": "select",
+      "reason": "The same channel as the mistakes pick, but a second full recipe (autolyse, aggressive mixing) would contradict the primary method."
+    },
+    {
+      "video_id": "Oaq4OPx4xlI",
+      "title": "How to Bake Your First Sourdough (In Just 7 Steps)",
+      "stage": "select",
+      "reason": "A solid bake-along, but a second full recipe would duplicate the primary one and conflict with it."
+    },
+    {
+      "video_id": "vFzAPBR4uNQ",
+      "title": "How to Know When Sourdough Bulk Fermentation Is Done (5 Signs)",
+      "stage": "select",
+      "reason": "33 minutes on bulk fermentation signs is too long for the budget and mostly repeats what the course and the mistakes video cover. Its segment map is also inconsistent."
+    },
+    {
+      "video_id": "IZegSO8zAB4",
+      "title": "140: How to Calculate SOURDOUGH Hydration - Bake with Jack",
+      "stage": "select",
+      "reason": "The hydration formula is useful but it is a third creator, and the main course already covers hydration."
+    },
+    {
+      "video_id": "GLSjBbIcUKo",
+      "title": "Sourdough bread Troubleshooting beginner Mistakes",
+      "stage": "select",
+      "reason": "A good troubleshooting video, but it is a third creator and carries a surface_intro flag, while an unflagged mistakes video exists."
+    },
+    {
+      "video_id": "Ah2UPXe471M",
+      "title": "Stop Over Proofing Your Sourdough, Use This Experiment to Find Your Optimum Proof",
+      "stage": "select",
+      "reason": "Flagged too_advanced_for_learner (an experiment on proofing windows)."
+    },
+    {
+      "video_id": "CClhjpjcAd8",
+      "title": "Are You Doing Cold Fermentation Wrong? | The 3-Hour Method for Bread and Pizza",
+      "stage": "select",
+      "reason": "Pure theory on the science of cold fermentation, off-topic for a first sourdough loaf, and flagged off_topic."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "The near-duplicate cluster (4gEoh3sk2AE, CTuGXdyrWUo, QWiouzzCUcs) was not used because of the two-baker limit, so none of its members is kept.",
+    "The plan uses 100.6 of 120 minutes (about 84%), leaving 19.4 minutes unused. The remaining good candidates are from other creators or duplicate the recipe, and adding them would break the two-baker limit.",
+    "The baking is done by two bakers: The Bread Code (primary: the course, the hydration and fermentation concepts, shaping, and the cold-proof bake) and Keep it Sweet Kitchen (mistakes only). Follow the Bread Code recipe and use the Keep it Sweet video only as troubleshooting.",
+    "Some segment maps do not match the listed durations (for example the course lists sections past its length). Whole videos are listed and counted at their stated minutes.",
+    "The cold-proof video compares room-temperature and cold-retarded loaves; follow only the cold-retarded loaf.",
+    "Assumes you have a Dutch oven, a scale and a banneton or a bowl with a towel, and a 1-2 day timeline with an overnight fridge proof."
+  ],
+  "pool_size": 36,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-4.5",
+    "select": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.13361,
+  "latency_s": 52.8,
+  "mode": "agent"
+}

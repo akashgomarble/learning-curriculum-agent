@@ -1,0 +1,76 @@
+{
+  "persona_id": "sourdough_first_loaf",
+  "goal": "Bake my first sourdough loaf this weekend; my starter is already active",
+  "time_budget_minutes": 120,
+  "user_context": {
+    "background": "Home cook who has baked yeasted sandwich bread a few times",
+    "known": [
+      "kneading",
+      "yeasted bread basics",
+      "using an oven"
+    ],
+    "unknown": [
+      "hydration and levain",
+      "bulk fermentation and stretch-and-folds",
+      "shaping a boule",
+      "cold retard",
+      "scoring",
+      "baking in a Dutch oven"
+    ],
+    "constraints": "No vlogs or equipment reviews. I want a full bake-along I can follow, plus help with the steps beginners get wrong. Different bakers contradict each other, so follow at most two bakers' methods."
+  },
+  "expectations": {
+    "notes": "Non-tech domain: proves the pipeline is not software-specific. Needs at least one full bake-along; shaping and scoring must be covered.",
+    "pick_count": [
+      2,
+      6
+    ],
+    "min_utilisation": 0.5,
+    "forbidden_title_regex": "(?i)review|unboxing|day in the life|vlog",
+    "forbidden_flags": [
+      "vlog",
+      "equipment_review",
+      "off_topic"
+    ],
+    "unknown_synonyms": {
+      "hydration and levain": [
+        "hydration",
+        "levain",
+        "starter"
+      ],
+      "bulk fermentation and stretch-and-folds": [
+        "bulk",
+        "stretch and fold",
+        "stretch-and-fold",
+        "fermentation"
+      ],
+      "shaping a boule": [
+        "shaping",
+        "shape",
+        "boule"
+      ],
+      "cold retard": [
+        "cold retard",
+        "fridge",
+        "proof",
+        "overnight"
+      ],
+      "scoring": [
+        "scoring",
+        "score"
+      ],
+      "baking in a Dutch oven": [
+        "dutch oven",
+        "baking",
+        "bake"
+      ]
+    },
+    "known_topics": [
+      "kneading",
+      "yeast bread"
+    ],
+    "require_project_based": true,
+    "required_language": "en",
+    "max_channels": 2
+  }
+}

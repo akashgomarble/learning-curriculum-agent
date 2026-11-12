@@ -1,0 +1,59 @@
+{
+  "persona_id": "hindi_excel_pivots",
+  "goal": "Learn pivot tables and lookups well enough to build a monthly sales dashboard in Excel",
+  "time_budget_minutes": 90,
+  "user_context": {
+    "background": "Small-business owner in Lucknow; uses Excel for basic lists and sums",
+    "known": [
+      "entering data",
+      "SUM and basic formulas",
+      "sorting and filtering"
+    ],
+    "unknown": [
+      "pivot tables",
+      "XLOOKUP / VLOOKUP",
+      "slicers",
+      "pivot charts",
+      "dashboard layout"
+    ],
+    "constraints": "I understand Hindi much better than English, so please choose Hindi-language videos. I watch on my phone, so nothing longer than 25 minutes at a time."
+  },
+  "expectations": {
+    "notes": "Non-English learner: every pick must be in Hindi; assessor reads Hindi transcripts.",
+    "pick_count": [
+      2,
+      5
+    ],
+    "min_utilisation": 0.6,
+    "forbidden_flags": [
+      "wrong_language",
+      "off_topic"
+    ],
+    "unknown_synonyms": {
+      "pivot tables": [
+        "pivot"
+      ],
+      "XLOOKUP / VLOOKUP": [
+        "xlookup",
+        "vlookup",
+        "lookup"
+      ],
+      "slicers": [
+        "slicer"
+      ],
+      "pivot charts": [
+        "chart"
+      ],
+      "dashboard layout": [
+        "dashboard"
+      ]
+    },
+    "known_topics": [
+      "sum",
+      "sorting",
+      "filtering"
+    ],
+    "required_language": "hi",
+    "max_sitting_minutes": 25
+  }
+}

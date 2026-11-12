@@ -1,0 +1,1732 @@
+{
+ "persona_id": "career_switch_ml_foundations",
+ "budget": 1200,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 17,
+    "total_min": 359.1,
+    "utilisation": 0.3,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 17,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "FHdlXe1bSe4: red flags ['surface_intro']",
+     "zfiSAzpy9NM: title matches forbidden pattern",
+     "zfiSAzpy9NM: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [
+     "hkiBZLRFvO4"
+    ],
+    "language": false,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "machine learning basics": true,
+     "gradient descent and backpropagation": true,
+     "PyTorch tensors and autograd": true,
+     "training loops": true,
+     "convolutional neural networks": true,
+     "model evaluation and overfitting": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [
+     "EuBBz3bI-aA covers evaluation_overfitting before its prerequisite nn_training_loop"
+    ],
+    "order_ok": false,
+    "max_redundancy": 0.5,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.76,
+    "cost_usd": 0.16663,
+    "latency_s": 69.7,
+    "hard_failures": [
+     "constraint_violations",
+     "language"
+    ],
+    "soft_misses": [
+     "utilisation_ok",
+     "pick_count_ok",
+     "order_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "TH8cvKLSXGg",
+    "EuBBz3bI-aA",
+    "4b4MUYve_U8",
+    "vsWrXfO3wWw",
+    "IHZwWFHWa-w",
+    "Ilg3gGewQ5U",
+    "tIeHLnjs5U8",
+    "fZtjO2cs3VQ",
+    "FHdlXe1bSe4",
+    "JHWqWIoac2I",
+    "zfiSAzpy9NM",
+    "jDe5BAsT2-Y",
+    "pDdP0TFzsoQ",
+    "fRqQwCXSeqo",
+    "8rqSbzap8oo",
+    "hkiBZLRFvO4",
+    "CtzfbUwrYGI"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is highly tailored to the learner's specific background, heavily relying on their existing calculus and linear algebra knowledge to teach derivation-heavy concepts (like the Stanford lecture and 3Blue1Brown calculus chapters) while satisfying their strong preference for code-along projects.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons closely match the reference summaries, accurately reflecting the core concepts taught in each video rather than relying on channel popularity or vanity metrics.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The curriculum successfully concludes with several end-to-end projects implementing exactly the desired goal: training and evaluating small image classifiers (CIFAR-10 and Fashion-MNIST) using PyTorch.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The ordering is highly logical, moving smoothly from foundational ML theory into gradient descent and backprop, translating those into PyTorch basics, expanding into CNN theory, and finally integrating everything with overfitting prevention and final projects.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum fails to respect the learner's language needs by explicitly including a Hindi-language tutorial (Video 16) without any indication that the learner speaks Hindi. This contradicts standard language expectations, especially since a Sinhala video was correctly dropped for the same reason.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "Although a significant portion of the budget is unused (359 out of 1200 minutes), the curriculum avoids padding with weak videos and clearly communicates that the pool of good, non-redundant PyTorch material has been exhausted, which is a sensible approach.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped list is provided and the justifications are logical, appropriately weeding out tutorials that use the wrong framework (TensorFlow/Keras), teach in the wrong language, or duplicate covered topics.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "While the curriculum is structurally excellent and mathematically well-tailored, including a tutorial taught in a language the learner does not understand is a fatal flaw that prevents the curriculum from being usable as-is.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "TH8cvKLSXGg",
+      "critique": "An excellent primer that establishes foundational ML vocabulary and basic linear regression concepts before moving into deeper math.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "EuBBz3bI-aA",
+      "critique": "A brief, highly intuitive explanation of bias and variance that sets up the need for train/test splits.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "4b4MUYve_U8",
+      "critique": "Ideal use of the learner's existing math background to rigorously understand gradient descent while staying under the 90-minute limit.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "vsWrXfO3wWw",
+      "critique": "A sensible code-along that allows the learner to implement gradient descent from scratch, cementing the previous mathematical concepts.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "IHZwWFHWa-w",
+      "critique": "Provides essential visual intuition for neural network optimization and the cost function landscape.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Ilg3gGewQ5U",
+      "critique": "A critical, intuitive bridge to understanding how errors propagate backwards through a network before looking at the raw calculus.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "tIeHLnjs5U8",
+      "critique": "Perfectly leverages the learner's university calculus to formalize backpropagation through the chain rule.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fZtjO2cs3VQ",
+      "critique": "Grounds the theory in concrete arithmetic, demonstrating a hand-calculated backprop step to verify understanding before automating it.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "FHdlXe1bSe4",
+      "critique": "Provides a crucial entry point into PyTorch syntax, directly connecting the backprop algorithm to PyTorch's autograd system in code.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "JHWqWIoac2I",
+      "critique": "A useful, basic PyTorch implementation showing the anatomy of an object-oriented deep learning model.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zfiSAzpy9NM",
+      "critique": "A strong conceptual primer on convolutions, pooling, and feature maps that avoids framework lock-in.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "jDe5BAsT2-Y",
+      "critique": "Shows the math under the hood of CNN layers, completely catering to an engineer who wants to understand how the filters act numerically.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "pDdP0TFzsoQ",
+      "critique": "Successfully combines the CNN theory and PyTorch syntax into a tangible code-along build of a CIFAR-10 model.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fRqQwCXSeqo",
+      "critique": "Directly links evaluation theory with practical PyTorch implementations like early stopping and dropout.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "8rqSbzap8oo",
+      "critique": "A practical project showing how to identify the overfitting gap in code and fix it, tying directly to the evaluation goal.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "hkiBZLRFvO4",
+      "critique": "This video is taught in Hindi, which makes it useless for an English-speaking learner and violates implicit language constraints.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "CtzfbUwrYGI",
+      "critique": "A solid concluding capstone project that builds, trains, and evaluates a complete PyTorch image classifier from scratch.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.94,
+    "claims": {
+     "TH8cvKLSXGg": [
+      {
+       "claim": "The video gives the supervised-learning framing, including the prediction equation.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers loss functions, specifically Mean Squared Error (MSE).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers feature vectors.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers gradient descent.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the train/validation/test split.",
+       "supported": true
+      }
+     ],
+     "EuBBz3bI-aA": [
+      {
+       "claim": "The video provides a short, intuitive treatment of train/test split.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers bias and variance.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers overfitting.",
+       "supported": true
+      },
+      {
+       "claim": "The video sets up later evaluation material.",
+       "supported": true
+      }
+     ],
+     "4b4MUYve_U8": [
+      {
+       "claim": "The video is a full lecture.",
+       "supported": true
+      },
+      {
+       "claim": "The video derives the squared-error cost function.",
+       "supported": true
+      },
+      {
+       "claim": "The video derives the gradient descent update rule.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers batch versus stochastic gradient descent.",
+       "supported": true
+      }
+     ],
+     "vsWrXfO3wWw": [
+      {
+       "claim": "The video is a code-along that implements gradient descent in plain Python on a linear regression cost function.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows partial derivatives.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the learning rate.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the update loop in code.",
+       "supported": true
+      }
+     ],
+     "IHZwWFHWa-w": [
+      {
+       "claim": "The video provides a visual explanation of cost functions.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains the negative gradient as steepest descent.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains how gradient descent trains a digit-recognizing network.",
+       "supported": true
+      }
+     ],
+     "Ilg3gGewQ5U": [
+      {
+       "claim": "The video explains backpropagation intuitively, including how each weight's effect on the cost is computed.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains mini-batch stochastic gradient descent.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers or prepares the learner for what loss.backward() does.",
+       "supported": false
+      }
+     ],
+     "tIeHLnjs5U8": [
+      {
+       "claim": "The video provides a formal chain-rule derivation of the gradients of cost with respect to weights and biases.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the mathematical side of backpropagation.",
+       "supported": true
+      }
+     ],
+     "fZtjO2cs3VQ": [
+      {
+       "claim": "Works backprop through a two-layer network with real numbers",
+       "supported": true
+      },
+      {
+       "claim": "Checks the gradients numerically",
+       "supported": true
+      },
+      {
+       "claim": "Ends with weight updates",
+       "supported": true
+      }
+     ],
+     "FHdlXe1bSe4": [
+      {
+       "claim": "The video is a code-along that builds a small neural network from tensors and nn.Parameter.",
+       "supported": true
+      },
+      {
+       "claim": "The video runs a training loop with loss.backward() and optimizer.step().",
+       "supported": true
+      },
+      {
+       "claim": "The video covers tensors and autograd in code.",
+       "supported": true
+      }
+     ],
+     "JHWqWIoac2I": [
+      {
+       "claim": "The video builds an nn.Module with fully connected layers and a forward pass with ReLU.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes live debugging.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how a PyTorch model class is structured.",
+       "supported": true
+      },
+      {
+       "claim": "The video discusses or prepares for moving to CNNs.",
+       "supported": false
+      }
+     ],
+     "zfiSAzpy9NM": [
+      {
+       "claim": "The video provides visual intuition for convolution filters and feature maps.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides visual intuition for ReLU.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides visual intuition for pooling.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides visual intuition for the full conv-pool-dense architecture.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses TensorFlow only for naming.",
+       "supported": true
+      }
+     ],
+     "jDe5BAsT2-Y": [
+      {
+       "claim": "The video walks through the arithmetic of convolution, max pooling, flattening, and the fully connected output in a trained CNN.",
+       "supported": true
+      },
+      {
+       "claim": "The model used in the video is an MNIST CNN.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides a mathematical view of CNNs rather than just diagrams.",
+       "supported": true
+      }
+     ],
+     "pDdP0TFzsoQ": [
+      {
+       "claim": "The video is a code-along that implements a CIFAR-10 CNN in PyTorch.",
+       "supported": true
+      },
+      {
+       "claim": "The implementation includes Conv2d, pooling, and flattening.",
+       "supported": true
+      },
+      {
+       "claim": "The implementation includes a training loop and accuracy evaluation.",
+       "supported": true
+      },
+      {
+       "claim": "It is the first end-to-end PyTorch CNN, straight after the CNN concepts.",
+       "supported": false
+      }
+     ],
+     "fRqQwCXSeqo": [
+      {
+       "claim": "Explains how to detect overfitting with validation data.",
+       "supported": true
+      },
+      {
+       "claim": "Covers early stopping, augmentation, L1/L2 regularization, and dropout.",
+       "supported": true
+      },
+      {
+       "claim": "Shows nn.Dropout in PyTorch.",
+       "supported": true
+      },
+      {
+       "claim": "Shows weight_decay in PyTorch.",
+       "supported": true
+      }
+     ],
+     "8rqSbzap8oo": [
+      {
+       "claim": "Demonstrates an overfitting gap between training and validation loss on a Fashion-MNIST CNN in PyTorch.",
+       "supported": true
+      },
+      {
+       "claim": "Reduces the overfitting gap with batch normalization, spatial dropout, and data augmentation.",
+       "supported": true
+      }
+     ],
+     "hkiBZLRFvO4": [
+      {
+       "claim": "Builds a Fashion-MNIST CNN in PyTorch.",
+       "supported": true
+      },
+      {
+       "claim": "Reaches 92% test accuracy.",
+       "supported": true
+      },
+      {
+       "claim": "Notices about 99.9% training accuracy (overfitting).",
+       "supported": true
+      },
+      {
+       "claim": "Ties the project back to evaluation lessons.",
+       "supported": false
+      }
+     ],
+     "CtzfbUwrYGI": [
+      {
+       "claim": "The video covers a complete CIFAR-10 pipeline in PyTorch.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes transforms.",
+       "supported": true
+      },
+      {
+       "claim": "The video builds a Conv2d/pool/linear CNN.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes a training loop with zero_grad.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers test accuracy.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 13,
+    "total_min": 291.0,
+    "utilisation": 0.24,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 13,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "FHdlXe1bSe4: red flags ['surface_intro']",
+     "zfiSAzpy9NM: title matches forbidden pattern",
+     "zfiSAzpy9NM: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "machine learning basics": true,
+     "gradient descent and backpropagation": true,
+     "PyTorch tensors and autograd": true,
+     "training loops": true,
+     "convolutional neural networks": true,
+     "model evaluation and overfitting": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [
+     "EuBBz3bI-aA covers overfit before its prerequisite project"
+    ],
+    "order_ok": false,
+    "max_redundancy": 0.54,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.79,
+    "cost_usd": 0.31678,
+    "latency_s": 85.1,
+    "hard_failures": [
+     "constraint_violations"
+    ],
+    "soft_misses": [
+     "utilisation_ok",
+     "pick_count_ok",
+     "order_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "4b4MUYve_U8",
+    "vsWrXfO3wWw",
+    "IHZwWFHWa-w",
+    "Ilg3gGewQ5U",
+    "tIeHLnjs5U8",
+    "EuBBz3bI-aA",
+    "FHdlXe1bSe4",
+    "JHWqWIoac2I",
+    "zfiSAzpy9NM",
+    "jDe5BAsT2-Y",
+    "CtzfbUwrYGI",
+    "EehRcPo1M-Q",
+    "fRqQwCXSeqo"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum explicitly leverages the learner's engineering background and math knowledge (calculus, linear algebra) by selecting rigorous theory videos (CS229, backprop calculus). It also meticulously respects the 90-minute sitting constraint.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately describe the concepts each video covers, aligning perfectly with the reference summaries without resorting to metadata popularity metrics.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The overarching goal is to train and evaluate a small image classifier in PyTorch. Video 11 completes this exact task by building a PyTorch CNN on the CIFAR-10 dataset.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is highly logical: math and gradient descent basics, followed by neural networks and backprop, then PyTorch fundamentals, leading into CNNs conceptually and mathematically, before finally building the project and addressing overfitting.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The balance of mathematical deep dives and hands-on Python/PyTorch code-alongs fits the learner's preferences perfectly. Sittings are well-chunked into segments under 90 minutes.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The curriculum uses less than a quarter of the budget, but explicitly warns the user that this is to avoid padding with duplicate or sub-standard material from a restricted candidate pool.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The curriculum omitted a dropped list altogether. Without seeing the reasons for rejected videos, the learner (and reviewer) cannot satisfy 'why not that one?'.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "While the content selection is strong and wonderfully tailored to an engineer who wants deep math alongside working code, the lack of a dropped videos list violates the requirements and leaves the learner without context on what was excluded.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "4b4MUYve_U8",
+      "critique": "A rigorous start that directly appeals to the learner's math and calculus background.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "vsWrXfO3wWw",
+      "critique": "Successfully bridges the abstract math of the previous lecture into tangible Python code.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "IHZwWFHWa-w",
+      "critique": "Provides excellent conceptual intuition for the cost function and gradient space.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Ilg3gGewQ5U",
+      "critique": "A critical bridge conceptualizing backpropagation before diving into its calculus.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "tIeHLnjs5U8",
+      "critique": "Capitalizes on the learner's calculus background to reveal the actual math underneath autograd.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "EuBBz3bI-aA",
+      "critique": "A brief overview that efficiently sets up core machine learning evaluation jargon.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "FHdlXe1bSe4",
+      "critique": "A perfect, gentle introduction linking theory to PyTorch mechanics.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "JHWqWIoac2I",
+      "critique": "A solid code-along practice for basic PyTorch model definition.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zfiSAzpy9NM",
+      "critique": "Clear foundational intuition for CNNs, a topic the learner flagged as unknown.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "jDe5BAsT2-Y",
+      "critique": "Satisfies the 'math intuition' constraint for CNNs, detailing the matrix operations.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "CtzfbUwrYGI",
+      "critique": "The capstone project perfectly mirrors the goal of training/evaluating a PyTorch image classifier.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "EehRcPo1M-Q",
+      "critique": "Lays out essential theory for handling overfitting, capping off the evaluation phase.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fRqQwCXSeqo",
+      "critique": "Translates the preceding overfitting theory into actionable PyTorch code.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.92,
+    "claims": {
+     "4b4MUYve_U8": [
+      {
+       "claim": "The video is a lecture covering supervised learning.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the squared-error cost.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the derivation of the gradient descent update.",
+       "supported": true
+      }
+     ],
+     "vsWrXfO3wWw": [
+      {
+       "claim": "The video is a code-along that implements gradient descent in Python.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Mean Squared Error (MSE).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers partial derivatives.",
+       "supported": true
+      }
+     ],
+     "IHZwWFHWa-w": [
+      {
+       "claim": "The video gives geometric intuition for the cost function over thousands of weights.",
+       "supported": true
+      },
+      {
+       "claim": "The video gives geometric intuition for the negative gradient as the steepest-descent direction.",
+       "supported": true
+      }
+     ],
+     "Ilg3gGewQ5U": [
+      {
+       "claim": "The video explains intuitively how backpropagation computes the gradient.",
+       "supported": true
+      },
+      {
+       "claim": "The video introduces mini-batches.",
+       "supported": true
+      },
+      {
+       "claim": "The video introduces stochastic gradient descent.",
+       "supported": true
+      },
+      {
+       "claim": "The video discusses or shows what PyTorch training loops use.",
+       "supported": false
+      }
+     ],
+     "tIeHLnjs5U8": [
+      {
+       "claim": "The video applies the chain rule to the cost function.",
+       "supported": true
+      },
+      {
+       "claim": "The video formalizes backpropagation.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows what autograd automates.",
+       "supported": false
+      }
+     ],
+     "EuBBz3bI-aA": [
+      {
+       "claim": "The video provides a short introduction to the train/test split, bias, variance, and overfitting.",
+       "supported": true
+      }
+     ],
+     "FHdlXe1bSe4": [
+      {
+       "claim": "The video builds a network in PyTorch with Parameters.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses loss.backward() and optimizer.step() in a training loop.",
+       "supported": true
+      },
+      {
+       "claim": "The video links the backprop theory to autograd.",
+       "supported": true
+      }
+     ],
+     "JHWqWIoac2I": [
+      {
+       "claim": "The video is a code-along.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to write an nn.Module class with fully connected layers and a forward pass.",
+       "supported": true
+      },
+      {
+       "claim": "The pattern taught is reused by every later model in the series.",
+       "supported": false
+      }
+     ],
+     "zfiSAzpy9NM": [
+      {
+       "claim": "The video provides visual intuition for CNNs.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers convolution filters and feature maps.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers ReLU and pooling stacked into a classifier.",
+       "supported": true
+      }
+     ],
+     "jDe5BAsT2-Y": [
+      {
+       "claim": "The video walks through the matrix math of a CNN forward pass, including convolution, max pooling, flattening, and a fully connected layer.",
+       "supported": true
+      }
+     ],
+     "CtzfbUwrYGI": [
+      {
+       "claim": "The video is a code-along that loads CIFAR-10 with transforms.",
+       "supported": true
+      },
+      {
+       "claim": "The video defines a Conv2d CNN.",
+       "supported": true
+      },
+      {
+       "claim": "The video writes the training loop with zero_grad.",
+       "supported": true
+      },
+      {
+       "claim": "The video evaluates test accuracy.",
+       "supported": true
+      }
+     ],
+     "EehRcPo1M-Q": [
+      {
+       "claim": "Explains why overfitting happens.",
+       "supported": true
+      },
+      {
+       "claim": "Covers L1/L2 regularization.",
+       "supported": true
+      },
+      {
+       "claim": "Covers dropout regularization.",
+       "supported": true
+      },
+      {
+       "claim": "Covers early stopping.",
+       "supported": true
+      },
+      {
+       "claim": "Covers data augmentation.",
+       "supported": true
+      }
+     ],
+     "fRqQwCXSeqo": [
+      {
+       "claim": "The video shows how to detect overfitting with a validation set.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to apply nn.Dropout in PyTorch.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to apply weight_decay in PyTorch.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 36,
+    "total_min": 621.6,
+    "utilisation": 0.52,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 36,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "zfiSAzpy9NM: title matches forbidden pattern",
+     "zfiSAzpy9NM: red flags ['surface_intro']",
+     "ORMx45xqWkA: title matches forbidden pattern",
+     "ORMx45xqWkA: red flags ['surface_intro']",
+     "7HPwo4wnJeA: title matches forbidden pattern",
+     "FHdlXe1bSe4: red flags ['surface_intro']",
+     "QoK1nNAURw4: red flags ['surface_intro']",
+     "wnK3uWv_WkU: red flags ['surface_intro']",
+     "o3DztvnfAJg: red flags ['surface_intro']",
+     "Idg5uFnpV1M: red flags ['surface_intro']",
+     "BZyKufPCKdI: red flags ['surface_intro']",
+     "pNI4N6GWdME: red flags ['surface_intro']",
+     "Ynhr-F5WwOA: title matches forbidden pattern",
+     "DK1GBJ-yWgw: red flags ['off_topic']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [
+     "0K4J_PTgysc",
+     "hkiBZLRFvO4",
+     "lSDhp0kr1ZE",
+     "NbPslfbNfjA"
+    ],
+    "language": false,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "machine learning basics": true,
+     "gradient descent and backpropagation": true,
+     "PyTorch tensors and autograd": true,
+     "training loops": true,
+     "convolutional neural networks": true,
+     "model evaluation and overfitting": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.64,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "IHZwWFHWa-w",
+     "Ilg3gGewQ5U",
+     "tIeHLnjs5U8",
+     "4b4MUYve_U8",
+     "EuBBz3bI-aA",
+     "zfiSAzpy9NM",
+     "ORMx45xqWkA",
+     "vsWrXfO3wWw",
+     "7HPwo4wnJeA",
+     "0K4J_PTgysc",
+     "CRB266Eyjkg",
+     "pDdP0TFzsoQ",
+     "FHdlXe1bSe4",
+     "QoK1nNAURw4",
+     "jDe5BAsT2-Y",
+     "JHWqWIoac2I",
+     "EehRcPo1M-Q",
+     "wnK3uWv_WkU",
+     "o3DztvnfAJg",
+     "Idg5uFnpV1M",
+     "CtzfbUwrYGI",
+     "hkiBZLRFvO4",
+     "r6yRAxDpamQ",
+     "hpFzuMSYg9k",
+     "BZyKufPCKdI",
+     "kUkGR5Lu3DU",
+     "fRqQwCXSeqo",
+     "36pfg7RpvbQ",
+     "pNI4N6GWdME",
+     "lSDhp0kr1ZE",
+     "Ynhr-F5WwOA",
+     "8rqSbzap8oo",
+     "NbPslfbNfjA",
+     "TH8cvKLSXGg",
+     "fZtjO2cs3VQ",
+     "DK1GBJ-yWgw"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified",
+     "language"
+    ],
+    "soft_misses": [
+     "utilisation_ok",
+     "pick_count_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "IHZwWFHWa-w",
+    "Ilg3gGewQ5U",
+    "tIeHLnjs5U8",
+    "4b4MUYve_U8",
+    "EuBBz3bI-aA",
+    "zfiSAzpy9NM",
+    "ORMx45xqWkA",
+    "vsWrXfO3wWw",
+    "7HPwo4wnJeA",
+    "0K4J_PTgysc",
+    "CRB266Eyjkg",
+    "pDdP0TFzsoQ",
+    "FHdlXe1bSe4",
+    "QoK1nNAURw4",
+    "jDe5BAsT2-Y",
+    "JHWqWIoac2I",
+    "EehRcPo1M-Q",
+    "wnK3uWv_WkU",
+    "o3DztvnfAJg",
+    "Idg5uFnpV1M",
+    "CtzfbUwrYGI",
+    "hkiBZLRFvO4",
+    "r6yRAxDpamQ",
+    "hpFzuMSYg9k",
+    "BZyKufPCKdI",
+    "kUkGR5Lu3DU",
+    "fRqQwCXSeqo",
+    "36pfg7RpvbQ",
+    "pNI4N6GWdME",
+    "lSDhp0kr1ZE",
+    "Ynhr-F5WwOA",
+    "8rqSbzap8oo",
+    "NbPslfbNfjA",
+    "TH8cvKLSXGg",
+    "fZtjO2cs3VQ",
+    "DK1GBJ-yWgw"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum reads like an uncurated raw dump of YouTube search results, pulling in wrong languages and wrong frameworks, completely ignoring the user's specific context.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "The listed reasons exclusively cite search query relevance and view counts ('Popular result for X'), utterly failing to describe the educational content of the videos.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "Multiple videos, such as videos 12 and 21, walk through building an image classifier in PyTorch, which directly aligns with the learner's stated final goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is entirely random based on search metrics; introductory gradient descent videos and 'What is PyTorch' overviews inexplicably appear near the end of the list, long after complex CNN builds.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The learner explicitly requested PyTorch but is repeatedly given Keras/TensorFlow tutorials; furthermore, numerous videos are in Hindi, Sinhala, and Vietnamese, blatantly violating implied language needs.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "Although the total time fits within the 1200-minute budget, the time is squandered on dozens of redundant videos covering the same concepts repeatedly, rather than forming a coherent learning path.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped list is provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "This is a raw, uncurated keyword search compilation containing redundant videos, mismatched languages, and incorrect frameworks. It is entirely unusable as a learning curriculum.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "IHZwWFHWa-w",
+      "critique": "A fantastic, intuitive mathematical foundation for gradient descent that fits the learner's background well.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Ilg3gGewQ5U",
+      "critique": "Continues seamlessly from the previous video to build strong visual intuition for backpropagation.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "tIeHLnjs5U8",
+      "critique": "Perfectly leverages the learner's calculus background to formalize the math behind the visual intuition.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "4b4MUYve_U8",
+      "critique": "A 78-minute linear regression lecture is unnecessary bloat for an engineer who wants to focus on PyTorch neural networks.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "EuBBz3bI-aA",
+      "critique": "A concise and excellent introduction to the core ML concepts of bias and variance.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zfiSAzpy9NM",
+      "critique": "Provides a great high-level, visual introduction to CNNs before diving into code.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "ORMx45xqWkA",
+      "critique": "A 3-minute surface overview is far too brief for an engineer trying to actually learn a new framework.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "vsWrXfO3wWw",
+      "critique": "Redundant coverage of gradient descent after it was already heavily covered in the first three videos.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "7HPwo4wnJeA",
+      "critique": "Uses TensorFlow/Keras when the learner explicitly constrained their request to PyTorch.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "0K4J_PTgysc",
+      "critique": "Taught in Hindi and uses Keras, violating multiple constraints.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "CRB266Eyjkg",
+      "critique": "Redundant coverage of the chain rule placed bizarrely after complete CNN project builds.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "pDdP0TFzsoQ",
+      "critique": "Directly tackles the learner's goal of building a CNN in PyTorch as a code-along.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "FHdlXe1bSe4",
+      "critique": "Basic PyTorch tensor introduction placed completely out of sequence after already building a full CNN.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "QoK1nNAURw4",
+      "critique": "A basic 2-minute gradient descent intro placed nonsensically in the middle of the curriculum.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "jDe5BAsT2-Y",
+      "critique": "Redundant coverage of CNN basics that was already introduced earlier in the list.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "JHWqWIoac2I",
+      "critique": "A beginner Iris neural network code-along placed randomly after more advanced CNN tutorials.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "EehRcPo1M-Q",
+      "critique": "A solid conceptual dive into regularization and overfitting which fits well after initial modeling.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wnK3uWv_WkU",
+      "critique": "Simply redundant to the PyTorch CNN build already completed in video 12.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "o3DztvnfAJg",
+      "critique": "Redundant and superficial coverage of overfitting compared to the much better video 17.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "Idg5uFnpV1M",
+      "critique": "'What is PyTorch' basic framework introduction placed completely inappropriately at video 20.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "CtzfbUwrYGI",
+      "critique": "Another completely redundant CIFAR-10 PyTorch CNN build.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "hkiBZLRFvO4",
+      "critique": "Violates constraints by being taught in Hindi.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "r6yRAxDpamQ",
+      "critique": "A disjointed, redundant piece of a PyTorch series placed entirely out of order.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "hpFzuMSYg9k",
+      "critique": "Yet another redundant video on regularization theory.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "BZyKufPCKdI",
+      "critique": "A broad conference talk on PyTorch's architecture rather than the requested code-along tutorials.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "kUkGR5Lu3DU",
+      "critique": "Another broad tech talk overviewing PyTorch instead of providing focused instruction.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "fRqQwCXSeqo",
+      "critique": "Brings the curriculum back to redundant overfitting concepts for the fourth time.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "36pfg7RpvbQ",
+      "critique": "Basic multivariate calculus for backpropagation placed nonsensically near the very end.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "pNI4N6GWdME",
+      "critique": "Uses Keras instead of PyTorch, violating constraints.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "lSDhp0kr1ZE",
+      "critique": "Violates user constraints by being taught in Sinhala.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "Ynhr-F5WwOA",
+      "critique": "Uses TensorFlow/Keras against the user's specific request for PyTorch.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "8rqSbzap8oo",
+      "critique": "Placed bizarrely near the end amongst unrelated topics and wrong-language videos.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "NbPslfbNfjA",
+      "critique": "Violates user constraints by being taught in Vietnamese.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "TH8cvKLSXGg",
+      "critique": "Introduction to supervised learning fundamentals placed absurdly at the very end of the course.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "fZtjO2cs3VQ",
+      "critique": "Performing backpropagation by hand is a day-one topic placed mistakenly at the very end.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "DK1GBJ-yWgw",
+      "critique": "PGD adversarial attacks are highly advanced and entirely off-topic for beginners.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 16,
+    "total_min": 323.8,
+    "utilisation": 0.27,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": false,
+    "n_videos": 16,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "FHdlXe1bSe4: red flags ['surface_intro']",
+     "zfiSAzpy9NM: title matches forbidden pattern",
+     "zfiSAzpy9NM: red flags ['surface_intro']",
+     "wnK3uWv_WkU: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "machine learning basics": true,
+     "gradient descent and backpropagation": true,
+     "PyTorch tensors and autograd": true,
+     "training loops": true,
+     "convolutional neural networks": true,
+     "model evaluation and overfitting": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [
+     "EuBBz3bI-aA covers evaluation_overfitting before its prerequisite nn_training_loop"
+    ],
+    "order_ok": false,
+    "max_redundancy": 0.5,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "TH8cvKLSXGg",
+     "EuBBz3bI-aA",
+     "4b4MUYve_U8",
+     "IHZwWFHWa-w",
+     "vsWrXfO3wWw",
+     "Ilg3gGewQ5U",
+     "tIeHLnjs5U8",
+     "fZtjO2cs3VQ",
+     "FHdlXe1bSe4",
+     "JHWqWIoac2I",
+     "zfiSAzpy9NM",
+     "jDe5BAsT2-Y",
+     "wnK3uWv_WkU",
+     "hpFzuMSYg9k",
+     "fRqQwCXSeqo",
+     "CtzfbUwrYGI"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.64,
+    "cost_usd": 0.2583,
+    "latency_s": 66.2,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "utilisation_ok",
+     "pick_count_ok",
+     "order_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "TH8cvKLSXGg",
+    "EuBBz3bI-aA",
+    "4b4MUYve_U8",
+    "IHZwWFHWa-w",
+    "vsWrXfO3wWw",
+    "Ilg3gGewQ5U",
+    "tIeHLnjs5U8",
+    "fZtjO2cs3VQ",
+    "FHdlXe1bSe4",
+    "JHWqWIoac2I",
+    "zfiSAzpy9NM",
+    "jDe5BAsT2-Y",
+    "wnK3uWv_WkU",
+    "hpFzuMSYg9k",
+    "fRqQwCXSeqo",
+    "CtzfbUwrYGI"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is perfectly calibrated for this learner's background. It specifically leverages their calculus and linear algebra knowledge to teach the foundational math of ML (gradient descent, backpropagation), while favoring practical Python code-alongs for the framework implementation.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately match what the videos actually teach according to the reference summaries, rather than focusing on superficial metrics.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The curriculum logically leads directly to the core goal, culminating in a capstone video that is exactly what the learner requested: an end-to-end walkthrough of building and evaluating a CNN image classifier (CIFAR-10) in PyTorch.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The progression is flawless: standard ML fundamentals concepts setup gradient descent, moving into backpropagation mechanics, which lays the groundwork for basic PyTorch operations, before moving into actual CNNs and concluding with overfitting fixes.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All constraints are strictly followed. No single video exceeds the 90-minute limit for a sitting, and the mix provides the explicit blend of code-along functionality and deep math intuition requested.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The list employs only roughly a quarter of the budget, but explicitly warns the user that this is due to a lack of substantial continuous long courses or better available materials in this particular pool, preventing useless padding.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped section clearly explains why videos were excluded using valid logic (wrong framework, wrong language, duplicate topics).",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an exceptionally strong, concise, and focused curriculum that utilizes the learner's background advantages to their fullest extent while avoiding tedious fluff.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "TH8cvKLSXGg",
+      "critique": "A strong math-centric introduction to supervised learning that suits the learner's engineering background.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "EuBBz3bI-aA",
+      "critique": "Provides essential conceptual intuition for model fitting before getting bogged down in complexities.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "4b4MUYve_U8",
+      "critique": "A rigorous derivation-heavy university lecture that is ideal for a learner comfortable with calculus and linear algebra, fitting exactly underneath the 90-minute limit.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "IHZwWFHWa-w",
+      "critique": "Provides world-class visual, mathematical intuition for gradient descent.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "vsWrXfO3wWw",
+      "critique": "Translates the math into practical numpy-style Python code, exactly as the constraints requested.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Ilg3gGewQ5U",
+      "critique": "Continues building conceptual math intuition by visually breaking down backpropagation.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "tIeHLnjs5U8",
+      "critique": "Directly taps into the learner's calculus background to explain how gradients flow.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fZtjO2cs3VQ",
+      "critique": "A numerical engineering-style walkthrough of backpropagation that cements the complex math visually.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "FHdlXe1bSe4",
+      "critique": "A necessary practical bridge from mathematical foundations into the PyTorch toolkit.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "JHWqWIoac2I",
+      "critique": "A straightforward code-along for creating basic ML module classes using PyTorch syntax.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zfiSAzpy9NM",
+      "critique": "Although it uses some TensorFlow, it introduces the core architecture of CNNs perfectly for someone with zero prior knowledge.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "jDe5BAsT2-Y",
+      "critique": "Re-injects the deep math understanding specifically mapped out onto CNN layers.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wnK3uWv_WkU",
+      "critique": "A gentle Python code-along to implement CNN layers over a simple MNIST project.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "hpFzuMSYg9k",
+      "critique": "A solid conceptual breakdown of evaluating, regulating, and fixing overfitted models.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fRqQwCXSeqo",
+      "critique": "Brings the conceptual regularization tools right back into practical PyTorch code implementation.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "CtzfbUwrYGI",
+      "critique": "Provides the exact requested capstone project: coding and training an image classifier (CIFAR-10) using PyTorch.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.87,
+    "claims": {
+     "TH8cvKLSXGg": [
+      {
+       "claim": "The video starts from zero with supervised learning.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers model representation, loss functions, and optimization.",
+       "supported": true
+      },
+      {
+       "claim": "The video teaches these concepts with the mathematical framework/equations.",
+       "supported": true
+      }
+     ],
+     "EuBBz3bI-aA": [
+      {
+       "claim": "The video explains bias and variance intuitively.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers train/test behavior and overfitting.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers underfitting.",
+       "supported": false
+      }
+     ],
+     "4b4MUYve_U8": [
+      {
+       "claim": "The video is a full university lecture covering supervised learning.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers linear regression.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers gradient descent with derivations.",
+       "supported": true
+      },
+      {
+       "claim": "The video utilizes calculus and linear algebra.",
+       "supported": true
+      },
+      {
+       "claim": "The video has a runtime of approximately 78 minutes.",
+       "supported": true
+      }
+     ],
+     "IHZwWFHWa-w": [
+      {
+       "claim": "The video gives visual and mathematical intuition for cost functions.",
+       "supported": true
+      },
+      {
+       "claim": "The video gives visual and mathematical intuition for gradient descent.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains how neural networks learn their weights.",
+       "supported": true
+      }
+     ],
+     "vsWrXfO3wWw": [
+      {
+       "claim": "The video is a code-along that implements gradient descent for linear regression in plain Python.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers cost function.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers MSE (mean squared error).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers learning rate.",
+       "supported": true
+      },
+      {
+       "claim": "The video turns math intuition into numpy-style code.",
+       "supported": false
+      }
+     ],
+     "Ilg3gGewQ5U": [
+      {
+       "claim": "The video builds intuition for backpropagation.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how each weight's influence on the cost drives its update.",
+       "supported": true
+      }
+     ],
+     "tIeHLnjs5U8": [
+      {
+       "claim": "The video gives the chain-rule calculus behind backpropagation.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how gradients flow backward.",
+       "supported": true
+      },
+      {
+       "claim": "The video prepares learners for what autograd automates.",
+       "supported": false
+      }
+     ],
+     "fZtjO2cs3VQ": [
+      {
+       "claim": "Works through a two-layer network by hand with numerical values.",
+       "supported": true
+      },
+      {
+       "claim": "Checks the analytic gradients against finite differences (numerical check).",
+       "supported": true
+      },
+      {
+       "claim": "Previews what autograd will compute.",
+       "supported": false
+      }
+     ],
+     "FHdlXe1bSe4": [
+      {
+       "claim": "The video is a step-by-step PyTorch walkthrough that builds a small network.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates making predictions with the network.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers optimizing parameters with backpropagation.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers tensors.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers autograd.",
+       "supported": true
+      }
+     ],
+     "JHWqWIoac2I": [
+      {
+       "claim": "The video is a code-along showing how to define a PyTorch nn.Module with layers and a forward function.",
+       "supported": true
+      },
+      {
+       "claim": "This covers the model-building half of the training loop for building a first network.",
+       "supported": true
+      }
+     ],
+     "zfiSAzpy9NM": [
+      {
+       "claim": "The video provides a beginner-friendly explanation of how convolutions work.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains how filters work.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains how CNN architectures work.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses TensorFlow examples.",
+       "supported": false
+      }
+     ],
+     "jDe5BAsT2-Y": [
+      {
+       "claim": "The video provides a math-oriented look at convolution and pooling layers.",
+       "supported": true
+      },
+      {
+       "claim": "The model covered is a PyTorch-trained MNIST model.",
+       "supported": false
+      }
+     ],
+     "wnK3uWv_WkU": [
+      {
+       "claim": "The video is a code-along that builds a CNN in PyTorch on MNIST.",
+       "supported": true
+      },
+      {
+       "claim": "The video turns CNN concepts into code.",
+       "supported": true
+      },
+      {
+       "claim": "The video is a gentle step before a longer CIFAR-10 project.",
+       "supported": false
+      }
+     ],
+     "hpFzuMSYg9k": [
+      {
+       "claim": "The video covers overfitting remedies including L1 and L2 regularization.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers dropout regularization.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers data augmentation.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers early stopping.",
+       "supported": true
+      }
+     ],
+     "fRqQwCXSeqo": [
+      {
+       "claim": "The video is a PyTorch-specific tutorial.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers techniques to prevent overfitting in neural networks.",
+       "supported": true
+      }
+     ],
+     "CtzfbUwrYGI": [
+      {
+       "claim": "The video provides an end-to-end PyTorch walkthrough.",
+       "supported": true
+      },
+      {
+       "claim": "The video trains a CNN on CIFAR-10.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the training process.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "b",
+   "orders": [
+    "b",
+    "b"
+   ],
+   "critiques": [
+    "Curriculum B is better structured for the learner. Curriculum A includes a video in Hindi (Video 16), which is inappropriate unless specifically requested, and stacks three different CNN code-along projects at the end, leading to unnecessary redundancy. Curriculum B avoids the language barrier, trims the redundant projects, and intelligently structures the remaining videos into logical sittings that respect the 90-minute constraint while leveraging the learner's strong math background.",
+    "Curriculum A provides a focused, well-structured progression that hits all the learner's constraints. It leverages their strong math background with the CS229 lecture and 3Blue1Brown's calculus videos, while fulfilling their preference for code-alongs with Python and PyTorch implementations. Curriculum B includes the exact same core path but unnecessarily pads it with duplicate CNN projects, including Video 16 which is in Hindi. Since the learner did not specify Hindi, this is a major inclusion error. Curriculum A is the clear winner."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A is a well-structured, logical path that perfectly integrates the learner's math background (calculus and linear algebra) with their requirement for PyTorch code-alongs. It covers theory, intuition, and ends with full PyTorch projects. Curriculum B is simply a raw list of search results, suffering from severe redundancies, out-of-order topics, wrong frameworks (TensorFlow/Keras tutorials instead of PyTorch), and several videos in languages the learner hasn't specified they speak (Hindi, Sinhala, Vietnamese). Even though Curriculum A accidentally includes one Hindi video, it is far superior in structure, relevance, and coherence.",
+    "Curriculum A is a massive dump of poorly filtered videos, including massive redundancy, incorrect frameworks (TensorFlow/Keras instead of PyTorch), and multiple videos in foreign languages (Hindi, Sinhala, Vietnamese). It completely ignores the learner's specific constraints and goals. Curriculum B provides a structured, logical sequence that balances math intuition with PyTorch code-alongs, fitting neatly within the learner's 90-minute sitting constraint. Although Curriculum B accidentally includes one Hindi video, it is far more focused, relevant, and respectful of the learner's time and prerequisites."
+   ]
+  },
+  "no_transcript": {
+   "winner": "b",
+   "orders": [
+    "b",
+    "b"
+   ],
+   "critiques": [
+    "Both curricula do an excellent job selecting a mix of theory and code-along videos to suit an engineer with a strong math background. They properly abide by the 90-minute sitting constraint. However, Curriculum A includes a video in Hindi (Video 16), which makes it unsuitable for this learner since no language preference was stated (defaulting to English). Curriculum A also has some unnecessary redundancy in its final project videos. Curriculum B avoids the language issue, maintains a logical progression, and provides a concise but thorough path to building a PyTorch CNN.",
+    "Both curricula present a strong progression from the mathematical foundations of gradient descent and backpropagation to PyTorch implementations of CNNs, perfectly aligning with the learner's strong math background and desire for code-alongs. However, Curriculum B includes a video (Building a CNN using PyTorch | Video 11 | CampusX) whose reference summary indicates it is taught in Hindi. Since there is no indication the learner understands Hindi, this renders that part of the curriculum unusable. Curriculum A stays completely in English while still providing excellent end-to-end PyTorch CNN builds to meet the learner's goal."
+   ]
+  }
+ }
+}

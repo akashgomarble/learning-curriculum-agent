@@ -1,0 +1,50 @@
+{
+ "ambiguous_design_frontend": {
+  "S1": "top_n_by_views",
+  "S2": "agent_loop",
+  "S3": "no_transcript",
+  "S4": "agent"
+ },
+ "career_switch_ml_foundations": {
+  "S1": "no_transcript",
+  "S2": "top_n_by_views",
+  "S3": "agent",
+  "S4": "agent_loop"
+ },
+ "go_dev_rust_ownership": {
+  "S1": "agent_loop",
+  "S2": "no_transcript",
+  "S3": "top_n_by_views",
+  "S4": "agent"
+ },
+ "hindi_excel_pivots": {
+  "S1": "agent_loop",
+  "S2": "top_n_by_views",
+  "S3": "agent",
+  "S4": "no_transcript"
+ },
+ "impossible_k8s_in_45": {
+  "S1": "agent_loop",
+  "S2": "top_n_by_views",
+  "S3": "no_transcript",
+  "S4": "agent"
+ },
+ "lunch_break_sql_windows": {
+  "S1": "agent_loop",
+  "S2": "no_transcript",
+  "S3": "top_n_by_views",
+  "S4": "agent"
+ },
+ "sourdough_first_loaf": {
+  "S1": "top_n_by_views",
+  "S2": "agent_loop",
+  "S3": "agent",
+  "S4": "no_transcript"
+ },
+ "weekend_react_dev": {
+  "S1": "agent_loop",
+  "S2": "no_transcript",
+  "S3": "agent",
+  "S4": "top_n_by_views"
+ }
+}

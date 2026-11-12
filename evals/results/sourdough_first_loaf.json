@@ -1,0 +1,905 @@
+{
+ "persona_id": "sourdough_first_loaf",
+ "budget": 120,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 5,
+    "total_min": 100.6,
+    "utilisation": 0.84,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 5,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "hydration and levain": true,
+     "bulk fermentation and stretch-and-folds": true,
+     "shaping a boule": true,
+     "cold retard": true,
+     "scoring": true,
+     "baking in a Dutch oven": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.38,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.7,
+    "cost_usd": 0.13361,
+    "latency_s": 52.8,
+    "hard_failures": [],
+    "soft_misses": [],
+    "pass": true
+   },
+   "picks": [
+    "msqU-ylXWUs",
+    "9fWzWpL5g6w",
+    "h7eqwYLv2tI",
+    "02WlZa_N-vI",
+    "5ZvYuz6mDRs"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum perfectly matches the learner's profile by focusing exclusively on sourdough-specific skills (bulk fermentation, shaping, cold retard) while skipping basic bread knowledge. It also rigorously adheres to the strict 'maximum two bakers' constraint.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons align squarely with the reference summaries, correctly identifying the techniques and topics covered in each video without relying on generic metrics.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The first video is a comprehensive bake-along for a beginner sourdough boule, directly mirroring the exact weekend goal of the learner.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "Providing a 30-minute complete overview of the process first gives the learner the big picture. Zooming in subsequently on the nuance of hydration, shaping, and cold proofing before finishing with troubleshooting is a highly effective pedagogical sequence.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum brilliantly respects all constraints: it avoids vlogs and equipment reviews, directly teaches every 'does not know yet' item (hydration, shaping, cold retard, Dutch oven), and uses exactly two creators to avoid confusing the learner with contradictory methods.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "Using 101 out of 120 minutes is highly efficient. The remaining time is intentionally left unused to strictly maintain the two-baker limit, which is the correct priority.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The explanations for dropped videos are logical and consistently apply the 'two bakers maximum' and 'must include cold retard' constraints.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an exceptionally constructed curriculum. It hones in precisely on the gap between yeasted bread baking and sourdough, respects a tight time budget, and exercises tremendous discipline in selecting exactly two creators to ensure a cohesive, non-contradictory process.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "msqU-ylXWUs",
+      "critique": "An excellent, comprehensive bake-along that serves as the backbone of the weekend project.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "9fWzWpL5g6w",
+      "critique": "Deepens the learner's understanding of hydration and fermentation using the primary baker's methodology.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "h7eqwYLv2tI",
+      "critique": "A brief, targeted deep-dive into shaping, a specific skill the learner requested help with.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "02WlZa_N-vI",
+      "critique": "Reinforces the cold retard, scoring, and Dutch oven stages without introducing a conflicting recipe.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "5ZvYuz6mDRs",
+      "critique": "Fulfills the request for common beginner mistakes and troubleshooting, thoughtfully sourced from a second creator without introducing a conflicting core recipe.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.96,
+    "claims": {
+     "msqU-ylXWUs": [
+      {
+       "claim": "The video is a full beginner bake-along for sourdough bread.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers levain and hydration.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers bulk fermentation with stretch-and-folds.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers shaping.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers cold retard (refrigerated proofing).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers scoring.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the Dutch oven bake.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains the 'why' behind each step.",
+       "supported": true
+      },
+      {
+       "claim": "The video ends with crumb troubleshooting.",
+       "supported": true
+      }
+     ],
+     "9fWzWpL5g6w": [
+      {
+       "claim": "The baker explains hydration levels and water ratios.",
+       "supported": true
+      },
+      {
+       "claim": "The baker explains fermentolyse.",
+       "supported": true
+      },
+      {
+       "claim": "The baker explains stretch-and-fold timing.",
+       "supported": true
+      },
+      {
+       "claim": "The baker explains how to know bulk fermentation is done.",
+       "supported": true
+      }
+     ],
+     "h7eqwYLv2tI": [
+      {
+       "claim": "The video provides a dedicated demonstration of shaping dough to create surface tension.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes preparing the banneton with rice flour.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes a simple beginner roll-and-pull shaping method.",
+       "supported": true
+      }
+     ],
+     "02WlZa_N-vI": [
+      {
+       "claim": "The video shows pre-shaping.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows the finger poke test.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows baking with the lid on in a Dutch oven for steam.",
+       "supported": true
+      },
+      {
+       "claim": "The video compares a cold-retarded loaf with a room-temperature one.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers cold retard and scoring detail.",
+       "supported": true
+      }
+     ],
+     "5ZvYuz6mDRs": [
+      {
+       "claim": "The video walks through ten beginner mistakes, including bulk fermentation errors, weak shaping, scoring and oven temperature.",
+       "supported": true
+      },
+      {
+       "claim": "The video says to skip the cold ferment only at the cost of flavor.",
+       "supported": false
+      },
+      {
+       "claim": "The video is used for troubleshooting, not as a second recipe.",
+       "supported": true
+      },
+      {
+       "claim": "The video addresses the steps beginners get wrong.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 5,
+    "total_min": 86.6,
+    "utilisation": 0.72,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 5,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "hydration and levain": true,
+     "bulk fermentation and stretch-and-folds": true,
+     "shaping a boule": true,
+     "cold retard": true,
+     "scoring": true,
+     "baking in a Dutch oven": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.29,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.78,
+    "cost_usd": 0.09793,
+    "latency_s": 33.7,
+    "hard_failures": [],
+    "soft_misses": [
+     "has_dropped_list"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "9fWzWpL5g6w",
+    "BJEHsvW2J6M",
+    "msqU-ylXWUs",
+    "Koab3fxN4t4",
+    "h7eqwYLv2tI"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is meticulously tailored to the learner's specific profile. It directly incorporates their request for a full bake-along, includes a video specifically targeting beginner mistakes, actively manages the two-baker limit, and provides thoughtful instructions on how to navigate the inevitable differences in their recipes.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons clearly reflect the actual instructional content of the videos, directly aligning with the reference summaries and providing specific details like fermentolyse, tension building, and rice flour usage.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner's goal is to bake their first sourdough loaf this weekend. Video 3 is a comprehensive bake-along that mirrors this exact goal perfectly, walking them through the entire process from start to finish.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is logical: it starts with fundamental concepts and vocabulary, moves to common pitfalls to be aware of, provides the main bake-along, and then offers deep-dives into preshaping and shaping that the learner can review before reaching those specific steps in their actual bake.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All constraints are strictly followed: there are no vlogs or gear reviews, a bake-along is provided, beginner mistakes are addressed, and exactly two bakers are used with clear guidance on how to avoid confusion.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The curriculum uses 87 out of 120 minutes. It sensibly leaves the remaining time unused to avoid redundancy and explicitly notes that the actual physical baking process will take much longer, ensuring the viewing time is concise and actionable.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The reasoning for dropping Brian Lagerstrom and Grant Bakes is sound: it honors the learner's request to limit the number of bakers (avoiding a third) and selects Bread Code specifically for its explanations of 'why' steps are taken.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an exceptionally strong curriculum. It gives the learner exactly what they asked for, respects their limits, provides clear guardrails for synthesizing the two different creators' methods, and isolates the most intimidating physical technique (shaping) into clear standalone videos for review during the long proofing wait times.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "9fWzWpL5g6w",
+      "critique": "Excellent choice for level-setting the concepts and vocabulary before the learner dives into a dense recipe.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "BJEHsvW2J6M",
+      "critique": "Directly addresses the prompt's request for help with steps beginners get wrong, and the curriculum cleverly frames how to consume this secondary bake-along without getting derailed.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "msqU-ylXWUs",
+      "critique": "A comprehensive bake-along from the primary baker that fulfills the learner's core goal.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Koab3fxN4t4",
+      "critique": "A quick, targeted short lesson on preshaping, a physical skill that is hard to glean from a fast-moving bake-along.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "h7eqwYLv2tI",
+      "critique": "Provides essential granular detail on creating surface tension for the final shape, which is a major stumbling block for first-timers.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.89,
+    "claims": {
+     "9fWzWpL5g6w": [
+      {
+       "claim": "The video explains hydration.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains fermentolyse.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains stretch-and-fold.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains knowing when fermentation is done.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains cold retard.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains Dutch oven steam.",
+       "supported": true
+      },
+      {
+       "claim": "This gives the vocabulary before baking, from the same baker as the bake-along.",
+       "supported": false
+      }
+     ],
+     "BJEHsvW2J6M": [
+      {
+       "claim": "The video goes through 15 beginner errors in order.",
+       "supported": false
+      },
+      {
+       "claim": "The video covers an inactive starter.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers autolyse.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the stretch-and-fold cadence.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the poke test for proofing.",
+       "supported": true
+      }
+     ],
+     "msqU-ylXWUs": [
+      {
+       "claim": "The video is a complete beginner bake-along for sourdough bread.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers levain/starter hydration.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers bulk fermentation with stretch-and-folds.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers shaping.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers using a banneton.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers cold retard (refrigeration overnight).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers scoring.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Dutch oven baking.",
+       "supported": true
+      },
+      {
+       "claim": "The video presents a single recipe to follow.",
+       "supported": true
+      }
+     ],
+     "Koab3fxN4t4": [
+      {
+       "claim": "The video demonstrates pre-shaping with surface tension.",
+       "supported": true
+      },
+      {
+       "claim": "The video warns against over-handling and degassing the dough.",
+       "supported": true
+      },
+      {
+       "claim": "The video comes from the same baker as the main recipe.",
+       "supported": false
+      }
+     ],
+     "h7eqwYLv2tI": [
+      {
+       "claim": "The video shows final boule shaping.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how surface tension leads to oven spring.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to prepare the banneton with rice flour.",
+       "supported": true
+      },
+      {
+       "claim": "The video features a simpler beginner method.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 10,
+    "total_min": 119.9,
+    "utilisation": 1.0,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 10,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "-9Osn7JsP1Y: red flags ['off_topic']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "hydration and levain": true,
+     "bulk fermentation and stretch-and-folds": true,
+     "shaping a boule": true,
+     "cold retard": true,
+     "scoring": true,
+     "baking in a Dutch oven": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.64,
+    "near_dup_respected": false,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "BJEHsvW2J6M",
+     "VEtU4Co08yY",
+     "4gEoh3sk2AE",
+     "-9Osn7JsP1Y",
+     "9fWzWpL5g6w",
+     "QWiouzzCUcs",
+     "CTuGXdyrWUo",
+     "s8dQ2hnYqp0",
+     "hWXA8xFYu9A",
+     "Z8sno5EzPw4"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [
+     "8 creators (max 2)"
+    ],
+    "creators_ok": false,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified",
+     "near_dup_respected",
+     "creators_ok"
+    ],
+    "soft_misses": [
+     "pick_count_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "BJEHsvW2J6M",
+    "VEtU4Co08yY",
+    "4gEoh3sk2AE",
+    "-9Osn7JsP1Y",
+    "9fWzWpL5g6w",
+    "QWiouzzCUcs",
+    "CTuGXdyrWUo",
+    "s8dQ2hnYqp0",
+    "hWXA8xFYu9A",
+    "Z8sno5EzPw4"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum ignores the learner's existing knowledge by including a video on how to make a starter from scratch, even though the learner stated their starter is already active. It also fails to tailor the selection to the constraint of avoiding contradictory methods.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons provided are simply search queries and view counts, rather than descriptions of the actual pedagogical content of the videos.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The curriculum includes several full bake-alongs that mirror the learner's goal of baking their first sourdough loaf.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is completely illogical. It starts with mistakes and full bake-alongs, then jumps back to a starter guide, then basics, then more bake-alongs, and finally ends with specific techniques like shaping and bulk fermentation that should have been introduced earlier.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The learner explicitly asked to follow at most two bakers' methods to avoid contradictions. This curriculum includes six different full bake-alongs from different creators, completely violating this constraint.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "While the curriculum exactly hits the 120-minute budget, it wastes the majority of that time on redundant bake-alongs and off-topic starter creation guides.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped list or reasons were provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "This curriculum is a poorly ordered dump of search results that violates the learner's core constraints and wastes time on things they already know.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "BJEHsvW2J6M",
+      "critique": "A good choice that directly addresses the learner's request for help with beginner mistakes while providing a full bake-along.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "VEtU4Co08yY",
+      "critique": "An excellent beginner-friendly bake-along that serves as the second allowed baker method.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "4gEoh3sk2AE",
+      "critique": "A third full bake-along, which violates the constraint to follow at most two bakers' methods.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "-9Osn7JsP1Y",
+      "critique": "The learner explicitly stated they already have an active starter, making this video completely unnecessary.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "9fWzWpL5g6w",
+      "critique": "While informative, introducing 18 new basics from yet another baker risks the contradictions the learner wanted to avoid.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "QWiouzzCUcs",
+      "critique": "Another full bake-along from a different baker, violating the max-two-bakers constraint.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "CTuGXdyrWUo",
+      "critique": "Yet another full bake-along that violates the core constraint of the prompt.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "s8dQ2hnYqp0",
+      "critique": "Violates the max-two-bakers constraint and wastes time teaching how to make a starter.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "hWXA8xFYu9A",
+      "critique": "A quick, focused video that helps with shaping a boule, addressing a specific knowledge gap.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Z8sno5EzPw4",
+      "critique": "A highly focused, visual guide to bulk fermentation that perfectly addresses one of the learner's weak points.",
+      "verdict": "pass"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 5,
+    "total_min": 74.2,
+    "utilisation": 0.62,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 5,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "hydration and levain": true,
+     "bulk fermentation and stretch-and-folds": true,
+     "shaping a boule": true,
+     "cold retard": true,
+     "scoring": true,
+     "baking in a Dutch oven": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [
+     "msqU-ylXWUs covers scoring_dutch_oven before its prerequisite cold_retard"
+    ],
+    "order_ok": false,
+    "max_redundancy": 0.25,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "msqU-ylXWUs",
+     "Koab3fxN4t4",
+     "h7eqwYLv2tI",
+     "TDrc82KTeig",
+     "9fWzWpL5g6w"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.49,
+    "cost_usd": 0.23707,
+    "latency_s": 54.9,
+    "hard_failures": [
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "order_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "msqU-ylXWUs",
+    "Koab3fxN4t4",
+    "h7eqwYLv2tI",
+    "TDrc82KTeig",
+    "9fWzWpL5g6w"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is highly tailored, picking a specific main course bake-along that covers the necessary skills for a first-time sourdough baker, while diligently respecting the strict maximum of two bakers constraint.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, noting specific content elements like shaping techniques, side-by-side cold-proof baking, and full bake-along coverage.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The first video provides the exact target goal: a full comprehensive beginner sourdough bake-along resulting in a complete sourdough boule.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The sequence is logical. It starts with the full step-by-step bake-along as an overarching guide, then isolates specific difficult steps like preshaping and shaping, followed by cold retard mechanics, and concludes with a roundup of mistakes and basics.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All constraints are honored. No vlogs are included, there is a full bake-along, common mistakes are addressed, and importantly, only two bakers (The Bread Code and Grant Bakes) are featured to prevent contradictory methodologies.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "Seventy-four minutes of the 120-minute budget are used. The curriculum correctly opts not to pad the remaining time to strictly honor the 'maximum two bakers' constraint, which was an intelligent decision.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped list clearly flags videos that introduce a third creator, lack of proven learning value (missing transcripts), or address off-topic variations, explaining perfectly why they were omitted.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an exceptionally strong, focused curriculum. It provides exactly what the learner needs to accomplish their weekend bake without overwhelming them with differing baking philosophy or filler content.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "msqU-ylXWUs",
+      "critique": "The perfect starting point, providing a complete bake-along from a single creator that hits nearly all of the learner's requested concepts.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Koab3fxN4t4",
+      "critique": "Preshaping is often a stumbling block for beginners, and keeping it with the same creator ensures the method stays consistent.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "h7eqwYLv2tI",
+      "critique": "Directly follows preshaping by detailing the final boule shape, respecting the creator consistency constraint.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "TDrc82KTeig",
+      "critique": "Adds a great physical demonstration of cold-proof baking dynamics while adhering to the 'maximum two bakers' cap.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "9fWzWpL5g6w",
+      "critique": "Provides the requested help regarding beginner mistakes without introducing a third creator.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.8,
+    "claims": {
+     "msqU-ylXWUs": [
+      {
+       "claim": "The video is a roughly 30-minute beginner full course on sourdough bread.",
+       "supported": true
+      },
+      {
+       "claim": "The video is from The Bread Code.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains the why behind each step.",
+       "supported": true
+      }
+     ],
+     "Koab3fxN4t4": [
+      {
+       "claim": "The video isolates pre-shaping after bulk fermentation.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes tricks for controlling the dough and building surface tension.",
+       "supported": true
+      },
+      {
+       "claim": "The video features the same baker as the main course.",
+       "supported": false
+      }
+     ],
+     "h7eqwYLv2tI": [
+      {
+       "claim": "The video is a shaping tutorial covering beginner and more advanced methods.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers forming loaves with surface tension.",
+       "supported": true
+      },
+      {
+       "claim": "The video follows the pre-shaping stage.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers final boule shaping / making a round loaf.",
+       "supported": true
+      }
+     ],
+     "TDrc82KTeig": [
+      {
+       "claim": "The video features a side-by-side bake comparing cold-proofed dough straight from the fridge versus after a rest at room temperature.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows the oven spring resulting from both methods.",
+       "supported": true
+      },
+      {
+       "claim": "Grant Bakes is the second and last baker.",
+       "supported": false
+      }
+     ],
+     "9fWzWpL5g6w": [
+      {
+       "claim": "The video covers 18 sourdough basics, including starter care, technique, and common mistakes.",
+       "supported": true
+      },
+      {
+       "claim": "The video comes from The Bread Code channel/creator.",
+       "supported": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "tie",
+   "orders": [
+    "a",
+    "b"
+   ],
+   "critiques": [
+    "Both curricula adhere to the constraints perfectly, delivering a primary bake-along and a secondary mistakes video without exceeding the two-baker limit. Curriculum A provides a slightly better logical flow and includes a helpful experiment video that directly covers cold retarding, which was on the learner's 'needs to learn' list. Curriculum B's choice for the mistakes video happens to be a full project build for a 50% whole wheat sesame loaf, which could introduce confusing contradictions if watched before the primary bake-along. Additionally, B places the shaping tutorials after the full course, making for a disjointed viewing experience.",
+    "Both curricula adhere to the constraints: they stay under 120 minutes, rely on at most two bakers to avoid confusion, provide a full bake-along, and include a video focusing on common beginner mistakes. Curriculum A is better structured for a first-time sourdough baker. It supplements the main bake-along with concise, targeted tutorials on pre-shaping and shaping. In contrast, Curriculum B includes an intermediate 17-minute experiment comparing cold-retarded vs room-temperature proofing for an open crumb. Since the learner just wants a straightforward guide to baking their first loaf, Curriculum A's direct instructional approach without extraneous experiments is the superior choice."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A perfectly addresses the learner's constraints. It strictly limits the methods to two bakers to avoid confusion, provides a complete bake-along, addresses common beginner mistakes, and entirely skips the redundant process of making a starter. Curriculum B is a disjointed playlist of heavily repetitive bake-alongs from multiple different creators, violating the two-baker limit. It also wastes time teaching how to make a sourdough starter from scratch, which the learner already has.",
+    "Curriculum A completely ignores the learner's constraints. It includes over half a dozen different full-process recipes from various creators, violating the strict limit to follow at most two bakers to avoid contradictory advice. It also wastes time teaching how to build a starter from scratch over 7 days, which the learner explicitly stated they already have. Curriculum B perfectly respects the two-baker limit, avoids re-teaching how to make a starter, and covers all the requested topics (hydration, bulk fermentation, stretch-and-folds, shaping, cold retard, scoring, and beginner mistakes) within the time budget."
+   ]
+  },
+  "no_transcript": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A does a much better job of satisfying the learner's constraints. It includes a full-length bake-along, covers specific techniques like shaping and cold retarding, and explicitly provides a video on common beginner mistakes while staying strictly within the two-baker limit (The Bread Code and Keep It Sweet Kitchen). Curriculum B fails to include a dedicated video on beginner mistakes, falsely assuming it would break the two-baker rule to add one.",
+    "Curriculum B is much better. It directly fulfills the learner's request for help with common beginner mistakes by including a dedicated video on the topic, making excellent use of the 120-minute time budget. Curriculum A leaves nearly half the time budget unused and omits the dedicated mistakes video. Additionally, Curriculum B keeps the methods more consistent by using 'The Bread Code' for the cold-proofing experiment instead of introducing a new baker for that step."
+   ]
+  }
+ }
+}

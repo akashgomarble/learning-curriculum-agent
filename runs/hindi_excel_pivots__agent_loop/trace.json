@@ -1,0 +1,5069 @@
+{
+ "persona": {
+  "persona_id": "hindi_excel_pivots",
+  "goal": "Learn pivot tables and lookups well enough to build a monthly sales dashboard in Excel",
+  "time_budget_minutes": 90,
+  "user_context": {
+   "background": "Small-business owner in Lucknow; uses Excel for basic lists and sums",
+   "known": [
+    "entering data",
+    "SUM and basic formulas",
+    "sorting and filtering"
+   ],
+   "unknown": [
+    "pivot tables",
+    "XLOOKUP / VLOOKUP",
+    "slicers",
+    "pivot charts",
+    "dashboard layout"
+   ],
+   "constraints": "I understand Hindi much better than English, so please choose Hindi-language videos. I watch on my phone, so nothing longer than 25 minutes at a time."
+  },
+  "expectations": {
+   "pick_count": [
+    2,
+    5
+   ],
+   "min_utilisation": 0.6,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": null,
+   "forbidden_flags": [
+    "wrong_language",
+    "off_topic"
+   ],
+   "unknown_synonyms": {
+    "pivot tables": [
+     "pivot"
+    ],
+    "XLOOKUP / VLOOKUP": [
+     "xlookup",
+     "vlookup",
+     "lookup"
+    ],
+    "slicers": [
+     "slicer"
+    ],
+    "pivot charts": [
+     "chart"
+    ],
+    "dashboard layout": [
+     "dashboard"
+    ]
+   },
+   "known_topics": [
+    "sum",
+    "sorting",
+    "filtering"
+   ],
+   "min_level": null,
+   "require_project_based": false,
+   "required_language": "hi",
+   "expect_infeasible": false,
+   "expect_assumptions": false,
+   "min_upload_year": null,
+   "max_sitting_minutes": 25.0,
+   "max_channels": null,
+   "max_per_channel": null,
+   "notes": "Non-English learner: every pick must be in Hindi; assessor reads Hindi transcripts."
+  }
+ },
+ "mode": "agent_loop",
+ "models": {
+  "agent_loop": "anthropic/claude-sonnet-5.5"
+ },
+ "turns": 5,
+ "tool_log": [
+  {
+   "turn": 0,
+   "tool": "search_youtube",
+   "arg": "pivot table in Excel Hindi",
+   "ok": true
+  },
+  {
+   "turn": 0,
+   "tool": "search_youtube",
+   "arg": "XLOOKUP VLOOKUP Excel Hindi",
+   "ok": true
+  },
+  {
+   "turn": 0,
+   "tool": "search_youtube",
+   "arg": "Excel sales dashboard Hindi slicer pivot chart",
+   "ok": true
+  },
+  {
+   "turn": 1,
+   "tool": "read_video",
+   "arg": "4A6hjD-61gM",
+   "ok": true
+  },
+  {
+   "turn": 1,
+   "tool": "read_video",
+   "arg": "gAY9is-ahQY",
+   "ok": true
+  },
+  {
+   "turn": 1,
+   "tool": "read_video",
+   "arg": "oKdBEjcgzyw",
+   "ok": true
+  },
+  {
+   "turn": 1,
+   "tool": "read_video",
+   "arg": "_JtEWpUJPVY",
+   "ok": true
+  },
+  {
+   "turn": 1,
+   "tool": "read_video",
+   "arg": "htOIqJGeewE",
+   "ok": true
+  },
+  {
+   "turn": 1,
+   "tool": "read_video",
+   "arg": "RdA04dRgF44",
+   "ok": true
+  },
+  {
+   "turn": 2,
+   "tool": "read_video",
+   "arg": "hmygrQMcHyU",
+   "ok": true
+  },
+  {
+   "turn": 2,
+   "tool": "read_video",
+   "arg": "d9yXBRbNuho",
+   "ok": true
+  },
+  {
+   "turn": 3,
+   "tool": "read_video",
+   "arg": "hro6_y7R310",
+   "ok": true
+  },
+  {
+   "turn": 4,
+   "tool": "submit_curriculum",
+   "arg": "submit",
+   "ok": true
+  }
+ ],
+ "videos_read": 9,
+ "timings_s": {
+  "agent_loop": 40.7
+ },
+ "cost_by_stage": {
+  "agent_loop": {
+   "calls": 5,
+   "cost_usd": 0.14241,
+   "prompt_tokens": 51517,
+   "completion_tokens": 3937,
+   "latency_s": 40.65
+  }
+ },
+ "calls": [
+  {
+   "stage": "agent_loop",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 3225,
+   "completion_tokens": 192,
+   "cost_usd": 0.008369999999999999,
+   "latency_s": 2.87
+  },
+  {
+   "stage": "agent_loop",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 5874,
+   "completion_tokens": 333,
+   "cost_usd": 0.015078000000000001,
+   "latency_s": 4.06
+  },
+  {
+   "stage": "agent_loop",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 12703,
+   "completion_tokens": 361,
+   "cost_usd": 0.029016,
+   "latency_s": 6.09
+  },
+  {
+   "stage": "agent_loop",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 14683,
+   "completion_tokens": 321,
+   "cost_usd": 0.03257600000000001,
+   "latency_s": 5.83
+  },
+  {
+   "stage": "agent_loop",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 15032,
+   "completion_tokens": 2730,
+   "cost_usd": 0.057364,
+   "latency_s": 21.8
+  }
+ ],
+ "plan": {
+  "interpretation": "In about 65 minutes of Hindi videos (each under 25 minutes), the learner can build a pivot table, pull data in with VLOOKUP/XLOOKUP, make pivot charts, and put together a slicer-driven monthly sales dashboard in Excel.",
+  "assumptions": [
+   "Hindi or Hinglish videos are acceptable, since the learner understands Hindi better than English.",
+   "The learner has a modern Excel version (2016 or later, ideally 365) so that XLOOKUP and slicers are available.",
+   "The dashboard builder video is the practice project, and the learner follows along with their own sales data."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "hi",
+  "learner_level": "beginner",
+  "sub_topics": [
+   {
+    "id": "pivot_basics",
+    "title": "Pivot table basics: rows, columns, values, refresh, first slicer",
+    "why": "This is the core skill, and the learner has never used a pivot table.",
+    "prereqs": [],
+    "minutes_share": 22.0
+   },
+   {
+    "id": "lookups",
+    "title": "VLOOKUP and XLOOKUP for pulling data into a sales sheet",
+    "why": "Lookups fill in product, price or city columns before the data is summarised.",
+    "prereqs": [],
+    "minutes_share": 28.0
+   },
+   {
+    "id": "pivot_charts",
+    "title": "Pivot charts",
+    "why": "These turn pivot summaries into visuals for the dashboard.",
+    "prereqs": [
+     "pivot_basics"
+    ],
+    "minutes_share": 15.0
+   },
+   {
+    "id": "dashboard",
+    "title": "Dashboard build: KPI cards, charts, connected slicers, layout",
+    "why": "This is the end goal: a monthly sales dashboard.",
+    "prereqs": [
+     "pivot_basics",
+     "pivot_charts"
+    ],
+    "minutes_share": 35.0
+   }
+  ],
+  "search_queries": [],
+  "title_exclusions": [],
+  "skip_topics": [
+   "entering data",
+   "SUM and basic formulas",
+   "sorting and filtering"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "lCoPTPsTJ4s",
+   "title": "Create Pivot Tables In Excel | Use of Pivot Table - Pivot Table Tutorial",
+   "channel": "Rishabh Mishra",
+   "minutes": 12.0,
+   "views": 1288526,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel pivot chart aur slicer Hindi tutorial",
+    "Excel table banana Hindi data cleaning for pivot table",
+    "Excel interactive dashboard Hindi step by step pivot table slicer"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "_JtEWpUJPVY",
+   "title": "“📊 Excel Dashboard Tutorial (Hindi) | Pivot Table से Dashboard बनाएं | Next-Level Reporting 🚀”",
+   "channel": "My Computer $kill",
+   "minutes": 22.7,
+   "views": 26085,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer",
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hxAkt7Pico0",
+   "title": "pivot table for beginners in excel in Hindi | pivot table excel in hindi",
+   "channel": "Computer Gyan",
+   "minutes": 23.9,
+   "views": 2383447,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "RdA04dRgF44",
+   "title": "XLOOKUP Function in MS Excel | MS Excel Advanced Tutorial | [Hindi] #ms excel",
+   "channel": "Computer Gyan",
+   "minutes": 10.0,
+   "views": 399485,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi",
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "oKdBEjcgzyw",
+   "title": "How to make Dashboard in excel ( Interactive + Simple )",
+   "channel": "Deepak EduWorld",
+   "minutes": 20.7,
+   "views": 252039,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer",
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "4A6hjD-61gM",
+   "title": "pivot table for beginners in excel in Hindi || Microsoft excel 2007,2010,2016",
+   "channel": "Deepak EduWorld",
+   "minutes": 14.2,
+   "views": 3505708,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "d9yXBRbNuho",
+   "title": "How to Use VLOOKUP, HLOOKUP, XLOOKUP || Detailed Explaination with examples || Advance Excel Formula",
+   "channel": "Accounts Expert",
+   "minutes": 9.4,
+   "views": 332606,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein",
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "sM2mdBu0Owc",
+   "title": "MS Excel - Pivot Table Slice",
+   "channel": "TutorialsPoint",
+   "minutes": 9.6,
+   "views": 477286,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer",
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "NbaiGbn4khs",
+   "title": "How to Create Pivot Table in Microsoft Excel | Pivot Table in Excel",
+   "channel": "StudySpan",
+   "minutes": 5.3,
+   "views": 2791344,
+   "found_by": [
+    "Excel table banana Hindi data cleaning for pivot table",
+    "Excel pivot table Hindi tutorial beginners"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hro6_y7R310",
+   "title": "Pivot Table Mastery in Excel | Pivot Table Tutorial in Hindi | Part - 01",
+   "channel": "TLS Computer Classes",
+   "minutes": 21.9,
+   "views": 868781,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "JOSh69tzivA",
+   "title": "How to use Slicer in Microsoft Excel | Slicer in Excel",
+   "channel": "StudySpan",
+   "minutes": 4.3,
+   "views": 43540,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial",
+    "Excel interactive dashboard Hindi step by step pivot table slicer"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "1Sg1KaRwQzg",
+   "title": "XLOOKUP in Excel | How to Use XLOOKUP Function in Excel | Excel Tutorial in Hindi",
+   "channel": "Deepak EduWorld",
+   "minutes": 21.9,
+   "views": 16773,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "E48tn7LcxFU",
+   "title": "Sales Dashboard in Excel In Hindi | अगर अपनी सैलरी बढ़ाना चाहते हैं | तो एक्सेल Dashboard बनाना सीखे",
+   "channel": "Abhijeetji Technical 4M",
+   "minutes": 60.4,
+   "views": 23014,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "gAY9is-ahQY",
+   "title": "How To Apply VLOOKUP and XLOOKUP Formula on Large Data in Excel [Hindi] #excel",
+   "channel": "Computer Gyan",
+   "minutes": 12.7,
+   "views": 3242621,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "P-qvfgioBxM",
+   "title": "Bye Bye Manual Work in Excel | Create Fully Automated Dashboard in Excel",
+   "channel": "Learn More",
+   "minutes": 17.7,
+   "views": 89603,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "0WPwWvpFtq8",
+   "title": "How to use XLOOKUP Function in MS Excel | XLOOKUP Formula in Excel",
+   "channel": "StudySpan",
+   "minutes": 4.0,
+   "views": 219836,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "5TNgfg-7RKE",
+   "title": "Excel Pivot Table, Pivot Chart & Slicer Tutorial in Hindi | Complete Data Analysis Guide",
+   "channel": "MANOJ KUMAR EXCEL",
+   "minutes": 5.5,
+   "views": 782,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "W3tM8BVhsuo",
+   "title": "Pivot Table in Excel Full Tutorial 🔥 Data Analysis for Beginners (Hindi) । Computer with Kritika",
+   "channel": "Computer with Kritika",
+   "minutes": 31.0,
+   "views": 4781,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hmygrQMcHyU",
+   "title": "Vlookup का सबसे आसान Example || What is Vlookup in Excel (in Hindi)",
+   "channel": "BUSINESS EXCEL",
+   "minutes": 5.5,
+   "views": 242654,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "rjuO8OGYDsk",
+   "title": "Learn Excel XLookup Formula A to Z ｜ X Lookup Masterclass by Satish Dhawale",
+   "channel": "Learn More",
+   "minutes": 51.1,
+   "views": 205531,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "mp5RFCvpWI0",
+   "title": "Excel mein Pivot Chart aur Slicer kaise Banayein | How to make Pivot Chart and Slicer in Excel",
+   "channel": "Data Saathi",
+   "minutes": 3.9,
+   "views": 37,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "HBJdxWxG7aU",
+   "title": "Microsoft Excel - How to create Dashboard in Excel | Sales Dashboard | Excel Tutorial",
+   "channel": "Excel with Rahul Chaudhary",
+   "minutes": 22.2,
+   "views": 10955,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hMparynKb2o",
+   "title": "How To Use XLOOKUP Formula in Microsoft Excel | XLOOKUP in Excel | Excel XLOOKUP",
+   "channel": "Excel with Rahul Chaudhary",
+   "minutes": 14.6,
+   "views": 8579,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "htOIqJGeewE",
+   "title": "How to Create Pivot Charts? | Excel Pivot Table in Hindi | Excel Pivot Table Series - Part - 2",
+   "channel": "Excel Tutorial by SkillCourse",
+   "minutes": 9.6,
+   "views": 220429,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "PuGzwrnBG_s",
+   "title": "Excel में Dashboard बनाना सीखे | Interactive Dashboard In Excel | Dashboard Tutorial |",
+   "channel": "DevelopersGuides",
+   "minutes": 20.8,
+   "views": 129256,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "DX0V7D0GWwI",
+   "title": "How to use VLOOKUP formula in Excel | VLOOKUP in Excel Tutorial",
+   "channel": "Rishabh Mishra",
+   "minutes": 5.3,
+   "views": 2280000,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "V59jFWmu7w0",
+   "title": "XLOOKUP function in MS Excel | Why XLOOKUP function is powerful in MS Excel? | Computer Tech Academy",
+   "channel": "Computer Tech Academy",
+   "minutes": 15.6,
+   "views": 34797,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "sPVl7_yVjLU",
+   "title": "Mastering XLOOKUP in Excel (With 10 Examples) | XLOOKUP Tutorial | XLOOKUP Function in Excel",
+   "channel": "Deepak EduWorld",
+   "minutes": 21.1,
+   "views": 256019,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "BvYU0GEHJyc",
+   "title": "Pivot Table in Excel | Pivot Table with Multiple Slicers | Pivot Table Full Tutorial | CTA",
+   "channel": "Computer Tech Academy",
+   "minutes": 19.7,
+   "views": 11059,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "ETQSNnOKDC0",
+   "title": "🔥 Excel Pivot Table Complete Tutorial in Hindi | Beginner to Advanced",
+   "channel": "Course Learn Academy ",
+   "minutes": 18.3,
+   "views": 541,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "YW_vqEoe-Sg",
+   "title": "VLOOKUP vs XLOOKUP Function in Microsoft Excel",
+   "channel": "StudySpan",
+   "minutes": 8.0,
+   "views": 27073,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "5TkRnGdC1NM",
+   "title": "Excel Dashboard Course #21 - Creating a Pivot table Dashboard with Slicers in Excel (in 15 minutes)",
+   "channel": "TrumpExcel",
+   "minutes": 14.7,
+   "views": 663739,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "DUP-Js2vNjs",
+   "title": "How To Apply VLOOKUP and XLOOKUP formula on Large / Big Data in Excel (Hindi)",
+   "channel": "Deepak EduWorld",
+   "minutes": 10.7,
+   "views": 846750,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "cqsKU_ECMHg",
+   "title": "Excel Tutorial: Sales Dashboard in Excel | Excel Dashboard | Excel Interview",
+   "channel": "Excel with Rahul Chaudhary",
+   "minutes": 17.6,
+   "views": 23324,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "-MyX4xjr8jM",
+   "title": "Pivot Table in MS Excel | Top 10 Examples of Pivot Table in MS Excel | Computer Tech Academy",
+   "channel": "Computer Tech Academy",
+   "minutes": 14.5,
+   "views": 54363,
+   "found_by": [
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "8nL9PtLdC94",
+   "title": "How to use XLOOKUP Formula in MS Excel | XLOOKUP Function in Excel",
+   "channel": "StudySpan",
+   "minutes": 5.3,
+   "views": 17932,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  }
+ ],
+ "assessments": {
+  "lCoPTPsTJ4s": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create and use pivot tables in Excel, demonstrating how to summarize and analyze data by placing fields into rows, columns, values, and filters sections. It covers practical examples like comparing scores by gender and house groups, changing calculation methods like sum to average, and formatting pivot table layouts.",
+   "topics_covered": [
+    "pivot_basics",
+    "pivot_table_creation",
+    "rows_columns_values",
+    "filters",
+    "data_summarization",
+    "calculations_in_pivots",
+    "pivot_table_refresh",
+    "tabular_layout"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "pivot table एक बहुत ही powerful tool है जो कि excel में होता है और ये help करता है आपको data calculate करने में"
+    },
+    {
+     "id": "q2",
+     "t": 180,
+     "text": "आपको जिस भी column के ऊपर calculation करना हो, उसको आप उठा के डाल दो values में"
+    },
+    {
+     "id": "q3",
+     "t": 325,
+     "text": "जेंडर को उठा के मैं column में डाल दूं तो आप देखो कैसा आएगा। female का ऐसा आया, male का values ऐसा आया"
+    },
+    {
+     "id": "q4",
+     "t": 840,
+     "text": "जैसे ही आप refresh करोगे रिफ्रेश ऑल कर देता हूं, अब देखो यहां पे 240 से 258 स्कोर हो गया"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 93,
+     "topic": "Introduction and what pivot tables are used for"
+    },
+    {
+     "start_s": 93,
+     "end_s": 502,
+     "topic": "Use case: analyzing test scores by gender"
+    },
+    {
+     "start_s": 502,
+     "end_s": 1754,
+     "topic": "Creating a pivot table: selecting data, choosing rows/columns/values/filters"
+    },
+    {
+     "start_s": 1754,
+     "end_s": 2142,
+     "topic": "Advanced formatting: tabular layout, hiding subtotals and grand totals"
+    },
+    {
+     "start_s": 2142,
+     "end_s": 2520,
+     "topic": "Drilling down into data and refreshing pivot tables after source data changes"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "lCoPTPsTJ4s",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "_JtEWpUJPVY": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to build an interactive sales dashboard in Excel using pivot tables, KPI cards, and charts. It demonstrates creating multiple pivot table reports, formatting them, and connecting them with slicers for filtering by product, region, and date.",
+   "topics_covered": [
+    "pivot tables",
+    "pivot charts",
+    "slicers",
+    "kpi cards",
+    "dashboard layout",
+    "data formatting",
+    "chart customization"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Interactive monthly sales dashboard with KPI cards (total revenue, units sold, orders), product-wise performance chart, region-wise performance chart, month-wise revenue trend chart, and connected slicers for product, region, and date filtering",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 21,
+     "text": "एक्सेल के अंदर एक मिनी सेल्स डाटा डैशबोर्ड बनाने सिखाने जा रहा हूं वो भी एकदम सिंपल और बिगिनर फ्रेंडली मेथड के साथ"
+    },
+    {
+     "id": "q2",
+     "t": 206,
+     "text": "पिवोट टेबल से रिलेटेड जो भी लेक्चर है मैंने उनको लिंक डिस्क्रिप्शन में डाल दिया है"
+    },
+    {
+     "id": "q3",
+     "t": 438,
+     "text": "अब हम इन रिपोर्ट्स की हेल्प से हम बनाएंगे डैशबोर्ड इन सभी रिपोर्ट्स की हेल्प से अब हम डैशबोर्ड बनाने जा रहे हैं"
+    },
+    {
+     "id": "q4",
+     "t": 2000,
+     "text": "किसी भी आपको चार्ट पर सेलेक्ट करने के बाद एनालाइज वाले ऑप्शन पे जाएंगे और यहां इंसर्ट स्लाइसर पे जाएंगे"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 210,
+     "topic": "Introduction and dashboard overview showing final result"
+    },
+    {
+     "start_s": 210,
+     "end_s": 420,
+     "topic": "Creating pivot tables from sales data"
+    },
+    {
+     "start_s": 420,
+     "end_s": 630,
+     "topic": "Building multiple pivot reports for different metrics"
+    },
+    {
+     "start_s": 630,
+     "end_s": 1000,
+     "topic": "Creating dashboard sheet and designing KPI cards with formulas"
+    },
+    {
+     "start_s": 1000,
+     "end_s": 1350,
+     "topic": "Adding and formatting charts for product-wise and region-wise performance"
+    },
+    {
+     "start_s": 1350,
+     "end_s": 1650,
+     "topic": "Creating month-wise sales trend charts"
+    },
+    {
+     "start_s": 1650,
+     "end_s": 1850,
+     "topic": "Inserting and connecting slicers for interactivity"
+    },
+    {
+     "start_s": 1850,
+     "end_s": 1364,
+     "topic": "Testing dashboard with slicer filters and final results"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "_JtEWpUJPVY",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "hxAkt7Pico0": {
+   "spoken_language": "hi",
+   "summary": "This video teaches pivot table fundamentals in Hindi for Excel beginners. It covers how to create pivot tables from raw sales data, configure rows/columns/values/filters fields, and generate summary reports showing sales by department, salesman, and state. It also demonstrates pivot charts for graphical visualization and slicers for interactive filtering.",
+   "topics_covered": [
+    "pivot table basics",
+    "pivot table fields",
+    "rows columns values filters",
+    "pivot charts",
+    "slicers",
+    "filtering and grouping",
+    "data summarization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel",
+    "WPS Office"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 146,
+     "text": "Pivot Table Excel का एक इंपॉर्टेंट टूल है जिसकी मदद से आप बड़े से बड़े डेटा को बड़ी आसानी से समराइज कर सकते हो"
+    },
+    {
+     "id": "q2",
+     "t": 422,
+     "text": "ये रहा डिपार्टमेंट, इसको हमने सेलेक्ट किया और सेलेक्ट करके मैंने डाल दिया है रो वाली फील्ड में"
+    },
+    {
+     "id": "q3",
+     "t": 1612,
+     "text": "सो स्लाइसर कैसे अप्लाई करते हैं? सबसे पहले तो आप एनालाइज टैब में जाओगे और फिल्टर के सेक्शन में स्लाइसर का ऑप्शन मिलता है"
+    },
+    {
+     "id": "q4",
+     "t": 1935,
+     "text": "कई बार क्या होता है जब आप डेटा का रिपोर्ट रेडी करते हो तो उस डेटा को हमें ग्राफिकल व्यू में भी सीनियर या सुपरवाइजर को भेजना पड़ता है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 180,
+     "topic": "Introduction to pivot tables and their importance"
+    },
+    {
+     "start_s": 180,
+     "end_s": 420,
+     "topic": "Data preparation and setup for pivot tables"
+    },
+    {
+     "start_s": 420,
+     "end_s": 900,
+     "topic": "Creating pivot tables and using fields (rows, columns, values)"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1200,
+     "topic": "Understanding filter field and field placement options"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1600,
+     "topic": "Practical examples with departments and states filtering"
+    },
+    {
+     "start_s": 1600,
+     "end_s": 2000,
+     "topic": "Report layout customization and formatting"
+    },
+    {
+     "start_s": 2000,
+     "end_s": 2100,
+     "topic": "Percentage calculations in pivot tables"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2200,
+     "topic": "Handling blank cells in pivot tables"
+    },
+    {
+     "start_s": 2200,
+     "end_s": 2300,
+     "topic": "Tabular report layout"
+    },
+    {
+     "start_s": 2300,
+     "end_s": 2400,
+     "topic": "Pivot charts for graphical visualization"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2350,
+     "topic": "Slicers and interactive filtering"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hxAkt7Pico0",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "RdA04dRgF44": {
+   "spoken_language": "hi",
+   "summary": "This video teaches XLOOKUP function as a superior alternative to VLOOKUP in Excel. It demonstrates how XLOOKUP handles column insertions without breaking formulas, provides built-in error handling with if_not_found parameter, and can return multiple columns at once. The video also shows how to use XLOOKUP to sum sales by date.",
+   "topics_covered": [
+    "xlookup function",
+    "lookup functions",
+    "returning multiple columns",
+    "error handling",
+    "vlookup comparison",
+    "summing with conditions"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel 2019",
+    "Office 365"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 21,
+     "text": "XLOOKUP से भी ज्यादा effective और ज्यादा आसान है यह function जो कि है XLOOKUP"
+    },
+    {
+     "id": "q2",
+     "t": 510,
+     "text": "अगर आप XLOOKUP करते हो तो ये जो दोनों दिक्कत है एक insert वाली और ये है दोनों ही दिक्कत आपको नहीं मिलेगी"
+    },
+    {
+     "id": "q3",
+     "t": 795,
+     "text": "XLOOKUP के साथ आपकी सारी complexity हट जाती है इसीलिए XLOOKUP बहुत ज्यादा important है"
+    },
+    {
+     "id": "q4",
+     "t": 1512,
+     "text": "दो तारीख की total sell यहां पे क्या आ गई 16500 जो कि यहां दिख रहा है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 342,
+     "topic": "Introduction and VLOOKUP limitations"
+    },
+    {
+     "start_s": 342,
+     "end_s": 570,
+     "topic": "Basic XLOOKUP syntax and advantages over VLOOKUP"
+    },
+    {
+     "start_s": 570,
+     "end_s": 840,
+     "topic": "Error handling with if_not_found parameter"
+    },
+    {
+     "start_s": 840,
+     "end_s": 1320,
+     "topic": "Returning multiple columns with XLOOKUP"
+    },
+    {
+     "start_s": 1320,
+     "end_s": 1560,
+     "topic": "Summing values by date using XLOOKUP"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "RdA04dRgF44",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "oKdBEjcgzyw": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to build an interactive sales dashboard in Excel using pivot tables, slicers, and charts without VBA. The instructor demonstrates creating multiple pivot tables from sales data, formatting them as percentages, adding slicers for filtering by region and item, and building visual elements like donut and bar charts that respond dynamically to slicer selections.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_table_formatting",
+    "slicers",
+    "chart_creation",
+    "dashboard_layout",
+    "data_visualization",
+    "interactive_filtering"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "An interactive sales dashboard showing regional sales distribution by percentage with donut charts, a seller performance bar chart, and dynamic slicers for filtering by region and product item",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 40,
+     "text": "do pivot table insert karni hongi. Toh maine data mein kahin bhi click kar liya, click karne ke baad, hum jayenge insert tab pe."
+    },
+    {
+     "id": "q2",
+     "t": 110,
+     "text": "Ye percentage mein dikh jayegi ki east mein kitne percent sale hui, north mein kitne percent sale hui, south mein kitne percent, west mein kitne percent"
+    },
+    {
+     "id": "q3",
+     "t": 206,
+     "text": "Slicer pe maine click kiya, yahan pe do slicer aapko add karne honge, ek seller ke name se aur yahan pe dusra region, item ke name se"
+    },
+    {
+     "id": "q4",
+     "t": 1179,
+     "text": "Yahan pe main CPU pe click kar raha hoon toh yahan pe bhi aapko kaun se seller ne kitne percent sale ki hai, East North South West mein kitni kitni sale hui hai"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 102,
+     "topic": "Introduction and creating pivot tables from sales data"
+    },
+    {
+     "start_s": 102,
+     "end_s": 326,
+     "topic": "Configuring pivot tables with regions and sales percentages"
+    },
+    {
+     "start_s": 326,
+     "end_s": 543,
+     "topic": "Adding and positioning slicers for region and item filtering"
+    },
+    {
+     "start_s": 543,
+     "end_s": 1113,
+     "topic": "Creating donut and bar charts, formatting chart elements, adding data shapes"
+    },
+    {
+     "start_s": 1113,
+     "end_s": 1339,
+     "topic": "Connecting slicers to pivot tables and final dashboard testing"
+    },
+    {
+     "start_s": 1339,
+     "end_s": 1362,
+     "topic": "Fixing percentage display issues and conclusion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "oKdBEjcgzyw",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "4A6hjD-61gM": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create and use pivot tables in Excel to summarize and analyze sales data by department, person, and year. It demonstrates inserting a pivot table from the Insert menu, dragging fields to rows/columns/values areas, refreshing data when source records change, and adding interactive slicers to filter the pivot table by department.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_table_creation",
+    "rows_columns_values",
+    "data_summarization",
+    "slicers",
+    "refresh_data",
+    "change_data_source"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel 2007",
+    "excel 2010",
+    "excel 2013",
+    "excel 2016"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 153,
+     "text": "पिवट टेबल की हेल्प से हम बड़े डाटा को समराइज कर सकते हैं और डाटा को दिखा सकते हैं"
+    },
+    {
+     "id": "q2",
+     "t": 133,
+     "text": "आप अपना टेबल के अंदर कहीं भी क्लिक कर लीजिए जो रिकॉर्ड आपका है और पिवट टेबल पे क्लिक कीजिए"
+    },
+    {
+     "id": "q3",
+     "t": 1101,
+     "text": "स्लाइसर की हेल्प से हम डाटा को आसानी से ड्रॉप डाउन लिस्ट क्रिएट होगी एक उस पे क्लिक करने से हम डाटा को आसानी से देख सकते हैं"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 1,
+     "end_s": 252,
+     "topic": "Introduction to pivot tables and business use cases"
+    },
+    {
+     "start_s": 252,
+     "end_s": 371,
+     "topic": "Accessing pivot table feature via Insert menu"
+    },
+    {
+     "start_s": 371,
+     "end_s": 768,
+     "topic": "Creating pivot tables: selecting data range and worksheet location"
+    },
+    {
+     "start_s": 768,
+     "end_s": 1008,
+     "topic": "Dragging fields to rows, columns, and values; grouping by person and sales years"
+    },
+    {
+     "start_s": 1008,
+     "end_s": 1248,
+     "topic": "Grouping by department and showing sales totals and employee counts"
+    },
+    {
+     "start_s": 1248,
+     "end_s": 1431,
+     "topic": "Adding and removing fields; displaying department-wise sales breakdown"
+    },
+    {
+     "start_s": 1431,
+     "end_s": 1587,
+     "topic": "Refreshing pivot table when source data changes"
+    },
+    {
+     "start_s": 1587,
+     "end_s": 1851,
+     "topic": "Adding new columns to source data and updating pivot table range"
+    },
+    {
+     "start_s": 1851,
+     "end_s": 1287,
+     "topic": "Inserting slicers to filter pivot table data interactively by department"
+    },
+    {
+     "start_s": 1287,
+     "end_s": 1449,
+     "topic": "Clearing and deleting pivot table data and structure"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "4A6hjD-61gM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q2",
+    "q3"
+   ]
+  },
+  "d9yXBRbNuho": {
+   "spoken_language": "hi",
+   "summary": "This video teaches VLOOKUP, HLOOKUP, and XLOOKUP functions with practical examples of looking up employee data by name to retrieve salary, designation, and department information. The instructor explains the conceptual differences between vertical and horizontal lookups and demonstrates how each function works with a sample dataset.",
+   "topics_covered": [
+    "vlookup",
+    "hlookup",
+    "xlookup",
+    "lookup_value",
+    "table_array",
+    "column_index_number",
+    "exact_match"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 47,
+     "text": "Lookup basically means see and tell me what will be the answer from the data"
+    },
+    {
+     "id": "q2",
+     "t": 104,
+     "text": "When you say V that means Vertical and when you say H that means Horizontal"
+    },
+    {
+     "id": "q3",
+     "t": 125,
+     "text": "XLOOKUP works like a parent. It checks vertically as well as horizontally like VLOOKUP and gives you the complete answer"
+    },
+    {
+     "id": "q4",
+     "t": 228,
+     "text": "Lookup Value is that which you want the answer according to the name tell me salary tell me designation tell me department"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 25,
+     "topic": "introduction to lookup functions"
+    },
+    {
+     "start_s": 25,
+     "end_s": 205,
+     "topic": "explanation of VLOOKUP, HLOOKUP, and XLOOKUP concepts"
+    },
+    {
+     "start_s": 205,
+     "end_s": 320,
+     "topic": "understanding rows, columns, and lookup terminology"
+    },
+    {
+     "start_s": 320,
+     "end_s": 552,
+     "topic": "detailed explanation of lookup parameters and syntax"
+    },
+    {
+     "start_s": 552,
+     "end_s": 927,
+     "topic": "demonstration of VLOOKUP with data limitations and array selection"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "d9yXBRbNuho",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "sM2mdBu0Owc": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create slicers in Excel pivot tables, which are user-friendly filter buttons that allow you to interactively filter data by specific columns like Name or Region. It demonstrates adding slicers to pivot tables, customizing their appearance and size, connecting one slicer to multiple pivot tables, and organizing slicers on a dashboard using alignment and layering tools.",
+   "topics_covered": [
+    "pivot tables basics",
+    "slicers",
+    "pivot table filtering",
+    "slicer customization",
+    "slicer alignment",
+    "multiple pivot tables"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 22,
+     "text": "I want to paste in this sheet in this cell number. I'll click on okay."
+    },
+    {
+     "id": "q2",
+     "t": 125,
+     "text": "Keep your cursor in the data and you can go to analyze tab and you can see this option that is insert slicer."
+    },
+    {
+     "id": "q3",
+     "t": 204,
+     "text": "If I click here, the John is selected. If I click here Rita, you see the Rita name is selected."
+    },
+    {
+     "id": "q4",
+     "t": 302,
+     "text": "If you want to find out Rita in East region, if you want Joseph in South region, so this way you can get the answer."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 100,
+     "topic": "Creating pivot table and adding fields"
+    },
+    {
+     "start_s": 100,
+     "end_s": 227,
+     "topic": "Using filter dropdowns in pivot tables"
+    },
+    {
+     "start_s": 227,
+     "end_s": 427,
+     "topic": "Inserting slicers and single-selection filtering"
+    },
+    {
+     "start_s": 427,
+     "end_s": 644,
+     "topic": "Multi-select filtering and multiple slicers"
+    },
+    {
+     "start_s": 644,
+     "end_s": 847,
+     "topic": "Customizing slicer size, height, width and styling"
+    },
+    {
+     "start_s": 847,
+     "end_s": 1008,
+     "topic": "Connecting one slicer to multiple pivot tables"
+    },
+    {
+     "start_s": 1008,
+     "end_s": 1154,
+     "topic": "Renaming slicers, alignment and selection pane"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "sM2mdBu0Owc",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "NbaiGbn4khs": {
+   "spoken_language": "hi",
+   "summary": "A step-by-step tutorial on creating and using pivot tables in Microsoft Excel. The video demonstrates how to set up a pivot table from sample sales data (employee names, items, quantity, rate, amount), configure fields into Filters, Columns, Rows, and Values sections, and use the filter button to analyze sales by product and employee.",
+   "topics_covered": [
+    "pivot_basics",
+    "pivot_fields",
+    "pivot_filters",
+    "data_analysis"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "too_basic_for_learner"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 22,
+     "text": "पिवट टेबल माइक्रोसॉफ्ट एक्सेल का एक बहुत ही इंपॉर्टेंट टूल है जिसको यूज करके आप बहुत सारे डेटा को इजीली बस कुछ ही समय में समराइज एंड एनालाइज कर सकते हो"
+    },
+    {
+     "id": "q2",
+     "t": 102,
+     "text": "इंसर्ट टैब में जाने के बाद यहां पे आपको सबसे फर्स्ट वाला जो ऑप्शन है यह है पिवट टेबल, यहां पे आपको क्लिक करना है"
+    },
+    {
+     "id": "q3",
+     "t": 124,
+     "text": "टेबल रेंज में आप अपने हिसाब से भी मैनुअली टेबल को सेलेक्ट कर सकते हो"
+    },
+    {
+     "id": "q4",
+     "t": 324,
+     "text": "राइट साइड में यहां पे आप देख सकते हो सारे कॉलम के नाम यहां पे आपको दिखाएगा और नीचे की तरफ यहां पे चार ऑप्शन आपको मिलेगा फिल्टर कॉलम्स रोज और वैल्यूज"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 22,
+     "topic": "Introduction and overview of pivot tables"
+    },
+    {
+     "start_s": 22,
+     "end_s": 102,
+     "topic": "Explanation of pivot table benefits and sample data setup"
+    },
+    {
+     "start_s": 102,
+     "end_s": 152,
+     "topic": "Inserting pivot table from Insert tab"
+    },
+    {
+     "start_s": 152,
+     "end_s": 204,
+     "topic": "Table range selection and worksheet options"
+    },
+    {
+     "start_s": 204,
+     "end_s": 324,
+     "topic": "Pivot table sheet opening and field overview"
+    },
+    {
+     "start_s": 324,
+     "end_s": 420,
+     "topic": "Dragging fields to Filters, Rows, and Values boxes"
+    },
+    {
+     "start_s": 420,
+     "end_s": 500,
+     "topic": "Using filter button to select and analyze items"
+    },
+    {
+     "start_s": 500,
+     "end_s": 317,
+     "topic": "Adding more fields (Amount) and filtering data"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "NbaiGbn4khs",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "hro6_y7R310": {
+   "spoken_language": "hi",
+   "summary": "This video introduces pivot tables in Excel, demonstrating how to create and configure pivot tables from sales data. The instructor shows how to arrange fields in rows, columns, values, and filters sections to generate reports by region, item, state, and city, with practical examples of summarizing quantities and amounts.",
+   "topics_covered": [
+    "pivot table creation",
+    "rows columns values filters",
+    "data summarization",
+    "grouping and filtering",
+    "pivot table layout",
+    "value field settings"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 70,
+     "text": "pivot table ek aisa tool hai jisski help se hum data ko summarize kar sakte hain, data ko analyze kar sakte hain"
+    },
+    {
+     "id": "q2",
+     "t": 152,
+     "text": "is data ki help se hum pivot table ko bahut acche se seekhne wale hain, ye ek company ka data hai"
+    },
+    {
+     "id": "q3",
+     "t": 580,
+     "text": "values mein jo hamari quantity amount jo numbers honge, wahi values mein hum rakhte hain kyonki calculation wagerah ussi pe karenege"
+    },
+    {
+     "id": "q4",
+     "t": 793,
+     "text": "aap jaise-jaise pivot table mein kaam karogey toh ye aapko samajh khud se ban jayegi mujhe kis option ko kahan rakhna hai"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction and data overview"
+    },
+    {
+     "start_s": 240,
+     "end_s": 480,
+     "topic": "Creating a pivot table from data range"
+    },
+    {
+     "start_s": 480,
+     "end_s": 720,
+     "topic": "Understanding rows, columns and values sections"
+    },
+    {
+     "start_s": 720,
+     "end_s": 960,
+     "topic": "Building region-wise quantity report"
+    },
+    {
+     "start_s": 960,
+     "end_s": 1200,
+     "topic": "Adding multiple values and switching layouts"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1440,
+     "topic": "Item-wise and region-wise analysis"
+    },
+    {
+     "start_s": 1440,
+     "end_s": 1680,
+     "topic": "Using filters for multi-level analysis"
+    },
+    {
+     "start_s": 1680,
+     "end_s": 1920,
+     "topic": "State and city grouping with drill-down"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hro6_y7R310",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "JOSh69tzivA": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates how to create and use slicers in Microsoft Excel to filter data by location. The instructor shows the complete process: converting data into a table, inserting a slicer on the Location column, adjusting its layout, and using single and multi-select filtering to display employee data for specific locations.",
+   "topics_covered": [
+    "slicers",
+    "excel tables",
+    "data filtering",
+    "multi-select filtering"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 48,
+     "text": "स्लाइसर को अप्लाई करने के लिए, सबसे पहले आपको इन डेटा को टेबल में कन्वर्ट कर लेना है"
+    },
+    {
+     "id": "q2",
+     "t": 102,
+     "text": "क्लिक करने के साथ ही यहां पे देखिए, वो सारे डेटा टेबल में कन्वर्ट हो चुका है"
+    },
+    {
+     "id": "q3",
+     "t": 124,
+     "text": "इंसर्ट स्लाइसर में जाके क्लिक करना है। क्लिक करने के साथ ही एक डायलॉग बॉक्स यहां पे ओपन हो जाएगा"
+    },
+    {
+     "id": "q4",
+     "t": 144,
+     "text": "क्लिक करने के साथ ही यहां पे देखिए, लोकेशन के ऊपर एक स्लाइसर यहां पे इंसर्ट हो चुका है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 48,
+     "topic": "introduction and overview of slicer concept"
+    },
+    {
+     "start_s": 48,
+     "end_s": 102,
+     "topic": "converting data to Excel table"
+    },
+    {
+     "start_s": 102,
+     "end_s": 204,
+     "topic": "inserting slicer on location column"
+    },
+    {
+     "start_s": 204,
+     "end_s": 324,
+     "topic": "adjusting slicer layout and formatting"
+    },
+    {
+     "start_s": 324,
+     "end_s": 415,
+     "topic": "single and multi-select filtering demonstration"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "JOSh69tzivA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "1Sg1KaRwQzg": {
+   "spoken_language": "hi",
+   "summary": "This video teaches XLOOKUP function in Excel with 10 practical examples. XLOOKUP is shown as a powerful modern alternative to VLOOKUP that can search in any direction (left-to-right or right-to-left), handle multiple lookup values, and automatically adjust when columns are inserted or deleted. The video demonstrates various real-world scenarios including single lookups, multiple column returns using CHOOSE, nested XLOOKUP with multiple criteria, combining XLOOKUP with SUM and TRANSPOSE, and comparing XLOOKUP advantages over VLOOKUP.",
+   "topics_covered": [
+    "xlookup",
+    "lookup_functions",
+    "vlookup_comparison",
+    "nested_formulas",
+    "choose_function",
+    "transpose",
+    "multiple_criteria",
+    "array_formulas"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 229,
+     "text": "XLOOKUP फार्मूला लेफ्ट टू राइट, राइट टू लेफ्ट सब तरीके से चलता है"
+    },
+    {
+     "id": "q2",
+     "t": 2106,
+     "text": "XLOOKUP फॉर्मूला जो रेंज हमने दी है ये ऑटोमेटिक रेंज को सेट कर लेता है"
+    },
+    {
+     "id": "q3",
+     "t": 102,
+     "text": "इस सेल में हमें करना क्या है इस HSN कोड को यहां पे मैच करवाना है"
+    },
+    {
+     "id": "q4",
+     "t": 921,
+     "text": "अगर यहां पे तीन लुकअप वैल्यू होती तो एंड का साइन लगा के तीनों एक साथ दे देते"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 270,
+     "topic": "XLOOKUP basics - single lookup value, lookup array, return array parameters"
+    },
+    {
+     "start_s": 270,
+     "end_s": 540,
+     "topic": "XLOOKUP for left-to-right lookup (reversing VLOOKUP limitations)"
+    },
+    {
+     "start_s": 540,
+     "end_s": 810,
+     "topic": "Using CHOOSE function to combine non-contiguous columns in XLOOKUP"
+    },
+    {
+     "start_s": 810,
+     "end_s": 1080,
+     "topic": "Multiple lookup values with XLOOKUP and CHOOSE"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 1350,
+     "topic": "Nested XLOOKUP with multiple criteria and TRANSPOSE function"
+    },
+    {
+     "start_s": 1350,
+     "end_s": 1620,
+     "topic": "Combining XLOOKUP with SUM, MAX, MIN, AVERAGE functions"
+    },
+    {
+     "start_s": 1620,
+     "end_s": 1800,
+     "topic": "Complex example with three lookup values matching simultaneously"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 1920,
+     "topic": "Horizontal lookup with non-sequential month data"
+    },
+    {
+     "start_s": 1920,
+     "end_s": 2100,
+     "topic": "VLOOKUP vs XLOOKUP comparison and advantages of XLOOKUP"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "1Sg1KaRwQzg",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "E48tn7LcxFU": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates how to build a complete sales dashboard in Excel for a supermarket with multiple revenue streams (online, cash, wholesale). The instructor walks through creating pivot tables to summarize sales data by month, product, category, and payment mode, then builds interactive charts and visualizations that automatically update when filters are applied.",
+   "topics_covered": [
+    "pivot tables",
+    "pivot charts",
+    "slicers and filters",
+    "text formulas for date extraction",
+    "index/offset functions",
+    "dashboard layout",
+    "data visualization",
+    "profit calculations"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Monthly sales dashboard with multiple visualizations (charts for sales by month, product categories, payment modes, top products) and interactive year/month filters",
+   "tools_and_versions": [
+    "Excel",
+    "pivot tables",
+    "column charts",
+    "slicers"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 21,
+     "text": "अगर मैं 2021 पर क्लिक करूंगा तो सारे ग्राफ ऑटोमेटिक इसी के अकॉर्डिंग चेंज होंगे"
+    },
+    {
+     "id": "q2",
+     "t": 619,
+     "text": "यहां पे हम क्या करेंगे डे को ले लेंगे रो सेक्शन में ठीक है"
+    },
+    {
+     "id": "q3",
+     "t": 864,
+     "text": "टोटल सेल के लिए हम क्या करेंगे इक्वल टू इसको प्रेस करेंगे"
+    },
+    {
+     "id": "q4",
+     "t": 1448,
+     "text": "प्रोडक्ट नेम आ गया यानी जो हमारा टॉप प्रोडक्ट है उसकी रैंकिंग यहां पे आ गई"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 300,
+     "topic": "Dashboard overview and features demonstration"
+    },
+    {
+     "start_s": 300,
+     "end_s": 630,
+     "topic": "Data preparation and date extraction using TEXT formulas"
+    },
+    {
+     "start_s": 630,
+     "end_s": 1000,
+     "topic": "Creating pivot table with rows, columns and values"
+    },
+    {
+     "start_s": 1000,
+     "end_s": 1300,
+     "topic": "Calculating totals, profit and profit percentage"
+    },
+    {
+     "start_s": 1300,
+     "end_s": 1500,
+     "topic": "Building column charts and formatting visualizations"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1800,
+     "topic": "Using INDEX/MATCH and OFFSET functions for top products"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2100,
+     "topic": "Creating product grouping by 10-unit batches"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2400,
+     "topic": "Building pie charts and final dashboard layout"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "E48tn7LcxFU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "gAY9is-ahQY": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to apply VLOOKUP and XLOOKUP formulas on large datasets in Excel. It demonstrates both manual and automated approaches, including using the MATCH function to dynamically determine column numbers and Named Ranges to simplify formula references.",
+   "topics_covered": [
+    "vlookup",
+    "xlookup",
+    "match function",
+    "named ranges",
+    "formula syntax",
+    "column index",
+    "lookup arrays"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "अगर आपके पास एक लार्ज डाटा है तो उस पर आप VLOOKUP या XLOOKUP कैसे अप्लाई करेंगे"
+    },
+    {
+     "id": "q2",
+     "t": 207,
+     "text": "जो चीज मैं यहां पर गिन के मैनुअली लिख रहा हूं यह यहां पर फॉर्मूले की मदद से भी आ सकता है"
+    },
+    {
+     "id": "q3",
+     "t": 41,
+     "text": "हमें क्या लिखना है यहां पर लुकअप अरे यानी कि एक अरे हम डालेंगे यहां पर जिसका डाटा हम ढूंढ रहे हैं"
+    },
+    {
+     "id": "q4",
+     "t": 41,
+     "text": "लास्ट डाटा पर आप VLOOKUP या XLOOKUP कैसे अप्लाई करेंगे वो आपको क्लियर हुआ हो"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 41,
+     "topic": "Introduction and video purpose"
+    },
+    {
+     "start_s": 41,
+     "end_s": 207,
+     "topic": "VLOOKUP syntax and manual application with employee data"
+    },
+    {
+     "start_s": 207,
+     "end_s": 350,
+     "topic": "Using Named Ranges to simplify data references"
+    },
+    {
+     "start_s": 350,
+     "end_s": 500,
+     "topic": "Automating column numbers with MATCH function"
+    },
+    {
+     "start_s": 500,
+     "end_s": 640,
+     "topic": "Introduction to XLOOKUP and its advantages"
+    },
+    {
+     "start_s": 640,
+     "end_s": 759,
+     "topic": "XLOOKUP application and formula automation across columns"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "gAY9is-ahQY",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "P-qvfgioBxM": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates creating a fully automated sales dashboard in Microsoft Excel using the Excel Booster tool, a third-party add-in. The creator builds KPIs, charts, slicers, and interactive filters in minutes without manual formatting, showcasing how the tool generates area charts, bar charts, pie charts, and comparison metrics automatically from sales data.",
+   "topics_covered": [
+    "excel booster addon",
+    "dashboard creation",
+    "kpi creation",
+    "pivot charts",
+    "slicers",
+    "chart types",
+    "data aggregation",
+    "theme customization"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A fully automated sales dashboard with KPIs (Total Net Sales, Total Gross Sales, Total Profit, Total Orders, Unique Customers, Total Quantity), charts (Month-wise Net Sales area chart, Top 5 states bar chart, Sales by Payment Mode pie chart, Net vs Gross Sales comparison), and interactive slicers (Zone, Category, Order Status, Sale Channel, Region)",
+   "tools_and_versions": [
+    "Excel Booster",
+    "Power Pivot"
+   ],
+   "red_flags": [
+    "pure_theory",
+    "wrong_language"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 199,
+     "text": "Ye dashboard banaya hai maine sirf 5 minute mein. Kaise agar aap janne ke liye interested ho toh ye video end tak dekhiye."
+    },
+    {
+     "id": "q2",
+     "t": 502,
+     "text": "Sabse pehle main KPIs add karna chahta hun. Toh maine yaha pe Total Net Sales type kar diya. Uske baad main column drop down se lunga Net Sales."
+    },
+    {
+     "id": "q3",
+     "t": 657,
+     "text": "X-axis mein main Order Date type karunga. Aur date hierarchy mein main yaha pe drop down se month select kar lunga."
+    },
+    {
+     "id": "q4",
+     "t": 932,
+     "text": "Mujhe region wise slicer chahiye toh main drop down mein jaunga aur jo bhi slicer chahiye aap us column ko bas select kar lo."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Dashboard showcase and capabilities - theme switching, PDF and PPT export, interactive slicers"
+    },
+    {
+     "start_s": 240,
+     "end_s": 420,
+     "topic": "Introduction to data and Excel Booster tool"
+    },
+    {
+     "start_s": 420,
+     "end_s": 660,
+     "topic": "Creating KPIs (Total Net Sales, Total Gross Sales, Total Profit, Total Orders)"
+    },
+    {
+     "start_s": 660,
+     "end_s": 840,
+     "topic": "Building charts - Month Wise Net Sales area chart"
+    },
+    {
+     "start_s": 840,
+     "end_s": 1020,
+     "topic": "Creating additional charts - Top 5 states and Sales by Payment Mode pie chart"
+    },
+    {
+     "start_s": 1020,
+     "end_s": 1200,
+     "topic": "Comparison metrics and adding slicers for regional filtering"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1440,
+     "topic": "Adding more KPIs (Unique Customers, Total Quantity) and aligning dashboard elements"
+    },
+    {
+     "start_s": 1440,
+     "end_s": 1640,
+     "topic": "Theme customization and multi-table Power Dashboard capabilities"
+    },
+    {
+     "start_s": 1640,
+     "end_s": 1800,
+     "topic": "Excel Booster tool features, pricing, and 4-hour masterclass promotion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "P-qvfgioBxM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "0WPwWvpFtq8": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates how to use the XLOOKUP function in Microsoft Excel to automatically pull employee information (name, designation, date of join, salary) based on an employee ID lookup. The instructor sets up a data table with employee details, creates a dropdown list for employee ID selection, and then applies the XLOOKUP formula to retrieve matching records.",
+   "topics_covered": [
+    "xlookup",
+    "lookup functions",
+    "data tables",
+    "data validation",
+    "dropdown lists",
+    "employee data lookup"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Employee information lookup system using XLOOKUP formula with dropdown selection",
+   "tools_and_versions": [
+    "Microsoft Excel",
+    "XLOOKUP function"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 20,
+     "text": "Employee ID, Employee Name, Designation, Date of Join and Salary"
+    },
+    {
+     "id": "q2",
+     "t": 206,
+     "text": "Equal XLOOKUP. Bracket open. First you need to give lookup value"
+    },
+    {
+     "id": "q3",
+     "t": 286,
+     "text": "Lookup array me aapko table me se Employee ID ke pure data ko select kar dena hai"
+    },
+    {
+     "id": "q4",
+     "t": 324,
+     "text": "Return array me aapko table me se baaki sare data matlab ke Name se ekdum Salary tak pura data select karna hoga"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 49,
+     "topic": "Introduction and table setup with employee data"
+    },
+    {
+     "start_s": 49,
+     "end_s": 206,
+     "topic": "Creating dropdown list using Data Validation"
+    },
+    {
+     "start_s": 206,
+     "end_s": 324,
+     "topic": "Applying XLOOKUP formula with lookup value and arrays"
+    },
+    {
+     "start_s": 324,
+     "end_s": 329,
+     "topic": "Formula execution and result verification"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "0WPwWvpFtq8",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "5TNgfg-7RKE": {
+   "spoken_language": "hi",
+   "summary": "This tutorial demonstrates how to create a complete sales dashboard in Excel using pivot tables, pivot charts, and slicers. The instructor shows how to transform raw sales data (with month, salesman name, sales amount, and zone) into a summarized report with interactive filters by month and zone.",
+   "topics_covered": [
+    "pivot_table_creation",
+    "pivot_chart_creation",
+    "slicer_setup",
+    "interactive_filtering",
+    "data_summarization",
+    "chart_formatting"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Sales dashboard with pivot table, pivot chart, and interactive slicers filtering by month and zone",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 51,
+     "text": "यहां पे क्या-क्या डाटा में है, मंथ है, सेल्समैन का नाम दिया हुआ है, यहां पे सेल कितना है"
+    },
+    {
+     "id": "q2",
+     "t": 51,
+     "text": "इंसर्ट में जाएंगे और इंसर्ट में जाने के बाद क्या करेंगे, यहां पे पावट टेबल है"
+    },
+    {
+     "id": "q3",
+     "t": 95,
+     "text": "अब इस सेल्समैन का जो है, कितना सेल किया है, वह यहां पे अमाउंट चाहिए"
+    },
+    {
+     "id": "q4",
+     "t": 290,
+     "text": "जनवरी पे क्लिक करता हूं, देखिए सभी डाटा जनवरी के अनुसार जो है यहां पे फिल्टर हो चुका है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 51,
+     "topic": "Introduction and raw data overview"
+    },
+    {
+     "start_s": 51,
+     "end_s": 112,
+     "topic": "Creating a pivot table from raw data"
+    },
+    {
+     "start_s": 112,
+     "end_s": 202,
+     "topic": "Configuring pivot table fields (month, salesman, sales)"
+    },
+    {
+     "start_s": 202,
+     "end_s": 322,
+     "topic": "Creating and formatting pivot charts"
+    },
+    {
+     "start_s": 322,
+     "end_s": 355,
+     "topic": "Adding and configuring slicers for month and zone"
+    },
+    {
+     "start_s": 355,
+     "end_s": 541,
+     "topic": "Interactive filtering with slicers and chart updates"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 2
+    }
+   ],
+   "video_id": "5TNgfg-7RKE",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "W3tM8BVhsuo": {
+   "spoken_language": "hi",
+   "summary": "A comprehensive Hindi tutorial on creating and using pivot tables in Excel from beginner to advanced level. The instructor teaches how to set up pivot tables, arrange fields in rows/columns/values, apply functions, filter data, customize layouts, and create pivot charts for data analysis.",
+   "topics_covered": [
+    "pivot table creation",
+    "rows columns values",
+    "field arrangement",
+    "filtering and slicing",
+    "pivot table functions",
+    "pivot charts",
+    "data summarization",
+    "grouping data"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "MS Excel"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 42,
+     "text": "पिवोट टेबल का यूज़ किया जाता है अपने डेटा को समराइज करने के लिए एनालाइज करने के लिए।"
+    },
+    {
+     "id": "q2",
+     "t": 102,
+     "text": "अब इन सारी चीजों का एक सॉल्यूशन होता है पिवोट टेबल जिसमें आपको ये सारे सवालों के जवाब मिल जाते हैं।"
+    },
+    {
+     "id": "q3",
+     "t": 1243,
+     "text": "अल्फाबेट्स वाला सारा डेटा रोज साइड और न्यूमेरिकल वाला डेटा वैल्यूज के साइड।"
+    },
+    {
+     "id": "q4",
+     "t": 801,
+     "text": "ईस्ट के सारे आइटम नॉर्थ के सारे आइटम साउथ के सारे आइटम वेस्ट के सारे आइटम।"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 180,
+     "topic": "Introduction to pivot tables and their purpose"
+    },
+    {
+     "start_s": 180,
+     "end_s": 240,
+     "topic": "Basic setup: selecting data and creating pivot table"
+    },
+    {
+     "start_s": 240,
+     "end_s": 480,
+     "topic": "Choosing location and managing pivot table placement"
+    },
+    {
+     "start_s": 480,
+     "end_s": 1000,
+     "topic": "Understanding rows, columns, and values fields"
+    },
+    {
+     "start_s": 1000,
+     "end_s": 1400,
+     "topic": "Arranging fields for better data display"
+    },
+    {
+     "start_s": 1400,
+     "end_s": 1600,
+     "topic": "Applying functions and value field settings"
+    },
+    {
+     "start_s": 1600,
+     "end_s": 1800,
+     "topic": "Report layout options and formatting"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2100,
+     "topic": "Pivot Table Analyze tab and naming"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2400,
+     "topic": "Filtering data and managing field placement"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2600,
+     "topic": "Refreshing data and changing data sources"
+    },
+    {
+     "start_s": 2600,
+     "end_s": 1859,
+     "topic": "Creating pivot charts and advanced options"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "W3tM8BVhsuo",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "hmygrQMcHyU": {
+   "spoken_language": "hi",
+   "summary": "A detailed beginner-friendly tutorial on VLOOKUP in Hindi, teaching how to search for names in a large dataset and automatically pull corresponding city names and sales amounts using the VLOOKUP formula with four parameters: lookup value, table array, column index number, and range lookup.",
+   "topics_covered": [
+    "vlookup",
+    "lookup functions",
+    "data retrieval",
+    "formula structure"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 44,
+     "text": "अब मान लीजिए आपके पास एक बहुत बड़ा डाटा है जैसे कि यहां पर हमने कुछ एंट्री ली है"
+    },
+    {
+     "id": "q2",
+     "t": 205,
+     "text": "इक्वल टू Vlookup, lookup वैल्यू, अब ये कह रहा है कि क्या ढूंढना है"
+    },
+    {
+     "id": "q3",
+     "t": 228,
+     "text": "कॉलम इंडेक्स नंबर अगर यह नाम जो हमने ढूंढना है वो इस लिस्ट में मिल जाए"
+    },
+    {
+     "id": "q4",
+     "t": 361,
+     "text": "बड़ा डाटा अगर हमारे पास है और उसमें से छोटा डाटा की बेस पर हमें वैल्यू निकालनी है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 20,
+     "topic": "Introduction and video purpose"
+    },
+    {
+     "start_s": 20,
+     "end_s": 44,
+     "topic": "Sample data structure explanation (names, cities, sales)"
+    },
+    {
+     "start_s": 44,
+     "end_s": 142,
+     "topic": "Use case for VLOOKUP with large datasets"
+    },
+    {
+     "start_s": 142,
+     "end_s": 223,
+     "topic": "Setting up the lookup example with sample names"
+    },
+    {
+     "start_s": 223,
+     "end_s": 437,
+     "topic": "VLOOKUP formula breakdown: syntax and parameters"
+    },
+    {
+     "start_s": 437,
+     "end_s": 518,
+     "topic": "VLOOKUP formula execution and dragging results"
+    },
+    {
+     "start_s": 518,
+     "end_s": 621,
+     "topic": "Complete example walkthrough and column index explanation"
+    },
+    {
+     "start_s": 621,
+     "end_s": 429,
+     "topic": "Scaling to multiple columns and course promotion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hmygrQMcHyU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "rjuO8OGYDsk": {
+   "spoken_language": "hi",
+   "summary": "A comprehensive masterclass on Excel's XLOOKUP function, covering all six arguments (lookup value, lookup array, return array, if not found, match mode, search mode) with practical examples. The tutorial demonstrates how to use XLOOKUP for data retrieval from multiple tables, error handling with IF NOT FOUND, and advanced scenarios like combining INDEX and MATCH for dynamic column lookups.",
+   "topics_covered": [
+    "xlookup formula",
+    "xlookup arguments",
+    "lookup value",
+    "lookup array",
+    "return array",
+    "if not found",
+    "match mode",
+    "search mode",
+    "index match combination",
+    "dynamic lookups",
+    "error handling"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel",
+    "Office 365"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 25,
+     "text": "XLOOKUP function in excel is used to find a value in one list and return a matching value from another list"
+    },
+    {
+     "id": "q2",
+     "t": 180,
+     "text": "If you have a list of products and their prices you can use XLOOKUP to quickly find the price of a specific product"
+    },
+    {
+     "id": "q3",
+     "t": 1260,
+     "text": "XLOOKUP का ये जो छह argument होते हैं इन्हें इन डेप्थ समझाने वाला हूं"
+    },
+    {
+     "id": "q4",
+     "t": 2100,
+     "text": "यहां पे मैं मैच और INDEX का combination यूज करूंगा क्योंकि return array में हमें specific column नहीं लेना है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 300,
+     "topic": "XLOOKUP introduction and definition"
+    },
+    {
+     "start_s": 300,
+     "end_s": 900,
+     "topic": "IF NOT FOUND argument and error handling"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1500,
+     "topic": "XLOOKUP arguments overview (lookup value, lookup array, return array)"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 2100,
+     "topic": "Practical example with account numbers and customer details"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 3000,
+     "topic": "Advanced INDEX and MATCH combination within XLOOKUP"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "rjuO8OGYDsk",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "mp5RFCvpWI0": {
+   "spoken_language": "hi",
+   "summary": "Learn how to create pivot charts in Excel from a sales database with employee data, and then add slicers to filter the pivot chart by region. The video demonstrates customizing the chart appearance, adding data levels for hierarchical filtering, and adjusting slicer column layout.",
+   "topics_covered": [
+    "pivot_charts",
+    "slicers",
+    "chart_customization",
+    "data_levels",
+    "filtering"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Aaj hum log sikhenge Excel mein pivot chart banana."
+    },
+    {
+     "id": "q2",
+     "t": 27,
+     "text": "Insert mein jayenge. Pivot chart."
+    },
+    {
+     "id": "q3",
+     "t": 51,
+     "text": "Man lijiye ki City ko lete hain. Aur jo sales target hai usko values mein lenge."
+    },
+    {
+     "id": "q4",
+     "t": 102,
+     "text": "Ek slicer ko lagayenge. Usme jo region hai usko select karenge."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 27,
+     "topic": "Introduction and database overview"
+    },
+    {
+     "start_s": 27,
+     "end_s": 51,
+     "topic": "Creating a pivot chart from data"
+    },
+    {
+     "start_s": 51,
+     "end_s": 102,
+     "topic": "Configuring pivot chart with City and Sales Target"
+    },
+    {
+     "start_s": 102,
+     "end_s": 180,
+     "topic": "Adding and customizing slicer by Region"
+    },
+    {
+     "start_s": 180,
+     "end_s": 240,
+     "topic": "Changing chart colors and formatting"
+    },
+    {
+     "start_s": 240,
+     "end_s": 335,
+     "topic": "Adding data levels for hierarchical filtering"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "mp5RFCvpWI0",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "HBJdxWxG7aU": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates how to create a complete sales dashboard in Excel using pivot tables, charts, and slicers. The instructor builds a multi-chart dashboard showing product-wise, brand-wise, city-wise sales data, with month-based filtering that allows dynamic updates of all visualizations simultaneously.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_charts",
+    "chart_creation",
+    "slicers",
+    "data_grouping",
+    "dashboard_layout",
+    "recommended_charts",
+    "data_labels"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Monthly sales dashboard with product-wise, brand-wise, and city-wise sales charts filtered by month using slicers",
+   "tools_and_versions": [
+    "microsoft excel",
+    "pivot tables",
+    "chart tools"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 48,
+     "text": "इस डेटा को एनालाइज करके इस डेटा के बिहाफ पर डैशबोर्ड क्रिएट करना"
+    },
+    {
+     "id": "q2",
+     "t": 432,
+     "text": "तो उसके लिए हम पाइवर्ट टेबल का यूज करते हैं"
+    },
+    {
+     "id": "q3",
+     "t": 630,
+     "text": "जैसे आप डेट को सेलेक्ट करोगे बाय डिफॉल्ट अपने आप ये इसको डेटा को एनालाइज कर लेगा एंड उस डेट को मंथ वाइज आपके सामने रिप्रेजेंट कर देगा"
+    },
+    {
+     "id": "q4",
+     "t": 1937,
+     "text": "अब आप देखोगे पूरा कंट्रोल होगा। मार्च पे क्लिक किया तो ये कंट्रोल हो रहा है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction to dashboard importance and example demonstration"
+    },
+    {
+     "start_s": 240,
+     "end_s": 410,
+     "topic": "Understanding data structure: product-wise, brand-wise, city-wise sales"
+    },
+    {
+     "start_s": 410,
+     "end_s": 620,
+     "topic": "Creating pivot tables from raw data"
+    },
+    {
+     "start_s": 620,
+     "end_s": 900,
+     "topic": "Month-wise data grouping using pivot table date fields"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1350,
+     "topic": "Creating recommended pivot charts for brand-wise sales"
+    },
+    {
+     "start_s": 1350,
+     "end_s": 1800,
+     "topic": "Chart formatting: adding values, bold text, layout options"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2100,
+     "topic": "Creating product-wise bar chart"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2400,
+     "topic": "Creating city-wise chart with data labels"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2800,
+     "topic": "Adding slicers for month-based filtering"
+    },
+    {
+     "start_s": 2800,
+     "end_s": 3100,
+     "topic": "Dashboard finalization and testing interactivity"
+    },
+    {
+     "start_s": 3100,
+     "end_s": 3280,
+     "topic": "Summary and call to action"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "HBJdxWxG7aU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "hMparynKb2o": {
+   "spoken_language": "hi",
+   "summary": "This video teaches XLOOKUP formula in Excel, showing how to search for data based on a lookup value and return corresponding information from other columns. The instructor demonstrates retrieving single columns of data (like names), multiple columns at once (name, designation, sales), and using XLOOKUP across different sheets in the same workbook.",
+   "topics_covered": [
+    "xlookup",
+    "lookup_value",
+    "return_array",
+    "lookup_array",
+    "cross_sheet_lookup",
+    "data_retrieval"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel",
+    "XLOOKUP formula"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 300,
+     "text": "agar aapke paas ek large data hai and us data mein se kisi bhi particular data ko aapko find karna hai, lookup karna hai, wahan par hum VLOOKUP ya XLOOKUP ki madad lete hain"
+    },
+    {
+     "id": "q2",
+     "t": 341,
+     "text": "Lookup value kya hota hai jiske aadhar pe aap data dhundh rahe ho. To main kiske aadhar pe data dhundh raha hoon ID number ke bhi aap pe"
+    },
+    {
+     "id": "q3",
+     "t": 527,
+     "text": "yahi kaam agar aap VLOOKUP se karte, to aapko ismein alag apply karna padta, ismein alag, ismein alag, ya fir aapko match ya columns formulas ki madad leni padti"
+    },
+    {
+     "id": "q4",
+     "t": 570,
+     "text": "aaj ki date mein companies mein VLOOKUP se jyada XLOOKUP ka use kiya jata hai"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 224,
+     "topic": "Introduction and problem statement: using XLOOKUP to retrieve data based on ID lookups"
+    },
+    {
+     "start_s": 224,
+     "end_s": 500,
+     "topic": "Understanding XLOOKUP syntax and basic setup with single column return"
+    },
+    {
+     "start_s": 500,
+     "end_s": 728,
+     "topic": "Practical demonstration: retrieving name from ID using XLOOKUP with formula step-by-step"
+    },
+    {
+     "start_s": 728,
+     "end_s": 957,
+     "topic": "Retrieving multiple columns (name, designation, sales) using XLOOKUP with expanded return array"
+    },
+    {
+     "start_s": 957,
+     "end_s": 1017,
+     "topic": "Comparing XLOOKUP advantages over VLOOKUP and demonstrating cross-sheet XLOOKUP"
+    },
+    {
+     "start_s": 1017,
+     "end_s": 1437,
+     "topic": "Course announcement and promotional content"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hMparynKb2o",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "htOIqJGeewE": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create pivot charts from pivot tables in Excel. The instructor demonstrates creating a new pivot chart with both a table and chart simultaneously, configuring rows/columns/values, changing chart types (column to pie), formatting data labels with percentages and category names, and designing the chart appearance.",
+   "topics_covered": [
+    "pivot_charts",
+    "pivot_table_configuration",
+    "chart_types",
+    "data_labels",
+    "chart_formatting",
+    "legend_positioning"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 26,
+     "text": "Pivot Chart हम यहां पे बनाने वाले है, तो सबसे पहले मैं Control A बटन प्रेस करूंगा।"
+    },
+    {
+     "id": "q2",
+     "t": 128,
+     "text": "Pivot Chart में क्या होता है बेसिकली खाली Chart ही नहीं बनेगा, यहां पे Table भी बनेगा, Chart भी बनेगा।"
+    },
+    {
+     "id": "q3",
+     "t": 202,
+     "text": "Chart से विजुअलाइजेशन एकदम प्रॉपर होता है जब आप किसी को कुछ चीजें प्रेजेंट करना चाहते हैं।"
+    },
+    {
+     "id": "q4",
+     "t": 724,
+     "text": "बेसिकली Pivot Table जो होता है उसी का ही Pivot Chart होता है। Table यहां पे आएगा-आएगा और Chart आएगा।"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 150,
+     "topic": "Introduction to pivot charts and when to use them"
+    },
+    {
+     "start_s": 150,
+     "end_s": 480,
+     "topic": "Creating a pivot chart using the Insert > Pivot Chart option"
+    },
+    {
+     "start_s": 480,
+     "end_s": 900,
+     "topic": "Configuring chart fields (rows, columns, values, legend)"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1320,
+     "topic": "Changing chart type from column to pie and adding data labels"
+    },
+    {
+     "start_s": 1320,
+     "end_s": 1500,
+     "topic": "Formatting data labels and chart area appearance"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 573,
+     "topic": "Creating pivot chart from existing pivot table"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "htOIqJGeewE",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "PuGzwrnBG_s": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates how to build an interactive sales dashboard in Excel using pivot tables and pivot charts. The instructor creates multiple pivot charts (pie, bar, column, combo) to analyze sales data by channel, state, gender, age group, and order status, then adds a month slicer to filter all charts interactively by month.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_charts",
+    "slicers",
+    "dashboard_layout",
+    "data_visualization",
+    "interactive_filtering",
+    "grouping_by_month"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Interactive sales dashboard with pivot charts filtered by month using slicers",
+   "tools_and_versions": [
+    "Microsoft Excel",
+    "Pivot Tables",
+    "Pivot Charts",
+    "Slicers"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "मेरे बॉस ने मुझे एक स्टोर का सेल डाटा दिया और उन्होंने मुझसे कहा कि आपको इस डाटा की मदद से एक इंटरेक्टिव डैशबोर्ड बना के देना है"
+    },
+    {
+     "id": "q2",
+     "t": 407,
+     "text": "अब हम इसका एक चार्ट बना लेंगे चार्ट बनाने के लिए हम पाइवट टेबल एनालाइज टैब में जाएंगे और यहां पर पाइवट चार्ट का एक ऑप्शन मिल जाता है"
+    },
+    {
+     "id": "q3",
+     "t": 1803,
+     "text": "स्लाइसर को ऐड करने के लिए आपको किसी भी एक चार्ट पे क्लिक करना है इसके बाद देखिए पाइवट चार्ट एनालाइज टैब आता है"
+    },
+    {
+     "id": "q4",
+     "t": 2014,
+     "text": "तो ये हमारा एक इंटरेक्टिव डैशबोर्ड बन गया जो कि हमने पाइवट टेबल और पाइवट चार्ट की मदद से बनाया"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction and dashboard requirements overview"
+    },
+    {
+     "start_s": 240,
+     "end_s": 360,
+     "topic": "Data structure and column explanation"
+    },
+    {
+     "start_s": 392,
+     "end_s": 480,
+     "topic": "Creating first pivot table for channel data"
+    },
+    {
+     "start_s": 480,
+     "end_s": 600,
+     "topic": "Creating pie chart from pivot table and formatting"
+    },
+    {
+     "start_s": 620,
+     "end_s": 810,
+     "topic": "Creating pivot table and bar chart for top 5 states"
+    },
+    {
+     "start_s": 850,
+     "end_s": 930,
+     "topic": "Creating pivot table for gender analysis"
+    },
+    {
+     "start_s": 930,
+     "end_s": 1020,
+     "topic": "Creating pie chart for gender comparison"
+    },
+    {
+     "start_s": 1040,
+     "end_s": 1080,
+     "topic": "Creating pivot table for age and gender analysis"
+    },
+    {
+     "start_s": 1320,
+     "end_s": 1380,
+     "topic": "Creating column chart for age and gender"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1560,
+     "topic": "Creating pivot table for order status analysis"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 1920,
+     "topic": "Creating combo chart for orders versus sales amount"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 1860,
+     "topic": "Adding month slicer to dashboard"
+    },
+    {
+     "start_s": 1860,
+     "end_s": 2040,
+     "topic": "Configuring and formatting the slicer"
+    },
+    {
+     "start_s": 1920,
+     "end_s": 2040,
+     "topic": "Testing interactive filtering by month"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "PuGzwrnBG_s",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "DX0V7D0GWwI": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to use the VLOOKUP formula in Excel to look up values in a table based on a lookup value. The instructor explains the four parameters of VLOOKUP (lookup value, table array, column index number, and match type), demonstrates filling a formula down across rows, and covers important gotchas like duplicate values and the top-to-bottom matching behavior.",
+   "topics_covered": [
+    "vlookup",
+    "lookup functions",
+    "formula parameters",
+    "exact match",
+    "duplicate values",
+    "paste as values"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "VLOOKUP ka full form hota hai vertical lookup. hai na aur usko hum log use karte hain excel mein jab hum log ko kisi bhi column ke samne uske respective values chahiye ho"
+    },
+    {
+     "id": "q2",
+     "t": 48,
+     "text": "lookup value. matlab aap yahan pe jo bhi value lana chahte hain wo kis kis value ke liye lana chahte hain?"
+    },
+    {
+     "id": "q3",
+     "t": 127,
+     "text": "yaad rakhiyega aapko poori table select karna hai sirf ek column ya ek row nahi. poori table select kiya"
+    },
+    {
+     "id": "q4",
+     "t": 324,
+     "text": "VLOOKUP mein aapko jo bhi value sabse pehle milegi ye upar se matlab top to bottom jata hai ye formula"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 39,
+     "topic": "Introduction to VLOOKUP concept and use cases"
+    },
+    {
+     "start_s": 39,
+     "end_s": 155,
+     "topic": "Defining lookup value and selecting the lookup column"
+    },
+    {
+     "start_s": 155,
+     "end_s": 230,
+     "topic": "Selecting table array and fixing with dollar signs"
+    },
+    {
+     "start_s": 230,
+     "end_s": 330,
+     "topic": "Column index number and match type parameters"
+    },
+    {
+     "start_s": 330,
+     "end_s": 407,
+     "topic": "Filling formula down and verifying results"
+    },
+    {
+     "start_s": 407,
+     "end_s": 600,
+     "topic": "Common mistakes: duplicate values and top-to-bottom matching behavior"
+    },
+    {
+     "start_s": 600,
+     "end_s": 658,
+     "topic": "Converting formulas to values with paste special"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "DX0V7D0GWwI",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "V59jFWmu7w0": {
+   "spoken_language": "hi",
+   "summary": "This video teaches XLOOKUP function in Excel, explaining why it's more powerful and versatile than VLOOKUP and HLOOKUP. The instructor demonstrates practical examples of using XLOOKUP to fetch complete data records from both vertical and horizontal datasets based on lookup values, and shows how XLOOKUP can work in reverse direction (right-to-left).",
+   "topics_covered": [
+    "xlookup",
+    "lookup_functions",
+    "vlookup_comparison",
+    "vertical_data",
+    "horizontal_data",
+    "data_fetching"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel 2019",
+    "excel 365",
+    "google sheets"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 51,
+     "text": "XLOOKUP सिर्फ Excel के लेटेस्ट वर्जंस में है। लाइक 2019 से पहले किसी भी वर्जन में XLOOKUP नहीं है।"
+    },
+    {
+     "id": "q2",
+     "t": 521,
+     "text": "इक्वल XLOOKUP करने के बाद में, अब जब आप ब्रैकेट ओपन करते हैं तो ये आपसे कहेगा लुकअप वैल्यू।"
+    },
+    {
+     "id": "q3",
+     "t": 702,
+     "text": "XLOOKUP में सिर्फ ये तीन चीजें देनी मैंडेटरी होती हैं, एक लुकअप वैल्यू, एक लुकअप एरे एंड एक रिटर्न एरे।"
+    },
+    {
+     "id": "q4",
+     "t": 2025,
+     "text": "XLOOKUP रिवर्स डायरेक्शन में भी अच्छे से वर्क करता है। राइट टू लेफ्ट अब हम डेटा फेच करना चाहते हैं तो वो भी पॉसिबल है।"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction: why XLOOKUP is important and in-demand"
+    },
+    {
+     "start_s": 240,
+     "end_s": 370,
+     "topic": "Comparison: XLOOKUP vs VLOOKUP vs HLOOKUP limitations"
+    },
+    {
+     "start_s": 370,
+     "end_s": 500,
+     "topic": "Advantages of XLOOKUP: flexibility, multiple columns, wildcards"
+    },
+    {
+     "start_s": 500,
+     "end_s": 700,
+     "topic": "Practical example 1: XLOOKUP with vertical data, single column return"
+    },
+    {
+     "start_s": 700,
+     "end_s": 850,
+     "topic": "XLOOKUP syntax: lookup value, lookup array, return array parameters"
+    },
+    {
+     "start_s": 850,
+     "end_s": 1050,
+     "topic": "Practical example 2: XLOOKUP returning multiple columns with spill"
+    },
+    {
+     "start_s": 1050,
+     "end_s": 1200,
+     "topic": "Locking arrays with F4 to prevent shift when copying formulas"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1350,
+     "topic": "Date formatting and custom formats"
+    },
+    {
+     "start_s": 1350,
+     "end_s": 1500,
+     "topic": "XLOOKUP in reverse direction: right-to-left lookup"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1650,
+     "topic": "XLOOKUP with horizontal data"
+    },
+    {
+     "start_s": 1650,
+     "end_s": 1880,
+     "topic": "Summary and reference to full XLOOKUP tutorial"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "V59jFWmu7w0",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "sPVl7_yVjLU": {
+   "spoken_language": "hi",
+   "summary": "This video provides a comprehensive tutorial on Excel's XLOOKUP function with 10 practical examples. The instructor demonstrates how XLOOKUP can search for data in tables, perform exact matches, return values from any direction (left or right), handle multiple lookup values, and work with two-dimensional lookups. The video shows how XLOOKUP is superior to VLOOKUP in many scenarios because it doesn't require columns to be in a specific order and automatically adjusts when data structure changes.",
+   "topics_covered": [
+    "xlookup",
+    "lookup functions",
+    "exact match",
+    "approximate match",
+    "two-dimensional lookup",
+    "multiple lookup values",
+    "transpose",
+    "choose function",
+    "vlookup comparison"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel",
+    "XLOOKUP function"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 27,
+     "text": "जब से ये फार्मूला आया है ना तब से LOOKUP, VLOOKUP, HLOOKUP, INDEX MATCH ये सारे फॉर्मूलेज़ को इसने साइड में रख दिया है।"
+    },
+    {
+     "id": "q2",
+     "t": 104,
+     "text": "XLOOKUP, ब्रैकेट ओपन, इसमें सबसे पहले हमें देनी होती है LOOKUP वैल्यू तो इस सेल में हमारी LOOKUP वैल्यू है।"
+    },
+    {
+     "id": "q3",
+     "t": 2006,
+     "text": "XLOOKUP फार्मूला जो रेंज हमने दी है, ये ऑटोमेटिक रेंज को सेट कर लेता है। इसको कोई फर्क नहीं पड़ता आप रेंज में नए कॉलम ऐड करो।"
+    },
+    {
+     "id": "q4",
+     "t": 229,
+     "text": "XLOOKUP फार्मूला लेफ्ट टू राइट, राइट टू लेफ्ट सब तरीके से चलता है।"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 330,
+     "topic": "Introduction to XLOOKUP and basic exact match example with HSN Code lookup"
+    },
+    {
+     "start_s": 330,
+     "end_s": 720,
+     "topic": "XLOOKUP looking up data from left to right (reverse lookup example)"
+    },
+    {
+     "start_s": 720,
+     "end_s": 1200,
+     "topic": "Returning multiple columns using XLOOKUP with CHOOSE function"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1560,
+     "topic": "Multiple lookup values and TRANSPOSE function for vertical output"
+    },
+    {
+     "start_s": 1560,
+     "end_s": 2100,
+     "topic": "Two-dimensional lookup with product name and month matching"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2700,
+     "topic": "Multiple lookup values in single column and nested XLOOKUP examples"
+    },
+    {
+     "start_s": 2700,
+     "end_s": 3240,
+     "topic": "VLOOKUP vs XLOOKUP comparison and advantages of XLOOKUP"
+    },
+    {
+     "start_s": 3240,
+     "end_s": 3300,
+     "topic": "Conclusion and links to additional resources"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "sPVl7_yVjLU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "BvYU0GEHJyc": {
+   "spoken_language": "hi",
+   "summary": "This tutorial teaches how to create pivot tables in Excel from scratch, including how to organize data, drag and drop fields into rows/columns/values areas, apply filters, create slicers for interactive filtering, and build pivot charts. The video demonstrates practical examples with sales data showing seller names, regions, items, and monthly sales figures.",
+   "topics_covered": [
+    "pivot_basics",
+    "pivot_fields",
+    "filtering",
+    "slicers",
+    "pivot_charts",
+    "data_visualization",
+    "multi_select_filtering"
+   ],
+   "level": "beginner",
+   "format": "full_course",
+   "is_project_based": true,
+   "project_built": "Sales data pivot table with multiple slicers for region and item filtering, plus a pivot chart showing sales trends",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 41,
+     "text": "अब हमें इससे बनानी है एक पाइवोट टेबल तो पाइवोट टेबल को बनाने के लिए आपको पता है कि आपको बस अपने डाटा को सेलेक्ट कर लेना है"
+    },
+    {
+     "id": "q2",
+     "t": 450,
+     "text": "और जो काउंट करने वाली चीजें हैं उनको आप वैल्यूज में लेके आइए जैसे रीजन चाहिए तो सेलर नेम में ले"
+    },
+    {
+     "id": "q3",
+     "t": 1404,
+     "text": "जब भी हमारा कभी डाटा होता है तो स्लाइज़र की जो कि सबसे ज्यादा जरूरी है आप किस तरीके से फिल्टर अप्लाई कर रहे हो"
+    },
+    {
+     "id": "q4",
+     "t": 1809,
+     "text": "बस आपको डाटा पर कहीं कर्सर रखना है पाइवोट चार्ट पर क्लिक कर देना है कौन सा चार्ट चाहिए कॉलम या लाइन"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 360,
+     "topic": "Introduction and data selection for pivot table creation"
+    },
+    {
+     "start_s": 360,
+     "end_s": 810,
+     "topic": "Creating pivot table and visualizing data by dragging fields into rows, columns, and values"
+    },
+    {
+     "start_s": 810,
+     "end_s": 1440,
+     "topic": "Configuring fields, changing aggregation functions (sum vs count), and applying filters"
+    },
+    {
+     "start_s": 1440,
+     "end_s": 1740,
+     "topic": "Creating and using slicers for interactive filtering with single and multiple selections"
+    },
+    {
+     "start_s": 1740,
+     "end_s": 1980,
+     "topic": "Adding new data columns and updating data source range"
+    },
+    {
+     "start_s": 1980,
+     "end_s": 2160,
+     "topic": "Pivot table design options, formatting, and naming"
+    },
+    {
+     "start_s": 2160,
+     "end_s": 2400,
+     "topic": "Creating pivot charts and formatting them for visualization"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "BvYU0GEHJyc",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "ETQSNnOKDC0": {
+   "spoken_language": "hi",
+   "summary": "This Hindi tutorial teaches how to create and use pivot tables in Excel to summarize and analyze large datasets. The instructor demonstrates how to organize data into pivot tables using rows, columns, and values, apply filters, group by different fields like country and product, and change aggregation functions from sum to max. The video also covers converting data into Excel Tables and using the Table Design features.",
+   "topics_covered": [
+    "pivot_basics",
+    "pivot_fields",
+    "rows_columns_values",
+    "filtering_pivot_tables",
+    "aggregation_functions",
+    "data_tables",
+    "pivot_table_creation"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "पायो टेबल का मतलब कि अगर आपके पास एक बड़ा सा डाटा एक कॉम्प्लेक्शन डाटा है उसको क्या करता है एक समराइज करके एनालाइज करके एक्यूरेट रिपोर्ट जनरेट करता है।"
+    },
+    {
+     "id": "q2",
+     "t": 503,
+     "text": "आपको चार इस तरीके का डैशबोर्ड मिलता है फिल्टर कॉलम्स वैल्यूज एंड रोज।"
+    },
+    {
+     "id": "q3",
+     "t": 644,
+     "text": "अगर वैल्यू को हम यहां पे सम करना है तो यहां पे सम ऑफ अमाउंट आ रहा है।"
+    },
+    {
+     "id": "q4",
+     "t": 1032,
+     "text": "पायो टेबल बहुत ही इंट्रेक्टिंग टूल है जिसमें आप बहुत ही आसानी से किसी भी पर्सन का किसी भी कंट्री का किसी भी प्रोडक्ट के डाटा को फाइंड कर सकते हैं।"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction to pivot tables and their purpose"
+    },
+    {
+     "start_s": 240,
+     "end_s": 600,
+     "topic": "Problem demonstration: filtering large sales data manually"
+    },
+    {
+     "start_s": 600,
+     "end_s": 900,
+     "topic": "Creating a pivot table: selecting data and location"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1200,
+     "topic": "Understanding pivot table fields: rows, columns, values, filters"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1500,
+     "topic": "Organizing fields and viewing summarized data"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1800,
+     "topic": "Changing aggregation functions: sum to max"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 1100,
+     "topic": "Filtering pivot tables by salesperson, country, product"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2400,
+     "topic": "Adding date hierarchy to pivot table filters"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 1700,
+     "topic": "Creating multiple pivot tables and using recommended templates"
+    },
+    {
+     "start_s": 2700,
+     "end_s": 3000,
+     "topic": "Converting data to Excel Tables and table design features"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "ETQSNnOKDC0",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "YW_vqEoe-Sg": {
+   "spoken_language": "hi",
+   "summary": "This video compares VLOOKUP and XLOOKUP functions in Excel by demonstrating how to look up employee salaries from a table. It shows step-by-step how to write both formulas, create dropdown lists for selection, and explains the key difference: XLOOKUP is more robust when columns are inserted or deleted, while VLOOKUP breaks because it relies on fixed column index numbers.",
+   "topics_covered": [
+    "vlookup",
+    "xlookup",
+    "lookup functions",
+    "data validation",
+    "dropdown lists"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 25,
+     "text": "XLOOKUP function Microsoft Excel ke naye version mein aapko milega aur VLOOKUP function Microsoft Excel ke saare version mein available hai"
+    },
+    {
+     "id": "q2",
+     "t": 305,
+     "text": "VLOOKUP formula mein jo aap column index number dete ho usko agar formula apply karne ke baad aap change karte ho"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 100,
+     "topic": "Introduction and setup of VLOOKUP and XLOOKUP comparison with employee data table"
+    },
+    {
+     "start_s": 100,
+     "end_s": 220,
+     "topic": "Creating dropdown lists using Data Validation for employee name selection"
+    },
+    {
+     "start_s": 220,
+     "end_s": 330,
+     "topic": "Applying VLOOKUP formula step by step to fetch salary"
+    },
+    {
+     "start_s": 330,
+     "end_s": 430,
+     "topic": "Applying XLOOKUP formula and comparing results with VLOOKUP"
+    },
+    {
+     "start_s": 430,
+     "end_s": 482,
+     "topic": "Demonstrating the key difference: XLOOKUP robustness vs VLOOKUP fragility when columns are inserted"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "YW_vqEoe-Sg",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "5TkRnGdC1NM": {
+   "spoken_language": "hi",
+   "summary": "This video demonstrates building a complete sales dashboard in Excel using pivot tables, pivot charts, and slicers that update together. The instructor shows how to create multiple connected pivot tables, build interactive slicers for year, month, and region filtering, generate pivot charts linked to those slicers, and arrange everything into a professional dashboard layout.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_charts",
+    "slicers",
+    "report_connections",
+    "dashboard_layout",
+    "chart_formatting",
+    "data_preparation"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A sales dashboard with four pivot charts (by sales rep, brand, industry, and region) connected to interactive slicers for year, month, and region filtering",
+   "tools_and_versions": [
+    "Excel",
+    "pivot tables",
+    "pivot charts",
+    "slicers"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "I will show you how to create a sales dashboard using pivot tables, pivot charts and slicers"
+    },
+    {
+     "id": "q2",
+     "t": 24,
+     "text": "when you click on any of these buttons, then these charts would automatically update"
+    },
+    {
+     "id": "q3",
+     "t": 409,
+     "text": "to create a slicer using this, I need to go to insert here and within insert, I have this option of slicer"
+    },
+    {
+     "id": "q4",
+     "t": 960,
+     "text": "when I have connected these and when I click OK, when I click on 2013 and I go to sales rep now, it becomes 23814"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 120,
+     "topic": "Introduction to dashboard overview and slicer functionality"
+    },
+    {
+     "start_s": 120,
+     "end_s": 360,
+     "topic": "Data structure review and pivot table foundation"
+    },
+    {
+     "start_s": 360,
+     "end_s": 540,
+     "topic": "Creating first pivot table using Alt+NV shortcut"
+    },
+    {
+     "start_s": 540,
+     "end_s": 720,
+     "topic": "Configuring pivot table fields (date, sales value)"
+    },
+    {
+     "start_s": 720,
+     "end_s": 900,
+     "topic": "Creating and formatting year slicer"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1080,
+     "topic": "Connecting multiple pivot tables using report connections"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 1200,
+     "topic": "Adjusting slicer layout and properties"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1380,
+     "topic": "Creating month and region slicers"
+    },
+    {
+     "start_s": 1380,
+     "end_s": 1560,
+     "topic": "Building pivot charts from pivot tables"
+    },
+    {
+     "start_s": 1560,
+     "end_s": 1800,
+     "topic": "Formatting pivot charts and removing field buttons"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 1440,
+     "topic": "Connecting charts to slicers via report connections"
+    },
+    {
+     "start_s": 1440,
+     "end_s": 1440,
+     "topic": "Creating additional charts for brand, industry and region"
+    },
+    {
+     "start_s": 1440,
+     "end_s": 1440,
+     "topic": "Final dashboard assembly and formatting"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "5TkRnGdC1NM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "DUP-Js2vNjs": {
+   "spoken_language": "hi",
+   "summary": "This video teaches VLOOKUP and XLOOKUP formulas to retrieve employee data from a large dataset. The instructor demonstrates how to use VLOOKUP with named ranges, the COLUMNS function to automate column indexing, IFERROR to handle missing data, and XLOOKUP as a modern alternative with simpler syntax that doesn't require manual column numbering.",
+   "topics_covered": [
+    "vlookup",
+    "xlookup",
+    "named ranges",
+    "columns function",
+    "iferror",
+    "lookup formulas",
+    "large data handling"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 25,
+     "text": "एक ही वी लुकअप लगाएंगे उसी को पकड़ के ड्रैग एंड ड्रॉप हम कर देंगे हमारा काम हो जाएगा"
+    },
+    {
+     "id": "q2",
+     "t": 369,
+     "text": "कॉलम इंडेक्स नंबर कॉलम इंडेक्स नंबर यहां पे आ जाइए हमें नेम निकालना है तो हम टू पास कर देंगे"
+    },
+    {
+     "id": "q3",
+     "t": 559,
+     "text": "अब हम करेंगे क्या हम अपने वी लुकअप में कॉलम इंडेक्स को ऑटोमेटिक करने के लिए ये जो कॉलम्स का फार्मूला है इसको हम कॉपी करेंगे"
+    },
+    {
+     "id": "q4",
+     "t": 754,
+     "text": "एक्स लुकअप में क्या होगा देखिए एक्स लुकअप ब्रैकेट ओपन लुकअप वैल्यू हमने ये दे दी"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 105,
+     "topic": "Introduction to VLOOKUP and XLOOKUP on large datasets"
+    },
+    {
+     "start_s": 105,
+     "end_s": 370,
+     "topic": "Setting up named ranges and basic VLOOKUP syntax"
+    },
+    {
+     "start_s": 370,
+     "end_s": 610,
+     "topic": "Using COLUMNS function to automate column indexing in VLOOKUP"
+    },
+    {
+     "start_s": 610,
+     "end_s": 660,
+     "topic": "Drag and drop VLOOKUP formula with dynamic column numbers"
+    },
+    {
+     "start_s": 660,
+     "end_s": 755,
+     "topic": "IFERROR formula to handle errors in lookup"
+    },
+    {
+     "start_s": 755,
+     "end_s": 940,
+     "topic": "XLOOKUP formula syntax and advantages over VLOOKUP"
+    },
+    {
+     "start_s": 940,
+     "end_s": 642,
+     "topic": "Date formatting and final comparison of VLOOKUP vs XLOOKUP"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "DUP-Js2vNjs",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "cqsKU_ECMHg": {
+   "spoken_language": "hi",
+   "summary": "This tutorial walks through building a complete sales dashboard in Excel using pivot tables, pivot charts, and slicers. The instructor demonstrates how to organize sales data by product, state, and sales representatives, create visualizations showing sales by category and region, and connect the charts with an interactive month slicer to filter all data simultaneously.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_charts",
+    "slicers",
+    "data_visualization",
+    "dashboard_layout",
+    "grouping_by_date",
+    "chart_formatting"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A monthly sales dashboard with multiple pivot charts (pie chart for product types, bar chart for states, sales representative data) connected via a month slicer for interactive filtering",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "एक्सेल का एक वन ऑफ द इंपोर्टेंट प्रैक्टिकल जो कि है सेल्स डैशबोर्ड"
+    },
+    {
+     "id": "q2",
+     "t": 429,
+     "text": "हमें चाहिए प्रोडक्ट, तो हम प्रोडक्ट को उठा के रख लेंगे कहां? रो वाले सेक्शन में"
+    },
+    {
+     "id": "q3",
+     "t": 615,
+     "text": "मंथ्स हमने कहां मैनेज किया डेट में तो डेट को उठा के आपको यहां रख लेना है"
+    },
+    {
+     "id": "q4",
+     "t": 1521,
+     "text": "इंसर्ट स्लाइसर का एंड यहां पे मंथ्स पे क्लिक करना है एंड कर देना है ओके"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 220,
+     "topic": "Introduction to sales dashboard and overview of final output"
+    },
+    {
+     "start_s": 220,
+     "end_s": 360,
+     "topic": "Explanation of raw sales data structure with products, states, and representatives"
+    },
+    {
+     "start_s": 360,
+     "end_s": 720,
+     "topic": "Creating pivot table: configuring rows (products), values (sales), and organizing by categories"
+    },
+    {
+     "start_s": 720,
+     "end_s": 1050,
+     "topic": "Configuring pivot table columns (product types, states, sales representatives) and adding date grouping by month"
+    },
+    {
+     "start_s": 1050,
+     "end_s": 1380,
+     "topic": "Creating first pivot chart (pie chart) for product types and formatting with data labels"
+    },
+    {
+     "start_s": 1380,
+     "end_s": 1650,
+     "topic": "Creating second pivot chart (bar chart) for states and applying design formatting"
+    },
+    {
+     "start_s": 1650,
+     "end_s": 1950,
+     "topic": "Creating third pivot chart for sales representatives and combining all charts into dashboard sheet"
+    },
+    {
+     "start_s": 1950,
+     "end_s": 2190,
+     "topic": "Adding month slicer and connecting it to all pivot tables for interactive filtering"
+    },
+    {
+     "start_s": 2190,
+     "end_s": 1653,
+     "topic": "Final dashboard review and verification of month-based filtering across all charts"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 3
+    }
+   ],
+   "video_id": "cqsKU_ECMHg",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "-MyX4xjr8jM": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create and use pivot tables in Excel to summarize and analyze sales data by employee, department, and city. It covers selecting data, configuring pivot table fields (rows, columns, values, filters), filtering and slicing data, and refreshing data when the source changes.",
+   "topics_covered": [
+    "pivot tables",
+    "pivot table fields",
+    "rows columns values",
+    "filtering pivot data",
+    "slicers",
+    "data refresh",
+    "grouping and summarization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 49,
+     "text": "पाइवोट टेबल से आप डेटा कैसे समराइज कर सकते हैं वह भी चुटकियों में"
+    },
+    {
+     "id": "q2",
+     "t": 144,
+     "text": "पाइवोट टेबल क्यों हम यूज करते हैं लाइक अगर आपके बॉस ने यह कह दिया कि हमें यह बताइए"
+    },
+    {
+     "id": "q3",
+     "t": 504,
+     "text": "आपको नेम को पकड़ना है रोज में लाना है क्योंकि नाम हमें यह सारे ऐसे रो में चाहिए"
+    },
+    {
+     "id": "q4",
+     "t": 1200,
+     "text": "इंसर्ट स्लाइसर का जो कि बहुत अच्छा ऑप्शन है जो कि आपको यहां पर एक ड्रॉप डाउन मेनू देता है"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 100,
+     "topic": "Introduction and motivation for learning pivot tables"
+    },
+    {
+     "start_s": 100,
+     "end_s": 341,
+     "topic": "Why pivot tables are useful - faster data summarization"
+    },
+    {
+     "start_s": 341,
+     "end_s": 600,
+     "topic": "Step-by-step guide to creating a pivot table from a data range"
+    },
+    {
+     "start_s": 600,
+     "end_s": 900,
+     "topic": "Configuring pivot table fields: rows, columns, values"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1225,
+     "topic": "Using filters in pivot tables to filter by department"
+    },
+    {
+     "start_s": 1225,
+     "end_s": 1400,
+     "topic": "Inserting slicers for interactive filtering"
+    },
+    {
+     "start_s": 1400,
+     "end_s": 1500,
+     "topic": "Refreshing pivot table data when source data changes"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "-MyX4xjr8jM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "8nL9PtLdC94": {
+   "spoken_language": "hi",
+   "summary": "Learn how to use the XLOOKUP function in Excel to look up employee names and salaries based on employee IDs. The video demonstrates creating a dropdown list for employee IDs using data validation, then applying XLOOKUP formulas to retrieve corresponding employee names and salary information from a table.",
+   "topics_covered": [
+    "xlookup",
+    "lookup_functions",
+    "data_validation",
+    "dropdown_list"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel",
+    "xlookup function"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 22,
+     "text": "हमने लिया है एम्प्लॉई आईडी, एम्प्लॉई नेम, डेसिग्नेशन, डेट ऑफ जॉइन एंड सैलरी"
+    },
+    {
+     "id": "q2",
+     "t": 143,
+     "text": "इक्वल XLOOKUP, ब्रैकेट ओपन। तो सबसे पहले आपको यहां पे देना है लुकअप वैल्यू।"
+    },
+    {
+     "id": "q3",
+     "t": 143,
+     "text": "लुकअप एरे में आपको एम्प्लॉई आईडी के पूरे डेटा को सिलेक्ट कर देना है।"
+    },
+    {
+     "id": "q4",
+     "t": 206,
+     "text": "रिटर्न एरे में हम यहां पे एम्प्लॉई नेम को निकालेंगे।"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 22,
+     "topic": "Introduction and table setup"
+    },
+    {
+     "start_s": 22,
+     "end_s": 102,
+     "topic": "Data validation and dropdown list creation"
+    },
+    {
+     "start_s": 102,
+     "end_s": 206,
+     "topic": "First XLOOKUP formula for employee names"
+    },
+    {
+     "start_s": 206,
+     "end_s": 334,
+     "topic": "Second XLOOKUP formula for salary"
+    },
+    {
+     "start_s": 334,
+     "end_s": 497,
+     "topic": "Testing formulas with multiple employee IDs"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "8nL9PtLdC94",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  }
+ },
+ "dup_clusters": [],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "4A6hjD-61gM",
+    "covers": [
+     "pivot_basics"
+    ],
+    "reason": "A beginner Hindi walkthrough of sales-data pivot tables. It covers inserting one, dragging fields to rows, columns and values, refreshing when records change, and adding a first slicer.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "Level and language fit well. Its transcript quotes are sparse."
+   },
+   {
+    "video_id": "hmygrQMcHyU",
+    "covers": [
+     "lookups"
+    ],
+    "reason": "A gentle Hindi VLOOKUP introduction that explains each argument: lookup value, table array, column index and range lookup. It uses a name, city and sales example.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.8,
+    "confidence_note": "Short and clear. It is VLOOKUP only."
+   },
+   {
+    "video_id": "gAY9is-ahQY",
+    "covers": [
+     "lookups"
+    ],
+    "reason": "Builds on the basic VLOOKUP video. It applies VLOOKUP and XLOOKUP to large data, using MATCH to find the column number and named ranges to simplify formulas.",
+    "evidence_quote_ids": [
+     "q1",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.75,
+    "confidence_note": "Hindi, beginner level and under 25 minutes. It runs a little fast for a complete beginner."
+   },
+   {
+    "video_id": "htOIqJGeewE",
+    "covers": [
+     "pivot_charts"
+    ],
+    "reason": "A Hindi walkthrough of creating a pivot chart together with its pivot table. It covers changing chart type, data labels and formatting, ready for the dashboard.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "Directly covers the pivot chart gap."
+   },
+   {
+    "video_id": "_JtEWpUJPVY",
+    "covers": [
+     "dashboard",
+     "pivot_charts"
+    ],
+    "reason": "A Hindi project build of an interactive monthly sales dashboard. It has KPI cards, product, region and month-trend charts, and slicers connected across all of them. This matches the learner's end goal.",
+    "evidence_quote_ids": [
+     "q1",
+     "q3",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "At 22.7 minutes it is under the 25-minute limit. Pause and follow along with your own data."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "oKdBEjcgzyw",
+    "reason": "This is a good Hinglish dashboard build, but it is a near-duplicate of the chosen one. It focuses on region and seller percentages and has no monthly view or KPI cards."
+   },
+   {
+    "video_id": "RdA04dRgF44",
+    "reason": "It has a good XLOOKUP explanation, but the read returned no quotes to cite and it is flagged pure_theory. It is also intermediate level."
+   },
+   {
+    "video_id": "d9yXBRbNuho",
+    "reason": "It is mostly English and flagged pure_theory. It overlaps with the Hindi VLOOKUP videos I picked."
+   },
+   {
+    "video_id": "hro6_y7R310",
+    "reason": "It is flagged surface_intro and is about 22 minutes. It duplicates the shorter pivot basics video and returned no quotes."
+   }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+   "The plan uses about 65 of the 90 minutes. I left the rest unused rather than add redundant videos.",
+   "A second dashboard build (oKdBEjcgzyw, 20.7 min) exists. It is a near-duplicate of the one I chose, so I did not pick it. The chosen one is monthly, has KPI cards and has a date slicer. You could watch the other one as optional extra practice.",
+   "No Hindi video gave a full, quoted XLOOKUP-only lesson. Both lookup videos are mostly VLOOKUP with some XLOOKUP, so practise XLOOKUP yourself.",
+   "The learner may need to pause and rewatch, since the dashboard video moves quickly.",
+   "Watch order: pivot basics, then lookups, then pivot charts, then the dashboard. If your sales sheet already has all columns filled, you can skip the lookups until you need them."
+  ]
+ },
+ "fixes": []
+}

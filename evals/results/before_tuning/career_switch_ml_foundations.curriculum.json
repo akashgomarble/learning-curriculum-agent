@@ -1,0 +1,491 @@
+{
+  "persona_id": "career_switch_ml_foundations",
+  "goal": "Go from zero ML knowledge to training and evaluating a small image classifier in PyTorch",
+  "budget_minutes": 1200,
+  "total_minutes": 355.5,
+  "interpretation": "The learner can explain how neural networks learn (loss, gradient descent, backprop), and can write, train and evaluate a small CNN image classifier in PyTorch from scratch, understanding overfitting and metrics.",
+  "assumptions": [
+    "The 1200 minutes is pure viewing time, so long code-along courses are acceptable and no time is reserved for separate practice.",
+    "A small image classifier means something like MNIST/Fashion-MNIST/CIFAR-10 trained with a CNN.",
+    "Because the learner knows calculus and linear algebra, math explanations can be intuitive but not simplified to avoid derivatives or matrices.",
+    "No constraints rule out particular video titles, so title exclusions are empty."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "ml_basics",
+      "title": "Machine learning fundamentals: supervised learning, loss functions, train/test split",
+      "why": "Learner has zero ML background; needs the vocabulary and framing before touching neural networks, though numpy and linear algebra let them move quickly.",
+      "prereqs": [],
+      "minutes_share": 0.1
+    },
+    {
+      "id": "gd_backprop",
+      "title": "Gradient descent, neural networks and backpropagation with math intuition",
+      "why": "Learner knows calculus, so the chain rule view of backprop will click fast; this gives the intuition they want for why training works.",
+      "prereqs": [
+        "ml_basics"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "pytorch_tensors_autograd",
+      "title": "PyTorch tensors and autograd",
+      "why": "Learner knows numpy, so PyTorch tensors map onto familiar ideas; autograd connects directly to the backprop they just learned.",
+      "prereqs": [
+        "gd_backprop"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "training_loop",
+      "title": "Building models and training loops in PyTorch (nn.Module, optimizers, DataLoader)",
+      "why": "Needed to turn the math into working code, including batching, loss, optimizer steps and GPU/CPU handling.",
+      "prereqs": [
+        "pytorch_tensors_autograd"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "cnn",
+      "title": "Convolutional neural networks for images",
+      "why": "Image classification needs convolutions, pooling and feature maps; the learner's linear algebra background helps with understanding the operations.",
+      "prereqs": [
+        "training_loop"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "evaluation_overfitting",
+      "title": "Model evaluation, overfitting, and regularization",
+      "why": "The learner must measure accuracy on held-out data, read loss curves, and use techniques like augmentation, dropout and weight decay to reduce overfitting.",
+      "prereqs": [
+        "training_loop"
+      ],
+      "minutes_share": 0.1
+    },
+    {
+      "id": "image_classifier_project",
+      "title": "Build, train and evaluate an image classifier end-to-end in PyTorch",
+      "why": "A code-along project ties everything together on a dataset like CIFAR-10 or Fashion-MNIST and matches the stated goal.",
+      "prereqs": [
+        "cnn",
+        "evaluation_overfitting"
+      ],
+      "minutes_share": 0.1
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "IHZwWFHWa-w",
+      "title": "Gradient descent, how neural networks learn | Deep Learning Chapter 2",
+      "channel": "3Blue1Brown",
+      "url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "duration_min": 20.6,
+      "minutes_counted": 20.6,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "ml_basics",
+        "gd_backprop"
+      ],
+      "reason": "Introduces cost functions, training data and gradient descent for a neural network, which gives the learner the core idea of how a model learns before any PyTorch. The learner's calculus background lets them use the gradient-vector view directly.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Cost functions and training for neural networks.",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "Based on chapter titles and description only (no transcript). The fit is clear from the chapters, but depth and pacing are unverified.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "Ilg3gGewQ5U",
+      "title": "Backpropagation, intuitively | Deep Learning Chapter 3",
+      "channel": "3Blue1Brown",
+      "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U",
+      "duration_min": 12.8,
+      "minutes_counted": 12.8,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "gd_backprop"
+      ],
+      "reason": "A visual walkthrough of how backpropagation nudges weights and biases, ending with stochastic gradient descent. It gives the intuition before the formal chain-rule treatment in the next video.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "What's actually happening to a neural network as it learns?",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "The main goal with the follow-on video is to show the connection between the visual walkthrough here",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "Chapters and description only. The intuition-first content is clear from the outline, but it cannot be checked against a transcript.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "tIeHLnjs5U8",
+      "title": "Backpropagation calculus | Deep Learning Chapter 4",
+      "channel": "3Blue1Brown",
+      "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8",
+      "duration_min": 10.3,
+      "minutes_counted": 10.3,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "gd_backprop"
+      ],
+      "reason": "Formalises backpropagation with the chain rule, derivatives with respect to weights and biases, and multi-neuron layers. This suits a learner who knows calculus and wants the math behind the intuition.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "This one is a bit more symbol-heavy, and that's actually the point.",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "The goal here is to represent in somewhat more formal terms the intuition for how backpropagation works in part 3 of the series",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "Chapters and description only. The symbol-heavy level matches the learner's calculus background, but actual clarity is unverified.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 4,
+      "video_id": "r1bquDz5GGA",
+      "title": "PyTorch in 1 Hour",
+      "channel": "Zachary Huang",
+      "url": "https://www.youtube.com/watch?v=r1bquDz5GGA",
+      "duration_min": 62.8,
+      "minutes_counted": 57.2,
+      "watch_from": "00:00",
+      "watch_until": "57:10",
+      "covers": [
+        "pytorch_tensors_autograd",
+        "training_loop"
+      ],
+      "reason": "Moves from the math to code: torch.tensor, requires_grad and the computation graph, loss.backward(), the manual gradient descent update, and then nn.Module and torch.optim. This ties the learner's new backprop knowledge to PyTorch autograd. The final transformer feed-forward chapter is skipped because it is not needed.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "0:01:55 - torch.tensor 0:07:32 - Autograd & requires_grad 0:09:21 - Computation Graph & .grad_fn",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "0:30:25 - loss.backward() 0:34:12 - Gradient Descent Update Rule 0:40:23 - torch.nn.Module",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.5,
+      "confidence_note": "Chapter list only. Pace is fast for a crash course, so tensors and autograd may be thin. The long course sections that follow reinforce tensors.",
+      "level": "beginner",
+      "format": "crash_course"
+    },
+    {
+      "rank": 5,
+      "video_id": "V_xro1bcAuA",
+      "title": "PyTorch for Deep Learning & Machine Learning – Full Course",
+      "channel": "freeCodeCamp.org",
+      "url": "https://www.youtube.com/watch?v=V_xro1bcAuA",
+      "duration_min": 1537.4,
+      "minutes_counted": 254.6,
+      "watch_from": "4:17:27",
+      "watch_until": "8:32:00",
+      "covers": [
+        "ml_basics",
+        "training_loop"
+      ],
+      "reason": "The PyTorch workflow chapters build a model on a linear regression task with train/test splits, loss, optimizer and the training and testing loop. This gives the learner a code-along for the supervised-learning workflow and the main PyTorch training pattern.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "4:37:12",
+          "quote": "Creating training and test sets (the most important concept in ML)",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.55,
+      "confidence_note": "Based on the chapter list only. Segment boundaries come from coarse chapters, and the depth of explanation is unverified.",
+      "level": "beginner",
+      "format": "full_course"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "VfhfHrns6CU",
+      "title": "Train a CONVOLUTIONAL NEURAL NETWORK on the CIFAR-100 dataset using PyTorch",
+      "stage": "prefilter",
+      "reason": "too short (92s)"
+    },
+    {
+      "video_id": "AlRBvnKyoic",
+      "title": "Building a CNN from Scratch for MNIST Digit Recognition | Step-by-Step Explanation",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "4dwsSz_fNSQ",
+      "title": "Lec-37: Supervised, Unsupervised and Reinforcement Learning in Artificial Intelligence in Hindi",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "36pfg7RpvbQ",
+      "title": "Understanding BackPropagation Using Multi-variate Calculus [Machine Learning Tutorial]",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "pXGBHV3y8rs",
+      "title": "Gradient Descent For Neural Network | Deep Learning Tutorial 12 (Tensorflow2.0, Keras & Python)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "2buq7xkZ2uE",
+      "title": "PyTorch crash course: from tensors to training a handwritten digit classifier",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "4JRcMisTNsg",
+      "title": "ODSC East 2016 | Alex Wiltschko - \"Building Neural Networks at Twitter with Autograd\"",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "OgriaU-OXdI",
+      "title": "CIFAR-10 Image Classification with CNN | Deep Learning Project 2",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Z_ikDlimN6A",
+      "title": "Learn PyTorch for deep learning in a day. Literally.",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "JxgmHe2NyeY",
+      "title": "Complete Machine Learning In 6 Hours| Krish Naik",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "wqPt3qjB6uA",
+      "title": "Understanding Backpropagation In Neural Networks with Basic Calculus",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "vsWrXfO3wWw",
+      "title": "Machine Learning Tutorial Python - 4: Gradient Descent and Cost Function",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "RH6DeE3bY6I",
+      "title": "Dataset & DataLoader Class in PyTorch | Video 6 | CampusX",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "kUkGR5Lu3DU",
+      "title": "Exploring the Deep Learning Framework PyTorch - Stephanie Kim",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "g-haFNF_KAY",
+      "title": "How to Build a CNN Image Classifier in PyTorch (CIFAR-10) — Beginner Guide (2026)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "dq6D4XSDh74",
+      "title": "Image Classification Using CNN",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "9BwIjB5T-vY",
+      "title": "Supervised Machine Learning Tutorial for Beginners [Part 10] | Logloss Function & its Interpretation",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "0r_Qjhusrv0",
+      "title": "Backpropagation Calculus Explained Simply | Chain Rule in Neural Networks | Deep Learning Chapter 4",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "vGaQgNRHxbs",
+      "title": "Gradient descent from scratch in python",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Y7gXLkLNrM0",
+      "title": "Learn PyTorch FAST - Full Course for Beginners (2026) Part 1 Basics ",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "_0D5lXDjNpw",
+      "title": "JAX in 100 Seconds",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "vtOI7NgXMQQ",
+      "title": "Introduction to Gradient Descent | How Models Minimize Loss",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "Tx3h3BbIgSs",
+      "title": "CNN for CIFAR 10",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "7lkVovTBKqI",
+      "title": "Build Your Own Butterfly Image Classifier with Python AI",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "gb5nm_3jBIo",
+      "title": "Loss Functions in Deep Learning | Deep Learning | CampusX",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "_iBciwXQys4",
+      "title": "Chain Rule To find Derivative In Back Propagation",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "c36lUUr864M",
+      "title": "Deep Learning With PyTorch - Full Course",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "1wqKowfoUPM",
+      "title": "Pytorch - Minimizing every function using Pytorch - 01",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "CyYHJnSOANY",
+      "title": "CNN Image Classification with PyTorch | CIFAR-10 Tutorial | PyTorch vs TensorFlow  | Part 2",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "UqA7bxp7VBk",
+      "title": "AI Engineering Full Course (PyTorch) 2026 UPDATED | Beginner to Advanced | One Shot | Sagar Chouksey",
+      "stage": "select",
+      "reason": "A 290-minute single-creator PyTorch course that covers tensors, training and a CNN, but its chapters list no evaluation or overfitting block. Adding it would also split the PyTorch teaching across several creators for little new coverage."
+    },
+    {
+      "video_id": "IFsVsXAqPto",
+      "title": "Deep Learning with PyTorch Full Course | Master PyTorch, Tensors, and Neural Networks",
+      "stage": "select",
+      "reason": "A broad survey of 115 minutes (chapter titles only) with no project. Its coverage overlaps the chosen course, and each topic gets only a short slot."
+    },
+    {
+      "video_id": "ORyfPJypKuU",
+      "title": "Gradient Descent From Scratch | End to End Gradient Descent | Gradient Descent Animation",
+      "stage": "select",
+      "reason": "A 2-hour gradient descent lecture whose spoken language is unverified. It repeats the gradient descent intuition already covered by the 3Blue1Brown videos and has no neural network or PyTorch content."
+    },
+    {
+      "video_id": "Lb0JzFtTmBs",
+      "title": "Part 2 - Supervised Learning | Complete Machine Learning Course for Beginners | Sheryians AI School",
+      "stage": "select",
+      "reason": "Scikit-learn linear regression lecture flagged off_topic, with no PyTorch or neural network content, and its language is unverified. Its cost function and overfitting material is already covered in PyTorch by the chosen course."
+    },
+    {
+      "video_id": "pDdP0TFzsoQ",
+      "title": "PyTorch Tutorial 14 - Convolutional Neural Network (CNN)",
+      "stage": "select",
+      "reason": "A good-looking 22-minute PyTorch CNN on CIFAR-10, but it repeats the CNN coverage in the chosen course and adds another creator and codebase. It is a sensible optional supplement."
+    },
+    {
+      "video_id": "CtzfbUwrYGI",
+      "title": "Image Classification CNN in PyTorch",
+      "stage": "select",
+      "reason": "A 30-minute CIFAR-10 CNN with saving and custom-image classification, with only chapter-level evidence. It mostly repeats the CNN and project coverage of the chosen course."
+    },
+    {
+      "video_id": "EvE0xT36kO0",
+      "title": "Deep Learning for Beginners: Image Classification with TensorFlow & CNN",
+      "stage": "select",
+      "reason": "A CIFAR-10 project in TensorFlow/Keras, not PyTorch, so it does not meet the learner's goal."
+    },
+    {
+      "video_id": "7HPwo4wnJeA",
+      "title": "Image classification using CNN (CIFAR10 dataset) | Deep Learning Tutorial 24 (Tensorflow & Python)",
+      "stage": "select",
+      "reason": "TensorFlow-based and carries a wrong_language red flag; it is not PyTorch."
+    },
+    {
+      "video_id": "44zW9dWxxXc",
+      "title": "Mastering PyTorch Fundamentals | Tensors, Autograd & Neural Networks (in 30 Minutes)",
+      "stage": "select",
+      "reason": "Tensors, autograd and a training loop, but on the tabular Iris dataset with no images, CNNs or evaluation. The assessment is from the description only."
+    },
+    {
+      "video_id": "U1Z39cFzenQ",
+      "title": "Deep Learning with CIFAR-10 Dataset - CNN Classifier | Neural Network  | Pytorch | Hindi | Bababoss",
+      "stage": "select",
+      "reason": "A PyTorch CIFAR-10 CNN code-along (chapter list only), but likely Hindi given the title, so the language is unverified. It also overlaps with the chosen course."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "Every candidate was assessed from chapters and descriptions only, with no transcripts, so all confidence values are limited. Depth and quality of teaching are unverified.",
+    "The plan uses about 1152 of 1200 minutes (96%), counting only the watched portions. About 48 minutes remain; Patrick Loeber's PyTorch CNN video (22 min) would be an optional supplement for CNN practice.",
+    "Most of the plan is one freeCodeCamp course taken in four slices, so the learner keeps the same codebase and teaching style. The slice boundaries come from coarse chapter markers, and the 8:32:00-10:12:00 cut is an estimate inside a long chapter.",
+    "The skipped parts of the course are the first 4+ hours of PyTorch fundamentals and most of the classification chapter (10:12:00-14:00:48). Tensor basics come from the crash course. Non-linear activations and multi-class classification may be covered thinly, so go back to those chapters if they feel unclear.",
+    "The learner wants code-along backpropagation. No candidate was verified to derive backpropagation in code, so the 3Blue1Brown videos are for intuition and math and Zachary Huang's video plus the course loops show autograd in practice.",
+    "The Zachary Huang video shows tensors and autograd compactly (about 57 minutes), so expect a quick pace there."
+  ],
+  "pool_size": 36,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-5.5",
+    "select": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.20218,
+  "latency_s": 133.8,
+  "mode": "agent"
+}

@@ -1,0 +1,2834 @@
+{
+ "persona": {
+  "persona_id": "ambiguous_design_frontend",
+  "goal": "Get better at design",
+  "time_budget_minutes": 180,
+  "user_context": {
+   "background": "Frontend developer, 2 years, React and CSS",
+   "known": [
+    "CSS",
+    "React",
+    "Flexbox and Grid"
+   ],
+   "unknown": [],
+   "constraints": "Make it practical: include at least one real redesign or critique of an existing UI. Nothing older than 2020."
+  },
+  "expectations": {
+   "pick_count": [
+    2,
+    6
+   ],
+   "min_utilisation": 0.6,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": "(?i)system design|photoshop|illustrator|logo design",
+   "forbidden_flags": [
+    "off_topic",
+    "too_basic_for_learner"
+   ],
+   "unknown_synonyms": {
+    "visual hierarchy": [
+     "hierarchy"
+    ],
+    "typography": [
+     "typography",
+     "font",
+     "type scale"
+    ],
+    "color": [
+     "color",
+     "colour",
+     "palette",
+     "contrast"
+    ],
+    "spacing and layout": [
+     "spacing",
+     "whitespace",
+     "layout",
+     "alignment",
+     "grid"
+    ]
+   },
+   "known_topics": [
+    "css basics",
+    "flexbox",
+    "react basics"
+   ],
+   "min_level": null,
+   "require_project_based": true,
+   "required_language": "en",
+   "expect_infeasible": false,
+   "expect_assumptions": true,
+   "min_upload_year": 2020,
+   "max_sitting_minutes": null,
+   "max_channels": null,
+   "max_per_channel": null,
+   "notes": "Ambiguous goal: should pick the UI/visual-design interpretation that fits a frontend developer, say so in assumptions, and not mix in system design or graphic-design software tutorials."
+  }
+ },
+ "mode": "no_transcript",
+ "models": {
+  "plan": "anthropic/claude-sonnet-5.5",
+  "assess": "anthropic/claude-haiku-4.5",
+  "select": "anthropic/claude-sonnet-5.5"
+ },
+ "offline": true,
+ "use_transcripts": false,
+ "timings_s": {
+  "load_fixture": 0.0,
+  "assess": 0.01,
+  "dedup": 0.0,
+  "select": 37.86
+ },
+ "cost_by_stage": {
+  "select": {
+   "calls": 1,
+   "cost_usd": 0.08627,
+   "prompt_tokens": 16607,
+   "completion_tokens": 5306,
+   "latency_s": 37.86
+  }
+ },
+ "calls": [
+  {
+   "stage": "select",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 16607,
+   "completion_tokens": 5306,
+   "cost_usd": 0.086274,
+   "latency_s": 37.86
+  }
+ ],
+ "plan": {
+  "interpretation": "A frontend developer comes away able to make their own UIs look noticeably more polished by applying core visual design principles (hierarchy, spacing, typography, color) and by critiquing and redesigning real interfaces.",
+  "assumptions": [
+   "'Design' means UI/visual design for web apps, not graphic design, UX research, or brand design",
+   "The learner wants to improve the look of interfaces they build in code, so developer-oriented design content fits best",
+   "Because they know CSS, layout mechanics are skipped and the focus is on design decisions",
+   "'Nothing older than 2020' means videos published in 2020 or later",
+   "No design tool such as Figma is assumed; tool basics are included only as far as needed to follow redesigns"
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "en",
+  "learner_level": "beginner",
+  "sub_topics": [
+   {
+    "id": "visual_hierarchy",
+    "title": "Visual hierarchy and layout composition",
+    "why": "They can build any layout with Flexbox and Grid, but need to learn how to guide the eye with size, weight, contrast and emphasis.",
+    "prereqs": [],
+    "minutes_share": 0.17
+   },
+   {
+    "id": "spacing_alignment",
+    "title": "Spacing, alignment and consistent spacing scales",
+    "why": "Inconsistent spacing is the most common reason developer-built UIs look amateur, and a spacing scale maps directly onto CSS variables.",
+    "prereqs": [
+     "visual_hierarchy"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "typography",
+    "title": "Typography for interfaces",
+    "why": "Font choice, type scale, line height and line length strongly affect polish and readability and are easy to apply in CSS.",
+    "prereqs": [
+     "visual_hierarchy"
+    ],
+    "minutes_share": 0.17
+   },
+   {
+    "id": "color_contrast",
+    "title": "Color systems, contrast and accessibility",
+    "why": "They need a practical way to build palettes, shades and accessible contrast rather than picking colors by guesswork.",
+    "prereqs": [
+     "visual_hierarchy"
+    ],
+    "minutes_share": 0.17
+   },
+   {
+    "id": "depth_details",
+    "title": "Polish details: shadows, borders, radius, and icons",
+    "why": "Small refinements make UIs feel finished, and they translate directly into CSS properties.",
+    "prereqs": [
+     "spacing_alignment",
+     "color_contrast"
+    ],
+    "minutes_share": 0.11
+   },
+   {
+    "id": "ui_critique",
+    "title": "Critiquing existing UIs and spotting problems",
+    "why": "Learning to diagnose what is wrong with a real interface builds the design eye and satisfies the need for practical critique.",
+    "prereqs": [
+     "spacing_alignment",
+     "typography",
+     "color_contrast"
+    ],
+    "minutes_share": 0.1
+   },
+   {
+    "id": "redesign_walkthrough",
+    "title": "Full redesign of a real UI, step by step",
+    "why": "Watching principles applied end to end on a real interface shows how to combine them and gives a repeatable process.",
+    "prereqs": [
+     "ui_critique",
+     "depth_details"
+    ],
+    "minutes_share": 0.13
+   }
+  ],
+  "search_queries": [
+   "UI design for developers visual hierarchy",
+   "spacing and layout UI design tips for developers",
+   "typography for web UI design practical guide",
+   "color palette UI design for developers contrast accessibility",
+   "UI design tips shadows borders polish for developers",
+   "UI redesign before and after real website critique",
+   "redesigning a bad UI step by step for developers"
+  ],
+  "title_exclusions": [],
+  "skip_topics": [
+   "CSS",
+   "React",
+   "Flexbox",
+   "Grid"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "EcbgbKtOELY",
+   "title": "Every UI/UX Concept Explained in Under 10 Minutes",
+   "channel": "Kole Jain",
+   "minutes": 9.4,
+   "views": 549926,
+   "found_by": [
+    "UI design basics for developers",
+    "UI design tips for developers shadows depth components",
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "NTmh8l-Xl4c",
+   "title": "UI Design Principles | Everything You Need To Know",
+   "channel": "DesignWithArash",
+   "minutes": 5.5,
+   "views": 279377,
+   "found_by": [
+    "UI design basics for developers",
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "vvPklRN0Tco",
+   "title": "The Easy Way to Pick UI Colors",
+   "channel": "Sajid",
+   "minutes": 9.6,
+   "views": 415596,
+   "found_by": [
+    "UI design tips for developers shadows depth components",
+    "color theory for developers choosing a color palette UI"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "ODpB9-MCa5s",
+   "title": "UI/UX Explained In 8 Minutes | UI/UX Design For Beginners | UI/UX Design Basics | Simplilearn",
+   "channel": "Simplilearn",
+   "minutes": 8.3,
+   "views": 748309,
+   "found_by": [
+    "UI design basics for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "9-oefwZ6Z74",
+   "title": "The 80% of UI Design - Typography",
+   "channel": "Sajid",
+   "minutes": 12.4,
+   "views": 360472,
+   "found_by": [
+    "typography for web developers UI design"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "wcZ6jSlZqDc",
+   "title": "The Easy Way to Fix Boring UIs",
+   "channel": "Sajid",
+   "minutes": 9.0,
+   "views": 272416,
+   "found_by": [
+    "UI design tips for developers shadows depth components"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "7AhCIBGTiEA",
+   "title": "UI/UX Website Redesign Before and After - CaterGraphix Design Academy",
+   "channel": "Deznr Academy",
+   "minutes": 43.9,
+   "views": 96,
+   "found_by": [
+    "redesign website UI before and after developer design tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "WwroSqXjrLM",
+   "title": "What Is Visual Hierarchy? | Visual Hierarchy In UI UX Design | UI/UX Tutorial | Simplilearn",
+   "channel": "Simplilearn",
+   "minutes": 8.9,
+   "views": 7123,
+   "found_by": [
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "MlsV3hu84as",
+   "title": "Complete Layout Guide",
+   "channel": "Flux Academy",
+   "minutes": 12.0,
+   "views": 945380,
+   "found_by": [
+    "spacing and layout design tips for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "TGGBUd_qRog",
+   "title": "Material UI Typography Component | Material UI 5 Tutorial | Typography in Material UI #4",
+   "channel": "Indian Coders",
+   "minutes": 7.3,
+   "views": 7291,
+   "found_by": [
+    "typography for web developers UI design"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "mRd1qsWnpik",
+   "title": "Website Redesign Before & After: Built to Convert, Not Just Look Nice",
+   "channel": "DoerBiplob",
+   "minutes": 2.9,
+   "views": 12,
+   "found_by": [
+    "redesign website UI before and after developer design tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "DBHBmeNhYrY",
+   "title": "What Is Visual Hierarchy?",
+   "channel": "Envato",
+   "minutes": 5.8,
+   "views": 82406,
+   "found_by": [
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "fImTa4daVc8",
+   "title": "Why Your UI Designs Look Off — It's Your Spacing & Layout",
+   "channel": "Ali Hassan",
+   "minutes": 25.0,
+   "views": 5863,
+   "found_by": [
+    "spacing and layout design tips for developers"
+   ],
+   "transcript_lang": "en-US",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "l6LqaAs4hWs",
+   "title": "UI/UX Design Color Theory CRASH COURSE | Color Theory For Beginners | Saptarshi Prakash",
+   "channel": "Saptarshi Prakash",
+   "minutes": 26.0,
+   "views": 12354,
+   "found_by": [
+    "color theory for developers choosing a color palette UI"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "qO9H--iKatY",
+   "title": "Figma UI Design Tutorial - How To Redesign Any Website [A Beginner's Guide]",
+   "channel": "Tutorials With Charles",
+   "minutes": 3.3,
+   "views": 510,
+   "found_by": [
+    "redesign website UI before and after developer design tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "LfkDiDyn6nU",
+   "title": "MASTER VISUAL HIERARCHY: Principles of VISUAL DESIGN for Designing Mobile Apps!",
+   "channel": "Design Pilot",
+   "minutes": 76.4,
+   "views": 25702,
+   "found_by": [
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "by8f2vYoJAE",
+   "title": "How to properly layout a website (in 8 minutes)",
+   "channel": "Payton Clark Smith",
+   "minutes": 8.1,
+   "views": 112039,
+   "found_by": [
+    "spacing and layout design tips for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "HE4rLEQpiXY",
+   "title": "How to think like a GENIUS UI/UX designer",
+   "channel": "Kole Jain",
+   "minutes": 5.5,
+   "views": 175063,
+   "found_by": [
+    "UI design tips for developers shadows depth components"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "uwNClNmekGU",
+   "title": "4 Foundational UI Design Principles | C.R.A.P.",
+   "channel": "Jesse Showalter",
+   "minutes": 9.3,
+   "views": 312723,
+   "found_by": [
+    "UI design basics for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "kK1TOpI948o",
+   "title": "The Beginner's Guide To Visual Hierarchy",
+   "channel": "DesignSpo",
+   "minutes": 15.5,
+   "views": 26308,
+   "found_by": [
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "a5KYlHNKQB8",
+   "title": "Beginning Graphic Design: Layout & Composition",
+   "channel": "LearnFree",
+   "minutes": 5.2,
+   "views": 3958596,
+   "found_by": [
+    "spacing and layout design tips for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "HQvOF7TK7hg",
+   "title": "UI Typography | Full UX Design Course for Beginners by Cutting Edge School",
+   "channel": "The Cutting Edge School",
+   "minutes": 25.6,
+   "views": 28420,
+   "found_by": [
+    "typography for web developers UI design"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "GyVMoejbGFg",
+   "title": "Super Practical Guide to Color Theory, Color Models and Perfect Color Palettes | UI Design",
+   "channel": "Elizabeth Alli - DesignerUp",
+   "minutes": 24.1,
+   "views": 594412,
+   "found_by": [
+    "color theory for developers choosing a color palette UI"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "t7cnk3aQp2c",
+   "title": "Steal My UI/UX Process in 2026 (Real Project Breakdown)",
+   "channel": "Agatha Richards",
+   "minutes": 8.8,
+   "views": 55856,
+   "found_by": [
+    "redesign website UI before and after developer design tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "wIuVvCuiJhU",
+   "title": "world's shortest UI/UX design course",
+   "channel": "Juxtopposed",
+   "minutes": 6.9,
+   "views": 2198175,
+   "found_by": [
+    "UI design basics for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "OqAdmfRztds",
+   "title": "Visual Hierarchy in UI/UX — Why NOBODY can READ your DESIGNS",
+   "channel": "Ali Hassan",
+   "minutes": 20.3,
+   "views": 3986,
+   "found_by": [
+    "visual hierarchy UI design explained"
+   ],
+   "transcript_lang": "en-US",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "oIX5vfuegZI",
+   "title": "Your Figma Drop Shadows Look Cheap (Fix This in 2 Minutes)",
+   "channel": "UI Collective",
+   "minutes": 2.5,
+   "views": 8725,
+   "found_by": [
+    "UI design tips for developers shadows depth components"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "CLLObtIpDUU",
+   "title": "Website Redesign | Before & After (EP 01)",
+   "channel": "Mr Saiful",
+   "minutes": 4.9,
+   "views": 8,
+   "found_by": [
+    "redesign website UI before and after developer design tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "c9Wg6Cb_YlU",
+   "title": "UI / UX Design Tutorial – Wireframe, Mockup & Design in Figma",
+   "channel": "freeCodeCamp.org",
+   "minutes": 86.3,
+   "views": 3422824,
+   "found_by": [
+    "UI design basics for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "PKfZ1gnVJ44",
+   "title": "The FULL 2026 Guide To Layout & Composition For Designers!",
+   "channel": "Satori Graphics",
+   "minutes": 30.9,
+   "views": 322356,
+   "found_by": [
+    "spacing and layout design tips for developers"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "AXpxZMRM1EY",
+   "title": "The ULTIMATE Guide To Typography For Beginners",
+   "channel": "DesignSpo",
+   "minutes": 13.5,
+   "views": 1362498,
+   "found_by": [
+    "typography for web developers UI design"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "dtRGlxI0TL8",
+   "title": "Industry-Standard Shadow System | Shadow Design System Tutorial for Product & UI/UX Designers",
+   "channel": "Universal Tech Fort (UTF)",
+   "minutes": 49.8,
+   "views": 135,
+   "found_by": [
+    "UI design tips for developers shadows depth components"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "1NTKwpAVcHg",
+   "title": "Give Me 7 Minutes & Your Web Design Skills Will Take Off",
+   "channel": "Self-Made Web Designer",
+   "minutes": 7.2,
+   "views": 536622,
+   "found_by": [
+    "redesign website UI before and after developer design tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  }
+ ],
+ "assessments": {
+  "EcbgbKtOELY": {
+   "spoken_language": "en",
+   "summary": "A rapid overview of core UI/UX design concepts including visual hierarchy, color theory, typography, spacing, and other foundational principles. The video claims to cover everything a designer needs to know in under 10 minutes.",
+   "topics_covered": [
+    "visual_hierarchy",
+    "color_theory",
+    "typography",
+    "spacing",
+    "ui_ux_principles"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "mobbin"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 559,
+     "topic": "Multiple UI/UX design concepts overview"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "EcbgbKtOELY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "NTmh8l-Xl4c": {
+   "spoken_language": "en",
+   "summary": "This video promises to walk through important UI design principles and how to apply them in projects, but the transcript is not available to verify the actual content taught.",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "NTmh8l-Xl4c",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "vvPklRN0Tco": {
+   "spoken_language": "en",
+   "summary": "The video claims to explain how to pick UI colors easily, positioning colors as the simplest aspect of UI design. However, without a transcript available, the actual depth and teaching methodology cannot be verified.",
+   "topics_covered": [
+    "color_selection"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 577,
+     "topic": "color picking fundamentals"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "vvPklRN0Tco",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "ODpB9-MCa5s": {
+   "spoken_language": "en",
+   "summary": "This is a brief introductory video on UI/UX design basics for beginners, covering fundamental concepts in 8 minutes. Without access to the transcript, the actual depth and practical content cannot be verified.",
+   "topics_covered": [
+    "ui/ux basics",
+    "design fundamentals"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 498,
+     "topic": "UI/UX design basics overview"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "ODpB9-MCa5s",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "9-oefwZ6Z74": {
+   "spoken_language": "en",
+   "summary": "A video focused on typography fundamentals for UI design, covering how to select and apply font sizes, weights, and colors effectively. The presenter emphasizes that typography is a core component of UI design, along with interactive elements and icons.",
+   "topics_covered": [
+    "typography",
+    "font_size",
+    "font_weight",
+    "color"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 744,
+     "topic": "Typography fundamentals for UI design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "9-oefwZ6Z74",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "wcZ6jSlZqDc": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to add depth to user interfaces using shadows to make designs more visually interesting. It focuses on shadow techniques as a practical way to improve boring UI designs.",
+   "topics_covered": [
+    "shadows",
+    "depth",
+    "ui polish"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "codepen"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 539,
+     "topic": "shadows and depth techniques for UI improvement"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "wcZ6jSlZqDc",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "7AhCIBGTiEA": {
+   "spoken_language": "en",
+   "summary": "A UI/UX redesign walkthrough showing before-and-after improvements to a student's website project. The video demonstrates how to enhance an existing webpage design to make it better, likely covering design principles and practical critique.",
+   "topics_covered": [
+    "ui_critique",
+    "redesign_walkthrough",
+    "visual_hierarchy",
+    "spacing_alignment"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Redesign of a student's website (CaterGraphix Academy student project)",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 2635,
+     "topic": "UI/UX redesign walkthrough and critique of existing student project"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 2
+    }
+   ],
+   "video_id": "7AhCIBGTiEA",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "WwroSqXjrLM": {
+   "spoken_language": "en",
+   "summary": "This video explains the concept of visual hierarchy in UI/UX design, covering how to organize elements to guide user attention and create effective layouts. It appears to be an introductory tutorial from Simplilearn's UI/UX certification program.",
+   "topics_covered": [
+    "visual hierarchy",
+    "ui design principles",
+    "layout composition"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 535,
+     "topic": "visual hierarchy in UI/UX design explanation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "WwroSqXjrLM",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "MlsV3hu84as": {
+   "spoken_language": "en",
+   "summary": "This video covers foundational layout principles including focal point, white space, and visual hierarchy as part one of a three-part series. It is a concept-focused explainer without transcript details available to verify the depth of teaching or practical application.",
+   "topics_covered": [
+    "visual_hierarchy",
+    "spacing_alignment",
+    "layout_principles"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 719,
+     "topic": "Layout principles: focal point, white space, and hierarchy"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "MlsV3hu84as",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "TGGBUd_qRog": {
+   "spoken_language": "en",
+   "summary": "This video teaches about the Typography component in Material UI 5, covering how to use pre-built typography styles and variants in a React UI library. It is part of a Material UI tutorial series focused on typography implementation.",
+   "topics_covered": [
+    "material ui",
+    "typography component",
+    "material ui 5"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "material ui 5"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 441,
+     "topic": "Material UI Typography component introduction and usage"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "TGGBUd_qRog",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "mRd1qsWnpik": {
+   "spoken_language": "en",
+   "summary": "The video compares a health blog website's old and new designs section by section, explaining design changes made for user experience, SEO, and conversion optimization. The redesign addresses issues like cluttered navigation, off-brand colors, unclear headlines, and hidden newsletter signup.",
+   "topics_covered": [
+    "visual_hierarchy",
+    "ui_critique",
+    "redesign_walkthrough",
+    "color_systems",
+    "navigation_design"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Health blog website redesign",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 173,
+     "topic": "Old vs new design comparison and issues identified"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 2
+    }
+   ],
+   "video_id": "mRd1qsWnpik",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "DBHBmeNhYrY": {
+   "spoken_language": "en",
+   "summary": "A brief overview of visual hierarchy as a fundamental concept in graphic design, layout design, and UI design. The video explains what visual hierarchy is and why it matters for visual communication, but does not include hands-on redesign work or practical application.",
+   "topics_covered": [
+    "visual_hierarchy"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 347,
+     "topic": "visual hierarchy concept and importance"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "DBHBmeNhYrY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "fImTa4daVc8": {
+   "spoken_language": "en",
+   "summary": "The video addresses why UI designs look off-balance and focuses on spacing and layout as the primary culprit. It appears to teach practical techniques for fixing spacing issues to improve overall design quality.",
+   "topics_covered": [
+    "spacing",
+    "layout",
+    "visual_hierarchy"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1501,
+     "topic": "spacing and layout troubleshooting"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "fImTa4daVc8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "l6LqaAs4hWs": {
+   "spoken_language": "en",
+   "summary": "The video explains 8 color theory laws for UI/UX design beginners, focusing on the psychology behind color choices and how color influences perception before other design elements like headlines.",
+   "topics_covered": [
+    "color theory",
+    "color psychology",
+    "ui design basics"
+   ],
+   "level": "beginner",
+   "format": "crash_course",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1559,
+     "topic": "Color theory laws and psychology for UI/UX design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "l6LqaAs4hWs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "qO9H--iKatY": {
+   "spoken_language": "en",
+   "summary": "Unable to assess the video's actual content as the transcript is not available. Based on the title, the video appears to teach how to redesign websites using Figma with a focus on wireframing for beginners. Without the transcript, specific topics taught cannot be reliably determined.",
+   "topics_covered": [
+    "figma",
+    "wireframing",
+    "website redesign"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Website redesign using Figma wireframes",
+   "tools_and_versions": [
+    "figma"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "qO9H--iKatY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "LfkDiDyn6nU": {
+   "spoken_language": "en",
+   "summary": "This tutorial covers visual hierarchy principles for designing mobile interfaces. It teaches how to apply visual design concepts to create better UI layouts and designs.",
+   "topics_covered": [
+    "visual hierarchy",
+    "visual design principles",
+    "mobile app design",
+    "interface design"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "mobbin"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 4584,
+     "topic": "visual hierarchy and visual design principles for mobile interfaces"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "LfkDiDyn6nU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "by8f2vYoJAE": {
+   "spoken_language": "en",
+   "summary": "This video provides a quick overview of website layout structure, covering navigation, hero sections, body content, and footers with critical layout tips. No hands-on redesign or critique work is shown; it appears to be a structural primer on website sections.",
+   "topics_covered": [
+    "layout",
+    "navigation",
+    "hero section",
+    "spacing",
+    "website structure"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 52,
+     "topic": "Intro to website layouts and navigation"
+    },
+    {
+     "start_s": 52,
+     "end_s": 145,
+     "topic": "Hero section design"
+    },
+    {
+     "start_s": 145,
+     "end_s": 363,
+     "topic": "Website body layout"
+    },
+    {
+     "start_s": 363,
+     "end_s": 402,
+     "topic": "Footer design"
+    },
+    {
+     "start_s": 402,
+     "end_s": 488,
+     "topic": "Critical layout tips"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "by8f2vYoJAE",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "HE4rLEQpiXY": {
+   "spoken_language": "en",
+   "summary": "A brief overview of UI/UX design philosophy covering user intent and design thinking approach. The video discusses how to approach web design from first principles and understand who the UI is actually for, positioning itself as teaching what separates good designers from great ones.",
+   "topics_covered": [
+    "design thinking",
+    "user intent",
+    "design approach"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 26,
+     "topic": "Introduction"
+    },
+    {
+     "start_s": 26,
+     "end_s": 62,
+     "topic": "User intent and design philosophy"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "HE4rLEQpiXY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "uwNClNmekGU": {
+   "spoken_language": "en",
+   "summary": "This video teaches the four foundational C.R.A.P. design principles (Contrast, Repetition, Alignment, Proximity) that apply to UI design. It covers each principle individually without showing a hands-on redesign or critique of an existing UI.",
+   "topics_covered": [
+    "contrast",
+    "repetition",
+    "alignment",
+    "proximity",
+    "design principles"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 25,
+     "topic": "Intro to C.R.A.P. principles"
+    },
+    {
+     "start_s": 40,
+     "end_s": 316,
+     "topic": "Contrast principle"
+    },
+    {
+     "start_s": 316,
+     "end_s": 288,
+     "topic": "Repetition principle"
+    },
+    {
+     "start_s": 288,
+     "end_s": 416,
+     "topic": "Alignment principle"
+    },
+    {
+     "start_s": 416,
+     "end_s": 556,
+     "topic": "Proximity principle"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "uwNClNmekGU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "kK1TOpI948o": {
+   "spoken_language": "en",
+   "summary": "This video introduces visual hierarchy concepts including contrast, uniformity, and how to make elements stand out in design. However, no transcript is available to verify the actual depth of teaching or whether practical examples and redesigns are included.",
+   "topics_covered": [
+    "visual_hierarchy",
+    "contrast",
+    "uniformity"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "kK1TOpI948o",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "a5KYlHNKQB8": {
+   "spoken_language": "en",
+   "summary": "This video covers foundational graphic design principles including layout, composition, spacing, alignment, contrast, and repetition. However, the transcript is unavailable, making it impossible to verify what is actually taught or whether it applies specifically to UI/interface design rather than general graphic design.",
+   "topics_covered": [
+    "layout",
+    "composition",
+    "spacing",
+    "alignment",
+    "contrast",
+    "repetition"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 315,
+     "topic": "layout, composition, spacing, alignment, contrast and repetition in graphic design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "a5KYlHNKQB8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "HQvOF7TK7hg": {
+   "spoken_language": "en",
+   "summary": "This video teaches typography for UI design, covering three main buckets of type as part of a full UX design course for beginners. The instructor walks through typography fundamentals relevant to interface design.",
+   "topics_covered": [
+    "typography",
+    "ui design fundamentals"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 66,
+     "topic": "Series introduction"
+    },
+    {
+     "start_s": 66,
+     "end_s": 122,
+     "topic": "Learning objectives for typography"
+    },
+    {
+     "start_s": 122,
+     "end_s": 179,
+     "topic": "Course resources and playlists"
+    },
+    {
+     "start_s": 179,
+     "end_s": 1533,
+     "topic": "Three main buckets of typography"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "HQvOF7TK7hg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "GyVMoejbGFg": {
+   "spoken_language": "en",
+   "summary": "This video teaches color theory fundamentals for UI design, focusing on how to create professional color palettes by understanding tone, tint, shade, and temperature—concepts often missing from basic color harmony tutorials.",
+   "topics_covered": [
+    "color theory",
+    "color palettes",
+    "color models",
+    "tone",
+    "tint",
+    "shade",
+    "color temperature"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 300,
+     "topic": "Color theory, tone, tint, shade and temperature concepts"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "GyVMoejbGFg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "t7cnk3aQp2c": {
+   "spoken_language": "en",
+   "summary": "The video presents a real-world UI/UX design process for a healthcare product that spans mobile and dashboard interfaces, emphasizing practical application over theory. The creator breaks down their actual workflow using Figma and design reference tools, with focus on accessibility and branding constraints.",
+   "topics_covered": [
+    "design process",
+    "figma",
+    "mobile design",
+    "dashboard design",
+    "accessibility",
+    "branding constraints",
+    "design workflow"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Healthcare product UI across mobile and dashboard interfaces",
+   "tools_and_versions": [
+    "figma",
+    "mobbin"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 36,
+     "topic": "Introduction to design process"
+    },
+    {
+     "start_s": 36,
+     "end_s": 526,
+     "topic": "Real project breakdown: healthcare product design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 2
+    }
+   ],
+   "video_id": "t7cnk3aQp2c",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "wIuVvCuiJhU": {
+   "spoken_language": "en",
+   "summary": "This is a 6-minute introductory overview of UI/UX design principles, covering the 20% of UI design that is used 80% of the time. The video appears to reference a site redesign (stacksorted.com) but provides only surface-level coverage due to its extreme brevity.",
+   "topics_covered": [
+    "ui_design_principles",
+    "ui_ux_overview"
+   ],
+   "level": "beginner",
+   "format": "crash_course",
+   "is_project_based": true,
+   "project_built": "stacksorted.com (mentioned but not shown in transcript)",
+   "tools_and_versions": [
+    "figma"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 413,
+     "topic": "UI/UX design overview and principles"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 1
+    }
+   ],
+   "video_id": "wIuVvCuiJhU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "OqAdmfRztds": {
+   "spoken_language": "en",
+   "summary": "This video teaches visual hierarchy principles in UI/UX design, focusing on why users struggle to read and navigate designs that lack clear hierarchy. It appears to address common problems in design communication and user confusion when viewing interfaces.",
+   "topics_covered": [
+    "visual_hierarchy",
+    "ui_design_principles"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1220,
+     "topic": "visual_hierarchy_and_readability_in_ui_design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "OqAdmfRztds",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "oIX5vfuegZI": {
+   "spoken_language": "en",
+   "summary": "A 2-minute Figma tutorial on creating professional drop shadows that look realistic rather than cheap or bulky. The instructor, claiming experience as a UX designer, shares a specific technique for shadow implementation in design tools.",
+   "topics_covered": [
+    "drop shadows",
+    "figma",
+    "polish details"
+   ],
+   "level": "beginner",
+   "format": "crash_course",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "figma"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 150,
+     "topic": "Introduction to drop shadow problems in Figma"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "oIX5vfuegZI",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "CLLObtIpDUU": {
+   "spoken_language": "en",
+   "summary": "A before-and-after website redesign of a WordPress site, showing transformation from outdated to modern design with improvements in visual hierarchy, user experience, and mobile responsiveness. The video focuses on UI modernization and conversion-focused design principles.",
+   "topics_covered": [
+    "visual_hierarchy",
+    "responsive_design",
+    "ui_critique",
+    "redesign_walkthrough",
+    "cta_design"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Complete WordPress website redesign from outdated to modern, responsive, conversion-focused design",
+   "tools_and_versions": [
+    "wordpress"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 296,
+     "topic": "Website redesign before and after demonstration with focus on visual hierarchy, UX, and mobile responsiveness"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 2
+    }
+   ],
+   "video_id": "CLLObtIpDUU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "c9Wg6Cb_YlU": {
+   "spoken_language": "en",
+   "summary": "Professional UI/UX design tutorial covering the complete design process from wireframing to mockup creation in Figma. Teaches how to build a full website design following user experience and user interface principles.",
+   "topics_covered": [
+    "wireframing",
+    "mockups",
+    "figma",
+    "design_process",
+    "ux_principles",
+    "ui_design"
+   ],
+   "level": "beginner",
+   "format": "full_course",
+   "is_project_based": true,
+   "project_built": "A complete website design from wireframe to mockup in Figma",
+   "tools_and_versions": [
+    "figma"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 2781,
+     "topic": "Complete UI/UX design workflow: wireframing, prototyping, and Figma design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "c9Wg6Cb_YlU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "PKfZ1gnVJ44": {
+   "spoken_language": "en",
+   "summary": "This video claims to be a comprehensive 2026 guide to layout and composition for graphic designers, covering how layouts function as foundational design principles. Without access to the transcript, the actual content and depth cannot be verified.",
+   "topics_covered": [
+    "layout",
+    "composition"
+   ],
+   "level": "beginner",
+   "format": "full_course",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1856,
+     "topic": "layout and composition guide (transcript unavailable)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "PKfZ1gnVJ44",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "AXpxZMRM1EY": {
+   "spoken_language": "en",
+   "summary": "This video teaches beginner typography principles for design, covering typeface selection and text handling as fundamental to visual design. The content focuses on foundational typography knowledge needed to start designing effectively.",
+   "topics_covered": [
+    "typography",
+    "typefaces"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 810,
+     "topic": "typography fundamentals and typeface types"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "AXpxZMRM1EY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "dtRGlxI0TL8": {
+   "spoken_language": "en",
+   "summary": "A comprehensive tutorial on creating and implementing shadow systems in UI design, covering how professional designers organize and apply elevation and shadow systems to build visually consistent and accessible digital products.",
+   "topics_covered": [
+    "shadow systems",
+    "elevation",
+    "design systems",
+    "visual consistency",
+    "accessibility"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 2990,
+     "topic": "shadow systems and elevation design"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "dtRGlxI0TL8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "1NTKwpAVcHg": {
+   "spoken_language": "en",
+   "summary": "A 7-minute overview claiming to condense 10 years of web design expertise into three core principles: layout, color, and typography. No transcript available to verify hands-on teaching or real UI critiques.",
+   "topics_covered": [
+    "layout",
+    "color",
+    "typography"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 435,
+     "topic": "Overview of web design principles: layout, color, typography"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "visual_hierarchy",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "spacing_alignment",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "typography",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "color_contrast",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "depth_details",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ui_critique",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "redesign_walkthrough",
+     "score": 0
+    }
+   ],
+   "video_id": "1NTKwpAVcHg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  }
+ },
+ "dup_clusters": [
+  {
+   "members": [
+    "GyVMoejbGFg",
+    "1NTKwpAVcHg"
+   ],
+   "shared_topics": [
+    "color models",
+    "color palettes",
+    "color temperature",
+    "color theory"
+   ]
+  }
+ ],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "kK1TOpI948o",
+    "covers": [
+     "visual_hierarchy"
+    ],
+    "reason": "Introduces visual hierarchy through contrast, uniformity and making elements stand out, which is the prerequisite for every later topic. Its only red flag is a poor transcript, so it is a better fit for a CSS-literate developer than the surface_intro or pure_theory alternatives.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "Based on title and summary only, with no transcript or verified quotes. Seeing real UI examples in it would raise confidence."
+   },
+   {
+    "video_id": "fImTa4daVc8",
+    "covers": [
+     "spacing_alignment"
+    ],
+    "reason": "Targets spacing and layout as the main reason UIs look off. This is the most relevant spacing video in the pool, and as a developer you can turn its fixes straight into CSS values.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.55,
+    "confidence_note": "Spacing relevance is high, but the transcript is poor so the depth is unverified. It is unclear whether it teaches an explicit spacing scale."
+   },
+   {
+    "video_id": "9-oefwZ6Z74",
+    "covers": [
+     "typography"
+    ],
+    "reason": "Covers UI typography decisions: font size, weight and colour, and how they build hierarchy in interfaces. This is the decision-focused content you need, since you already know the CSS mechanics.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "It carries surface_intro and pure_theory flags, but it is the most UI-specific typography option. A transcript confirming concrete size and weight guidance would raise confidence."
+   },
+   {
+    "video_id": "AXpxZMRM1EY",
+    "covers": [
+     "typography"
+    ],
+    "reason": "Adds typeface selection and text-handling fundamentals that the UI-specific typography video does not cover, such as how to choose and pair fonts. It fills the rest of the typography slot.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.4,
+    "confidence_note": "Flagged as a surface intro and pure theory, and it is graphic-design oriented. It is included because it adds typeface-choice coverage that the other typography video lacks."
+   },
+   {
+    "video_id": "GyVMoejbGFg",
+    "covers": [
+     "color_contrast"
+    ],
+    "reason": "Teaches how to build professional UI palettes using tone, tint, shade and temperature, which basic colour-harmony tutorials usually skip. It is UI-specific and published in 2020, so it meets your date limit.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.55,
+    "confidence_note": "The summary clearly targets UI palettes. Its segment map is thin, and it is unclear whether it covers contrast ratios and accessibility."
+   },
+   {
+    "video_id": "wcZ6jSlZqDc",
+    "covers": [
+     "depth_details"
+    ],
+    "reason": "Shows how to add depth to flat, boring UIs with shadows, using CodePen. This is the closest match to the polish-details topic and is directly implementable in CSS.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "Only shadows are evidenced, so borders, radius and icons stay uncovered. The flags are surface_intro and pure_theory, but no other candidate offers better practical coverage."
+   },
+   {
+    "video_id": "CLLObtIpDUU",
+    "covers": [
+     "ui_critique",
+     "redesign_walkthrough"
+    ],
+    "reason": "A short before-and-after redesign of a real WordPress site that points out what was wrong, such as weak hierarchy and unclear calls to action. It gives you a quick critique example before the longer walkthrough.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.4,
+    "confidence_note": "Only 4.9 minutes and the transcript is poor, so the critique may be shallow. It is chosen mainly to meet your requirement for a real redesign."
+   },
+   {
+    "video_id": "7AhCIBGTiEA",
+    "covers": [
+     "ui_critique",
+     "redesign_walkthrough"
+    ],
+    "reason": "The longest real redesign in the pool: it walks through before-and-after improvements to an existing website and works as a critique of it. It lets you apply the hierarchy, spacing, typography and colour ideas from the earlier videos, and it meets your requirement for a real redesign or critique.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "The format and relevance fit, but the transcript is poor and the project is a student website. It would be stronger if the critique reasoning were verified."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "OqAdmfRztds",
+    "reason": "Another visual hierarchy explainer. It overlaps with the kept hierarchy video, has a poor transcript and a surface_intro flag, and would add a creator without opening a new gap."
+   },
+   {
+    "video_id": "LfkDiDyn6nU",
+    "reason": "At 76 minutes, it would use most of the hierarchy budget on mobile app design for a single topic. Its transcript is poor and it has no segment map to pick out a useful part."
+   },
+   {
+    "video_id": "c9Wg6Cb_YlU",
+    "reason": "An 86-minute Figma wireframe-to-mockup course. It is tool- and process-heavy, scores relevance 1 or less on the plan's topics, and teaches little design critique."
+   },
+   {
+    "video_id": "dtRGlxI0TL8",
+    "reason": "At 49.8 minutes it is a pure-theory lecture on shadow systems, far beyond the 20-minute polish slot and not practical enough."
+   },
+   {
+    "video_id": "l6LqaAs4hWs",
+    "reason": "26 minutes of colour psychology theory aimed at beginners. It overlaps with the kept colour video and does not cover UI palettes or contrast."
+   },
+   {
+    "video_id": "MlsV3hu84as",
+    "reason": "A pure-theory, surface-level layout explainer that duplicates the hierarchy and spacing coverage already picked."
+   },
+   {
+    "video_id": "uwNClNmekGU",
+    "reason": "The C.R.A.P. principles are covered only as theory, with no redesign. Its alignment and proximity content is already covered by the spacing pick."
+   },
+   {
+    "video_id": "t7cnk3aQp2c",
+    "reason": "A Figma process breakdown of a healthcare product. It is a workflow overview rather than a critique of an existing UI, its transcript is poor, and it has only 8.8 minutes of mixed content."
+   },
+   {
+    "video_id": "mRd1qsWnpik",
+    "reason": "A 2.9-minute redesign comparison, too short to teach anything beyond what the other redesign videos show, with a poor transcript."
+   },
+   {
+    "video_id": "a5KYlHNKQB8",
+    "reason": "Uploaded in 2016, which breaks the 'nothing older than 2020' limit, and it is also graphic-design oriented."
+   }
+  ],
+  "near_duplicates": [
+   {
+    "kept": "GyVMoejbGFg",
+    "dropped": "1NTKwpAVcHg",
+    "shared_topics": [
+     "color models",
+     "color palettes",
+     "color temperature",
+     "color theory"
+    ],
+    "why_kept": "It is a 24-minute UI-specific guide to building palettes with tone, tint, shade and temperature. The dropped one is a 7-minute overview of layout, colour and typography with a surface_intro flag and a poor transcript."
+   }
+  ],
+  "warnings": [
+   "No candidate has verified quotes and every card is based on metadata, with poor or unverified transcripts. All picks are therefore based on titles and summaries and carry moderate-to-low confidence, so skim the first minutes of each before committing.",
+   "Colour contrast and accessibility (WCAG ratios) are likely thin: the colour video is about palette building, and no candidate clearly teaches contrast checking.",
+   "Borders, border-radius and icons are not covered. Only shadows are covered in the polish-details slot.",
+   "The redesign and critique videos are a student website and a WordPress site, not React or web-app UIs, so you will need to translate the lessons to your own components.",
+   "Total viewing time is 148.3 of 180 minutes (82%). The remaining 31.7 minutes are unused because the other candidates were redundant, off-level, too long for their slots or had unusable evidence, and padding with weak videos seemed worse than under-filling.",
+   "The plan uses 8 creators because no single creator covers all the topics. Expect to adjust to different teaching styles.",
+   "I read 'nothing older than 2020' as upload dates in 2020 or later, and all picks meet that."
+  ]
+ },
+ "fixes": []
+}

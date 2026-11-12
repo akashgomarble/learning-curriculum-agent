@@ -1,0 +1,290 @@
+{
+ "ambiguous_design_frontend": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 14.81,
+   "discover": 4.45,
+   "hydrate": 49.27,
+   "assess": 22.45,
+   "dedup": 0.04,
+   "select": 46.77
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01307,
+    "prompt_tokens": 1754,
+    "completion_tokens": 956,
+    "latency_s": 14.81
+   },
+   "assess": {
+    "calls": 33,
+    "cost_usd": 0.03783,
+    "prompt_tokens": 208170,
+    "completion_tokens": 33991,
+    "latency_s": 201.51
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.10698,
+    "prompt_tokens": 27934,
+    "completion_tokens": 5111,
+    "latency_s": 46.77
+   }
+  },
+  "total_cost_usd": 0.1579,
+  "wall_s": 137.8
+ },
+ "career_switch_ml_foundations": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 11.01,
+   "discover": 2.95,
+   "hydrate": 31.37,
+   "assess": 28.45,
+   "dedup": 0.03,
+   "select": 60.01
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01623,
+    "prompt_tokens": 1886,
+    "completion_tokens": 1246,
+    "latency_s": 11.01
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.04731,
+    "prompt_tokens": 139961,
+    "completion_tokens": 66587,
+    "latency_s": 307.39
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.13866,
+    "prompt_tokens": 28460,
+    "completion_tokens": 8174,
+    "latency_s": 60.0
+   }
+  },
+  "total_cost_usd": 0.2022,
+  "wall_s": 133.8
+ },
+ "go_dev_rust_ownership": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 10.75,
+   "discover": 3.02,
+   "hydrate": 33.77,
+   "assess": 27.8,
+   "dedup": 0.02,
+   "select": 64.08
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01699,
+    "prompt_tokens": 1870,
+    "completion_tokens": 1325,
+    "latency_s": 10.75
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.04385,
+    "prompt_tokens": 127007,
+    "completion_tokens": 62309,
+    "latency_s": 283.89
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.14205,
+    "prompt_tokens": 26219,
+    "completion_tokens": 8961,
+    "latency_s": 64.07
+   }
+  },
+  "total_cost_usd": 0.2029,
+  "wall_s": 139.4
+ },
+ "hindi_excel_pivots": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 9.39,
+   "discover": 3.9,
+   "hydrate": 30.01,
+   "assess": 25.84,
+   "dedup": 0.02,
+   "select": 44.69
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01509,
+    "prompt_tokens": 1856,
+    "completion_tokens": 1138,
+    "latency_s": 9.38
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.03991,
+    "prompt_tokens": 131416,
+    "completion_tokens": 53525,
+    "latency_s": 253.27
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.1114,
+    "prompt_tokens": 24311,
+    "completion_tokens": 6278,
+    "latency_s": 44.69
+   }
+  },
+  "total_cost_usd": 0.1664,
+  "wall_s": 113.8
+ },
+ "impossible_k8s_in_45": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 10.71,
+   "discover": 2.61,
+   "hydrate": 31.19,
+   "assess": 29.63,
+   "dedup": 0.03,
+   "select": 44.89
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01629,
+    "prompt_tokens": 1839,
+    "completion_tokens": 1261,
+    "latency_s": 10.71
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.04799,
+    "prompt_tokens": 142214,
+    "completion_tokens": 67547,
+    "latency_s": 308.74
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.10698,
+    "prompt_tokens": 29113,
+    "completion_tokens": 4875,
+    "latency_s": 44.89
+   }
+  },
+  "total_cost_usd": 0.1713,
+  "wall_s": 119.1
+ },
+ "lunch_break_sql_windows": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 8.6,
+   "discover": 2.77,
+   "hydrate": 28.84,
+   "assess": 25.72,
+   "dedup": 0.03,
+   "select": 36.88
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01389,
+    "prompt_tokens": 1863,
+    "completion_tokens": 1016,
+    "latency_s": 8.6
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.04132,
+    "prompt_tokens": 132549,
+    "completion_tokens": 56158,
+    "latency_s": 266.47
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.10215,
+    "prompt_tokens": 25065,
+    "completion_tokens": 5202,
+    "latency_s": 36.87
+   }
+  },
+  "total_cost_usd": 0.1574,
+  "wall_s": 102.8
+ },
+ "sourdough_first_loaf": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 11.03,
+   "discover": 3.55,
+   "hydrate": 34.69,
+   "assess": 26.7,
+   "dedup": 0.02,
+   "select": 44.84
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01556,
+    "prompt_tokens": 1867,
+    "completion_tokens": 1183,
+    "latency_s": 11.03
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.04426,
+    "prompt_tokens": 131550,
+    "completion_tokens": 62214,
+    "latency_s": 288.6
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.12028,
+    "prompt_tokens": 27289,
+    "completion_tokens": 6570,
+    "latency_s": 44.84
+   }
+  },
+  "total_cost_usd": 0.1801,
+  "wall_s": 120.8
+ },
+ "weekend_react_dev": {
+  "note": "cold online run on 2026-11-10 (before selector prompt tuning); plan+discover+hydrate+assess+select",
+  "timings_s": {
+   "plan": 11.05,
+   "discover": 2.71,
+   "hydrate": 19.19,
+   "assess": 28.53,
+   "dedup": 0.01,
+   "select": 62.03
+  },
+  "cost_by_stage": {
+   "plan": {
+    "calls": 1,
+    "cost_usd": 0.01587,
+    "prompt_tokens": 1840,
+    "completion_tokens": 1219,
+    "latency_s": 11.05
+   },
+   "assess": {
+    "calls": 36,
+    "cost_usd": 0.04257,
+    "prompt_tokens": 124360,
+    "completion_tokens": 60263,
+    "latency_s": 284.84
+   },
+   "select": {
+    "calls": 1,
+    "cost_usd": 0.1341,
+    "prompt_tokens": 25755,
+    "completion_tokens": 8259,
+    "latency_s": 62.02
+   }
+  },
+  "total_cost_usd": 0.1925,
+  "wall_s": 123.5
+ }
+}

@@ -1,0 +1,890 @@
+{
+ "persona_id": "hindi_excel_pivots",
+ "budget": 90,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 6,
+    "total_min": 73.8,
+    "utilisation": 0.82,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 6,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "pivot tables": true,
+     "XLOOKUP / VLOOKUP": true,
+     "slicers": true,
+     "pivot charts": true,
+     "dashboard layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [
+     "BvYU0GEHJyc covers slicers_timelines before its prerequisite pivot_charts"
+    ],
+    "order_ok": false,
+    "max_redundancy": 0.38,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.76,
+    "cost_usd": 0.13056,
+    "latency_s": 50.7,
+    "hard_failures": [],
+    "soft_misses": [
+     "pick_count_ok",
+     "order_ok"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "JOSh69tzivA",
+    "DX0V7D0GWwI",
+    "gAY9is-ahQY",
+    "BvYU0GEHJyc",
+    "htOIqJGeewE",
+    "HBJdxWxG7aU"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum perfectly matches the learner's profile, selecting Hindi-language videos that are all strictly under the 25-minute constraint and focusing entirely on the skills needed for a monthly sales dashboard.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the educational content of the videos as described in the reference summaries.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The final video directly creates a complete monthly sales dashboard showing product-wise and city-wise data with month slicers, precisely mirroring the learner's goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The sequence is highly logical: formatting data as tables, pulling in missing data via lookups (VLOOKUP then XLOOKUP), then creating pivots, visualizing with pivot charts, and finally combining them into a dashboard.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All constraints are honored. The videos are all in Hindi/Hinglish, and none exceed the strict 25-minute-per-video limit designed for phone viewing.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The budget of 90 minutes is utilized efficiently, providing a comprehensive start-to-finish guide in 74 minutes while avoiding redundancy.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped items provide clear, sound reasons for rejection, primarily focusing on strict adherence to the time limits, language requirements, and avoiding redundancy.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an excellent, compact, highly purposeful curriculum that respects the learner's time, language needs, and device constraints while directly achieving their goal.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "JOSh69tzivA",
+      "critique": "Provides a quick, introductory look at converting data to Tables and applying basic slicers, which is necessary foundational prep work.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "DX0V7D0GWwI",
+      "critique": "A concise, beginner-friendly introduction to the core concepts of VLOOKUP.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gAY9is-ahQY",
+      "critique": "Effectively bridges VLOOKUP to XLOOKUP and shows application on larger datasets, building the lookup skills required.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "BvYU0GEHJyc",
+      "critique": "A comprehensive pivot table tutorial that covers slicers and filtering on relevant sales data while staying under the time limit.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "htOIqJGeewE",
+      "critique": "A highly focused lesson on pivot charts essential for dashboard visuals.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "HBJdxWxG7aU",
+      "critique": "An ideal final project build that integrates all the learned skills into a dynamic sales dashboard.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.96,
+    "claims": {
+     "JOSh69tzivA": [
+      {
+       "claim": "The video is in Hindi.",
+       "supported": true
+      },
+      {
+       "claim": "Shows how to convert a plain list into an Excel Table before using it.",
+       "supported": true
+      },
+      {
+       "claim": "Gives an introduction to slicers.",
+       "supported": true
+      }
+     ],
+     "DX0V7D0GWwI": [
+      {
+       "claim": "The video is a Hinglish walkthrough of VLOOKUP.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains lookup value, table array, column index, and exact match.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers filling the formula down.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers duplicate-value and top-to-bottom matching pitfalls.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers pasting as values.",
+       "supported": true
+      }
+     ],
+     "gAY9is-ahQY": [
+      {
+       "claim": "The video is in Hindi.",
+       "supported": true
+      },
+      {
+       "claim": "The video applies VLOOKUP and then XLOOKUP to a large dataset.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses named ranges and MATCH to avoid hard-coding column numbers.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows XLOOKUP as the simpler modern option.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses a full monthly sales list dataset.",
+       "supported": false
+      }
+     ],
+     "BvYU0GEHJyc": [
+      {
+       "claim": "The video is a Hindi pivot table course on sales data (seller, region, item, monthly figures).",
+       "supported": true
+      },
+      {
+       "claim": "It covers dragging fields into rows, columns and values.",
+       "supported": true
+      },
+      {
+       "claim": "It covers switching sum to count.",
+       "supported": true
+      },
+      {
+       "claim": "It covers filters.",
+       "supported": true
+      },
+      {
+       "claim": "It covers multiple slicers.",
+       "supported": true
+      },
+      {
+       "claim": "It covers a first pivot chart.",
+       "supported": true
+      }
+     ],
+     "htOIqJGeewE": [
+      {
+       "claim": "The video is in Hindi and dedicated to pivot charts.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows that a pivot chart creates a table and a chart together.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to change the chart type.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to format data labels.",
+       "supported": true
+      }
+     ],
+     "HBJdxWxG7aU": [
+      {
+       "claim": "Builds a monthly sales dashboard end to end in Hindi, from raw data to pivot tables.",
+       "supported": true
+      },
+      {
+       "claim": "Groups dates by month.",
+       "supported": true
+      },
+      {
+       "claim": "Builds product, brand and city charts.",
+       "supported": true
+      },
+      {
+       "claim": "Adds month slicers that control every chart.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 5,
+    "total_min": 64.7,
+    "utilisation": 0.72,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 5,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "pivot tables": true,
+     "XLOOKUP / VLOOKUP": true,
+     "slicers": true,
+     "pivot charts": true,
+     "dashboard layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.17,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.82,
+    "cost_usd": 0.1424,
+    "latency_s": 40.7,
+    "hard_failures": [],
+    "soft_misses": [],
+    "pass": true
+   },
+   "picks": [
+    "4A6hjD-61gM",
+    "hmygrQMcHyU",
+    "gAY9is-ahQY",
+    "htOIqJGeewE",
+    "_JtEWpUJPVY"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is highly customized for the learner. It correctly selects Hindi-language content, keeps all videos under the 25-minute constraint for phone viewing, and directly targets the small business owner's exact dashboard goal.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the specific Excel skills and topics taught in each video (as confirmed by the reference summaries), rather than relying on meta-metrics like views or subscriber count.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The final video is a detailed step-by-step project that builds an interactive monthly sales dashboard, perfectly mirroring the learner's stated goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The logical sequence moves from foundational pivot tables and lookup introductions to advanced lookups, then pivot charts, and culminates with a dashboard that synthesizes these elements.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All videos are in Hindi, none exceed the strict 25-minute limit (the longest is 23 minutes), and the curriculum correctly skips basic formulas the learner already knows.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "Using 65 out of 90 minutes is an excellent use of time. It achieves the entire goal efficiently without padding the schedule, leaving the remaining time for the user to pause, practice, and build along with their own data.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons give solid educational justifications that a learner would understand, such as content duplication, language barriers (English), or being too advanced, even though a few meta-tool notes sneak in.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is a meticulously planned curriculum. It deeply respects the learner's language choice, device constraints, current knowledge, and ultimate business goal.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "4A6hjD-61gM",
+      "critique": "A clear, foundational Hindi introduction to pivot tables and slicers that initiates the journey toward a dashboard.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "hmygrQMcHyU",
+      "critique": "Provides a gentle, beginner-friendly introduction to VLOOKUP in Hindi before stepping into complex usage.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gAY9is-ahQY",
+      "critique": "Effectively builds on the prior video by introducing XLOOKUP and applying lookups to larger datasets.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "htOIqJGeewE",
+      "critique": "Specifically tackles pivot charts, which is a required prerequisite skill for building visual dashboards.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "_JtEWpUJPVY",
+      "critique": "An incredible capstone project that exactly builds a monthly sales dashboard in Hindi, fitting just under the 25-minute constraint.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.9,
+    "claims": {
+     "4A6hjD-61gM": [
+      {
+       "claim": "The video is a beginner walkthrough in Hindi on sales-data pivot tables.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers inserting a pivot table.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers dragging fields to rows, columns, and values.",
+       "supported": false
+      },
+      {
+       "claim": "The video covers refreshing the pivot table when records change.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers adding a first slicer.",
+       "supported": true
+      }
+     ],
+     "hmygrQMcHyU": [
+      {
+       "claim": "The video is an introductory guide to VLOOKUP in Hindi.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains each argument of VLOOKUP: lookup value, table array, column index, and range lookup.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses an example with name, city, and sales data.",
+       "supported": true
+      }
+     ],
+     "gAY9is-ahQY": [
+      {
+       "claim": "The video builds on the basic VLOOKUP video.",
+       "supported": false
+      },
+      {
+       "claim": "The video applies VLOOKUP and XLOOKUP to large data.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses MATCH to find the column number.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses named ranges to simplify formulas.",
+       "supported": true
+      }
+     ],
+     "htOIqJGeewE": [
+      {
+       "claim": "The video is a Hindi walkthrough of creating a pivot chart together with its pivot table.",
+       "supported": true
+      },
+      {
+       "claim": "It covers changing chart type.",
+       "supported": true
+      },
+      {
+       "claim": "It covers data labels and formatting.",
+       "supported": true
+      },
+      {
+       "claim": "It covers preparing the chart ready for the dashboard.",
+       "supported": true
+      }
+     ],
+     "_JtEWpUJPVY": [
+      {
+       "claim": "The video is a Hindi project build of an interactive monthly sales dashboard.",
+       "supported": true
+      },
+      {
+       "claim": "The dashboard has KPI cards.",
+       "supported": true
+      },
+      {
+       "claim": "The dashboard has product, region, and month-trend charts.",
+       "supported": true
+      },
+      {
+       "claim": "The dashboard has slicers connected across all charts/KPI cards.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 8,
+    "total_min": 89.6,
+    "utilisation": 1.0,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 8,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "pivot tables": true,
+     "XLOOKUP / VLOOKUP": true,
+     "slicers": true,
+     "pivot charts": true,
+     "dashboard layout": false
+    },
+    "unknown_coverage": 0.8,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.27,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "4A6hjD-61gM",
+     "gAY9is-ahQY",
+     "NbaiGbn4khs",
+     "hxAkt7Pico0",
+     "DX0V7D0GWwI",
+     "lCoPTPsTJ4s",
+     "DUP-Js2vNjs",
+     "hmygrQMcHyU"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "pick_count_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "4A6hjD-61gM",
+    "gAY9is-ahQY",
+    "NbaiGbn4khs",
+    "hxAkt7Pico0",
+    "DX0V7D0GWwI",
+    "lCoPTPsTJ4s",
+    "DUP-Js2vNjs",
+    "hmygrQMcHyU"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum fails to provide a structured learning path tailored to the learner's specific goal of building a dashboard. Instead, it is a repetitive playlist of basic tutorials on the exact same two topics.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons provided are solely based on search queries and view counts (popularity) rather than describing the pedagogical value or specific content of the videos.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The learner wants to build a monthly sales dashboard. None of the selected videos demonstrate how to bring these skills together to design and build a dashboard.",
+     "verdict": "fail"
+    },
+    "prereq_order_sensible": {
+     "critique": "The curriculum jumps randomly between Pivot Tables and VLOOKUPs. Furthermore, it places intermediate/advanced lookup techniques on large datasets (Video 2) before introductory VLOOKUP tutorials (Videos 5 and 8).",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum successfully respects the constraints: all videos are in Hindi, and no single video exceeds the 25-minute limit for mobile viewing.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The 90-minute budget is completely wasted on extreme redundancy. There are four separate videos teaching basic pivot tables and four teaching basic lookups, leaving no time for the dashboard layout concepts.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped list or reasons are provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "This curriculum is unacceptable. It operates like a raw dump of search results, completely ignoring order, progression, redundancy, and the learner's ultimate goal of creating a dashboard.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "4A6hjD-61gM",
+      "critique": "A solid introductory video that covers pivot tables and slicers in Hindi, making it a reasonable starting point.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gAY9is-ahQY",
+      "critique": "This introduces advanced concepts like the MATCH function before the learner has been taught the basics of VLOOKUP.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "NbaiGbn4khs",
+      "critique": "Redundant with the first video and flagged as too basic for the learner.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "hxAkt7Pico0",
+      "critique": "While it covers pivot charts, it spends most of its 24 minutes re-teaching the basic pivot table concepts already covered in Video 1.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "DX0V7D0GWwI",
+      "critique": "This is a good basic VLOOKUP tutorial, but it is placed far too late in the curriculum, after advanced lookup videos.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "lCoPTPsTJ4s",
+      "critique": "Yet another introductory pivot table video that wastes time repeating what has already been taught.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "DUP-Js2vNjs",
+      "critique": "Redundant with Video 2, teaching the exact same large-dataset lookup techniques.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "hmygrQMcHyU",
+      "critique": "A basic VLOOKUP introduction placed at the very end of the curriculum, rendering it completely out of order and redundant.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 6,
+    "total_min": 87.5,
+    "utilisation": 0.97,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 6,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "pivot tables": true,
+     "XLOOKUP / VLOOKUP": true,
+     "slicers": true,
+     "pivot charts": true,
+     "dashboard layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.27,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "hmygrQMcHyU",
+     "gAY9is-ahQY",
+     "hro6_y7R310",
+     "mp5RFCvpWI0",
+     "_JtEWpUJPVY",
+     "PuGzwrnBG_s"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.53,
+    "cost_usd": 0.22778,
+    "latency_s": 53.9,
+    "hard_failures": [
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "hmygrQMcHyU",
+    "gAY9is-ahQY",
+    "hro6_y7R310",
+    "mp5RFCvpWI0",
+    "_JtEWpUJPVY",
+    "PuGzwrnBG_s"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is highly customized to the learner's specific context, explicitly filtering for Hindi-language content, adhering to the strict 25-minute per-video constraint for mobile viewing, and focusing on the exact skills needed for a sales dashboard.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The curriculum's reasons accurately reflect the reference summaries, describing the specific Excel functions and dashboard elements taught in each video.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The curriculum includes two project-build videos that directly walk through creating interactive sales dashboards using pivot tables and slicers, perfectly mirroring the learner's end goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The progression is logical: it starts with lookups to prepare data, moves to pivot table basics, introduces pivot charts and slicers, and finally combines them all into full dashboard builds.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All videos are in Hindi or Hinglish, and every single video is under the 25-minute limit, perfectly respecting the learner's constraints.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The curriculum uses 89 out of 90 minutes effectively, providing a comprehensive path from basic functions to a complete dashboard without padding.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons clearly explain why alternatives were rejected, citing the 25-minute limit, language constraints, and redundancy.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an excellent, highly tailored curriculum that respects all constraints, fits the budget perfectly, and directly achieves the learner's goal of building a sales dashboard.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "hmygrQMcHyU",
+      "critique": "A great, gentle introduction to VLOOKUP in Hindi that fits the learner's beginner status.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gAY9is-ahQY",
+      "critique": "Builds on the first video by introducing XLOOKUP and handling larger datasets, which is necessary for dashboard data preparation.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "hro6_y7R310",
+      "critique": "A solid, beginner-friendly introduction to pivot tables in Hindi that stays under the 25-minute limit.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "mp5RFCvpWI0",
+      "critique": "A quick, focused tutorial on pivot charts and slicers that bridges the gap between basic pivot tables and full dashboards.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "_JtEWpUJPVY",
+      "critique": "Directly mirrors the learner's goal by building a sales dashboard from pivot tables, staying within the time limit.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "PuGzwrnBG_s",
+      "critique": "Provides a second dashboard example for reinforcement, effectively using the remaining budget.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.95,
+    "claims": {
+     "hmygrQMcHyU": [
+      {
+       "claim": "The video is a Hindi VLOOKUP introduction.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes one simple example.",
+       "supported": true
+      },
+      {
+       "claim": "The video teaches what VLOOKUP is and how to write it.",
+       "supported": true
+      }
+     ],
+     "gAY9is-ahQY": [
+      {
+       "claim": "The video is in Hindi.",
+       "supported": true
+      },
+      {
+       "claim": "The video applies both VLOOKUP and XLOOKUP to larger datasets.",
+       "supported": true
+      },
+      {
+       "claim": "The video comes with a practice file.",
+       "supported": false
+      },
+      {
+       "claim": "The video covers XLOOKUP for modern Excel plus VLOOKUP as a fallback.",
+       "supported": true
+      }
+     ],
+     "hro6_y7R310": [
+      {
+       "claim": "The video is Part 1 of a Hindi pivot table series.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the basics of creating pivot tables at a beginner level.",
+       "supported": true
+      },
+      {
+       "claim": "The video takes the learner from raw list/data to a summary using rows, columns, and values.",
+       "supported": true
+      }
+     ],
+     "mp5RFCvpWI0": [
+      {
+       "claim": "The video is a walkthrough in Hinglish.",
+       "supported": true
+      },
+      {
+       "claim": "The video teaches making a pivot chart in Excel.",
+       "supported": true
+      },
+      {
+       "claim": "The video teaches adding slicers to a pivot chart.",
+       "supported": true
+      },
+      {
+       "claim": "The title is in Hinglish.",
+       "supported": true
+      }
+     ],
+     "_JtEWpUJPVY": [
+      {
+       "claim": "The video is a Hindi project build of a mini sales dashboard from pivot tables.",
+       "supported": true
+      },
+      {
+       "claim": "It ties pivot summaries and pivot charts into one dashboard.",
+       "supported": true
+      }
+     ],
+     "PuGzwrnBG_s": [
+      {
+       "claim": "The video is in Hindi.",
+       "supported": true
+      },
+      {
+       "claim": "The video goes through building an interactive dashboard from start to finish.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows dashboard layout and interactive elements (such as slicers/pivot charts).",
+       "supported": true
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "b",
+   "orders": [
+    "b",
+    "b"
+   ],
+   "critiques": [
+    "Curriculum B offers a much more logical pedagogical progression. It starts with the core concept of Pivot Tables (which also introduces slicers), moves to Lookups, then Pivot Charts, and finally ties everything together in the Dashboard build. Curriculum A introduces slicers on regular tables before teaching pivot tables or lookups, which disrupts the learning flow. Both curricula respect the language, time budget, and 25-minute-per-video constraints perfectly, but Curriculum B's structure makes it the better choice for a beginner.",
+    "Both curricula perfectly match the learner's constraints: they use Hindi-language videos, keep every single video under the 25-minute limit, and respect the overall 90-minute budget. They both also successfully teach the required lookup functions, pivot tables, pivot charts, and tie it all together with a dashboard project. Curriculum A is slightly better structured, as it integrates the concept of slicers directly into its comprehensive pivot table and dashboard tutorials rather than dedicating a standalone video to table slicers like Curriculum B does, making it a more efficient path to the exact same goal."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A is a well-structured, logical progression that directly addresses the learner's goal. It covers slicers, VLOOKUP and XLOOKUP, pivot tables, pivot charts, and concludes with a full, 22-minute project building a sales dashboard, keeping all videos within the 25-minute constraint. Curriculum B, on the other hand, is highly redundant, repeating beginner pivot table introductions four times and lookup tutorials four times, while completely failing to include a dashboard project or layout instruction.",
+    "Curriculum A is a collection of redundant videos, repeating basic Pivot Table and VLOOKUP tutorials multiple times without ever progressing to the learner's actual goal of building a dashboard. Curriculum B is perfectly structured for the learner's goal and constraints: it covers foundational topics like turning raw data into tables and using VLOOKUP/XLOOKUP, then moves logically through pivot tables, pivot charts, and culminates with a comprehensive project building a monthly sales dashboard. All videos in B are under the 25-minute limit and in Hindi, respecting all constraints while preventing wasted time on duplicate content."
+   ]
+  },
+  "no_transcript": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A provides a much better logical progression for a beginner. It dedicates solid, distinct blocks of time to each foundational skill (VLOOKUP, XLOOKUP, Pivot Tables, Pivot Charts, and Slicers) before culminating in a single, comprehensive 22-minute dashboard build. Curriculum B, on the other hand, crams Pivot Charts and Slicers into a single 4-minute surface-level video and then spends over 40 minutes on two back-to-back dashboard projects. Both curricula respect the 25-minute per video constraint and the Hindi language requirement, but Curriculum A's pacing and structure will be much more effective for learning the individual mechanics before combining them into a dashboard.",
+    "Curriculum B provides a much stronger, logical progression without redundancy. It starts by teaching how to convert data into an Excel Table (a crucial step for dashboards), builds up lookup skills, introduces pivot tables and charts systematically, and ends with a single, comprehensive dashboard project. Curriculum A, by contrast, spends over 40 minutes on two back-to-back dashboard builds, which is redundant and leaves out dedicated instruction on converting raw lists to tables."
+   ]
+  }
+ }
+}

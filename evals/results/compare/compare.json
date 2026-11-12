@@ -1,0 +1,151 @@
+[
+ {
+  "persona": "career_switch_ml_foundations",
+  "model": "anthropic/claude-sonnet-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.96,
+  "unknown_cov": 1.0,
+  "redundancy": 0.17,
+  "select_cost": 0.1137,
+  "latency_s": 41.9
+ },
+ {
+  "persona": "career_switch_ml_foundations",
+  "model": "anthropic/claude-opus-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.99,
+  "unknown_cov": 1.0,
+  "redundancy": 0.17,
+  "select_cost": 0.2056,
+  "latency_s": 60.6,
+  "vs_anthropic/claude-sonnet-5.5": "loss"
+ },
+ {
+  "persona": "career_switch_ml_foundations",
+  "model": "anthropic/claude-haiku-5.5",
+  "pass": false,
+  "failed": [
+   "constraint_violations",
+   "evidence_verified"
+  ],
+  "util": 0.82,
+  "unknown_cov": 1.0,
+  "redundancy": 0.33,
+  "select_cost": 0.0254,
+  "latency_s": 176.0,
+  "vs_anthropic/claude-sonnet-5.5": "loss"
+ },
+ {
+  "persona": "go_dev_rust_ownership",
+  "model": "anthropic/claude-sonnet-5.5",
+  "pass": false,
+  "failed": [
+   "level_floor"
+  ],
+  "util": 0.94,
+  "unknown_cov": 1.0,
+  "redundancy": 0.2,
+  "select_cost": 0.1049,
+  "latency_s": 38.2
+ },
+ {
+  "persona": "go_dev_rust_ownership",
+  "model": "anthropic/claude-opus-5.5",
+  "pass": false,
+  "failed": [
+   "level_floor"
+  ],
+  "util": 0.86,
+  "unknown_cov": 1.0,
+  "redundancy": 0.1,
+  "select_cost": 0.2095,
+  "latency_s": 66.0,
+  "vs_anthropic/claude-sonnet-5.5": "tie"
+ },
+ {
+  "persona": "go_dev_rust_ownership",
+  "model": "anthropic/claude-haiku-5.5",
+  "pass": false,
+  "failed": [
+   "level_floor"
+  ],
+  "util": 0.83,
+  "unknown_cov": 1.0,
+  "redundancy": 0.29,
+  "select_cost": 0.009,
+  "latency_s": 57.4,
+  "vs_anthropic/claude-sonnet-5.5": "tie"
+ },
+ {
+  "persona": "lunch_break_sql_windows",
+  "model": "anthropic/claude-sonnet-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.86,
+  "unknown_cov": 1.0,
+  "redundancy": 0.25,
+  "select_cost": 0.0944,
+  "latency_s": 32.4
+ },
+ {
+  "persona": "lunch_break_sql_windows",
+  "model": "anthropic/claude-opus-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.86,
+  "unknown_cov": 1.0,
+  "redundancy": 0.25,
+  "select_cost": 0.1653,
+  "latency_s": 40.4,
+  "vs_anthropic/claude-sonnet-5.5": "tie"
+ },
+ {
+  "persona": "lunch_break_sql_windows",
+  "model": "anthropic/claude-haiku-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.77,
+  "unknown_cov": 1.0,
+  "redundancy": 0.25,
+  "select_cost": 0.0078,
+  "latency_s": 49.8,
+  "vs_anthropic/claude-sonnet-5.5": "loss"
+ },
+ {
+  "persona": "weekend_react_dev",
+  "model": "anthropic/claude-sonnet-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.42,
+  "unknown_cov": 1.0,
+  "redundancy": 0.44,
+  "select_cost": 0.1943,
+  "latency_s": 133.3
+ },
+ {
+  "persona": "weekend_react_dev",
+  "model": "anthropic/claude-opus-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.82,
+  "unknown_cov": 1.0,
+  "redundancy": 0.38,
+  "select_cost": 0.2408,
+  "latency_s": 88.1,
+  "vs_anthropic/claude-sonnet-5.5": "loss"
+ },
+ {
+  "persona": "weekend_react_dev",
+  "model": "anthropic/claude-haiku-5.5",
+  "pass": true,
+  "failed": [],
+  "util": 0.48,
+  "unknown_cov": 1.0,
+  "redundancy": 0.4,
+  "select_cost": 0.0212,
+  "latency_s": 151.2,
+  "vs_anthropic/claude-sonnet-5.5": "loss"
+ }
+]

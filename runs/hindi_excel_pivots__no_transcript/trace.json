@@ -1,0 +1,3194 @@
+{
+ "persona": {
+  "persona_id": "hindi_excel_pivots",
+  "goal": "Learn pivot tables and lookups well enough to build a monthly sales dashboard in Excel",
+  "time_budget_minutes": 90,
+  "user_context": {
+   "background": "Small-business owner in Lucknow; uses Excel for basic lists and sums",
+   "known": [
+    "entering data",
+    "SUM and basic formulas",
+    "sorting and filtering"
+   ],
+   "unknown": [
+    "pivot tables",
+    "XLOOKUP / VLOOKUP",
+    "slicers",
+    "pivot charts",
+    "dashboard layout"
+   ],
+   "constraints": "I understand Hindi much better than English, so please choose Hindi-language videos. I watch on my phone, so nothing longer than 25 minutes at a time."
+  },
+  "expectations": {
+   "pick_count": [
+    2,
+    5
+   ],
+   "min_utilisation": 0.6,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": null,
+   "forbidden_flags": [
+    "wrong_language",
+    "off_topic"
+   ],
+   "unknown_synonyms": {
+    "pivot tables": [
+     "pivot"
+    ],
+    "XLOOKUP / VLOOKUP": [
+     "xlookup",
+     "vlookup",
+     "lookup"
+    ],
+    "slicers": [
+     "slicer"
+    ],
+    "pivot charts": [
+     "chart"
+    ],
+    "dashboard layout": [
+     "dashboard"
+    ]
+   },
+   "known_topics": [
+    "sum",
+    "sorting",
+    "filtering"
+   ],
+   "min_level": null,
+   "require_project_based": false,
+   "required_language": "hi",
+   "expect_infeasible": false,
+   "expect_assumptions": false,
+   "min_upload_year": null,
+   "max_sitting_minutes": 25.0,
+   "max_channels": null,
+   "max_per_channel": null,
+   "notes": "Non-English learner: every pick must be in Hindi; assessor reads Hindi transcripts."
+  }
+ },
+ "mode": "no_transcript",
+ "models": {
+  "plan": "anthropic/claude-sonnet-5.5",
+  "assess": "anthropic/claude-haiku-4.5",
+  "select": "anthropic/claude-sonnet-5.5"
+ },
+ "offline": true,
+ "use_transcripts": false,
+ "timings_s": {
+  "load_fixture": 0.0,
+  "assess": 13.36,
+  "dedup": 0.01,
+  "select": 40.48
+ },
+ "cost_by_stage": {
+  "assess": {
+   "calls": 36,
+   "cost_usd": 0.13071,
+   "prompt_tokens": 84255,
+   "completion_tokens": 9292,
+   "latency_s": 135.36
+  },
+  "select": {
+   "calls": 1,
+   "cost_usd": 0.09706,
+   "prompt_tokens": 17922,
+   "completion_tokens": 6122,
+   "latency_s": 40.47
+  }
+ },
+ "calls": [
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2317,
+   "completion_tokens": 248,
+   "cost_usd": 0.0035570000000000003,
+   "latency_s": 3.37
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2359,
+   "completion_tokens": 243,
+   "cost_usd": 0.003574,
+   "latency_s": 3.97
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2311,
+   "completion_tokens": 266,
+   "cost_usd": 0.0036409999999999997,
+   "latency_s": 3.98
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2295,
+   "completion_tokens": 238,
+   "cost_usd": 0.0034850000000000003,
+   "latency_s": 4.03
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2388,
+   "completion_tokens": 251,
+   "cost_usd": 0.003643,
+   "latency_s": 4.16
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2338,
+   "completion_tokens": 270,
+   "cost_usd": 0.0036880000000000003,
+   "latency_s": 4.46
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2408,
+   "completion_tokens": 259,
+   "cost_usd": 0.003703,
+   "latency_s": 4.45
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2328,
+   "completion_tokens": 244,
+   "cost_usd": 0.003548,
+   "latency_s": 4.57
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2264,
+   "completion_tokens": 292,
+   "cost_usd": 0.003724,
+   "latency_s": 4.57
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2350,
+   "completion_tokens": 250,
+   "cost_usd": 0.0036,
+   "latency_s": 4.58
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2307,
+   "completion_tokens": 323,
+   "cost_usd": 0.003922,
+   "latency_s": 4.58
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2329,
+   "completion_tokens": 250,
+   "cost_usd": 0.003579,
+   "latency_s": 4.64
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2348,
+   "completion_tokens": 241,
+   "cost_usd": 0.003553,
+   "latency_s": 3.0
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2381,
+   "completion_tokens": 247,
+   "cost_usd": 0.0036160000000000003,
+   "latency_s": 3.8
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2374,
+   "completion_tokens": 266,
+   "cost_usd": 0.0037040000000000003,
+   "latency_s": 3.19
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2293,
+   "completion_tokens": 249,
+   "cost_usd": 0.003538,
+   "latency_s": 3.07
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2351,
+   "completion_tokens": 247,
+   "cost_usd": 0.003586,
+   "latency_s": 2.98
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2345,
+   "completion_tokens": 293,
+   "cost_usd": 0.00381,
+   "latency_s": 3.75
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2359,
+   "completion_tokens": 249,
+   "cost_usd": 0.003604,
+   "latency_s": 3.28
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2314,
+   "completion_tokens": 249,
+   "cost_usd": 0.003559,
+   "latency_s": 3.18
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2339,
+   "completion_tokens": 252,
+   "cost_usd": 0.0035989999999999998,
+   "latency_s": 3.21
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2321,
+   "completion_tokens": 264,
+   "cost_usd": 0.0036409999999999997,
+   "latency_s": 3.31
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2353,
+   "completion_tokens": 273,
+   "cost_usd": 0.0037180000000000004,
+   "latency_s": 3.03
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2411,
+   "completion_tokens": 246,
+   "cost_usd": 0.0036409999999999997,
+   "latency_s": 2.96
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2364,
+   "completion_tokens": 272,
+   "cost_usd": 0.003724,
+   "latency_s": 6.31
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2337,
+   "completion_tokens": 207,
+   "cost_usd": 0.0033720000000000004,
+   "latency_s": 2.85
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2320,
+   "completion_tokens": 259,
+   "cost_usd": 0.0036150000000000006,
+   "latency_s": 3.09
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2320,
+   "completion_tokens": 251,
+   "cost_usd": 0.0035750000000000005,
+   "latency_s": 5.99
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2369,
+   "completion_tokens": 264,
+   "cost_usd": 0.003689,
+   "latency_s": 3.13
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2369,
+   "completion_tokens": 276,
+   "cost_usd": 0.003749,
+   "latency_s": 3.19
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2262,
+   "completion_tokens": 253,
+   "cost_usd": 0.003527,
+   "latency_s": 3.77
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2345,
+   "completion_tokens": 269,
+   "cost_usd": 0.00369,
+   "latency_s": 3.16
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2299,
+   "completion_tokens": 243,
+   "cost_usd": 0.0035140000000000006,
+   "latency_s": 3.05
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2351,
+   "completion_tokens": 269,
+   "cost_usd": 0.0036960000000000005,
+   "latency_s": 4.45
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2361,
+   "completion_tokens": 257,
+   "cost_usd": 0.0036460000000000004,
+   "latency_s": 3.1
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2375,
+   "completion_tokens": 262,
+   "cost_usd": 0.0036850000000000003,
+   "latency_s": 3.15
+  },
+  {
+   "stage": "select",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 17922,
+   "completion_tokens": 6122,
+   "cost_usd": 0.097064,
+   "latency_s": 40.47
+  }
+ ],
+ "plan": {
+  "interpretation": "The learner can take their raw monthly sales list, use lookups to enrich it, summarize it with pivot tables, and assemble a single-sheet Excel dashboard with pivot charts and slicers, all by following Hindi-language videos on a phone.",
+  "assumptions": [
+   "Learner has a desktop/laptop Excel (Microsoft 365 or 2021) available to build the dashboard even though videos are watched on a phone, so XLOOKUP is available; VLOOKUP is covered as the fallback for older versions.",
+   "Sales data is a simple table with date, product, customer/region, quantity and amount columns.",
+   "The 25-minute limit applies to each individual video, not to the total plan, so several shorter videos will be combined.",
+   "Hindi-language videos are preferred; Hinglish tutorials are acceptable since they are understandable to a Hindi speaker."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "hi",
+  "learner_level": "beginner",
+  "sub_topics": [
+   {
+    "id": "clean_data_table",
+    "title": "Preparing sales data as an Excel Table",
+    "why": "Pivot tables and lookups need clean, structured data; the learner only knows basic lists, so converting a list to a Table avoids common errors.",
+    "prereqs": [],
+    "minutes_share": 0.08
+   },
+   {
+    "id": "lookup_functions",
+    "title": "VLOOKUP and XLOOKUP to pull in product prices, names and categories",
+    "why": "The learner has no lookup experience, and sales data usually needs product or customer details matched from another sheet before summarizing.",
+    "prereqs": [
+     "clean_data_table"
+    ],
+    "minutes_share": 0.22
+   },
+   {
+    "id": "pivot_basics",
+    "title": "Creating pivot tables: rows, columns, values, grouping by month",
+    "why": "Core skill for summarizing sales by month, product and region; builds on their knowledge of SUM and sorting/filtering.",
+    "prereqs": [
+     "clean_data_table"
+    ],
+    "minutes_share": 0.25
+   },
+   {
+    "id": "pivot_charts",
+    "title": "Pivot charts for sales trends and comparisons",
+    "why": "Charts turn pivot summaries into visuals that the dashboard needs.",
+    "prereqs": [
+     "pivot_basics"
+    ],
+    "minutes_share": 0.12
+   },
+   {
+    "id": "slicers_timelines",
+    "title": "Slicers and timelines to filter the dashboard interactively",
+    "why": "Lets the owner switch month, product or region with a click; extends the filtering they already know.",
+    "prereqs": [
+     "pivot_charts"
+    ],
+    "minutes_share": 0.1
+   },
+   {
+    "id": "dashboard_build",
+    "title": "Building a monthly sales dashboard layout end to end",
+    "why": "Brings lookups, pivots, charts and slicers together into one dashboard sheet, which is the actual goal.",
+    "prereqs": [
+     "lookup_functions",
+     "pivot_charts",
+     "slicers_timelines"
+    ],
+    "minutes_share": 0.23
+   }
+  ],
+  "search_queries": [
+   "Excel pivot table Hindi tutorial beginners",
+   "Excel VLOOKUP aur XLOOKUP Hindi mein",
+   "Excel XLOOKUP function in Hindi",
+   "Excel pivot chart aur slicer Hindi tutorial",
+   "Excel sales dashboard kaise banaye Hindi",
+   "Excel interactive dashboard Hindi step by step pivot table slicer",
+   "Excel table banana Hindi data cleaning for pivot table"
+  ],
+  "title_exclusions": [],
+  "skip_topics": [
+   "entering data",
+   "SUM and basic formulas",
+   "sorting and filtering"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "lCoPTPsTJ4s",
+   "title": "Create Pivot Tables In Excel | Use of Pivot Table - Pivot Table Tutorial",
+   "channel": "Rishabh Mishra",
+   "minutes": 12.0,
+   "views": 1288526,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel pivot chart aur slicer Hindi tutorial",
+    "Excel table banana Hindi data cleaning for pivot table",
+    "Excel interactive dashboard Hindi step by step pivot table slicer"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "_JtEWpUJPVY",
+   "title": "“📊 Excel Dashboard Tutorial (Hindi) | Pivot Table से Dashboard बनाएं | Next-Level Reporting 🚀”",
+   "channel": "My Computer $kill",
+   "minutes": 22.7,
+   "views": 26085,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer",
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hxAkt7Pico0",
+   "title": "pivot table for beginners in excel in Hindi | pivot table excel in hindi",
+   "channel": "Computer Gyan",
+   "minutes": 23.9,
+   "views": 2383447,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "RdA04dRgF44",
+   "title": "XLOOKUP Function in MS Excel | MS Excel Advanced Tutorial | [Hindi] #ms excel",
+   "channel": "Computer Gyan",
+   "minutes": 10.0,
+   "views": 399485,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi",
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "oKdBEjcgzyw",
+   "title": "How to make Dashboard in excel ( Interactive + Simple )",
+   "channel": "Deepak EduWorld",
+   "minutes": 20.7,
+   "views": 252039,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer",
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "4A6hjD-61gM",
+   "title": "pivot table for beginners in excel in Hindi || Microsoft excel 2007,2010,2016",
+   "channel": "Deepak EduWorld",
+   "minutes": 14.2,
+   "views": 3505708,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "d9yXBRbNuho",
+   "title": "How to Use VLOOKUP, HLOOKUP, XLOOKUP || Detailed Explaination with examples || Advance Excel Formula",
+   "channel": "Accounts Expert",
+   "minutes": 9.4,
+   "views": 332606,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein",
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "sM2mdBu0Owc",
+   "title": "MS Excel - Pivot Table Slice",
+   "channel": "TutorialsPoint",
+   "minutes": 9.6,
+   "views": 477286,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer",
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "NbaiGbn4khs",
+   "title": "How to Create Pivot Table in Microsoft Excel | Pivot Table in Excel",
+   "channel": "StudySpan",
+   "minutes": 5.3,
+   "views": 2791344,
+   "found_by": [
+    "Excel table banana Hindi data cleaning for pivot table",
+    "Excel pivot table Hindi tutorial beginners"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hro6_y7R310",
+   "title": "Pivot Table Mastery in Excel | Pivot Table Tutorial in Hindi | Part - 01",
+   "channel": "TLS Computer Classes",
+   "minutes": 21.9,
+   "views": 868781,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners",
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "JOSh69tzivA",
+   "title": "How to use Slicer in Microsoft Excel | Slicer in Excel",
+   "channel": "StudySpan",
+   "minutes": 4.3,
+   "views": 43540,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial",
+    "Excel interactive dashboard Hindi step by step pivot table slicer"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "1Sg1KaRwQzg",
+   "title": "XLOOKUP in Excel | How to Use XLOOKUP Function in Excel | Excel Tutorial in Hindi",
+   "channel": "Deepak EduWorld",
+   "minutes": 21.9,
+   "views": 16773,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "E48tn7LcxFU",
+   "title": "Sales Dashboard in Excel In Hindi | अगर अपनी सैलरी बढ़ाना चाहते हैं | तो एक्सेल Dashboard बनाना सीखे",
+   "channel": "Abhijeetji Technical 4M",
+   "minutes": 60.4,
+   "views": 23014,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "gAY9is-ahQY",
+   "title": "How To Apply VLOOKUP and XLOOKUP Formula on Large Data in Excel [Hindi] #excel",
+   "channel": "Computer Gyan",
+   "minutes": 12.7,
+   "views": 3242621,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "P-qvfgioBxM",
+   "title": "Bye Bye Manual Work in Excel | Create Fully Automated Dashboard in Excel",
+   "channel": "Learn More",
+   "minutes": 17.7,
+   "views": 89603,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "0WPwWvpFtq8",
+   "title": "How to use XLOOKUP Function in MS Excel | XLOOKUP Formula in Excel",
+   "channel": "StudySpan",
+   "minutes": 4.0,
+   "views": 219836,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "5TNgfg-7RKE",
+   "title": "Excel Pivot Table, Pivot Chart & Slicer Tutorial in Hindi | Complete Data Analysis Guide",
+   "channel": "MANOJ KUMAR EXCEL",
+   "minutes": 5.5,
+   "views": 782,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "W3tM8BVhsuo",
+   "title": "Pivot Table in Excel Full Tutorial 🔥 Data Analysis for Beginners (Hindi) । Computer with Kritika",
+   "channel": "Computer with Kritika",
+   "minutes": 31.0,
+   "views": 4781,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hmygrQMcHyU",
+   "title": "Vlookup का सबसे आसान Example || What is Vlookup in Excel (in Hindi)",
+   "channel": "BUSINESS EXCEL",
+   "minutes": 5.5,
+   "views": 242654,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "rjuO8OGYDsk",
+   "title": "Learn Excel XLookup Formula A to Z ｜ X Lookup Masterclass by Satish Dhawale",
+   "channel": "Learn More",
+   "minutes": 51.1,
+   "views": 205531,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "mp5RFCvpWI0",
+   "title": "Excel mein Pivot Chart aur Slicer kaise Banayein | How to make Pivot Chart and Slicer in Excel",
+   "channel": "Data Saathi",
+   "minutes": 3.9,
+   "views": 37,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "HBJdxWxG7aU",
+   "title": "Microsoft Excel - How to create Dashboard in Excel | Sales Dashboard | Excel Tutorial",
+   "channel": "Excel with Rahul Chaudhary",
+   "minutes": 22.2,
+   "views": 10955,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hMparynKb2o",
+   "title": "How To Use XLOOKUP Formula in Microsoft Excel | XLOOKUP in Excel | Excel XLOOKUP",
+   "channel": "Excel with Rahul Chaudhary",
+   "minutes": 14.6,
+   "views": 8579,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "htOIqJGeewE",
+   "title": "How to Create Pivot Charts? | Excel Pivot Table in Hindi | Excel Pivot Table Series - Part - 2",
+   "channel": "Excel Tutorial by SkillCourse",
+   "minutes": 9.6,
+   "views": 220429,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "PuGzwrnBG_s",
+   "title": "Excel में Dashboard बनाना सीखे | Interactive Dashboard In Excel | Dashboard Tutorial |",
+   "channel": "DevelopersGuides",
+   "minutes": 20.8,
+   "views": 129256,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "DX0V7D0GWwI",
+   "title": "How to use VLOOKUP formula in Excel | VLOOKUP in Excel Tutorial",
+   "channel": "Rishabh Mishra",
+   "minutes": 5.3,
+   "views": 2280000,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "V59jFWmu7w0",
+   "title": "XLOOKUP function in MS Excel | Why XLOOKUP function is powerful in MS Excel? | Computer Tech Academy",
+   "channel": "Computer Tech Academy",
+   "minutes": 15.6,
+   "views": 34797,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "sPVl7_yVjLU",
+   "title": "Mastering XLOOKUP in Excel (With 10 Examples) | XLOOKUP Tutorial | XLOOKUP Function in Excel",
+   "channel": "Deepak EduWorld",
+   "minutes": 21.1,
+   "views": 256019,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "BvYU0GEHJyc",
+   "title": "Pivot Table in Excel | Pivot Table with Multiple Slicers | Pivot Table Full Tutorial | CTA",
+   "channel": "Computer Tech Academy",
+   "minutes": 19.7,
+   "views": 11059,
+   "found_by": [
+    "Excel pivot chart aur slicer Hindi tutorial"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "ETQSNnOKDC0",
+   "title": "🔥 Excel Pivot Table Complete Tutorial in Hindi | Beginner to Advanced",
+   "channel": "Course Learn Academy ",
+   "minutes": 18.3,
+   "views": 541,
+   "found_by": [
+    "Excel pivot table Hindi tutorial beginners"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "YW_vqEoe-Sg",
+   "title": "VLOOKUP vs XLOOKUP Function in Microsoft Excel",
+   "channel": "StudySpan",
+   "minutes": 8.0,
+   "views": 27073,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "5TkRnGdC1NM",
+   "title": "Excel Dashboard Course #21 - Creating a Pivot table Dashboard with Slicers in Excel (in 15 minutes)",
+   "channel": "TrumpExcel",
+   "minutes": 14.7,
+   "views": 663739,
+   "found_by": [
+    "Excel interactive dashboard Hindi step by step pivot table slicer"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "DUP-Js2vNjs",
+   "title": "How To Apply VLOOKUP and XLOOKUP formula on Large / Big Data in Excel (Hindi)",
+   "channel": "Deepak EduWorld",
+   "minutes": 10.7,
+   "views": 846750,
+   "found_by": [
+    "Excel VLOOKUP aur XLOOKUP Hindi mein"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "cqsKU_ECMHg",
+   "title": "Excel Tutorial: Sales Dashboard in Excel | Excel Dashboard | Excel Interview",
+   "channel": "Excel with Rahul Chaudhary",
+   "minutes": 17.6,
+   "views": 23324,
+   "found_by": [
+    "Excel sales dashboard kaise banaye Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "-MyX4xjr8jM",
+   "title": "Pivot Table in MS Excel | Top 10 Examples of Pivot Table in MS Excel | Computer Tech Academy",
+   "channel": "Computer Tech Academy",
+   "minutes": 14.5,
+   "views": 54363,
+   "found_by": [
+    "Excel table banana Hindi data cleaning for pivot table"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "8nL9PtLdC94",
+   "title": "How to use XLOOKUP Formula in MS Excel | XLOOKUP Function in Excel",
+   "channel": "StudySpan",
+   "minutes": 5.3,
+   "views": 17932,
+   "found_by": [
+    "Excel XLOOKUP function in Hindi"
+   ],
+   "transcript_lang": "hi",
+   "transcript_generated": true,
+   "transcript_error": null
+  }
+ ],
+ "assessments": {
+  "lCoPTPsTJ4s": {
+   "spoken_language": "en",
+   "summary": "The video introduces pivot tables in Excel, covering what they are, their uses, and how to create them with sample data. It includes discussion of advanced functions and options available in pivot tables.",
+   "topics_covered": [
+    "pivot_basics",
+    "pivot table creation",
+    "pivot table functions"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 720,
+     "topic": "pivot tables overview and creation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "lCoPTPsTJ4s",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "_JtEWpUJPVY": {
+   "spoken_language": "hi",
+   "summary": "The video teaches how to build a mini sales dashboard in Excel using pivot tables for real reporting. It focuses on creating a practical dashboard that enhances reporting skills to an advanced level.",
+   "topics_covered": [
+    "pivot_basics",
+    "pivot_charts",
+    "dashboard_build"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Mini sales dashboard using pivot tables",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 682,
+     "topic": "Excel sales dashboard creation using pivot tables"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 2
+    }
+   ],
+   "video_id": "_JtEWpUJPVY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "hxAkt7Pico0": {
+   "spoken_language": "hi",
+   "summary": "This video introduces pivot tables in Excel for beginners, covering the fundamental concepts and creation process. The title and description suggest it teaches how to create and use pivot tables, which is a core component of the learner's plan.",
+   "topics_covered": [
+    "pivot_basics"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel",
+    "wps office"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1434,
+     "topic": "pivot table fundamentals and creation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hxAkt7Pico0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "RdA04dRgF44": {
+   "spoken_language": "hi",
+   "summary": "This video teaches the XLOOKUP function in Excel, an important lookup function for retrieving data from tables. It is positioned as an advanced tutorial suitable for interview preparation.",
+   "topics_covered": [
+    "xlookup"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 600,
+     "topic": "XLOOKUP function tutorial"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "RdA04dRgF44",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "oKdBEjcgzyw": {
+   "spoken_language": "hi",
+   "summary": "A beginner-friendly tutorial on building an interactive Excel dashboard without VBA or macros. The video teaches modern dashboard design techniques applicable across Excel 2013 to Office 365, focusing on creating a dynamic and visually appealing dashboard layout.",
+   "topics_covered": [
+    "dashboard layout",
+    "interactive dashboard",
+    "excel dashboard design"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Interactive Excel dashboard",
+   "tools_and_versions": [
+    "Excel 2013",
+    "Excel 2016",
+    "Excel 2019",
+    "Excel 2021",
+    "Office 365"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1242,
+     "topic": "Building an interactive Excel dashboard without VBA"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 2
+    }
+   ],
+   "video_id": "oKdBEjcgzyw",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "4A6hjD-61gM": {
+   "spoken_language": "hi",
+   "summary": "The video demonstrates how to create pivot tables in Microsoft Excel 2007-2016, showing the basics of inserting a pivot table and using it to summarize data. It is aimed at beginners with no prior pivot table experience.",
+   "topics_covered": [
+    "pivot_basics",
+    "data summarization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel 2007",
+    "excel 2010",
+    "excel 2013",
+    "excel 2016"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 420,
+     "topic": "pivot table creation and data summarization"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "4A6hjD-61gM",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "d9yXBRbNuho": {
+   "spoken_language": "en",
+   "summary": "The video claims to explain VLOOKUP, HLOOKUP, and XLOOKUP with examples. However, without a transcript available, the exact content, depth, and hands-on approach cannot be verified.",
+   "topics_covered": [
+    "vlookup",
+    "hlookup",
+    "xlookup"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 567,
+     "topic": "lookup functions overview and examples"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "d9yXBRbNuho",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "sM2mdBu0Owc": {
+   "spoken_language": "unknown",
+   "summary": "This appears to be a brief tutorial on pivot table slicing functionality in Excel, likely covering how to use slicers to filter pivot table data. However, without transcript access, the exact scope and depth cannot be determined.",
+   "topics_covered": [
+    "pivot_table_slicing",
+    "slicers"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 578,
+     "topic": "pivot table slicing and slicers"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "sM2mdBu0Owc",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "NbaiGbn4khs": {
+   "spoken_language": "en",
+   "summary": "The video demonstrates how to create a pivot table in Microsoft Excel step by step. However, without access to the transcript, the exact depth and scope of coverage cannot be determined.",
+   "topics_covered": [
+    "pivot_basics"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 317,
+     "topic": "Creating pivot tables in Excel"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "NbaiGbn4khs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "hro6_y7R310": {
+   "spoken_language": "hi",
+   "summary": "This video is Part 1 of a pivot table mastery series in Hindi, covering foundational pivot table concepts in Excel. The exact content cannot be fully assessed due to unavailable transcript, but based on the title and description it appears to teach pivot table creation and basics.",
+   "topics_covered": [
+    "pivot tables",
+    "pivot table creation"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1313,
+     "topic": "pivot table basics and creation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hro6_y7R310",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "JOSh69tzivA": {
+   "spoken_language": "hi",
+   "summary": "The video demonstrates how to use slicers in Microsoft Excel with step-by-step examples. It covers inserting slicers and filtering data using them.",
+   "topics_covered": [
+    "slicers",
+    "filtering",
+    "excel basics"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Microsoft Excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 257,
+     "topic": "slicer usage and examples"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "JOSh69tzivA",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "1Sg1KaRwQzg": {
+   "spoken_language": "hi",
+   "summary": "This video teaches the XLOOKUP function in Excel as a modern alternative to VLOOKUP, covering step-by-step practical examples for beginners learning lookup formulas.",
+   "topics_covered": [
+    "xlookup",
+    "lookup functions",
+    "excel formulas"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1312,
+     "topic": "XLOOKUP function tutorial"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "1Sg1KaRwQzg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "E48tn7LcxFU": {
+   "spoken_language": "hi",
+   "summary": "The video claims to teach how to build a sales dashboard in Excel to improve career prospects. It states coverage from basic to advanced levels, but without a transcript, the actual content taught cannot be verified.",
+   "topics_covered": [
+    "dashboard_build",
+    "excel_visualization"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "sales dashboard",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "clickbait"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 3624,
+     "topic": "sales dashboard creation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "E48tn7LcxFU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "gAY9is-ahQY": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to apply VLOOKUP and XLOOKUP formulas in Excel when working with large datasets. It covers both lookup functions with practical examples and provides a practice file for hands-on learning.",
+   "topics_covered": [
+    "vlookup",
+    "xlookup",
+    "lookup functions",
+    "large data"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel",
+    "vlookup",
+    "xlookup"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 760,
+     "topic": "VLOOKUP and XLOOKUP formula application on large data"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "gAY9is-ahQY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "P-qvfgioBxM": {
+   "spoken_language": "en",
+   "summary": "The video promises to teach creating a fully automated Excel dashboard to reduce manual work and enable professional data analysis. However, without a transcript available, the actual content cannot be verified against the learning plan.",
+   "topics_covered": [
+    "dashboard automation",
+    "data analysis"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Fully automated Excel dashboard",
+   "tools_and_versions": [
+    "Excel",
+    "XLBooster"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "clickbait"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1060,
+     "topic": "Creating automated Excel dashboard with XLBooster"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "P-qvfgioBxM",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "0WPwWvpFtq8": {
+   "spoken_language": "en",
+   "summary": "The video demonstrates the XLOOKUP function in Microsoft Excel with multiple worked examples, showing how to use the formula step by step.",
+   "topics_covered": [
+    "xlookup"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 237,
+     "topic": "XLOOKUP function examples and usage"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "0WPwWvpFtq8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "5TNgfg-7RKE": {
+   "spoken_language": "hi",
+   "summary": "This video claims to teach pivot tables, pivot charts, and slicers for data analysis in Excel, but the transcript is not available. The description mentions inserting pivot tables, creating pivot charts, and filtering with slicers, but the actual teaching content cannot be verified.",
+   "topics_covered": [
+    "pivot_tables",
+    "pivot_charts",
+    "slicers"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "5TNgfg-7RKE",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "W3tM8BVhsuo": {
+   "spoken_language": "hi",
+   "summary": "This video teaches pivot tables in Excel for beginners, focusing on how to analyze data and create reports. It appears to cover the basics of pivot table creation and data analysis suitable for office work and job-related tasks.",
+   "topics_covered": [
+    "pivot_basics",
+    "data_analysis"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1859,
+     "topic": "pivot tables and data analysis for beginners"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "W3tM8BVhsuo",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "hmygrQMcHyU": {
+   "spoken_language": "hi",
+   "summary": "A basic introduction to VLOOKUP in Excel with a simple example. The video teaches what VLOOKUP is and how to use it, aimed at beginners learning lookup functions in Hindi.",
+   "topics_covered": [
+    "vlookup",
+    "lookup_functions"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 329,
+     "topic": "VLOOKUP concept and basic example"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hmygrQMcHyU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "rjuO8OGYDsk": {
+   "spoken_language": "hi",
+   "summary": "A comprehensive XLookup tutorial covering the formula from basics to advanced use cases, including data retrieval, error handling, and practical applications in Excel. The video is designed for both beginners and advanced users wanting to master XLookup functionality.",
+   "topics_covered": [
+    "xlookup",
+    "lookup functions",
+    "data retrieval",
+    "error handling"
+   ],
+   "level": "beginner",
+   "format": "full_course",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel",
+    "xlookup"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 51,
+     "topic": "XLookup formula tutorial"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "rjuO8OGYDsk",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "mp5RFCvpWI0": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create pivot charts and slicers in Excel for data visualization. It promises a step-by-step tutorial on customizing pivot charts with slicers to make data analysis easier to understand.",
+   "topics_covered": [
+    "pivot_charts",
+    "slicers"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 235,
+     "topic": "pivot charts and slicers in excel"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "mp5RFCvpWI0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "HBJdxWxG7aU": {
+   "spoken_language": "hi",
+   "summary": "The video demonstrates how to create a sales dashboard in Excel, covering dashboard concepts and practical implementation. However, without access to the transcript, the specific techniques taught (pivot tables, lookups, slicers, etc.) cannot be verified.",
+   "topics_covered": [
+    "dashboard_build"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Sales dashboard in Excel",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1330,
+     "topic": "sales dashboard creation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "HBJdxWxG7aU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "hMparynKb2o": {
+   "spoken_language": "hi",
+   "summary": "Video covers XLOOKUP formula in Microsoft Excel with practical examples. The content focuses on explaining what XLOOKUP is and how to use it, relevant to lookup functions needed for dashboard building.",
+   "topics_covered": [
+    "xlookup",
+    "lookup_functions"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 878,
+     "topic": "XLOOKUP formula explanation and practical usage"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "hMparynKb2o",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "htOIqJGeewE": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create pivot charts from pivot tables in Excel to enhance presentations. It covers what pivot charts are and the step-by-step process of creating them, positioning this as Part 2 of a pivot table series.",
+   "topics_covered": [
+    "pivot_charts",
+    "pivot_tables"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 573,
+     "topic": "pivot charts creation and basics"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "htOIqJGeewE",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "PuGzwrnBG_s": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to create an interactive dashboard in Excel, covering the process of building dashboards from start to finish. The content appears to target learners who want to visualize data dynamically in Excel.",
+   "topics_covered": [
+    "dashboard_build",
+    "interactive_elements"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Interactive dashboard in Excel",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1245,
+     "topic": "Dashboard creation and interactive features in Excel"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "PuGzwrnBG_s",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "DX0V7D0GWwI": {
+   "spoken_language": "en",
+   "summary": "This video teaches the VLOOKUP formula in Excel, covering what VLOOKUP is, its uses, how to apply it, and its options using sample data.",
+   "topics_covered": [
+    "vlookup"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 320,
+     "topic": "VLOOKUP formula explanation and usage"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "DX0V7D0GWwI",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "V59jFWmu7w0": {
+   "spoken_language": "unknown",
+   "summary": "Unable to assess: no transcript provided. Based on title alone, appears to explain XLOOKUP function in Excel and its advantages, but content depth and teaching method cannot be verified.",
+   "topics_covered": [
+    "xlookup"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel",
+    "xlookup"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "V59jFWmu7w0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "sPVl7_yVjLU": {
+   "spoken_language": "hi",
+   "summary": "A comprehensive tutorial on the XLOOKUP function in Excel covering 10 practical examples, including exact and approximate matches, error handling, and data searching techniques.",
+   "topics_covered": [
+    "xlookup",
+    "lookup_functions",
+    "exact_match",
+    "approximate_match",
+    "error_handling"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel",
+    "xlookup"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 630,
+     "topic": "XLOOKUP function tutorial with 10 examples"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "sPVl7_yVjLU",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "BvYU0GEHJyc": {
+   "spoken_language": "",
+   "summary": "Unable to assess: no transcript provided. The title suggests pivot tables and slicers, but without transcript data, the actual content, depth, and teaching method cannot be verified.",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "BvYU0GEHJyc",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "ETQSNnOKDC0": {
+   "spoken_language": "hi",
+   "summary": "This video provides a beginner to advanced tutorial on Excel pivot tables in Hindi, explaining what pivot tables are, how to create them, and how to work with rows, columns, and values. The tutorial is designed to enable viewers to create professional reports and perform data analysis quickly.",
+   "topics_covered": [
+    "pivot tables",
+    "pivot table creation",
+    "rows columns values"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 548,
+     "topic": "Pivot table introduction and creation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "ETQSNnOKDC0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "YW_vqEoe-Sg": {
+   "spoken_language": "unknown",
+   "summary": "The video demonstrates VLOOKUP and XLOOKUP functions in Excel with multiple examples, covering syntax and usage for both lookup functions.",
+   "topics_covered": [
+    "vlookup",
+    "xlookup",
+    "lookup functions"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 482,
+     "topic": "VLOOKUP and XLOOKUP function explanation with examples"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "YW_vqEoe-Sg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "5TkRnGdC1NM": {
+   "spoken_language": "en",
+   "summary": "This video demonstrates how to create a pivot table dashboard in Excel with pivot charts and slicers, compressing the process into 15 minutes. It appears to cover dashboard assembly with interactive filtering elements.",
+   "topics_covered": [
+    "pivot tables",
+    "pivot charts",
+    "slicers",
+    "dashboard layout"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "pivot table dashboard with charts and slicers",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "wrong_language",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 900,
+     "topic": "pivot table dashboard creation with slicers"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 2
+    }
+   ],
+   "video_id": "5TkRnGdC1NM",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "DUP-Js2vNjs": {
+   "spoken_language": "hi",
+   "summary": "This video teaches how to apply VLOOKUP and XLOOKUP formulas in Excel when working with large datasets. It demonstrates both lookup functions with practical examples on real data, focusing on retrieving matching values from large tables.",
+   "topics_covered": [
+    "vlookup",
+    "xlookup",
+    "lookup functions",
+    "large datasets"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 645,
+     "topic": "VLOOKUP and XLOOKUP formulas on large data"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "DUP-Js2vNjs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "cqsKU_ECMHg": {
+   "spoken_language": "en",
+   "summary": "The video appears to be an Excel dashboard tutorial covering sales dashboard creation, though the full transcript is unavailable to verify specific teaching methods and depth of coverage.",
+   "topics_covered": [
+    "dashboard design",
+    "sales kpis",
+    "data visualization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Sales dashboard in Excel",
+   "tools_and_versions": [
+    "Excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1053,
+     "topic": "Sales dashboard overview and KPI tracking"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 1
+    }
+   ],
+   "video_id": "cqsKU_ECMHg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "-MyX4xjr8jM": {
+   "spoken_language": "en",
+   "summary": "This video claims to teach pivot tables through 10 practical examples in Excel, covering what pivot tables are, how to create them, and real-life data analysis use cases. However, without a transcript available, the actual depth and hands-on instruction cannot be verified.",
+   "topics_covered": [
+    "pivot tables",
+    "data analysis"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "ms excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "-MyX4xjr8jM",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "8nL9PtLdC94": {
+   "spoken_language": "en",
+   "summary": "The video teaches XLOOKUP function in Excel with multiple step-by-step examples. It covers how to use XLOOKUP to look up and return values from data ranges.",
+   "topics_covered": [
+    "xlookup",
+    "lookup_functions",
+    "excel_formulas"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "microsoft excel",
+    "xlookup"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 317,
+     "topic": "xlookup function examples and usage"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "clean_data_table",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lookup_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pivot_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pivot_charts",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "slicers_timelines",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "dashboard_build",
+     "score": 0
+    }
+   ],
+   "video_id": "8nL9PtLdC94",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  }
+ },
+ "dup_clusters": [
+  {
+   "members": [
+    "hxAkt7Pico0",
+    "NbaiGbn4khs"
+   ],
+   "shared_topics": [
+    "pivot_basics"
+   ]
+  },
+  {
+   "members": [
+    "hro6_y7R310",
+    "ETQSNnOKDC0"
+   ],
+   "shared_topics": [
+    "pivot table creation",
+    "pivot tables"
+   ]
+  },
+  {
+   "members": [
+    "gAY9is-ahQY",
+    "YW_vqEoe-Sg",
+    "DUP-Js2vNjs"
+   ],
+   "shared_topics": [
+    "lookup functions",
+    "vlookup",
+    "xlookup"
+   ]
+  },
+  {
+   "members": [
+    "0WPwWvpFtq8",
+    "V59jFWmu7w0"
+   ],
+   "shared_topics": [
+    "xlookup"
+   ]
+  },
+  {
+   "members": [
+    "5TNgfg-7RKE",
+    "mp5RFCvpWI0",
+    "htOIqJGeewE"
+   ],
+   "shared_topics": [
+    "pivot_charts",
+    "pivot_tables",
+    "slicers"
+   ]
+  }
+ ],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "hmygrQMcHyU",
+    "covers": [
+     "lookup_functions"
+    ],
+    "reason": "A short Hindi VLOOKUP intro with one simple example, a gentle starting point for someone who has never used lookups. It teaches what VLOOKUP is and how to write it before the fuller lookup video. It is flagged surface_intro, but a gentle on-ramp suits this beginner, and the next pick adds depth.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "Transcript was unavailable, so this rests on the title and summary. Higher if the example uses a price or product table."
+   },
+   {
+    "video_id": "gAY9is-ahQY",
+    "covers": [
+     "lookup_functions"
+    ],
+    "reason": "A Hindi video that applies both VLOOKUP and XLOOKUP to larger datasets and comes with a practice file. This matches the learner's need to pull prices, names and categories into a sales list, and it covers XLOOKUP for modern Excel plus VLOOKUP as the fallback.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.6,
+    "confidence_note": "The card shows both functions with practical examples and a practice file, but there is no transcript or verified quotes."
+   },
+   {
+    "video_id": "hro6_y7R310",
+    "covers": [
+     "pivot_basics"
+    ],
+    "reason": "Part 1 of a Hindi pivot table series covering the basics of creating pivot tables, at a beginner level. It is the main pivot coverage, taking the learner from raw list to summary with rows, columns and values.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.55,
+    "confidence_note": "No transcript, so grouping by month is unconfirmed. Higher if it shows date grouping."
+   },
+   {
+    "video_id": "mp5RFCvpWI0",
+    "covers": [
+     "pivot_charts",
+     "slicers_timelines"
+    ],
+    "reason": "A very short Hinglish walkthrough of making a pivot chart and adding slicers to it. It covers both skills before the dashboard build, and the Hinglish title is understandable to a Hindi speaker.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "At under 4 minutes it is probably shallow, and timelines are likely not covered. The dashboard videos that follow reinforce it."
+   },
+   {
+    "video_id": "_JtEWpUJPVY",
+    "covers": [
+     "pivot_charts",
+     "dashboard_build"
+    ],
+    "reason": "A Hindi project build of a mini sales dashboard from pivot tables. It ties pivot summaries and pivot charts into one dashboard, which is the learner's end goal.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.6,
+    "confidence_note": "The card names the project as a mini sales dashboard from pivot tables, but the transcript is poor. Whether it uses slicers is unverified."
+   },
+   {
+    "video_id": "PuGzwrnBG_s",
+    "covers": [
+     "dashboard_build"
+    ],
+    "reason": "A Hindi interactive-dashboard video that goes through building a dashboard from start to finish. It gives a second example of layout and interactive elements, so the learner can practise the layout on their own sales data.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.4,
+    "confidence_note": "Evidence is thin: relevance is only 1 and there is no transcript. Skip it if the previous dashboard video already feels sufficient."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "RdA04dRgF44",
+    "reason": "An XLOOKUP-only Hindi video marked intermediate. The chosen VLOOKUP and XLOOKUP video covers both functions at a beginner level."
+   },
+   {
+    "video_id": "1Sg1KaRwQzg",
+    "reason": "A good Hindi XLOOKUP tutorial, but adding 22 minutes would repeat lookup coverage and leave no budget for the dashboard picks. VLOOKUP is also not covered."
+   },
+   {
+    "video_id": "hxAkt7Pico0",
+    "reason": "Near-duplicate of the chosen Hindi pivot basics video, and at 23.9 minutes it takes more of the budget for the same content."
+   },
+   {
+    "video_id": "ETQSNnOKDC0",
+    "reason": "Near-duplicate of the chosen pivot video. It is flagged surface_intro, and its segment map shows only about 9 minutes of actual pivot content."
+   },
+   {
+    "video_id": "htOIqJGeewE",
+    "reason": "Hindi pivot charts video, but it is in the same near-duplicate cluster as the chosen chart and slicer video. It has no slicer coverage, so the chosen pick covers more of the plan."
+   },
+   {
+    "video_id": "5TNgfg-7RKE",
+    "reason": "A 5.5-minute video claiming pivot tables, charts and slicers. It has no segment map and only relevance 1 for each topic, so it is too thin."
+   },
+   {
+    "video_id": "E48tn7LcxFU",
+    "reason": "A 60-minute Hindi sales dashboard video flagged clickbait, with no verifiable content and relevance 0. It is also far over the 25-minute sitting limit."
+   },
+   {
+    "video_id": "W3tM8BVhsuo",
+    "reason": "A 31-minute Hindi pivot lecture, over the 25-minute limit. It would need splitting and would take most of the budget for beginner pivot content already covered."
+   },
+   {
+    "video_id": "5TkRnGdC1NM",
+    "reason": "A well-matched pivot dashboard with slicers, but flagged wrong_language (not Hindi), which is disqualifying for this learner."
+   },
+   {
+    "video_id": "BvYU0GEHJyc",
+    "reason": "The title suggests pivot tables with multiple slicers, but no topics or content could be verified."
+   }
+  ],
+  "near_duplicates": [
+   {
+    "kept": "gAY9is-ahQY",
+    "dropped": "DUP-Js2vNjs",
+    "shared_topics": [
+     "vlookup",
+     "xlookup",
+     "lookup_functions"
+    ],
+    "why_kept": "Both are Hindi VLOOKUP and XLOOKUP videos on large data. The kept one is a bit longer, so it has more room for examples, and it comes with a practice file."
+   },
+   {
+    "kept": "gAY9is-ahQY",
+    "dropped": "YW_vqEoe-Sg",
+    "shared_topics": [
+     "vlookup",
+     "xlookup",
+     "lookup_functions"
+    ],
+    "why_kept": "The dropped video has no clear Hindi signal in its title. The kept one is explicitly Hindi and uses large-data practical examples."
+   },
+   {
+    "kept": "hro6_y7R310",
+    "dropped": "ETQSNnOKDC0",
+    "shared_topics": [
+     "pivot table creation",
+     "pivot tables"
+    ],
+    "why_kept": "The kept video is a series Part 1 with no surface_intro flag. The dropped one is flagged surface_intro and has only about 9 minutes of relevant content."
+   },
+   {
+    "kept": "mp5RFCvpWI0",
+    "dropped": "5TNgfg-7RKE",
+    "shared_topics": [
+     "pivot_charts",
+     "slicers"
+    ],
+    "why_kept": "The kept video rates 2 for both pivot charts and slicers, while the dropped one rates only 1 on each and has no segment map."
+   },
+   {
+    "kept": "mp5RFCvpWI0",
+    "dropped": "htOIqJGeewE",
+    "shared_topics": [
+     "pivot_charts"
+    ],
+    "why_kept": "The kept video covers slicers as well as pivot charts. The dropped one covers charts only, so slicers would still be missing."
+   }
+  ],
+  "warnings": [
+   "No candidate has verified quotes or a usable transcript, so every pick rests on titles, summaries and segment maps. Confidence is moderate at best; skim the first minute of each video to confirm it suits you.",
+   "Language was inferred from titles and summaries: the picks are Hindi or Hinglish, but this is not confirmed from the audio.",
+   "The sub-topic 'Preparing sales data as an Excel Table' (about 7 minutes) has no dedicated video in the pool. Convert your list to a Table with Ctrl+T (Insert > Table) before the pivot videos. The pivot videos may touch on this, but it is unverified.",
+   "Timelines (date filters) are not clearly covered by any candidate; the slicer video covers slicers only. Look at the Timeline option under PivotTable Analyze once your dashboard is built.",
+   "Total viewing time is 87.5 of 90 minutes, and every video is under the 25-minute limit for phone viewing. The last pick, PuGzwrnBG_s, is the most optional; dropping it cuts the plan to 66.7 minutes.",
+   "Assumes you have desktop Excel 2021 or Microsoft 365 for XLOOKUP; on older versions use VLOOKUP, which the first two lookup picks cover. Videos from different creators use different sample data, so apply each lesson to your own sales table."
+  ]
+ },
+ "fixes": []
+}

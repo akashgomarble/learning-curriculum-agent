@@ -1,0 +1,519 @@
+{
+  "persona_id": "impossible_k8s_in_45",
+  "goal": "Learn Kubernetes deeply and pass the CKA exam, including hands-on cluster setup",
+  "budget_minutes": 45,
+  "total_minutes": 43.6,
+  "interpretation": "In 45 minutes of viewing, the learner gets a solid conceptual foundation in Kubernetes architecture, core objects, kubectl, and kubeadm cluster setup, framed around the CKA exam, along with a clear picture of the exam's scope and what to study next.",
+  "assumptions": [
+    "'Nothing from before 2023' means videos must be published in 2023 or later, and since titles are the only signal available, titles that mention older years or outdated exam versions are excluded.",
+    "The learner will use the remaining CKA preparation (practice labs, mock exams) outside this 45-minute video plan.",
+    "The learner has no prior Kubernetes exposure, so the plan starts at architecture and does not assume cloud-managed clusters.",
+    "The current CKA curriculum covers cluster architecture/installation/configuration, workloads and scheduling, services and networking, storage, and troubleshooting."
+  ],
+  "feasible": false,
+  "feasibility_note": "Deep Kubernetes mastery and passing the CKA cannot be achieved in 45 minutes of video. Realistic in this budget: understand the CKA scope and format, learn Kubernetes architecture, pods/deployments/services, core kubectl usage, and see a kubeadm cluster setup walkthrough, which gives a foundation for later hands-on practice and mock exams.",
+  "sub_topics": [
+    {
+      "id": "cka_overview",
+      "title": "CKA exam format, domains and study strategy",
+      "why": "The learner needs exam-prep orientation: what the current CKA covers, the weighting of domains, and the time-pressured, hands-on format.",
+      "prereqs": [],
+      "minutes_share": 0.1
+    },
+    {
+      "id": "k8s_architecture",
+      "title": "Kubernetes architecture: control plane and worker node components",
+      "why": "Coming from single-server Docker, the learner must understand how API server, etcd, scheduler, controller manager, kubelet and kube-proxy fit together to orchestrate containers across nodes.",
+      "prereqs": [
+        "cka_overview"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "pods_deployments",
+      "title": "Pods, ReplicaSets and Deployments",
+      "why": "These are the core workload objects replacing 'docker run'; the learner knows containers but not how Kubernetes schedules, scales and updates them declaratively with YAML.",
+      "prereqs": [
+        "k8s_architecture"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "services_networking",
+      "title": "Services and basic cluster networking",
+      "why": "Single-server Docker port mapping differs from Kubernetes Services (ClusterIP, NodePort, LoadBalancer) and DNS, which are heavily tested in the CKA.",
+      "prereqs": [
+        "pods_deployments"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "kubectl_essentials",
+      "title": "kubectl essentials and exam-speed imperative commands",
+      "why": "The CKA is a command-line practical exam; the learner needs fast kubectl usage, imperative commands, dry-run YAML generation, and kubectl explain/docs navigation.",
+      "prereqs": [
+        "pods_deployments"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "kubeadm_setup",
+      "title": "Cluster setup with kubeadm",
+      "why": "Hands-on cluster installation (init, join, CNI, node prep) is a core CKA domain and the learner has never built a multi-node cluster.",
+      "prereqs": [
+        "k8s_architecture",
+        "kubectl_essentials"
+      ],
+      "minutes_share": 0.2
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "5NHMNVeutT8",
+      "title": "Kubernetes Architecture Explained: Control Plane, Nodes & Pod Lifecycle | CKA Ch 1.1",
+      "channel": "DevopsJourney",
+      "url": "https://www.youtube.com/watch?v=5NHMNVeutT8",
+      "duration_min": 10.2,
+      "minutes_counted": 10.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "k8s_architecture"
+      ],
+      "reason": "Gives a CKA-framed walk through control plane components (API server, etcd, scheduler, controller manager) and worker components (kubelet, runtime, kube-proxy, CNI). It also traces the six steps from kubectl apply to a running pod, which links the architecture to the objects that follow.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "01:50",
+          "quote": "The control plane makes decisions and stores the cluster's state. The worker nodes run your applications.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "10:01",
+          "quote": "First, Kube control sends the request to the API server, which authenticates it, authorizes it, runs admission, and stores the deployment in ETCD.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "12:24",
+          "quote": "When a pod is pending, describe it and read the events section. The scheduler explains itself.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Unflagged, exam-oriented and recent. The segment map runs past the stated duration, so the content is inferred from the summary and quotes.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "yeUBojfuhiI",
+      "title": "EP05 - Kubernetes Deployments & ReplicaSets",
+      "channel": "Devops Basics with Dali",
+      "url": "https://www.youtube.com/watch?v=yeUBojfuhiI",
+      "duration_min": 5.9,
+      "minutes_counted": 5.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "pods_deployments"
+      ],
+      "reason": "Explains how a Deployment declares the desired state and how the ReplicaSet keeps the pods running. It shows a Deployment manifest being applied and a pod being deleted and recreated, which gives the learner the object model before the imperative commands.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:20",
+          "quote": "The deployment defines the desired state, in this case three replicas. Then, the replica set ensures that three pods are always running.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "01:44",
+          "quote": "The replica set constantly checks if the desired number of pods is running. So, if one pod crashes or disappears, Kubernetes automatically creates a new one to replace it.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q5",
+          "t": "05:04",
+          "quote": "We only created one deployment manifest, but Kubernetes automatically created three pods based on the replicas value.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Short and clear, but it does not cover pod specs in depth and is not exam-specific.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "ZDFqVFbX0Ic",
+      "title": "Day 13: Imperative commands for Deployments, Services and Troubleshooting | CKA Course 2025",
+      "channel": "Cloud With VarJosh",
+      "url": "https://www.youtube.com/watch?v=ZDFqVFbX0Ic",
+      "duration_min": 31.1,
+      "minutes_counted": 14.2,
+      "watch_from": "03:46",
+      "watch_until": "18:00",
+      "covers": [
+        "kubectl_essentials",
+        "pods_deployments",
+        "services_networking"
+      ],
+      "reason": "A CKA-course lesson on creating deployments imperatively, using --dry-run to generate YAML skeletons, and exposing them as ClusterIP services. It covers the exam-speed kubectl habits the learner needs, and the range stops before the NodePort and DNS-testing sections to fit the budget.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "imperative commands are super handy for quick testing, troubleshooting, and even during the CKA exam",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "03:46",
+          "quote": "imperative commands can do those things quickly. So we can use imperative commands to create a skeleton deployment YAML",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "07:21",
+          "quote": "In deployment, when you specify a port, you are specifying the container port. This is just for documentation purposes",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Good fit for the content and level. It is slightly above beginner level, and the range was chosen from the segment map.",
+      "level": "intermediate",
+      "format": "project_build"
+    },
+    {
+      "rank": 4,
+      "video_id": "yL_DurdVxak",
+      "title": "Stop Losing Easy Points on the CKA: Complete NodePort Workflow (CKA Trap)",
+      "channel": "Uptime Unicorn",
+      "url": "https://www.youtube.com/watch?v=yL_DurdVxak",
+      "duration_min": 4.2,
+      "minutes_counted": 4.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "services_networking",
+        "kubectl_essentials",
+        "cka_overview"
+      ],
+      "reason": "A short CKA-style task: expose a deployment with a NodePort service. It covers the trap that kubectl expose cannot set a custom nodePort and the dry-run-then-edit workflow. It also gives a realistic sense of how the exam scores such tasks.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "00:49",
+          "quote": "The trap is that the kubectl expose doesn't let you pass a custom nodeport flag directly.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "03:40",
+          "quote": "We must use the dry run client to create a YAML file to generate the basic server spec instantly and dump it to the YAML.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "00:00",
+          "quote": "Exposing deployment with no port service should be a three or three point on the CKA exam. But almost every year candidate lose mark here.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "Strong on NodePort and exam technique. It is a weak substitute for a real exam-format and domains overview.",
+      "level": "beginner",
+      "format": "project_build"
+    },
+    {
+      "rank": 5,
+      "video_id": "j3a2Sr2n8eQ",
+      "title": "How to Install Kubernetes with Kubeadm (2025 Update) | Full Cluster Setup Walkthrough",
+      "channel": "KubeSkills",
+      "url": "https://www.youtube.com/watch?v=j3a2Sr2n8eQ",
+      "duration_min": 9.1,
+      "minutes_counted": 9.1,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "kubeadm_setup"
+      ],
+      "reason": "A compact 2025 kubeadm walkthrough: install containerd and kubeadm/kubelet/kubectl, run kubeadm init, join a worker with the join token, and apply the Calico CNI. This is the cluster-setup part of the CKA that this learner has never seen.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "we're going to be installing the container D runtime, the Kube ADM, Kublet, and Kubectl to install our Kubernetes cluster",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "10:27",
+          "quote": "Kube ADM join, and then that contains the token that's going to join the worker node to the cluster",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "11:42",
+          "quote": "we're going to use the Calico CNI. We can run the command Kubectl apply. Just as we would any other YAML file",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Recent, unflagged and focused on setup. It uses Ubuntu with Calico, which may differ from an exam environment.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "JoHUi9KvnOA",
+      "title": "Kubernetes Beginner To Expert Level In One Video | Ultimate Kubernetes Guide | #kubernetes #k8s",
+      "stage": "prefilter",
+      "reason": "420 min, far beyond the 45-min budget"
+    },
+    {
+      "video_id": "k1Xu9mJNRA8",
+      "title": "CKA 2026 Crash Course: Learn Kubernetes FAST + Hands-On Full Guide",
+      "stage": "prefilter",
+      "reason": "1283 min, far beyond the 45-min budget"
+    },
+    {
+      "video_id": "d9xfB5qaOfg",
+      "title": "Kubernetes CKS Full Course Theory + Practice + Browser Scenarios",
+      "stage": "prefilter",
+      "reason": "667 min, far beyond the 45-min budget"
+    },
+    {
+      "video_id": "kiMpfSFsOfg",
+      "title": "Everything you need to know about AWS Cloud Practitioner ☁️ #aws",
+      "stage": "prefilter",
+      "reason": "too short (41s)"
+    },
+    {
+      "video_id": "_4uQI4ihGVU",
+      "title": "Learn Kubernetes in 6 Hours – Full Course with Real-World Project",
+      "stage": "prefilter",
+      "reason": "353 min, far beyond the 45-min budget"
+    },
+    {
+      "video_id": "FmbaIGevdRw",
+      "title": "Day 9 – ReplicaSets ExplainedWhen a Pod crashes, gets deleted, or becomes unhealthy",
+      "stage": "prefilter",
+      "reason": "too short (23s)"
+    },
+    {
+      "video_id": "MTHGoGUFpvE",
+      "title": "Kubernetes Zero to Hero: The Complete Beginner’s Guide (2025 Edition)",
+      "stage": "prefilter",
+      "reason": "170 min, far beyond the 45-min budget"
+    },
+    {
+      "video_id": "GGo6S4Zz9OQ",
+      "title": "Are Certifications Worth it? The Truth About PMP and Scrum Master",
+      "stage": "prefilter",
+      "reason": "too short (44s)"
+    },
+    {
+      "video_id": "X48VuDVv0do",
+      "title": "Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]",
+      "stage": "prefilter",
+      "reason": "217 min, far beyond the 45-min budget"
+    },
+    {
+      "video_id": "GuEIFEvcVGM",
+      "title": "3 Career Paths for 1 Crore Salary! | Kushal Lodha #shorts",
+      "stage": "prefilter",
+      "reason": "too short (59s)"
+    },
+    {
+      "video_id": "LcDP59CyeCk",
+      "title": "CKA Skill Builder: Manually Upgrade a Kubernetes Cluster with kubeadm",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "a-nWPre5QYI",
+      "title": "What is Kubernetes? | Kubernetes Explained",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "6Ynaad5E7-Q",
+      "title": "Kubernetes Architecture Explained in Hindi | Control Plane & Node Components Simplified | Tutorial#2",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "B2eTZXFI0PM",
+      "title": "Kubernetes Deployment Explained 🚀 | Create, Update & Scale Deployments | Kubernetes Tutorial",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "jggLjpmU98o",
+      "title": "Kubernetes Services explained and Labs | ClusterIP vs NodePort vs LoadBalancer vs Headless Service",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "RORhczcOrWs",
+      "title": "Day 6/40 - Kubernetes Multi Node Cluster Setup Step By Step | Kind Tutorial",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "mg5NMX7qqCU",
+      "title": "Kubernetes Cluster Architecture | Control Plan & Node Component | #Kubernetes #CKA @AlokKumar",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "ExOP4tIgh3I",
+      "title": "Kubernetes Deployments: Update Your App Without Downtime",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "LUOZLuHSMQ0",
+      "title": "Kubernetes Service Explained | ClusterIP, NodePort & LoadBalancer with Hands-On Lab | CKA",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "0xHappiYvIY",
+      "title": "Setup Kubernetes v1.29 Cluster using Kubeadm and Containerd on AWS",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "9AKSLbfen6w",
+      "title": "Kubernetes Crash Course for Beginners | Hands-On Tutorial + First Deployment",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "tHAQWLKMTB0",
+      "title": "Day 9/40 - Kubernetes Services Explained - ClusterIP vs NodePort vs Loadbalancer vs External",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "WcdMC3Lj4tU",
+      "title": "Day 27/40 - Setup a Multi Node Kubernetes Cluster Using Kubeadm",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "92NB8oQBtnc",
+      "title": "Day 12: Kubernetes Services IN-DEPTH | ClusterIP, NodePort, LoadBalancer, ExternalName | CKA 2025",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "hh8vIE4UseA",
+      "title": "kubectl commands cheat sheet 2026: Master Kubernetes CLI [CKA Roadmap]",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "xY6Ic7Igzck",
+      "title": "DAY-35 | EVERYTHING ABOUT KUBERNETES SERVICES | DISCOVERY | LOAD BALANCING | NETWORKING | #devops",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "2ZauKFZSc34",
+      "title": "From Zero to CKA Hero: Master the Exam with Payload Pat's Tips!",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "NtX75Ze47EU",
+      "title": "Day 34/40 - Step-By-Step Guide To Upgrade a Multi Node Kubernetes Cluster With Kubeadm",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "hK8wf18SasY",
+      "title": "Kubernetes and EKS for Beginners – Crash Course with Pulumi",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "SuKkL8YjXMg",
+      "title": "CKA Exam Prep: How I Became a Kubestronaut",
+      "stage": "select",
+      "reason": "Flagged as a vlog, surface intro and pure theory. It is a personal story with only brief exam-format coverage, and the yL_DurdVxak exam-scenario pick replaces it."
+    },
+    {
+      "video_id": "YNPap3UH1IA",
+      "title": "How to Pass the CKA Exam in 2026 | Certified Kubernetes Administrator",
+      "stage": "select",
+      "reason": "Upload date is 2022, which breaks the learner's no-pre-2023 limit, even though its title says 2026."
+    },
+    {
+      "video_id": "xX52dc3u2HU",
+      "title": "Setup Kubernetes Cluster Using Kubeadm [Multi-node]",
+      "stage": "select",
+      "reason": "A good kubeadm video from 2023, but its Terraform/AWS infrastructure setup makes it longer and heavier than the focused kubeadm walkthrough chosen."
+    },
+    {
+      "video_id": "beYyRumKXZE",
+      "title": "Kubernetes Architecture Explained: Control Plane & Worker Node Components",
+      "stage": "select",
+      "reason": "Unflagged architecture video, but it runs about 28 minutes and would take most of the budget; the chosen video covers architecture plus the pod workflow in 10 minutes."
+    },
+    {
+      "video_id": "gywke3XiNC0",
+      "title": "Day-31 | KUBERNETES ARCHITECTURE USING EXAMPLES | Kubernetes is Easy #devops #k8s #devopscourse",
+      "stage": "select",
+      "reason": "Flagged pure_theory, 25 minutes long, and spends much of its time on Docker background the learner already knows."
+    },
+    {
+      "video_id": "klxZke9qbvg",
+      "title": "Kubernetes Architecture Explained: Exploring etcd, Schedulers, Managers, and Node Components",
+      "stage": "select",
+      "reason": "Flagged pure_theory and covers architecture only, with no link to pod workflow or the CKA."
+    },
+    {
+      "video_id": "TlHvYWVUZyc",
+      "title": "Kubernetes Explained in 6 Minutes | k8s Architecture",
+      "stage": "select",
+      "reason": "Flagged as a surface intro that includes use-case and trade-off discussion; a CKA-framed unflagged architecture video exists."
+    },
+    {
+      "video_id": "bhGufLt75X4",
+      "title": "Kubernetes Services explained | ClusterIp NodePort & LB| Part - 2 ..... #Kubernetes #CKA @AlokKumar",
+      "stage": "select",
+      "reason": "28 minutes on services in an EKS cluster. This is a managed-cloud setup, and the services material is covered more efficiently elsewhere."
+    },
+    {
+      "video_id": "XuSQU5Grv1g",
+      "title": "Kubernetes Crash Course: Learn the Basics and Build a Microservice Application",
+      "stage": "select",
+      "reason": "A 130-minute crash course assessed from metadata only, so the evidence is weak and it does not fit the 45-minute budget."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "Infeasible as stated: 45 minutes of video cannot teach Kubernetes deeply or get anyone through the CKA. This plan gives a foundation; real practice labs and mock exams (e.g. killer.sh) are needed afterwards.",
+    "No post-2022 candidate in the pool is a clean CKA exam overview. The only dedicated overview videos were either flagged (vlog) or pre-2023, so cka_overview is covered only partly, through the exam-scenario framing in the NodePort video and the CKA framing in the architecture video.",
+    "Planned viewing time is about 43.6 of 45 minutes (about 97%). The ZDFqVFbX0Ic range (3:46-18:00) stops before its NodePort and DNS/connectivity-testing sections to fit the budget.",
+    "Services and networking is covered thinly: ClusterIP in the course excerpt and NodePort in the short exam video. Ingress, DNS and network policies are not covered.",
+    "Storage, troubleshooting, scheduling and other exam domains are outside this 45-minute plan.",
+    "Some transcript segment maps list timestamps beyond the stated video length, so the architecture, ReplicaSet and kubeadm picks are played in full and the ZDFqVFbX0Ic range relies on its segment map."
+  ],
+  "pool_size": 36,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-4.5",
+    "select": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.24516,
+  "latency_s": 90.6,
+  "mode": "agent"
+}

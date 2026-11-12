@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="data:,"><title>How it works</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--muted:#5d6472;--line:#e3e6eb;--accent:#2f6fde;--accent-soft:#e8f0fd;
+--warn:#8a5a00;--warn-bg:#fff6e0;--bad:#b42318;--bad-bg:#fdecea;--ok:#18794e;--ok-bg:#e6f6ee;--chip:#eef1f5;--mark:#fff1a8;
+--shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#e8eaee;--muted:#9aa3b2;--line:#272c36;--accent:#7aa7ff;
+--accent-soft:#1c2740;--warn:#f5c26b;--warn-bg:#2a2214;--bad:#ff8a80;--bad-bg:#2c1716;--ok:#5fd39a;--ok-bg:#122a1f;--chip:#222733;
+--mark:#4a4214;--shadow:none}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+nav div{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;gap:18px;align-items:center;font-size:14px}
+nav b{margin-right:auto}nav a.on{font-weight:600;color:var(--ink)}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:26px;line-height:1.25;margin:4px 0 6px}h2{font-size:18px;margin:34px 0 12px}h3{font-size:17px;line-height:1.35;margin:0}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:14px 0 6px}
+.crumb{font-size:13px;color:var(--muted)}.muted{color:var(--muted)}.small{font-size:13px}
+code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:4px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:120px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--muted)}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--chip);margin:6px 0 4px}
+.bar i{display:block;height:100%;border-right:2px solid var(--card)}
+.legend{font-size:12px;color:var(--muted)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:760px){.two{grid-template-columns:1fr}}
+.warn{background:var(--warn-bg);color:var(--ink);border-radius:10px;padding:10px 14px;margin:8px 0;font-size:14px}
+.warn b{color:var(--warn)}.bad{border-left:4px solid var(--bad)}
+.plan{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.plan li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 48px;position:relative}
+.plan li:before{content:counter(s);position:absolute;left:14px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:13px;text-align:center;line-height:22px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--muted)}
+.chip.c{background:var(--accent-soft);color:var(--accent)}.chip.ok{background:var(--ok-bg);color:var(--ok)}
+.chip.no{background:var(--bad-bg);color:var(--bad)}.chip.w{background:var(--warn-bg);color:var(--warn)}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 18px;box-shadow:var(--shadow)}
+.pick header{display:flex;gap:12px;padding:14px 16px 10px;align-items:flex-start}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;text-align:center;line-height:30px}
+.meta{font-size:13px;color:var(--muted);margin-top:3px}
+.body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;padding:0 16px 12px}
+.body>div:first-child{align-self:start;position:sticky;top:56px}
+@media (max-width:760px){.body{grid-template-columns:1fr}.body>div:first-child{position:static}}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}
+.player iframe,.player button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.player button{cursor:pointer;padding:0;background:#000 center/cover no-repeat}
+.player button:after{content:"";position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(0,0,0,.72)}
+.player button:before{content:"";position:absolute;left:50%;top:50%;margin:-11px 0 0 -7px;border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff;z-index:1}
+.player button:hover:after{background:#e62117}
+.range{font-size:12px;color:var(--muted);margin-top:6px}
+.reason{margin:0 0 10px}
+.conf{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:10px}
+.conf .m{flex:1;height:6px;border-radius:3px;background:var(--chip);overflow:hidden}.conf .m i{display:block;height:100%}
+blockquote{margin:0 0 8px;padding:6px 10px;border-left:3px solid var(--line);font-size:14px}
+.ts{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);color:var(--accent);border:0;border-radius:5px;padding:1px 6px;cursor:pointer;margin-right:6px}
+blockquote small{color:var(--muted)}
+.note{font-size:13px;color:var(--muted);font-style:italic;margin-top:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}
+.pick details{margin:0 16px 14px;background:var(--bg)}
+summary{cursor:pointer;font-weight:600}details ul{margin:8px 0 0;padding-left:18px}details li{margin:4px 0;font-size:14px}
+.extract{max-height:420px;overflow:auto;margin-top:10px;font-size:13px;line-height:1.5}
+.extract p{margin:0 0 6px}.extract .ch{color:var(--muted);font-weight:600}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
+.gap{color:var(--muted);text-align:center;font-size:12px;margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.grid .box h3{margin-bottom:6px}.grid .box p{margin:6px 0;font-size:14px}
+.card-tc{display:flex;flex-direction:column}.card-tc>p:last-of-type{margin-bottom:10px}
+.cardbtns{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+.btn-ghost,.btn-soft{font-size:13px;font-weight:600;padding:7px 13px;border-radius:9px;border:1px solid var(--line);white-space:nowrap}
+.btn-ghost{color:var(--ink);background:var(--bg)}.btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+.btn-soft{color:#fff;background:var(--accent);border-color:var(--accent)}.btn-soft:hover{text-decoration:none;opacity:.92}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);background:var(--bg)}
+td:first-child{min-width:130px}tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.y{color:var(--ok);font-weight:600}.x{color:var(--bad);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:14px 0}
+.steps div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px}
+.steps b{display:block;font-size:14px;margin-bottom:2px}
+.wk-list{display:grid;gap:10px}
+.wk{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.wk-n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.wk-b{min-width:0}.wk-h{font-weight:600;margin-bottom:4px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.why{margin-top:6px;font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px}
+.why b{color:var(--ink)}
+.tryform{display:grid;gap:10px;margin:14px 0}
+.tryform label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+.tryform .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:600px){.tryform .row{grid-template-columns:1fr}}
+.tryform input{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+.tryform button{justify-self:start;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.tryform button:disabled{opacity:.6;cursor:default}
+.run-stages{display:grid;gap:8px;margin:16px 0}
+.run-stages div{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.run-stages .dot{width:12px;height:12px;border-radius:50%;background:var(--chip);flex:none}
+.run-stages .done .dot{background:var(--ok)}.run-stages .active .dot{background:var(--accent);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.4}}
+footer{margin-top:36px;font-size:12px;color:var(--muted)}
+</style></head><body><nav><div><b>Learning Curriculum Builder</b><a href="index.html" class="">Test cases</a><a href="how-it-works.html" class="on">How it works</a><a href="evaluation.html" class="">Evaluation</a><a href="/chat" class="">Chat ✨</a></div></nav><main><h1>How it works</h1><div class='muted'>A learning-curriculum agent: goal + time budget + learner profile in, an ordered, justified curriculum out. This page explains how the agent works, every design decision and why, and how it is evaluated.</div><h2>The agent</h2><div class='muted small' style='margin-bottom:10px'>A tool-using loop, not fixed stages. The model plans, then decides each move for itself — search, read, choose — over a bounded number of turns. Code, not the model, enforces the rules it can't be trusted with.</div><div class='wk-list'><div class='wk'><div class='wk-n'>1</div><div class='wk-b'><div class='wk-h'><code>Plan</code></div><div>From the learner profile it names 3–7 ordered sub-topics with prerequisites, judges whether the goal is feasible in the budget, and narrates what it is about to do — the narration you see streaming live.</div></div></div><div class='wk'><div class='wk-n'>2</div><div class='wk-b'><div class='wk-h'><code>search_youtube(query)</code></div><div>It issues its own queries — one per sub-topic, plus a project-style query that mirrors the goal — against a candidate pool gathered from YouTube search (yt-dlp by default; the official Data API when a key is set). View count is returned but the prompt is explicit that popularity is not fit.</div></div></div><div class='wk'><div class='wk-n'>3</div><div class='wk-b'><div class='wk-h'><code>read_video(video_id)</code></div><div>The only way to learn what a video teaches: a content summary, level, format, red flags, topics covered, and verbatim quotes with ids and timestamps. It reads only as many as it needs to choose well — typically far fewer than the whole pool.</div></div></div><div class='wk'><div class='wk-n'>4</div><div class='wk-b'><div class='wk-h'><code>submit_curriculum(…)</code></div><div>When the plan is covered it submits picks in watch order, each with the sub-topics it covers, a reason, the verified quote ids backing that reason, an optional watch range, a confidence, and a list of strong candidates it read but dropped.</div></div></div><div class='wk'><div class='wk-n'>5</div><div class='wk-b'><div class='wk-h'><code>Verify (in code)</code></div><div>Every submission runs the same guardrails as a code pipeline would: ids must be in the pool, only quotes verified against the transcript may be cited, the budget must hold, flagged picks are replaced when an unflagged alternative exists, and the learner&#x27;s stated limits are applied. A submission that fails is handed back to the agent to fix.</div></div></div></div><div class='box small'><b>Why a loop, not a chain?</b> The agent reads only what it needs, can back out of a dead end, and — because the model that built the curriculum is still in the conversation — it can defend each choice and revise on request with its real working context, not a reconstruction. Transcript grounding, quote verification, assessment and assembly are shared library code, so the loop is about <i>who decides</i>, never about cutting corners on the checks.</div><h2>Design decisions, and why</h2><div class='tbl'><table><tr><th>Decision</th><th>Why</th></tr><tr><td><b>An agent loop, and it stays to defend its work</b></td><td>The model drives search → read → choose itself, then remains in the conversation to answer &#x27;why this video?&#x27; and to revise on request — with its real working context, not a reconstruction. Grounding is still enforced in code, so the openness costs nothing on correctness.</td></tr><tr><td><b>Read the transcripts, not titles or views</b></td><td>The brief&#x27;s premise is that popularity and titles don&#x27;t tell you fit. Reasons must quote what is actually said. The &#x27;no transcript&#x27; baseline in the eval measures what reading buys.</td></tr><tr><td><b>Quotes verified in code and cited by id</b></td><td>The selector can only cite quote ids that code already found in the transcript, so a reason cannot be backed by invented evidence. Grounding is enforced, not requested.</td></tr><tr><td><b>Cheap model reads, strong model chooses</b></td><td>~30 extraction calls per run go to the cheap model (Haiku); planning and selection, where judgement matters, go to Sonnet 5.5. The split is tested by the model comparison, not assumed.</td></tr><tr><td><b>Code owns the arithmetic and the hard rules</b></td><td>Budget sums, valid ids, quote ids, red-flag replacement and the learner&#x27;s stated limits (recency, sitting length, creators) are checked in Python. Models are unreliable at arithmetic and rule-following under pressure.</td></tr><tr><td><b>Dedup from topic labels, not embeddings</b></td><td>Free, explainable, and guarded by level and format so a beginner explainer and an advanced build are not merged.</td></tr><tr><td><b>Degrade honestly when YouTube blocks transcripts</b></td><td>Fall back to chapters and description, label that evidence as weaker everywhere, and don&#x27;t work around the block with scrapers or proxies. A hosted provider on the user&#x27;s own key can fill gaps if configured.</td></tr><tr><td><b>Judge from a different model family</b></td><td>A model preferring its own outputs would inflate the scores, so OpenAI/Google models judge the Anthropic curator&#x27;s picks, in both orders, with binary verdicts and critiques rather than drift-prone scores.</td></tr></table></div><h2>How it's evaluated</h2><div class='box'><p>Three layers, decided before looking at any output:</p><ol><li><b>Deterministic checks</b> (no model): invented ids, budget overrun, constraint and red-flag violations, known-topic leakage, unverified quotes, level floor, language, and the learner's stated limits. Hard checks gate a pass.</li><li><b>LLM judges from another model family</b>: a per-criterion rubric with written critiques, pairwise comparisons against both baselines in both orders, and a faithfulness check that each reason's claims are supported by the video's text.</li><li><b>Human labels</b> (blind) to measure whether the judge can be trusted.</li></ol><p class='small muted'>Two baselines run on the same candidate pool: the agent without transcripts, and the top videos by view count. See the <a href='evaluation.html'>evaluation page</a> for results.</p></div><h2>What it deliberately does not do</h2><div class='box small'><ul><li>Measure teaching quality beyond what is said — pacing, audio and on-screen code are not seen.</li><li>Work around YouTube's caption block with scrapers or proxies; it degrades to weaker evidence and says so.</li><li>Promise a learner reaches the goal — every number is a proxy for 'a careful mentor would pick this'.</li></ul></div></main><script>
+function play(el, start){
+  const p = el.closest('.pick').querySelector('.player');
+  const id = (p.dataset.id || '').replace(/[^A-Za-z0-9_-]/g, ''), end = p.dataset.end;
+  const s = start ?? p.dataset.start;
+  const q = new URLSearchParams({autoplay:'1', rel:'0', modestbranding:'1'});
+  if (s) q.set('start', s); if (end && (start == null || +start < +end)) q.set('end', end);
+  p.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?${q}" title="${(p.dataset.title || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c])}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  p.scrollIntoView({block:'nearest', behavior:'smooth'});
+}
+</script></body></html>

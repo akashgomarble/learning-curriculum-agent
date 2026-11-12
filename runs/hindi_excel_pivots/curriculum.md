@@ -1,0 +1,125 @@
+# Curriculum: Learn pivot tables and lookups well enough to build a monthly sales dashboard in Excel
+
+**Budget:** 90 min · **Planned:** 74 min · **Videos:** 6 · **Candidates assessed:** 36
+
+**How I read the goal:** The learner can take their raw monthly sales list, use lookups to enrich it, summarize it with pivot tables, and assemble a single-sheet Excel dashboard with pivot charts and slicers, all by following Hindi-language videos on a phone.
+
+**Assumptions:** Learner has a desktop/laptop Excel (Microsoft 365 or 2021) available to build the dashboard even though videos are watched on a phone, so XLOOKUP is available; VLOOKUP is covered as the fallback for older versions.; Sales data is a simple table with date, product, customer/region, quantity and amount columns.; The 25-minute limit applies to each individual video, not to the total plan, so several shorter videos will be combined.; Hindi-language videos are preferred; Hinglish tutorials are acceptable since they are understandable to a Hindi speaker.
+> ⚠️ Planned viewing is 73.8 of 90 minutes (about 82%). That leaves 16.2 minutes unused because the remaining Hindi candidates repeated topics already covered, and adding them would only add redundancy and extra creators.
+> ⚠️ Timelines (date-range filters) are not covered by any Hindi candidate. Slicers are covered, including a month slicer. After the slicer videos, try Analyze > Insert Timeline yourself.
+> ⚠️ Clean data table preparation is only covered briefly, in the table-conversion part of the first video. Make sure your sales list has one header row, no blank rows or columns, and real dates.
+> ⚠️ No selected video shows lookups feeding into a dashboard. The dashboard video uses its own sample data, so you will need to apply a lookup to your own list to add product names or categories before building pivots.
+> ⚠️ The VLOOKUP video is Hinglish in Roman script, not pure Hindi. The other picks are Hindi.
+> ⚠️ XLOOKUP needs Microsoft 365 or Excel 2021. If your Excel is older, use VLOOKUP, which is covered in the first two lookup videos.
+> ⚠️ Every pick is within 25 minutes, but the stated durations do not match the segment maps in some cards, so playback times may differ slightly. I used the full videos and the stated durations.
+
+## Plan
+
+- **Preparing sales data as an Excel Table** (`clean_data_table`): Pivot tables and lookups need clean, structured data; the learner only knows basic lists, so converting a list to a Table avoids common errors.
+- **VLOOKUP and XLOOKUP to pull in product prices, names and categories** (`lookup_functions`): The learner has no lookup experience, and sales data usually needs product or customer details matched from another sheet before summarizing.
+- **Creating pivot tables: rows, columns, values, grouping by month** (`pivot_basics`): Core skill for summarizing sales by month, product and region; builds on their knowledge of SUM and sorting/filtering.
+- **Pivot charts for sales trends and comparisons** (`pivot_charts`): Charts turn pivot summaries into visuals that the dashboard needs.
+- **Slicers and timelines to filter the dashboard interactively** (`slicers_timelines`): Lets the owner switch month, product or region with a click; extends the filtering they already know.
+- **Building a monthly sales dashboard layout end to end** (`dashboard_build`): Brings lookups, pivots, charts and slicers together into one dashboard sheet, which is the actual goal.
+
+## Watch in this order
+
+### 1. [How to use Slicer in Microsoft Excel | Slicer in Excel](https://www.youtube.com/watch?v=JOSh69tzivA)
+StudySpan · 4 min · counts 4 min · beginner, concept_explainer · covers clean_data_table · **confidence 0.60**
+
+Shows in Hindi how to convert a plain list into an Excel Table before using it, which is the first step for your monthly sales list. It also gives a gentle first look at slicers. It is flagged as a surface intro, but that is what a beginner needs for this step and no other short video teaches the table step.
+
+> [00:48] “स्लाइसर को अप्लाई करने के लिए, सबसे पहले आपको इन डेटा को टेबल में कन्वर्ट कर लेना है”
+> [01:42] “क्लिक करने के साथ ही यहां पे देखिए, वो सारे डेटा टेबल में कन्वर्ट हो चुका है”
+
+_Confidence note: Only a short table-conversion segment is relevant, and it is taught through a slicer demo. A dedicated Hindi video on preparing sales data as a Table would make this a firmer pick._
+
+### 2. [How to use VLOOKUP formula in Excel | VLOOKUP in Excel Tutorial](https://www.youtube.com/watch?v=DX0V7D0GWwI)
+Rishabh Mishra · 5 min · counts 5 min · beginner, concept_explainer · covers lookup_functions · **confidence 0.75**
+
+A simple Hinglish walkthrough of VLOOKUP: lookup value, table array, column index and exact match, then filling the formula down. It also covers the duplicate-value and top-to-bottom matching pitfalls and pasting as values. This is a good starting point for pulling prices or categories into your sales list.
+
+> [00:48] “lookup value. matlab aap yahan pe jo bhi value lana chahte hain wo kis kis value ke liye lana chahte hain?”
+> [02:07] “yaad rakhiyega aapko poori table select karna hai sirf ek column ya ek row nahi. poori table select kiya”
+> [05:24] “VLOOKUP mein aapko jo bhi value sabse pehle milegi ye upar se matlab top to bottom jata hai ye formula”
+
+_Confidence note: Clear and beginner-level, but it uses generic data rather than sales prices. The language is Hinglish (Hindi written in Roman script), not pure Hindi._
+
+### 3. [How To Apply VLOOKUP and XLOOKUP Formula on Large Data in Excel [Hindi] #excel](https://www.youtube.com/watch?v=gAY9is-ahQY)
+Computer Gyan · 13 min · counts 13 min · beginner, concept_explainer · covers lookup_functions · **confidence 0.78**
+
+Hindi video that applies VLOOKUP and then XLOOKUP to a large dataset. It uses named ranges and MATCH to avoid hard-coding column numbers, then shows XLOOKUP as the simpler modern option. This extends the basic VLOOKUP into the version you will use on a full monthly sales list.
+
+> [00:00] “अगर आपके पास एक लार्ज डाटा है तो उस पर आप VLOOKUP या XLOOKUP कैसे अप्लाई करेंगे”
+> [00:41] “हमें क्या लिखना है यहां पर लुकअप अरे यानी कि एक अरे हम डालेंगे यहां पर जिसका डाटा हम ढूंढ रहे हैं”
+
+_Confidence note: Content matches the lookup gap well and is unflagged. It uses employee data rather than product prices, and the transcript is auto-generated._
+
+### 4. [Pivot Table in Excel | Pivot Table with Multiple Slicers | Pivot Table Full Tutorial | CTA](https://www.youtube.com/watch?v=BvYU0GEHJyc)
+Computer Tech Academy · 20 min · counts 20 min · beginner, full_course · covers pivot_basics, slicers_timelines · **confidence 0.80**
+
+Hindi pivot table course on sales data (seller, region, item, monthly figures). It covers dragging fields into rows, columns and values, switching sum to count, filters, multiple slicers, and a first pivot chart. It gives you the core pivot skills before the chart and dashboard videos.
+
+> [00:41] “अब हमें इससे बनानी है एक पाइवोट टेबल तो पाइवोट टेबल को बनाने के लिए आपको पता है कि आपको बस अपने डाटा को सेलेक्ट कर लेना है”
+> [07:30] “और जो काउंट करने वाली चीजें हैं उनको आप वैल्यूज में लेके आइए जैसे रीजन चाहिए तो सेलर नेम में ले”
+> [30:09] “बस आपको डाटा पर कहीं कर्सर रखना है पाइवोट चार्ट पर क्लिक कर देना है कौन सा चार्ट चाहिए कॉलम या लाइन”
+
+_Confidence note: Strong match for pivot fundamentals and slicers at your level. It does not cover timelines or grouping by month in detail._
+
+### 5. [How to Create Pivot Charts? | Excel Pivot Table in Hindi | Excel Pivot Table Series - Part - 2](https://www.youtube.com/watch?v=htOIqJGeewE)
+Excel Tutorial by SkillCourse · 10 min · counts 10 min · beginner, concept_explainer · covers pivot_charts · **confidence 0.80**
+
+Hindi video dedicated to pivot charts. It shows that a pivot chart creates a table and a chart together, how to change chart type, and how to format data labels. This gives you the chart skills for sales trends and comparisons.
+
+> [02:08] “Pivot Chart में क्या होता है बेसिकली खाली Chart ही नहीं बनेगा, यहां पे Table भी बनेगा, Chart भी बनेगा।”
+> [12:04] “बेसिकली Pivot Table जो होता है उसी का ही Pivot Chart होता है। Table यहां पे आएगा-आएगा और Chart आएगा।”
+
+_Confidence note: Focused and unflagged. It uses generic data rather than a dated sales trend._
+
+### 6. [Microsoft Excel - How to create Dashboard in Excel | Sales Dashboard | Excel Tutorial](https://www.youtube.com/watch?v=HBJdxWxG7aU)
+Excel with Rahul Chaudhary · 22 min · counts 22 min · beginner, project_build · covers pivot_basics, pivot_charts, slicers_timelines, dashboard_build · **confidence 0.80**
+
+Builds a monthly sales dashboard end to end in Hindi, from raw data to pivot tables. It groups dates by month, builds product, brand and city charts, and adds month slicers that control every chart. This brings together the earlier pieces into the dashboard you want.
+
+> [10:30] “जैसे आप डेट को सेलेक्ट करोगे बाय डिफॉल्ट अपने आप ये इसको डेटा को एनालाइज कर लेगा एंड उस डेट को मंथ वाइज आपके सामने रिप्रेजेंट कर देगा”
+> [32:17] “अब आप देखोगे पूरा कंट्रोल होगा। मार्च पे क्लिक किया तो ये कंट्रोल हो रहा है”
+
+_Confidence note: Closest match to a monthly dashboard. The segment timings in the card are inconsistent, so I used the full video and the stated 22.2 minutes. It does not use lookups or timelines._
+
+## Considered and dropped
+
+- [“📊 Excel Dashboard Tutorial (Hindi) | Pivot Table से Dashboard बनाएं | Next-Level Reporting 🚀”](https://www.youtube.com/watch?v=_JtEWpUJPVY): Good Hindi dashboard with KPI cards and slicers, but it covers the same ground as the chosen dashboard video. Adding it would push the plan over the 90-minute budget and add a second dashboard style.
+- [pivot table for beginners in excel in Hindi | pivot table excel in hindi](https://www.youtube.com/watch?v=hxAkt7Pico0): Solid Hindi pivot basics, but it is 23.9 minutes and BvYU0GEHJyc covers the same material more compactly, leaving room for the chart and dashboard videos.
+- [Excel Tutorial: Sales Dashboard in Excel | Excel Dashboard | Excel Interview](https://www.youtube.com/watch?v=cqsKU_ECMHg): Another Hindi monthly dashboard with a month slicer. It is redundant with HBJdxWxG7aU, which covers the same ground.
+- [Excel Pivot Table, Pivot Chart & Slicer Tutorial in Hindi | Complete Data Analysis Guide](https://www.youtube.com/watch?v=5TNgfg-7RKE): Good short Hindi demo of a pivot table, chart and slicer. It overlaps the chosen pivot and dashboard videos and would add another creator and codebase.
+- [Sales Dashboard in Excel In Hindi | अगर अपनी सैलरी बढ़ाना चाहते हैं | तो एक्सेल Dashboard बनाना सीखे](https://www.youtube.com/watch?v=E48tn7LcxFU): Complete Hindi monthly dashboard, but it is 60 minutes, which breaks the 25-minute limit and would use most of the budget.
+- [Pivot Table in Excel Full Tutorial 🔥 Data Analysis for Beginners (Hindi) । Computer with Kritika](https://www.youtube.com/watch?v=W3tM8BVhsuo): Hindi pivot table lecture of 31 minutes, over your 25-minute limit and flagged as pure theory.
+- [Excel Dashboard Course #21 - Creating a Pivot table Dashboard with Slicers in Excel (in 15 minutes)](https://www.youtube.com/watch?v=5TkRnGdC1NM): Good dashboard course content, but it is in English, which conflicts with your Hindi preference.
+- [Bye Bye Manual Work in Excel | Create Fully Automated Dashboard in Excel](https://www.youtube.com/watch?v=P-qvfgioBxM): Flagged wrong_language and built on a paid third-party add-in (Excel Booster) rather than standard pivot tables.
+- [XLOOKUP in Excel | How to Use XLOOKUP Function in Excel | Excel Tutorial in Hindi](https://www.youtube.com/watch?v=1Sg1KaRwQzg): XLOOKUP with 10 intermediate examples, using CHOOSE, TRANSPOSE and nested formulas. This is too advanced for your first lookup lesson and 21.9 minutes is too long for the lookup slot.
+- [Learn Excel XLookup Formula A to Z ｜ X Lookup Masterclass by Satish Dhawale](https://www.youtube.com/watch?v=rjuO8OGYDsk): 51-minute XLOOKUP masterclass, over your 25-minute limit and flagged as pure theory.
+
+<details><summary>Filtered before assessment (18)</summary>
+
+- XLOOKUP Excel में सीखें | VLOOKUP और HLOOKUP से बेहतर | Data Search Made Easy Xlookup in Excel Hindi (prefilter): too short (118s)
+- Pivot Table & Slicer use in excel | pivot table and slicer in excel | Slicer kaise use kare excel me (prefilter): too short (91s)
+- Data filter using Slicer in excel #excelshorts #ytshorts #shorts (prefilter): too short (50s)
+- Create Pivot Table & Pivot Chart In Excel 🔥 | Microsoft Excel Tricks 💯 #shorts #exceltips #bytetech (prefilter): too short (37s)
+- Pivot Table In Excel | Pivot Table In Excel In Hindi #shorts #excel (prefilter): too short (36s)
+- Create Instant Dashboard In Excel 🔥 | This Excel Trick Will Blow Your Mind ‼️ #exceltips #bytetech (prefilter): too short (46s)
+- How to make a Pivot Table in 3 Steps‼️ #excel (prefilter): too short (34s)
+- XLOOKUP function in #excel better than VLOOKUP (prefilter): too short (41s)
+- How to use slicer with pivot chart and pivot table #excel #exceltutorial (prefilter): too short (59s)
+- Excel XLOOKUP Function 😱 | Find Anything Instantly in Seconds 💥 (prefilter): too short (17s)
+- How to create a Simple Dashboard Report in Microsoft Excel (prefilter): pool cap reached
+- How to Create Professional Excel Dashboard in 12 mins | Beginner to Pro (prefilter): pool cap reached
+- Excel Pivot Table Tutorial: From Beginner to Advanced in Hindi! (prefilter): pool cap reached
+- Professional 🔥 Sales Dashboard in Excel | Office work in Excel | MS Excel #sales (prefilter): pool cap reached
+- MS Excel - Lookup, Vlookup, Hlookup and Xlookup Formula Explained ( अब कोई डाउट नहीं बचेगा  ) (prefilter): pool cap reached
+- Dashboard In Excel For Beginners In Hindi || Complete Tutorial (prefilter): pool cap reached
+- Full Project in Excel with Interactive Dashboard | Excel Tutorial for Beginners (prefilter): pool cap reached
+- Pivot Table Full Course Tutorial || Basic to Advance || Hindi (prefilter): pool cap reached
+
+</details>
+
+_Models: plan=anthropic/claude-sonnet-5.5, assess=anthropic/claude-haiku-4.5, select=anthropic/claude-sonnet-5.5 · cost $0.131 · 51 s_

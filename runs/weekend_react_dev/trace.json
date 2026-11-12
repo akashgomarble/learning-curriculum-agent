@@ -1,0 +1,4244 @@
+{
+ "persona": {
+  "persona_id": "weekend_react_dev",
+  "goal": "Build a small React app this weekend, something like a habit tracker with local storage",
+  "time_budget_minutes": 360,
+  "user_context": {
+   "background": "Python backend engineer, 5 years experience",
+   "known": [
+    "JavaScript fundamentals",
+    "HTTP, REST, JSON",
+    "Git, npm"
+   ],
+   "unknown": [
+    "React",
+    "JSX",
+    "Vite tooling",
+    "React hooks",
+    "Component patterns"
+   ],
+   "constraints": "I prefer project-based content. Avoid pure-theory lectures and 'in 100 seconds' surface intros. Nothing made before 2022 (I want Vite and modern hooks, not create-react-app). At most two videos from any one creator."
+  },
+  "expectations": {
+   "pick_count": [
+    4,
+    6
+   ],
+   "min_utilisation": 0.7,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": "(?i)100 seconds|javascript (for beginners|crash course|tutorial for beginners)",
+   "forbidden_flags": [
+    "surface_intro",
+    "pure_theory",
+    "outdated_tooling",
+    "too_basic_for_learner"
+   ],
+   "unknown_synonyms": {
+    "React": [
+     "react",
+     "component",
+     "jsx",
+     "hook",
+     "usestate"
+    ],
+    "JSX": [
+     "jsx"
+    ],
+    "Vite tooling": [
+     "vite"
+    ],
+    "React hooks": [
+     "hook",
+     "usestate",
+     "useeffect",
+     "usereducer",
+     "useref",
+     "usecontext"
+    ],
+    "Component patterns": [
+     "component",
+     "props",
+     "composition",
+     "lifting state",
+     "children",
+     "custom hook"
+    ]
+   },
+   "known_topics": [
+    "javascript fundamentals",
+    "javascript basics",
+    "http",
+    "rest api",
+    "json",
+    "git",
+    "npm"
+   ],
+   "min_level": null,
+   "require_project_based": true,
+   "required_language": "en",
+   "expect_infeasible": false,
+   "expect_assumptions": false,
+   "min_upload_year": 2022,
+   "max_sitting_minutes": null,
+   "max_channels": null,
+   "max_per_channel": 2,
+   "notes": "Reference persona from the brief. Good output per the brief: 4-6 videos, React/Vite setup first, then a project build that mirrors a habit tracker, no JS intros, no '100 seconds' content, ~5 hours."
+  }
+ },
+ "mode": "agent",
+ "models": {
+  "plan": "anthropic/claude-sonnet-5.5",
+  "assess": "anthropic/claude-haiku-4.5",
+  "select": "anthropic/claude-sonnet-5.5"
+ },
+ "offline": true,
+ "use_transcripts": true,
+ "timings_s": {
+  "load_fixture": 0.0,
+  "assess": 0.0,
+  "dedup": 0.01,
+  "select": 52.84
+ },
+ "cost_by_stage": {
+  "select": {
+   "calls": 1,
+   "cost_usd": 0.11451,
+   "prompt_tokens": 25781,
+   "completion_tokens": 6295,
+   "latency_s": 52.84
+  }
+ },
+ "calls": [
+  {
+   "stage": "select",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 25781,
+   "completion_tokens": 6295,
+   "cost_usd": 0.114512,
+   "latency_s": 52.84
+  }
+ ],
+ "plan": {
+  "interpretation": "By the end of the weekend, the learner has built and run a working habit tracker in React (Vite) that persists data to localStorage, and understands the hooks and component patterns behind it.",
+  "assumptions": [
+   "Habit tracker means: add/delete habits, mark them complete per day, view streaks, with data persisted in localStorage",
+   "The 360 minutes is pure watching time, so a long project build video can serve as the backbone",
+   "Plain JavaScript (not TypeScript) is fine since the learner knows JS fundamentals but did not mention TypeScript",
+   "Modern function components and hooks only; class components are not needed",
+   "The 'nothing before 2022' constraint is handled by the later video-selection step using upload dates; the exclusions here cover title-based filters only"
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "en",
+  "learner_level": "beginner",
+  "sub_topics": [
+   {
+    "id": "vite_setup",
+    "title": "Vite project setup and React project structure",
+    "why": "The learner knows npm but not Vite; they need to scaffold a modern React project and understand the folder layout, dev server and build, instead of using create-react-app.",
+    "prereqs": [],
+    "minutes_share": 0.07
+   },
+   {
+    "id": "jsx_components",
+    "title": "JSX and function components with props",
+    "why": "As a JS-literate backend dev, they need the mental model of JSX as JS expressions plus component composition and props to build UI.",
+    "prereqs": [
+     "vite_setup"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "state_events",
+    "title": "State with useState and event handling",
+    "why": "A habit tracker is driven by state (habits list, completion toggles); they need immutable updates of arrays/objects and form handling.",
+    "prereqs": [
+     "jsx_components"
+    ],
+    "minutes_share": 0.2
+   },
+   {
+    "id": "effects_localstorage",
+    "title": "useEffect and persisting state to localStorage",
+    "why": "Persistence is a core requirement; they need to understand effects, dependency arrays, lazy state initialization and JSON serialization (which they already know).",
+    "prereqs": [
+     "state_events"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "component_patterns",
+    "title": "Component patterns: lifting state up, lists and keys, custom hooks",
+    "why": "To structure a multi-component app cleanly, they need to share state between components, render lists correctly, and extract a reusable useLocalStorage hook.",
+    "prereqs": [
+     "effects_localstorage"
+    ],
+    "minutes_share": 0.13
+   },
+   {
+    "id": "project_build",
+    "title": "Build a habit tracker / similar small app end-to-end",
+    "why": "Following a project build ties all concepts together and mirrors the weekend goal; it is the backbone of the plan.",
+    "prereqs": [
+     "component_patterns"
+    ],
+    "minutes_share": 0.25
+   },
+   {
+    "id": "polish_deploy",
+    "title": "Streak logic, styling and finishing touches",
+    "why": "The learner needs to adapt the tutorial project into their own habit tracker by adding date-based completion and streak calculation.",
+    "prereqs": [
+     "project_build"
+    ],
+    "minutes_share": 0.05
+   }
+  ],
+  "search_queries": [
+   "React project tutorial with Vite for beginners build an app",
+   "React JSX components props crash course Vite 2023",
+   "React useState useEffect hooks explained by building a project",
+   "React localStorage useEffect custom hook useLocalStorage tutorial",
+   "build a habit tracker app React tutorial",
+   "React todo app with localStorage Vite project tutorial",
+   "React for backend developers lifting state up components patterns"
+  ],
+  "title_exclusions": [
+   "in 100 seconds",
+   "100 seconds",
+   "create-react-app"
+  ],
+  "skip_topics": [
+   "JavaScript fundamentals",
+   "HTTP",
+   "REST",
+   "JSON",
+   "Git",
+   "npm"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "8ub_3kjILV8",
+   "title": "Understand Any React Project in 16 Minutes | Vite + React + TypeScript Folder Structure Explained",
+   "channel": "ShawnDev",
+   "minutes": 16.0,
+   "views": 1705,
+   "found_by": [
+    "Vite React setup and project structure walkthrough",
+    "React project tutorial for experienced developers Vite"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "X92kk5iT8CM",
+   "title": "Build a Complete To-Do List App with React + Vite | Dashboard, Reminders & Local Storage Tutorial",
+   "channel": "DevCrafted Learn-Build-Deploy",
+   "minutes": 27.0,
+   "views": 1745,
+   "found_by": [
+    "React project tutorial build a todo app with hooks and localStorage step by step",
+    "build habit tracker app React localStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "G6D9cBaLViA",
+   "title": "Learn React With This ONE Project",
+   "channel": "Tech With Tim",
+   "minutes": 99.5,
+   "views": 1050027,
+   "found_by": [
+    "React project tutorial for experienced developers Vite"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "uvEAvxWvwOs",
+   "title": "PROPS in React explained 📧",
+   "channel": "Bro Code",
+   "minutes": 12.2,
+   "views": 246236,
+   "found_by": [
+    "React useState and props explained by building a project"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "N7rs5F4f6FA",
+   "title": "Learn How to Use Local Storage in React With an Easy-to-Understand Example",
+   "channel": "Max Programming",
+   "minutes": 8.9,
+   "views": 11506,
+   "found_by": [
+    "React useEffect localStorage tutorial build app"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "1uiNxQIpcLU",
+   "title": "React Custom Hooks: useLocalStorage - Simply Explained!",
+   "channel": "Cosden Solutions",
+   "minutes": 10.4,
+   "views": 35159,
+   "found_by": [
+    "React custom hook useLocalStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "35LuyXrByPM",
+   "title": "localStorage + Sign-in Frontend: Building a Habit Tracker with React/Redux/Express Part 9",
+   "channel": "Taha Khan | AI Automation",
+   "minutes": 9.2,
+   "views": 529,
+   "found_by": [
+    "build habit tracker app React localStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "v4wU3-wuRTs",
+   "title": "React Todo App Tutorial for Beginners: Project Setup with Vite & Modern CSS",
+   "channel": "CodeLucky",
+   "minutes": 3.5,
+   "views": 207,
+   "found_by": [
+    "Vite React setup and project structure walkthrough"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "V9i3cGD-mts",
+   "title": "Learn React Hooks: useState - Simply Explained!",
+   "channel": "Cosden Solutions",
+   "minutes": 8.1,
+   "views": 162798,
+   "found_by": [
+    "React useState and props explained by building a project"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "8bsG5Xg9PaI",
+   "title": "#76 - useLocalStorage Custom Hook in React js | React Hooks Tutorial in Hindi",
+   "channel": "AtoB",
+   "minutes": 8.2,
+   "views": 2592,
+   "found_by": [
+    "React custom hook useLocalStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "wyC25aCGdwk",
+   "title": "React Tutorial & Vite in 2025: Your First Project From Scratch! (The Easy Way)",
+   "channel": "Developer Gus",
+   "minutes": 10.1,
+   "views": 929,
+   "found_by": [
+    "React project tutorial for experienced developers Vite"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "CU5cyEeCCBs",
+   "title": "React JS Tutorial for Beginners | Setup React with Vite & Understand Project Structure",
+   "channel": "The Script Style",
+   "minutes": 62.9,
+   "views": 397,
+   "found_by": [
+    "Vite React setup and project structure walkthrough"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "wIyHSOugGGw",
+   "title": "Every React Concept Explained in 12 Minutes",
+   "channel": "Code Bootcamp",
+   "minutes": 11.9,
+   "views": 1938402,
+   "found_by": [
+    "React useState and props explained by building a project"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "wKjsnUIfGHI",
+   "title": "ReactJS Tutorial 81: Creating Our Own useLocalStorage Hook In ReactJS",
+   "channel": "Code Stoic",
+   "minutes": 16.0,
+   "views": 5575,
+   "found_by": [
+    "React custom hook useLocalStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "SqcY0GlETPk",
+   "title": "React Tutorial for Beginners",
+   "channel": "Programming with Mosh",
+   "minutes": 80.1,
+   "views": 6298159,
+   "found_by": [
+    "React project tutorial for experienced developers Vite"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "l6_v2goHUTk",
+   "title": "React Project Structure Explained! | Vite Folder Walkthrough for Beginners 🚀",
+   "channel": "Full Stack Universe",
+   "minutes": 4.9,
+   "views": 620,
+   "found_by": [
+    "Vite React setup and project structure walkthrough"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "b4cnZo-KBE0",
+   "title": "REACT TODO App Store Data in LocalStoaage | Practical use of useEffect | Tutorial for beginners #11",
+   "channel": "Synochi Tech Academy",
+   "minutes": 4.0,
+   "views": 76,
+   "found_by": [
+    "React useEffect localStorage tutorial build app"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "5uHikv1oBEI",
+   "title": "LocalStorage in React Using Custom Hook | The Complete React Course | Ep.41",
+   "channel": "Anurag Singh ProCodrr",
+   "minutes": 44.2,
+   "views": 8172,
+   "found_by": [
+    "React custom hook useLocalStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "MVs1QMoz7ME",
+   "title": "Sign-in Backend + Logout: Building a Habit Tracker with React/Redux/Express Part 10",
+   "channel": "Taha Khan | AI Automation",
+   "minutes": 15.9,
+   "views": 341,
+   "found_by": [
+    "build habit tracker app React localStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "V1PxgjIhTw0",
+   "title": "React Explained in 8 Minutes",
+   "channel": "Coding2GO",
+   "minutes": 8.0,
+   "views": 43130,
+   "found_by": [
+    "React project tutorial for experienced developers Vite"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "VZ6Qpe3sjhM",
+   "title": "How to Set Up React in 2025 | Install React with Vite in 2 minutes",
+   "channel": "Devtamin",
+   "minutes": 2.4,
+   "views": 47382,
+   "found_by": [
+    "Vite React setup and project structure walkthrough"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "7VPULX3WcGE",
+   "title": "A Habit Tracker App Using React Redux",
+   "channel": "Priyanka Gupta",
+   "minutes": 5.6,
+   "views": 187,
+   "found_by": [
+    "build habit tracker app React localStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "b6dnwttsdTo",
+   "title": "Learn React Custom Hooks in 7 minutes | Create useFetch hook",
+   "channel": "Fullstack Simplified",
+   "minutes": 7.0,
+   "views": 1959,
+   "found_by": [
+    "React custom hook useLocalStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "3qmUoOC0wUU",
+   "title": "Habit-tracker app with the help of react and redux",
+   "channel": "Technical Ninjas",
+   "minutes": 2.5,
+   "views": 50,
+   "found_by": [
+    "build habit tracker app React localStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "QdTHUv79EZc",
+   "title": "Build a Todo App with React.js | Beginner React Project using hooks",
+   "channel": "Coding With Dawid",
+   "minutes": 62.4,
+   "views": 29737,
+   "found_by": [
+    "React project tutorial build a todo app with hooks and localStorage step by step"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "do62-z3z6FM",
+   "title": "Vite Crash Course – Frontend Build Tool",
+   "channel": "freeCodeCamp.org",
+   "minutes": 40.2,
+   "views": 103225,
+   "found_by": [
+    "React project tutorial for experienced developers Vite"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "h97s1tfi5P8",
+   "title": "custom hook: useLocalStorage",
+   "channel": "frontend-coder",
+   "minutes": 9.0,
+   "views": 564,
+   "found_by": [
+    "React custom hook useLocalStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "bO7n1PJM094",
+   "title": "Fullstack Nextjs15 Habit Tracker | local storage & stage-management | overview",
+   "channel": "thejayadad",
+   "minutes": 4.2,
+   "views": 68,
+   "found_by": [
+    "build habit tracker app React localStorage tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  },
+  {
+   "video_id": "orLqzKffcXo",
+   "title": "Functional Components & Props & useState Hook",
+   "channel": "Learn Full Stack Development with GeeksforGeeks",
+   "minutes": 53.5,
+   "views": 530,
+   "found_by": [
+    "React useState and props explained by building a project"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": null,
+   "transcript_error": null
+  }
+ ],
+ "assessments": {
+  "8ub_3kjILV8": {
+   "spoken_language": "en",
+   "summary": "This video breaks down the folder structure and configuration files of a modern Vite + React + TypeScript project, explaining the purpose of each directory and configuration file (package.json, vite.config, tsconfig, etc.). It uses a real Scrabble AI project as an example to show how experienced developers navigate and understand an unfamiliar codebase before making changes.",
+   "topics_covered": [
+    "vite setup",
+    "project structure",
+    "typescript configuration",
+    "react folder organization",
+    "components and pages",
+    "custom hooks",
+    "configuration files"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "typescript",
+    "tailwind css",
+    "netlify",
+    "shadcn/ui",
+    "pnpm",
+    "npm"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 155,
+     "text": "package.json is the identity of an application. It tells us basic information about our project"
+    },
+    {
+     "id": "q2",
+     "t": 403,
+     "text": "the client folder is basically everything user interacts with, contains app.tsx which is the main landing part"
+    },
+    {
+     "id": "q3",
+     "t": 521,
+     "text": "components are the smaller building blocks, instead of creating everything inside one giant page file, we separate the pieces that can be reused"
+    },
+    {
+     "id": "q4",
+     "t": 922,
+     "text": "Understanding the folder structure is actually the first step building features"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 91,
+     "topic": "Introduction and project overview"
+    },
+    {
+     "start_s": 91,
+     "end_s": 235,
+     "topic": "Root configuration files (package.json, lock files, tsconfig)"
+    },
+    {
+     "start_s": 235,
+     "end_s": 413,
+     "topic": "Vite and tool configuration"
+    },
+    {
+     "start_s": 413,
+     "end_s": 664,
+     "topic": "Client folder structure and app.tsx"
+    },
+    {
+     "start_s": 664,
+     "end_s": 958,
+     "topic": "Pages, components, and UI organization"
+    },
+    {
+     "start_s": 958,
+     "end_s": 1080,
+     "topic": "Hooks, lib folder, and server logic"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 1198,
+     "topic": "Recap and next steps"
+    },
+    {
+     "start_s": 1198,
+     "end_s": 1438,
+     "topic": "Conclusion and planning for future features"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "8ub_3kjILV8",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "X92kk5iT8CM": {
+   "spoken_language": "en",
+   "summary": "A comprehensive tutorial building a complete to-do list application using React and Vite with Tailwind CSS. The app includes features like task management (add, edit, delete), priority levels, due dates, reminders, local storage persistence, and a dashboard with statistics for total, pending, completed, and overdue tasks.",
+   "topics_covered": [
+    "vite setup",
+    "jsx components",
+    "react hooks",
+    "usestate",
+    "useeffect",
+    "localstorage",
+    "event handling",
+    "component composition",
+    "tailwind css",
+    "form handling"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "TaskMaster to-do list app with task management, priority levels, due dates, reminders, local storage, and dashboard with statistics",
+   "tools_and_versions": [
+    "react",
+    "vite",
+    "tailwind css",
+    "postcss"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "we are going to build a to-do list app using React plus white"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "we have a dashboard for showing our total task completed task pending task and overdue"
+    },
+    {
+     "id": "q3",
+     "t": 1226,
+     "text": "use local storage so I'll copy this and I'll paste this"
+    },
+    {
+     "id": "q4",
+     "t": 1448,
+     "text": "just go to your terminal run as npm rundev"
+    },
+    {
+     "id": "q5",
+     "t": 1579,
+     "text": "you can see the things are getting added and once you click on this it is incomplete"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 303,
+     "topic": "Project demo and features overview"
+    },
+    {
+     "start_s": 303,
+     "end_s": 549,
+     "topic": "Vite project setup and folder structure"
+    },
+    {
+     "start_s": 549,
+     "end_s": 738,
+     "topic": "Tailwind CSS and PostCSS configuration"
+    },
+    {
+     "start_s": 738,
+     "end_s": 909,
+     "topic": "HTML structure and component file creation"
+    },
+    {
+     "start_s": 909,
+     "end_s": 1203,
+     "topic": "AddTaskForm component with form handling"
+    },
+    {
+     "start_s": 1203,
+     "end_s": 1365,
+     "topic": "Sidebar component with filter navigation"
+    },
+    {
+     "start_s": 1365,
+     "end_s": 1611,
+     "topic": "TaskItem component with edit and delete functionality"
+    },
+    {
+     "start_s": 1611,
+     "end_s": 1940,
+     "topic": "TaskList, localStorage hook, and dashboard components"
+    },
+    {
+     "start_s": 1940,
+     "end_s": 2099,
+     "topic": "App.jsx with state management and effect hooks"
+    },
+    {
+     "start_s": 2099,
+     "end_s": 2459,
+     "topic": "CSS styling and running the development server"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 1
+    }
+   ],
+   "video_id": "X92kk5iT8CM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5"
+   ]
+  },
+  "G6D9cBaLViA": {
+   "spoken_language": "en",
+   "summary": "Learn React by building a movie search app with real-world API integration. The video covers JSX, components, state management with useState, conditional rendering, routing, API calls with async/await, localStorage integration through React Context, and complete project implementation from setup to favorites page.",
+   "topics_covered": [
+    "vite setup",
+    "jsx syntax",
+    "function components",
+    "props",
+    "state with usestate",
+    "event handling",
+    "conditional rendering",
+    "lists and map",
+    "routing",
+    "api calls",
+    "async await",
+    "useeffect",
+    "context api",
+    "localstorage",
+    "favorites feature"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Movie search and favorites app with API integration, search functionality, favorites list management, and navigation between home and favorites pages",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "react-router-dom"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 217,
+     "text": "Everything revolves around something called a component. Now a component is really just a part of your application"
+    },
+    {
+     "id": "q2",
+     "t": 775,
+     "text": "JSX simply means kind of a combination of JavaScript and HTML. And you'll see that we have some things that look like HTML"
+    },
+    {
+     "id": "q3",
+     "t": 2813,
+     "text": "When a state change occurs, the entire component is reran or rerendered. So if we just define something as a normal variable"
+    },
+    {
+     "id": "q4",
+     "t": 4875,
+     "text": "A context will allow state to be globally available to anything that's within the provided context"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 360,
+     "topic": "React introduction and concepts overview"
+    },
+    {
+     "start_s": 360,
+     "end_s": 780,
+     "topic": "Vite setup and project template walkthrough"
+    },
+    {
+     "start_s": 780,
+     "end_s": 1200,
+     "topic": "JSX syntax, components, and movie card component creation"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1800,
+     "topic": "Conditional rendering, map for lists, and state management"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2400,
+     "topic": "Page routing with react-router-dom"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 3000,
+     "topic": "CSS styling and search form implementation"
+    },
+    {
+     "start_s": 3000,
+     "end_s": 3600,
+     "topic": "Calling APIs with async/await and fetch"
+    },
+    {
+     "start_s": 3600,
+     "end_s": 4050,
+     "topic": "useEffect hook for data loading, error handling, and loading states"
+    },
+    {
+     "start_s": 4050,
+     "end_s": 4770,
+     "topic": "React Context API for global favorites state and localStorage persistence"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 1
+    }
+   ],
+   "video_id": "G6D9cBaLViA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "uvEAvxWvwOs": {
+   "spoken_language": "en",
+   "summary": "This video explains React props: how parent components pass data to child components using key-value pairs. It demonstrates creating a Student component that accepts props (name, age, isStudent), shows how to use PropTypes for type checking, and covers defaultProps for fallback values.",
+   "topics_covered": [
+    "props",
+    "jsx_components",
+    "component_reuse",
+    "proptypes",
+    "defaultprops"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "props short for properties they are read-only properties that are shared between components"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "a parent component can send data to a child component when you include a component within a parent"
+    },
+    {
+     "id": "q3",
+     "t": 130,
+     "text": "when you send key value pairs to a component they're all stored within the props object"
+    },
+    {
+     "id": "q4",
+     "t": 460,
+     "text": "prop types prop types are a mechanism that ensures that the past value is of the correct data type"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 56,
+     "topic": "Introduction to props concept"
+    },
+    {
+     "start_s": 56,
+     "end_s": 288,
+     "topic": "Creating Student component with props (name, age, isStudent)"
+    },
+    {
+     "start_s": 288,
+     "end_s": 420,
+     "topic": "Styling with CSS and reusing components with different data"
+    },
+    {
+     "start_s": 420,
+     "end_s": 622,
+     "topic": "PropTypes for type validation"
+    },
+    {
+     "start_s": 622,
+     "end_s": 707,
+     "topic": "defaultProps for fallback values"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "uvEAvxWvwOs",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "N7rs5F4f6FA": {
+   "spoken_language": "en",
+   "summary": "This video demonstrates how to persist React state to localStorage in two ways: first by manually using localStorage.setItem with useEffect and handling type conversions, then by simplifying the approach with a custom hook from the usehooks-ts library. The example builds a counter app that maintains its state across page refreshes.",
+   "topics_covered": [
+    "localstorage",
+    "useeffect",
+    "usestate",
+    "custom hooks",
+    "state persistence",
+    "type conversion"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react",
+    "usehooks-ts"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 43,
+     "text": "I want it to persist the state. So right now, this is the state that we have"
+    },
+    {
+     "id": "q2",
+     "t": 193,
+     "text": "whenever the count variable changes, which means whenever this state changes, we want to run this piece of code"
+    },
+    {
+     "id": "q3",
+     "t": 318,
+     "text": "everything in local storage is stored in the string format. So how do we fix this?"
+    },
+    {
+     "id": "q4",
+     "t": 402,
+     "text": "if you just go on, now available on npmjs.com, they show you, you can just install the package"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 88,
+     "topic": "Intro and counter app demo"
+    },
+    {
+     "start_s": 88,
+     "end_s": 168,
+     "topic": "localStorage in DevTools and setItem basics"
+    },
+    {
+     "start_s": 168,
+     "end_s": 243,
+     "topic": "Fixing the bug with useEffect and dependency arrays"
+    },
+    {
+     "start_s": 243,
+     "end_s": 362,
+     "topic": "Reading from localStorage and type conversion with toString and coercion"
+    },
+    {
+     "start_s": 362,
+     "end_s": 481,
+     "topic": "Using custom hook useLocalStorage from usehooks-ts library"
+    },
+    {
+     "start_s": 481,
+     "end_s": 537,
+     "topic": "Outro and conclusion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "N7rs5F4f6FA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "1uiNxQIpcLU": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to build a custom React hook called useLocalStorage that wraps the browser's localStorage API. The hook exposes three functions (setItem, getItem, removeItem) with error handling via try-catch blocks, and demonstrates the hook in a simple app with input and buttons.",
+   "topics_covered": [
+    "custom hooks",
+    "localstorage",
+    "try-catch error handling",
+    "json serialization",
+    "typescript typing",
+    "hook patterns"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A simple app with a text input and three buttons (set, get, remove) that use a custom useLocalStorage hook to interact with browser localStorage",
+   "tools_and_versions": [
+    "react",
+    "typescript"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 21,
+     "text": "we are going to create a hook called use local storage that is going to expose to us three different functions"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "we have a very simple application in front of us there's only this text input here which we can type anything into"
+    },
+    {
+     "id": "q3",
+     "t": 193,
+     "text": "window local storage set item we're going to give it the key that we have here and then we're going to do json stringify"
+    },
+    {
+     "id": "q4",
+     "t": 595,
+     "text": "any component that wants to make use of the local storage can just use this hook directly and get access to all of these functions"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 105,
+     "topic": "Introduction and project overview"
+    },
+    {
+     "start_s": 105,
+     "end_s": 270,
+     "topic": "Creating the useLocalStorage hook file and basic structure"
+    },
+    {
+     "start_s": 270,
+     "end_s": 520,
+     "topic": "Building the setItem function with JSON.stringify and try-catch"
+    },
+    {
+     "start_s": 520,
+     "end_s": 720,
+     "topic": "Building the getItem function with JSON.parse"
+    },
+    {
+     "start_s": 720,
+     "end_s": 920,
+     "topic": "Building the removeItem function and testing all three functions"
+    },
+    {
+     "start_s": 920,
+     "end_s": 627,
+     "topic": "Summary and benefits of custom hooks"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "1uiNxQIpcLU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "35LuyXrByPM": {
+   "spoken_language": "en",
+   "summary": "This video covers implementing localStorage to persist user authentication state across browser refreshes, and setting up a sign-in frontend component with Redux. The instructor demonstrates storing user data as JSON strings in localStorage, retrieving it on app initialization, and creating a sign-in form with Redux state management similar to the registration flow.",
+   "topics_covered": [
+    "localstorage",
+    "redux",
+    "state_management",
+    "sign_in_form",
+    "json_stringify",
+    "json_parse"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Habit tracker app (part 9 of series) - authentication with localStorage persistence and sign-in frontend",
+   "tools_and_versions": [
+    "react",
+    "redux",
+    "express",
+    "postgres"
+   ],
+   "red_flags": [
+    "outdated_tooling"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 46,
+     "text": "local storage is basically a method of storing key value pairs directly in your browser"
+    },
+    {
+     "id": "q2",
+     "t": 110,
+     "text": "local storage dot set item and now what key do we want to store it'll be called user info"
+    },
+    {
+     "id": "q3",
+     "t": 131,
+     "text": "we can't directly store response.data because this is an object and in local storage we need to store a string"
+    },
+    {
+     "id": "q4",
+     "t": 216,
+     "text": "json.parse this value because remember this thing is a string and we want to get the actual json object from that string"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 110,
+     "topic": "Recap and localStorage concept explanation"
+    },
+    {
+     "start_s": 110,
+     "end_s": 240,
+     "topic": "Implementing localStorage with JSON stringify in user slice"
+    },
+    {
+     "start_s": 240,
+     "end_s": 270,
+     "topic": "Retrieving localStorage on app init with JSON parse"
+    },
+    {
+     "start_s": 270,
+     "end_s": 360,
+     "topic": "Sign-in route setup and component creation"
+    },
+    {
+     "start_s": 360,
+     "end_s": 435,
+     "topic": "Redux sign-in action creator and state setup"
+    },
+    {
+     "start_s": 435,
+     "end_s": 555,
+     "topic": "Sign-in reducers and backend endpoint testing"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "35LuyXrByPM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "v4wU3-wuRTs": {
+   "spoken_language": "en",
+   "summary": "This tutorial walks through setting up a React project from scratch using Vite, covering Node.js prerequisites, creating a new React project with the Vite template, understanding the project structure, and cleaning up default files to create a basic App component. The video demonstrates how to run the development server and access the app in a browser.",
+   "topics_covered": [
+    "vite setup",
+    "react project structure",
+    "jsx",
+    "function components",
+    "development server"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Todo app (foundation/setup only)",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "node.js 18+",
+    "npm",
+    "vs code"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 40,
+     "text": "Open your terminal and run the command npm create vit at latest to-do app template react"
+    },
+    {
+     "id": "q2",
+     "t": 61,
+     "text": "navigate into the project directory by typing cd to do app in your terminal"
+    },
+    {
+     "id": "q3",
+     "t": 82,
+     "text": "Inside the to-do app folder, you'll find a src folder containing app.jsx, app.tcss, main.jsx, and index.css"
+    },
+    {
+     "id": "q4",
+     "t": 270,
+     "text": "simply run the command npm rundev in your terminal to start the development server"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 37,
+     "topic": "Introduction and prerequisites"
+    },
+    {
+     "start_s": 37,
+     "end_s": 100,
+     "topic": "Creating React project with Vite"
+    },
+    {
+     "start_s": 100,
+     "end_s": 142,
+     "topic": "Project setup commands and structure overview"
+    },
+    {
+     "start_s": 142,
+     "end_s": 220,
+     "topic": "Cleaning up default files"
+    },
+    {
+     "start_s": 220,
+     "end_s": 270,
+     "topic": "Basic App component setup"
+    },
+    {
+     "start_s": 270,
+     "end_s": 328,
+     "topic": "Running development server and outro"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "v4wU3-wuRTs",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "V9i3cGD-mts": {
+   "spoken_language": "en",
+   "summary": "This video teaches useState, one of the fundamental React hooks for managing state in functional components. Through a simple counter application example with increment and decrement buttons, the instructor explains what state is, how to destructure useState to get a state variable and updater function, how to set default values, and how to update state through event handlers.",
+   "topics_covered": [
+    "usestate",
+    "state management",
+    "event handling",
+    "component state",
+    "functional components"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 20,
+     "text": "state the simplest way that you can think about this is data that changes with time"
+    },
+    {
+     "id": "q2",
+     "t": 127,
+     "text": "useState is the hook that you use in React to manipulate state"
+    },
+    {
+     "id": "q3",
+     "t": 232,
+     "text": "const and then we're going to open an array. the first variable in the array is always the state variable"
+    },
+    {
+     "id": "q4",
+     "t": 407,
+     "text": "setCount and we're using this function to manipulate the state"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 47,
+     "topic": "introduction and what state is"
+    },
+    {
+     "start_s": 47,
+     "end_s": 207,
+     "topic": "explanation of state with API examples"
+    },
+    {
+     "start_s": 207,
+     "end_s": 404,
+     "topic": "implementing useState for a counter"
+    },
+    {
+     "start_s": 404,
+     "end_s": 707,
+     "topic": "adding event handlers and button clicks"
+    },
+    {
+     "start_s": 707,
+     "end_s": 486,
+     "topic": "summary and next steps"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "V9i3cGD-mts",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "8bsG5Xg9PaI": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to create a custom useLocalStorage hook in React that persists form input values across page refreshes. The instructor builds a functional component that uses useEffect to save values to localStorage via JSON.stringify, and retrieves them on mount using JSON.parse, demonstrating the complete implementation with a working example.",
+   "topics_covered": [
+    "custom hooks",
+    "useeffect",
+    "localstorage",
+    "usestate",
+    "json serialization"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 24,
+     "text": "whenever I refresh, if there is any value in it, then this value should remain here, so what will we have to do for that? We will have to save this value in local storage"
+    },
+    {
+     "id": "q2",
+     "t": 69,
+     "text": "I am going to create one more hook. Here, useLocalStorage. Okay? So whichever hook we create, it will start with 'use'. This is a convention."
+    },
+    {
+     "id": "q3",
+     "t": 178,
+     "text": "we can only save data in the form of a string here. We cannot save raw JSON. So, our state that comes here, how can it come? It can come as an object"
+    },
+    {
+     "id": "q4",
+     "t": 204,
+     "text": "from where will I fetch it? Like, local storage dot get item, there is a get item to fetch from local storage, and I will pass the key into it"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 47,
+     "topic": "Introduction to the problem: preserving form input across refreshes"
+    },
+    {
+     "start_s": 47,
+     "end_s": 152,
+     "topic": "Setting up the useLocalStorage hook structure and convention"
+    },
+    {
+     "start_s": 152,
+     "end_s": 258,
+     "topic": "Implementing useEffect and localStorage.setItem with JSON.stringify"
+    },
+    {
+     "start_s": 258,
+     "end_s": 427,
+     "topic": "Implementing getSavedValue function and JSON.parse for retrieval"
+    },
+    {
+     "start_s": 427,
+     "end_s": 652,
+     "topic": "Connecting the hook to useState and returning the custom hook"
+    },
+    {
+     "start_s": 652,
+     "end_s": 490,
+     "topic": "Demonstrating the working hook with a test component"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "8bsG5Xg9PaI",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "wyC25aCGdwk": {
+   "spoken_language": "en",
+   "summary": "This video walks through creating a React project from scratch using Vite, a modern build tool. It covers setting up Node.js and npm, running the Vite scaffolding command, installing dependencies, starting the development server with hot reloading, and touring the project structure including node_modules, package.json, index.html, and the src folder with the root App.jsx component.",
+   "topics_covered": [
+    "vite setup",
+    "npm",
+    "nodejs",
+    "project structure",
+    "jsx basics",
+    "app.jsx",
+    "hot reloading",
+    "react introduction"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "React project scaffold with Vite (initial setup, not a full feature)",
+   "tools_and_versions": [
+    "vite latest",
+    "react",
+    "react-dom",
+    "nodejs",
+    "npm",
+    "visual studio code"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 105,
+     "text": "mpm create v at latest. I'm going to use the dot here, but you can write whatever project name you want"
+    },
+    {
+     "id": "q2",
+     "t": 308,
+     "text": "This is our root component, the main building block of our app. Notice the JSX file extension"
+    },
+    {
+     "id": "q3",
+     "t": 337,
+     "text": "the dev server has hot reloading. That means whenever you save a change in your code, this page will automatically update"
+    },
+    {
+     "id": "q4",
+     "t": 575,
+     "text": "React is a library for building user interfaces and Vit is just an awesome modern tool that helps us get a project up and running super fast"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 43,
+     "topic": "Introduction and Vite motivation"
+    },
+    {
+     "start_s": 43,
+     "end_s": 145,
+     "topic": "Node.js and npm prerequisites"
+    },
+    {
+     "start_s": 145,
+     "end_s": 228,
+     "topic": "Running npm create vite command"
+    },
+    {
+     "start_s": 228,
+     "end_s": 310,
+     "topic": "Selecting React framework and variant"
+    },
+    {
+     "start_s": 310,
+     "end_s": 451,
+     "topic": "npm install and starting dev server"
+    },
+    {
+     "start_s": 451,
+     "end_s": 637,
+     "topic": "Viewing app in browser with hot reload"
+    },
+    {
+     "start_s": 637,
+     "end_s": 928,
+     "topic": "Project structure tour: node_modules, package.json, index.html, src, app.jsx"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "wyC25aCGdwk",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "CU5cyEeCCBs": {
+   "spoken_language": "en",
+   "summary": "This video teaches React fundamentals and Vite project setup for beginners. It covers what React is, why it's needed, how it works with the Virtual DOM, and walks through creating a React project with Vite, understanding the project structure and key files (index.html, main.js, App.jsx, package.json).",
+   "topics_covered": [
+    "react fundamentals",
+    "vite setup",
+    "project structure",
+    "jsx",
+    "virtual dom",
+    "single page applications",
+    "node and npm",
+    "file structure"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "vite",
+    "node.js",
+    "npm",
+    "react"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 2530,
+     "text": "npm create vite@latest my-first-react-app"
+    },
+    {
+     "id": "q2",
+     "t": 3098,
+     "text": "JSX files are those files which have JavaScript functions in them and return HTML from a JavaScript function"
+    },
+    {
+     "id": "q3",
+     "t": 861,
+     "text": "React only updates the DOM where the changes have actually occurred, that is why React is a bit fast"
+    },
+    {
+     "id": "q4",
+     "t": 129,
+     "text": "using just JavaScript will not be enough, you will have to manage different states there"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 420,
+     "topic": "Why React is needed and problem it solves"
+    },
+    {
+     "start_s": 420,
+     "end_s": 1050,
+     "topic": "Library vs framework, what React is"
+    },
+    {
+     "start_s": 1050,
+     "end_s": 1600,
+     "topic": "Virtual DOM and how React updates the UI"
+    },
+    {
+     "start_s": 1600,
+     "end_s": 2400,
+     "topic": "Node.js requirement and installation"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2900,
+     "topic": "Creating a React project with Vite (npm create vite command)"
+    },
+    {
+     "start_s": 2900,
+     "end_s": 3600,
+     "topic": "Project structure: node_modules, public folder, src folder"
+    },
+    {
+     "start_s": 3600,
+     "end_s": 4100,
+     "topic": "Running the development server (npm run dev)"
+    },
+    {
+     "start_s": 4100,
+     "end_s": 4600,
+     "topic": "Understanding JSX files and components"
+    },
+    {
+     "start_s": 4600,
+     "end_s": 5200,
+     "topic": "index.html and root div in single page applications"
+    },
+    {
+     "start_s": 5200,
+     "end_s": 5800,
+     "topic": "main.js and createRoot, rendering App component"
+    },
+    {
+     "start_s": 5800,
+     "end_s": 6200,
+     "topic": "Strict Mode and additional configuration"
+    },
+    {
+     "start_s": 6200,
+     "end_s": 6700,
+     "topic": "vite.config.js configuration file"
+    },
+    {
+     "start_s": 6700,
+     "end_s": 7370,
+     "topic": "package.json and package-lock.json explained"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "CU5cyEeCCBs",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "wIyHSOugGGw": {
+   "spoken_language": "en",
+   "summary": "A rapid overview of core React concepts including components, JSX, props, state, hooks, effects, and advanced features like context and error boundaries. Covers the fundamentals needed to build React applications, with brief explanations of each concept but minimal hands-on coding.",
+   "topics_covered": [
+    "components",
+    "jsx",
+    "props",
+    "state",
+    "usestate",
+    "event handling",
+    "hooks",
+    "useeffect",
+    "controlled components",
+    "keys",
+    "fragments",
+    "context",
+    "refs",
+    "error boundaries"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 22,
+     "text": "every react component is a JavaScript function that returns markup"
+    },
+    {
+     "id": "q2",
+     "t": 317,
+     "text": "useState takes an argument that serves as the starting value and returns an array containing the state variable"
+    },
+    {
+     "id": "q3",
+     "t": 402,
+     "text": "use effect let you connect with external systems like browser apis"
+    },
+    {
+     "id": "q4",
+     "t": 511,
+     "text": "effects are code that reach outside of our react application"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 360,
+     "topic": "React fundamentals: components, JSX, props, children, keys"
+    },
+    {
+     "start_s": 270,
+     "end_s": 600,
+     "topic": "State management: useState, controlled components, hooks intro"
+    },
+    {
+     "start_s": 420,
+     "end_s": 930,
+     "topic": "Advanced concepts: effects, refs, context, portals, suspense, error boundaries"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "wIyHSOugGGw",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "wKjsnUIfGHI": {
+   "spoken_language": "en",
+   "summary": "This tutorial teaches how to create a custom useLocalStorage React hook that persists user data to the browser's local storage. The video covers browser storage fundamentals, builds a reusable hook with set and get functions, and demonstrates its use in a login component with useState and event handling.",
+   "topics_covered": [
+    "custom hooks",
+    "localstorage",
+    "usestate",
+    "event handling",
+    "component state",
+    "browser storage api"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Custom useLocalStorage hook with a login form that persists username to browser local storage",
+   "tools_and_versions": [
+    "react",
+    "jsx"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 41,
+     "text": "every browser which you have actually has its own local storage that means you have some data which needs to persist"
+    },
+    {
+     "id": "q2",
+     "t": 252,
+     "text": "we want to create a hook for that so in order to do that I'll go back to the code editor here and first of all you need to go ahead and create a hooks folder"
+    },
+    {
+     "id": "q3",
+     "t": 533,
+     "text": "we simply need to go ahead and use this hook so in order to use this hook I'll create a component right from scratch"
+    },
+    {
+     "id": "q4",
+     "t": 1203,
+     "text": "whenever we actually click the login button what we essentially want to do is we want to take this name and pass this particular name to the local storage"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 224,
+     "topic": "Introduction to browser local storage and localStorage API methods (setItem, getItem)"
+    },
+    {
+     "start_s": 224,
+     "end_s": 344,
+     "topic": "Planning the custom useLocalStorage hook design and folder structure"
+    },
+    {
+     "start_s": 344,
+     "end_s": 536,
+     "topic": "Building the useLocalStorage hook with setUser and getUser functions"
+    },
+    {
+     "start_s": 536,
+     "end_s": 598,
+     "topic": "Integrating useState with the hook for state persistence"
+    },
+    {
+     "start_s": 598,
+     "end_s": 703,
+     "topic": "Creating a login component from scratch with input field"
+    },
+    {
+     "start_s": 703,
+     "end_s": 876,
+     "topic": "Adding state management and onChange handler to input field"
+    },
+    {
+     "start_s": 876,
+     "end_s": 962,
+     "topic": "Creating login button and handleClick function"
+    },
+    {
+     "start_s": 962,
+     "end_s": 1080,
+     "topic": "Integrating the useLocalStorage hook into the login component"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 962,
+     "topic": "Fixing imports and return statement in the hook"
+    },
+    {
+     "start_s": 962,
+     "end_s": 1082,
+     "topic": "Testing the hook by logging in and verifying localStorage persistence"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "wKjsnUIfGHI",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "SqcY0GlETPk": {
+   "spoken_language": "en",
+   "summary": "This is a beginner-friendly React tutorial that covers core concepts including components, JSX, state management with useState, props, event handling, conditional rendering, and lists. The instructor builds a ListGroup component throughout the course, demonstrating how to create interactive UI elements with React 18 and TypeScript.",
+   "topics_covered": [
+    "vite setup",
+    "jsx syntax",
+    "function components",
+    "props",
+    "usestate",
+    "event handling",
+    "conditional rendering",
+    "list rendering",
+    "component composition",
+    "react devtools"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react 18",
+    "typescript",
+    "vite",
+    "bootstrap",
+    "react devtools"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 166,
+     "text": "React is a JavaScript library for building dynamic and interactive user interfaces."
+    },
+    {
+     "id": "q2",
+     "t": 707,
+     "text": "function-based components have become more popular because they're more concise and easier to write."
+    },
+    {
+     "id": "q3",
+     "t": 1877,
+     "text": "to render data dynamically, we need to wrap this expression in braces."
+    },
+    {
+     "id": "q4",
+     "t": 27158,
+     "text": "props or properties are the inputs or arguments passed to a component. State is the internal data managed by a component."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 310,
+     "topic": "Course intro and prerequisites"
+    },
+    {
+     "start_s": 310,
+     "end_s": 600,
+     "topic": "What is React and how it works"
+    },
+    {
+     "start_s": 600,
+     "end_s": 1260,
+     "topic": "Setting up development environment and project structure"
+    },
+    {
+     "start_s": 1260,
+     "end_s": 1617,
+     "topic": "Creating React components with JSX"
+    },
+    {
+     "start_s": 1617,
+     "end_s": 1980,
+     "topic": "How React works with virtual DOM and React DOM"
+    },
+    {
+     "start_s": 2104,
+     "end_s": 2700,
+     "topic": "Building a ListGroup component with Bootstrap styling"
+    },
+    {
+     "start_s": 2700,
+     "end_s": 3111,
+     "topic": "Rendering lists and key props"
+    },
+    {
+     "start_s": 3311,
+     "end_s": 3936,
+     "topic": "Conditional rendering with logical operators"
+    },
+    {
+     "start_s": 3936,
+     "end_s": 4543,
+     "topic": "Handling click events and state management with useState"
+    },
+    {
+     "start_s": 4543,
+     "end_s": 5442,
+     "topic": "Passing data via props and component interfaces"
+    },
+    {
+     "start_s": 5442,
+     "end_s": 5922,
+     "topic": "Passing functions via props and state vs props"
+    },
+    {
+     "start_s": 6000,
+     "end_s": 6306,
+     "topic": "Passing children to components"
+    },
+    {
+     "start_s": 6304,
+     "end_s": 6606,
+     "topic": "Inspecting components with React DevTools"
+    },
+    {
+     "start_s": 6714,
+     "end_s": 7170,
+     "topic": "Exercise: Building a Button component with props"
+    },
+    {
+     "start_s": 7170,
+     "end_s": 7404,
+     "topic": "Exercise: Showing an alert with conditional rendering"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "SqcY0GlETPk",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "l6_v2goHUTk": {
+   "spoken_language": "en",
+   "summary": "A walkthrough of the folder structure and files in a Vite-powered React project. The video explains what each file and folder does, from node_modules and public assets to the src directory, configuration files, and how main.tsx injects the React app into index.html.",
+   "topics_covered": [
+    "vite setup",
+    "react project structure",
+    "src folder",
+    "public folder",
+    "index.html",
+    "main.tsx",
+    "app.tsx",
+    "configuration files"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "typescript",
+    "eslint",
+    "vite config"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 22,
+     "text": "node modules is nothing but a folder which store all of our dependencies like external dependencies"
+    },
+    {
+     "id": "q2",
+     "t": 43,
+     "text": "in public folder we store assets which are static in nature for example images any manifest file"
+    },
+    {
+     "id": "q3",
+     "t": 64,
+     "text": "the SRC folder which is super important where all the codes will lie and we will write all the Logics"
+    },
+    {
+     "id": "q4",
+     "t": 213,
+     "text": "main. TSX file what it does is like it inject our application into index.html file"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 22,
+     "topic": "introduction and overview"
+    },
+    {
+     "start_s": 22,
+     "end_s": 103,
+     "topic": "node_modules, public folder, src folder, .gitignore"
+    },
+    {
+     "start_s": 103,
+     "end_s": 209,
+     "topic": "eslint, index.html, package.json, readme, tsconfig, vite config"
+    },
+    {
+     "start_s": 209,
+     "end_s": 293,
+     "topic": "yarn.lock and recap of vite-generated files"
+    },
+    {
+     "start_s": 293,
+     "end_s": 416,
+     "topic": "src folder deep dive: app.tsx, main.tsx, injection into index.html"
+    },
+    {
+     "start_s": 416,
+     "end_s": 293,
+     "topic": "summary and teaser for next video on components and props"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "l6_v2goHUTk",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "b4cnZo-KBE0": {
+   "spoken_language": "en",
+   "summary": "This video builds a React Todo app that saves data to localStorage, demonstrating useEffect for side effects and practical local storage persistence. The tutorial is aimed at React beginners and shows how to integrate useState with useEffect to handle data persistence.",
+   "topics_covered": [
+    "react basics",
+    "useeffect",
+    "localstorage",
+    "todo app",
+    "state management"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "React Todo app with localStorage persistence",
+   "tools_and_versions": [
+    "react"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "REACT TODO App Store Data in LocalStorage Practical use of useEffect"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction and setup"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "b4cnZo-KBE0",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "5uHikv1oBEI": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to build a custom `useLocalStorage` hook to persist state across page refreshes in a React expense tracker application. The instructor demonstrates implementing localStorage with the custom hook for various form fields, handling edge cases like function values, and shows the hook working in practice as users add and edit expenses.",
+   "topics_covered": [
+    "custom hooks",
+    "uselocalstorage",
+    "localstorage",
+    "useeffect patterns",
+    "state persistence",
+    "json serialization",
+    "expense tracker project"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Expense tracker with localStorage persistence using custom useLocalStorage hook",
+   "tools_and_versions": [
+    "react",
+    "vite (implied)"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 23,
+     "text": "we will use local storage and save it in our local storage so let's come to our screen"
+    },
+    {
+     "id": "q2",
+     "t": 110,
+     "text": "we will make a custom hook of react name it useLocalStorage and with that hook we will implement local storage"
+    },
+    {
+     "id": "q3",
+     "t": 1780,
+     "text": "we have made custom hook, we just changed use state to use local storage and the local storage need a key"
+    },
+    {
+     "id": "q4",
+     "t": 2185,
+     "text": "json.stringify a function i have already done it json.stringify or any other function if it returns anything or not"
+    },
+    {
+     "id": "q5",
+     "t": 2575,
+     "text": "whatever we will add will be saved in our local storage and we have done one more thing that if we are going to add something"
+    },
+    {
+     "id": "q6",
+     "t": 2596,
+     "text": "if we refresh it then also whatever I typed is updated in our local storage and from there our use local storage hook is fetched"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 100,
+     "topic": "Problem statement: expense tracker loses data on refresh"
+    },
+    {
+     "start_s": 100,
+     "end_s": 240,
+     "topic": "Introduction to custom useLocalStorage hook and planning"
+    },
+    {
+     "start_s": 240,
+     "end_s": 600,
+     "topic": "Creating and testing basic useLocalStorage hook with initial values"
+    },
+    {
+     "start_s": 600,
+     "end_s": 1100,
+     "topic": "Fixing infinite render loop with useEffect and proper initialization"
+    },
+    {
+     "start_s": 1100,
+     "end_s": 1400,
+     "topic": "Handling function values in localStorage and JSON serialization issues"
+    },
+    {
+     "start_s": 1400,
+     "end_s": 1800,
+     "topic": "Applying custom hook to expense tracker state variables"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2400,
+     "topic": "Testing and demonstrating localStorage persistence with add/edit/refresh cycles"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2650,
+     "topic": "Final demo showing complete functionality and wrap-up"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 1
+    }
+   ],
+   "video_id": "5uHikv1oBEI",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6"
+   ]
+  },
+  "MVs1QMoz7ME": {
+   "spoken_language": "en",
+   "summary": "This video builds the backend sign-in logic and logout functionality for a habit tracker app built with React, Redux, and Express. It covers email validation, password hashing with bcrypt, database queries, and front-end logout with Redux state management and localStorage cleanup.",
+   "topics_covered": [
+    "backend signin",
+    "input validation",
+    "database queries",
+    "bcrypt password hashing",
+    "redux actions",
+    "logout functionality",
+    "localstorage"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Habit tracker app with sign-in backend, user authentication, and logout functionality",
+   "tools_and_versions": [
+    "react",
+    "redux",
+    "express",
+    "bcrypt",
+    "postgresql"
+   ],
+   "red_flags": [
+    "outdated_tooling"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 4,
+     "text": "we built out the front end as well as the redux state for the sign in component and we also implemented local storage"
+    },
+    {
+     "id": "q2",
+     "t": 56,
+     "text": "we need to check if the email exists in our system and we also need to check if the password from the database matches"
+    },
+    {
+     "id": "q3",
+     "t": 783,
+     "text": "dispatch logout user and basically we'll put an arrow function here and we're going to call a function that will make above called handle logout"
+    },
+    {
+     "id": "q4",
+     "t": 563,
+     "text": "in the next video i want to show you guys this little bug and also we have not yet implemented jwt which is json web tokens"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 50,
+     "topic": "Series recap and video overview"
+    },
+    {
+     "start_s": 50,
+     "end_s": 210,
+     "topic": "Input validation for sign-in (email and password checks)"
+    },
+    {
+     "start_s": 210,
+     "end_s": 360,
+     "topic": "Database query to check if email exists"
+    },
+    {
+     "start_s": 360,
+     "end_s": 540,
+     "topic": "Password verification with bcrypt.compare"
+    },
+    {
+     "start_s": 540,
+     "end_s": 810,
+     "topic": "Front-end sign-out button and Redux logout action"
+    },
+    {
+     "start_s": 810,
+     "end_s": 956,
+     "topic": "Display user name and conditional rendering, next steps preview"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "MVs1QMoz7ME",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3"
+   ]
+  },
+  "V1PxgjIhTw0": {
+   "spoken_language": "en",
+   "summary": "This video explains core React concepts including declarative programming, components, JSX, props, state with useState, and Vite setup. It demonstrates building a simple counter app to show how state changes trigger re-renders, and covers the key differences between React's declarative approach and imperative vanilla JavaScript.",
+   "topics_covered": [
+    "declarative_programming",
+    "react_components",
+    "jsx",
+    "props",
+    "state_usestate",
+    "event_handling",
+    "vite_setup",
+    "react_hooks"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "nodejs",
+    "jsx",
+    "visual studio code"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 211,
+     "text": "npm create vite@latest. To start a project with React, you need Node.js installed on your computer."
+    },
+    {
+     "id": "q2",
+     "t": 211,
+     "text": "Vite is a build tool that will ask you a few questions to generate the project setup."
+    },
+    {
+     "id": "q3",
+     "t": 355,
+     "text": "State is data that can change over time. And when the data changes, React updates the UI for you."
+    },
+    {
+     "id": "q4",
+     "t": 419,
+     "text": "We update the state using the function we got from the useState Hook, set counter. Here, we set the new value to counter plus one."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 50,
+     "topic": "What problem does React solve (DOM manipulation)"
+    },
+    {
+     "start_s": 50,
+     "end_s": 210,
+     "topic": "Declarative vs imperative programming"
+    },
+    {
+     "start_s": 210,
+     "end_s": 270,
+     "topic": "React components, props, and reusability"
+    },
+    {
+     "start_s": 270,
+     "end_s": 370,
+     "topic": "JSX syntax and mixing JavaScript with HTML"
+    },
+    {
+     "start_s": 370,
+     "end_s": 410,
+     "topic": "Single Page Applications concept"
+    },
+    {
+     "start_s": 410,
+     "end_s": 490,
+     "topic": "Vite project setup and file structure"
+    },
+    {
+     "start_s": 490,
+     "end_s": 560,
+     "topic": "App component structure and JSX basics"
+    },
+    {
+     "start_s": 560,
+     "end_s": 481,
+     "topic": "useState hook and state management"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "V1PxgjIhTw0",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "VZ6Qpe3sjhM": {
+   "spoken_language": "en",
+   "summary": "Step-by-step walkthrough of setting up a new React project using Vite in 2025. Covers installing Node.js, running npm create vite, selecting React and JavaScript, installing dependencies, and starting the development server.",
+   "topics_covered": [
+    "vite_setup",
+    "node.js_installation",
+    "npm_basics",
+    "project_structure"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "node.js",
+    "npm"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "in this video, I will teach you how to install React in 2025. In 2025, if you want to create a React application, you need to use Vite"
+    },
+    {
+     "id": "q2",
+     "t": 44,
+     "text": "npm create vite@latest. Hit enter. If you install Node.js on your computer, you will be able to run npm"
+    },
+    {
+     "id": "q3",
+     "t": 65,
+     "text": "you can select a framework. For example, in this case, we are going to install React, so I choose React"
+    },
+    {
+     "id": "q4",
+     "t": 131,
+     "text": "you can run npm run dev to start the React application. Here is the URL of the application"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 22,
+     "topic": "Introduction and Vite documentation"
+    },
+    {
+     "start_s": 22,
+     "end_s": 44,
+     "topic": "Node.js installation and setup"
+    },
+    {
+     "start_s": 44,
+     "end_s": 87,
+     "topic": "Running npm create vite command and selecting React"
+    },
+    {
+     "start_s": 87,
+     "end_s": 131,
+     "topic": "Opening project and running npm install"
+    },
+    {
+     "start_s": 131,
+     "end_s": 144,
+     "topic": "Running npm run dev and viewing application"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "VZ6Qpe3sjhM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "7VPULX3WcGE": {
+   "spoken_language": "en",
+   "summary": "A demo of a habit tracker app built with React and Redux that allows users to add tasks with titles and descriptions, track daily completion status over 7 days, and delete tasks. The video walks through the app's functionality and then explains the Redux architecture including actions, reducers, and store.",
+   "topics_covered": [
+    "redux",
+    "state management",
+    "reducers",
+    "actions",
+    "store",
+    "jsx components",
+    "event handling",
+    "list rendering",
+    "date handling"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Habit tracker app with task creation, daily tracking over 7 days, and Redux state management",
+   "tools_and_versions": [
+    "react",
+    "redux",
+    "bootstrap",
+    "fontawesome"
+   ],
+   "red_flags": [
+    "too_advanced_for_learner"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "this project is a habit Tracker app and this title the laptop you can see the title has been given a habit Tracker app and it is maintained using the Redux Library"
+    },
+    {
+     "id": "q2",
+     "t": 23,
+     "text": "Redux Library helps to centralize your state and data"
+    },
+    {
+     "id": "q3",
+     "t": 107,
+     "text": "another is maintained using action reducers and there is a store so this three are the main component in The Riddles"
+    },
+    {
+     "id": "q4",
+     "t": 153,
+     "text": "to do will help you to maintain the home page and details will display the disk details and nav bar"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 106,
+     "topic": "Project overview and functionality demo"
+    },
+    {
+     "start_s": 106,
+     "end_s": 207,
+     "topic": "Redux architecture explanation - actions, reducers, store"
+    },
+    {
+     "start_s": 207,
+     "end_s": 337,
+     "topic": "Project structure and file organization"
+    },
+    {
+     "start_s": 337,
+     "end_s": 445,
+     "topic": "Code walkthrough - state and selectors"
+    },
+    {
+     "start_s": 445,
+     "end_s": 337,
+     "topic": "CSS organization and component details"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 1
+    }
+   ],
+   "video_id": "7VPULX3WcGE",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "b6dnwttsdTo": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to create a custom React hook called useFetch to avoid repeating fetch logic across components. It demonstrates extracting duplicate state management and useEffect code from two similar components into a reusable custom hook that accepts a URL and initial data, then shows how to use the hook in both components.",
+   "topics_covered": [
+    "custom hooks",
+    "useeffect",
+    "usestate",
+    "code reuse",
+    "fetch api",
+    "destructuring"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A custom useFetch hook for fetching random user and address data from APIs",
+   "tools_and_versions": [
+    "create-react-app",
+    "react"
+   ],
+   "red_flags": [
+    "outdated_tooling"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 63,
+     "text": "we are repeating a lot of similar codes and logics in both of these components"
+    },
+    {
+     "id": "q2",
+     "t": 84,
+     "text": "in order to avoid this we can simply create a function and perform our fetch call"
+    },
+    {
+     "id": "q3",
+     "t": 104,
+     "text": "in order to create your own custom hook you need to simply create a file and i'm going to say use fetch dot js"
+    },
+    {
+     "id": "q4",
+     "t": 255,
+     "text": "we are going to return these states that is data loading and the error which we are going to use in our component"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 103,
+     "topic": "Problem identification: duplicate fetch logic in two components"
+    },
+    {
+     "start_s": 103,
+     "end_s": 205,
+     "topic": "Introduction to custom hooks concept"
+    },
+    {
+     "start_s": 205,
+     "end_s": 435,
+     "topic": "Building the useFetch custom hook with useState and useEffect"
+    },
+    {
+     "start_s": 435,
+     "end_s": 642,
+     "topic": "Using the custom hook in both components and testing"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "b6dnwttsdTo",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "3qmUoOC0wUU": {
+   "spoken_language": "en",
+   "summary": "A demonstration of a habit tracker app built with React and Redux. The video shows the UI with input fields, add/delete buttons, and a list of habits, then briefly discusses the code structure including create-react-app setup, components, and Redux store initialization.",
+   "topics_covered": [
+    "react basics",
+    "redux",
+    "component structure",
+    "state management",
+    "habit tracker project"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Habit tracker app with input, add habit button, delete button, and habit list",
+   "tools_and_versions": [
+    "react",
+    "redux",
+    "create-react-app"
+   ],
+   "red_flags": [
+    "outdated_tooling",
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "we are going to discuss the project habit tracker which I will develop with the help of react and redux"
+    },
+    {
+     "id": "q2",
+     "t": 22,
+     "text": "when we enter any input like running I now running when we enter add habit this is our list"
+    },
+    {
+     "id": "q3",
+     "t": 68,
+     "text": "this is our creator react app which is Along by the Facebook code here we initialize the a component app component"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 45,
+     "topic": "Project overview and UI demo"
+    },
+    {
+     "start_s": 45,
+     "end_s": 108,
+     "topic": "Habit deletion and project features"
+    },
+    {
+     "start_s": 108,
+     "end_s": 151,
+     "topic": "Code structure and create-react-app setup"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "3qmUoOC0wUU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "QdTHUv79EZc": {
+   "spoken_language": "en",
+   "summary": "Build a fully functional todo app with React using hooks (useState, useEffect) and localStorage persistence. The tutorial covers HTML structure, CSS styling with animations, checkbox customization, task management (add, delete, rename, mark complete), dynamic messaging, and a task counter with visual feedback.",
+   "topics_covered": [
+    "vite_setup",
+    "jsx_components",
+    "state_events",
+    "effects_localstorage",
+    "component_patterns",
+    "project_build",
+    "css_animations"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Todo app with task creation, completion toggling, deletion, renaming, localStorage persistence, animated checkboxes, and dynamic progress counter",
+   "tools_and_versions": [
+    "create-react-app",
+    "react hooks (usestate, useeffect)",
+    "localStorage",
+    "font awesome icons",
+    "css animations"
+   ],
+   "red_flags": [
+    "outdated_tooling"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "we are going to build this to-do app with react.js it's a really cool project and I try to put a smudge of cool features as possible"
+    },
+    {
+     "id": "q2",
+     "t": 131,
+     "text": "you're going to learn some basic react hooks like use effect and the use State you're also going to learn to use local storage with react apps"
+    },
+    {
+     "id": "q3",
+     "t": 65,
+     "text": "everything is saved inside local storage so even if I close the app or if I refresh it still shows the same tasks"
+    },
+    {
+     "id": "q4",
+     "t": 3694,
+     "text": "we can edit test renamed enter and it's done we can edit them in this one test 43 enter yeah everything works"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 300,
+     "topic": "Intro and feature walkthrough"
+    },
+    {
+     "start_s": 300,
+     "end_s": 600,
+     "topic": "Project setup with create-react-app and initial component structure"
+    },
+    {
+     "start_s": 600,
+     "end_s": 900,
+     "topic": "HTML structure and basic CSS styling"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1200,
+     "topic": "Custom checkbox styling with Font Awesome icons"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1600,
+     "topic": "Adding and listing tasks with useState"
+    },
+    {
+     "start_s": 1600,
+     "end_s": 1980,
+     "topic": "Saving and loading tasks from localStorage with useEffect"
+    },
+    {
+     "start_s": 1980,
+     "end_s": 2400,
+     "topic": "Task completion toggling with animations and opacity effects"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2880,
+     "topic": "Task deletion, counter display, and dynamic messaging"
+    },
+    {
+     "start_s": 2880,
+     "end_s": 3145,
+     "topic": "Task renaming with inline editing and form state"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 2
+    }
+   ],
+   "video_id": "QdTHUv79EZc",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "do62-z3z6FM": {
+   "spoken_language": "en",
+   "summary": "A comprehensive Vite crash course that teaches how to set up and configure Vite for React development, covering project scaffolding, hot module replacement, static asset handling, environment variables, TypeScript integration, production builds, and plugin extensions.",
+   "topics_covered": [
+    "vite setup",
+    "react project structure",
+    "hot module replacement",
+    "static assets",
+    "environment variables",
+    "typescript",
+    "production build",
+    "vite configuration",
+    "vite plugins",
+    "npm scripts"
+   ],
+   "level": "beginner",
+   "format": "crash_course",
+   "is_project_based": true,
+   "project_built": "React app with boilerplate counter component, header footer components, static asset optimization, environment variables integration, and production build setup",
+   "tools_and_versions": [
+    "vite",
+    "react",
+    "node.js 18+",
+    "npm",
+    "typescript",
+    "esbuild",
+    "rollup",
+    "vite-svgr plugin"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Vit is a next generation build tool that offers instant project startup and real-time updates"
+    },
+    {
+     "id": "q2",
+     "t": 348,
+     "text": "npm create vit at latest then select React and JavaScript to scaffold the React project"
+    },
+    {
+     "id": "q3",
+     "t": 493,
+     "text": "Vit uses hot module replacement or HMR which replaces only the part of the code that changed"
+    },
+    {
+     "id": "q4",
+     "t": 124,
+     "text": "We learned how to build React apps with Vit, how to work with static assets, using environment variables, TypeScript"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 180,
+     "topic": "Introduction to Vite and course overview"
+    },
+    {
+     "start_s": 165,
+     "end_s": 520,
+     "topic": "Vite project setup and scaffolding with npm create vite"
+    },
+    {
+     "start_s": 425,
+     "end_s": 870,
+     "topic": "Hot module replacement (HMR) and component creation"
+    },
+    {
+     "start_s": 800,
+     "end_s": 1050,
+     "topic": "Static asset handling and optimization"
+    },
+    {
+     "start_s": 1000,
+     "end_s": 1264,
+     "topic": "Environment variables and useEffect hook integration"
+    },
+    {
+     "start_s": 1350,
+     "end_s": 1600,
+     "topic": "TypeScript configuration and transpilation"
+    },
+    {
+     "start_s": 1545,
+     "end_s": 1635,
+     "topic": "Production build and preview commands"
+    },
+    {
+     "start_s": 1735,
+     "end_s": 1850,
+     "topic": "Vite configuration and build options"
+    },
+    {
+     "start_s": 1920,
+     "end_s": 2025,
+     "topic": "Vite plugins and ecosystem"
+    },
+    {
+     "start_s": 2115,
+     "end_s": 2415,
+     "topic": "Vite internals: ESBuild, Rollup, and Rolldown"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "do62-z3z6FM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q4"
+   ]
+  },
+  "h97s1tfi5P8": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to build a custom React hook called useLocalStorage that abstracts local storage operations (set, get, delete) with proper error handling and JSON serialization. The hook is demonstrated in a simple app with buttons to test setting, retrieving, and removing values from browser local storage.",
+   "topics_covered": [
+    "custom hooks",
+    "localstorage",
+    "json serialization",
+    "error handling",
+    "window api"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Custom useLocalStorage hook with set, get, and delete functionality",
+   "tools_and_versions": [
+    "react",
+    "codesandbox"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "we're going to write a very simple custom hook that can be used across our app this custom hook is about local storage"
+    },
+    {
+     "id": "q2",
+     "t": 257,
+     "text": "window dot local storage get item and we would pass along the key"
+    },
+    {
+     "id": "q3",
+     "t": 279,
+     "text": "window dot local storage set item and we would set the key that's provided here with the value"
+    },
+    {
+     "id": "q4",
+     "t": 478,
+     "text": "json dot stringify this value and here when we get it we need to parse it so json that parse the value"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 102,
+     "topic": "Introduction to local storage and the custom hook goal"
+    },
+    {
+     "start_s": 102,
+     "end_s": 228,
+     "topic": "Setting up the app component with buttons for testing"
+    },
+    {
+     "start_s": 228,
+     "end_s": 317,
+     "topic": "Defining the three functions: setItem, getItem, deleteItem"
+    },
+    {
+     "start_s": 317,
+     "end_s": 400,
+     "topic": "Wiring buttons to the hook functions in the app"
+    },
+    {
+     "start_s": 400,
+     "end_s": 520,
+     "topic": "Implementing getItem and setItem with window.localStorage"
+    },
+    {
+     "start_s": 520,
+     "end_s": 606,
+     "topic": "Adding try-catch error handling to all three functions"
+    },
+    {
+     "start_s": 606,
+     "end_s": 539,
+     "topic": "Adding JSON.stringify and JSON.parse for serialization"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "h97s1tfi5P8",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "bO7n1PJM094": {
+   "spoken_language": "en",
+   "summary": "Overview demo of a fullstack Next.js 15 habit tracker app that uses local storage to persist CRUD operations. The app features a weekly table view, list view with progress bars, and monthly view with conditional messages, allowing users to create, update, delete, and track habits across different time periods.",
+   "topics_covered": [
+    "nextjs",
+    "local storage",
+    "state management",
+    "crud operations",
+    "conditional rendering",
+    "ui components",
+    "responsive views"
+   ],
+   "level": "beginner",
+   "format": "vlog",
+   "is_project_based": true,
+   "project_built": "Fullstack habit tracker with weekly/list/monthly views, CRUD operations, and local storage persistence",
+   "tools_and_versions": [
+    "next.js 15",
+    "sonner (toast notifications)"
+   ],
+   "red_flags": [
+    "vlog",
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Today we will build a full stack habit tracker application using the latest version of Nex.js and just your local storage"
+    },
+    {
+     "id": "q2",
+     "t": 21,
+     "text": "We have a model that has a title that reads add new habit and we just have a uh input and the ability to save"
+    },
+    {
+     "id": "q3",
+     "t": 103,
+     "text": "This is being managed by state management with local storage so that as we change views or change routes we still have the same information"
+    },
+    {
+     "id": "q4",
+     "t": 147,
+     "text": "I have some conditional rendering that just gives a little message to say hey let's bounce back next month or let's keep going"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 8,
+     "topic": "project foundation introduction"
+    },
+    {
+     "start_s": 9,
+     "end_s": 3600,
+     "topic": "habit tracker app demo - CRUD, views, local storage, conditional rendering"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 1
+    }
+   ],
+   "video_id": "bO7n1PJM094",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "orLqzKffcXo": {
+   "spoken_language": "en",
+   "summary": "This video teaches functional components, props, and the useState hook in React. The instructor builds several interactive button and input examples in CodeSandbox to demonstrate how to create reusable components, pass data via props, manage component state with useState, and handle user events like button clicks and text input changes.",
+   "topics_covered": [
+    "functional components",
+    "props",
+    "usestate",
+    "event handling",
+    "re-rendering",
+    "virtual dom",
+    "input state management"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "react",
+    "codesandbox"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 500,
+     "text": "a component is nothing but a function which returns html okay a component is nothing but a function which returns systems"
+    },
+    {
+     "id": "q2",
+     "t": 798,
+     "text": "props is nothing but an object which has a property text and its value is add"
+    },
+    {
+     "id": "q3",
+     "t": 2051,
+     "text": "u state hook u state basically will return me two values one which will be the initial value and one is a center function"
+    },
+    {
+     "id": "q4",
+     "t": 1836,
+     "text": "with u state whenever this state is changed the app is re-rendered okay re-render does not means refresh"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "introduction and agenda overview"
+    },
+    {
+     "start_s": 240,
+     "end_s": 540,
+     "topic": "setting up codesandbox and creating first component"
+    },
+    {
+     "start_s": 540,
+     "end_s": 900,
+     "topic": "functional components and button component basics"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1200,
+     "topic": "understanding props as objects and passing multiple props"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1400,
+     "topic": "passing functions as props and event handlers"
+    },
+    {
+     "start_s": 1400,
+     "end_s": 1700,
+     "topic": "problem with direct state mutation and the need for useState"
+    },
+    {
+     "start_s": 1700,
+     "end_s": 2100,
+     "topic": "introducing useState hook and state management"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2400,
+     "topic": "how re-rendering works with virtual dom"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2700,
+     "topic": "useState returns array with state value and setter function"
+    },
+    {
+     "start_s": 2700,
+     "end_s": 3200,
+     "topic": "conditional rendering and preventing infinite loops"
+    },
+    {
+     "start_s": 3200,
+     "end_s": 3600,
+     "topic": "using useState with input fields and form state"
+    },
+    {
+     "start_s": 3600,
+     "end_s": 3270,
+     "topic": "preview of future topics: objects and arrays in useState"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "vite_setup",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "jsx_components",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "state_events",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "effects_localstorage",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "component_patterns",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "project_build",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "polish_deploy",
+     "score": 0
+    }
+   ],
+   "video_id": "orLqzKffcXo",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  }
+ },
+ "dup_clusters": [],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "do62-z3z6FM",
+    "covers": [
+     "vite_setup"
+    ],
+    "reason": "Covers scaffolding a React project with npm create vite, the dev server and hot module replacement, and creating components, which is the Vite tooling you haven't used. Only the setup-to-useEffect part is needed, so you skip the TypeScript config and the Vite internals talk.",
+    "evidence_quote_ids": [
+     "q1",
+     "q4"
+    ],
+    "watch_from_s": 165,
+    "watch_until_s": 1264,
+    "confidence": 0.8,
+    "confidence_note": "Unflagged and clearly shows Vite setup. Its segment map has overlapping timestamps, so the range boundaries are approximate. The project may lean toward TypeScript."
+   },
+   {
+    "video_id": "G6D9cBaLViA",
+    "covers": [
+     "jsx_components",
+     "state_events",
+     "effects_localstorage",
+     "component_patterns"
+    ],
+    "reason": "A project-based Vite build that teaches JSX, components and props, useState re-rendering, mapping lists, useEffect, and React Context with localStorage persistence for a favorites list. That list is structurally close to tracking habits. It is the main backbone for the core concepts.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "Plain JS, Vite and modern hooks, and it covers four sub-topics. The movie API and routing are tangential to a habit tracker. The segment map ends at 1:19:30 although the video runs 99.5 minutes."
+   },
+   {
+    "video_id": "5uHikv1oBEI",
+    "covers": [
+     "effects_localstorage",
+     "component_patterns"
+    ],
+    "reason": "Builds a reusable useLocalStorage custom hook in an expense tracker and swaps useState for it across several form fields. It also fixes an infinite render loop with useEffect. This is the custom-hook pattern you will need to persist habits.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.8,
+    "confidence_note": "Unflagged, project-based, and directly on persistence and custom hooks. It is somewhat long for one hook, and Vite is only implied."
+   },
+   {
+    "video_id": "X92kk5iT8CM",
+    "covers": [
+     "project_build",
+     "polish_deploy"
+    ],
+    "reason": "A complete React + Vite to-do app with add, edit and delete, completion state, localStorage persistence and a statistics dashboard. It is the closest modern end-to-end analogue to a habit tracker, and its Tailwind styling covers the finishing touches. Watch it after the concepts so you can adapt it to habits.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3",
+     "q5"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.7,
+    "confidence_note": "The project fits well, but it is a task app, not a habit tracker, and has no streak logic. Its metadata says 27 minutes while its segment map runs to about 41 minutes, so the time estimate is uncertain."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "QdTHUv79EZc",
+    "reason": "Strong todo build with useState, useEffect and localStorage, but it is set up with create-react-app (flagged outdated_tooling), which you ruled out. Unflagged Vite builds cover the same sub-topics."
+   },
+   {
+    "video_id": "SqcY0GlETPk",
+    "reason": "A long TypeScript lecture flagged pure_theory built around a ListGroup demo, not a project. Plain-JS project builds already cover props, lists and state."
+   },
+   {
+    "video_id": "wyC25aCGdwk",
+    "reason": "Vite setup walkthrough flagged surface_intro. The Vite crash course covers the same setup more deeply."
+   },
+   {
+    "video_id": "V9i3cGD-mts",
+    "reason": "Good useState counter explainer, but it overlaps with the useState coverage in the Tech With Tim build and adds a short isolated demo."
+   },
+   {
+    "video_id": "wKjsnUIfGHI",
+    "reason": "A useLocalStorage hook on a login form that covers the same ground as the expense-tracker hook video, with a less relevant example."
+   },
+   {
+    "video_id": "N7rs5F4f6FA",
+    "reason": "Flagged surface_intro; it shows a counter plus a library hook, and the hook video builds the same idea from scratch."
+   },
+   {
+    "video_id": "8ub_3kjILV8",
+    "reason": "A TypeScript folder-structure explainer flagged pure_theory; it is not project-based and the Vite coverage is already sufficient."
+   },
+   {
+    "video_id": "CU5cyEeCCBs",
+    "reason": "A 63-minute lecture flagged pure_theory covering Virtual DOM theory and Vite setup, which conflicts with your preference for project-based content."
+   },
+   {
+    "video_id": "7VPULX3WcGE",
+    "reason": "A habit tracker demo built on Redux, flagged too_advanced_for_learner. It is a short walkthrough, not a build-along tutorial."
+   },
+   {
+    "video_id": "orLqzKffcXo",
+    "reason": "A pure-theory CodeSandbox lecture on components, props and useState, dated 2022; redundant with the project builds."
+   }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+   "The picks total about 189 of 360 minutes (about 52%), leaving about 171 minutes unused. The remaining candidates are flagged for conflicts with your constraints (create-react-app, pure-theory or surface-intro) or only repeat topics already covered, and I preferred under-filling to padding.",
+   "No candidate teaches habit streak logic, such as consecutive-day calculation, so you will need to write that yourself; sub-topic polish_deploy is only partly covered.",
+   "No video here covers lifting state up in depth. You get it only implicitly through the project builds and the Context API.",
+   "Tech With Tim's project fetches a movie API and uses react-router, which a habit tracker doesn't need. Focus on the useState, useEffect and Context/localStorage sections.",
+   "The do62-z3z6FM range (2:45 to 21:04) comes from an overlapping segment map, so adjust a few seconds if it starts mid-sentence.",
+   "The DevCrafted to-do video lists 27 minutes but its segments suggest about 41 minutes, so the real watch time may be longer. Even then the total stays under budget.",
+   "The habit trackers found in the pool use Redux or Next.js, or date from before 2022. I left them out because you asked for Vite and the hooks-based approach."
+  ]
+ },
+ "fixes": []
+}

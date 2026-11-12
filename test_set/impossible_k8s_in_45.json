@@ -1,0 +1,66 @@
+{
+  "persona_id": "impossible_k8s_in_45",
+  "goal": "Learn Kubernetes deeply and pass the CKA exam, including hands-on cluster setup",
+  "time_budget_minutes": 45,
+  "user_context": {
+    "background": "Junior sysadmin, 1 year; runs Docker containers on single servers",
+    "known": [
+      "Linux command line",
+      "Docker",
+      "containers"
+    ],
+    "unknown": [
+      "Kubernetes architecture",
+      "pods, deployments, services",
+      "kubectl",
+      "cluster setup with kubeadm",
+      "CKA exam topics"
+    ],
+    "constraints": "Must be exam-prep oriented. The CKA exam changed recently, so nothing from before 2023."
+  },
+  "expectations": {
+    "notes": "Impossible goal: agent should say it is not feasible, pick a best-effort 45-minute slice, and not claim exam readiness.",
+    "pick_count": [
+      1,
+      4
+    ],
+    "min_utilisation": 0.5,
+    "forbidden_flags": [
+      "surface_intro",
+      "off_topic"
+    ],
+    "unknown_synonyms": {
+      "Kubernetes architecture": [
+        "architecture",
+        "control plane",
+        "node",
+        "kubelet"
+      ],
+      "pods, deployments, services": [
+        "pod",
+        "deployment",
+        "service"
+      ],
+      "kubectl": [
+        "kubectl"
+      ],
+      "cluster setup with kubeadm": [
+        "kubeadm",
+        "cluster setup",
+        "install"
+      ],
+      "CKA exam topics": [
+        "cka",
+        "exam"
+      ]
+    },
+    "known_topics": [
+      "docker basics",
+      "containers",
+      "linux"
+    ],
+    "expect_infeasible": true,
+    "required_language": "en",
+    "min_upload_year": 2023
+  }
+}

@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="data:,"><title>Learning Curriculum Builder</title><style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16181d;--muted:#5d6472;--line:#e3e6eb;--accent:#2f6fde;--accent-soft:#e8f0fd;
+--warn:#8a5a00;--warn-bg:#fff6e0;--bad:#b42318;--bad-bg:#fdecea;--ok:#18794e;--ok-bg:#e6f6ee;--chip:#eef1f5;--mark:#fff1a8;
+--shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a21;--ink:#e8eaee;--muted:#9aa3b2;--line:#272c36;--accent:#7aa7ff;
+--accent-soft:#1c2740;--warn:#f5c26b;--warn-bg:#2a2214;--bad:#ff8a80;--bad-bg:#2c1716;--ok:#5fd39a;--ok-bg:#122a1f;--chip:#222733;
+--mark:#4a4214;--shadow:none}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+nav div{max-width:980px;margin:0 auto;padding:10px 16px;display:flex;gap:18px;align-items:center;font-size:14px}
+nav b{margin-right:auto}nav a.on{font-weight:600;color:var(--ink)}
+main{max-width:980px;margin:0 auto;padding:24px 16px 64px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-size:26px;line-height:1.25;margin:4px 0 6px}h2{font-size:18px;margin:34px 0 12px}h3{font-size:17px;line-height:1.35;margin:0}
+h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:14px 0 6px}
+.crumb{font-size:13px;color:var(--muted)}.muted{color:var(--muted)}.small{font-size:13px}
+code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:4px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:120px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:var(--muted)}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--chip);margin:6px 0 4px}
+.bar i{display:block;height:100%;border-right:2px solid var(--card)}
+.legend{font-size:12px;color:var(--muted)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media (max-width:760px){.two{grid-template-columns:1fr}}
+.warn{background:var(--warn-bg);color:var(--ink);border-radius:10px;padding:10px 14px;margin:8px 0;font-size:14px}
+.warn b{color:var(--warn)}.bad{border-left:4px solid var(--bad)}
+.plan{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.plan li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 48px;position:relative}
+.plan li:before{content:counter(s);position:absolute;left:14px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:13px;text-align:center;line-height:22px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--muted)}
+.chip.c{background:var(--accent-soft);color:var(--accent)}.chip.ok{background:var(--ok-bg);color:var(--ok)}
+.chip.no{background:var(--bad-bg);color:var(--bad)}.chip.w{background:var(--warn-bg);color:var(--warn)}
+.pick{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:0 0 18px;box-shadow:var(--shadow)}
+.pick header{display:flex;gap:12px;padding:14px 16px 10px;align-items:flex-start}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;text-align:center;line-height:30px}
+.meta{font-size:13px;color:var(--muted);margin-top:3px}
+.body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;padding:0 16px 12px}
+.body>div:first-child{align-self:start;position:sticky;top:56px}
+@media (max-width:760px){.body{grid-template-columns:1fr}.body>div:first-child{position:static}}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}
+.player iframe,.player button{position:absolute;inset:0;width:100%;height:100%;border:0}
+.player button{cursor:pointer;padding:0;background:#000 center/cover no-repeat}
+.player button:after{content:"";position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(0,0,0,.72)}
+.player button:before{content:"";position:absolute;left:50%;top:50%;margin:-11px 0 0 -7px;border-style:solid;border-width:11px 0 11px 19px;border-color:transparent transparent transparent #fff;z-index:1}
+.player button:hover:after{background:#e62117}
+.range{font-size:12px;color:var(--muted);margin-top:6px}
+.reason{margin:0 0 10px}
+.conf{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:10px}
+.conf .m{flex:1;height:6px;border-radius:3px;background:var(--chip);overflow:hidden}.conf .m i{display:block;height:100%}
+blockquote{margin:0 0 8px;padding:6px 10px;border-left:3px solid var(--line);font-size:14px}
+.ts{font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--accent-soft);color:var(--accent);border:0;border-radius:5px;padding:1px 6px;cursor:pointer;margin-right:6px}
+blockquote small{color:var(--muted)}
+.note{font-size:13px;color:var(--muted);font-style:italic;margin-top:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:10px 0}
+.pick details{margin:0 16px 14px;background:var(--bg)}
+summary{cursor:pointer;font-weight:600}details ul{margin:8px 0 0;padding-left:18px}details li{margin:4px 0;font-size:14px}
+.extract{max-height:420px;overflow:auto;margin-top:10px;font-size:13px;line-height:1.5}
+.extract p{margin:0 0 6px}.extract .ch{color:var(--muted);font-weight:600}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 2px}
+.gap{color:var(--muted);text-align:center;font-size:12px;margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.grid .box h3{margin-bottom:6px}.grid .box p{margin:6px 0;font-size:14px}
+.card-tc{display:flex;flex-direction:column}.card-tc>p:last-of-type{margin-bottom:10px}
+.cardbtns{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+.btn-ghost,.btn-soft{font-size:13px;font-weight:600;padding:7px 13px;border-radius:9px;border:1px solid var(--line);white-space:nowrap}
+.btn-ghost{color:var(--ink);background:var(--bg)}.btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+.btn-soft{color:#fff;background:var(--accent);border-color:var(--accent)}.btn-soft:hover{text-decoration:none;opacity:.92}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);background:var(--bg)}
+td:first-child{min-width:130px}tr:last-child td{border-bottom:0}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.y{color:var(--ok);font-weight:600}.x{color:var(--bad);font-weight:600}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:14px 0}
+.steps div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px}
+.steps b{display:block;font-size:14px;margin-bottom:2px}
+.wk-list{display:grid;gap:10px}
+.wk{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.wk-n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;text-align:center;line-height:26px;font-size:14px}
+.wk-b{min-width:0}.wk-h{font-weight:600;margin-bottom:4px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.why{margin-top:6px;font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px}
+.why b{color:var(--ink)}
+.tryform{display:grid;gap:10px;margin:14px 0}
+.tryform label{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+.tryform .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:600px){.tryform .row{grid-template-columns:1fr}}
+.tryform input{font:inherit;font-weight:400;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+.tryform button{justify-self:start;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.tryform button:disabled{opacity:.6;cursor:default}
+.run-stages{display:grid;gap:8px;margin:16px 0}
+.run-stages div{display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.run-stages .dot{width:12px;height:12px;border-radius:50%;background:var(--chip);flex:none}
+.run-stages .done .dot{background:var(--ok)}.run-stages .active .dot{background:var(--accent);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.4}}
+footer{margin-top:36px;font-size:12px;color:var(--muted)}
+</style></head><body><nav><div><b>Learning Curriculum Builder</b><a href="index.html" class="on">Test cases</a><a href="how-it-works.html" class="">How it works</a><a href="evaluation.html" class="">Evaluation</a><a href="/chat" class="">Chat ✨</a></div></nav><main><h1>Learning Curriculum Builder</h1><div class='muted'>Give it a learning goal, a time budget and a learner profile. An agent searches YouTube, reads the transcripts, and builds an ordered curriculum where every pick is justified by quotes from the video itself — then it stays to answer <b>why</b>, or to change the plan on request.</div><div class='steps'><div><b>1. Plan</b><span class='muted'>sub-topics &amp; feasibility</span></div><div><b>2. Search</b><span class='muted'>gather a candidate pool from YouTube</span></div><div><b>3. Read</b><span class='muted'>transcripts — what each video actually teaches</span></div><div><b>4. Choose</b><span class='muted'>pick &amp; order, grounded in verified quotes</span></div><div><b>5. Verify</b><span class='muted'>code checks the quotes, budget &amp; red flags</span></div></div><div class='small muted'>A tool-using agent that decides each step for itself. See <a href='how-it-works.html'>How it works</a> for the design, and the <a href='evaluation.html'>evaluation</a> for how it scores.</div><h2 id='build'>Curate your own</h2><form class='tryform box' method='get' action='/chat'><div class='muted small' id='tf-note'>Describe a learner and press Build. The agent loop runs live and streams its work — searching, reading transcripts, choosing — into a chat on the left while the curriculum takes shape on the right. Then you can ask it why, or tell it to change things. Available when the site is served with <code>uv run curriculum serve</code>; a brand-new goal takes 1–2 minutes.</div><label>Learning goal<input name='goal' required placeholder='Build a small React app this weekend, a habit tracker with local storage'></label><div class='row'><label>Time budget (minutes)<input name='budget' type='number' min='15' max='3000' value='360' required></label><label>Learner background<input name='background' placeholder='Python backend engineer, 5 years'></label></div><div class='row'><label>Already knows (comma-separated)<input name='known' placeholder='JavaScript, HTTP, Git, npm'></label><label>Wants to learn (comma-separated)<input name='unknown' placeholder='React, JSX, hooks, Vite'></label></div><label>Constraints (optional)<input name='constraints' placeholder='Project-based; avoid 100-seconds intros; nothing before 2022'></label><button type='submit'>Build it live →</button></form><h2>Test cases</h2><div class='muted small' style='margin-bottom:10px'>Eight curated learners spanning the hard cases — a tiny budget, a non-English goal, an infeasible ask, an ambiguous one. <b>Open</b> any one to read the finished curriculum the agent built, with its reasons, caveats and scores. To build one for your own learner, use <a href='#build'>Build your own</a> below.</div><div class='grid'><div class='box card-tc'><h3><a href='ambiguous_design_frontend__agent_loop/curriculum.html'>Get better at design</a></h3><p class='muted'>Frontend developer, 2 years, React and CSS</p><p></p><p><span class='chip c'>180 min budget</span><span class='chip c'>7 videos · 165 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Ambiguous goal: should pick the UI/visual-design interpretation that fits a frontend developer, say so in assumptions, and not mix in system design or graphic-design software tutorials.</p><div class='cardbtns'><a class='btn-ghost' href='ambiguous_design_frontend__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='career_switch_ml_foundations__agent_loop/curriculum.html'>Go from zero ML knowledge to training and evaluating a small image classifier in PyTorch</a></h3><p class='muted'>Mechanical engineer moving into ML; comfortable with Python scripting, numpy and linear algebra from university</p><p><span class=chip>machine learning basics</span><span class=chip>gradient descent and backpropagation</span><span class=chip>PyTorch tensors and autograd</span><span class=chip>training loops</span></p><p><span class='chip c'>1200 min budget</span><span class='chip c'>13 videos · 291 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Huge budget: should use most of 20 hours with a prerequisite chain (ML basics -&gt; gradients -&gt; tensors/autograd -&gt; training loop -&gt; CNN -&gt; evaluation); long courses legitimate.</p><div class='cardbtns'><a class='btn-ghost' href='career_switch_ml_foundations__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='go_dev_rust_ownership__agent_loop/curriculum.html'>Get comfortable with Rust ownership, borrowing and lifetimes so I can port a small Go CLI tool</a></h3><p class='muted'>Senior Go developer, 8 years; wrote systems tools and services</p><p><span class=chip>ownership and moves</span><span class=chip>borrowing and references</span><span class=chip>lifetimes</span><span class=chip>traits</span></p><p><span class='chip c'>240 min budget</span><span class='chip c'>9 videos · 204 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Advanced learner: beginner &#x27;programming 101&#x27; content must be excluded; known-topic leakage is the main risk.</p><div class='cardbtns'><a class='btn-ghost' href='go_dev_rust_ownership__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='hindi_excel_pivots__agent_loop/curriculum.html'>Learn pivot tables and lookups well enough to build a monthly sales dashboard in Excel</a></h3><p class='muted'>Small-business owner in Lucknow; uses Excel for basic lists and sums</p><p><span class=chip>pivot tables</span><span class=chip>XLOOKUP / VLOOKUP</span><span class=chip>slicers</span><span class=chip>pivot charts</span></p><p><span class='chip c'>90 min budget</span><span class='chip c'>5 videos · 65 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Non-English learner: every pick must be in Hindi; assessor reads Hindi transcripts.</p><div class='cardbtns'><a class='btn-ghost' href='hindi_excel_pivots__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='impossible_k8s_in_45__agent_loop/curriculum.html'>Learn Kubernetes deeply and pass the CKA exam, including hands-on cluster setup</a></h3><p class='muted'>Junior sysadmin, 1 year; runs Docker containers on single servers</p><p><span class=chip>Kubernetes architecture</span><span class=chip>pods, deployments, services</span><span class=chip>kubectl</span><span class=chip>cluster setup with kubeadm</span></p><p><span class='chip c'>45 min budget</span><span class='chip c'>4 videos · 44 min</span><span class='chip'>100% transcript-backed</span><span class='chip w'>flags infeasible goal</span></p><p class='small muted'>Impossible goal: agent should say it is not feasible, pick a best-effort 45-minute slice, and not claim exam readiness.</p><div class='cardbtns'><a class='btn-ghost' href='impossible_k8s_in_45__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='lunch_break_sql_windows__agent_loop/curriculum.html'>Understand SQL window functions well enough to rewrite my self-join reports</a></h3><p class='muted'>Data analyst, 3 years writing SQL reports in PostgreSQL</p><p><span class=chip>window functions</span><span class=chip>PARTITION BY</span><span class=chip>ROW_NUMBER / RANK</span><span class=chip>running totals with window frames</span></p><p><span class='chip c'>30 min budget</span><span class='chip c'>2 videos · 30 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Tiny budget: 1-3 short videos or a segment of a longer one; must not exceed 30 minutes; must not include a beginner SQL course.</p><div class='cardbtns'><a class='btn-ghost' href='lunch_break_sql_windows__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='sourdough_first_loaf__agent_loop/curriculum.html'>Bake my first sourdough loaf this weekend; my starter is already active</a></h3><p class='muted'>Home cook who has baked yeasted sandwich bread a few times</p><p><span class=chip>hydration and levain</span><span class=chip>bulk fermentation and stretch-and-folds</span><span class=chip>shaping a boule</span><span class=chip>cold retard</span></p><p><span class='chip c'>120 min budget</span><span class='chip c'>5 videos · 87 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Non-tech domain: proves the pipeline is not software-specific. Needs at least one full bake-along; shaping and scoring must be covered.</p><div class='cardbtns'><a class='btn-ghost' href='sourdough_first_loaf__agent_loop/curriculum.html'>Open ↗</a></div></div><div class='box card-tc'><h3><a href='weekend_react_dev__agent_loop/curriculum.html'>Build a small React app this weekend, something like a habit tracker with local storage</a></h3><p class='muted'>Python backend engineer, 5 years experience</p><p><span class=chip>React</span><span class=chip>JSX</span><span class=chip>Vite tooling</span><span class=chip>React hooks</span></p><p><span class='chip c'>360 min budget</span><span class='chip c'>5 videos · 185 min</span><span class='chip'>100% transcript-backed</span></p><p class='small muted'>Reference persona from the brief. Good output per the brief: 4-6 videos, React/Vite setup first, then a project build that mirrors a habit tracker, no JS intros, no &#x27;100 seconds&#x27; content, ~5 hours.</p><div class='cardbtns'><a class='btn-ghost' href='weekend_react_dev__agent_loop/curriculum.html'>Open ↗</a></div></div></div><footer>Generated by <code>uv run curriculum html</code> from runs/, test_set/ and evals/results/.</footer></main><script>
+function play(el, start){
+  const p = el.closest('.pick').querySelector('.player');
+  const id = (p.dataset.id || '').replace(/[^A-Za-z0-9_-]/g, ''), end = p.dataset.end;
+  const s = start ?? p.dataset.start;
+  const q = new URLSearchParams({autoplay:'1', rel:'0', modestbranding:'1'});
+  if (s) q.set('start', s); if (end && (start == null || +start < +end)) q.set('end', end);
+  p.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?${q}" title="${(p.dataset.title || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c])}"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+  p.scrollIntoView({block:'nearest', behavior:'smooth'});
+}
+</script></body></html>

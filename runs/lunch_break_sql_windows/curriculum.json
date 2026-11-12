@@ -1,0 +1,261 @@
+{
+  "persona_id": "lunch_break_sql_windows",
+  "goal": "Understand SQL window functions well enough to rewrite my self-join reports",
+  "budget_minutes": 30,
+  "total_minutes": 23.1,
+  "interpretation": "In 30 minutes of viewing across at most two videos, the learner understands window functions (OVER, PARTITION BY, ranking, frames, LAG/LEAD) well enough to replace their self-join based reports with window function queries in PostgreSQL.",
+  "assumptions": [
+    "Self-join reports are typically things like previous-row comparisons, running totals, and top-N per group, which map to LAG/LEAD, window frames, and ROW_NUMBER/RANK.",
+    "Videos should use PostgreSQL or standard SQL syntax that works in PostgreSQL.",
+    "Two videos at most means the plan should favor one comprehensive practical video plus optionally one short complementary video, not many small ones.",
+    "No practice time is reserved, so the 30 minutes is all watching."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "over_partition_basics",
+      "title": "OVER() and PARTITION BY: window vs GROUP BY",
+      "why": "The learner knows GROUP BY aggregates, so the key mental shift is keeping row-level detail while computing aggregates over partitions, which replaces self-joins to aggregated subqueries.",
+      "prereqs": [],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "ranking_functions",
+      "title": "ROW_NUMBER, RANK, DENSE_RANK for top-N per group",
+      "why": "Top-N per group and deduplication are common self-join/subquery report patterns that ranking functions replace directly.",
+      "prereqs": [
+        "over_partition_basics"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "lag_lead",
+      "title": "LAG and LEAD for previous/next row comparisons",
+      "why": "Comparing a row with its previous or next row is the classic self-join use case, and LAG/LEAD make it a single pass.",
+      "prereqs": [
+        "over_partition_basics"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "running_totals_frames",
+      "title": "Running totals and window frames (ORDER BY, ROWS/RANGE BETWEEN)",
+      "why": "Running totals and moving averages usually require painful self-joins with inequality conditions; frames replace them.",
+      "prereqs": [
+        "over_partition_basics"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "rewrite_self_joins",
+      "title": "Rewriting self-join reports as window function queries",
+      "why": "The goal is to convert existing reports, so seeing before/after examples of self-join to window function rewrites ties everything together.",
+      "prereqs": [
+        "ranking_functions",
+        "lag_lead",
+        "running_totals_frames"
+      ],
+      "minutes_share": 0.2
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "dUzivpyLK1s",
+      "title": "SQL Window Functions Explained: ROW_NUMBER, RANK, LAG, LEAD",
+      "channel": "DataBite",
+      "url": "https://www.youtube.com/watch?v=dUzivpyLK1s",
+      "duration_min": 15.5,
+      "minutes_counted": 15.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "over_partition_basics",
+        "ranking_functions",
+        "lag_lead",
+        "running_totals_frames"
+      ],
+      "reason": "A PostgreSQL walkthrough that goes from OVER and PARTITION BY through ROW_NUMBER/RANK/DENSE_RANK top-N per group, LAG/LEAD month-over-month growth, and running totals with ROWS BETWEEN. It is one practical video that covers most of the plan, so the learner has a single setup to follow. It also ends with common mistakes such as a missing ORDER BY inside OVER.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:24",
+          "quote": "A window function keeps every row and adds a calculated value next to each one.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:46",
+          "quote": "Partition by decides which rows belong together. Order by decides the sequence inside each group.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "10:21",
+          "quote": "LAG fetches the value from the row before, LEAD fetches the row after.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Covers all four core sub-topics at the right level in PostgreSQL. Less sure because the segment map runs past the stated 15.5 minutes, so the real length may differ.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "-JtMlZI6MZE",
+      "title": "SQL Running Total, LAG and LEAD, Moving Average, ROWS vs RANGE | Real-Time #6",
+      "channel": "TechBrothersIT",
+      "url": "https://www.youtube.com/watch?v=-JtMlZI6MZE",
+      "duration_min": 7.6,
+      "minutes_counted": 7.6,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "running_totals_frames",
+        "lag_lead",
+        "rewrite_self_joins"
+      ],
+      "reason": "A second pass through the report-style patterns a self-join normally handles: running totals restarting per partition, month-over-month change with LAG/LEAD, and moving averages with explicit frames. It also warns about the ROWS vs RANGE frame trap. These patterns map directly onto the learner's self-join reports.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "01:54",
+          "quote": "PARTITION BY customer. The running total restarts for every customer.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "03:42",
+          "quote": "LAG reads the previous row's revenue, and LEAD reads the next row's.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "05:15",
+          "quote": "ROWS BETWEEN TWO PRECEDING AND CURRENT ROW. That's this month plus the two before it.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.65,
+      "confidence_note": "Strong on frames and LAG/LEAD in PostgreSQL. It never shows a self-join query side by side with its window rewrite, and its segment map also runs past the stated 7.6 minutes.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "9ctKDYilxkU",
+      "title": "SQL Window Functions for Interviews #sql #dataanalysis #interviews",
+      "stage": "prefilter",
+      "reason": "too short (60s)"
+    },
+    {
+      "video_id": "o666k19mZwE",
+      "title": "SQL Window Functions Basics (Visually Explained) | PARTITION BY, ORDER BY, FRAME | #SQL Course 22",
+      "stage": "prefilter",
+      "reason": "title matches exclusion 'sql course' from the learner's constraints"
+    },
+    {
+      "video_id": "Wvg4PjbMTO8",
+      "title": "The Ultimate SQL Window Functions Course | Complete End-to-End Guide",
+      "stage": "prefilter",
+      "reason": "231 min, far beyond the 30-min budget"
+    },
+    {
+      "video_id": "cC9HFEqKivY",
+      "title": "Master Advanced SQL in 90 Minutes | CASE, CTE, Subqueries & Window Functions Explained",
+      "stage": "prefilter",
+      "reason": "93 min, far beyond the 30-min budget"
+    },
+    {
+      "video_id": "r50v9k5bFTU",
+      "title": "SQL Window Functions | ROW_NUMBER, RANK, LEAD, LAG + Interview Questions",
+      "stage": "prefilter",
+      "reason": "325 min, far beyond the 30-min budget"
+    },
+    {
+      "video_id": "L0oIEAduiSo",
+      "title": "SQL Window Functions with Examples | ROW_NUMBER, RANK, SUM, LAG & LEAD",
+      "stage": "prefilter",
+      "reason": "too short (16s)"
+    },
+    {
+      "video_id": "3LJ-yWBQBGs",
+      "title": "Session 36 - Window Functions in SQL | DSMP 2023",
+      "stage": "prefilter",
+      "reason": "100 min, far beyond the 30-min budget"
+    },
+    {
+      "video_id": "qa_0Qx41qQI",
+      "title": "Data Analysis SQL Interview Questions | Running SUM | Who Hit the Sales Target First",
+      "stage": "prefilter",
+      "reason": "too short (60s)"
+    },
+    {
+      "video_id": "Kd64mv2kjX8",
+      "title": "SQL Window Functions Explained: OVER, PARTITION BY, RANK, LAG, Running Totals",
+      "stage": "select",
+      "reason": "Covers all four topics in 13 minutes, but is a generic sales-table walkthrough with no top-N-per-group pattern and no report-style content. It would add little over the first pick."
+    },
+    {
+      "video_id": "OCMpARjC-VU",
+      "title": "SQL Window Functions Explained Visually (ROW_NUMBER, RANK, LEAD, LAG) 🎯",
+      "stage": "select",
+      "reason": "Short and mentions LAG replacing a self-join, but it skims every topic and would mostly repeat the first pick."
+    },
+    {
+      "video_id": "UkFjJ0Wvtjs",
+      "title": "How to Use Window Functions for High-Performance Postgres Queries",
+      "stage": "select",
+      "reason": "Directly contrasts window functions with self-joins in PostgreSQL, but it covers only running totals and moving averages, with no LAG/LEAD. The chosen second video covers more of the gaps."
+    },
+    {
+      "video_id": "Ww71knvhQ-s",
+      "title": "SQL Window Function | How to write SQL Query using RANK, DENSE RANK, LEAD/LAG | SQL Queries Tutorial",
+      "stage": "select",
+      "reason": "Good on ranking and LAG/LEAD, but at 24.9 minutes it would use most of the budget, and it has nothing on running totals or frames."
+    },
+    {
+      "video_id": "_zBEsmNhIiE",
+      "title": "[Database Lecture 22] Master SQL Window Functions | Running Total, Moving Average, LEAD & LAG",
+      "stage": "select",
+      "reason": "Complete coverage, but at 30.2 minutes it fills the whole budget, leaves no room for a second video, and is a lecture format rather than practical examples."
+    },
+    {
+      "video_id": "rIcB4zMYMas",
+      "title": "SQL Window Functions | Clearly Explained | PARTITION BY, ORDER BY, ROW_NUMBER, RANK, DENSE_RANK",
+      "stage": "select",
+      "reason": "Clear on ranking and top-N with a subquery, but it does not cover frames or running totals, and its LAG/LEAD coverage is minimal."
+    },
+    {
+      "video_id": "GzRyOsQsugk",
+      "title": "Running & Rolling Total | Moving & Rolling Average |  SQL Key Data Analysis Concepts",
+      "stage": "select",
+      "reason": "Excellent on running totals and frames, but at 19.1 minutes it covers only that one sub-topic and does not fit alongside a comprehensive first video."
+    },
+    {
+      "video_id": "OqhfXIK1NhY",
+      "title": "SQL Window Function Crash Course for Data Analyst ",
+      "stage": "select",
+      "reason": "A 67-minute crash course with no transcript, so it could not be assessed, and it is also far too long for the budget."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "Neither pick shows a self-join report rewritten as a window query side by side. The rewrite_self_joins sub-topic is covered only indirectly, through month-over-month LAG, top-N and running-total patterns. Map your own reports onto those patterns when you practice.",
+    "The plan targets about 23.1 of 30 minutes (77%), leaving roughly 6.9 minutes unused. The remaining candidates mostly repeat topics, and a third video would break your two-video limit.",
+    "The segment maps for both picks run past the stated durations. If either video is longer than listed, the total could exceed 30 minutes, so check the lengths before you start.",
+    "I assumed PostgreSQL or standard SQL is fine. No time is reserved for practice, so the 30 minutes is viewing only."
+  ],
+  "pool_size": 35,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-4.5",
+    "select": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.09916,
+  "latency_s": 31.5,
+  "mode": "agent"
+}

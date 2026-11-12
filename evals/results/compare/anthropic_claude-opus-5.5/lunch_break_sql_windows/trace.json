@@ -1,0 +1,3742 @@
+{
+ "persona": {
+  "persona_id": "lunch_break_sql_windows",
+  "goal": "Understand SQL window functions well enough to rewrite my self-join reports",
+  "time_budget_minutes": 30,
+  "user_context": {
+   "background": "Data analyst, 3 years writing SQL reports in PostgreSQL",
+   "known": [
+    "SELECT, WHERE, JOIN",
+    "GROUP BY and aggregates",
+    "subqueries",
+    "self-joins"
+   ],
+   "unknown": [
+    "window functions",
+    "PARTITION BY",
+    "ROW_NUMBER / RANK",
+    "running totals with window frames",
+    "LAG / LEAD"
+   ],
+   "constraints": "Only a lunch break. Practical examples, no full SQL courses."
+  },
+  "expectations": {
+   "pick_count": [
+    1,
+    3
+   ],
+   "min_utilisation": 0.5,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": "(?i)full (sql )?course|for (absolute )?beginners|sql tutorial for beginners",
+   "forbidden_flags": [
+    "surface_intro",
+    "too_basic_for_learner"
+   ],
+   "unknown_synonyms": {
+    "window functions": [
+     "window function",
+     "over(",
+     "over clause",
+     "window"
+    ],
+    "PARTITION BY": [
+     "partition by",
+     "partition"
+    ],
+    "ROW_NUMBER / RANK": [
+     "row_number",
+     "rank",
+     "dense_rank",
+     "ranking"
+    ],
+    "running totals with window frames": [
+     "running total",
+     "frame",
+     "rows between",
+     "cumulative"
+    ],
+    "LAG / LEAD": [
+     "lag",
+     "lead"
+    ]
+   },
+   "known_topics": [
+    "select",
+    "where clause",
+    "joins",
+    "group by",
+    "aggregate functions",
+    "subqueries"
+   ],
+   "min_level": null,
+   "require_project_based": false,
+   "required_language": "en",
+   "expect_infeasible": false,
+   "expect_assumptions": false,
+   "notes": "Tiny budget: 1-3 short videos or a segment of a longer one; must not exceed 30 minutes; must not include a beginner SQL course."
+  }
+ },
+ "mode": "select=anthropic/claude-opus-5.5",
+ "models": {
+  "plan": "anthropic/claude-sonnet-5.5",
+  "assess": "anthropic/claude-haiku-5.5",
+  "select": "anthropic/claude-opus-5.5"
+ },
+ "offline": true,
+ "use_transcripts": true,
+ "timings_s": {
+  "load_fixture": 0.0,
+  "assess": 0.0,
+  "dedup": 0.01,
+  "select": 40.4
+ },
+ "cost_by_stage": {
+  "select": {
+   "calls": 1,
+   "cost_usd": 0.16529,
+   "prompt_tokens": 25377,
+   "completion_tokens": 3189,
+   "latency_s": 40.39
+  }
+ },
+ "calls": [
+  {
+   "stage": "select",
+   "model": "anthropic/claude-opus-5.5",
+   "prompt_tokens": 25377,
+   "completion_tokens": 3189,
+   "cost_usd": 0.165288,
+   "latency_s": 40.39
+  }
+ ],
+ "plan": {
+  "interpretation": "After 30 minutes of watching, the learner can read and write PostgreSQL window functions (OVER, PARTITION BY, ranking, LAG/LEAD, running totals) and confidently replace their self-join based reports with them.",
+  "assumptions": [
+   "Self-join reports are typically things like previous-row comparisons, running totals, and top-N per group, so the plan targets those patterns.",
+   "'No full SQL courses' means the learner wants short, focused videos rather than long multi-hour course uploads.",
+   "PostgreSQL syntax is preferred, but examples in other SQL dialects are acceptable since window function syntax is largely standard."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "en",
+  "learner_level": "intermediate",
+  "sub_topics": [
+   {
+    "id": "window_basics",
+    "title": "OVER() and PARTITION BY: how window functions differ from GROUP BY",
+    "why": "The learner knows GROUP BY aggregates well, so the key shift is keeping row-level detail while computing per-group values.",
+    "prereqs": [],
+    "minutes_share": 0.2
+   },
+   {
+    "id": "ranking_functions",
+    "title": "ROW_NUMBER, RANK, DENSE_RANK with ORDER BY inside OVER",
+    "why": "Replaces self-joins and correlated subqueries used for top-N per group and de-duplication.",
+    "prereqs": [
+     "window_basics"
+    ],
+    "minutes_share": 0.2
+   },
+   {
+    "id": "lag_lead",
+    "title": "LAG and LEAD for previous/next row comparisons",
+    "why": "Self-joins on id-1 or date-1 for period-over-period reports are exactly what LAG/LEAD replace.",
+    "prereqs": [
+     "window_basics"
+    ],
+    "minutes_share": 0.2
+   },
+   {
+    "id": "running_totals_frames",
+    "title": "Running totals and window frames (ROWS BETWEEN, default frame behavior)",
+    "why": "Cumulative sums and moving averages are usually done with self-joins on <= conditions; frames make this simple and fast.",
+    "prereqs": [
+     "window_basics"
+    ],
+    "minutes_share": 0.2
+   },
+   {
+    "id": "rewrite_self_joins",
+    "title": "Rewriting self-join reports with window functions in PostgreSQL",
+    "why": "Ties the pieces together by converting real self-join queries into window function versions, which is the learner's actual goal.",
+    "prereqs": [
+     "ranking_functions",
+     "lag_lead",
+     "running_totals_frames"
+    ],
+    "minutes_share": 0.2
+   }
+  ],
+  "search_queries": [
+   "SQL window functions explained PARTITION BY OVER for analysts",
+   "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL",
+   "SQL LAG LEAD window function examples month over month",
+   "SQL running total window function ROWS BETWEEN frame explained",
+   "replace self join with window function SQL",
+   "PostgreSQL window functions tutorial practical examples",
+   "SQL window functions vs self join real world report"
+  ],
+  "title_exclusions": [
+   "full course",
+   "complete course",
+   "crash course",
+   "for beginners"
+  ],
+  "skip_topics": [
+   "SELECT",
+   "WHERE",
+   "JOIN",
+   "GROUP BY and aggregates",
+   "subqueries",
+   "self-joins"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "Ww71knvhQ-s",
+   "title": "SQL Window Function | How to write SQL Query using RANK, DENSE RANK, LEAD/LAG | SQL Queries Tutorial",
+   "channel": "techTFQ",
+   "minutes": 24.9,
+   "views": 1675049,
+   "found_by": [
+    "SQL window functions vs self join real world report",
+    "SQL LAG LEAD window function examples month over month",
+    "replace self join with window function SQL",
+    "SQL window functions explained PARTITION BY OVER for analysts",
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL",
+    "PostgreSQL window functions tutorial practical examples"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "IpBlocked"
+  },
+  {
+   "video_id": "rIcB4zMYMas",
+   "title": "SQL Window Functions | Clearly Explained | PARTITION BY, ORDER BY, ROW_NUMBER, RANK, DENSE_RANK",
+   "channel": "Maven Analytics",
+   "minutes": 7.9,
+   "views": 430846,
+   "found_by": [
+    "SQL window functions explained PARTITION BY OVER for analysts",
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL",
+    "SQL running total window function ROWS BETWEEN frame explained",
+    "PostgreSQL window functions tutorial practical examples"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "IpBlocked"
+  },
+  {
+   "video_id": "S1do1EeA7ng",
+   "title": "SQL Window Function with Example- RANK, DENSE RANK, ROW NUMBER, LEAD/LAG | SQL Tutorial in Hindi 14",
+   "channel": "Rishabh Mishra",
+   "minutes": 21.4,
+   "views": 533005,
+   "found_by": [
+    "PostgreSQL window functions tutorial practical examples",
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL",
+    "SQL window functions explained PARTITION BY OVER for analysts",
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "IpBlocked"
+  },
+  {
+   "video_id": "o666k19mZwE",
+   "title": "SQL Window Functions Basics (Visually Explained) | PARTITION BY, ORDER BY, FRAME | #SQL Course 22",
+   "channel": "Data with Baraa",
+   "minutes": 57.3,
+   "views": 269452,
+   "found_by": [
+    "SQL window functions explained PARTITION BY OVER for analysts",
+    "SQL running total window function ROWS BETWEEN frame explained",
+    "PostgreSQL window functions tutorial practical examples"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "IpBlocked"
+  },
+  {
+   "video_id": "MnDqhGAcRug",
+   "title": "Window Functions in SQL Full Tutorial 🔥 | ROW_NUMBER, RANK, LAG, LEAD Explained",
+   "channel": "Learn More",
+   "minutes": 29.6,
+   "views": 21180,
+   "found_by": [
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL",
+    "PostgreSQL window functions tutorial practical examples",
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "Wh9yXS9sgio",
+   "title": "Window Functions in SQL Masterclass",
+   "channel": "Chai aur Code",
+   "minutes": 36.4,
+   "views": 51364,
+   "found_by": [
+    "PostgreSQL window functions tutorial practical examples",
+    "SQL window functions explained PARTITION BY OVER for analysts"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "GzRyOsQsugk",
+   "title": "Running & Rolling Total | Moving & Rolling Average |  SQL Key Data Analysis Concepts",
+   "channel": "Data with Baraa",
+   "minutes": 19.1,
+   "views": 16994,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained",
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "OsMV0p8_3mk",
+   "title": "LAG() & LEAD() in SQL Explained with Real Examples | Complete Window Functions Tutorial",
+   "channel": "HaiderWithCode",
+   "minutes": 12.7,
+   "views": 33,
+   "found_by": [
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "2poJ0Gv1Vzs",
+   "title": "SQL Part 27 Replace Function  and  self join in Malayalam ",
+   "channel": "KTU CSE",
+   "minutes": 3.6,
+   "views": 61,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "zbL0ID7c7ls",
+   "title": "Window Frames in Snowflake | ROWS BETWEEN, Running and Remaining Totals | Snowflake SQL #54",
+   "channel": "TechBrothersIT",
+   "minutes": 6.5,
+   "views": 106,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "6iKWzyqyms8",
+   "title": "SQL Joins & Window Functions Explained | Data Engineering Interview Prep| Jun Batch DE Roadmap #4",
+   "channel": "PathNex - Shaping Careers",
+   "minutes": 42.5,
+   "views": 197,
+   "found_by": [
+    "SQL window functions vs self join real world report"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "NNpFHQl_GT0",
+   "title": "Rank() vs Dense_Rank() Window Function() | SQL Interview🎙Questions🙋🙋‍♀️",
+   "channel": "Gate Smashers",
+   "minutes": 7.7,
+   "views": 115498,
+   "found_by": [
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "Jag6Eb2i-bQ",
+   "title": "SQL Value Window Functions | LEAD, LAG, FIRST_VALUE, LAST_VALUE | #SQL Course 25",
+   "channel": "Data with Baraa",
+   "minutes": 45.0,
+   "views": 82684,
+   "found_by": [
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "YfDyHvH6sdc",
+   "title": "SQL Running Total | Advance SQL | Rolling N months SUM, AVG, MIN, MAX",
+   "channel": "Ankit Bansal",
+   "minutes": 10.3,
+   "views": 40562,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "D5MV7epXRnI",
+   "title": "SQL REPLACE Statement: Combination of INSERT & DELETE",
+   "channel": "Engineering Digest",
+   "minutes": 5.2,
+   "views": 5736,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "CBnlLY67cbc",
+   "title": "PostgreSQL Window Functions Tutorial Database | Part 10 | LAG, LEAD ROW_NUMBER, RANK, DENSE_RANK",
+   "channel": "HindiWaleEngineer",
+   "minutes": 29.9,
+   "views": 305,
+   "found_by": [
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "speKIs60TRs",
+   "title": "Lead/Lag Window Analytical functions in SQL | Advance SQL concepts",
+   "channel": "Ankit Bansal",
+   "minutes": 10.6,
+   "views": 77075,
+   "found_by": [
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "xLAmRI_Iky8",
+   "title": "Rows Between in SQL | Analytical Functions Advanced SQL | Ashutosh Kumar",
+   "channel": "Ashutosh Kumar",
+   "minutes": 13.4,
+   "views": 38484,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "4ZoHY4RT1Fo",
+   "title": "Different ways to replace NULL in sql server - Part 15",
+   "channel": "kudvenkat",
+   "minutes": 11.7,
+   "views": 550912,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "fpPIOiGFh38",
+   "title": "Window Function in SQL - Day - 27 - SQL - From Basic to Advance",
+   "channel": "Satish Dhawale",
+   "minutes": 13.2,
+   "views": 62557,
+   "found_by": [
+    "PostgreSQL window functions tutorial practical examples"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "Hf9O8oNnHg8",
+   "title": "SQL Functions Mastery: String, Date, Math & Aggregate Tutorial",
+   "channel": "Engineering Digest",
+   "minutes": 41.5,
+   "views": 16188,
+   "found_by": [
+    "SQL window functions vs self join real world report"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "5xOxNWJMjwA",
+   "title": "Month Over Month Revenue Growth Rate | LAG() + Growth Formula Explained | SQL Interview #37",
+   "channel": "Dive in Data",
+   "minutes": 13.4,
+   "views": 689,
+   "found_by": [
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "_2trRFNmB_A",
+   "title": "Master Sql Window functions with Aggregate Fun & Over, Partitions, Order By, Row, Rank, Lead, Lag",
+   "channel": "Traidev Official ",
+   "minutes": 50.7,
+   "views": 9259,
+   "found_by": [
+    "SQL window functions explained PARTITION BY OVER for analysts"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "xMWEVFC4FOk",
+   "title": "RANK, DENSE_RANK, ROW_NUMBER SQL Analytical Functions Simplified",
+   "channel": "Ankit Bansal",
+   "minutes": 9.7,
+   "views": 163343,
+   "found_by": [
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "OHHzOwdIvB4",
+   "title": "View In SQL| Very Easy Explanation| Create & Replace Existing View",
+   "channel": "Mohit Singh",
+   "minutes": 9.2,
+   "views": 70,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "gFvnKtQbKl4",
+   "title": "Day 117 | SQL LAG() & LEAD() Functions Explained | Window Functions | Previous & Next Row",
+   "channel": "DataWalaShivam",
+   "minutes": 12.4,
+   "views": 36,
+   "found_by": [
+    "SQL window functions vs self join real world report"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "u7WJD3nvBgw",
+   "title": "26. SQL Aggregate & Basic Window Functions | OVER() Clause & PARTITION BY with Practical Examples",
+   "channel": "BikkadIT",
+   "minutes": 89.4,
+   "views": 66,
+   "found_by": [
+    "SQL window functions explained PARTITION BY OVER for analysts"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "N0IB9qCcQJY",
+   "title": "Nth Highest Salary in SQL | RANK vs DENSE_RANK vs ROW_NUMBER | Window Functions Interview Questions",
+   "channel": "The Data Dose",
+   "minutes": 11.1,
+   "views": 29,
+   "found_by": [
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "sovaZQx-HTs",
+   "title": "Master SQL Interview Questions Part 2: Joins, Window Functions, PIVOT & Recursive CTE Explained",
+   "channel": "Ship of Learning",
+   "minutes": 36.1,
+   "views": 482,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "Vq9H8_wMn0k",
+   "title": "Rows Between vs Range Between in SQL Window Functions | Real Difference Explained with Examples",
+   "channel": "Ankit Bansal",
+   "minutes": 15.1,
+   "views": 5813,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "UkFjJ0Wvtjs",
+   "title": "How to Use Window Functions for High-Performance Postgres Queries",
+   "channel": "Sachin: PostgreSQL Instructor",
+   "minutes": 5.8,
+   "views": 6,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "pbwEhL_RP_g",
+   "title": "PostgreSQL Window Functions Tutorial Database | Part 9 | ROW_NUMBER, RANK, DENSE_RANK, LAG & LEAD",
+   "channel": "HindiWaleEngineer",
+   "minutes": 31.5,
+   "views": 394,
+   "found_by": [
+    "SQL ROW_NUMBER RANK DENSE_RANK practical examples PostgreSQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "5Ighj_2PGV0",
+   "title": "All About SQL Aggregations | SQL Advance | Zero to Hero",
+   "channel": "Ankit Bansal",
+   "minutes": 17.7,
+   "views": 91943,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "SnHuzYstzHw",
+   "title": "Sql window function Hindi | Window Function in Sql Hindi",
+   "channel": "Lotusamaze",
+   "minutes": 22.4,
+   "views": 83457,
+   "found_by": [
+    "replace self join with window function SQL"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "-r7DpMSLuDw",
+   "title": "SQL LAG and LEAD Functions: Compare Rows & Month-over-Month Change",
+   "channel": "PM Techhub",
+   "minutes": 3.8,
+   "views": 3,
+   "found_by": [
+    "SQL LAG LEAD window function examples month over month"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  },
+  {
+   "video_id": "Uxv2_C1Eh7I",
+   "title": "SQL Window Frames Explained! 🔥 | ROWS BETWEEN, PRECEDING & CURRENT ROW | Real SQL Problem",
+   "channel": "The Data Dose",
+   "minutes": 8.3,
+   "views": 13,
+   "found_by": [
+    "SQL running total window function ROWS BETWEEN frame explained"
+   ],
+   "transcript_lang": null,
+   "transcript_generated": null,
+   "transcript_error": "skipped: YouTube is blocking transcript requests from this IP"
+  }
+ ],
+ "assessments": {
+  "Ww71knvhQ-s": {
+   "spoken_language": "en",
+   "summary": "The transcript is unavailable, so this assessment rests only on the chapter list and description. The video appears to introduce SQL window functions: OVER with PARTITION BY and ORDER BY, ROW_NUMBER, RANK, DENSE_RANK, LEAD and LAG, plus aggregates such as MIN, MAX, SUM, COUNT and AVG used as window functions. Whether it goes into window frames or running totals, or applies these to self-join rewrites, cannot be confirmed.",
+   "topics_covered": [
+    "window functions syntax",
+    "over and partition by",
+    "row_number",
+    "rank and dense_rank",
+    "lead and lag",
+    "aggregates as window functions"
+   ],
+   "level": "intermediate",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Partition By clause is used to specify the column based on which different windows needs to be created."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "We go through the syntax of using rank, dense_rank, row_number, lead, lag and max functions as window function."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Also, we see how to use SQL Aggregate functions like MIN, MAX, SUM, COUNT, AVG as window function."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 93,
+     "topic": "intro"
+    },
+    {
+     "start_s": 93,
+     "end_s": 196,
+     "topic": "understanding aggregate functions"
+    },
+    {
+     "start_s": 196,
+     "end_s": 393,
+     "topic": "window function query syntax"
+    },
+    {
+     "start_s": 393,
+     "end_s": 717,
+     "topic": "row_number"
+    },
+    {
+     "start_s": 717,
+     "end_s": 943,
+     "topic": "rank"
+    },
+    {
+     "start_s": 943,
+     "end_s": 1030,
+     "topic": "dense_rank"
+    },
+    {
+     "start_s": 1030,
+     "end_s": 1079,
+     "topic": "rank vs dense_rank vs row_number"
+    },
+    {
+     "start_s": 1079,
+     "end_s": 1495,
+     "topic": "lead and lag"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "Ww71knvhQ-s",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "rIcB4zMYMas": {
+   "spoken_language": "en",
+   "summary": "The transcript is unavailable, so this assessment rests only on the chapter list and description. The video appears to be a step-by-step window function walkthrough using a small baby_names table, covering OVER, ORDER BY, ROW_NUMBER, RANK, DENSE_RANK, PARTITION BY and filtering with window functions in a subquery. It does not appear to cover LAG/LEAD, running totals with frames, or rewriting self-joins.",
+   "topics_covered": [
+    "window function syntax",
+    "over clause",
+    "order by in window",
+    "row_number",
+    "rank vs dense_rank",
+    "partition by",
+    "window function in subquery"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "SQL Pocket Guide author Alice Zhao breaks down each part of a window function, step-by-step."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "INSERT INTO baby_names (Gender, Name, Total) VALUES ('Girl', 'Ava', 95), ('Girl', 'Emma', 106), ('Boy', 'Ethan', 115)"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 81,
+     "topic": "introduction to window functions and the sample table"
+    },
+    {
+     "start_s": 81,
+     "end_s": 155,
+     "topic": "basic window function syntax with ORDER BY and OVER"
+    },
+    {
+     "start_s": 155,
+     "end_s": 291,
+     "topic": "exploring window functions and advanced examples"
+    },
+    {
+     "start_s": 291,
+     "end_s": 339,
+     "topic": "modifying windows with PARTITION BY"
+    },
+    {
+     "start_s": 339,
+     "end_s": 472,
+     "topic": "recap and filtering with window functions in subqueries"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "rIcB4zMYMas",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "S1do1EeA7ng": {
+   "spoken_language": "hi",
+   "summary": "Transcript unavailable, so this assessment rests only on the chapter list and description. The chapters suggest a Hindi-language walkthrough of window function syntax, terms, types, and examples using aggregate, ranking, and analytic (LEAD/LAG) functions, ending with an assignment. What is actually taught in depth cannot be verified.",
+   "topics_covered": [
+    "window functions overview",
+    "over clause",
+    "partition by",
+    "ranking functions",
+    "lead and lag",
+    "aggregate window example"
+   ],
+   "level": "intermediate",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 669,
+     "text": "Window Function Example Using Ranking Function"
+    },
+    {
+     "id": "q2",
+     "t": 86,
+     "text": "Window Function Syntax"
+    },
+    {
+     "id": "q3",
+     "t": 1160,
+     "text": "Window Function Assignment"
+    },
+    {
+     "id": "q4",
+     "t": 0,
+     "text": "over clause, partition by clause, ranking function, analytic function, lead and lag function in sql"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 21,
+     "topic": "intro"
+    },
+    {
+     "start_s": 21,
+     "end_s": 86,
+     "topic": "window function concept"
+    },
+    {
+     "start_s": 86,
+     "end_s": 170,
+     "topic": "window function syntax"
+    },
+    {
+     "start_s": 170,
+     "end_s": 259,
+     "topic": "window function terms"
+    },
+    {
+     "start_s": 259,
+     "end_s": 364,
+     "topic": "window function types"
+    },
+    {
+     "start_s": 364,
+     "end_s": 669,
+     "topic": "example using aggregate functions"
+    },
+    {
+     "start_s": 669,
+     "end_s": 984,
+     "topic": "example using ranking functions"
+    },
+    {
+     "start_s": 984,
+     "end_s": 1160,
+     "topic": "example using analytic functions (lead/lag)"
+    },
+    {
+     "start_s": 1160,
+     "end_s": 1281,
+     "topic": "assignment"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "S1do1EeA7ng",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "o666k19mZwE": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the chapter list and description. The chapters suggest a visual explainer on window functions covering OVER, PARTITION BY, ORDER BY and frame clauses, with a comparison to GROUP BY. Nothing in the metadata shows ranking functions, LAG/LEAD, or rewriting self-joins in PostgreSQL.",
+   "topics_covered": [
+    "window functions",
+    "window vs group by",
+    "partition by",
+    "order by",
+    "window frame"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "too_basic_for_learner"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Visually explained how SQL window functions use PARTITION BY, ORDER BY, and FRAME to analyze data across rows."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "0:00 intro 0:21 Window vs Group By 5:06 Why We Need Window Functions"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 760,
+     "topic": "intro, window vs group by, why window functions are needed"
+    },
+    {
+     "start_s": 760,
+     "end_s": 1675,
+     "topic": "window syntax and partition by clause"
+    },
+    {
+     "start_s": 1675,
+     "end_s": 1933,
+     "topic": "order by clause"
+    },
+    {
+     "start_s": 1933,
+     "end_s": 2799,
+     "topic": "frame clause"
+    },
+    {
+     "start_s": 2799,
+     "end_s": 3439,
+     "topic": "4 rules of window and summary"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "o666k19mZwE",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "MnDqhGAcRug": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video description, which lists window function topics such as OVER(), PARTITION BY, ROW_NUMBER, RANK, DENSE_RANK, LAG and LEAD. The description does not show how these are taught, and it does not mention running totals, window frames or rewriting self-joins. Treat this as an unverified candidate.",
+   "topics_covered": [
+    "over clause",
+    "partition by",
+    "row_number",
+    "rank",
+    "dense_rank",
+    "lag",
+    "lead",
+    "aggregate vs window functions"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "We have covered important concepts like OVER(), PARTITION BY, ORDER BY, ROW_NUMBER(), RANK(), DENSE_RANK(), LAG(), LEAD() along with real-world examples"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Window functions are one of the most powerful features in SQL, widely used in data analysis, reporting, and interviews."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Difference between Aggregate & Window Functions"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1774,
+     "topic": "unknown: transcript unavailable; description lists window function topics only"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "MnDqhGAcRug",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "Wh9yXS9sgio": {
+   "spoken_language": "hi",
+   "summary": "No transcript is available, so this assessment rests only on the video description. The description says the channel teaches programming in Hindi and links to general JavaScript, React, backend and Python series, with no mention of SQL or window functions. Nothing in the available text shows that window functions are taught.",
+   "topics_covered": [
+    "channel overview",
+    "javascript series links",
+    "reactjs series links",
+    "python series links"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "javascript",
+    "reactjs",
+    "python"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "wrong_language",
+    "off_topic"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Now you can learn best of programming concepts with industry standard practical guide in Hindi language."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "All source code is available at my Github account:"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 2186,
+     "topic": "description only, no transcript available; no SQL or window function content visible"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "Wh9yXS9sgio",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "GzRyOsQsugk": {
+   "spoken_language": "en",
+   "summary": "The transcript is unavailable, so this assessment relies only on the chapter list and description. The video appears to cover running totals, rolling totals, moving averages and rolling averages in SQL, likely as a concept explainer. Nothing can be confirmed about the actual SQL syntax, window functions, or whether hands-on work is shown.",
+   "topics_covered": [
+    "running total",
+    "rolling total",
+    "moving average",
+    "rolling average"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Learn how to calculate Running Totals and Moving Averages in SQL, essential techniques for real data analysis."
+    },
+    {
+     "id": "q2",
+     "t": 79,
+     "text": "SQL Running Total & Rolling Total"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 79,
+     "topic": "intro"
+    },
+    {
+     "start_s": 79,
+     "end_s": 570,
+     "topic": "running total and rolling total"
+    },
+    {
+     "start_s": 570,
+     "end_s": 823,
+     "topic": "moving average"
+    },
+    {
+     "start_s": 823,
+     "end_s": 1001,
+     "topic": "rolling average"
+    },
+    {
+     "start_s": 1001,
+     "end_s": 1147,
+     "topic": "summary"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "GzRyOsQsugk",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "OsMV0p8_3mk": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the video description and chapter list. The description promises a step-by-step explanation of LAG() and LEAD() with OVER(), PARTITION BY and ORDER BY, using sales and salary examples, but the actual teaching cannot be verified.",
+   "topics_covered": [
+    "lag",
+    "lead",
+    "over clause",
+    "partition by",
+    "order by",
+    "previous and next row comparison"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql",
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Want to compare current sales with previous month sales? Or find the next month's sales using SQL?"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "I'll explain LAG() and LEAD() step by step with practical SQL queries, datasets, and outputs"
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Compare current and previous month sales."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 763,
+     "topic": "LAG and LEAD window functions (known from description only; no transcript)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "OsMV0p8_3mk",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "2poJ0Gv1Vzs": {
+   "spoken_language": "ml",
+   "summary": "The transcript is not available, so this assessment rests only on the title and a two-word hashtag description. The title suggests a Malayalam SQL tutorial covering a replace function and self joins, but the actual teaching content cannot be verified. Nothing here shows window functions, so the video cannot be relied on for this plan.",
+   "topics_covered": [
+    "self join",
+    "replace function"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 215,
+     "topic": "unknown, no transcript available"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "2poJ0Gv1Vzs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "zbL0ID7c7ls": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the chapter list and video description, which describe a Snowflake walkthrough of window frames: ROWS BETWEEN, running totals, trailing sums, centred averages, remaining totals and partitions. Whether the video actually teaches these in depth cannot be confirmed from the material provided.",
+   "topics_covered": [
+    "window frames",
+    "rows between",
+    "running totals",
+    "trailing sums",
+    "centred averages",
+    "remaining total",
+    "partitions"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "snowflake"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Window frames in Snowflake decide which rows a window function is allowed to look at for the row it is on."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Watch the frame grow and slide by measuring it with COUNT(*), MIN and MAX"
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "We build running totals, trailing sums, centred averages and a remaining total."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 14,
+     "topic": "intro"
+    },
+    {
+     "start_s": 14,
+     "end_s": 90,
+     "topic": "watching the frame move"
+    },
+    {
+     "start_s": 90,
+     "end_s": 159,
+     "topic": "frame with fixed size (trailing sum, centred average)"
+    },
+    {
+     "start_s": 159,
+     "end_s": 224,
+     "topic": "remaining total"
+    },
+    {
+     "start_s": 224,
+     "end_s": 284,
+     "topic": "empty and reversed frames"
+    },
+    {
+     "start_s": 284,
+     "end_s": 351,
+     "topic": "partitions and cumulative revenue"
+    },
+    {
+     "start_s": 351,
+     "end_s": 388,
+     "topic": "recap"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "zbL0ID7c7ls",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "6iKWzyqyms8": {
+   "spoken_language": "en",
+   "summary": "Based only on the video description, this session is an interview-prep overview of SQL joins and window functions, listing PARTITION BY, ROW_NUMBER, RANK, DENSE_RANK, LAG and LEAD. No transcript was available, so it is unverified whether any of these are taught with hands-on examples or only named. It is unlikely to cover running totals with window frames or rewriting self-joins with window functions.",
+   "topics_covered": [
+    "window functions",
+    "partition by",
+    "row_number",
+    "rank",
+    "dense_rank",
+    "lag",
+    "lead",
+    "order by in window functions"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this session, we will cover two of the most important SQL topics asked in Data Engineering interviews: Joins and Window Functions."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "These concepts are extensively used in real-world ETL pipelines, reporting systems, and data analytics projects."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Joins and Window Functions are among the most frequently asked SQL topics in Data Engineering interviews"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 2547,
+     "topic": "description only, no transcript available: listed topics include joins, window functions, ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, PARTITION BY"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "6iKWzyqyms8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "NNpFHQl_GT0": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video's title and channel description. The title suggests a short interview-style comparison of RANK() and DENSE_RANK(), a narrow part of the window functions topic, but nothing confirms what is actually taught.",
+   "topics_covered": [
+    "rank vs dense_rank"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "MASTER COMPUTER SCIENCE | INTERVIEWS | EXAMS"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Structured Query Language (SQL) playlist linked in the channel description"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 459,
+     "topic": "unknown; no transcript available, title suggests rank vs dense_rank interview questions"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "NNpFHQl_GT0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1"
+   ]
+  },
+  "Jag6Eb2i-bQ": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the chapter list and description. The video appears to be a concept explainer covering LEAD, LAG, FIRST_VALUE and LAST_VALUE, with examples on month-over-month and customer retention analysis and lowest/highest sales per product. It does not show running totals, ROW_NUMBER/RANK or window frames, so it covers only part of the plan.",
+   "topics_covered": [
+    "lead",
+    "lag",
+    "first_value",
+    "last_value",
+    "month-over-month analysis",
+    "customer retention analysis"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Visually explained how SQL value window functions like LEAD, LAG, FIRST_VALUE, and LAST_VALUE compare data across rows."
+    },
+    {
+     "id": "q2",
+     "t": 1250,
+     "text": "LEAD & LAG: Customer Retention Analysis"
+    },
+    {
+     "id": "q3",
+     "t": 2105,
+     "text": "Lowest & Highest Sales per Product"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 752,
+     "topic": "intro and what window value functions are"
+    },
+    {
+     "start_s": 752,
+     "end_s": 1250,
+     "topic": "lead and lag with month-over-month analysis"
+    },
+    {
+     "start_s": 1250,
+     "end_s": 1776,
+     "topic": "lead and lag for customer retention analysis"
+    },
+    {
+     "start_s": 1776,
+     "end_s": 2105,
+     "topic": "first_value and last_value"
+    },
+    {
+     "start_s": 2105,
+     "end_s": 2702,
+     "topic": "lowest and highest sales per product, then summary"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "Jag6Eb2i-bQ",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "YfDyHvH6sdc": {
+   "spoken_language": "en",
+   "summary": "The transcript is unavailable, so this assessment rests only on the chapter list and description. The video appears to explain rolling and running calculations in SQL, with a conceptual section followed by finding a rolling sum. Whether it shows window frames, PARTITION BY, or PostgreSQL in practice cannot be verified.",
+   "topics_covered": [
+    "rolling sum",
+    "running totals",
+    "rolling aggregates"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video we will learn how to find running/rolling calculations in SQL."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "This is very important concept and very frequently used in analytical projects."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 25,
+     "topic": "intro to rolling values"
+    },
+    {
+     "start_s": 25,
+     "end_s": 270,
+     "topic": "what rolling values are (concept explanation)"
+    },
+    {
+     "start_s": 270,
+     "end_s": 318,
+     "topic": "finding the rolling sum"
+    },
+    {
+     "start_s": 318,
+     "end_s": 617,
+     "topic": "rolling sum continued (no chapter detail available)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "YfDyHvH6sdc",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "D5MV7epXRnI": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the video's description. The description says the video covers the SQL REPLACE string function, how it differs from UPDATE, and examples across several database systems. Nothing in the material touches window functions, PARTITION BY, ranking, LAG/LEAD, or window frames.",
+   "topics_covered": [
+    "sql replace statement",
+    "string functions",
+    "replace vs update"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "mysql",
+    "sql server",
+    "postgresql",
+    "oracle"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Learn everything you need to know about the SQL REPLACE statement in this comprehensive tutorial designed for both IT students and database professionals."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "We'll explore how REPLACE differs from UPDATE statements, when to use each option, and performance considerations across different database management systems"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 312,
+     "topic": "description only, no transcript: SQL REPLACE string function"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "D5MV7epXRnI",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "CBnlLY67cbc": {
+   "spoken_language": "hi",
+   "summary": "The transcript is not available, so this assessment rests only on the title and the chapter list in the description. The title suggests a PostgreSQL tutorial (Part 10 of a series) on LAG, LEAD, ROW_NUMBER, RANK and DENSE_RANK, but the actual teaching content cannot be verified. The channel and related links suggest Hindi-language instruction, so the spoken language is probably Hindi, not English.",
+   "topics_covered": [
+    "window functions",
+    "lag",
+    "lead",
+    "row_number",
+    "rank",
+    "dense_rank"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "PostgreSQL Window Functions Tutorial Database | Part 10 | LAG, LEAD ROW_NUMBER, RANK, DENSE_RANK"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Always looking for suggestions on what video to make next you can type class and chapter."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1791,
+     "topic": "introduction chapter only; no transcript available to confirm the content of the video"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "CBnlLY67cbc",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "speKIs60TRs": {
+   "spoken_language": "en",
+   "summary": "Only the video description was available, with no transcript, so this assessment is cautious. The description says the video introduces LEAD and LAG analytical functions for comparing the current row with previous or next rows, but it does not show how much hands-on work is included.",
+   "topics_covered": [
+    "lag",
+    "lead",
+    "previous and next row comparison",
+    "analytical functions"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "these functions are used when you need to compare current row with another previous or next row"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "In this video we will learn lead/lag analytical functions."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 634,
+     "topic": "lead/lag overview (from description only, no transcript)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "speKIs60TRs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "xLAmRI_Iky8": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the video's chapter list and description. The chapters and description suggest a walkthrough of the ROWS BETWEEN window frame clause in SQL, using a sample dataset and covering customizing row ranges and unbounded ranges. Whether it teaches the material hands-on, and how deeply, cannot be verified.",
+   "topics_covered": [
+    "rows between",
+    "window frames",
+    "unbounded range",
+    "sql window functions"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql server",
+    "excel"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video i have covered rows between concept in the advanced sql which comes in window functions."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Sql one of the most important language asked in most of the analytics interviews"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 53,
+     "topic": "introduction to rows between"
+    },
+    {
+     "start_s": 53,
+     "end_s": 133,
+     "topic": "dataset and problem setup"
+    },
+    {
+     "start_s": 133,
+     "end_s": 305,
+     "topic": "rows between concept and syntax"
+    },
+    {
+     "start_s": 305,
+     "end_s": 567,
+     "topic": "implementing query, range logic and verifying results"
+    },
+    {
+     "start_s": 567,
+     "end_s": 807,
+     "topic": "customizing row ranges, unbounded range and conclusion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "xLAmRI_Iky8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "4ZoHY4RT1Fo": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment relies only on the video's description and chapter list. The video appears to cover replacing NULL values in SQL Server using ISNULL, CASE and COALESCE, with a left outer self join example. It does not appear to cover window functions, so it is unlikely to help with the learner's goal.",
+   "topics_covered": [
+    "replace null",
+    "isnull",
+    "case statement",
+    "coalesce",
+    "left outer self join"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql server"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video we will learn about the different ways to replace NULL values in sql server."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "1. ISNULL() function 2. CASE statement 3. COALESCE() function"
+    },
+    {
+     "id": "q3",
+     "t": 130,
+     "text": "Write the Left Outer Self Join in Query"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 130,
+     "topic": "intro and overview of null replacement (chapter 1)"
+    },
+    {
+     "start_s": 130,
+     "end_s": 244,
+     "topic": "writing the left outer self join query"
+    },
+    {
+     "start_s": 244,
+     "end_s": 539,
+     "topic": "isnull function"
+    },
+    {
+     "start_s": 539,
+     "end_s": 702,
+     "topic": "case statement"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 1
+    }
+   ],
+   "video_id": "4ZoHY4RT1Fo",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "fpPIOiGFh38": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video description. The description says the video covers SQL window functions for ranking, running totals and averages within categories, using ROW_NUMBER() and DENSE_RANK() with partitioning and ordering. It does not show whether the teaching is hands-on or covers LAG/LEAD, frames, or self-join rewrites.",
+   "topics_covered": [
+    "window functions",
+    "partition by",
+    "row_number",
+    "dense_rank",
+    "ordering in over",
+    "running totals"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql",
+    "row_number()",
+    "dense_rank()"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video covers SQL window functions, showing how to perform calculations like ranking, running totals, and averages on rows within specified categories."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "It demonstrates practical examples using ROW_NUMBER() and DENSE_RANK(), along with partitioning and ordering data."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Viewers are encouraged to practice and take an exam for certification."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 793,
+     "topic": "Unknown: transcript unavailable, description only mentions window functions, ROW_NUMBER, DENSE_RANK, partitioning and ordering"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "fpPIOiGFh38",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "Hf9O8oNnHg8": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video description. The description advertises an introductory tour of SQL scalar functions (string, numeric, date) and aggregates with GROUP BY, with no mention of window functions, PARTITION BY, ranking, LAG/LEAD or frames. Nothing in the plan's sub-topics can be confirmed as taught, so the fit is poor.",
+   "topics_covered": [
+    "string functions",
+    "numeric functions",
+    "date functions",
+    "aggregate functions"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "mysql",
+    "sql server",
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic",
+    "too_basic_for_learner"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "This video covers four essential categories of SQL functions that every database developer must know"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Learn through practical examples using real-world database scenarios with employees and products tables."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "All examples include clear explanations and can be applied to MySQL, SQL Server, PostgreSQL, and other major database systems."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 2489,
+     "topic": "unknown; transcript unavailable, description lists string, numeric, date and aggregate functions"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "Hf9O8oNnHg8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "5xOxNWJMjwA": {
+   "spoken_language": "en",
+   "summary": "The transcript is unavailable, so this assessment rests only on the title and description. The video appears to solve a month-over-month revenue growth interview question on an e-commerce database, and the title mentions LAG() and a growth formula. Whether it teaches window functions in depth or walks through a self-join rewrite cannot be verified.",
+   "topics_covered": [
+    "month over month growth",
+    "lag",
+    "revenue growth formula",
+    "sql interview question"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "mysql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video, we solve a real-world SQL interview coding question"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Find the Month Over Month (MOM) Revenue growth rate in the e-commerce."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 807,
+     "topic": "unavailable transcript; description only (month over month revenue growth interview question)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "5xOxNWJMjwA",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "_2trRFNmB_A": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment relies only on the description and chapter list. The title promises SQL window functions, but the description outlines a video about transactions: ACID properties, BEGIN, COMMIT and ROLLBACK, and transaction control in MySQL, PostgreSQL, Oracle and SQL Server. Nothing in the available text shows window functions being taught.",
+   "topics_covered": [
+    "transactions",
+    "acid properties",
+    "begin commit rollback"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "mysql",
+    "postgresql",
+    "oracle",
+    "sql server"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video, we will learn all about SQL Window Function"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "How to use BEGIN, COMMIT, and ROLLBACK statements"
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Practical examples of transaction control in databases"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 3043,
+     "topic": "description only: transactions outline, no transcript to confirm window function content"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "_2trRFNmB_A",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "xMWEVFC4FOk": {
+   "spoken_language": "en",
+   "summary": "The transcript is unavailable, so this assessment relies only on the video description, which says the video introduces SQL analytical functions RANK, DENSE_RANK and ROW_NUMBER. Nothing about how they are taught, which examples are used, or whether any PostgreSQL or hands-on work is shown can be verified.",
+   "topics_covered": [
+    "rank",
+    "dense_rank",
+    "row_number",
+    "analytical functions"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video we will understand very important concept of SQL analytical functions RANK, DENSE_RANK, ROW_NUMBER."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 583,
+     "topic": "ranking functions (from description only, transcript unavailable)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "xMWEVFC4FOk",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1"
+   ]
+  },
+  "OHHzOwdIvB4": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video description, which says the video explains SQL views and how to create or replace them. The description links to related joins and stored-procedure videos and mentions a window-function interview question, but nothing shows that window functions are taught.",
+   "topics_covered": [
+    "sql views",
+    "create or replace view",
+    "window function interview question"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video, SQL View is explained in a way you can never forget."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Scenario Based Interview Question on Window function"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 554,
+     "topic": "sql views (from description only, no transcript)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "OHHzOwdIvB4",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "gFvnKtQbKl4": {
+   "spoken_language": "hi",
+   "summary": "Based only on the description, since no transcript is available, this Hindi-language Day 117 video appears to explain LAG() and LEAD() window functions for accessing previous and next rows, with OVER, ORDER BY and PARTITION BY listed as chapters. The shown examples are short single-query SELECT statements on an Employees table. Teaching depth and hands-on practice cannot be verified.",
+   "topics_covered": [
+    "lag()",
+    "lead()",
+    "over clause",
+    "order by in window",
+    "partition by",
+    "previous and next row access"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "wrong_language",
+    "too_basic_for_learner"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "These functions help you access values from the previous or next row without using complex self-joins."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "LAG() helps you access the previous row, while LEAD() helps you access the next row."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "SELECT EmployeeID, Name, Salary, LAG(Salary) OVER ( ORDER BY EmployeeID ) AS PreviousSalary FROM Employees;"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 742,
+     "topic": "LAG and LEAD overview from description only; transcript unavailable"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 1
+    }
+   ],
+   "video_id": "gFvnKtQbKl4",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "u7WJD3nvBgw": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video description. The description says the video covers SQL aggregate functions with GROUP BY and introduces window functions with OVER() and PARTITION BY, using SQL Server Management Studio examples. It does not show ROW_NUMBER, RANK, LAG/LEAD, window frames or PostgreSQL, so fit for this learner is uncertain.",
+   "topics_covered": [
+    "aggregate functions",
+    "group by",
+    "over clause",
+    "partition by",
+    "window functions basics"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql server management studio",
+    "ssms",
+    "sql server"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "showing how to perform calculations across related rows without collapsing the result into a single row"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Practical examples demonstrate customer, sales, banking, and transaction analysis use cases for real-world SQL projects."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 5366,
+     "topic": "description only: aggregates with GROUP BY, then OVER() and PARTITION BY (no transcript)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "u7WJD3nvBgw",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "N0IB9qCcQJY": {
+   "spoken_language": "en",
+   "summary": "Only the video description and chapter list are available, with no transcript. The description says the video solves the Nth highest salary interview question and compares ROW_NUMBER, RANK and DENSE_RANK, but the actual teaching cannot be verified from the available text.",
+   "topics_covered": [
+    "nth highest salary",
+    "row_number",
+    "rank",
+    "dense_rank",
+    "tied values"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video, we'll solve one of the most commonly asked SQL interview questions"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Assigns the same rank to tied values and skips subsequent ranking numbers"
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "If the question asks for the Nth highest distinct salary, DENSE_RANK() is generally the right choice."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 665,
+     "topic": "description overview of nth highest salary and ranking functions (no transcript available)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "N0IB9qCcQJY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "sovaZQx-HTs": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the chapter list and description. The video appears to be a quiz-style walkthrough of 15 SQL interview questions, mostly basics such as ORDER BY, LIMIT, TRUNCATE, constraints and UNION, with only a few window-function items (DENSE_RANK, LAG) and a self-join question. Window frames and running totals are not mentioned.",
+   "topics_covered": [
+    "order by",
+    "limit",
+    "truncate",
+    "constraints",
+    "union",
+    "dense_rank",
+    "lag",
+    "dynamic pivot",
+    "recursive cte"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "dense_rank",
+    "lag",
+    "lead",
+    "recursive cte",
+    "union"
+   ],
+   "red_flags": [
+    "poor_transcript",
+    "off_topic",
+    "too_basic_for_learner"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "find the second highest salary using DENSE_RANK"
+    },
+    {
+     "id": "q2",
+     "t": 711,
+     "text": "Q08. You need to find the second highest salary in an employee table. How would you approach it?"
+    },
+    {
+     "id": "q3",
+     "t": 1865,
+     "text": "Q14. You need to calculate each employee's salary growth compared to the previous year. Which window function combo would you use?"
+    },
+    {
+     "id": "q4",
+     "t": 0,
+     "text": "Recursive CTEs to generate date series without a calendar table"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 711,
+     "topic": "Q01-Q07: ORDER BY, LIMIT, TRUNCATE, constraints, UNION (basics)"
+    },
+    {
+     "start_s": 711,
+     "end_s": 1325,
+     "topic": "Q08-Q11: second highest salary with DENSE_RANK, LEFT JOIN, GROUP BY, self-join"
+    },
+    {
+     "start_s": 1325,
+     "end_s": 1462,
+     "topic": "Q12: HAVING with company average salary comparison"
+    },
+    {
+     "start_s": 1462,
+     "end_s": 1865,
+     "topic": "Q13: dynamic PIVOT with unknown category names"
+    },
+    {
+     "start_s": 1865,
+     "end_s": 2009,
+     "topic": "Q14: year-over-year salary growth with LAG"
+    },
+    {
+     "start_s": 2009,
+     "end_s": 2169,
+     "topic": "Q15: date series with recursive CTE"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 1
+    }
+   ],
+   "video_id": "sovaZQx-HTs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "Vq9H8_wMn0k": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the chapter list and description. Based on those, the video appears to explain ROWS BETWEEN versus RANGE BETWEEN window frames with PostgreSQL examples, a running total case, and date-based intervals. Whether it is taught hands-on or in depth cannot be confirmed.",
+   "topics_covered": [
+    "rows between",
+    "range between",
+    "window frames",
+    "running totals",
+    "date interval ranges"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "postgresql",
+    "sql server"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Confused between ROWS BETWEEN and RANGE BETWEEN in SQL Window Functions?"
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "This video explains the real difference with simple examples, same date scenarios, PostgreSQL use cases"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 64,
+     "topic": "introduction to sql windowing"
+    },
+    {
+     "start_s": 64,
+     "end_s": 167,
+     "topic": "setting up the environment"
+    },
+    {
+     "start_s": 167,
+     "end_s": 312,
+     "topic": "rows between"
+    },
+    {
+     "start_s": 312,
+     "end_s": 506,
+     "topic": "range between"
+    },
+    {
+     "start_s": 506,
+     "end_s": 868,
+     "topic": "date-based rolling calculations and range intervals"
+    },
+    {
+     "start_s": 868,
+     "end_s": 906,
+     "topic": "closing remarks"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "Vq9H8_wMn0k",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "UkFjJ0Wvtjs": {
+   "spoken_language": "en",
+   "summary": "No transcript is available, so this assessment rests only on the video description and chapter list. The description promises an overview of window functions (GROUP BY vs window functions, ROW_NUMBER, RANK, LEAD, LAG) and replacing self-joins with windowed operations in PostgreSQL, but the actual teaching depth cannot be verified.",
+   "topics_covered": [
+    "window functions overview",
+    "row_number",
+    "rank",
+    "lead",
+    "lag",
+    "group by vs window functions",
+    "replacing self-joins"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "We’ll show you how to identify bottlenecks in your current SQL and replace them with high-performance windowed operations."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "The difference between GROUP BY and window functions. How to use essential window functions like ROW_NUMBER(), RANK(), LEAD(), and LAG()."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 345,
+     "topic": "description only: window functions overview and promised self-join replacement (no transcript available)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 1
+    }
+   ],
+   "video_id": "UkFjJ0Wvtjs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "pbwEhL_RP_g": {
+   "spoken_language": "hi",
+   "summary": "No transcript is available, so this assessment rests only on the title, chapter list and description. The title and description point to a PostgreSQL window functions tutorial covering ROW_NUMBER, RANK, DENSE_RANK, LAG and LEAD, but the actual teaching content cannot be verified.",
+   "topics_covered": [
+    "row_number",
+    "rank",
+    "dense_rank",
+    "lag",
+    "lead"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Sorry, the video output is not very clear. Please change the video quality to 1080p."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Thanks for watching and thank you for all your support!!"
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Always looking for suggestions on what video to make next you can type class and chapter."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1889,
+     "topic": "introduction (chapter list only; no transcript to confirm the rest)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "pbwEhL_RP_g",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "5Ighj_2PGV0": {
+   "spoken_language": "en",
+   "summary": "Transcript unavailable, so this assessment relies only on the chapter list and description. The video appears to cover SQL aggregations, including simple sum, group by, window functions, partition by, running totals, rolling sums and lag/lead. Actual depth and teaching quality cannot be verified.",
+   "topics_covered": [
+    "aggregations",
+    "group by",
+    "window functions",
+    "partition by",
+    "running totals",
+    "rolling sums",
+    "lag and lead"
+   ],
+   "level": "intermediate",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql server"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this video we will discuss all flavors of aggregation in SQL."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Do watch this video till end to master SQL aggregation."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 97,
+     "topic": "introduction to aggregation"
+    },
+    {
+     "start_s": 97,
+     "end_s": 201,
+     "topic": "simple sum query and group by"
+    },
+    {
+     "start_s": 201,
+     "end_s": 310,
+     "topic": "advanced window functions"
+    },
+    {
+     "start_s": 310,
+     "end_s": 901,
+     "topic": "partition by, running totals and rolling sums"
+    },
+    {
+     "start_s": 901,
+     "end_s": 1063,
+     "topic": "lag and lead functions"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "5Ighj_2PGV0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "SnHuzYstzHw": {
+   "spoken_language": "hi",
+   "summary": "No transcript was available, so this assessment rests only on the title and description. The description says the video covers window functions in SQL, including the difference between RANK and DENSE_RANK, ROW_NUMBER, NTILE, OVER and PARTITION BY. It is likely a Hindi-language SQL Server lesson, and it does not show LAG/LEAD, running-total frames, or PostgreSQL self-join rewrites.",
+   "topics_covered": [
+    "window functions",
+    "over clause",
+    "partition by",
+    "row_number",
+    "rank vs dense_rank",
+    "ntile"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sql server"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "This video helps you to understand about window functions in sql."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "What is difference between rank and dense rank."
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Also explains about Row_Number(), Ntile, Over and partition by."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1345,
+     "topic": "unknown, transcript unavailable; description lists window functions, rank vs dense rank, row_number, ntile, over, partition by"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "SnHuzYstzHw",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "-r7DpMSLuDw": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the description and chapter list. The description says the lesson compares each row with the previous or next row for period-over-period changes, using SQLite examples. It does not show how LAG or LEAD is taught, so the depth of the teaching cannot be judged.",
+   "topics_covered": [
+    "lag",
+    "lead",
+    "month over month"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "sqlite"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Compare each row with the previous or next row and calculate period-over-period changes."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Every example runs real SQL on SQLite, with the code on the left and the result on the right."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 228,
+     "topic": "LAG and LEAD row comparison (inferred from description only)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "-r7DpMSLuDw",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "Uxv2_C1Eh7I": {
+   "spoken_language": "en",
+   "summary": "No transcript was available, so this assessment rests only on the video description and chapter list. The description says the video covers window frames (ROWS BETWEEN, PRECEDING, FOLLOWING, CURRENT ROW) and a rolling SUM in PostgreSQL, and it appears aimed at beginners. Actual teaching depth and hands-on work cannot be verified.",
+   "topics_covered": [
+    "window frames",
+    "rows between",
+    "preceding and following",
+    "current row",
+    "rolling sum",
+    "window functions vs window frames"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "postgresql"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "In this tutorial, we'll explore how SQL Window Frames work and how to use them to calculate rolling totals and analyze data over a specific set of rows."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Calculating Rolling SUM using Window Frames"
+    },
+    {
+     "id": "q3",
+     "t": 0,
+     "text": "Solving a practical SQL problem using PostgreSQL"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 500,
+     "topic": "unverified: description lists window frames, ROWS BETWEEN and rolling SUM; no transcript to confirm the content"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "window_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "ranking_functions",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "lag_lead",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "running_totals_frames",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "rewrite_self_joins",
+     "score": 0
+    }
+   ],
+   "video_id": "Uxv2_C1Eh7I",
+   "evidence_source": "metadata",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  }
+ },
+ "dup_clusters": [
+  {
+   "members": [
+    "Ww71knvhQ-s",
+    "fpPIOiGFh38"
+   ],
+   "shared_topics": [
+    "aggregates as window functions",
+    "over and partition by",
+    "rank and dense_rank",
+    "row_number",
+    "window functions syntax"
+   ]
+  },
+  {
+   "members": [
+    "MnDqhGAcRug",
+    "SnHuzYstzHw"
+   ],
+   "shared_topics": [
+    "aggregate vs window functions",
+    "dense_rank",
+    "over clause",
+    "partition by",
+    "rank",
+    "row_number"
+   ]
+  },
+  {
+   "members": [
+    "6iKWzyqyms8",
+    "CBnlLY67cbc",
+    "UkFjJ0Wvtjs",
+    "pbwEhL_RP_g"
+   ],
+   "shared_topics": [
+    "dense_rank",
+    "lag",
+    "lead",
+    "order by in window functions",
+    "rank",
+    "row_number",
+    "window functions"
+   ]
+  }
+ ],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "rIcB4zMYMas",
+    "covers": [
+     "window_basics",
+     "ranking_functions"
+    ],
+    "reason": "A step-by-step breakdown of each part of a window function on a small PostgreSQL baby_names table. It covers OVER, ORDER BY, PARTITION BY, ROW_NUMBER, RANK and DENSE_RANK, and ends with filtering window results in a subquery. That last pattern is the top-N-per-group replacement for a self-join.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.7,
+    "confidence_note": "The chapters and sample data match the slot well and use PostgreSQL. There is no transcript, so the teaching depth is inferred."
+   },
+   {
+    "video_id": "-r7DpMSLuDw",
+    "covers": [
+     "lag_lead"
+    ],
+    "reason": "A short lesson on LAG and LEAD that compares each row with the previous or next row to compute period-over-period changes. That is the classic previous-row self-join you want to replace. It runs real SQL with the code shown next to the result.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.55,
+    "confidence_note": "It is very short and the evidence comes from the description only. The examples use SQLite, but LAG/LEAD syntax is the same in PostgreSQL."
+   },
+   {
+    "video_id": "Uxv2_C1Eh7I",
+    "covers": [
+     "running_totals_frames"
+    ],
+    "reason": "Explains window frames (ROWS BETWEEN, PRECEDING, FOLLOWING, CURRENT ROW) and calculates a rolling SUM. It then solves a practical problem in PostgreSQL, which covers running totals you may currently build with self-joins.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.6,
+    "confidence_note": "The topic and dialect fit well. Evidence comes from the description only, and it is unclear whether the default frame behavior is explained."
+   },
+   {
+    "video_id": "UkFjJ0Wvtjs",
+    "covers": [
+     "rewrite_self_joins",
+     "window_basics"
+    ],
+    "reason": "A PostgreSQL-focused overview that contrasts GROUP BY with window functions and reviews ROW_NUMBER, RANK, LEAD and LAG. It shows how to identify bottlenecks in existing SQL and replace them with windowed operations, which is the closest match in the pool to rewriting your self-join reports.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "It is the only candidate that explicitly promises the self-join replacement. It is short and its depth is unverified."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "Ww71knvhQ-s",
+    "reason": "It covers the right functions, but as a 25-minute lecture it would eat most of the budget. The short focused videos cover the same ground in PostgreSQL, plus frames and self-join replacement."
+   },
+   {
+    "video_id": "MnDqhGAcRug",
+    "reason": "A beginner-level 30-minute tutorial whose description gives no segment detail. It has no frames or self-join content."
+   },
+   {
+    "video_id": "o666k19mZwE",
+    "reason": "Flagged too basic, and at 57 minutes it is part of a full course, which conflicts with your no-courses constraint."
+   },
+   {
+    "video_id": "Jag6Eb2i-bQ",
+    "reason": "A 45-minute course episode on value functions. The LAG/LEAD part alone (about 16 minutes) would exceed its slot."
+   },
+   {
+    "video_id": "Vq9H8_wMn0k",
+    "reason": "A good PostgreSQL frames video, but at 15 minutes for ROWS vs RANGE it goes deeper than needed. The 8-minute frames pick fits the slot."
+   },
+   {
+    "video_id": "OsMV0p8_3mk",
+    "reason": "A beginner-level LAG/LEAD video that runs 12.7 minutes, too long for the slot. The shorter pick covers the same previous-row comparison."
+   },
+   {
+    "video_id": "zbL0ID7c7ls",
+    "reason": "Covers frames well but in Snowflake. A PostgreSQL frames video was available."
+   },
+   {
+    "video_id": "gFvnKtQbKl4",
+    "reason": "Wrong language (Hindi) and flagged too basic, despite mentioning self-joins."
+   },
+   {
+    "video_id": "5Ighj_2PGV0",
+    "reason": "A SQL Server aggregation overview. It would add another creator only to repeat topics already covered."
+   },
+   {
+    "video_id": "CBnlLY67cbc",
+    "reason": "Probably taught in Hindi, with no visible content detail. It is in the same cluster as the kept PostgreSQL overview."
+   }
+  ],
+  "near_duplicates": [
+   {
+    "kept": "UkFjJ0Wvtjs",
+    "dropped": "6iKWzyqyms8",
+    "shared_topics": [
+     "row_number",
+     "rank",
+     "lag",
+     "lead",
+     "window functions"
+    ],
+    "why_kept": "It focuses on PostgreSQL and explicitly targets replacing self-joins. The other is a 42-minute interview-prep session that also covers joins you already know."
+   },
+   {
+    "kept": "UkFjJ0Wvtjs",
+    "dropped": "CBnlLY67cbc",
+    "shared_topics": [
+     "row_number",
+     "rank",
+     "dense_rank",
+     "lag",
+     "lead"
+    ],
+    "why_kept": "It is in English, short, and covers self-join replacement. The other is probably Hindi, 30 minutes long, and covers only the function list."
+   },
+   {
+    "kept": "UkFjJ0Wvtjs",
+    "dropped": "pbwEhL_RP_g",
+    "shared_topics": [
+     "row_number",
+     "rank",
+     "dense_rank",
+     "lag",
+     "lead"
+    ],
+    "why_kept": "The other is probably Hindi, has a noted poor video quality issue, and does not cover self-join rewriting."
+   }
+  ],
+  "warnings": [
+   "None of the candidates had a transcript; every assessment is based on descriptions and chapters, so the content is unverified.",
+   "The plan uses 25.8 of 30 minutes. The remaining 4.2 minutes were left unused because the alternatives would have added a long lecture fragment or a redundant creator.",
+   "Self-join rewriting has only thin coverage: a 5.8-minute overview. Practice by converting one of your own reports right after watching.",
+   "The LAG/LEAD video uses SQLite. Its syntax matches PostgreSQL for these functions."
+  ]
+ },
+ "fixes": []
+}

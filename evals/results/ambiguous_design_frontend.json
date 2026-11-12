@@ -1,0 +1,1051 @@
+{
+ "persona_id": "ambiguous_design_frontend",
+ "budget": 180,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 11,
+    "total_min": 136.6,
+    "utilisation": 0.76,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 10,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "visual hierarchy": true,
+     "typography": true,
+     "color": true,
+     "spacing and layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.36,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.71,
+    "cost_usd": 0.16847,
+    "latency_s": 78.9,
+    "hard_failures": [],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "OqAdmfRztds",
+    "uwNClNmekGU",
+    "fImTa4daVc8",
+    "9-oefwZ6Z74",
+    "AXpxZMRM1EY",
+    "vvPklRN0Tco",
+    "t7cnk3aQp2c",
+    "wcZ6jSlZqDc",
+    "MlsV3hu84as",
+    "LfkDiDyn6nU",
+    "LfkDiDyn6nU"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is highly customized for a frontend developer who already knows CSS and React. It deliberately skips layout mechanics like Flexbox and Grid, focusing instead on design decisions, CSS variables, and design tokens that appeal to a developer's mindset.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons directly reference the actual content taught in the videos, such as specific redesigns (bike website, flight app) and specific design principles (CRAP, 8-point spacing), perfectly aligning with the reference summaries.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner requested at least one real redesign or critique of an existing UI. The curriculum provides several, including a critique of the Pantone website and a full redesign of a flight booking app.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The progression is logical: it starts with overarching concepts like visual hierarchy and foundational principles, moves systematically through spacing, typography, and color, and finishes with complex, real-world critiques and redesigns.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum includes practical redesigns and critiques, excludes outdated content (explicitly filtering out a 2016 video), and avoids redundant CSS layout tutorials.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The budget uses 137 out of 180 minutes. The curriculum explicitly warns the learner about the unused time and provides a sound justification: avoiding padding with redundant or Figma-heavy content.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped list is thorough and provides excellent, logical reasons for exclusion, such as videos being too focused on design tools (Figma), older than the 2020 constraint, or teaching component APIs rather than actual design theory.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an exceptional curriculum that perfectly bridges the gap between frontend development and UI design, respecting the learner's existing skills while satisfying all strict constraints.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "OqAdmfRztds",
+      "critique": "A strong conceptual starting point that teaches how to guide user attention without bogging a developer down in CSS layout mechanics.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "uwNClNmekGU",
+      "critique": "Introduces foundational design principles (CRAP) and immediately applies them to a practical redesign.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fImTa4daVc8",
+      "critique": "Spacing systems like the 8-point grid translate perfectly into CSS variables, making this highly relevant for a developer.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "9-oefwZ6Z74",
+      "critique": "Demonstrates how typography creates hierarchy and structure in practical UI components like feeds and lists.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "AXpxZMRM1EY",
+      "critique": "Provides the underlying typography vocabulary and system-building rules needed to complement the previous practical video.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "vvPklRN0Tco",
+      "critique": "Approaches color palettes using HSL and OKLCH, which aligns perfectly with modern CSS development.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "t7cnk3aQp2c",
+      "critique": "Offers an insightful look into a real-world healthcare app project, fulfilling the practical application constraint.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wcZ6jSlZqDc",
+      "critique": "Teaches actionable techniques for adding depth and shadows that can easily be translated into CSS.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "MlsV3hu84as",
+      "critique": "Directly satisfies the constraint for a critique of an existing UI by breaking down the Pantone homepage.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "LfkDiDyn6nU",
+      "critique": "Provides an excellent diagnosis of a poorly designed UI, teaching the learner how to critically evaluate interfaces.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "LfkDiDyn6nU",
+      "critique": "Serves as a great capstone project by applying all the previously learned concepts to a complete UI redesign.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.9,
+    "claims": {
+     "OqAdmfRztds": [
+      {
+       "claim": "The video shows how size, weight, color, spacing, and position set the reading order.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates concepts using pricing cards, notifications, and full pages.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses the framing 'if everything shouts the user hears nothing'.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes a mistakes-to-avoid section.",
+       "supported": true
+      }
+     ],
+     "uwNClNmekGU": [
+      {
+       "claim": "Applies contrast, repetition, alignment and proximity step by step to redesign a bike website layout.",
+       "supported": true
+      },
+      {
+       "claim": "This is the first hands-on before/after in the course.",
+       "supported": false
+      },
+      {
+       "claim": "Ties hierarchy to alignment and grouping.",
+       "supported": false
+      }
+     ],
+     "fImTa4daVc8": [
+      {
+       "claim": "Teaches the 4/8-point spacing scale.",
+       "supported": true
+      },
+      {
+       "claim": "Teaches how spacing groups elements.",
+       "supported": true
+      },
+      {
+       "claim": "Includes before/after critiques of cards.",
+       "supported": true
+      },
+      {
+       "claim": "Builds a card with consistent spacing.",
+       "supported": true
+      },
+      {
+       "claim": "Turns spacing into rules a developer can reuse as CSS tokens.",
+       "supported": false
+      }
+     ],
+     "9-oefwZ6Z74": [
+      {
+       "claim": "The video demonstrates building hierarchy using font size, weight, color, and spacing.",
+       "supported": true
+      },
+      {
+       "claim": "The video redesigns a social feed.",
+       "supported": true
+      },
+      {
+       "claim": "The video redesigns a subscription list.",
+       "supported": true
+      },
+      {
+       "claim": "The video ends with a minimal three-size type scale.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates a scale and CSS-variable approach.",
+       "supported": true
+      }
+     ],
+     "AXpxZMRM1EY": [
+      {
+       "claim": "The video covers typeface categories.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers line height.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers letter spacing and kerning.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how to turn them into a typography system with rules per text type.",
+       "supported": true
+      },
+      {
+       "claim": "The video gives the vocabulary for choosing and pairing fonts.",
+       "supported": true
+      }
+     ],
+     "vvPklRN0Tco": [
+      {
+       "claim": "Builds neutral and brand palettes with HSL and CSS variables",
+       "supported": true
+      },
+      {
+       "claim": "Includes light and dark themes",
+       "supported": true
+      },
+      {
+       "claim": "Covers readable contrast, borders and highlights",
+       "supported": true
+      },
+      {
+       "claim": "It is code-friendly",
+       "supported": true
+      },
+      {
+       "claim": "Ends with OKLCH",
+       "supported": true
+      }
+     ],
+     "t7cnk3aQp2c": [
+      {
+       "claim": "The video follows a real healthcare app project.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows reference collection.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers fixing a bad-contrast salmon primary color for accessibility.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers redesigning a banner after feedback indicated it looked unclickable.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows contrast and critique decisions on real work.",
+       "supported": true
+      },
+      {
+       "claim": "The video ends with a before/after comparison.",
+       "supported": true
+      }
+     ],
+     "wcZ6jSlZqDc": [
+      {
+       "claim": "Shows the layered-shades-plus-shadows technique.",
+       "supported": true
+      },
+      {
+       "claim": "Applies the technique before/after to nav tabs, a profile card, radio buttons, and a dashboard.",
+       "supported": true
+      },
+      {
+       "claim": "Covers polish details (shadow, depth) in redesigns that can be coded in CSS.",
+       "supported": true
+      }
+     ],
+     "MlsV3hu84as": [
+      {
+       "claim": "The video walks through real sites (Figma, Webflow).",
+       "supported": true
+      },
+      {
+       "claim": "The video critiques Pantone's cluttered homepage against focal point, hierarchy, and white space.",
+       "supported": true
+      },
+      {
+       "claim": "The video gives a repeatable checklist for spotting layout problems on a live site.",
+       "supported": false
+      }
+     ],
+     "LfkDiDyn6nU": [
+      {
+       "claim": "The video builds text styles, spacing, color sections, and emphasis step by step to redesign a flight app.",
+       "supported": true
+      },
+      {
+       "claim": "The video applies all earlier lessons to one real UI.",
+       "supported": true
+      },
+      {
+       "claim": "The instructor concludes that a few text styles and colors give a clear interface.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 7,
+    "total_min": 165.0,
+    "utilisation": 0.92,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 7,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "visual hierarchy": true,
+     "typography": true,
+     "color": true,
+     "spacing and layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.23,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.77,
+    "cost_usd": 0.14442,
+    "latency_s": 46.1,
+    "hard_failures": [],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "uwNClNmekGU",
+    "fImTa4daVc8",
+    "9-oefwZ6Z74",
+    "GyVMoejbGFg",
+    "wcZ6jSlZqDc",
+    "LfkDiDyn6nU",
+    "t7cnk3aQp2c"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is perfectly calibrated for a frontend developer, providing rule-based, systematic approaches to design (like the 8-pt grid and specific HSL/HSB value ranges) that translate seamlessly to CSS.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, detailing exactly what methods and techniques each video teaches.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The goal is to get better at design with practical application. The curriculum provides numerous before/after redesigns and builds up to a massive 76-minute real-world app redesign, completely fulfilling the goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The progression is logical: foundational principles (CRAP) first, followed by specific design elements (spacing, typography, color, depth), and concluding with a comprehensive redesign project and a real-world workflow breakdown.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The requirement for at least one real redesign is met multiple times. The curriculum assumes all content is post-2020, and the selection avoids reteaching CSS code, focusing strictly on UI design principles.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The curriculum uses 164 out of 180 minutes. The warning rightly justifies leaving 15 minutes unused rather than cramming in redundant material.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons are highly specific and logical, rejecting a video for using a no-code builder (since the learner knows CSS) and others for being redundant or pure theory.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an outstanding, highly actionable curriculum that gives a developer exactly what they need to improve their UI design skills without getting bogged down in code they already know.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "uwNClNmekGU",
+      "critique": "An excellent, fast-paced introduction to the essential CRAP design principles using a practical redesign.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fImTa4daVc8",
+      "critique": "Provides a robust, rule-based spacing system (4/8-pt grid) that frontend developers can immediately apply in CSS.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "9-oefwZ6Z74",
+      "critique": "Teaching typography hierarchy through HSL lightness is a brilliant choice for a CSS developer.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "GyVMoejbGFg",
+      "critique": "Although pure theory, the concrete saturation and brightness ranges make color selection programmatic and actionable.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wcZ6jSlZqDc",
+      "critique": "A practical two-step method for shadows and depth that is easy to translate into CSS box-shadow and color variables.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "LfkDiDyn6nU",
+      "critique": "A substantial, hands-on redesign that perfectly satisfies the learner's constraint for a practical critique and overhaul.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "t7cnk3aQp2c",
+      "critique": "A great capstone that bridges the gap between design iteration and the developer handoff.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.95,
+    "claims": {
+     "uwNClNmekGU": [
+      {
+       "claim": "The video teaches the four CRAP principles.",
+       "supported": true
+      },
+      {
+       "claim": "The video applies each of the four CRAP principles to a bike website layout redesign.",
+       "supported": true
+      }
+     ],
+     "fImTa4daVc8": [
+      {
+       "claim": "The video explains the 4/8-pt spacing system.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains proximity (keeping related elements close and unrelated elements separated).",
+       "supported": true
+      },
+      {
+       "claim": "The video includes before/after examples where only spacing and layout change.",
+       "supported": true
+      },
+      {
+       "claim": "The video claims spacing is the biggest lever for developers.",
+       "supported": false
+      }
+     ],
+     "9-oefwZ6Z74": [
+      {
+       "claim": "The video redesigns a social feed and a subscription list using size, weight, and HSL lightness.",
+       "supported": true
+      },
+      {
+       "claim": "The video gives a minimal type scale the learner can use in CSS.",
+       "supported": true
+      }
+     ],
+     "GyVMoejbGFg": [
+      {
+       "claim": "The video provides concrete saturation and brightness ranges for each color palette category.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides a rule to pair one color category with neutrals.",
+       "supported": true
+      }
+     ],
+     "wcZ6jSlZqDc": [
+      {
+       "claim": "The video uses a two-step method consisting of layered shades plus shadows to fix boring UIs.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates this method through before/after redesigns of components and a dashboard.",
+       "supported": true
+      }
+     ],
+     "LfkDiDyn6nU": [
+      {
+       "claim": "The video provides a long hands-on redesign of a flight booking app.",
+       "supported": true
+      },
+      {
+       "claim": "The video starts from user needs and a critique of existing apps.",
+       "supported": true
+      },
+      {
+       "claim": "The video applies hierarchy, typography, spacing, and color.",
+       "supported": true
+      }
+     ],
+     "t7cnk3aQp2c": [
+      {
+       "claim": "The video shows a live healthcare app project.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes feedback-driven changes to a design that looked unclickable.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers a contrast and accessibility fix.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers handoff to developers.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 10,
+    "total_min": 178.4,
+    "utilisation": 0.99,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 10,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "visual hierarchy": true,
+     "typography": true,
+     "color": true,
+     "spacing and layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.45,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "a5KYlHNKQB8",
+     "c9Wg6Cb_YlU",
+     "wIuVvCuiJhU",
+     "AXpxZMRM1EY",
+     "MlsV3hu84as",
+     "ODpB9-MCa5s",
+     "GyVMoejbGFg",
+     "EcbgbKtOELY",
+     "1NTKwpAVcHg",
+     "NTmh8l-Xl4c"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [
+     "a5KYlHNKQB8"
+    ],
+    "recency_ok": false,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": false,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "evidence_verified",
+     "assumptions_stated",
+     "recency_ok"
+    ],
+    "soft_misses": [
+     "pick_count_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "a5KYlHNKQB8",
+    "c9Wg6Cb_YlU",
+    "wIuVvCuiJhU",
+    "AXpxZMRM1EY",
+    "MlsV3hu84as",
+    "ODpB9-MCa5s",
+    "GyVMoejbGFg",
+    "EcbgbKtOELY",
+    "1NTKwpAVcHg",
+    "NTmh8l-Xl4c"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is a generic compilation of highly viewed UI/UX videos with no customization for a frontend developer, ignoring their existing technical skills to serve up superficial introductory content.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "Every reason provided is based entirely on search popularity and view counts, rather than explaining what the video actually teaches.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The videos cover UI/UX design concepts, fundamentals, and practical builds, directly addressing the learner's goal to get better at design.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The curriculum places a comprehensive 86-minute Figma website build (Video 2) ahead of fundamental theory lessons on layout, typography, and color theory, forcing the learner to apply concepts before formally learning them.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum violates the timeline constraint by including an older visual design video (Video 1, 'Beginning Graphic Design') that predates 2020.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "The budget is poorly utilized, padded heavily with multiple redundant, surface-level overview videos (Videos 3, 6, 8, 9, 10) instead of allocating that time to structured, deep dives into practical design applications.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No list of dropped videos or reasons was provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "This curriculum relies completely on scraping popular search results rather than thoughtfully structuring a learning path. The out-of-order foundational lessons, repetitive surface-level overview videos, and inclusion of older content make it an inefficient and frustrating experience for an experienced frontend developer.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "a5KYlHNKQB8",
+      "critique": "Revising older graphic design theory violates the constraint to include nothing older than 2020.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "c9Wg6Cb_YlU",
+      "critique": "While a great practical project, placing this comprehensive build before teaching foundational typography and color theory puts the cart before the horse.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "wIuVvCuiJhU",
+      "critique": "Another surface-level introduction that is redundant, especially coming immediately after a lengthy, comprehensive tutorial.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "AXpxZMRM1EY",
+      "critique": "A solid foundational guide to typography that is important for UI design, though ideally it should have been placed earlier.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "MlsV3hu84as",
+      "critique": "Explains core theoretical layout principles and fulfills the constraint of including a real UI critique.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "ODpB9-MCa5s",
+      "critique": "A simplistic overview of UI/UX that wastes budget midway through an already established curriculum.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "GyVMoejbGFg",
+      "critique": "Provides a mathematically grounded, practical approach to color theory that will click perfectly with a developer's mindset.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "EcbgbKtOELY",
+      "critique": "A repetitive overview of concepts that have already been explained in detail by other videos.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "1NTKwpAVcHg",
+      "critique": "Another superficial summary of web design rules that repeats previous layout and color theory lessons without adding depth.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "NTmh8l-Xl4c",
+      "critique": "Yet another beginner overview, further wasting the learner's time with redundant theory.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 8,
+    "total_min": 148.3,
+    "utilisation": 0.82,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 8,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "visual hierarchy": true,
+     "typography": true,
+     "color": true,
+     "spacing and layout": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.23,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "kK1TOpI948o",
+     "fImTa4daVc8",
+     "9-oefwZ6Z74",
+     "AXpxZMRM1EY",
+     "GyVMoejbGFg",
+     "wcZ6jSlZqDc",
+     "CLLObtIpDUU",
+     "7AhCIBGTiEA"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.49,
+    "cost_usd": 0.08627,
+    "latency_s": 37.9,
+    "hard_failures": [
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "kK1TOpI948o",
+    "fImTa4daVc8",
+    "9-oefwZ6Z74",
+    "AXpxZMRM1EY",
+    "GyVMoejbGFg",
+    "wcZ6jSlZqDc",
+    "CLLObtIpDUU",
+    "7AhCIBGTiEA"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum clearly respects the learner's frontend background by skipping HTML/CSS mechanics (since they already know Flexbox and Grid) and focusing strictly on the design theory, decisions, and systems they need to improve their UIs.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons provided perfectly match the reference summaries, accurately describing the specific design topics, rules, and components covered in each video.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The curriculum culminates in multiple practical redesigns of real user interfaces, matching both the general goal to get better at design and the specific constraint to include existing UI critiques.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The sequence is highly logical: it starts with broad visual hierarchy, moves down into specific elements (spacing, typography, color, shadows), and finishes by weaving them together in applied redesigns.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The time budget is strictly observed, real redesigns are included, and the curriculum actively filters out content published before 2020.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "It optimally uses 148 out of 180 minutes to balance theory fundamentals with substantial applied examples, leaving just enough buffer.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The explanations for omitting videos are completely rational, rightfully rejecting items that violate time constraints, duplicate content, rely too heavily on specific design tools (Figma) rather than design concepts, or break the age constraint.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is a rigorous, practical, and highly relevant curriculum that exactly fits the needs of a frontend developer wanting to improve their design skills.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "kK1TOpI948o",
+      "critique": "Establishes the foundational concept of visual hierarchy without bogging down a developer in drawing tools.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "fImTa4daVc8",
+      "critique": "Teaches the spatial relationships and rules that dictate good layout, distinct from the CSS mechanisms the learner already knows.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "9-oefwZ6Z74",
+      "critique": "Focuses well on applying text styling for UI hierarchy, a common weak spot for developers.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "AXpxZMRM1EY",
+      "critique": "Completes the typography training by looking at font usage and selection, ensuring a holistic understanding.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "GyVMoejbGFg",
+      "critique": "Offers a highly functional approach to color theory, ideal for someone looking to build a palette for code.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wcZ6jSlZqDc",
+      "critique": "Provides easily implemented, impactful polish techniques via CodePen, making theoretical concepts tangible.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "CLLObtIpDUU",
+      "critique": "Functions perfectly as a short visual primer to redesign before tackling the longer project.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "7AhCIBGTiEA",
+      "critique": "A substantial capstone project that satisfies the real-world redesign constraint and unites the core concepts learned earlier.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.67,
+    "claims": {
+     "kK1TOpI948o": [
+      {
+       "claim": "The video introduces visual hierarchy through contrast.",
+       "supported": true
+      },
+      {
+       "claim": "The video introduces visual hierarchy through uniformity.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers making elements stand out.",
+       "supported": true
+      }
+     ],
+     "fImTa4daVc8": [
+      {
+       "claim": "The video targets spacing and layout as the main reason UIs look off.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows fixes that can be converted directly into CSS values.",
+       "supported": false
+      }
+     ],
+     "9-oefwZ6Z74": [
+      {
+       "claim": "The video covers UI typography decisions regarding font size, weight, and colour.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how font size, weight, and colour build hierarchy in interfaces.",
+       "supported": true
+      }
+     ],
+     "AXpxZMRM1EY": [
+      {
+       "claim": "The video covers typeface selection / how to choose fonts.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers text-handling fundamentals (such as size, weight, line height, letter spacing, kerning, contrast, and hierarchy).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how to pair fonts.",
+       "supported": false
+      }
+     ],
+     "GyVMoejbGFg": [
+      {
+       "claim": "Teaches how to build professional UI palettes using tone, tint, shade, and temperature.",
+       "supported": true
+      },
+      {
+       "claim": "Addresses concepts that basic colour-harmony tutorials usually skip.",
+       "supported": true
+      },
+      {
+       "claim": "The content is UI-specific.",
+       "supported": true
+      },
+      {
+       "claim": "The video was published in 2020.",
+       "supported": false
+      }
+     ],
+     "wcZ6jSlZqDc": [
+      {
+       "claim": "The video shows how to add depth to flat, boring UIs with shadows.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses CodePen.",
+       "supported": false
+      },
+      {
+       "claim": "The techniques are directly implementable in CSS.",
+       "supported": true
+      }
+     ],
+     "CLLObtIpDUU": [
+      {
+       "claim": "The video is a short before-and-after redesign of a real WordPress site.",
+       "supported": false
+      },
+      {
+       "claim": "The video points out what was wrong with the original site, such as weak hierarchy and unclear calls to action.",
+       "supported": false
+      },
+      {
+       "claim": "The video provides a quick critique example before a longer walkthrough.",
+       "supported": false
+      }
+     ],
+     "7AhCIBGTiEA": [
+      {
+       "claim": "The video walks through before-and-after improvements to an existing website design.",
+       "supported": true
+      },
+      {
+       "claim": "The video works as a critique of the website design.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers hierarchy, spacing, typography, and colour.",
+       "supported": true
+      },
+      {
+       "claim": "It is the longest real redesign in the pool.",
+       "supported": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A takes a stronger tailored approach for a frontend developer by selecting a color tutorial (vvPklRN0Tco) that specifically leverages CSS variables and HSL over a purely theoretical one. Furthermore, Curriculum A cleverly uses segment timestamps to dissect a 76-minute video (LfkDiDyn6nU), pulling out only the most relevant critique and redesign portions to maximize the learner's time without them having to sit through a potentially drawn-out mobile app tutorial. Both meet all constraints, but A is more precise.",
+    "Curriculum B is better tailored to the learner's background as a frontend developer. By selecting specific segments of the 76-minute flight app video, it skips the UX research phases and focuses purely on the visual design and critique, saving time for other topics. It also replaces the purely theoretical 24-minute color video from Curriculum A with a 10-minute code-friendly color video that uses CSS variables, which directly aligns with the learner's existing CSS skills. Both curricula meet the constraints of including redesigns/critiques and staying within the time budget, but B's modular approach provides a more comprehensive and developer-friendly learning path."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A is significantly better tailored to the learner. It intentionally skips basic CSS layout mechanics the learner already knows, focusing instead on design decisions like spacing scales, hierarchy, typography, and color selection. It also perfectly satisfies the constraint by including multiple practical redesigns and critiques (e.g., the Pantone homepage critique, flight booking app redesign). Curriculum B relies on generic search results, including many surface-level introductions and an 86-minute Figma tutorial that eats up half the budget without catering specifically to a developer's existing knowledge.",
+    "Curriculum A is filled with repetitive, superficial 'overview' videos (six videos under 10 minutes that all claim to explain the basics of UI/UX) and irrelevant graphic design theory. Curriculum B is perfectly tailored for a developer: it skips CSS mechanics they already know, focuses heavily on practical design decisions, includes developer-friendly tips like using CSS variables and HSL for color, and meets the constraints by featuring multiple hands-on redesigns and critiques."
+   ]
+  },
+  "no_transcript": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A is much better tailored to a React/CSS developer. It selects a color video that explicitly covers CSS variables, HSL, and modern OKLCH, whereas Curriculum B opts for a theoretical HSB color theory video. Furthermore, Curriculum A provides component-level and app-level redesigns (a flight booking app, a dashboard, pricing cards) which perfectly match a web app developer's daily work. Curriculum B relies on a massive 44-minute redesign using a WordPress no-code builder (Oxygen), which is much less relevant to someone building React components.",
+    "Curriculum A relies heavily on a 44-minute redesign video that uses a no-code builder (Oxygen) to fix spacing and responsive design, which is largely redundant for a developer who already knows CSS, Flexbox, and Grid. Curriculum B is much better tailored to a frontend developer: it swaps the theoretical color video for one that practically applies HSL and CSS variables, and replaces the no-code builder video with highly relevant UI critiques and redesigns (such as the Pantone homepage and a flight booking app). Curriculum B also makes excellent use of partial video segments to maximize value within the time budget while strictly meeting all constraints."
+   ]
+  }
+ }
+}

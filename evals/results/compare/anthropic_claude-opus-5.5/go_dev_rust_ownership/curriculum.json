@@ -1,0 +1,579 @@
+{
+  "persona_id": "go_dev_rust_ownership",
+  "goal": "Get comfortable with Rust ownership, borrowing and lifetimes so I can port a small Go CLI tool",
+  "budget_minutes": 240,
+  "total_minutes": 207.5,
+  "interpretation": "Within 240 minutes of watching, the learner understands Rust ownership, borrowing and lifetimes deeply enough to reason about the borrow checker, and can use traits and Result well enough to port a small Go CLI tool to Rust.",
+  "assumptions": [
+    "The learner has little or no Rust syntax beyond what transfers from C-like languages, so a brief Rust-specific syntax orientation is folded into the ownership material rather than taught as a separate topic.",
+    "Porting a small Go CLI implies argument parsing, file or stdin I/O, and error propagation, so a CLI-style project video is the plan's backbone.",
+    "Traits and Result are included because they are needed for the port, though the emphasis (about 60% of the budget) is on ownership, borrowing and lifetimes.",
+    "The learner has no interest in beginner material, so videos aimed at complete programming novices are undesirable."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "ownership_moves",
+      "title": "Ownership and moves (vs Go's GC and value copies)",
+      "why": "As a Go dev used to the garbage collector and implicit copying, the learner needs a new mental model of single ownership, moves, Copy vs Clone, and drop/RAII, which maps to their systems and memory knowledge.",
+      "prereqs": [],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "borrowing_refs",
+      "title": "Borrowing and references: shared vs mutable, borrow checker rules",
+      "why": "Rust references look like Go pointers but come with aliasing-XOR-mutability rules. Depth here is the learner's stated priority, including common compiler errors and how to restructure code to satisfy the checker.",
+      "prereqs": [
+        "ownership_moves"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "lifetimes",
+      "title": "Lifetimes: annotations, elision rules, structs holding references",
+      "why": "Lifetimes have no Go equivalent. The learner wants depth, so they need to understand why annotations exist, elision rules, lifetimes in structs and functions, and 'static.",
+      "prereqs": [
+        "borrowing_refs"
+      ],
+      "minutes_share": 0.25
+    },
+    {
+      "id": "traits_generics",
+      "title": "Traits and generics (compared to Go interfaces and generics)",
+      "why": "Traits are central to idiomatic Rust and to the standard library APIs a CLI port uses. The learner can map them to Go interfaces but must learn trait bounds, impl blocks, derive and dyn vs generics.",
+      "prereqs": [
+        "borrowing_refs"
+      ],
+      "minutes_share": 0.12
+    },
+    {
+      "id": "result_errors",
+      "title": "Error handling with Result, the ? operator, and custom error types",
+      "why": "Go's if err != nil pattern maps onto Result and ?, but the learner must learn Option/Result, From conversions, and crates like anyhow and thiserror for CLI tools.",
+      "prereqs": [
+        "traits_generics"
+      ],
+      "minutes_share": 0.13
+    },
+    {
+      "id": "cli_port_project",
+      "title": "Building a CLI tool in Rust (clap, file I/O, error propagation)",
+      "why": "The final goal is porting a Go CLI, so seeing ownership, borrowing, traits and Result applied in a realistic command-line project cements the concepts and covers the tooling (cargo, clap).",
+      "prereqs": [
+        "lifetimes",
+        "result_errors"
+      ],
+      "minutes_share": 0.15
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "79phqVpE7cU",
+      "title": "Rust: What is Ownership and Borrowing?",
+      "channel": "Gary Explains",
+      "url": "https://www.youtube.com/watch?v=79phqVpE7cU",
+      "duration_min": 19.7,
+      "minutes_counted": 19.7,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "ownership_moves",
+        "borrowing_refs"
+      ],
+      "reason": "An intermediate explainer that starts from the idea that each piece of data has one owner. It walks through String moves versus copies, mutable references passed to functions, and when cloning is a crutch. This gives a Go developer a concrete first model of moves before going deeper on the borrow checker.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "03:02",
+          "quote": "Each bit of data, e.g. \"hello\", has an owner",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "12:27",
+          "quote": "Clone is your friend, but not an excuse for sloppy code",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "It can be a little tricky to understand, but once you do you will understand why Rust is called a memory safe language.",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.55,
+      "confidence_note": "Judged only from chapter titles and the description, with no transcript. The chapters line up well with ownership and moves, but the depth is unverified.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "zfb1y8yn8QI",
+      "title": "Understanding Rust – Or How to Stop Worrying & Love the Borrow-Checker • Steve Smith • YOW! 2024",
+      "channel": "GOTO Conferences",
+      "url": "https://www.youtube.com/watch?v=zfb1y8yn8QI",
+      "duration_min": 41.9,
+      "minutes_counted": 25.2,
+      "watch_from": "00:00",
+      "watch_until": "25:11",
+      "covers": [
+        "ownership_moves",
+        "borrowing_refs"
+      ],
+      "reason": "A conference talk on why Rust's move, borrow and mutability rules exist. It compares them with garbage collection and resource management and covers stack and heap sharing, which maps directly onto your Go and GC background and gives the conceptual depth on the borrow checker you asked for. It carries a pure_theory flag; I kept it because you asked for depth rather than hands-on coding, and no other intermediate candidate frames the borrow checker against GC.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "In this talk Steve Smith takes you through some of these core rules and why they exist",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "drawing comparisons to existing programming techniques such as garbage collection and resource management",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Rust can be very welcoming, but it expects you to abide by a few rules that other languages regard as optional",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.5,
+      "confidence_note": "There is no transcript, and the chapter map ends at 25:11 of a 41.9-minute video, so the rest is probably Q&A and is excluded. The talk is conceptual only.",
+      "level": "intermediate",
+      "format": "lecture"
+    },
+    {
+      "rank": 3,
+      "video_id": "Ns-GgnxN7HY",
+      "title": "🦀Master Rust Programming #8 | Rust Generics, Traits, Trait Bound & Lifetimes | Advanced Type System🚀",
+      "channel": "BlockDev",
+      "url": "https://www.youtube.com/watch?v=Ns-GgnxN7HY",
+      "duration_min": 78.5,
+      "minutes_counted": 63.6,
+      "watch_from": "14:54",
+      "watch_until": "1:18:32",
+      "covers": [
+        "traits_generics",
+        "lifetimes",
+        "borrowing_refs"
+      ],
+      "reason": "From generic functions onward, this covers trait bounds and where clauses, then dangling references, lifetime annotations and syntax, and the 'static lifetime. That gives you the traits-as-bounds material you need for the port, plus a structured first pass at lifetimes before the deep dive. The basic generic-types section at the start is skipped because you already know Go generics.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Lifetimes prevent dangling references at compile time",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "Traits provide safe polymorphism without inheritance",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "Generics enable code reuse without runtime cost",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.55,
+      "confidence_note": "The chapter titles match the plan closely, but there is no transcript. There is no confirmed explicit comparison with Go interfaces.",
+      "level": "intermediate",
+      "format": "lecture"
+    },
+    {
+      "rank": 4,
+      "video_id": "MSi3E5Z8oRw",
+      "title": "Understanding Rust Lifetimes",
+      "channel": "Ryan Levick",
+      "url": "https://www.youtube.com/watch?v=MSi3E5Z8oRw",
+      "duration_min": 81.1,
+      "minutes_counted": 68.9,
+      "watch_from": "05:56",
+      "watch_until": "1:14:49",
+      "covers": [
+        "lifetimes",
+        "borrowing_refs",
+        "traits_generics"
+      ],
+      "reason": "A deep stream on one lifetime-heavy example that 'can challenge even long time Rustaceans.' It covers missing lifetime specifiers, mutable slices and iterators, returning a trait, conflicting requirements, the anonymous lifetime, and a long walk through the compiler's error messages. This is the borrow-checker depth you asked for, aimed above beginner level.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "In this stream we attempt to discuss one example that can challenge even long time Rustaceans when it comes to understanding lifetimes.",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "Follow along as we dive deep into lifetimes.",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "The chapters point strongly to deep lifetime reasoning, but this is an unedited stream with no transcript, so pacing may be slow. The final mutable-iterators section and the intro are skipped.",
+      "level": "intermediate",
+      "format": "other"
+    },
+    {
+      "rank": 5,
+      "video_id": "3Z-7MFNPzL0",
+      "title": "Rust Error Handling Tutorial: thiserror, anyhow, and the Source Chain You're Losing",
+      "channel": "Elite Dev News",
+      "url": "https://www.youtube.com/watch?v=3Z-7MFNPzL0",
+      "duration_min": 17.1,
+      "minutes_counted": 17.1,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "result_errors"
+      ],
+      "reason": "Covers Result and the ? operator, what makes a type an error, thiserror derives with from and source, anyhow for applications, and the pitfall of losing the source chain when printing errors. This is the error-handling toolkit you need for a CLI port. It is labeled beginner, but the content is Rust-specific error design, not general programming basics.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Result and the question mark, writing an error type, adding context, and the four ways to print an error",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "11:44",
+          "quote": "The gotcha: losing the source chain",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "one of which silently throws away the root cause",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "It is the only candidate rated 2 on result_errors, and its chapters are specific. With no transcript, the depth is unconfirmed.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 6,
+      "video_id": "uvP1bKTfa_Q",
+      "title": "Build a Rust CLI Tool from Scratch (clap, serde, anyhow) – logscan",
+      "channel": "Back To Code",
+      "url": "https://www.youtube.com/watch?v=uvP1bKTfa_Q",
+      "duration_min": 13.0,
+      "minutes_counted": 13.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "cli_port_project",
+        "lifetimes",
+        "result_errors"
+      ],
+      "reason": "Builds a log-analyzer CLI with clap arguments, anyhow error context and zero-copy &str parsing with lifetimes. Along the way it hits and fixes a real E0515 borrow-checker error, which ties together everything you need for your Go CLI port.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Along the way we hit a real borrow-checker error (E0515: cannot return value referencing local variable)",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q4",
+          "t": "00:00",
+          "quote": "Zero-copy parsing with &str and lifetimes",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "04:45",
+          "quote": "The borrow checker strikes (E0515)",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.65,
+      "confidence_note": "The project closely matches your goal, but without a transcript the depth of each step is unverified, and 13 minutes is brisk for this much content.",
+      "level": "intermediate",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "i4T2-Fp1MZI",
+      "title": "Understanding the Mutable Borrow Error in Rust",
+      "stage": "prefilter",
+      "reason": "too short (88s)"
+    },
+    {
+      "video_id": "Ncn5wflWvUc",
+      "title": "How to Fix Rust Borrow Checker Issues: Simple Code Solutions Explained",
+      "stage": "prefilter",
+      "reason": "too short (90s)"
+    },
+    {
+      "video_id": "5lPSXWRa5kM",
+      "title": "Why Rust Has No Function Overloading",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "wM6o70NAWUI",
+      "title": "Error Handling in Rust",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Ot3qCA3Iv_8",
+      "title": "Parse Rust CLI Args With Clap 🦀 Rust Tutorial",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Mgj1bqZjhM4",
+      "title": "Rust programming References & Borrowing: Mastering Ownership Like a Pro",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "usJDUSrcwqI",
+      "title": "The Rust Survival Guide",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "0y6RKiIk6cs",
+      "title": "Rust for Dummies in 12 Minutes",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "-DaVwuQeQD0",
+      "title": "Stop Using Rust Without These Rustc Commands",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "sZV6sz4P6QY",
+      "title": "Mastering Error Handling in Rust: From Panics to thiserror & anyhow | with Nathan Stocks",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "oOaclyKsrjw",
+      "title": "🦀 Master Rust Programming #12 | Build CLI with CLAP Crate & Publish to Crates.io | Cargo Deep Dive 🚀",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "zAFcmYNEs0M",
+      "title": "How to THINK Like the Rust Compiler (Deep Dive) #rust #hackers #programming #compilation",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "PbR4ECFIckg",
+      "title": "8 deadly mistakes beginner Rust developers make",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "joCFbTJt0o0",
+      "title": "Complete Rust Marathon in 6 hours",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "R4rqEXB2rV0",
+      "title": "Understand Ownership and Borrowing In Rust Programming Language",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "xcygqF5LVmM",
+      "title": "Crust of Rust: Dispatch and Fat Pointers",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "XPrfxen4Md4",
+      "title": "panic! vs Result: When to Use Each Rust Error Type",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "XYkiwsplDTg",
+      "title": "Writing a CLI App in Rust! - Part 1",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "oI94lrLc2R8",
+      "title": "Mastering Ownership & Borrowing In Rust",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "R0dP-QR5wQo",
+      "title": "Will Crichton: Rust for Everyone!",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "fuz8gn3b7Ow",
+      "title": "🦀Master Rust Programming #11 | Iterators & Closures | Functional Programming Features & Performance🚀",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "N4P3BhpeVio",
+      "title": "Rust 51 | Traits in Rust – part 1 | Rust Programming Course | Uplatz",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "SNSd8GzYsrQ",
+      "title": "Error Handling in Rust | panic! and Result",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "lZ2xWczv1lI",
+      "title": "Build a simple Command Line Interface (CLI) in Rust - Full Crash Rust Tutorial for Beginners",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "_uwneq_cwvE",
+      "title": "Rust Tutorial 5  | Ownership and Borrowing | Rust in Hindi | Tutorial | Learn from scratch",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "QIQYf8Qb2-g",
+      "title": "DevOpsCon Munich 2021: Generics in Go",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Z6wxawIPUaw",
+      "title": "Rust error handling made easier with the ?-operator",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "fD9ptABVQbI",
+      "title": "Rust Command Line Argument Parsing (A Better Way With Clap)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "gl8okcRDRpI",
+      "title": "Rust Ownership & Borrowing, Finally Visualized (Full Course)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "XJMF0PlLELc",
+      "title": "Adam McCullough- Rust's Borrow Checker Proven Correct!- λC 2019",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "dMoHKOeIu6I",
+      "title": "Rust Memory Management: Ownership, Reference, & Lifetime Explained Simply #10 Rust",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "pDM_5HT2UlU",
+      "title": "Rust for Go Developers: The 6 Things You Actually Need to Learn",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "6WykcOk78sc",
+      "title": "Rust Error Handling: The ? Operator, thiserror & anyhow",
+      "stage": "select",
+      "reason": "Only about 7 minutes cover ownership, borrowing and Result. The remaining roughly 25 minutes are Tokio, atomics and benchmarks, which are outside the plan."
+    },
+    {
+      "video_id": "8hRctxuLCW0",
+      "title": "Modern Rust Systems: Complete Architecture Deep Dive & Advanced Systems Roadmap",
+      "stage": "select",
+      "reason": "A roadmap overview of a series, flagged surface_intro, that names topics without teaching them in depth."
+    },
+    {
+      "video_id": "2J9nYgrSTDg",
+      "title": "🦀Master Rust Programming #2 | Ownership, Borrowing, References, Slices & Structs | Full Course 2025🚀",
+      "stage": "select",
+      "reason": "A beginner full-course episode flagged too_basic_for_learner; it covers ownership at a novice pace."
+    },
+    {
+      "video_id": "kUzhjVExJIc",
+      "title": "Rust Book Club #10: Generics, Traits & Lifetimes",
+      "stage": "select",
+      "reason": "A book-club discussion of generics, traits and lifetimes that overlaps the BlockDev lecture, which has a clearer chapter structure on trait bounds and lifetimes."
+    },
+    {
+      "video_id": "94ju0zfnwhI",
+      "title": "Rust Error E0502 Explained Visually – Borrow Checker Finally Makes Sense",
+      "stage": "select",
+      "reason": "A visual E0502 explainer that is useful but short and description-only. The Levick stream and the logscan E0515 fix already cover concrete borrow-error debugging."
+    },
+    {
+      "video_id": "Pg07HQJ0tvI",
+      "title": "How to fight Rust's borrow checker... and win.",
+      "stage": "select",
+      "reason": "A short collection of borrow-checker tips with no verified depth; it would add another creator for overlapping content."
+    },
+    {
+      "video_id": "OcaerPp59Gs",
+      "title": "🚀 Build a Robust CLI App in Rust with Clap | Rust Programming Tutorial",
+      "stage": "select",
+      "reason": "A clap CLI build focused on configuration and async tasks rather than ownership, borrowing and lifetimes; flagged off_topic."
+    },
+    {
+      "video_id": "RLy-KJSyK4w",
+      "title": "JavaScript Dev Learns Rust | Building a CLI tool with Rust and clap",
+      "stage": "select",
+      "reason": "A beginner live session that starts with installing Rust and Hello World, which is too basic. logscan covers CLI building with borrow-checker content."
+    },
+    {
+      "video_id": "9RsgFFp67eo",
+      "title": "Rust’s most complicated features explained",
+      "stage": "select",
+      "reason": "Advanced and mostly about async, pinning and Send/Sync, which is off-topic for this plan."
+    },
+    {
+      "video_id": "K682q8p-YHg",
+      "title": "Ownership in Rust | Rust Book",
+      "stage": "select",
+      "reason": "A beginner Rust Book read-through spending an hour on ownership alone, at the wrong level for an experienced systems developer."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "No candidate had a transcript; every assessment rests on chapter lists and descriptions, so depth and teaching quality are unverified.",
+    "Total counted viewing time is about 207.5 of 240 minutes (86%); about 32 minutes are deliberately unused because the remaining candidates are beginner-level, off-topic or redundant.",
+    "Lifetimes get about 100 minutes, more than the planned 60, while ownership and borrowing get about 45 minutes of dedicated material, less than planned. The extra lifetimes time also covers advanced borrowing in practice.",
+    "No video confirms an explicit comparison between traits and Go interfaces. Expect to map that yourself: trait bounds roughly correspond to interface constraints, and dyn Trait to interface values.",
+    "The Steve Smith talk carries a pure_theory flag, and the error-handling video is labeled beginner. Both were kept because no unflagged alternative covers their angle."
+  ],
+  "pool_size": 36,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-5.5",
+    "select": "anthropic/claude-opus-5.5"
+  },
+  "cost_usd": 0.20946,
+  "latency_s": 66.0,
+  "mode": "select=anthropic/claude-opus-5.5"
+}

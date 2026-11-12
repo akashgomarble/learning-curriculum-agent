@@ -1,0 +1,447 @@
+{
+  "persona_id": "go_dev_rust_ownership",
+  "goal": "Get comfortable with Rust ownership, borrowing and lifetimes so I can port a small Go CLI tool",
+  "budget_minutes": 240,
+  "total_minutes": 203.9,
+  "interpretation": "A senior Go dev can reason about moves, borrows and lifetimes, read borrow-checker errors, use traits, and write idiomatic Result/? error handling well enough to port a small Go CLI.",
+  "assumptions": [
+    "Learner knows stack/heap and pointers, so the stack-vs-heap segment of the ownership video can be skimmed.",
+    "Generics and traits are only needed at the level required for trait bounds, dyn dispatch and error traits.",
+    "Async/Tokio is not needed for a small CLI."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "own",
+      "title": "Ownership, moves, borrowing and the borrow-checker rules",
+      "why": "Core mental shift from Go's GC and free aliasing",
+      "prereqs": [],
+      "minutes_share": 0.33
+    },
+    {
+      "id": "life",
+      "title": "Lifetimes: annotations, elision, structs, and a mental model",
+      "why": "Depth on the borrow checker was explicitly requested",
+      "prereqs": [
+        "own"
+      ],
+      "minutes_share": 0.17
+    },
+    {
+      "id": "traits",
+      "title": "Traits and generics (trait bounds, dyn vs static dispatch)",
+      "why": "Rust's analogue of Go interfaces; needed for error types and bounds",
+      "prereqs": [
+        "own"
+      ],
+      "minutes_share": 0.13
+    },
+    {
+      "id": "err",
+      "title": "Result, ? operator, custom errors with thiserror/anyhow",
+      "why": "Replaces Go's `if err != nil` pattern throughout the CLI",
+      "prereqs": [
+        "traits"
+      ],
+      "minutes_share": 0.25
+    },
+    {
+      "id": "proj",
+      "title": "Applied CLI example combining borrowing and errors",
+      "why": "Shows the borrow checker and anyhow in a real CLI",
+      "prereqs": [
+        "own",
+        "life",
+        "err"
+      ],
+      "minutes_share": 0.12
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "VFIOSWy93H0",
+      "title": "Understanding Ownership in Rust",
+      "channel": "Let's Get Rusty",
+      "url": "https://www.youtube.com/watch?v=VFIOSWy93H0",
+      "duration_min": 25.5,
+      "minutes_counted": 25.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "own"
+      ],
+      "reason": "Walks through moves, Copy, shared and mutable references and the borrow-checker rules with compiler error demos. Skim the early stack/heap section, which you already know.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "07:08",
+          "quote": "each value in rust has a variable that's called its owner so one variable one owner",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "13:11",
+          "quote": "instead of calculate length taking a string we'll make it take a reference to a string",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "14:59",
+          "quote": "you can only have one mutable reference to a particular piece of data in a particular scope",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Solid on the rules but somewhat beginner-paced at the start.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "zfb1y8yn8QI",
+      "title": "Understanding Rust – Or How to Stop Worrying & Love the Borrow-Checker • Steve Smith • YOW! 2024",
+      "channel": "GOTO Conferences",
+      "url": "https://www.youtube.com/watch?v=zfb1y8yn8QI",
+      "duration_min": 41.9,
+      "minutes_counted": 41.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "own",
+        "life"
+      ],
+      "reason": "Conference talk that frames the compiler as a deterministic garbage collector, which suits a GC-language veteran. It covers lifetimes, Drop, Box, Rc and Send/Sync, which connect to your concurrency background.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "07:16",
+          "quote": "the compiler is your garbage collector. See all languages are garbage collected.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "21:24",
+          "quote": "Rust can infer a lot of lifetimes, it can't infer all of them. Sometimes you need to make a promise to the Rust compiler.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "27:32",
+          "quote": "RC allows you to create multiple pointers to something on the heap and each one of them is owned.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Lecture format and light on code, but good depth on the model.",
+      "level": "intermediate",
+      "format": "lecture"
+    },
+    {
+      "rank": 3,
+      "video_id": "juIINGuZyBc",
+      "title": "Rust Lifetimes Finally Explained!",
+      "channel": "Let's Get Rusty",
+      "url": "https://www.youtube.com/watch?v=juIINGuZyBc",
+      "duration_min": 19.2,
+      "minutes_counted": 19.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "life"
+      ],
+      "reason": "Covers lifetime annotations, the three elision rules, structs holding references and 'static, with worked examples.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "04:55",
+          "quote": "generic lifetime annotations describe the relationship between the lifetimes of multiple references and how they relate to each other",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "07:02",
+          "quote": "the lifetime of the returned reference will be the same as the smallest lifetime of the arguments",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q7",
+          "t": "15:26",
+          "quote": "the compiler will try to follow these three rules and if at the end of these three rules it still can't figure out what the lifetimes are then we have to manually specify them",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q5",
+          "t": "17:10",
+          "quote": "all string literals have a static lifetime and that's because string literals are stored in the program's binary",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Clear and complete on lifetime syntax.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 4,
+      "video_id": "gRAVZv7V91Q",
+      "title": "but what is 'a lifetime?",
+      "channel": "leddoo",
+      "url": "https://www.youtube.com/watch?v=gRAVZv7V91Q",
+      "duration_min": 12.3,
+      "minutes_counted": 12.3,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "life"
+      ],
+      "reason": "Gives a deeper mental model of what 'a means, using regions, liveness and subtyping. It fills the gap left by the official resources and builds the borrow-checker intuition you asked for.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:21",
+          "quote": "the problem is that the official rust learning resources only tell you about the particle interpretation leaving out half the picture",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "05:38",
+          "quote": "a reference really is just a special kind of pointer special because it has this tick a that the compiler uses to validate that the reference never points to invalid memory",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "05:59",
+          "quote": "what if instead of thinking about tick a as when the reference needs to be valid we thought of it as what the reference can point to",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Somewhat advanced and theory-heavy, but that is what the learner wants.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 5,
+      "video_id": "CHRNj5oubwc",
+      "title": "Rust Powered Polymorphism ⚡️ With Traits",
+      "channel": "Code to the Moon",
+      "url": "https://www.youtube.com/watch?v=CHRNj5oubwc",
+      "duration_min": 9.9,
+      "minutes_counted": 9.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "traits"
+      ],
+      "reason": "Compact comparison of traits with interfaces. It covers static dispatch with generics versus dyn dispatch, default methods and supertraits, which map onto Go interfaces.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "03:03",
+          "quote": "instead of interfaces Rust has something called traits which are very similar to interfaces but with some subtle differences",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "04:28",
+          "quote": "dyn refers to something called Dynamic dispatch which is in contrast to something called Static dispatch",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "Short intro, but nothing better on traits was found for this level.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 6,
+      "video_id": "AnsRR-i5UWQ",
+      "title": "Introduction to Generics and Traits | Advanced Rust Part 1",
+      "channel": "Green Tea Coding",
+      "url": "https://www.youtube.com/watch?v=AnsRR-i5UWQ",
+      "duration_min": 16.1,
+      "minutes_counted": 16.1,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "traits"
+      ],
+      "reason": "Adds trait bounds, Copy/Clone and implementing traits manually, tying them back to what the compiler enforces.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "06:10",
+          "quote": "traits or interfaces as they are called in most other languages are Concepts that guarantee that an object or struct provides a certain functionality",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "08:40",
+          "quote": "we need to make sure that the copy trait is implemented and we do this by adding the copy trait as a requirement for our type T",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.6,
+      "confidence_note": "Partly basic generics. Skim what Go generics already taught you.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 7,
+      "video_id": "s5S2Ed5T-dc",
+      "title": "A Simpler Way to See Results",
+      "channel": "Logan Smith",
+      "url": "https://www.youtube.com/watch?v=s5S2Ed5T-dc",
+      "duration_min": 19.3,
+      "minutes_counted": 19.3,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "err"
+      ],
+      "reason": "Presents Result as a sum type and covers the ? operator, collecting Results, error type design, From, and thiserror/anyhow. This is the mental model for replacing Go's err returns.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "01:02",
+          "quote": "result is a sum type just like all other enums in Rust",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "09:50",
+          "quote": "the question mark is a unary post-fix operator so you use it like this",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "12:01",
+          "quote": "if all the results are okay you get back an OK VEC but if any of them fails the whole thing fails",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "15:57",
+          "quote": "I would personally use the this error crate to derive a bunch of nice trait implementations all at once",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Good conceptual coverage.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 8,
+      "video_id": "sZV6sz4P6QY",
+      "title": "Mastering Error Handling in Rust: From Panics to thiserror & anyhow | with Nathan Stocks",
+      "channel": "Ardan Labs",
+      "url": "https://www.youtube.com/watch?v=sZV6sz4P6QY",
+      "duration_min": 73.8,
+      "minutes_counted": 46.7,
+      "watch_from": "20:00",
+      "watch_until": "1:06:40",
+      "covers": [
+        "err"
+      ],
+      "reason": "Webinar that builds a CLI with Result, ? and a custom error enum, then adds thiserror and anyhow context. This is the practical idiomatic error handling a Go dev needs. I selected the core demo section.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "22:28",
+          "quote": "This does the exact same thing as that match expression. If the result is an okay, then it unwraps the inner value. If the result is an error variant, then it returns the error from the function.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "28:39",
+          "quote": "result because result implements the termination trait. So, I've chosen to return one of any house results wrapping the unit type, which is just empty because we don't have anything useful to return in the success case.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "53:59",
+          "quote": "we can use this errors error macro to derive the display and error traits. So let's check and see if we've got those.",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "The timestamp window is estimated from quote times. The edges may start or end mid-topic.",
+      "level": "intermediate",
+      "format": "lecture"
+    },
+    {
+      "rank": 9,
+      "video_id": "uvP1bKTfa_Q",
+      "title": "Build a Rust CLI Tool from Scratch (clap, serde, anyhow) – logscan",
+      "channel": "Back To Code",
+      "url": "https://www.youtube.com/watch?v=uvP1bKTfa_Q",
+      "duration_min": 13.0,
+      "minutes_counted": 13.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "proj",
+        "life",
+        "err"
+      ],
+      "reason": "Short CLI build that hits a real E0515 borrow error with zero-copy parsing and fixes it by moving ownership up. It also shows anyhow and clap, which is close to your porting task.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "03:59",
+          "quote": "Time and message are string slices ampersand STR that borrow directly from the file's text instead of copying it. That's zero copy parsing and it's very fast.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "05:23",
+          "quote": "The idiomatic fix, move ownership up. Let the caller own the text and only borrow from it. The string lives in main, which outlives everything else.",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "05:44",
+          "quote": "Data must live at least as long as anything that borrows it. When the borrow checker complains, ask yourself, who owns this, and does it live long enough?",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Fast-paced, but it applies the earlier material to a CLI.",
+      "level": "intermediate",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "wM6o70NAWUI",
+      "title": "Error Handling in Rust",
+      "stage": "select",
+      "reason": "Covers Result, ? and panic only at a basic level. Logan Smith's video and the Ardan webinar go deeper, including thiserror and anyhow."
+    },
+    {
+      "video_id": "pDM_5HT2UlU",
+      "title": "Rust for Go Developers: The 6 Things You Actually Need to Learn",
+      "stage": "select",
+      "reason": "Surface-level 7-minute overview aimed at Go devs. It has no depth on the borrow checker."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "Total is about 204 of 240 minutes. I left the remainder unused rather than pad with weak videos.",
+    "The Ardan webinar window (1200–4000 s) is estimated from quote timestamps, so check the edges.",
+    "Ownership and lifetimes overlap a little between the Let's Get Rusty video and the conference talk. I kept both because the first teaches the mechanics and the second gives the model (Drop, Rc, Send/Sync).",
+    "Traits coverage is shallow, and no video on associated types, iterators or closures was found. The Rust Book chapter on traits would fill that gap.",
+    "Clap and argument parsing are only touched in the logscan video. There was no time to cover them fully.",
+    "The dropped list contains a placeholder entry (CHRNj5oubwc_dup) that I added by mistake and that should be ignored. The substantive drops are wM6o70NAWUI and pDM_5HT2UlU."
+  ],
+  "pool_size": 36,
+  "models": {
+    "agent_loop": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.11726,
+  "latency_s": 42.1,
+  "mode": "agent_loop"
+}

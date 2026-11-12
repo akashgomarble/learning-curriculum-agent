@@ -1,0 +1,862 @@
+{
+ "persona_id": "impossible_k8s_in_45",
+ "budget": 45,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 5,
+    "total_min": 43.6,
+    "utilisation": 0.97,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 5,
+    "pick_count_ok": false,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "Kubernetes architecture": true,
+     "pods, deployments, services": true,
+     "kubectl": true,
+     "cluster setup with kubeadm": true,
+     "CKA exam topics": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [
+     "5NHMNVeutT8 covers k8s_architecture before its prerequisite cka_overview"
+    ],
+    "order_ok": false,
+    "max_redundancy": 0.21,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.79,
+    "cost_usd": 0.24516,
+    "latency_s": 90.6,
+    "hard_failures": [],
+    "soft_misses": [
+     "pick_count_ok",
+     "order_ok"
+    ],
+    "pass": true
+   },
+   "picks": [
+    "5NHMNVeutT8",
+    "yeUBojfuhiI",
+    "ZDFqVFbX0Ic",
+    "yL_DurdVxak",
+    "j3a2Sr2n8eQ"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum is strongly tailored to this learner. It specifically focuses on CKA exam-prep material, skips foundational container/Docker concepts the learner already knows, and strictly adheres to the constraint of avoiding any pre-2023 material.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The curriculum's reasons accurately describe the actual content of the videos, directly aligning with the provided reference summaries.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner's goals are to prepare for the CKA and see a hands-on cluster setup. Video 5 directly demonstrates a kubeadm cluster setup, and the other videos focus on exam-style tasks and imperative commands.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is highly logical: it starts with cluster architecture, introduces core objects like Deployments and ReplicaSets, moves to exam-speed imperative commands, and finishes with a full cluster setup.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The learner's constraints are perfectly respected. The plan consists almost entirely of CKA-focused material, and all selected videos appear to comply with the 2023+ requirement.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The curriculum uses approximately 44 minutes of the 45-minute budget efficiently. It also includes a very honest and necessary feasibility note acknowledging that 45 minutes is insufficient for full CKA mastery.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons clearly explain why alternative videos were rejected, citing the 2023+ constraint, length issues, or lack of exam focus.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an excellent, highly focused curriculum that maximizes the tight 45-minute budget to deliver targeted CKA exam prep and cluster setup knowledge without wasting time on what the learner already knows.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "5NHMNVeutT8",
+      "critique": "Provides a strong, exam-framed introduction to Kubernetes architecture and the pod lifecycle.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "yeUBojfuhiI",
+      "critique": "Establishes the foundational declarative object model (Deployments and ReplicaSets) before introducing imperative shortcuts.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "ZDFqVFbX0Ic",
+      "critique": "A crucial pick for CKA prep, teaching the imperative commands and dry-run habits needed for exam speed.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "yL_DurdVxak",
+      "critique": "Addresses a specific, high-yield exam trap in a very time-efficient manner.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "j3a2Sr2n8eQ",
+      "critique": "Directly fulfills the learner's goal of seeing a hands-on kubeadm cluster setup within the time constraints.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 1.0,
+    "claims": {
+     "5NHMNVeutT8": [
+      {
+       "claim": "Gives a CKA-framed walkthrough of control plane components (API server, etcd, scheduler, controller manager)",
+       "supported": true
+      },
+      {
+       "claim": "Gives a walkthrough of worker components (kubelet, runtime, kube-proxy, CNI)",
+       "supported": true
+      },
+      {
+       "claim": "Traces the six steps from kubectl apply to a running pod",
+       "supported": true
+      }
+     ],
+     "yeUBojfuhiI": [
+      {
+       "claim": "The video explains how a Deployment declares the desired state.",
+       "supported": true
+      },
+      {
+       "claim": "The video explains how the ReplicaSet keeps the pods running.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows a Deployment manifest being applied.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows a pod being deleted and recreated.",
+       "supported": true
+      }
+     ],
+     "ZDFqVFbX0Ic": [
+      {
+       "claim": "The video is a CKA-course lesson.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers creating deployments imperatively.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers using --dry-run to generate YAML skeletons.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers exposing deployments as ClusterIP services.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers exam-speed kubectl habits.",
+       "supported": true
+      },
+      {
+       "claim": "The video contains NodePort and DNS-testing sections.",
+       "supported": true
+      }
+     ],
+     "yL_DurdVxak": [
+      {
+       "claim": "The video covers a CKA-style task of exposing a deployment with a NodePort service.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the trap that kubectl expose cannot set a custom nodePort.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates the dry-run-then-edit workflow.",
+       "supported": true
+      },
+      {
+       "claim": "The video gives a realistic sense of how the exam scores such tasks.",
+       "supported": true
+      }
+     ],
+     "j3a2Sr2n8eQ": [
+      {
+       "claim": "The video provides a kubeadm walkthrough from 2025.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers installing containerd.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers installing kubeadm, kubelet, and kubectl.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows running kubeadm init.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows joining a worker node using the join token.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates applying the Calico CNI.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 4,
+    "total_min": 44.5,
+    "utilisation": 0.99,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 4,
+    "pick_count_ok": true,
+    "constraint_violation_list": [
+     "YNPap3UH1IA: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "Kubernetes architecture": true,
+     "pods, deployments, services": true,
+     "kubectl": true,
+     "cluster setup with kubeadm": true,
+     "CKA exam topics": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.11,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [
+     "YNPap3UH1IA"
+    ],
+    "recency_ok": false,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.71,
+    "cost_usd": 0.10836,
+    "latency_s": 29.5,
+    "hard_failures": [
+     "constraint_violations",
+     "recency_ok"
+    ],
+    "soft_misses": [
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "klxZke9qbvg",
+    "j3a2Sr2n8eQ",
+    "ZDFqVFbX0Ic",
+    "YNPap3UH1IA"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum perfectly leverages the learner's existing knowledge of Linux and Docker by jumping straight into Kubernetes architecture, followed by exactly what was requested: kubeadm setup, kubectl basics, and exam strategy.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The curriculum's reasons accurately describe the educational content of each video and align with the provided reference summaries.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner explicitly requested hands-on cluster setup with kubeadm, and the second video walks through doing exactly this. The final video directly addresses the CKA exam goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is highly logical: the learner gets the high-level architecture first, then sets up a cluster, then learns commands to manage it, and finally gets an exam strategy.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum adheres to the strict 2023 timeline constraint where it matters most (installation, commands, exam strategy). The inclusion of an architecture video with an unknown date is reasonably justified as pure theory.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "Using 44 of 45 minutes is great. More importantly, the curriculum gives a very necessary and honest warning that a 45-minute budget is physically impossible for deep CKA preparation.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The reason for dropping a competing kubeadm video based on time constraints and unverified dates makes perfect sense for this user.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "An excellent foundation curriculum that sets realistic expectations, targets the learner's skill gap efficiently, and strictly addresses their goals.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "klxZke9qbvg",
+      "critique": "A good, visual explanation of the K8s control plane that fills the learner's foundational knowledge gap.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "j3a2Sr2n8eQ",
+      "critique": "Directly delivers the requested hands-on kubeadm cluster setup using modern components.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "ZDFqVFbX0Ic",
+      "critique": "Teaching imperative commands is specifically high-yield for the time-constrained CKA exam.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "YNPap3UH1IA",
+      "critique": "Rounding out the list with a dedicated video covering CKA exam strategy and rules hits the learner's goal perfectly.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.95,
+    "claims": {
+     "klxZke9qbvg": [
+      {
+       "claim": "The KodeKloud lecture is tied to the CKA course.",
+       "supported": false
+      },
+      {
+       "claim": "The video walks through etcd.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through the scheduler.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through controllers.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through the API server.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through kubelet.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through kube-proxy.",
+       "supported": true
+      }
+     ],
+     "j3a2Sr2n8eQ": [
+      {
+       "claim": "The video is a 2025 walkthrough.",
+       "supported": true
+      },
+      {
+       "claim": "The video builds a control plane and worker.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses containerd.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses kubeadm init and kubeadm join.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses Calico CNI.",
+       "supported": true
+      }
+     ],
+     "ZDFqVFbX0Ic": [
+      {
+       "claim": "The video is a CKA 2025 course lesson.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses imperative commands to generate deployment YAML skeletons (dry-run).",
+       "supported": true
+      },
+      {
+       "claim": "The video creates deployments using imperative commands.",
+       "supported": true
+      },
+      {
+       "claim": "The video exposes deployments as services.",
+       "supported": true
+      },
+      {
+       "claim": "The first ~13 minutes teach the exam-speed workflow.",
+       "supported": true
+      }
+     ],
+     "YNPap3UH1IA": [
+      {
+       "claim": "The video covers exam rules, including the one documentation tab limit.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers time management for the exam.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers repetition-based practice.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers mock exam resources.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 4,
+    "total_min": 43.6,
+    "utilisation": 0.97,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 4,
+    "pick_count_ok": true,
+    "constraint_violation_list": [
+     "TlHvYWVUZyc: red flags ['surface_intro']",
+     "oGPjzCBZGzg: red flags ['surface_intro']",
+     "vmCuNJiNzfg: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "Kubernetes architecture": true,
+     "pods, deployments, services": true,
+     "kubectl": false,
+     "cluster setup with kubeadm": false,
+     "CKA exam topics": true
+    },
+    "unknown_coverage": 0.6,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.15,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "TlHvYWVUZyc",
+     "T4Z7visMM4E",
+     "oGPjzCBZGzg",
+     "vmCuNJiNzfg"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [
+     "T4Z7visMM4E"
+    ],
+    "recency_ok": false,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": false,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified",
+     "infeasibility_flagged",
+     "recency_ok"
+    ],
+    "soft_misses": [
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "TlHvYWVUZyc",
+    "T4Z7visMM4E",
+    "oGPjzCBZGzg",
+    "vmCuNJiNzfg"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum ignores the learner's existing knowledge of Docker and containers by including a redundant 'Docker vs. Kubernetes' video, and fails to include hands-on cluster setup which was explicitly requested.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons provided are entirely based on popularity and search term match rather than describing what the videos actually teach.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The learner explicitly requested CKA exam prep and hands-on cluster setup, but none of the videos provide exam-specific preparation or demonstrate how to set up a cluster with kubeadm.",
+     "verdict": "fail"
+    },
+    "prereq_order_sensible": {
+     "critique": "The curriculum places a deeply detailed 24-minute video on Services before formally introducing Pods and Deployments, which are foundational prerequisites for understanding Services.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum fails to provide exam-prep oriented material as requested, and re-teaches basic container concepts the learner already knows.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "The short budget is wasted on redundant architecture videos (Videos 1 and 4 are essentially the same topic) and re-teaching Docker.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped list or reasons are provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "The curriculum completely fails to address the CKA exam prep and hands-on cluster setup goals, wastes time on redundant videos, and relies entirely on search term popularity for its justifications.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "TlHvYWVUZyc",
+      "critique": "This is a basic surface intro, but its selection reason is based entirely on popularity, providing no educational justification.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "T4Z7visMM4E",
+      "critique": "While detailed, this video is placed before the learner has been taught about Pods and Deployments.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "oGPjzCBZGzg",
+      "critique": "The learner already knows Docker and containers, making this comparison video largely redundant.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "vmCuNJiNzfg",
+      "critique": "This video is completely redundant, covering the exact same architecture overview as the first video.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 6,
+    "total_min": 42.7,
+    "utilisation": 0.95,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 6,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "SuKkL8YjXMg: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "Kubernetes architecture": true,
+     "pods, deployments, services": true,
+     "kubectl": true,
+     "cluster setup with kubeadm": true,
+     "CKA exam topics": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.14,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "SuKkL8YjXMg",
+     "5NHMNVeutT8",
+     "yeUBojfuhiI",
+     "yL_DurdVxak",
+     "ZDFqVFbX0Ic",
+     "j3a2Sr2n8eQ"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.57,
+    "cost_usd": 0.21872,
+    "latency_s": 66.6,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "SuKkL8YjXMg",
+    "5NHMNVeutT8",
+    "yeUBojfuhiI",
+    "yL_DurdVxak",
+    "ZDFqVFbX0Ic",
+    "j3a2Sr2n8eQ"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum perfectly matches the learner's profile, explicitly bridging their existing Docker knowledge to Kubernetes workload concepts (Deployments/ReplicaSets) and directly targeting their request for CKA prep and a kubeadm walkthrough.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons align exactly with the reference summaries provided. They describe the specific Kubernetes components, commands, and CKA tips taught in each video.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner wants to pass the CKA and learn hands-on cluster setup. The curriculum includes videos specifically on CKA exam strategies, imperative commands used in the exam, and a direct hands-on walkthrough of a kubeadm cluster setup.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The sequence is highly logical: it starts with exam strategy, moves to architecture, introduces Deployments/ReplicaSets, explains how to expose them with Services, covers imperative exam-speed kubectl usage, and concludes with the cluster installation.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All videos are post-2023 as requested (or verified as such via updated titles), the content is highly exam-oriented, and the 45-minute budget limit is respected.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The 45-minute budget is used almost entirely (43 minutes). An excellent feasibility warning is provided acknowledging that passing the CKA in 45 minutes of video is impossible, correctly framing this as a foundational study session.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons are highly specific, correctly citing length constraints, upload dates that violate the 2023 floor, and lack of exam focus.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an exceptional curriculum given the strict 45-minute limit. It manages to pack in CKA strategy, architecture basics, workloads, networking, exam-speed tips, and a full kubeadm install without feeling disjointed.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "SuKkL8YjXMg",
+      "critique": "Sets the scope for the CKA exam and gives the learner an immediate roadmap for their broader study plan.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "5NHMNVeutT8",
+      "critique": "Crucial architecture foundation that connects the dots for a user who only knows single-server Docker.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "yeUBojfuhiI",
+      "critique": "Excellent progression introducing Deployments and ReplicaSets, moving the learner from single containers to managed workloads.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "yL_DurdVxak",
+      "critique": "Provides high-yield, exam-specific advice on NodePort services and common CKA traps.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "ZDFqVFbX0Ic",
+      "critique": "Teaches imperative commands, which are absolutely essential for time management in the practical CKA exam.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "j3a2Sr2n8eQ",
+      "critique": "Directly fulfills the learner's request for a hands-on kubeadm cluster setup walkthrough.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.86,
+    "claims": {
+     "SuKkL8YjXMg": [
+      {
+       "claim": "Gives a CKA-specific roadmap of exam format and key topics.",
+       "supported": true
+      },
+      {
+       "claim": "It is the only post-2023 exam-overview video that fits the 4-minute slot.",
+       "supported": false
+      },
+      {
+       "claim": "Sets the scope before any Kubernetes content.",
+       "supported": false
+      }
+     ],
+     "5NHMNVeutT8": [
+      {
+       "claim": "The video is a CKA-chapter video.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers control plane components including kube-apiserver, etcd, scheduler, and controller-manager.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers node components including kubelet, runtime, kube-proxy, and CNI.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through the Deployment-to-Running-Pod lifecycle.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows how to match failure symptoms to components.",
+       "supported": true
+      }
+     ],
+     "yeUBojfuhiI": [
+      {
+       "claim": "The video explains Deployments and ReplicaSets (including self-healing, scaling, and rolling updates).",
+       "supported": true
+      },
+      {
+       "claim": "The video creates a Deployment from a YAML manifest with kubectl.",
+       "supported": true
+      }
+     ],
+     "yL_DurdVxak": [
+      {
+       "claim": "The video presents a CKA-oriented NodePort workflow that exposes a Deployment.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the exam trap of missing container ports.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers the exam trap of invalid kubectl flags (such as attempting to set nodePort directly via kubectl expose).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers selector mismatches that leave a Service with no Endpoints.",
+       "supported": false
+      }
+     ],
+     "ZDFqVFbX0Ic": [
+      {
+       "claim": "The video is part of a CKA 2025 course.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers imperative commands for Deployments, Services, and troubleshooting.",
+       "supported": true
+      },
+      {
+       "claim": "Imperative commands provide exam-speed kubectl skills.",
+       "supported": true
+      }
+     ],
+     "j3a2Sr2n8eQ": [
+      {
+       "claim": "The video provides a step-by-step kubeadm cluster install on Ubuntu 22.04 with containerd.",
+       "supported": true
+      },
+      {
+       "claim": "The video installs and configures Calico CNI.",
+       "supported": true
+      },
+      {
+       "claim": "The video was updated for 2025.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates the kubeadm init and join flow.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "tie",
+   "orders": [
+    "a",
+    "b"
+   ],
+   "critiques": [
+    "Curriculum A uses the extremely limited 45-minute budget much more effectively by focusing on hands-on, exam-oriented practical skills. It provides a more applied architecture video (which includes practical troubleshooting matching CKA symptoms) compared to B's purely theoretical analogy-based one. Curriculum A also manages to fit in a lesson on Deployments and ReplicaSets, plus a specific CKA 'trap' video regarding NodePorts. Curriculum B, on the other hand, wastes 13 minutes on a talking-head exam strategy video (rules, documentation tabs), which does not teach Kubernetes concepts or hands-on cluster setup. Both meet the 2023+ constraint using up-to-date and 2025-labeled videos for the hands-on portions, but A delivers significantly more technical value.",
+    "Curriculum A provides a more cohesive and balanced approach. It directly addresses the learner's request for CKA exam topics and orientation with a dedicated exam strategy video that covers rules, time management, and documentation techniques. Curriculum B makes an awkward timestamp cut in the imperative commands video (starting at 03:46) and skips the exam overview entirely in favor of piecemeal deployment videos. Curriculum A smoothly covers architecture, cluster setup, practical imperative commands, and exam strategy within the tight time budget."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A perfectly aligns with the learner's goals and constraints. It provides hands-on, CKA-oriented content, covers imperative commands critical for the exam, and includes a modern (2025) kubeadm cluster setup walkthrough. It also avoids teaching what the learner already knows. Curriculum B wastes time on redundant, surface-level architecture overviews and a 'Docker vs Kubernetes' video, which violates the constraint of not re-teaching what the learner already knows. It also lacks any CKA exam focus or kubeadm setup.",
+    "Curriculum A violates multiple constraints: it wastes time re-teaching the difference between Docker and Kubernetes (which the learner already knows), covers architecture twice, and fails to include any kubeadm cluster setup or CKA-specific exam preparation. Curriculum B is perfectly tailored to the learner's goal. It focuses on CKA-specific tips, covers imperative commands essential for the exam, includes a recent (2025) kubeadm setup walkthrough, and efficiently introduces the core concepts without wasting time on redundant Docker basics."
+   ]
+  },
+  "no_transcript": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A makes much better use of the limited time budget by excluding the vlog in Curriculum B (Video 1, flagged as a vlog and pure theory). Instead, Curriculum A allocates that time to watch a longer, more substantial portion of the imperative commands video, which is highly practical and critical for passing the hands-on CKA exam. Both curricula hit the required topics (architecture, deployments, services, kubeadm), but Curriculum A avoids filler content.",
+    "Curriculum B is better because it avoids the low-value 'vlog' video used in Curriculum A, reallocating that time to the more practical imperative commands tutorial. Furthermore, Curriculum B uses verified transcript timestamps to select a specific segment for the imperative commands video, whereas Curriculum A blindly guesses the 0-9 minute range. Curriculum B's curation is much more precise and focused on actionable exam skills."
+   ]
+  }
+ }
+}

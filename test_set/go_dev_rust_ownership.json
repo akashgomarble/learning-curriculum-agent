@@ -1,0 +1,75 @@
+{
+  "persona_id": "go_dev_rust_ownership",
+  "goal": "Get comfortable with Rust ownership, borrowing and lifetimes so I can port a small Go CLI tool",
+  "time_budget_minutes": 240,
+  "user_context": {
+    "background": "Senior Go developer, 8 years; wrote systems tools and services",
+    "known": [
+      "systems programming",
+      "pointers and memory",
+      "concurrency",
+      "Go",
+      "CLI tools",
+      "basic syntax of C-like languages"
+    ],
+    "unknown": [
+      "ownership and moves",
+      "borrowing and references",
+      "lifetimes",
+      "traits",
+      "error handling with Result",
+      "Result-based error handling"
+    ],
+    "constraints": "Skip anything that explains what a variable or a loop is. I want depth on the borrow checker. My Go CLI returns errors everywhere, so I also need idiomatic error handling with Result and the ? operator."
+  },
+  "expectations": {
+    "notes": "Advanced learner: beginner 'programming 101' content must be excluded; known-topic leakage is the main risk.",
+    "pick_count": [
+      2,
+      6
+    ],
+    "min_utilisation": 0.6,
+    "forbidden_title_regex": "(?i)for (absolute )?beginners|programming basics|what is a variable|in 100 seconds",
+    "forbidden_flags": [
+      "surface_intro",
+      "too_basic_for_learner"
+    ],
+    "unknown_synonyms": {
+      "ownership and moves": [
+        "ownership",
+        "move"
+      ],
+      "borrowing and references": [
+        "borrow",
+        "reference"
+      ],
+      "lifetimes": [
+        "lifetime"
+      ],
+      "traits": [
+        "trait"
+      ],
+      "error handling with Result": [
+        "result",
+        "error handling",
+        "? operator"
+      ],
+      "Result-based error handling": [
+        "result",
+        "error handling",
+        "? operator",
+        "question mark operator",
+        "anyhow",
+        "thiserror"
+      ]
+    },
+    "known_topics": [
+      "variables",
+      "loops",
+      "go basics",
+      "pointers"
+    ],
+    "min_level": "intermediate",
+    "required_language": "en"
+  }
+}

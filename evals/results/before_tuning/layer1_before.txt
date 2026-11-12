@@ -1,0 +1,8 @@
+ambiguous_design_frontend 9 0.89 pass [] ['pick_count_ok'] cov 1.0 qv 1.0 [] [] None
+career_switch_ml_foundations 5 0.3 pass [] ['utilisation_ok'] cov 1.0 qv 1.0 [] [] None
+go_dev_rust_ownership 9 0.79 FAIL ['level_floor'] ['pick_count_ok'] cov 1.0 qv 1.0 [] [] ['3Z-7MFNPzL0']
+hindi_excel_pivots 4 0.91 pass [] [] cov 1.0 qv 1.0 [] [] None
+impossible_k8s_in_45 5 0.95 FAIL ['constraint_violations'] ['pick_count_ok'] cov 1.0 qv 1.0 [] ["SuKkL8YjXMg: red flags ['surface_intro']"] None
+lunch_break_sql_windows 3 0.88 pass [] [] cov 1.0 qv 1.0 [] [] None
+sourdough_first_loaf 8 0.77 pass [] ['pick_count_ok'] cov 1.0 qv 1.0 [] [] None
+weekend_react_dev 6 0.45 FAIL ['constraint_violations'] ['utilisation_ok'] cov 1.0 qv 1.0 [] ["fsyfL33soRQ: red flags ['outdated_tooling']"] None

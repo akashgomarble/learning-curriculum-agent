@@ -1,0 +1,539 @@
+{
+  "persona_id": "weekend_react_dev",
+  "goal": "Build a small React app this weekend, something like a habit tracker with local storage",
+  "budget_minutes": 360,
+  "total_minutes": 189.0,
+  "interpretation": "By the end of the weekend, the learner has built and run a working habit tracker in React (Vite) that persists data to localStorage, and understands the hooks and component patterns behind it.",
+  "assumptions": [
+    "Habit tracker means: add/delete habits, mark them complete per day, view streaks, with data persisted in localStorage",
+    "The 360 minutes is pure watching time, so a long project build video can serve as the backbone",
+    "Plain JavaScript (not TypeScript) is fine since the learner knows JS fundamentals but did not mention TypeScript",
+    "Modern function components and hooks only; class components are not needed",
+    "The 'nothing before 2022' constraint is handled by the later video-selection step using upload dates; the exclusions here cover title-based filters only"
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "vite_setup",
+      "title": "Vite project setup and React project structure",
+      "why": "The learner knows npm but not Vite; they need to scaffold a modern React project and understand the folder layout, dev server and build, instead of using create-react-app.",
+      "prereqs": [],
+      "minutes_share": 0.07
+    },
+    {
+      "id": "jsx_components",
+      "title": "JSX and function components with props",
+      "why": "As a JS-literate backend dev, they need the mental model of JSX as JS expressions plus component composition and props to build UI.",
+      "prereqs": [
+        "vite_setup"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "state_events",
+      "title": "State with useState and event handling",
+      "why": "A habit tracker is driven by state (habits list, completion toggles); they need immutable updates of arrays/objects and form handling.",
+      "prereqs": [
+        "jsx_components"
+      ],
+      "minutes_share": 0.2
+    },
+    {
+      "id": "effects_localstorage",
+      "title": "useEffect and persisting state to localStorage",
+      "why": "Persistence is a core requirement; they need to understand effects, dependency arrays, lazy state initialization and JSON serialization (which they already know).",
+      "prereqs": [
+        "state_events"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "component_patterns",
+      "title": "Component patterns: lifting state up, lists and keys, custom hooks",
+      "why": "To structure a multi-component app cleanly, they need to share state between components, render lists correctly, and extract a reusable useLocalStorage hook.",
+      "prereqs": [
+        "effects_localstorage"
+      ],
+      "minutes_share": 0.13
+    },
+    {
+      "id": "project_build",
+      "title": "Build a habit tracker / similar small app end-to-end",
+      "why": "Following a project build ties all concepts together and mirrors the weekend goal; it is the backbone of the plan.",
+      "prereqs": [
+        "component_patterns"
+      ],
+      "minutes_share": 0.25
+    },
+    {
+      "id": "polish_deploy",
+      "title": "Streak logic, styling and finishing touches",
+      "why": "The learner needs to adapt the tutorial project into their own habit tracker by adding date-based completion and streak calculation.",
+      "prereqs": [
+        "project_build"
+      ],
+      "minutes_share": 0.05
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "do62-z3z6FM",
+      "title": "Vite Crash Course – Frontend Build Tool",
+      "channel": "freeCodeCamp.org",
+      "url": "https://www.youtube.com/watch?v=do62-z3z6FM",
+      "duration_min": 40.2,
+      "minutes_counted": 18.3,
+      "watch_from": "02:45",
+      "watch_until": "21:04",
+      "covers": [
+        "vite_setup"
+      ],
+      "reason": "Covers scaffolding a React project with npm create vite, the dev server and hot module replacement, and creating components, which is the Vite tooling you haven't used. Only the setup-to-useEffect part is needed, so you skip the TypeScript config and the Vite internals talk.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Vit is a next generation build tool that offers instant project startup and real-time updates",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "02:04",
+          "quote": "We learned how to build React apps with Vit, how to work with static assets, using environment variables, TypeScript",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Unflagged and clearly shows Vite setup. Its segment map has overlapping timestamps, so the range boundaries are approximate. The project may lean toward TypeScript.",
+      "level": "beginner",
+      "format": "crash_course"
+    },
+    {
+      "rank": 2,
+      "video_id": "G6D9cBaLViA",
+      "title": "Learn React With This ONE Project",
+      "channel": "Tech With Tim",
+      "url": "https://www.youtube.com/watch?v=G6D9cBaLViA",
+      "duration_min": 99.5,
+      "minutes_counted": 99.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "jsx_components",
+        "state_events",
+        "effects_localstorage",
+        "component_patterns"
+      ],
+      "reason": "A project-based Vite build that teaches JSX, components and props, useState re-rendering, mapping lists, useEffect, and React Context with localStorage persistence for a favorites list. That list is structurally close to tracking habits. It is the main backbone for the core concepts.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "12:55",
+          "quote": "JSX simply means kind of a combination of JavaScript and HTML. And you'll see that we have some things that look like HTML",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "46:53",
+          "quote": "When a state change occurs, the entire component is reran or rerendered. So if we just define something as a normal variable",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "1:21:15",
+          "quote": "A context will allow state to be globally available to anything that's within the provided context",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Plain JS, Vite and modern hooks, and it covers four sub-topics. The movie API and routing are tangential to a habit tracker. The segment map ends at 1:19:30 although the video runs 99.5 minutes.",
+      "level": "beginner",
+      "format": "project_build"
+    },
+    {
+      "rank": 3,
+      "video_id": "5uHikv1oBEI",
+      "title": "LocalStorage in React Using Custom Hook | The Complete React Course | Ep.41",
+      "channel": "Anurag Singh ProCodrr",
+      "url": "https://www.youtube.com/watch?v=5uHikv1oBEI",
+      "duration_min": 44.2,
+      "minutes_counted": 44.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "effects_localstorage",
+        "component_patterns"
+      ],
+      "reason": "Builds a reusable useLocalStorage custom hook in an expense tracker and swaps useState for it across several form fields. It also fixes an infinite render loop with useEffect. This is the custom-hook pattern you will need to persist habits.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "01:50",
+          "quote": "we will make a custom hook of react name it useLocalStorage and with that hook we will implement local storage",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "29:40",
+          "quote": "we have made custom hook, we just changed use state to use local storage and the local storage need a key",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Unflagged, project-based, and directly on persistence and custom hooks. It is somewhat long for one hook, and Vite is only implied.",
+      "level": "intermediate",
+      "format": "project_build"
+    },
+    {
+      "rank": 4,
+      "video_id": "X92kk5iT8CM",
+      "title": "Build a Complete To-Do List App with React + Vite | Dashboard, Reminders & Local Storage Tutorial",
+      "channel": "DevCrafted Learn-Build-Deploy",
+      "url": "https://www.youtube.com/watch?v=X92kk5iT8CM",
+      "duration_min": 27.0,
+      "minutes_counted": 27.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "project_build",
+        "polish_deploy"
+      ],
+      "reason": "A complete React + Vite to-do app with add, edit and delete, completion state, localStorage persistence and a statistics dashboard. It is the closest modern end-to-end analogue to a habit tracker, and its Tailwind styling covers the finishing touches. Watch it after the concepts so you can adapt it to habits.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "we have a dashboard for showing our total task completed task pending task and overdue",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "20:26",
+          "quote": "use local storage so I'll copy this and I'll paste this",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q5",
+          "t": "26:19",
+          "quote": "you can see the things are getting added and once you click on this it is incomplete",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.7,
+      "confidence_note": "The project fits well, but it is a task app, not a habit tracker, and has no streak logic. Its metadata says 27 minutes while its segment map runs to about 41 minutes, so the time estimate is uncertain.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "PUFdvEY8Myw",
+      "title": "React useEffect: Save Cart to localStorage | Beginner Tutorial",
+      "stage": "prefilter",
+      "reason": "too short (49s)"
+    },
+    {
+      "video_id": "BuYwyx8Ul9s",
+      "title": "Habit Tracker Using HTML, CSS and JS | JavaScript Beginner Friendly Project #100dayschallenge",
+      "stage": "prefilter",
+      "reason": "too short (35s)"
+    },
+    {
+      "video_id": "VWJFZ5WNT10",
+      "title": "Persist State to localStorage in React",
+      "stage": "prefilter",
+      "reason": "too short (55s)"
+    },
+    {
+      "video_id": "z-lof-klHCg",
+      "title": "How to Install React in 2026 - Goodbye Create React App - Vite React Project",
+      "stage": "prefilter",
+      "reason": "too short (114s)"
+    },
+    {
+      "video_id": "olHk6jB4GqM",
+      "title": "useEffect Syntax Explained in 30 Seconds",
+      "stage": "prefilter",
+      "reason": "too short (38s)"
+    },
+    {
+      "video_id": "wWpwLyAiibo",
+      "title": "React Project | Habit Tracker",
+      "stage": "prefilter",
+      "reason": "too short (23s)"
+    },
+    {
+      "video_id": "FHEtul0l9og",
+      "title": "React JS vs Vite JS Explained for Beginners | 2025 Web Development Guide #shorts #reactjs",
+      "stage": "prefilter",
+      "reason": "too short (47s)"
+    },
+    {
+      "video_id": "vXu5FSdq90s",
+      "title": "UseEffect React Hook the complete guide: Fetch data + Dependency Array + convert class to function",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "hgts_74JjVM",
+      "title": "Creating a Custom React Hook for Local Storage: Persisting State Effortlessly",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "2YWtOIVPM6Y",
+      "title": "Habit-Tracker App in React",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "WE8aYoGK0Ec",
+      "title": "How To Make To-Do List App Using React JS And Tailwind CSS | Create Task App In React JS",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "aATKsdHdMtk",
+      "title": "React JS with Vite Tutorial in English 🚀 | Build Home, About Us & Contact Pages | Beginner to Adv.",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "eD3IMlifSV4",
+      "title": "React JS Tutorial #2 | Setup React Project using Vite, Node.js & Create React App",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "IYvD9oBCuJI",
+      "title": "React State Vs Props",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "RDAFJ5ToMmQ",
+      "title": "Persist State to localStorage in React (Complete Tutorial)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "LJYZY0Hhrr4",
+      "title": "ReactJS Tutorial 80: Creating Custom Hooks In React",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "uTP3ffTx_Xs",
+      "title": "🔴 Building a Todo List App Project with Local Storage in React JS  & Hooks in 2021",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "U91Ykd1FFOI",
+      "title": "React JS Setup with Vite | Beginner Guide (2026)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "O6P86uwfdR0",
+      "title": "Learn useState In 15 Minutes - React Hooks Explained",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Tj4jfyk_f08",
+      "title": "#40: Keep Todo Data After Refresh: Adding Local Storage in React",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "gm-RaXu5PXA",
+      "title": "13. Custom hooks in react - useCounter, useLocalstorage ,useForm & useFetch | react in Hindi",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "lINkZe4dfSs",
+      "title": "JWT for User Auth: Building a Habit Tracker with React/Redux/Express Part 11",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "3lZrt5rQCRc",
+      "title": "Building a Todo List App Project in ReactJS from Scratch in Hindi in 2020. #viral #python #shorts",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "dU_mmTArv4g",
+      "title": "80 : useEffect in React and how to retrieve data from localStorage",
+      "stage": "language",
+      "reason": "transcript is 'ar', learner needs 'en'"
+    },
+    {
+      "video_id": "t5omB6952zs",
+      "title": "#34: React Project - Build a Complete Todo App from Scratch with Advanced Features",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "zQFzFsbRiB8",
+      "title": "Build TODO List App with React JS from Scratch - React JS Mini Project [2026]",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "zHoWgJD0jw4",
+      "title": "Hooks & State in React | Sigma Web Development Course - Tutorial #107",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "RxPF47orKzo",
+      "title": "Todo List Application using React JS in Hindi | React Projects for beginners in Hindi",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "CJHQ66RQKjk",
+      "title": "Add to Cart in React JS | useState + Props Explained with Simple E-Commerce Project",
+      "stage": "language",
+      "reason": "transcript is 'ta', learner needs 'en'"
+    },
+    {
+      "video_id": "QmL2dP3u_08",
+      "title": "React Custom Hook useLocalStorage() Hook The Complete Beginner’s Guide!🚀#reactjs #coding #javascript",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "TdiJ5Rbq5bo",
+      "title": "🚀 React JS ToDo App Tutorial for 2024 | Edit Task Functionality | Hindi 🧑‍💻",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "cFrIJVk7Ag8",
+      "title": "Create a React App Using Vite + Folder Structure Explained",
+      "stage": "language",
+      "reason": "transcript is 'fi', learner needs 'en'"
+    },
+    {
+      "video_id": "S4VH8hddg8c",
+      "title": "Components, Props and JSX in React | Sigma Web Development Course - Tutorial #106",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "DLwWS9ZRPn4",
+      "title": "Working with localStorage in ReactJS, ReactJS Tutorial In Telugu #coding #js #reactjs",
+      "stage": "language",
+      "reason": "transcript is 'te', learner needs 'en'"
+    },
+    {
+      "video_id": "Aib88vl6gDA",
+      "title": "Learn \"useState\" Hook in React 2024",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "h9nsFP2muW4",
+      "title": "Building a Dynamic To-Do List in Local Storage in Hindi | JavaScript 2024🔥",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "RGKi6LSPDLU",
+      "title": "React Tutorial in Hindi 🔥🔥",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "6I4kPKM_GS8",
+      "title": "React Installation and Setup | Create React App using Vite | React Tutorial for Beginners #3",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "QdTHUv79EZc",
+      "title": "Build a Todo App with React.js | Beginner React Project using hooks",
+      "stage": "select",
+      "reason": "Strong todo build with useState, useEffect and localStorage, but it is set up with create-react-app (flagged outdated_tooling), which you ruled out. Unflagged Vite builds cover the same sub-topics."
+    },
+    {
+      "video_id": "SqcY0GlETPk",
+      "title": "React Tutorial for Beginners",
+      "stage": "select",
+      "reason": "A long TypeScript lecture flagged pure_theory built around a ListGroup demo, not a project. Plain-JS project builds already cover props, lists and state."
+    },
+    {
+      "video_id": "wyC25aCGdwk",
+      "title": "React Tutorial & Vite in 2025: Your First Project From Scratch! (The Easy Way)",
+      "stage": "select",
+      "reason": "Vite setup walkthrough flagged surface_intro. The Vite crash course covers the same setup more deeply."
+    },
+    {
+      "video_id": "V9i3cGD-mts",
+      "title": "Learn React Hooks: useState - Simply Explained!",
+      "stage": "select",
+      "reason": "Good useState counter explainer, but it overlaps with the useState coverage in the Tech With Tim build and adds a short isolated demo."
+    },
+    {
+      "video_id": "wKjsnUIfGHI",
+      "title": "ReactJS Tutorial 81: Creating Our Own useLocalStorage Hook In ReactJS",
+      "stage": "select",
+      "reason": "A useLocalStorage hook on a login form that covers the same ground as the expense-tracker hook video, with a less relevant example."
+    },
+    {
+      "video_id": "N7rs5F4f6FA",
+      "title": "Learn How to Use Local Storage in React With an Easy-to-Understand Example",
+      "stage": "select",
+      "reason": "Flagged surface_intro; it shows a counter plus a library hook, and the hook video builds the same idea from scratch."
+    },
+    {
+      "video_id": "8ub_3kjILV8",
+      "title": "Understand Any React Project in 16 Minutes | Vite + React + TypeScript Folder Structure Explained",
+      "stage": "select",
+      "reason": "A TypeScript folder-structure explainer flagged pure_theory; it is not project-based and the Vite coverage is already sufficient."
+    },
+    {
+      "video_id": "CU5cyEeCCBs",
+      "title": "React JS Tutorial for Beginners | Setup React with Vite & Understand Project Structure",
+      "stage": "select",
+      "reason": "A 63-minute lecture flagged pure_theory covering Virtual DOM theory and Vite setup, which conflicts with your preference for project-based content."
+    },
+    {
+      "video_id": "7VPULX3WcGE",
+      "title": "A Habit Tracker App Using React Redux",
+      "stage": "select",
+      "reason": "A habit tracker demo built on Redux, flagged too_advanced_for_learner. It is a short walkthrough, not a build-along tutorial."
+    },
+    {
+      "video_id": "orLqzKffcXo",
+      "title": "Functional Components & Props & useState Hook",
+      "stage": "select",
+      "reason": "A pure-theory CodeSandbox lecture on components, props and useState, dated 2022; redundant with the project builds."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "The picks total about 189 of 360 minutes (about 52%), leaving about 171 minutes unused. The remaining candidates are flagged for conflicts with your constraints (create-react-app, pure-theory or surface-intro) or only repeat topics already covered, and I preferred under-filling to padding.",
+    "No candidate teaches habit streak logic, such as consecutive-day calculation, so you will need to write that yourself; sub-topic polish_deploy is only partly covered.",
+    "No video here covers lifting state up in depth. You get it only implicitly through the project builds and the Context API.",
+    "Tech With Tim's project fetches a movie API and uses react-router, which a habit tracker doesn't need. Focus on the useState, useEffect and Context/localStorage sections.",
+    "The do62-z3z6FM range (2:45 to 21:04) comes from an overlapping segment map, so adjust a few seconds if it starts mid-sentence.",
+    "The DevCrafted to-do video lists 27 minutes but its segments suggest about 41 minutes, so the real watch time may be longer. Even then the total stays under budget.",
+    "The habit trackers found in the pool use Redux or Next.js, or date from before 2022. I left them out because you asked for Vite and the hooks-based approach."
+  ],
+  "pool_size": 29,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-4.5",
+    "select": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.11451,
+  "latency_s": 52.9,
+  "mode": "agent"
+}

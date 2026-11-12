@@ -1,0 +1,3261 @@
+{
+ "persona": {
+  "persona_id": "sourdough_first_loaf",
+  "goal": "Bake my first sourdough loaf this weekend; my starter is already active",
+  "time_budget_minutes": 120,
+  "user_context": {
+   "background": "Home cook who has baked yeasted sandwich bread a few times",
+   "known": [
+    "kneading",
+    "yeasted bread basics",
+    "using an oven"
+   ],
+   "unknown": [
+    "hydration and levain",
+    "bulk fermentation and stretch-and-folds",
+    "shaping a boule",
+    "cold retard",
+    "scoring",
+    "baking in a Dutch oven"
+   ],
+   "constraints": "No vlogs or equipment reviews. I want a full bake-along I can follow, plus help with the steps beginners get wrong. Different bakers contradict each other, so follow at most two bakers' methods."
+  },
+  "expectations": {
+   "pick_count": [
+    2,
+    6
+   ],
+   "min_utilisation": 0.5,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": "(?i)review|unboxing|day in the life|vlog",
+   "forbidden_flags": [
+    "vlog",
+    "equipment_review",
+    "off_topic"
+   ],
+   "unknown_synonyms": {
+    "hydration and levain": [
+     "hydration",
+     "levain",
+     "starter"
+    ],
+    "bulk fermentation and stretch-and-folds": [
+     "bulk",
+     "stretch and fold",
+     "stretch-and-fold",
+     "fermentation"
+    ],
+    "shaping a boule": [
+     "shaping",
+     "shape",
+     "boule"
+    ],
+    "cold retard": [
+     "cold retard",
+     "fridge",
+     "proof",
+     "overnight"
+    ],
+    "scoring": [
+     "scoring",
+     "score"
+    ],
+    "baking in a Dutch oven": [
+     "dutch oven",
+     "baking",
+     "bake"
+    ]
+   },
+   "known_topics": [
+    "kneading",
+    "yeast bread"
+   ],
+   "min_level": null,
+   "require_project_based": true,
+   "required_language": "en",
+   "expect_infeasible": false,
+   "expect_assumptions": false,
+   "min_upload_year": null,
+   "max_sitting_minutes": null,
+   "max_channels": 2,
+   "max_per_channel": null,
+   "notes": "Non-tech domain: proves the pipeline is not software-specific. Needs at least one full bake-along; shaping and scoring must be covered."
+  }
+ },
+ "mode": "no_transcript",
+ "models": {
+  "plan": "anthropic/claude-sonnet-5.5",
+  "assess": "anthropic/claude-haiku-4.5",
+  "select": "anthropic/claude-sonnet-5.5"
+ },
+ "offline": true,
+ "use_transcripts": false,
+ "timings_s": {
+  "load_fixture": 0.0,
+  "assess": 13.5,
+  "dedup": 0.01,
+  "select": 41.38
+ },
+ "cost_by_stage": {
+  "assess": {
+   "calls": 36,
+   "cost_usd": 0.14073,
+   "prompt_tokens": 85854,
+   "completion_tokens": 10977,
+   "latency_s": 153.87
+  },
+  "select": {
+   "calls": 1,
+   "cost_usd": 0.09633,
+   "prompt_tokens": 18394,
+   "completion_tokens": 5954,
+   "latency_s": 41.37
+  }
+ },
+ "calls": [
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2432,
+   "completion_tokens": 244,
+   "cost_usd": 0.003652,
+   "latency_s": 3.03
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2394,
+   "completion_tokens": 278,
+   "cost_usd": 0.003784,
+   "latency_s": 5.33
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2385,
+   "completion_tokens": 283,
+   "cost_usd": 0.0038,
+   "latency_s": 5.43
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2457,
+   "completion_tokens": 315,
+   "cost_usd": 0.004032,
+   "latency_s": 5.54
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2368,
+   "completion_tokens": 288,
+   "cost_usd": 0.003808,
+   "latency_s": 5.63
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2370,
+   "completion_tokens": 283,
+   "cost_usd": 0.0037850000000000006,
+   "latency_s": 5.89
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2383,
+   "completion_tokens": 287,
+   "cost_usd": 0.003818,
+   "latency_s": 5.89
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2390,
+   "completion_tokens": 301,
+   "cost_usd": 0.003895,
+   "latency_s": 5.9
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2387,
+   "completion_tokens": 303,
+   "cost_usd": 0.003902,
+   "latency_s": 6.05
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2269,
+   "completion_tokens": 325,
+   "cost_usd": 0.0038940000000000003,
+   "latency_s": 6.05
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2398,
+   "completion_tokens": 418,
+   "cost_usd": 0.004488,
+   "latency_s": 6.05
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2402,
+   "completion_tokens": 286,
+   "cost_usd": 0.0038320000000000003,
+   "latency_s": 3.36
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2370,
+   "completion_tokens": 297,
+   "cost_usd": 0.003855,
+   "latency_s": 8.68
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2384,
+   "completion_tokens": 277,
+   "cost_usd": 0.003769,
+   "latency_s": 3.16
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2399,
+   "completion_tokens": 259,
+   "cost_usd": 0.0036940000000000002,
+   "latency_s": 3.24
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2397,
+   "completion_tokens": 328,
+   "cost_usd": 0.004037000000000001,
+   "latency_s": 3.68
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2405,
+   "completion_tokens": 352,
+   "cost_usd": 0.004164999999999999,
+   "latency_s": 4.03
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2383,
+   "completion_tokens": 305,
+   "cost_usd": 0.003908,
+   "latency_s": 3.39
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2401,
+   "completion_tokens": 341,
+   "cost_usd": 0.004106,
+   "latency_s": 3.94
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2387,
+   "completion_tokens": 291,
+   "cost_usd": 0.003842,
+   "latency_s": 3.5
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2394,
+   "completion_tokens": 375,
+   "cost_usd": 0.004269,
+   "latency_s": 4.21
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2424,
+   "completion_tokens": 270,
+   "cost_usd": 0.003774,
+   "latency_s": 3.32
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2393,
+   "completion_tokens": 346,
+   "cost_usd": 0.004123,
+   "latency_s": 3.74
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2376,
+   "completion_tokens": 322,
+   "cost_usd": 0.003986,
+   "latency_s": 4.23
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2279,
+   "completion_tokens": 313,
+   "cost_usd": 0.003844,
+   "latency_s": 3.21
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2367,
+   "completion_tokens": 282,
+   "cost_usd": 0.0037770000000000004,
+   "latency_s": 3.03
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2375,
+   "completion_tokens": 271,
+   "cost_usd": 0.00373,
+   "latency_s": 2.86
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2399,
+   "completion_tokens": 286,
+   "cost_usd": 0.0038290000000000004,
+   "latency_s": 3.43
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2373,
+   "completion_tokens": 328,
+   "cost_usd": 0.004013,
+   "latency_s": 3.41
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2376,
+   "completion_tokens": 232,
+   "cost_usd": 0.003536,
+   "latency_s": 3.03
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2452,
+   "completion_tokens": 400,
+   "cost_usd": 0.004452,
+   "latency_s": 4.17
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2393,
+   "completion_tokens": 290,
+   "cost_usd": 0.0038429999999999996,
+   "latency_s": 3.38
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2371,
+   "completion_tokens": 311,
+   "cost_usd": 0.003926,
+   "latency_s": 3.33
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2377,
+   "completion_tokens": 287,
+   "cost_usd": 0.0038120000000000003,
+   "latency_s": 3.01
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2361,
+   "completion_tokens": 317,
+   "cost_usd": 0.003946,
+   "latency_s": 3.96
+  },
+  {
+   "stage": "assess",
+   "model": "anthropic/claude-haiku-4.5",
+   "prompt_tokens": 2383,
+   "completion_tokens": 286,
+   "cost_usd": 0.0038130000000000004,
+   "latency_s": 3.78
+  },
+  {
+   "stage": "select",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 18394,
+   "completion_tokens": 5954,
+   "cost_usd": 0.096328,
+   "latency_s": 41.37
+  }
+ ],
+ "plan": {
+  "interpretation": "The learner bakes a decent first sourdough boule this weekend with their active starter, understanding each step (levain, hydration, bulk, shaping, cold proof, scoring, Dutch oven bake) from at most two consistent bakers.",
+  "assumptions": [
+   "The 'weekend' bake means mixing Friday/Saturday, a cold retard overnight, and baking the next day, so a 1-2 day timeline is acceptable.",
+   "The learner owns or can get a Dutch oven, a kitchen scale, and a banneton or a bowl with a towel.",
+   "The learner wants a standard country-style white or lightly whole-wheat boule at around 70-75% hydration, not an advanced high-hydration loaf.",
+   "Since 'at most two bakers' methods' is required, the plan favors one primary full bake-along baker plus one optional secondary for troubleshooting."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "en",
+  "learner_level": "beginner",
+  "sub_topics": [
+   {
+    "id": "levain_hydration",
+    "title": "Hydration and building a levain from an active starter",
+    "why": "They know yeasted dough but not baker's percentages or how to turn a starter into a levain that fits the weekend schedule.",
+    "prereqs": [],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "mixing_bulk",
+    "title": "Mixing, autolyse, and bulk fermentation with stretch-and-folds",
+    "why": "Yeast timing cues do not apply; they must learn to read dough (volume increase, bubbles, jiggle) instead of the clock, and replace kneading with folds.",
+    "prereqs": [
+     "levain_hydration"
+    ],
+    "minutes_share": 0.2
+   },
+   {
+    "id": "shaping_boule",
+    "title": "Pre-shaping and shaping a boule with surface tension",
+    "why": "Sandwich-loaf shaping is different; wetter sourdough needs tension-building technique to hold its shape.",
+    "prereqs": [
+     "mixing_bulk"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "cold_retard",
+    "title": "Final proof and cold retard in the fridge",
+    "why": "Makes the weekend schedule workable and develops flavor; they need to know how to judge proofing with the poke test and avoid overproofing.",
+    "prereqs": [
+     "shaping_boule"
+    ],
+    "minutes_share": 0.1
+   },
+   {
+    "id": "scoring_dutch_oven",
+    "title": "Scoring and baking in a preheated Dutch oven",
+    "why": "Dutch oven steam and scoring control oven spring and crust, which they have never done with sandwich bread.",
+    "prereqs": [
+     "cold_retard"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "full_bakealong",
+    "title": "Follow a full beginner sourdough bake-along from start to finish",
+    "why": "Ties all steps together into one consistent method so the learner can follow along at the counter.",
+    "prereqs": [
+     "levain_hydration"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "beginner_mistakes",
+    "title": "Common beginner sourdough mistakes and fixes",
+    "why": "Helps diagnose dense crumb, flat loaves, sticking dough, and underproofing/overproofing on a first bake.",
+    "prereqs": [
+     "scoring_dutch_oven"
+    ],
+    "minutes_share": 0.1
+   }
+  ],
+  "search_queries": [
+   "beginner sourdough bread recipe full process start to finish Dutch oven",
+   "sourdough for beginners hydration and levain explained",
+   "sourdough bulk fermentation stretch and folds how to tell when it's done",
+   "how to shape a sourdough boule for beginners",
+   "sourdough cold retard overnight proofing poke test",
+   "how to score sourdough and bake in Dutch oven beginner",
+   "common sourdough beginner mistakes and how to fix them"
+  ],
+  "title_exclusions": [
+   "vlog",
+   "review",
+   "vs",
+   "best dutch oven",
+   "unboxing",
+   "what i bought",
+   "day in my life"
+  ],
+  "skip_topics": [
+   "kneading",
+   "yeasted bread basics",
+   "using an oven"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "4gEoh3sk2AE",
+   "title": "Bake the Perfect Sourdough Bread: A Step-by-Step Guide",
+   "channel": "Natashas Kitchen",
+   "minutes": 11.9,
+   "views": 3492933,
+   "found_by": [
+    "how to score sourdough and bake in Dutch oven beginner",
+    "beginner sourdough bread recipe full process start to finish Dutch oven",
+    "sourdough for beginners hydration and levain explained",
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "s8dQ2hnYqp0",
+   "title": "STEP-BY-STEP SOURDOUGH FOR BEGINNERS: How to Make Sourdough Starter & Sourdough Bread",
+   "channel": "Lauren I A Bright Moment",
+   "minutes": 12.2,
+   "views": 988191,
+   "found_by": [
+    "beginner sourdough bread recipe full process start to finish Dutch oven",
+    "sourdough for beginners hydration and levain explained",
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "CTuGXdyrWUo",
+   "title": "The BEST Beginner Sourdough Bread Tutorial on YouTube",
+   "channel": "Grant Bakes",
+   "minutes": 12.0,
+   "views": 1097704,
+   "found_by": [
+    "beginner sourdough bread recipe full process start to finish Dutch oven",
+    "how to score sourdough and bake in Dutch oven beginner"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "VEtU4Co08yY",
+   "title": "YOUR FIRST SOURDOUGH (Sourdough Bread For Complete Beginners)",
+   "channel": "Brian Lagerstrom ",
+   "minutes": 14.1,
+   "views": 4646570,
+   "found_by": [
+    "beginner sourdough bread recipe full process start to finish Dutch oven",
+    "how to score sourdough and bake in Dutch oven beginner"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "GLSjBbIcUKo",
+   "title": "Sourdough bread Troubleshooting beginner Mistakes",
+   "channel": "little more salt",
+   "minutes": 13.3,
+   "views": 104860,
+   "found_by": [
+    "common sourdough beginner mistakes and how to fix them",
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "QWiouzzCUcs",
+   "title": "A Sourdough Masterclass for Home Bakers",
+   "channel": "Grant Bakes",
+   "minutes": 12.0,
+   "views": 1606560,
+   "found_by": [
+    "how to score sourdough and bake in Dutch oven beginner",
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "nlb4hmdsLRs",
+   "title": "Sourdough Starter and Leaven Explained | Are They The Same Thing?",
+   "channel": "ChainBaker",
+   "minutes": 8.0,
+   "views": 243269,
+   "found_by": [
+    "sourdough for beginners hydration and levain explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "EMspoBQRrEs",
+   "title": "How to Shape a SOURDOUGH BOULE | Sourdough Shaping Techniques",
+   "channel": "Grant Bakes",
+   "minutes": 3.6,
+   "views": 95181,
+   "found_by": [
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "lq0IF9sWEOs",
+   "title": "How to stop your dough spreading out after cold proofing ",
+   "channel": "Charlotte’s World",
+   "minutes": 3.9,
+   "views": 2744,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "BJEHsvW2J6M",
+   "title": "15 Mistakes Most Beginner Sourdough Bakers Make",
+   "channel": "LifebyMikeG",
+   "minutes": 21.6,
+   "views": 10527535,
+   "found_by": [
+    "common sourdough beginner mistakes and how to fix them"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "-9Osn7JsP1Y",
+   "title": "Easy Sourdough Starter Guide: Just Flour & Water!",
+   "channel": "Natashas Kitchen",
+   "minutes": 8.1,
+   "views": 3306938,
+   "found_by": [
+    "sourdough for beginners hydration and levain explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "vFzAPBR4uNQ",
+   "title": "How to Know When Sourdough Bulk Fermentation Is Done (5 Signs)",
+   "channel": "Keep it Sweet Kitchen",
+   "minutes": 33.1,
+   "views": 77322,
+   "found_by": [
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "g6H_mdz4fOg",
+   "title": "Sourdough Baking 101: Master Our Pre-Shaping and Shaping Method",
+   "channel": "You Knead Sourdough",
+   "minutes": 2.1,
+   "views": 322278,
+   "found_by": [
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "kIsOM0mphT0",
+   "title": "Sourdough. Almost over fermented dough, plus 42 hour cold retard, turned out OK.",
+   "channel": "nimcm",
+   "minutes": 3.0,
+   "views": 2368,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "SMlaH9vvgYc",
+   "title": "Beginner Friendly Low Hydration Sourdough (68% hydration) No more sticky dough! ",
+   "channel": "Sourdough with Wanna",
+   "minutes": 9.2,
+   "views": 7763,
+   "found_by": [
+    "sourdough for beginners hydration and levain explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Koab3fxN4t4",
+   "title": "The Last PRESHAPING SOURDOUGH Tutorial You Ever Need",
+   "channel": "The Bread Code",
+   "minutes": 4.3,
+   "views": 263620,
+   "found_by": [
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "TDrc82KTeig",
+   "title": "Let cold-proofed sourdough come up to room temperature before baking?",
+   "channel": "Grant Bakes",
+   "minutes": 9.2,
+   "views": 294946,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Oaq4OPx4xlI",
+   "title": "How to Bake Your First Sourdough (In Just 7 Steps)",
+   "channel": "Keep it Sweet Kitchen",
+   "minutes": 28.7,
+   "views": 265216,
+   "found_by": [
+    "beginner sourdough bread recipe full process start to finish Dutch oven"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "9fWzWpL5g6w",
+   "title": "18 Sourdough Basics YOU Should Know",
+   "channel": "The Bread Code",
+   "minutes": 21.9,
+   "views": 1991515,
+   "found_by": [
+    "sourdough for beginners hydration and levain explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "GiR2wshezF0",
+   "title": "How to tell if your sourdough is proofed",
+   "channel": "Little River Kitchen",
+   "minutes": 2.2,
+   "views": 141091,
+   "found_by": [
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hWXA8xFYu9A",
+   "title": "How to Shape a Bread into a Boule (Round Ball)",
+   "channel": "San Diego Artisan Bread School",
+   "minutes": 3.8,
+   "views": 460250,
+   "found_by": [
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Ah2UPXe471M",
+   "title": "Stop Over Proofing Your Sourdough, Use This Experiment to Find Your Optimum Proof",
+   "channel": "Culinary Exploration",
+   "minutes": 8.1,
+   "views": 328455,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "5ZvYuz6mDRs",
+   "title": "10 Mistakes Beginner Sourdough Bakers Make",
+   "channel": "Keep it Sweet Kitchen",
+   "minutes": 23.0,
+   "views": 277130,
+   "found_by": [
+    "common sourdough beginner mistakes and how to fix them"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "IZegSO8zAB4",
+   "title": "140: How to Calculate SOURDOUGH Hydration - Bake with Jack",
+   "channel": "Bake with Jack",
+   "minutes": 5.4,
+   "views": 40016,
+   "found_by": [
+    "sourdough for beginners hydration and levain explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Di3iEsnPqZk",
+   "title": "12 Bulk Fermentation Hacks That Transformed My Sourdough Baking",
+   "channel": "That Sourdough Gal",
+   "minutes": 15.4,
+   "views": 347923,
+   "found_by": [
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "h7eqwYLv2tI",
+   "title": "The ONLY SOURDOUGH BREAD SHAPING Tutorial You Will Ever Need",
+   "channel": "The Bread Code",
+   "minutes": 7.9,
+   "views": 887733,
+   "found_by": [
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Z8sno5EzPw4",
+   "title": "Bulk Fermentation, a Visual Guide. Stop letting your dough double!",
+   "channel": "Dough My Goodness Bakery",
+   "minutes": 2.3,
+   "views": 405837,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "tSJwo2tkTUY",
+   "title": "Sourdough slap-and-fold: sorry, you're doing it wrong",
+   "channel": "TRUE FOOD TV",
+   "minutes": 3.3,
+   "views": 250721,
+   "found_by": [
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "msqU-ylXWUs",
+   "title": "Your First Sourdough Bread (FULL COURSE in 30 minutes)",
+   "channel": "The Bread Code",
+   "minutes": 30.9,
+   "views": 1051058,
+   "found_by": [
+    "beginner sourdough bread recipe full process start to finish Dutch oven"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "fjREsZmGAp4",
+   "title": "How To Know When Bulk Fermentation for Sourdough is Done",
+   "channel": "Gathered in Grace",
+   "minutes": 3.2,
+   "views": 8856,
+   "found_by": [
+    "sourdough bulk fermentation stretch and folds how to tell when it's done"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "02WlZa_N-vI",
+   "title": "What creates the BEST OPEN CRUMB? Cold proofing or Room temperature?",
+   "channel": "The Bread Code",
+   "minutes": 16.9,
+   "views": 124880,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "ACipczTnezM",
+   "title": "Beginner Sourdough Mistakes & How to Fix Them | Sourdough Bread Tips",
+   "channel": "Yours Truly, Crystal",
+   "minutes": 5.5,
+   "views": 134,
+   "found_by": [
+    "common sourdough beginner mistakes and how to fix them"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "epnjX9gn5kY",
+   "title": "The Complete Beginners Guide to Baking Perfect Sourdough",
+   "channel": "Keep it Sweet Kitchen",
+   "minutes": 20.1,
+   "views": 255906,
+   "found_by": [
+    "beginner sourdough bread recipe full process start to finish Dutch oven"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  },
+  {
+   "video_id": "qJDs85V2NYg",
+   "title": "From Disaster to Master, How to Balance Sourdough Hydration the RIGHT Way",
+   "channel": "Culinary Exploration",
+   "minutes": 6.6,
+   "views": 214383,
+   "found_by": [
+    "sourdough for beginners hydration and levain explained"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "dTh9pJ3in7k",
+   "title": "How to Shape a Boule (Round Loaf) | Sourdough Shaping Techniques",
+   "channel": "Matthew James Duffy",
+   "minutes": 2.5,
+   "views": 34017,
+   "found_by": [
+    "how to shape a sourdough boule for beginners"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "CClhjpjcAd8",
+   "title": "Are You Doing Cold Fermentation Wrong? | The 3-Hour Method for Bread and Pizza",
+   "channel": "Novita Listyani",
+   "minutes": 25.9,
+   "views": 226758,
+   "found_by": [
+    "sourdough cold retard overnight proofing poke test"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": false,
+   "transcript_error": null
+  }
+ ],
+ "assessments": {
+  "4gEoh3sk2AE": {
+   "spoken_language": "en",
+   "summary": "Unable to assess content - transcript not available. Video appears to be a sourdough bake-along based on title and ingredient list in description, but without the transcript, teaching method, pacing, and actual content coverage cannot be verified.",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "sourdough loaf",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "4gEoh3sk2AE",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "s8dQ2hnYqp0": {
+   "spoken_language": "en",
+   "summary": "This video claims to teach sourdough bread baking and starter creation for beginners. However, without access to the transcript, the actual content cannot be verified against the learner's specific needs (levain hydration, bulk fermentation, shaping, cold retard, Dutch oven baking).",
+   "topics_covered": [
+    "sourdough starter",
+    "sourdough bread"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "sourdough starter and sourdough bread",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 732,
+     "topic": "sourdough starter and bread (content unverifiable)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "s8dQ2hnYqp0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "CTuGXdyrWUo": {
+   "spoken_language": "en",
+   "summary": "Unable to assess content in detail due to missing transcript. Based on title and description, this appears to be a beginner sourdough tutorial covering a complete recipe, but specific techniques and coverage of the learner's sub-topics cannot be verified without the actual transcript.",
+   "topics_covered": [
+    "sourdough basics",
+    "beginner recipe"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A beginner sourdough loaf",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 721,
+     "topic": "Beginner sourdough bread tutorial and recipe"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "CTuGXdyrWUo",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "VEtU4Co08yY": {
+   "spoken_language": "en",
+   "summary": "This video provides a step-by-step guide for complete beginners making their first sourdough loaf, featuring a lower-hydration recipe that is easier to handle and ferments faster than traditional sourdough.",
+   "topics_covered": [
+    "sourdough basics",
+    "beginner recipe",
+    "lower hydration",
+    "starter fermentation",
+    "entry level technique"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "first sourdough loaf",
+   "tools_and_versions": [
+    "sourdough starter"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 854,
+     "topic": "introductory guide to first sourdough loaf"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "VEtU4Co08yY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "GLSjBbIcUKo": {
+   "spoken_language": "en",
+   "summary": "This video addresses common beginner sourdough mistakes and questions from viewers, serving as a troubleshooting guide rather than a full recipe walkthrough. The creator references their main recipe video for the actual baking method.",
+   "topics_covered": [
+    "beginner mistakes",
+    "troubleshooting",
+    "sourdough"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 798,
+     "topic": "beginner mistakes and troubleshooting"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "GLSjBbIcUKo",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "QWiouzzCUcs": {
+   "spoken_language": "en",
+   "summary": "A 12-minute sourdough recipe overview from Grant Bakes showing the baker's preferred method refined over 4 years. Without the transcript, it appears to cover the full sourdough process, though the brief format suggests it may be more of a recipe summary than a detailed beginner bake-along.",
+   "topics_covered": [
+    "sourdough bread",
+    "sourdough recipe"
+   ],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": true,
+   "project_built": "Sourdough loaf",
+   "tools_and_versions": [
+    "sourdough starter"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 721,
+     "topic": "Sourdough bread recipe overview"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "QWiouzzCUcs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "nlb4hmdsLRs": {
+   "spoken_language": "en",
+   "summary": "This video explains the terminology and definitions of sourdough starter, levain, and leaven, clarifying whether these terms are interchangeable. It appears to be a conceptual explainer focused on language and definitions rather than hands-on baking technique.",
+   "topics_covered": [
+    "levain definition",
+    "sourdough terminology",
+    "starter vs levain"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 481,
+     "topic": "Levain and starter terminology explanation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "nlb4hmdsLRs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "EMspoBQRrEs": {
+   "spoken_language": "en",
+   "summary": "This video demonstrates how to shape a sourdough boule, focusing on a shaping technique suitable for beginners with 65-80% hydration doughs. It provides a practical guide to one of the simpler sourdough shaping methods.",
+   "topics_covered": [
+    "shaping boule",
+    "sourdough shaping",
+    "hydration"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 214,
+     "topic": "sourdough boule shaping technique"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "EMspoBQRrEs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "lq0IF9sWEOs": {
+   "spoken_language": "en",
+   "summary": "This short video appears to focus on a specific troubleshooting issue with dough spreading during cold proofing, likely addressing a common beginner problem rather than teaching a full sourdough bake-along from start to finish.",
+   "topics_covered": [
+    "cold_retard",
+    "troubleshooting",
+    "dough_handling"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "off_topic"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 234,
+     "topic": "troubleshooting dough spread during cold proofing"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "lq0IF9sWEOs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "BJEHsvW2J6M": {
+   "spoken_language": "en",
+   "summary": "This video identifies and explains 15 common mistakes beginner sourdough bakers make, aiming to help new bakers avoid pitfalls and bake fresh artisanal sourdough at home.",
+   "topics_covered": [
+    "beginner mistakes",
+    "sourdough troubleshooting"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1299,
+     "topic": "15 common beginner sourdough mistakes"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 2
+    }
+   ],
+   "video_id": "BJEHsvW2J6M",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "-9Osn7JsP1Y": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to create a sourdough starter from scratch using only flour and water. It does not cover mixing, fermenting, shaping, or baking an actual sourdough loaf.",
+   "topics_covered": [
+    "sourdough starter creation"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "digital kitchen scale",
+    "weck jars"
+   ],
+   "red_flags": [
+    "off_topic",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 483,
+     "topic": "sourdough starter creation from flour and water"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "-9Osn7JsP1Y",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "vFzAPBR4uNQ": {
+   "spoken_language": "en",
+   "summary": "This video focuses on recognizing the five signs that sourdough bulk fermentation is complete, and how to identify under-fermented and over-fermented dough to help beginners get bulk fermentation timing right.",
+   "topics_covered": [
+    "bulk fermentation",
+    "fermentation timing",
+    "under-fermentation",
+    "over-fermentation",
+    "sourdough readiness"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 33,
+     "topic": "introduction and overview of bulk fermentation signs"
+    },
+    {
+     "start_s": 33,
+     "end_s": 1000,
+     "topic": "five signs of completed bulk fermentation"
+    },
+    {
+     "start_s": 1000,
+     "end_s": 1500,
+     "topic": "identifying under-fermented sourdough"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1989,
+     "topic": "identifying over-fermented sourdough"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "vFzAPBR4uNQ",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "g6H_mdz4fOg": {
+   "spoken_language": "en",
+   "summary": "This video teaches pre-shaping and shaping techniques for sourdough, specifically how to shape dough into an oval shape for a banneton. However, without access to the transcript, the depth and completeness of the instruction cannot be verified.",
+   "topics_covered": [
+    "pre-shaping",
+    "shaping boule",
+    "surface tension"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 125,
+     "topic": "pre-shaping and shaping technique for oval banneton"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "g6H_mdz4fOg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "kIsOM0mphT0": {
+   "spoken_language": "en",
+   "summary": "This is a personal vlog documenting one bake where the baker accidentally over-fermented dough (75% bulk rise) and then applied a 42-hour cold retard before baking. It focuses on what happened in that specific instance rather than teaching beginner techniques systematically.",
+   "topics_covered": [
+    "cold retard",
+    "bulk fermentation",
+    "hydration"
+   ],
+   "level": "intermediate",
+   "format": "vlog",
+   "is_project_based": true,
+   "project_built": "a sourdough loaf",
+   "tools_and_versions": [
+    "rouge de bordeaux flour",
+    "dutch oven"
+   ],
+   "red_flags": [
+    "vlog",
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 179,
+     "topic": "bulk fermentation and cold retard documentation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "kIsOM0mphT0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "SMlaH9vvgYc": {
+   "spoken_language": "en",
+   "summary": "A beginner sourdough tutorial demonstrating a low-hydration (68%) recipe designed for easier handling. The video promises step-by-step guidance through the baking process with a focus on simplifying the dough for confident beginners.",
+   "topics_covered": [
+    "low hydration",
+    "sourdough starter",
+    "beginner sourdough",
+    "dough handling"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A low-hydration sourdough loaf (68% hydration, 100g starter, 325g water, 500g flour, 10g salt)",
+   "tools_and_versions": [
+    "sourdough starter"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 551,
+     "topic": "Low-hydration sourdough recipe and overview (title and description only)"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "SMlaH9vvgYc",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "Koab3fxN4t4": {
+   "spoken_language": "en",
+   "summary": "This video focuses specifically on preshaping technique for sourdough after bulk fermentation, teaching how to divide and preshape dough with several tricks to maintain control. It does not cover the full bake-along from mixing through baking, but rather isolates one specific step in the process.",
+   "topics_covered": [
+    "preshaping",
+    "dough_handling",
+    "surface_tension"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 261,
+     "topic": "preshaping techniques and dough handling"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "Koab3fxN4t4",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "TDrc82KTeig": {
+   "spoken_language": "en",
+   "summary": "This video compares baking cold-proofed sourdough directly from the fridge versus letting it come to room temperature first, showing the differences in oven spring and crumb structure through a side-by-side bake test.",
+   "topics_covered": [
+    "cold_retard",
+    "scoring_dutch_oven",
+    "oven_spring"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Two sourdough loaves baked using different cold-proof-to-bake methods",
+   "tools_and_versions": [
+    "banneton basket",
+    "bread lame"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 280,
+     "topic": "Introduction and setup of cold versus room temperature comparison"
+    },
+    {
+     "start_s": 280,
+     "end_s": 553,
+     "topic": "Baking cold dough and observing oven spring results"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "TDrc82KTeig",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "Oaq4OPx4xlI": {
+   "spoken_language": "en",
+   "summary": "Without access to the transcript, I cannot accurately assess what is taught. The title and description suggest a beginner sourdough tutorial covering starter, bulk fermentation, shaping, cold proof, and baking, but I cannot confirm the depth, accuracy, or which specific techniques are actually demonstrated.",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "full_course",
+   "is_project_based": true,
+   "project_built": "sourdough bread loaf",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "Oaq4OPx4xlI",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "9fWzWpL5g6w": {
+   "spoken_language": "en",
+   "summary": "This video covers 18 sourdough basics for beginners and experienced bakers, touching on starter care, technique improvement, and common mistakes. However, without the transcript available, the exact depth of coverage on each topic cannot be verified.",
+   "topics_covered": [
+    "sourdough basics",
+    "starter care",
+    "technique",
+    "common mistakes"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1315,
+     "topic": "18 sourdough basics overview"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "9fWzWpL5g6w",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "GiR2wshezF0": {
+   "spoken_language": "en",
+   "summary": "Demonstrates how to determine if sourdough dough has properly proofed using the poke test, identifying the signs of under-proofed, properly-proofed, and over-proofed dough.",
+   "topics_covered": [
+    "proofing test",
+    "poke test",
+    "dough readiness"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 131,
+     "topic": "poke test for proofing"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "GiR2wshezF0",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "hWXA8xFYu9A": {
+   "spoken_language": "en",
+   "summary": "Kathleen demonstrates how to shape bread dough into a boule or round ball, with tips and tricks to improve bread shaping technique and outcomes.",
+   "topics_covered": [
+    "boule shaping",
+    "surface tension",
+    "bread shaping technique"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "dutch oven"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 230,
+     "topic": "boule shaping demonstration and techniques"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "hWXA8xFYu9A",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "Ah2UPXe471M": {
+   "spoken_language": "en",
+   "summary": "The video tests different proofing times and combinations to optimize sourdough fermentation, and explores how cold retard affects proofing progression. It appears focused on experimental methodology rather than teaching a complete beginner bake-along from start to finish.",
+   "topics_covered": [
+    "cold retard",
+    "overproofing",
+    "proofing times"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory",
+    "off_topic"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 486,
+     "topic": "testing proofing times and cold retard effects"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "Ah2UPXe471M",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "5ZvYuz6mDRs": {
+   "spoken_language": "en",
+   "summary": "This video identifies and explains 10 common mistakes that beginner sourdough bakers make, covering issues with starters, bulk fermentation, shaping, and other aspects of the baking process. It aims to help new bakers avoid these pitfalls and improve their sourdough results.",
+   "topics_covered": [
+    "beginner mistakes",
+    "starter management",
+    "bulk fermentation",
+    "shaping",
+    "sourdough troubleshooting"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 23000,
+     "topic": "10 common beginner sourdough mistakes"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 2
+    }
+   ],
+   "video_id": "5ZvYuz6mDRs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "IZegSO8zAB4": {
+   "spoken_language": "en",
+   "summary": "A tutorial on calculating hydration percentages in sourdough dough, explaining the mathematical relationship between flour weight and total water content. This is a foundational concept video rather than a full bake-along.",
+   "topics_covered": [
+    "hydration calculation",
+    "sourdough math"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 325,
+     "topic": "hydration calculation explanation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "IZegSO8zAB4",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "Di3iEsnPqZk": {
+   "spoken_language": "en",
+   "summary": "This video covers 12 tips for mastering sourdough bulk fermentation, including dough temperature control, the aliquot jar method, and starter ratios. It addresses common troubleshooting issues beginners face during the bulk fermentation phase.",
+   "topics_covered": [
+    "bulk fermentation",
+    "dough temperature",
+    "aliquot jar",
+    "starter ratio",
+    "troubleshooting",
+    "sourdough timing"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 103,
+     "topic": "Introduction"
+    },
+    {
+     "start_s": 104,
+     "end_s": 142,
+     "topic": "Dough temperature importance"
+    },
+    {
+     "start_s": 143,
+     "end_s": 294,
+     "topic": "Controlling dough temperature"
+    },
+    {
+     "start_s": 295,
+     "end_s": 516,
+     "topic": "Sourdough journey chart"
+    },
+    {
+     "start_s": 517,
+     "end_s": 722,
+     "topic": "Aliquot jar method"
+    },
+    {
+     "start_s": 723,
+     "end_s": 838,
+     "topic": "Starter amounts and ratios"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "Di3iEsnPqZk",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "h7eqwYLv2tI": {
+   "spoken_language": "en",
+   "summary": "This video teaches sourdough shaping techniques, covering both beginner and advanced methods for forming loaves. It focuses specifically on the shaping step of sourdough baking, not a complete bake-along.",
+   "topics_covered": [
+    "shaping_boule",
+    "surface_tension",
+    "pre_shaping"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 476,
+     "topic": "sourdough shaping techniques - beginner and advanced methods"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "h7eqwYLv2tI",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "Z8sno5EzPw4": {
+   "spoken_language": "en",
+   "summary": "This video appears to focus specifically on bulk fermentation techniques and visual cues for judging fermentation progress, emphasizing not waiting for dough to double as a metric. However, without a transcript, the exact depth and breadth of coverage cannot be assessed.",
+   "topics_covered": [
+    "bulk fermentation",
+    "fermentation cues"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 138,
+     "topic": "bulk fermentation and visual cues"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "Z8sno5EzPw4",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "tSJwo2tkTUY": {
+   "spoken_language": "en",
+   "summary": "This short video focuses on the slap-and-fold technique in sourdough, claiming viewers are doing it incorrectly and missing a key step for building dough strength. It does not appear to cover a full bake-along or the complete sourdough process.",
+   "topics_covered": [
+    "slap-and-fold",
+    "dough strength"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 197,
+     "topic": "slap-and-fold technique and dough strength"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "tSJwo2tkTUY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "msqU-ylXWUs": {
+   "spoken_language": "en",
+   "summary": "This video claims to be a full beginner guide to sourdough baking in 30 minutes, covering the 'why' behind each step. However, without access to the actual transcript, it is impossible to verify what specific techniques are taught or how thoroughly topics like levain hydration, bulk fermentation, shaping, cold retard, and Dutch oven baking are covered.",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "crash_course",
+   "is_project_based": true,
+   "project_built": "sourdough bread loaf",
+   "tools_and_versions": [
+    "sourdough starter"
+   ],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "msqU-ylXWUs",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "fjREsZmGAp4": {
+   "spoken_language": "en",
+   "summary": "This video focuses on recognizing when bulk fermentation is complete in sourdough, offering visual and tactile signs to look for. It emphasizes extending fermentation time slightly rather than under-fermenting, with examples of what different fermentation stages look like.",
+   "topics_covered": [
+    "bulk fermentation",
+    "fermentation timing",
+    "visual cues"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 191,
+     "topic": "bulk fermentation timing and visual signs"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "fjREsZmGAp4",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "02WlZa_N-vI": {
+   "spoken_language": "en",
+   "summary": "This video compares cold proofing versus room temperature proofing for sourdough to determine which produces better open crumb structure. It is an experimental comparison rather than a full bake-along or beginner instruction video.",
+   "topics_covered": [
+    "cold_retard",
+    "final_proof",
+    "crumb_structure"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory",
+    "off_topic"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1017,
+     "topic": "comparison of cold proofing vs room temperature proofing methods"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "02WlZa_N-vI",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "ACipczTnezM": {
+   "spoken_language": "en",
+   "summary": "This video discusses common beginner sourdough mistakes and how to fix them, addressing issues that affect bread outcomes for new sourdough bakers.",
+   "topics_covered": [
+    "beginner mistakes",
+    "troubleshooting"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "ACipczTnezM",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "epnjX9gn5kY": {
+   "spoken_language": "en",
+   "summary": "Unable to assess: no transcript available. The title suggests a complete beginner sourdough guide, but without the transcript, content coverage, depth of teaching, and actual methods cannot be verified.",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": true,
+   "project_built": "sourdough loaf",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "epnjX9gn5kY",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "qJDs85V2NYg": {
+   "spoken_language": "en",
+   "summary": "This video explains how to balance hydration in sourdough formulas to avoid common problems like sticky dough, collapsed loaves, and gummy crumbs. It promotes a free sourdough recipe calculator tool.",
+   "topics_covered": [
+    "hydration",
+    "sourdough formula",
+    "dough consistency"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "magnus 2.0 sourdough calculator"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 397,
+     "topic": "hydration balance and common problems"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "qJDs85V2NYg",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "dTh9pJ3in7k": {
+   "spoken_language": "en",
+   "summary": "This video demonstrates a specific sourdough boule shaping technique focused on building surface tension for better oven spring and consistency. The presenter shows step-by-step methods for shaping a round loaf.",
+   "topics_covered": [
+    "shaping_boule",
+    "surface_tension",
+    "oven_spring"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 147,
+     "topic": "boule shaping technique and surface tension"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 1
+    }
+   ],
+   "video_id": "dTh9pJ3in7k",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  },
+  "CClhjpjcAd8": {
+   "spoken_language": "en",
+   "summary": "This video discusses cold fermentation techniques for bread and pizza, focusing on a 3-hour method and the science behind why cold fermentation improves flavor. It challenges the common belief that cold ferments require 6+ hours to be beneficial.",
+   "topics_covered": [
+    "cold fermentation",
+    "flavor development",
+    "fermentation science"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "poor_transcript",
+    "surface_intro"
+   ],
+   "quotes": [],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 1553,
+     "topic": "cold fermentation science and 3-hour method"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "levain_hydration",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "mixing_bulk",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "shaping_boule",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cold_retard",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "scoring_dutch_oven",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "full_bakealong",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "beginner_mistakes",
+     "score": 0
+    }
+   ],
+   "video_id": "CClhjpjcAd8",
+   "evidence_source": "metadata",
+   "verified_quote_ids": []
+  }
+ },
+ "dup_clusters": [
+  {
+   "members": [
+    "GLSjBbIcUKo",
+    "BJEHsvW2J6M",
+    "5ZvYuz6mDRs",
+    "ACipczTnezM"
+   ],
+   "shared_topics": [
+    "beginner mistakes",
+    "sourdough",
+    "sourdough troubleshooting",
+    "troubleshooting"
+   ]
+  }
+ ],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "msqU-ylXWUs",
+    "covers": [
+     "levain_hydration",
+     "mixing_bulk",
+     "scoring_dutch_oven",
+     "full_bakealong"
+    ],
+    "reason": "A roughly 30-minute beginner full course from The Bread Code that is described as explaining the why behind each step. It is the only full-length beginner bake-along in the pool with a manual transcript, so it is the spine of the plan and fixes your first baker.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.45,
+    "confidence_note": "The card has no verified quotes, no topics and an empty segment map, so I am going on the title, format and manual transcript. Confidence rises if it shows hydration, stretch-and-folds and a Dutch oven bake."
+   },
+   {
+    "video_id": "Koab3fxN4t4",
+    "covers": [
+     "shaping_boule"
+    ],
+    "reason": "Isolates pre-shaping after bulk, with tricks for controlling the dough and building surface tension. It is the same baker as the main course, so the method stays consistent.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.6,
+    "confidence_note": "Manual transcript and a clearly scoped topic, but no verified quotes. It is flagged surface_intro, but it is short and precise, which is what a first-timer needs for this step."
+   },
+   {
+    "video_id": "h7eqwYLv2tI",
+    "covers": [
+     "shaping_boule"
+    ],
+    "reason": "A shaping tutorial from the same baker, covering beginner and more advanced methods for forming loaves with surface tension. It follows pre-shaping, so you can practise the final boule shape.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.55,
+    "confidence_note": "Relevance to shaping is rated 2, but the card is flagged poor_transcript and has no quotes. Focus on the boule or beginner method and skip the advanced shapes."
+   },
+   {
+    "video_id": "TDrc82KTeig",
+    "covers": [
+     "cold_retard",
+     "scoring_dutch_oven"
+    ],
+    "reason": "A side-by-side bake of cold-proofed dough straight from the fridge versus after a rest at room temperature, showing oven spring. It fills the cold retard gap, which the main course is not confirmed to cover in depth. Grant Bakes is the second and last baker.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.5,
+    "confidence_note": "Rated 2 for cold retard and 1 for scoring and Dutch oven, but it is an intermediate-level comparison with a poor transcript and no quotes. Follow the main course's timing and use this to decide whether to rest the dough before baking."
+   },
+   {
+    "video_id": "9fWzWpL5g6w",
+    "covers": [
+     "beginner_mistakes"
+    ],
+    "reason": "Covers 18 sourdough basics including starter care, technique and common mistakes, across every stage you are learning. It comes from The Bread Code, so you get mistake-avoidance without adding a third baker. The surface_intro flag is acceptable because you asked for the beginner-mistakes overview.",
+    "evidence_quote_ids": [],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.35,
+    "confidence_note": "Poor transcript, no quotes and only rated 1 for each topic. Lower confidence; the keen mistakes video 5ZvYuz6mDRs would be stronger but is a third creator."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "VEtU4Co08yY",
+    "reason": "The best-rated full beginner bake-along (lower hydration), but it shows no cold retard, scoring or Dutch oven content and would force a third baker once cold-proof and mistakes videos are added."
+   },
+   {
+    "video_id": "CTuGXdyrWUo",
+    "reason": "A Grant Bakes beginner recipe tutorial with no usable transcript and no verified content. It duplicates the main course, and a second full recipe would add contradictory methods."
+   },
+   {
+    "video_id": "5ZvYuz6mDRs",
+    "reason": "Strongest mistakes video (manual transcript, rated 2) but from Keep it Sweet Kitchen, which would be a third baker and break your limit of two. It is also in the near-duplicate cluster."
+   },
+   {
+    "video_id": "Oaq4OPx4xlI",
+    "reason": "A 28.7-minute '7 steps' course that is probably relevant, but the transcript is unusable, so nothing can be verified, and it is a third creator."
+   },
+   {
+    "video_id": "vFzAPBR4uNQ",
+    "reason": "33 minutes on bulk fermentation signs only. Pure theory flagged, third creator, and too long for one sub-topic."
+   },
+   {
+    "video_id": "EMspoBQRrEs",
+    "reason": "A good short boule demonstration, but the shaping slot is already filled by The Bread Code and a second shaping method would add contradictions."
+   },
+   {
+    "video_id": "kIsOM0mphT0",
+    "reason": "A vlog of one accidental over-ferment, which you ruled out, and it is not systematic teaching."
+   },
+   {
+    "video_id": "IZegSO8zAB4",
+    "reason": "A hydration calculation lesson that is pure theory, from a third baker. Hydration is covered in the main course."
+   },
+   {
+    "video_id": "02WlZa_N-vI",
+    "reason": "An experimental cold versus room-temperature crumb comparison. Intermediate level and flagged off_topic and pure_theory, so it is not a beginner cold-retard guide."
+   },
+   {
+    "video_id": "4gEoh3sk2AE",
+    "reason": "Possibly a bake-along, but no transcript is available to verify it, and it would add a third baker."
+   }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+   "The pool had no verified quotes, so every pick rests on titles, summaries and metadata rather than checked transcript evidence. Confidence is correspondingly modest.",
+   "Time used is about 74 of 120 minutes (62%). Roughly 46 minutes are unused because the remaining videos were third-party, redundant, unverifiable or off-level. Padding them in would have broken your two-baker limit or added weak material.",
+   "Only two bakers are used: The Bread Code (main course, shaping, mistakes) and Grant Bakes (cold-proof and bake test). If their timings or hydration differ, follow The Bread Code for the bake and use Grant Bakes only for the cold-proof decision.",
+   "The beginner-mistakes cluster (GLSjBbIcUKo, BJEHsvW2J6M, 5ZvYuz6mDRs, ACipczTnezM) was entirely from other creators, so none was picked. The Bread Code '18 basics' video stands in for this topic.",
+   "Coverage of bulk fermentation timing, stretch-and-folds, scoring technique and Dutch oven preheating depends on the main course actually showing them, which I could not verify from the card. Check it first and fall back on the 18 basics video if anything is thin.",
+   "Assumed plan: mix on Friday or Saturday, cold retard overnight, bake the next day, with a scale, Dutch oven and banneton or towel-lined bowl."
+  ]
+ },
+ "fixes": []
+}

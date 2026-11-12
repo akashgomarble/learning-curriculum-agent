@@ -1,0 +1,5400 @@
+{
+ "persona": {
+  "persona_id": "career_switch_ml_foundations",
+  "goal": "Go from zero ML knowledge to training and evaluating a small image classifier in PyTorch",
+  "time_budget_minutes": 1200,
+  "user_context": {
+   "background": "Mechanical engineer moving into ML; comfortable with Python scripting, numpy and linear algebra from university",
+   "known": [
+    "Python",
+    "numpy",
+    "basic linear algebra",
+    "calculus"
+   ],
+   "unknown": [
+    "machine learning basics",
+    "gradient descent and backpropagation",
+    "PyTorch tensors and autograd",
+    "training loops",
+    "convolutional neural networks",
+    "model evaluation and overfitting"
+   ],
+   "constraints": "I learn best from code-along videos but I want to understand the math intuition too. Long courses are fine. I can only study 90 minutes at a sitting, so split long courses into parts."
+  },
+  "expectations": {
+   "pick_count": [
+    4,
+    10
+   ],
+   "min_utilisation": 0.6,
+   "max_utilisation": 1.0,
+   "forbidden_title_regex": "(?i)in \\d+ seconds|tensorflow|keras",
+   "forbidden_flags": [
+    "surface_intro",
+    "off_topic"
+   ],
+   "unknown_synonyms": {
+    "machine learning basics": [
+     "machine learning",
+     "supervised",
+     "loss function",
+     "regression",
+     "classification"
+    ],
+    "gradient descent and backpropagation": [
+     "gradient descent",
+     "backprop",
+     "gradient"
+    ],
+    "PyTorch tensors and autograd": [
+     "tensor",
+     "autograd"
+    ],
+    "training loops": [
+     "training loop",
+     "optimizer",
+     "epoch",
+     "training"
+    ],
+    "convolutional neural networks": [
+     "cnn",
+     "convolution",
+     "conv2d"
+    ],
+    "model evaluation and overfitting": [
+     "evaluation",
+     "overfitting",
+     "validation",
+     "accuracy",
+     "test set"
+    ]
+   },
+   "known_topics": [
+    "python basics",
+    "numpy",
+    "linear algebra"
+   ],
+   "min_level": null,
+   "require_project_based": true,
+   "required_language": "en",
+   "expect_infeasible": false,
+   "expect_assumptions": false,
+   "min_upload_year": null,
+   "max_sitting_minutes": 90.0,
+   "max_channels": null,
+   "max_per_channel": null,
+   "notes": "Huge budget: should use most of 20 hours with a prerequisite chain (ML basics -> gradients -> tensors/autograd -> training loop -> CNN -> evaluation); long courses legitimate."
+  }
+ },
+ "mode": "agent",
+ "models": {
+  "plan": "anthropic/claude-sonnet-5.5",
+  "assess": "anthropic/claude-haiku-4.5",
+  "select": "anthropic/claude-sonnet-5.5"
+ },
+ "offline": true,
+ "use_transcripts": true,
+ "timings_s": {
+  "load_fixture": 0.0,
+  "assess": 0.0,
+  "dedup": 0.02,
+  "select": 69.66
+ },
+ "cost_by_stage": {
+  "select": {
+   "calls": 1,
+   "cost_usd": 0.16663,
+   "prompt_tokens": 33781,
+   "completion_tokens": 9907,
+   "latency_s": 69.65
+  }
+ },
+ "calls": [
+  {
+   "stage": "select",
+   "model": "anthropic/claude-sonnet-5.5",
+   "prompt_tokens": 33781,
+   "completion_tokens": 9907,
+   "cost_usd": 0.166632,
+   "latency_s": 69.65
+  }
+ ],
+ "plan": {
+  "interpretation": "The learner can explain core ML and backpropagation intuition, then write and run a PyTorch training loop for a small CNN image classifier and evaluate it for overfitting and accuracy.",
+  "assumptions": [
+   "The 1200 minutes is pure viewing time, so it covers about 20 hours of videos with no time reserved for practice.",
+   "Because the learner likes code-along videos, the plan favors tutorials where the presenter writes code live.",
+   "'Small image classifier' means a CNN trained on MNIST, Fashion-MNIST or CIFAR-10, not a large pretrained model pipeline.",
+   "Each video or course part should fit within a 90-minute sitting, so long courses are picked in chunks of 90 minutes or less.",
+   "Calculus and linear algebra are already known, so math-focused videos should build intuition for ML and not reteach prerequisites."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "preferred_language": "en",
+  "learner_level": "beginner",
+  "sub_topics": [
+   {
+    "id": "ml_basics",
+    "title": "Machine learning fundamentals: models, loss, features, train/test split",
+    "why": "The learner has no ML background, so they need the vocabulary and framing (supervised learning, loss functions, generalization) before touching neural networks.",
+    "prereqs": [],
+    "minutes_share": 0.1
+   },
+   {
+    "id": "gradient_descent_backprop",
+    "title": "Gradient descent and backpropagation intuition and math",
+    "why": "The learner knows calculus, so they can learn the chain rule applied to computation graphs and see how weights are updated, which gives the math intuition they want.",
+    "prereqs": [
+     "ml_basics"
+    ],
+    "minutes_share": 0.17
+   },
+   {
+    "id": "pytorch_tensors_autograd",
+    "title": "PyTorch tensors and autograd",
+    "why": "The learner knows numpy, so tensors map to familiar ideas. They need to learn the PyTorch API, GPU/device handling, and how autograd computes gradients.",
+    "prereqs": [
+     "gradient_descent_backprop"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "nn_training_loop",
+    "title": "Building neural networks and training loops in PyTorch",
+    "why": "They need to write nn.Module models, pick loss functions and optimizers, use DataLoaders and run the train/eval loop end to end.",
+    "prereqs": [
+     "pytorch_tensors_autograd"
+    ],
+    "minutes_share": 0.17
+   },
+   {
+    "id": "cnn_fundamentals",
+    "title": "Convolutional neural networks: convolutions, pooling, architectures",
+    "why": "Image classification needs CNNs. A linear algebra background helps with understanding convolution as a sliding dot product and with feature maps and shapes.",
+    "prereqs": [
+     "nn_training_loop"
+    ],
+    "minutes_share": 0.15
+   },
+   {
+    "id": "evaluation_overfitting",
+    "title": "Model evaluation, overfitting, and regularization",
+    "why": "The learner must measure accuracy and tell whether the model generalizes, using validation splits, loss curves, confusion matrices, data augmentation, dropout and weight decay.",
+    "prereqs": [
+     "nn_training_loop"
+    ],
+    "minutes_share": 0.11
+   },
+   {
+    "id": "image_classifier_project",
+    "title": "Build and train an image classifier end to end in PyTorch",
+    "why": "A code-along project ties everything together: load an image dataset, build a CNN, train it, evaluate it, and iterate to improve results.",
+    "prereqs": [
+     "cnn_fundamentals",
+     "evaluation_overfitting"
+    ],
+    "minutes_share": 0.15
+   }
+  ],
+  "search_queries": [
+   "machine learning fundamentals for beginners with math intuition supervised learning loss function",
+   "gradient descent and backpropagation explained calculus chain rule neural network from scratch",
+   "PyTorch tensors and autograd tutorial for numpy users code along",
+   "PyTorch full course beginner neural network training loop code along",
+   "convolutional neural network explained PyTorch CNN tutorial code along",
+   "overfitting underfitting validation loss PyTorch regularization dropout data augmentation tutorial",
+   "PyTorch image classification project CNN CIFAR-10 Fashion-MNIST full tutorial from scratch"
+  ],
+  "title_exclusions": [],
+  "skip_topics": [
+   "Python",
+   "numpy",
+   "basic linear algebra",
+   "calculus"
+  ]
+ },
+ "pool": [
+  {
+   "video_id": "Idg5uFnpV1M",
+   "title": "What is PyTorch | Introduction to PyTorch | PyTorch Tutorial For Beginners | Intellipaat",
+   "channel": "Intellipaat",
+   "minutes": 4.0,
+   "views": 71739,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along",
+    "PyTorch full course beginner neural network training loop code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "ORMx45xqWkA",
+   "title": "PyTorch in 100 Seconds",
+   "channel": "Fireship",
+   "minutes": 2.7,
+   "views": 1430192,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along",
+    "PyTorch full course beginner neural network training loop code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "QoK1nNAURw4",
+   "title": "Machine Learning Crash Course: Gradient Descent",
+   "channel": "Google for Developers",
+   "minutes": 2.2,
+   "views": 222714,
+   "found_by": [
+    "machine learning fundamentals for beginners with math intuition supervised learning loss function"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "tIeHLnjs5U8",
+   "title": "Backpropagation calculus | Deep Learning Chapter 4",
+   "channel": "3Blue1Brown",
+   "minutes": 10.3,
+   "views": 4010639,
+   "found_by": [
+    "gradient descent and backpropagation explained calculus chain rule neural network from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "JHWqWIoac2I",
+   "title": "Create a Basic Neural Network Model - Deep Learning with PyTorch 5",
+   "channel": "John Elder",
+   "minutes": 15.7,
+   "views": 168219,
+   "found_by": [
+    "PyTorch full course beginner neural network training loop code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "pDdP0TFzsoQ",
+   "title": "PyTorch Tutorial 14 - Convolutional Neural Network (CNN)",
+   "channel": "Patrick Loeber",
+   "minutes": 22.1,
+   "views": 241988,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hpFzuMSYg9k",
+   "title": "Regularization | L1 & L2 | Dropout | Data Augmentation | Early Stopping |  Deep Learning Part 4",
+   "channel": "ByteQuest",
+   "minutes": 13.9,
+   "views": 7751,
+   "found_by": [
+    "overfitting underfitting validation loss PyTorch regularization dropout data augmentation tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "7HPwo4wnJeA",
+   "title": "Image classification using CNN (CIFAR10 dataset) | Deep Learning Tutorial 24 (Tensorflow & Python)",
+   "channel": "codebasics",
+   "minutes": 28.2,
+   "views": 621747,
+   "found_by": [
+    "PyTorch image classification project CNN CIFAR-10 Fashion-MNIST full tutorial from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "CRB266Eyjkg",
+   "title": "Tutorial 6-Chain Rule of Differentiation with BackPropagation",
+   "channel": "Krish Naik",
+   "minutes": 13.7,
+   "views": 258676,
+   "found_by": [
+    "gradient descent and backpropagation explained calculus chain rule neural network from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "lSDhp0kr1ZE",
+   "title": "PyTorch Sinhala Tutorial #2 - Auto Grad and Tensor Functions - PyTorch in Sinhala",
+   "channel": "Haritha Weerathunga",
+   "minutes": 13.5,
+   "views": 424,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "zfiSAzpy9NM",
+   "title": "Simple explanation of convolutional neural network | Deep Learning Tutorial 23 (Tensorflow & Python)",
+   "channel": "codebasics",
+   "minutes": 23.9,
+   "views": 1459263,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "8rqSbzap8oo",
+   "title": "Curing Overfitting with Regularization | Season 1 | Part 29",
+   "channel": "Soance Learning Hub",
+   "minutes": 5.0,
+   "views": 100,
+   "found_by": [
+    "overfitting underfitting validation loss PyTorch regularization dropout data augmentation tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Ynhr-F5WwOA",
+   "title": "Tensorflow Fashion MNIST Tutorial. | Tensorflow Image Classification | Neural Networks Deep learning",
+   "channel": "John Cena",
+   "minutes": 18.9,
+   "views": 182,
+   "found_by": [
+    "PyTorch image classification project CNN CIFAR-10 Fashion-MNIST full tutorial from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "EuBBz3bI-aA",
+   "title": "Machine Learning Fundamentals: Bias and Variance",
+   "channel": "StatQuest with Josh Starmer",
+   "minutes": 6.6,
+   "views": 1818746,
+   "found_by": [
+    "machine learning fundamentals for beginners with math intuition supervised learning loss function"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "Ilg3gGewQ5U",
+   "title": "Backpropagation, intuitively | Deep Learning Chapter 3",
+   "channel": "3Blue1Brown",
+   "minutes": 12.8,
+   "views": 6401499,
+   "found_by": [
+    "gradient descent and backpropagation explained calculus chain rule neural network from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "jDe5BAsT2-Y",
+   "title": "Convolutional Neural Networks from Scratch | In Depth",
+   "channel": "Erai",
+   "minutes": 12.9,
+   "views": 177622,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "fRqQwCXSeqo",
+   "title": "13 PyTorch tutorial - Popular techniques to prevent the overfitting in a Neural Networks",
+   "channel": "datahacker. rs",
+   "minutes": 15.9,
+   "views": 2063,
+   "found_by": [
+    "overfitting underfitting validation loss PyTorch regularization dropout data augmentation tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "0K4J_PTgysc",
+   "title": "Cat Vs Dog Image Classification Project | Deep Learning Project | CNN Project",
+   "channel": "CampusX",
+   "minutes": 27.5,
+   "views": 351702,
+   "found_by": [
+    "PyTorch image classification project CNN CIFAR-10 Fashion-MNIST full tutorial from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "TH8cvKLSXGg",
+   "title": "[ML1] Machine Learning Fundamentals: Supervised Learning & Linear Regression",
+   "channel": "64TechBits",
+   "minutes": 12.3,
+   "views": 64,
+   "found_by": [
+    "machine learning fundamentals for beginners with math intuition supervised learning loss function"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "IHZwWFHWa-w",
+   "title": "Gradient descent, how neural networks learn | Deep Learning Chapter 2",
+   "channel": "3Blue1Brown",
+   "minutes": 20.6,
+   "views": 9744717,
+   "found_by": [
+    "gradient descent and backpropagation explained calculus chain rule neural network from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "BZyKufPCKdI",
+   "title": "PyTorch a framework for research of dynamic deep learning models - Adam Paszke",
+   "channel": "PyData",
+   "minutes": 34.1,
+   "views": 5233,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "CtzfbUwrYGI",
+   "title": "Image Classification CNN in PyTorch",
+   "channel": "NeuralNine",
+   "minutes": 30.5,
+   "views": 47573,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "o3DztvnfAJg",
+   "title": "Underfitting & Overfitting - Explained",
+   "channel": "NStatum",
+   "minutes": 2.9,
+   "views": 93491,
+   "found_by": [
+    "overfitting underfitting validation loss PyTorch regularization dropout data augmentation tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "36pfg7RpvbQ",
+   "title": "Understanding BackPropagation Using Multi-variate Calculus [Machine Learning Tutorial]",
+   "channel": "Growlix Digital",
+   "minutes": 13.2,
+   "views": 1371,
+   "found_by": [
+    "gradient descent and backpropagation explained calculus chain rule neural network from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "DK1GBJ-yWgw",
+   "title": "Fixing loss.backward() Gradient Issues in PyTorch S3FD PGD Attack",
+   "channel": "vlogommentary",
+   "minutes": 4.3,
+   "views": 1,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "hkiBZLRFvO4",
+   "title": "Building a CNN using PyTorch | Video 11 | CampusX",
+   "channel": "CampusX",
+   "minutes": 32.4,
+   "views": 47522,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "EehRcPo1M-Q",
+   "title": "Regularization in a Neural Network | Dealing with overfitting",
+   "channel": "AssemblyAI",
+   "minutes": 11.7,
+   "views": 122138,
+   "found_by": [
+    "overfitting underfitting validation loss PyTorch regularization dropout data augmentation tutorial"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "NbPslfbNfjA",
+   "title": "Simple CNN (train from scratch) - MNIST datasets",
+   "channel": "Nguyên Ôn",
+   "minutes": 3.0,
+   "views": 88,
+   "found_by": [
+    "PyTorch image classification project CNN CIFAR-10 Fashion-MNIST full tutorial from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "vsWrXfO3wWw",
+   "title": "Machine Learning Tutorial Python - 4: Gradient Descent and Cost Function",
+   "channel": "codebasics",
+   "minutes": 28.4,
+   "views": 854730,
+   "found_by": [
+    "machine learning fundamentals for beginners with math intuition supervised learning loss function"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "fZtjO2cs3VQ",
+   "title": "Backpropagation Explained By Hand: Two-Layer Neural Network, Chain Rule and Gradient Descent",
+   "channel": "CodeFlow Daily",
+   "minutes": 8.0,
+   "views": 36,
+   "found_by": [
+    "gradient descent and backpropagation explained calculus chain rule neural network from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "kUkGR5Lu3DU",
+   "title": "Exploring the Deep Learning Framework PyTorch - Stephanie Kim",
+   "channel": "Anaconda, Inc.",
+   "minutes": 36.0,
+   "views": 2764,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "wnK3uWv_WkU",
+   "title": "Pytorch CNN example (Convolutional Neural Network)",
+   "channel": "Aladdin Persson",
+   "minutes": 10.3,
+   "views": 100334,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "pNI4N6GWdME",
+   "title": "Convolutional Neural Network to Identify Particles of Clothing - Part 2",
+   "channel": "StudyGyaan",
+   "minutes": 10.0,
+   "views": 592,
+   "found_by": [
+    "PyTorch image classification project CNN CIFAR-10 Fashion-MNIST full tutorial from scratch"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "4b4MUYve_U8",
+   "title": "Stanford CS229: Machine Learning - Linear Regression and Gradient Descent |  Lecture 2 (Autumn 2018)",
+   "channel": "Stanford Online",
+   "minutes": 78.3,
+   "views": 2155520,
+   "found_by": [
+    "machine learning fundamentals for beginners with math intuition supervised learning loss function"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "FHdlXe1bSe4",
+   "title": "The StatQuest Introduction to PyTorch",
+   "channel": "StatQuest with Josh Starmer",
+   "minutes": 23.4,
+   "views": 224798,
+   "found_by": [
+    "PyTorch tensors and autograd tutorial for numpy users code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  },
+  {
+   "video_id": "r6yRAxDpamQ",
+   "title": "Convolutional Neural Network Model - Deep Learning with PyTorch 16",
+   "channel": "John Elder",
+   "minutes": 12.4,
+   "views": 19941,
+   "found_by": [
+    "convolutional neural network explained PyTorch CNN tutorial code along"
+   ],
+   "transcript_lang": "en",
+   "transcript_generated": true,
+   "transcript_error": null
+  }
+ ],
+ "assessments": {
+  "Idg5uFnpV1M": {
+   "spoken_language": "en",
+   "summary": "An overview of PyTorch as a deep learning framework, covering what it is, its core features (tensors, CUDA, dynamic computational graphs), and a high-level description of the PyTorch workflow for model training. The video explains why PyTorch is popular among data scientists and briefly outlines the steps: importing data, building models, backpropagation with autograd, and testing/saving.",
+   "topics_covered": [
+    "pytorch overview",
+    "tensors",
+    "cuda",
+    "dynamic computational graphs",
+    "autograd",
+    "pytorch workflow"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch",
+    "cuda"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 26,
+     "text": "PyTorch is one of the best python frameworks out there when it comes to creating deep learning models"
+    },
+    {
+     "id": "q2",
+     "t": 1843,
+     "text": "Tensor is one of the most prominent features a data type that PyTorch brings to the table"
+    },
+    {
+     "id": "q3",
+     "t": 206,
+     "text": "PyTorch offers Dynamic Computational Graphs which let developers define and modify models during runtime itself"
+    },
+    {
+     "id": "q4",
+     "t": 5029,
+     "text": "we proceed with minimizing the loss function with the help of back propagation using the Autograd method"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 27,
+     "topic": "Introduction and why PyTorch is popular"
+    },
+    {
+     "start_s": 27,
+     "end_s": 110,
+     "topic": "What is PyTorch framework and its history"
+    },
+    {
+     "start_s": 110,
+     "end_s": 206,
+     "topic": "Tensors as core datatype and CUDA for parallel computing"
+    },
+    {
+     "start_s": 206,
+     "end_s": 300,
+     "topic": "Why PyTorch: dynamic computational graphs and flexibility"
+    },
+    {
+     "start_s": 300,
+     "end_s": 352,
+     "topic": "PyTorch workflow overview: data import, model building, backprop, validation and saving"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "Idg5uFnpV1M",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3"
+   ]
+  },
+  "ORMx45xqWkA": {
+   "spoken_language": "en",
+   "summary": "A 100-second overview of PyTorch covering what it is, how tensors work, GPU acceleration, and how to build a simple neural network classifier by defining a class with layers (flatten, linear, activation) and a forward method.",
+   "topics_covered": [
+    "pytorch_intro",
+    "tensors",
+    "gpu_acceleration",
+    "neural_network_basics",
+    "fully_connected_layers",
+    "activation_functions"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch 2",
+    "cuda"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Pytorch, an open source deep learning framework used to build some of the world's most famous artificial intelligence products."
+    },
+    {
+     "id": "q2",
+     "t": 0,
+     "text": "Fundamentally, it's a library for programming with tensors, which are basically just multi-dimensional arrays."
+    },
+    {
+     "id": "q3",
+     "t": 124,
+     "text": "Inside the constructor, we can build it out layer by layer. The flatten layer will take a multi-dimensional input like an image."
+    },
+    {
+     "id": "q4",
+     "t": 202,
+     "text": "Linear is a fully connected layer that takes the flattened 28x28 image and transforms it to an output of 512."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 22,
+     "topic": "PyTorch overview and what it is"
+    },
+    {
+     "start_s": 22,
+     "end_s": 52,
+     "topic": "Tensors, computation graphs, and GPU acceleration"
+    },
+    {
+     "start_s": 52,
+     "end_s": 104,
+     "topic": "Real-world applications of PyTorch"
+    },
+    {
+     "start_s": 104,
+     "end_s": 163,
+     "topic": "Installation and creating tensors"
+    },
+    {
+     "start_s": 163,
+     "end_s": 223,
+     "topic": "Building a neural network class with layers"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "ORMx45xqWkA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "QoK1nNAURw4": {
+   "spoken_language": "en",
+   "summary": "This video explains gradient descent as an algorithm for training machine learning models by iteratively adjusting weights and biases to minimize loss. Using a concrete example of predicting travel times based on the number of stop signs, it demonstrates how gradient descent uses calculus to find optimal model parameters that produce the lowest mean squared error.",
+   "topics_covered": [
+    "gradient descent",
+    "loss function",
+    "mean squared error",
+    "model convergence",
+    "weight and bias optimization",
+    "linear regression"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Gradient descent is a mathematical technique for training a model that iteratively finds the weight and bias"
+    },
+    {
+     "id": "q2",
+     "t": 25,
+     "text": "Let's focus on one parameter, the number of stop signs on your route to your local coffee shop"
+    },
+    {
+     "id": "q3",
+     "t": 101,
+     "text": "Gradient descent uses calculus to decide whether to increase or decrease the weight and bias values to improve the model"
+    },
+    {
+     "id": "q4",
+     "t": 143,
+     "text": "Gradient descent repeats this process, adjusting weight and bias values iteratively to reduce loss"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 25,
+     "topic": "What is gradient descent and its purpose"
+    },
+    {
+     "start_s": 25,
+     "end_s": 45,
+     "topic": "Setting up the example problem: coffee shop travel time prediction"
+    },
+    {
+     "start_s": 45,
+     "end_s": 101,
+     "topic": "Initializing model and calculating initial loss"
+    },
+    {
+     "start_s": 101,
+     "end_s": 143,
+     "topic": "How gradient descent adjusts parameters and reduces loss"
+    },
+    {
+     "start_s": 143,
+     "end_s": 203,
+     "topic": "Iterative process and model convergence"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "QoK1nNAURw4",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "tIeHLnjs5U8": {
+   "spoken_language": "en",
+   "summary": "This video provides a formal mathematical treatment of backpropagation, focusing on how to compute derivatives of the cost function with respect to weights and biases using the chain rule from calculus. It covers single-neuron and multi-neuron layers, explaining how sensitivity to weights, biases, and activations propagates backwards through the network.",
+   "topics_covered": [
+    "backpropagation",
+    "chain rule",
+    "derivatives",
+    "gradient computation",
+    "cost function",
+    "weights and biases",
+    "activation functions"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 3,
+     "text": "we get a little bit more formal and dive into the relevant calculus"
+    },
+    {
+     "id": "q2",
+     "t": 346,
+     "text": "the chain rule, where multiplying together these three ratios gives us the sensitivity of C to small changes in WL"
+    },
+    {
+     "id": "q3",
+     "t": 403,
+     "text": "the derivative of C with respect to AL works out to be two times AL minus Y"
+    },
+    {
+     "id": "q4",
+     "t": 627,
+     "text": "you can just keep iterating this same chain rule idea backwards to see how sensitive the cost function is to previous weights and previous biases"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 38,
+     "topic": "introduction and prerequisites"
+    },
+    {
+     "start_s": 38,
+     "end_s": 240,
+     "topic": "chain rule in networks with single neuron layers"
+    },
+    {
+     "start_s": 240,
+     "end_s": 360,
+     "topic": "cost function and notation setup"
+    },
+    {
+     "start_s": 360,
+     "end_s": 540,
+     "topic": "computing derivatives via chain rule"
+    },
+    {
+     "start_s": 540,
+     "end_s": 720,
+     "topic": "interpreting derivatives and sensitivity analysis"
+    },
+    {
+     "start_s": 720,
+     "end_s": 900,
+     "topic": "extending to multi-neuron layers"
+    },
+    {
+     "start_s": 900,
+     "end_s": 618,
+     "topic": "recap and intuition of backpropagation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "tIeHLnjs5U8",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "JHWqWIoac2I": {
+   "spoken_language": "en",
+   "summary": "This video builds a basic neural network class in PyTorch for classifying Iris flowers. It covers defining model architecture with fully connected layers, implementing the forward pass with ReLU activation, instantiating the model, and debugging common errors. The focus is on hands-on PyTorch code rather than mathematical foundations.",
+   "topics_covered": [
+    "pytorch basics",
+    "neural network architecture",
+    "fully connected layers",
+    "forward pass",
+    "relu activation",
+    "nn.module",
+    "object-oriented programming",
+    "manual seed"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "A simple neural network classifier for Iris flower classification with input layer (4 features), two hidden layers (8 neurons each), and output layer (3 classes)",
+   "tools_and_versions": [
+    "pytorch",
+    "google colab",
+    "jupyter notebook"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 144,
+     "text": "You have an input layer here, an output layer here, and then inside of here, we have hidden layers of neurons."
+    },
+    {
+     "id": "q2",
+     "t": 1024,
+     "text": "fully connected one and fully connected two, because they are fully connected."
+    },
+    {
+     "id": "q3",
+     "t": 1844,
+     "text": "ReLU stands for rectified linear unit. if the output is less than zero, let's just call it zero. Otherwise, use the output."
+    },
+    {
+     "id": "q4",
+     "t": 2143,
+     "text": "neural networks involve randomization. if you want your random numbers to equal my random numbers, we have to give it a seed."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 270,
+     "topic": "Introduction and Iris dataset overview"
+    },
+    {
+     "start_s": 270,
+     "end_s": 450,
+     "topic": "Neural network architecture explanation with diagram"
+    },
+    {
+     "start_s": 450,
+     "end_s": 510,
+     "topic": "Imports and setup"
+    },
+    {
+     "start_s": 510,
+     "end_s": 660,
+     "topic": "Creating model class inheriting nn.module"
+    },
+    {
+     "start_s": 660,
+     "end_s": 840,
+     "topic": "Defining fully connected layers"
+    },
+    {
+     "start_s": 840,
+     "end_s": 1125,
+     "topic": "Implementing forward function with ReLU activation"
+    },
+    {
+     "start_s": 1125,
+     "end_s": 1310,
+     "topic": "Manual seed and model instantiation"
+    },
+    {
+     "start_s": 1310,
+     "end_s": 1540,
+     "topic": "Debugging and error fixes"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 2
+    }
+   ],
+   "video_id": "JHWqWIoac2I",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2"
+   ]
+  },
+  "pDdP0TFzsoQ": {
+   "spoken_language": "en",
+   "summary": "Implements a CNN from scratch in PyTorch to classify CIFAR-10 images. Covers CNN architecture concepts (convolutional filters, pooling layers, fully connected layers), building a multi-layer CNN model with Conv2d and Linear layers, and training it end-to-end with a training loop and accuracy evaluation.",
+   "topics_covered": [
+    "cnn_architecture",
+    "convolutional_filters",
+    "pooling",
+    "pytorch_nn_module",
+    "conv2d_layers",
+    "linear_layers",
+    "training_loop",
+    "model_evaluation",
+    "cifar10_dataset"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "CIFAR-10 image classifier CNN in PyTorch",
+   "tools_and_versions": [
+    "pytorch",
+    "cifar-10"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 45,
+     "text": "Convolutional Neural Nets are similar to ordinary neural networks but mainly work on image data and apply convolutional filters"
+    },
+    {
+     "id": "q2",
+     "t": 144,
+     "text": "a typical CNN architecture has convolutional layers and pooling layers to learn features from images, then fully connected layers for classification"
+    },
+    {
+     "id": "q3",
+     "t": 250,
+     "text": "we apply the first convolutional layer and this will get the images, then print the next size after this operation"
+    },
+    {
+     "id": "q4",
+     "t": 1629,
+     "text": "now after these convolutional layers, when we put them into our classification layers, we want to flatten the 3D tensor to a 1D tensor"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 400,
+     "topic": "CNN fundamentals and architecture explanation"
+    },
+    {
+     "start_s": 400,
+     "end_s": 800,
+     "topic": "Data loading and project structure"
+    },
+    {
+     "start_s": 800,
+     "end_s": 1300,
+     "topic": "Defining CNN layers in PyTorch"
+    },
+    {
+     "start_s": 1300,
+     "end_s": 1800,
+     "topic": "Implementing forward pass with convolution and pooling"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2100,
+     "topic": "Training loop and model evaluation"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2200,
+     "topic": "Results and conclusion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 3
+    }
+   ],
+   "video_id": "pDdP0TFzsoQ",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q4"
+   ]
+  },
+  "hpFzuMSYg9k": {
+   "spoken_language": "en",
+   "summary": "This video explains regularization techniques to prevent overfitting in machine learning models. It covers L1 and L2 regularization, dropout, data augmentation, and early stopping, with geometric intuitions and mathematical foundations for each method.",
+   "topics_covered": [
+    "regularization",
+    "l1_regularization",
+    "l2_regularization",
+    "dropout",
+    "data_augmentation",
+    "early_stopping",
+    "overfitting",
+    "model_generalization"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 127,
+     "text": "Regularization is anything we do to prevent overfitting and help the model generalize better"
+    },
+    {
+     "id": "q2",
+     "t": 251,
+     "text": "When lambda is bigger, the penalty is bigger; when lambda is smaller, the penalty is smaller"
+    },
+    {
+     "id": "q3",
+     "t": 703,
+     "text": "L1 regularization produces sparse weights because the diamond has corners with high probability of touching"
+    },
+    {
+     "id": "q4",
+     "t": 1324,
+     "text": "With early stopping, we stop training at the point where the validation loss is smaller, preventing the model from overfitting"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 150,
+     "topic": "Introduction to overfitting and underfitting"
+    },
+    {
+     "start_s": 150,
+     "end_s": 450,
+     "topic": "L1 and L2 regularization concepts and math"
+    },
+    {
+     "start_s": 450,
+     "end_s": 650,
+     "topic": "Geometric intuition for L1 vs L2 regularization"
+    },
+    {
+     "start_s": 650,
+     "end_s": 1050,
+     "topic": "Dropout regularization and inverted dropout"
+    },
+    {
+     "start_s": 1050,
+     "end_s": 1280,
+     "topic": "Data augmentation techniques"
+    },
+    {
+     "start_s": 1280,
+     "end_s": 1434,
+     "topic": "Early stopping method"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "hpFzuMSYg9k",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "7HPwo4wnJeA": {
+   "spoken_language": "en",
+   "summary": "This video builds an image classifier on the CIFAR-10 dataset using TensorFlow/Keras. It first trains a simple artificial neural network, then shows how a convolutional neural network dramatically improves accuracy from 47% to 70%, explaining convolution filters, pooling, and activation functions along the way.",
+   "topics_covered": [
+    "image classification",
+    "cifar10 dataset",
+    "data exploration",
+    "data normalization",
+    "artificial neural networks",
+    "convolutional neural networks",
+    "convolution filters",
+    "max pooling",
+    "softmax activation",
+    "relu activation",
+    "model compilation",
+    "training and evaluation",
+    "precision recall f1",
+    "classification metrics"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Image classifier on CIFAR-10 dataset using CNN with convolution and pooling layers",
+   "tools_and_versions": [
+    "tensorflow",
+    "keras",
+    "python",
+    "numpy",
+    "matplotlib",
+    "jupyter notebook"
+   ],
+   "red_flags": [
+    "wrong_language"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "today we are going to do image classification of 60,000 small images and this dataset is coming from Tensorflow library itself"
+    },
+    {
+     "id": "q2",
+     "t": 912,
+     "text": "the input layer is a flatten layer, it's the first layer, which accepts the shape of 32x32x3"
+    },
+    {
+     "id": "q3",
+     "t": 1601,
+     "text": "the best thing about convolutional neural network is you don't need to tell it what what the filters are. It will figure out the filters for you"
+    },
+    {
+     "id": "q4",
+     "t": 2018,
+     "text": "in this kind of complex tough dataset also, we get 70% accuracy, which is pretty nice"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "introduction and dataset overview"
+    },
+    {
+     "start_s": 240,
+     "end_s": 720,
+     "topic": "loading and exploring CIFAR-10 data"
+    },
+    {
+     "start_s": 720,
+     "end_s": 936,
+     "topic": "visualizing and checking data shapes"
+    },
+    {
+     "start_s": 936,
+     "end_s": 1506,
+     "topic": "data normalization and exploration"
+    },
+    {
+     "start_s": 1506,
+     "end_s": 2020,
+     "topic": "building and training simple ANN"
+    },
+    {
+     "start_s": 2020,
+     "end_s": 2400,
+     "topic": "evaluating ANN performance with metrics"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2880,
+     "topic": "building CNN architecture with convolution and pooling"
+    },
+    {
+     "start_s": 2880,
+     "end_s": 3400,
+     "topic": "training CNN and achieving 70% accuracy"
+    },
+    {
+     "start_s": 3400,
+     "end_s": 3600,
+     "topic": "visualizing predictions and evaluating CNN"
+    },
+    {
+     "start_s": 3600,
+     "end_s": 3900,
+     "topic": "exercise assignment and conclusion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 3
+    }
+   ],
+   "video_id": "7HPwo4wnJeA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "CRB266Eyjkg": {
+   "spoken_language": "en",
+   "summary": "This video explains the chain rule of differentiation as the mathematical foundation of backpropagation in neural networks. It walks through how weights are updated during backpropagation by computing gradients using the chain rule, tracing how changes in weights impact the loss function through multiple layers.",
+   "topics_covered": [
+    "chain rule",
+    "backpropagation",
+    "gradient computation",
+    "weight updates",
+    "loss function",
+    "neural network architecture"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "in deep learning the most important thing to understand is back propagation"
+    },
+    {
+     "id": "q2",
+     "t": 432,
+     "text": "W11 new equals W11 old minus learning rate of derivative of W11"
+    },
+    {
+     "id": "q3",
+     "t": 1005,
+     "text": "derivative of loss with respect to W divided by derivative of output multiplied by derivative of output with respect to weight"
+    },
+    {
+     "id": "q4",
+     "t": 939,
+     "text": "this is what is chain rule, this is impacting this, this is impacting this, so from the backend I'm going to find out the derivative"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 300,
+     "topic": "Introduction and neural network architecture diagram"
+    },
+    {
+     "start_s": 300,
+     "end_s": 600,
+     "topic": "Loss function and weight update formulas"
+    },
+    {
+     "start_s": 600,
+     "end_s": 1200,
+     "topic": "Chain rule application to simple weight gradients"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1400,
+     "topic": "Chain rule for multi-layer weights and multiple paths"
+    },
+    {
+     "start_s": 1400,
+     "end_s": 1643,
+     "topic": "Summary of backpropagation process and gradient descent convergence"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "CRB266Eyjkg",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "lSDhp0kr1ZE": {
+   "spoken_language": "si",
+   "summary": "This tutorial teaches PyTorch tensors and automatic gradient computation (autograd). It covers creating tensors with requires_grad enabled, computing gradients using backward(), and basic tensor operations like concatenation, reshaping, and trigonometric functions. It also demonstrates NumPy-PyTorch conversion.",
+   "topics_covered": [
+    "pytorch tensors",
+    "autograd",
+    "requires_grad",
+    "backward propagation",
+    "tensor operations",
+    "concatenation",
+    "reshaping",
+    "trigonometric functions",
+    "numpy conversion"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch",
+    "numpy"
+   ],
+   "red_flags": [
+    "wrong_language"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 125,
+     "text": "requires_grad if it is set to True, gradients need to be computed for this tensor"
+    },
+    {
+     "id": "q2",
+     "t": 332,
+     "text": "Y.backward. We can compute dy/dx, dy/dm, dy/dc using x.grad, m.grad, c.grad"
+    },
+    {
+     "id": "q3",
+     "t": 451,
+     "text": "W is weight and B is bias. These are the parameters we use in neural networks"
+    },
+    {
+     "id": "q4",
+     "t": 848,
+     "text": "torch.cat takes a list of tensors and concatenates them together"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 423,
+     "topic": "Introduction and requires_grad parameter"
+    },
+    {
+     "start_s": 423,
+     "end_s": 621,
+     "topic": "Computing gradients with backward() and derivatives"
+    },
+    {
+     "start_s": 621,
+     "end_s": 900,
+     "topic": "Tensor functions: torch.full, concatenation"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1349,
+     "topic": "Tensor operations: reshaping, trigonometric functions"
+    },
+    {
+     "start_s": 1349,
+     "end_s": 808,
+     "topic": "NumPy and PyTorch compatibility and conversion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "lSDhp0kr1ZE",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1"
+   ]
+  },
+  "zfiSAzpy9NM": {
+   "spoken_language": "en",
+   "summary": "This video provides a visual, intuitive explanation of convolutional neural networks (CNNs) for image recognition, avoiding heavy mathematics. It covers how CNNs use filters to detect features like edges and facial components, applies convolution and pooling operations to reduce computation, and combines these with dense layers for classification.",
+   "topics_covered": [
+    "cnn_fundamentals",
+    "convolution_operation",
+    "feature_detection",
+    "pooling",
+    "relu_activation",
+    "feature_extraction",
+    "location_invariance"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "tensorflow"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 604,
+     "text": "The way convolution operation works is you take 3x3 grid from your original image and multiply individual numbers with this filter."
+    },
+    {
+     "id": "q2",
+     "t": 804,
+     "text": "When you apply this filter or a convolution operation, you are generating a feature map that has that particular feature detected."
+    },
+    {
+     "id": "q3",
+     "t": 1704,
+     "text": "You will have typically a convolution and ReLU layer, then you will have pooling, then there will be another convolution ReLU, pooling."
+    },
+    {
+     "id": "q4",
+     "t": 2229,
+     "text": "The network will learn those on its own, and this that is the most fascinating part about neural network in general."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 260,
+     "topic": "Problem with raw pixel grids and motivation for CNNs"
+    },
+    {
+     "start_s": 300,
+     "end_s": 430,
+     "topic": "Computational complexity of dense networks on large images"
+    },
+    {
+     "start_s": 700,
+     "end_s": 850,
+     "topic": "Feature hierarchy and feature detection intuition"
+    },
+    {
+     "start_s": 1000,
+     "end_s": 1100,
+     "topic": "Convolution operation explained with 3x3 filters and feature maps"
+    },
+    {
+     "start_s": 1300,
+     "end_s": 1700,
+     "topic": "Location invariance of filters and multilayer feature aggregation"
+    },
+    {
+     "start_s": 1900,
+     "end_s": 2100,
+     "topic": "Feature extraction vs classification stages of CNN"
+    },
+    {
+     "start_s": 2200,
+     "end_s": 2350,
+     "topic": "ReLU activation and non-linearity"
+    },
+    {
+     "start_s": 2500,
+     "end_s": 2600,
+     "topic": "Max pooling for dimensionality reduction and robustness"
+    },
+    {
+     "start_s": 2800,
+     "end_s": 3200,
+     "topic": "Complete CNN architecture overview: convolution, ReLU, pooling, flattening, dense layers"
+    },
+    {
+     "start_s": 3100,
+     "end_s": 3300,
+     "topic": "Benefits of pooling, parameter sharing, and data augmentation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "zfiSAzpy9NM",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "8rqSbzap8oo": {
+   "spoken_language": "en",
+   "summary": "This video teaches how to recognize and fix overfitting in neural networks using three complementary techniques: batch normalization, spatial dropout, and data augmentation. Using Fashion MNIST as a hands-on example in PyTorch, the instructor systematically demonstrates how each regularization technique reduces the gap between training and validation loss, ultimately achieving production-grade generalization.",
+   "topics_covered": [
+    "overfitting",
+    "regularization",
+    "batch normalization",
+    "dropout",
+    "data augmentation",
+    "validation loss",
+    "generalization",
+    "pytorch implementation"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Training and regularizing a convolutional neural network on Fashion MNIST with batch normalization, spatial dropout, and data augmentation",
+   "tools_and_versions": [
+    "pytorch",
+    "google colab",
+    "fashion mnist dataset"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "Your network hasn't learned the task, it has just memorized the answers to the test."
+    },
+    {
+     "id": "q2",
+     "t": 27,
+     "text": "True generalization, the ability to perform accurately on data the model has never seen before, is the only metric that matters."
+    },
+    {
+     "id": "q3",
+     "t": 219,
+     "text": "This diverging space is the overfitting gap, confirming the network stops learning universal properties and starts memorizing specific training noise."
+    },
+    {
+     "id": "q4",
+     "t": 331,
+     "text": "By artificially expanding the structural variety of the training data, we provide the network with a much wider empirical foundation."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 27,
+     "topic": "Introduction to overfitting problem"
+    },
+    {
+     "start_s": 27,
+     "end_s": 107,
+     "topic": "Setup and sanity check with Fashion MNIST"
+    },
+    {
+     "start_s": 107,
+     "end_s": 199,
+     "topic": "Demonstrating unregularized overfitting"
+    },
+    {
+     "start_s": 199,
+     "end_s": 240,
+     "topic": "Spatial dropout and batch normalization"
+    },
+    {
+     "start_s": 240,
+     "end_s": 331,
+     "topic": "Data augmentation technique"
+    },
+    {
+     "start_s": 331,
+     "end_s": 423,
+     "topic": "Combined regularization stack results"
+    },
+    {
+     "start_s": 423,
+     "end_s": 448,
+     "topic": "Comparison of all experiments and next steps"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 2
+    }
+   ],
+   "video_id": "8rqSbzap8oo",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "Ynhr-F5WwOA": {
+   "spoken_language": "en",
+   "summary": "This tutorial trains a deep neural network using TensorFlow/Keras to classify Fashion MNIST clothing images (t-shirts, sneakers, ankle boots, etc.). The video covers data loading, normalization, visualization, model creation with Flatten and Dense layers, compilation with loss and optimizer, training with epochs, and evaluation on test data.",
+   "topics_covered": [
+    "tensorflow",
+    "keras",
+    "fashion mnist",
+    "data normalization",
+    "neural network layers",
+    "flatten layer",
+    "dense layers",
+    "model compilation",
+    "training loop",
+    "model evaluation",
+    "accuracy metrics"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Fashion MNIST image classifier using TensorFlow/Keras",
+   "tools_and_versions": [
+    "tensorflow",
+    "keras",
+    "numpy",
+    "matplotlib"
+   ],
+   "red_flags": [
+    "wrong_language"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 1735,
+     "text": "we will train a deep neural network using Tensorflow for classifying the images of clothing"
+    },
+    {
+     "id": "q2",
+     "t": 1052,
+     "text": "So the first layer in this network, Tensorflow.keras.layers.Flatten transforms your images from a two-dimensional array"
+    },
+    {
+     "id": "q3",
+     "t": 1230,
+     "text": "before training model, we have to compile it using loss, optimizer and matrixes"
+    },
+    {
+     "id": "q4",
+     "t": 425,
+     "text": "we have to normalize the data, so the values are from the range 0 to 1"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 210,
+     "topic": "Introduction and TensorFlow installation"
+    },
+    {
+     "start_s": 210,
+     "end_s": 329,
+     "topic": "Fashion MNIST dataset overview"
+    },
+    {
+     "start_s": 329,
+     "end_s": 579,
+     "topic": "Data loading, exploration, and normalization"
+    },
+    {
+     "start_s": 579,
+     "end_s": 837,
+     "topic": "Data visualization with matplotlib"
+    },
+    {
+     "start_s": 837,
+     "end_s": 1008,
+     "topic": "Fashion MNIST class labels explanation"
+    },
+    {
+     "start_s": 1008,
+     "end_s": 1273,
+     "topic": "Model creation: Flatten and Dense layers"
+    },
+    {
+     "start_s": 1273,
+     "end_s": 1459,
+     "topic": "Model compilation with loss and optimizer"
+    },
+    {
+     "start_s": 1459,
+     "end_s": 1634,
+     "topic": "Training the model with epochs"
+    },
+    {
+     "start_s": 1634,
+     "end_s": 1754,
+     "topic": "Model evaluation on test data"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 2
+    }
+   ],
+   "video_id": "Ynhr-F5WwOA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "EuBBz3bI-aA": {
+   "spoken_language": "en",
+   "summary": "This video explains bias and variance, two fundamental ML concepts, using intuitive examples of fitting curves to mouse weight-height data. It demonstrates how simple models (linear regression) have high bias but low variance, while complex models (squiggly lines) have low bias but high variance, and introduces the concept of overfitting and the need to find a sweet spot between model complexity.",
+   "topics_covered": [
+    "bias and variance",
+    "train test split",
+    "model complexity",
+    "overfitting",
+    "regularization basics"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 109,
+     "text": "we're going to use two machine learning methods to approximate this relationship"
+    },
+    {
+     "id": "q2",
+     "t": 109,
+     "text": "The first thing we do is split the data into two sets, one for training the machine learning algorithms and one for testing them"
+    },
+    {
+     "id": "q3",
+     "t": 201,
+     "text": "The inability for a machine learning method like linear regression to capture the true relationship is called Bias"
+    },
+    {
+     "id": "q4",
+     "t": 402,
+     "text": "the difference in fits between data sets is called Variance"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 130,
+     "topic": "introduction and setup"
+    },
+    {
+     "start_s": 130,
+     "end_s": 210,
+     "topic": "train-test split concept"
+    },
+    {
+     "start_s": 210,
+     "end_s": 340,
+     "topic": "bias explained with linear regression example"
+    },
+    {
+     "start_s": 340,
+     "end_s": 430,
+     "topic": "flexible models, low bias, high variance"
+    },
+    {
+     "start_s": 430,
+     "end_s": 510,
+     "topic": "overfitting and variance in testing sets"
+    },
+    {
+     "start_s": 510,
+     "end_s": 620,
+     "topic": "bias-variance tradeoff and sweet spot"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "EuBBz3bI-aA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "Ilg3gGewQ5U": {
+   "spoken_language": "en",
+   "summary": "This video explains backpropagation, the core algorithm for training neural networks, using intuitive visual explanations without heavy mathematics. It walks through how a single training example propagates error signals backwards through the network to determine how weights and biases should be adjusted, and introduces stochastic gradient descent as a practical computational shortcut.",
+   "topics_covered": [
+    "backpropagation intuition",
+    "gradient descent",
+    "cost function",
+    "weight sensitivity",
+    "mini batches",
+    "stochastic gradient descent"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 143,
+     "text": "Back propagation, the topic of this video, is an algorithm for computing that crazy complicated gradient."
+    },
+    {
+     "id": "q2",
+     "t": 204,
+     "text": "The magnitude of each component here is telling you how sensitive the cost function is to each weight and bias."
+    },
+    {
+     "id": "q3",
+     "t": 521,
+     "text": "The connections with the brightest neurons from the preceding layer have the biggest effect, since those weights are multiplied by larger activation values."
+    },
+    {
+     "id": "q4",
+     "t": 1053,
+     "text": "You randomly shuffle your training data and then divide it into a whole bunch of mini batches. Then you compute a step according to the mini batch."
+    },
+    {
+     "id": "q5",
+     "t": 1031,
+     "text": "This technique is referred to as stochastic gradient descent."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 180,
+     "topic": "Introduction and recap of neural network fundamentals"
+    },
+    {
+     "start_s": 180,
+     "end_s": 575,
+     "topic": "Intuitive explanation of how cost function sensitivity relates to weight adjustments"
+    },
+    {
+     "start_s": 575,
+     "end_s": 560,
+     "topic": "Step-by-step walkthrough of backpropagation with a handwritten digit example"
+    },
+    {
+     "start_s": 800,
+     "end_s": 1300,
+     "topic": "How error signals propagate backwards through layers and accumulate"
+    },
+    {
+     "start_s": 1300,
+     "end_s": 1200,
+     "topic": "Introduction to stochastic gradient descent and mini batches"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 768,
+     "topic": "Summary and connection to calculus for deeper understanding"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "Ilg3gGewQ5U",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q5"
+   ]
+  },
+  "jDe5BAsT2-Y": {
+   "spoken_language": "en",
+   "summary": "This video provides an in-depth walkthrough of how a convolutional neural network processes images through forward propagation, using a pretrained model on MNIST with 95.4% accuracy. The video visualizes and explains the mathematics of each layer: convolutions with filters and activation functions (ReLU and sigmoid), max pooling, flattening, and the fully connected output layer.",
+   "topics_covered": [
+    "convolutional neural networks",
+    "convolution operations",
+    "filters and kernels",
+    "activation functions",
+    "relu",
+    "sigmoid",
+    "max pooling",
+    "flattening",
+    "fully connected layers",
+    "forward propagation"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 50,
+     "text": "First off, we will perform a convolution with two filters that have a filter size of 5x5x1 and use an activation function called ReLU."
+    },
+    {
+     "id": "q2",
+     "t": 405,
+     "text": "In order to get the activation value, we use this formula. We multiply the weights from the kernel with the overlapping values from the input."
+    },
+    {
+     "id": "q3",
+     "t": 647,
+     "text": "ReLU stands for Rectified Linear Unit. For zero or any negative value, ReLU will return zero. For any positive value, ReLU will return the input value."
+    },
+    {
+     "id": "q4",
+     "t": 1050,
+     "text": "A fully connected layer consists of input nodes and output nodes that are connected with weights and biases."
+    },
+    {
+     "id": "q5",
+     "t": 1204,
+     "text": "The output matrix Z is defined as the matrix multiplication of the input nodes times the weights plus the bias terms."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 147,
+     "topic": "Introduction and model overview"
+    },
+    {
+     "start_s": 147,
+     "end_s": 320,
+     "topic": "Model architecture walkthrough"
+    },
+    {
+     "start_s": 320,
+     "end_s": 603,
+     "topic": "Convolution on single channel with ReLU"
+    },
+    {
+     "start_s": 603,
+     "end_s": 648,
+     "topic": "Max pooling layer 1"
+    },
+    {
+     "start_s": 648,
+     "end_s": 1007,
+     "topic": "Convolution on multiple channels with sigmoid"
+    },
+    {
+     "start_s": 1007,
+     "end_s": 1047,
+     "topic": "Max pooling and flattening"
+    },
+    {
+     "start_s": 1047,
+     "end_s": 1247,
+     "topic": "Fully connected output layer"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "jDe5BAsT2-Y",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q4",
+    "q5"
+   ]
+  },
+  "fRqQwCXSeqo": {
+   "spoken_language": "en",
+   "summary": "This tutorial explains overfitting in neural networks and demonstrates five techniques to prevent it: reducing network complexity, early stopping, adding more data, data augmentation, regularization (L1/L2), and dropout. The video includes code examples showing how to implement dropout and L2 regularization in PyTorch using nn.Dropout and the weight_decay parameter in optimizers.",
+   "topics_covered": [
+    "overfitting",
+    "underfitting",
+    "early stopping",
+    "regularization",
+    "l1 regularization",
+    "l2 regularization",
+    "dropout",
+    "data augmentation",
+    "model evaluation",
+    "weight decay"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch",
+    "adam optimizer"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 49,
+     "text": "when our model is too complex, sometimes it can start to learn the irrelevant information in the data set"
+    },
+    {
+     "id": "q2",
+     "t": 147,
+     "text": "The best way to tell if your model is overfitted is to use the validation data set during training"
+    },
+    {
+     "id": "q3",
+     "t": 350,
+     "text": "we can simply remove layers and make the network smaller. Note that while removing layer layers, it is important to adjust the input and output dimensions"
+    },
+    {
+     "id": "q4",
+     "t": 625,
+     "text": "The most common regularization method is to add a penalty to the loss function in in proportion to the size of the weights in the model"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction to overfitting and underfitting"
+    },
+    {
+     "start_s": 240,
+     "end_s": 540,
+     "topic": "Detecting overfitting with validation metrics"
+    },
+    {
+     "start_s": 540,
+     "end_s": 900,
+     "topic": "Techniques overview: reducing complexity, early stopping, adding data"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1200,
+     "topic": "Data augmentation methods"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1500,
+     "topic": "L1 and L2 regularization theory and mathematics"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1800,
+     "topic": "Dropout concept and intuition"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2100,
+     "topic": "PyTorch dropout implementation with nn.Dropout"
+    },
+    {
+     "start_s": 2100,
+     "end_s": 2400,
+     "topic": "L2 regularization in PyTorch using weight_decay"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2700,
+     "topic": "Experimental comparison with and without regularization"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 1
+    }
+   ],
+   "video_id": "fRqQwCXSeqo",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "0K4J_PTgysc": {
+   "spoken_language": "hi",
+   "summary": "Build a CNN-based dog vs cat image classifier using Keras/TensorFlow on Google Colab. The video walks through loading the dataset, normalizing images, constructing a CNN architecture with convolution and pooling layers, training the model, identifying overfitting, and applying techniques like data augmentation, batch normalization, and dropout to improve performance.",
+   "topics_covered": [
+    "cnn architecture",
+    "image preprocessing",
+    "convolution layers",
+    "pooling layers",
+    "batch normalization",
+    "dropout regularization",
+    "data augmentation",
+    "model training",
+    "overfitting detection",
+    "image classification"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Dog vs cat image classifier CNN in Keras",
+   "tools_and_versions": [
+    "keras",
+    "tensorflow",
+    "google colab",
+    "opencv",
+    "numpy",
+    "matplotlib"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 26,
+     "text": "we are going to build a dog versus cat classifier, theek hai? Ek aisa CNN model hum banane ja rahe hain"
+    },
+    {
+     "id": "q2",
+     "t": 1184,
+     "text": "Convolution layer ke just baad hum log pooling layer lagayenge. So we would write model.add(MaxPooling2D)"
+    },
+    {
+     "id": "q3",
+     "t": 1684,
+     "text": "ye gap generally batata hai ki over fitting ho raha hai. Just to conclude yahan par humne validation loss aur training loss ko bhi plot kiya hai"
+    },
+    {
+     "id": "q4",
+     "t": 1714,
+     "text": "hamara jo model hai wo training data ke upar results bahut acche de raha hai, test data ke upar utne acche results nahi de raha hai"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "intro and dataset overview"
+    },
+    {
+     "start_s": 240,
+     "end_s": 540,
+     "topic": "kaggle dataset structure and downloading data to colab"
+    },
+    {
+     "start_s": 540,
+     "end_s": 900,
+     "topic": "importing keras layers and image data loading"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1080,
+     "topic": "image normalization from 0-255 to 0-1"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 1440,
+     "topic": "building CNN: convolution and pooling layers"
+    },
+    {
+     "start_s": 1440,
+     "end_s": 1650,
+     "topic": "adding dense layers and model summary"
+    },
+    {
+     "start_s": 1650,
+     "end_s": 2040,
+     "topic": "training the model and monitoring training progress"
+    },
+    {
+     "start_s": 2040,
+     "end_s": 2340,
+     "topic": "analyzing overfitting via loss and accuracy plots"
+    },
+    {
+     "start_s": 2340,
+     "end_s": 2460,
+     "topic": "applying regularization: batch norm and dropout"
+    },
+    {
+     "start_s": 2460,
+     "end_s": 2700,
+     "topic": "making predictions on new unseen images"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 3
+    }
+   ],
+   "video_id": "0K4J_PTgysc",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "TH8cvKLSXGg": {
+   "spoken_language": "en",
+   "summary": "This video teaches the mathematical foundations of supervised machine learning, covering the prediction equation (ŷ = f_θ(x)), loss functions (MSE), and gradient descent optimization. It explains how to represent multiple features using vectors and design matrices, and introduces the concepts of generalization, train/validation/test splits, and overfitting using house price prediction as a worked example.",
+   "topics_covered": [
+    "ml_basics",
+    "linear_regression",
+    "loss_functions",
+    "gradient_descent",
+    "feature_vectors",
+    "train_test_split",
+    "overfitting",
+    "model_optimization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 43,
+     "text": "We want to learn them from the available data. That's the fundamental idea behind supervised machine learning."
+    },
+    {
+     "id": "q2",
+     "t": 527,
+     "text": "A loss function measures the discrepancy between the model's prediction and the actual target."
+    },
+    {
+     "id": "q3",
+     "t": 655,
+     "text": "One approach is to use gradient descent. Imagine the loss function as a surface whose height represents how large the error is."
+    },
+    {
+     "id": "q4",
+     "t": 822,
+     "text": "The model might perform extremely well on the training set but poorly on the test set. This is commonly associated with overfitting."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 90,
+     "topic": "Introduction to machine learning and supervised learning concept"
+    },
+    {
+     "start_s": 90,
+     "end_s": 360,
+     "topic": "Prediction equation, model representation, weights and bias"
+    },
+    {
+     "start_s": 360,
+     "end_s": 510,
+     "topic": "Feature vectors and design matrices for multiple features"
+    },
+    {
+     "start_s": 510,
+     "end_s": 660,
+     "topic": "Loss functions and mean squared error"
+    },
+    {
+     "start_s": 660,
+     "end_s": 750,
+     "topic": "Gradient descent optimization and learning rates"
+    },
+    {
+     "start_s": 750,
+     "end_s": 916,
+     "topic": "Generalization, train/validation/test splits, overfitting and model assumptions"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "TH8cvKLSXGg",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "IHZwWFHWa-w": {
+   "spoken_language": "en",
+   "summary": "This video explains gradient descent and backpropagation—the core algorithms that enable neural networks to learn from training data. Using a handwritten digit recognition example, it visualizes how cost functions work, how gradients point toward lower cost, and why repeatedly stepping in the negative gradient direction minimizes error over thousands of training examples.",
+   "topics_covered": [
+    "gradient descent",
+    "cost functions",
+    "backpropagation",
+    "loss functions",
+    "neural network training intuition",
+    "multivariable calculus",
+    "optimization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 4,
+     "text": "the first is to introduce the idea of gradient descent, which underlies not only how neural networks learn, but how a lot of other machine learning works as well"
+    },
+    {
+     "id": "q2",
+     "t": 450,
+     "text": "the cost function is a layer of complexity on top of that. It takes as its input those 13,000 or so weights and biases"
+    },
+    {
+     "id": "q3",
+     "t": 600,
+     "text": "if you can figure out the slope of the function where you are, then shift to the left if that slope is positive, and shift the input to the right if that slope is negative"
+    },
+    {
+     "id": "q4",
+     "t": 839,
+     "text": "the negative gradient of the cost function is just a vector. It's some direction inside this insanely huge input space that tells you which nudges to all of those numbers is going to cause the most rapid decrease to the cost function"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "recap of neural network structure and MNIST problem"
+    },
+    {
+     "start_s": 181,
+     "end_s": 420,
+     "topic": "training data and the learning objective"
+    },
+    {
+     "start_s": 420,
+     "end_s": 480,
+     "topic": "cost functions and loss"
+    },
+    {
+     "start_s": 540,
+     "end_s": 780,
+     "topic": "gradient descent in 1D"
+    },
+    {
+     "start_s": 780,
+     "end_s": 900,
+     "topic": "gradient and multivariable optimization"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1050,
+     "topic": "gradient descent algorithm and backpropagation overview"
+    },
+    {
+     "start_s": 1050,
+     "end_s": 1320,
+     "topic": "network performance on unseen data"
+    },
+    {
+     "start_s": 1320,
+     "end_s": 1680,
+     "topic": "analysis of what hidden layers actually learn"
+    },
+    {
+     "start_s": 1680,
+     "end_s": 1800,
+     "topic": "interview segment on memorization vs. generalization"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "IHZwWFHWa-w",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "BZyKufPCKdI": {
+   "spoken_language": "en",
+   "summary": "Adam Paszke introduces PyTorch as a dynamic deep learning framework, explaining its design philosophy of define-by-run graphs versus static graph frameworks like TensorFlow. He covers PyTorch's tensor library with GPU support, automatic differentiation (autograd), neural network modules, datasets, and demonstrates how the framework integrates natively with Python for flexible model building.",
+   "topics_covered": [
+    "pytorch overview",
+    "define-by-run graphs",
+    "tensors",
+    "gpu support",
+    "autograd",
+    "neural network modules",
+    "datasets",
+    "model serialization"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch",
+    "tensorflow",
+    "mxnet",
+    "chainer",
+    "numpy",
+    "scipy",
+    "cuda"
+   ],
+   "red_flags": [
+    "pure_theory",
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 536,
+     "text": "you just declare your weights and then you just have your regular Python for loop where you create the data"
+    },
+    {
+     "id": "q2",
+     "t": 1130,
+     "text": "we have an automatic differentiation package because computing gradients by yourself is too painful"
+    },
+    {
+     "id": "q3",
+     "t": 1330,
+     "text": "PyTorch natively supports GPUs so to do computation on GPU you just call the CUDA method of the tensor"
+    },
+    {
+     "id": "q4",
+     "t": 1330,
+     "text": "you compute the output of your model you compute mean square error loss you ask for the gradients"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 270,
+     "topic": "Introduction to PyTorch and deep learning frameworks landscape"
+    },
+    {
+     "start_s": 270,
+     "end_s": 510,
+     "topic": "Define-and-run vs define-by-run graph paradigms, TensorFlow comparison"
+    },
+    {
+     "start_s": 510,
+     "end_s": 800,
+     "topic": "PyTorch tensors, NumPy similarity, and basic operations"
+    },
+    {
+     "start_s": 800,
+     "end_s": 1080,
+     "topic": "GPU support with CUDA, tensor type casting"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 1380,
+     "topic": "Automatic differentiation and gradient-based optimization"
+    },
+    {
+     "start_s": 1380,
+     "end_s": 1680,
+     "topic": "Training loop example with loss computation and optimization"
+    },
+    {
+     "start_s": 1680,
+     "end_s": 2040,
+     "topic": "Autograd capabilities and neural network modules (nn package)"
+    },
+    {
+     "start_s": 2040,
+     "end_s": 2250,
+     "topic": "Model utilities: serialization, eval/train modes, data parallel"
+    },
+    {
+     "start_s": 2250,
+     "end_s": 2400,
+     "topic": "Dataset abstraction and data loading"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2500,
+     "topic": "Python integration and custom differentiable operations"
+    },
+    {
+     "start_s": 2500,
+     "end_s": 2800,
+     "topic": "Performance improvements and future roadmap"
+    },
+    {
+     "start_s": 2800,
+     "end_s": 3050,
+     "topic": "Q&A and contributing to PyTorch"
+    },
+    {
+     "start_s": 3050,
+     "end_s": 3244,
+     "topic": "Closing remarks"
+    },
+    {
+     "start_s": 3244,
+     "end_s": 3244,
+     "topic": "End of lecture"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "BZyKufPCKdI",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "CtzfbUwrYGI": {
+   "spoken_language": "en",
+   "summary": "Build and train a CNN image classifier on CIFAR-10 in PyTorch from scratch. The video covers data loading with transformations, designing a convolutional neural network with Conv2d, pooling, and fully connected layers, implementing a training loop with loss and optimizer, and evaluating accuracy on test data.",
+   "topics_covered": [
+    "cnn architecture",
+    "conv2d layers",
+    "max pooling",
+    "pytorch tensors",
+    "training loop",
+    "loss and optimizer",
+    "model evaluation",
+    "accuracy metric",
+    "image preprocessing",
+    "torch.nn"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Image classifier CNN trained on CIFAR-10 dataset to classify 10 image classes (dogs, cats, horses, ships, trucks, cars, etc.)",
+   "tools_and_versions": [
+    "pytorch",
+    "torchvision",
+    "numpy",
+    "pillow",
+    "jupyter notebook"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 24,
+     "text": "we're going to load the data, we're going to have training and testing data, we're going to train the model, and we're going to evaluate the model"
+    },
+    {
+     "id": "q2",
+     "t": 810,
+     "text": "we have a 5 * 5 pixel kernel that moves across the image, calculates a dot product and creates feature maps"
+    },
+    {
+     "id": "q3",
+     "t": 1746,
+     "text": "optimizer.zero_grad, so we reset the gradients, we set all of the gradients to none, and then what we do is we say the outputs"
+    },
+    {
+     "id": "q4",
+     "t": 2220,
+     "text": "how many of the total instances were classified correctly, accuracy is going to be equal to accuracy percent"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Setup and imports"
+    },
+    {
+     "start_s": 240,
+     "end_s": 480,
+     "topic": "Data loading and transformations"
+    },
+    {
+     "start_s": 480,
+     "end_s": 1080,
+     "topic": "CNN architecture design with Conv2d and pooling"
+    },
+    {
+     "start_s": 1080,
+     "end_s": 1500,
+     "topic": "Forward pass implementation"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1980,
+     "topic": "Training loop with loss and optimization"
+    },
+    {
+     "start_s": 1980,
+     "end_s": 2400,
+     "topic": "Model evaluation and accuracy calculation"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2700,
+     "topic": "Inference on new images"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 3
+    }
+   ],
+   "video_id": "CtzfbUwrYGI",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3"
+   ]
+  },
+  "o3DztvnfAJg": {
+   "spoken_language": "en",
+   "summary": "A brief overview of underfitting and overfitting in machine learning models. The video explains what causes each problem, how to recognize them by comparing training vs validation performance, and suggests high-level approaches to fix them.",
+   "topics_covered": [
+    "underfitting",
+    "overfitting",
+    "model generalization",
+    "training vs validation",
+    "hyperparameter tuning"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 20,
+     "text": "Underfitting usually occurs when your model hasn't had enough time or data to train with"
+    },
+    {
+     "id": "q2",
+     "t": 101,
+     "text": "Overfitting essentially occurs when your model is too accurate and has learned patterns that are only in the training data"
+    },
+    {
+     "id": "q3",
+     "t": 127,
+     "text": "You can look for overfitting quite easily by comparing the error amounts between training data and validation data"
+    },
+    {
+     "id": "q4",
+     "t": 202,
+     "text": "To resolve overfitting, you will often need to graph out the accuracy of your model with different hyperparameters"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 20,
+     "topic": "Introduction to machine learning problem statement"
+    },
+    {
+     "start_s": 20,
+     "end_s": 104,
+     "topic": "Underfitting: causes and solutions"
+    },
+    {
+     "start_s": 104,
+     "end_s": 207,
+     "topic": "Overfitting: definition and detection via train/validation comparison"
+    },
+    {
+     "start_s": 207,
+     "end_s": 293,
+     "topic": "Methods to address overfitting: hyperparameter tuning"
+    },
+    {
+     "start_s": 293,
+     "end_s": 244,
+     "topic": "Closing remarks and encouragement for further study"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "o3DztvnfAJg",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q3",
+    "q4"
+   ]
+  },
+  "36pfg7RpvbQ": {
+   "spoken_language": "en",
+   "summary": "This video explains backpropagation through the lens of multivariate calculus, building up from simple partial derivatives to complex computational graphs. It demonstrates how the chain rule applies when computing gradients through multiple paths in a computation tree, which is the mathematical foundation of backpropagation in neural networks.",
+   "topics_covered": [
+    "backpropagation",
+    "chain rule",
+    "partial derivatives",
+    "computational graphs",
+    "gradient computation"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 20,
+     "text": "elementary change in Z D is equals to partial derivative of F with respect to X times DX"
+    },
+    {
+     "id": "q2",
+     "t": 346,
+     "text": "D Z over D T is equal to del F over del X times D X over D T plus del F over del Y times D Y over D T"
+    },
+    {
+     "id": "q3",
+     "t": 610,
+     "text": "when we back propagate from Z to X, we encountered a partial derivative of del Z over del X and from X to T"
+    },
+    {
+     "id": "q4",
+     "t": 743,
+     "text": "this is the essence, this is the crux of the back propagation using this multivariate calculus"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 180,
+     "topic": "Introduction and basic multivariate calculus with two variables"
+    },
+    {
+     "start_s": 180,
+     "end_s": 420,
+     "topic": "Computational tree representation for case one"
+    },
+    {
+     "start_s": 420,
+     "end_s": 780,
+     "topic": "Case two: chain of functions and dZ/dT equation"
+    },
+    {
+     "start_s": 780,
+     "end_s": 1250,
+     "topic": "Backpropagation interpretation through computational paths and chain rule"
+    },
+    {
+     "start_s": 1250,
+     "end_s": 1400,
+     "topic": "Case three: multiple independent variables feeding into intermediate variables"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "36pfg7RpvbQ",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "DK1GBJ-yWgw": {
+   "spoken_language": "en",
+   "summary": "This video diagnoses and fixes a common PyTorch error where loss.backward() fails in adversarial PGD attacks because the computational graph is broken by premature conversion to NumPy arrays. The solution is to preserve tensors throughout the computation and avoid .data and .numpy() calls that detach gradients from the autograd system.",
+   "topics_covered": [
+    "pytorch autograd",
+    "computational graph",
+    "requires_grad",
+    "loss.backward()",
+    "gradient flow",
+    "tensor detachment"
+   ],
+   "level": "advanced",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch"
+   ],
+   "red_flags": [
+    "too_advanced_for_learner",
+    "off_topic"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 27,
+     "text": "RuntimeError: element 0 of tensors does not require grad and does not have a grad_fn"
+    },
+    {
+     "id": "q2",
+     "t": 47,
+     "text": "This conversion from PyTorch tensors to NumPy arrays detaches the result from PyTorch's autograd system"
+    },
+    {
+     "id": "q3",
+     "t": 109,
+     "text": "olist = [oelem.data.cpu().numpy() for oelem in olist]"
+    },
+    {
+     "id": "q4",
+     "t": 135,
+     "text": "Only tensors with requires_grad=True connected upstream to the model parameters through differentiable ops will allow backpropagation"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 47,
+     "topic": "Problem statement: broken gradients in PGD attack"
+    },
+    {
+     "start_s": 47,
+     "end_s": 149,
+     "topic": "Root cause: NumPy conversion breaks computational graph"
+    },
+    {
+     "start_s": 149,
+     "end_s": 215,
+     "topic": "Why gradient flow fails with detached tensors"
+    },
+    {
+     "start_s": 215,
+     "end_s": 329,
+     "topic": "Solutions: preserve tensors, avoid NumPy, maintain requires_grad"
+    },
+    {
+     "start_s": 329,
+     "end_s": 358,
+     "topic": "Debugging and verification checklist"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "DK1GBJ-yWgw",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "hkiBZLRFvO4": {
+   "spoken_language": "hi",
+   "summary": "This video builds a convolutional neural network (CNN) from scratch in PyTorch to classify Fashion MNIST images. The instructor walks through CNN architecture design (convolution layers, pooling, fully connected layers), implements it in Google Colab by modifying previous ANN code, and achieves 92% test accuracy while observing some overfitting (99.9% training accuracy).",
+   "topics_covered": [
+    "cnn architecture",
+    "convolution layers",
+    "pooling layers",
+    "feature extraction",
+    "fully connected layers",
+    "batch normalization",
+    "dropout",
+    "pytorch implementation",
+    "model training",
+    "accuracy evaluation"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "CNN image classifier for Fashion MNIST dataset",
+   "tools_and_versions": [
+    "pytorch",
+    "google colab",
+    "fashion mnist dataset"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 801,
+     "text": "CNN ki sabse badi khaasiyat ye hai ki agar aap usko grid based data doge toh woh uske andar ke jo spatial patterns hain toh unko bahut acche se woh identify kar pata hai"
+    },
+    {
+     "id": "q2",
+     "t": 1026,
+     "text": "Convolution layer mein aap kya karte ho ki aapke paas chhote-chhote filters hote hain, let's say 3x3 ke aur aap in filters ko uthate ho aur aap apne image ke upar un filters ko apply karte ho"
+    },
+    {
+     "id": "q3",
+     "t": 2343,
+     "text": "hamare architecture mein jo image hum dalenge uska shape hoga 1, 28, 28 aur ye hamara output layer hoga jahan pe 10 neurons honge"
+    },
+    {
+     "id": "q4",
+     "t": 1807,
+     "text": "Hamara batch size actually 32 hai but is point pe hume nahi pata isliye hum usko ek placeholder se replace kar denge which is minus one"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Recap of previous ANN videos and project progress (83% to 90% accuracy with optimizations)"
+    },
+    {
+     "start_s": 240,
+     "end_s": 350,
+     "topic": "Plan of action: building basic CNN, then optimization, then transfer learning"
+    },
+    {
+     "start_s": 350,
+     "end_s": 800,
+     "topic": "CNN fundamentals: what CNNs are, why they work for grid-based data, spatial patterns"
+    },
+    {
+     "start_s": 800,
+     "end_s": 1350,
+     "topic": "CNN architecture explanation: convolution layers, filters, pooling, feature extraction vs classification"
+    },
+    {
+     "start_s": 1350,
+     "end_s": 1650,
+     "topic": "Specific CNN architecture design for Fashion MNIST (input shape, layer dimensions, number of filters)"
+    },
+    {
+     "start_s": 1650,
+     "end_s": 2400,
+     "topic": "Implementing CNN architecture in PyTorch: modifying previous ANN code, converting data to 4D"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 2800,
+     "topic": "Building first convolutional and pooling layers with specific filter counts and kernel sizes"
+    },
+    {
+     "start_s": 2800,
+     "end_s": 3200,
+     "topic": "Building second convolutional layer and feature extraction stage completion"
+    },
+    {
+     "start_s": 3200,
+     "end_s": 3500,
+     "topic": "Adding fully connected classification layers with hidden neurons and dropout for overfitting prevention"
+    },
+    {
+     "start_s": 3500,
+     "end_s": 3600,
+     "topic": "Training results: 92% test accuracy, 99.9% training accuracy showing overfitting"
+    },
+    {
+     "start_s": 3600,
+     "end_s": 3800,
+     "topic": "Summary and preview of next video for optimization"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 3
+    }
+   ],
+   "video_id": "hkiBZLRFvO4",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "EehRcPo1M-Q": {
+   "spoken_language": "en",
+   "summary": "A conceptual explanation of regularization techniques used to combat overfitting in neural networks. The video covers L1 and L2 regularization, dropout, early stopping, and data augmentation, explaining why high weights cause overfitting and how each technique reduces model flexibility to improve generalization.",
+   "topics_covered": [
+    "overfitting",
+    "regularization",
+    "l1 regularization",
+    "l2 regularization",
+    "dropout",
+    "early stopping",
+    "data augmentation",
+    "model variance",
+    "weights",
+    "generalization"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 44,
+     "text": "Overfitting is when your model really closely fits the training data, so much so that it is not able to generalize really well to the real world."
+    },
+    {
+     "id": "q2",
+     "t": 239,
+     "text": "Regularization is a way to limit this flexibility that the model has in hopes to avoid overfitting."
+    },
+    {
+     "id": "q3",
+     "t": 322,
+     "text": "These weights are basically the importance of this, the output of the certain neuron."
+    },
+    {
+     "id": "q4",
+     "t": 502,
+     "text": "The idea behind L1 and L2 regularization is to adding the weights into the loss calculation or the cost function to punish the network for having higher weights."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 44,
+     "topic": "Introduction and definition of overfitting"
+    },
+    {
+     "start_s": 44,
+     "end_s": 180,
+     "topic": "Understanding overfitting: training vs validation loss divergence"
+    },
+    {
+     "start_s": 180,
+     "end_s": 240,
+     "topic": "Model variance and flexibility as causes of overfitting"
+    },
+    {
+     "start_s": 240,
+     "end_s": 302,
+     "topic": "How regularization limits model flexibility by lowering weights"
+    },
+    {
+     "start_s": 302,
+     "end_s": 450,
+     "topic": "L1 regularization and sparse networks"
+    },
+    {
+     "start_s": 450,
+     "end_s": 580,
+     "topic": "L2 regularization and weight distribution"
+    },
+    {
+     "start_s": 580,
+     "end_s": 670,
+     "topic": "Tuning alpha parameter and risk of underfitting"
+    },
+    {
+     "start_s": 670,
+     "end_s": 800,
+     "topic": "Dropout regularization and keep probability"
+    },
+    {
+     "start_s": 800,
+     "end_s": 810,
+     "topic": "Early stopping technique and controversy"
+    },
+    {
+     "start_s": 810,
+     "end_s": 923,
+     "topic": "Data augmentation for overfitting prevention"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 1
+    }
+   ],
+   "video_id": "EehRcPo1M-Q",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "NbPslfbNfjA": {
+   "spoken_language": "vi",
+   "summary": "",
+   "topics_covered": [],
+   "level": "beginner",
+   "format": "other",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "wrong_language",
+    "poor_transcript"
+   ],
+   "quotes": [],
+   "segments": [],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "NbPslfbNfjA",
+   "evidence_source": "transcript",
+   "verified_quote_ids": []
+  },
+  "vsWrXfO3wWw": {
+   "spoken_language": "en",
+   "summary": "This tutorial covers gradient descent and cost functions for machine learning, using linear regression on home price prediction as the concrete example. The instructor explains the math behind mean squared error, partial derivatives, and the gradient descent algorithm, then implements it in Python code to find the best-fit line for training data.",
+   "topics_covered": [
+    "gradient descent",
+    "cost function",
+    "mean squared error",
+    "derivatives",
+    "partial derivatives",
+    "learning rate",
+    "linear regression",
+    "python implementation"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": true,
+   "project_built": "Linear regression model using gradient descent to predict home prices",
+   "tools_and_versions": [
+    "Python",
+    "Jupyter Notebook",
+    "SKLearn"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 22,
+     "text": "the reason we are doing this exercise today is that you should know some of the internals so that while using the SKLearn library, you know what's going on"
+    },
+    {
+     "id": "q2",
+     "t": 450,
+     "text": "gradient descent is that algorithm that finds best fit line for given training data set in very less number of iteration"
+    },
+    {
+     "id": "q3",
+     "t": 1821,
+     "text": "derivative is all about slope. slope is nothing but a change in Y divided by change in X"
+    },
+    {
+     "id": "q4",
+     "t": 1530,
+     "text": "partial derivatives gives you a slope and then once you have direction, now you need to take a step, so for the step, you use something called a learning rate"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction and overview of cost function, gradient descent, learning rate"
+    },
+    {
+     "start_s": 240,
+     "end_s": 960,
+     "topic": "Prediction function and mean squared error explained with home price example"
+    },
+    {
+     "start_s": 960,
+     "end_s": 1800,
+     "topic": "Gradient descent algorithm and cost surface visualization"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2200,
+     "topic": "Derivative and partial derivative concepts with mathematical examples"
+    },
+    {
+     "start_s": 2200,
+     "end_s": 2700,
+     "topic": "Gradient descent update rule and learning rate"
+    },
+    {
+     "start_s": 2700,
+     "end_s": 3400,
+     "topic": "Python code implementation of gradient descent algorithm"
+    },
+    {
+     "start_s": 3400,
+     "end_s": 3600,
+     "topic": "Code execution, results, and hyperparameter tuning"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "vsWrXfO3wWw",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "fZtjO2cs3VQ": {
+   "spoken_language": "en",
+   "summary": "A detailed hand-worked derivation of backpropagation for a two-layer neural network, showing the forward pass, backward pass using the chain rule, and gradient descent weight updates. Every derivative is computed step-by-step with real numbers, then verified numerically against finite differences, demonstrating how neural networks learn by measuring error and nudging weights.",
+   "topics_covered": [
+    "backpropagation",
+    "chain rule",
+    "sigmoid derivative",
+    "gradient computation",
+    "two-layer network",
+    "forward pass",
+    "backward pass",
+    "gradient descent",
+    "numerical gradient checking"
+   ],
+   "level": "intermediate",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 0,
+     "text": "The algorithm that works out exactly how much to nudge each weight is called back propagation."
+    },
+    {
+     "id": "q2",
+     "t": 23,
+     "text": "First, a forward pass where numbers flow from the inputs to a loss. Second, a backward pass where the error flows back through the network layer by layer using the chain rule."
+    },
+    {
+     "id": "q3",
+     "t": 331,
+     "text": "Each hidden delta is the sum over outgoing paths times the local slope. This is the chain rule doing the bookkeeping."
+    },
+    {
+     "id": "q4",
+     "t": 612,
+     "text": "Each step moves every parameter against its gradient with learning rate equal to 0.5. The loss falls at every step."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 59,
+     "topic": "introduction and overview of backpropagation"
+    },
+    {
+     "start_s": 59,
+     "end_s": 201,
+     "topic": "forward pass: computing activations and loss"
+    },
+    {
+     "start_s": 201,
+     "end_s": 410,
+     "topic": "backward pass: loss derivative and sigmoid derivative"
+    },
+    {
+     "start_s": 410,
+     "end_s": 539,
+     "topic": "output layer gradient computation"
+    },
+    {
+     "start_s": 539,
+     "end_s": 672,
+     "topic": "hidden layer: summing paths and computing deltas"
+    },
+    {
+     "start_s": 672,
+     "end_s": 780,
+     "topic": "matrix form of backpropagation algorithm"
+    },
+    {
+     "start_s": 780,
+     "end_s": 853,
+     "topic": "numerical gradient checking and verification"
+    },
+    {
+     "start_s": 853,
+     "end_s": 481,
+     "topic": "training loop and loss decrease"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "fZtjO2cs3VQ",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q4"
+   ]
+  },
+  "kUkGR5Lu3DU": {
+   "spoken_language": "en",
+   "summary": "This talk introduces PyTorch 1.0 as a deep learning framework, covering tensors, computational graphs, automatic differentiation (Autograd), and deployment strategies like TorchScript. The speaker explains PyTorch's advantages such as dynamic computation graphs, ease of debugging with standard Python, and GPU support, while discussing practical considerations for production use.",
+   "topics_covered": [
+    "pytorch tensors",
+    "computational graphs",
+    "autograd",
+    "pytorch deployment",
+    "torchscript",
+    "gpu usage",
+    "model serialization",
+    "dynamic computation"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch 1.0",
+    "onnx",
+    "torchscript",
+    "torch.nn",
+    "torch.autograd",
+    "scikit-learn",
+    "numpy"
+   ],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 23,
+     "text": "computational graphs are just DAGs, they're directed acyclic graphs, and they have nodes which make up variables such as tensors"
+    },
+    {
+     "id": "q2",
+     "t": 1411,
+     "text": "PyTorch does this through reverse automatic differentiation system called Autograd, which is used to calculate the gradients"
+    },
+    {
+     "id": "q3",
+     "t": 3331,
+     "text": "the tensors actually contain values and the operations can modify data, you can use your favorite IDE to debug using regular Python"
+    },
+    {
+     "id": "q4",
+     "t": 4851,
+     "text": "with PyTorch 1.0, you can serialize and optimize your models using Torch Script, turn your dynamic computational graph into a static one"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction and PyTorch overview"
+    },
+    {
+     "start_s": 240,
+     "end_s": 840,
+     "topic": "PyTorch benefits and why to use it"
+    },
+    {
+     "start_s": 840,
+     "end_s": 1110,
+     "topic": "Tensors and computational graphs fundamentals"
+    },
+    {
+     "start_s": 1410,
+     "end_s": 1800,
+     "topic": "Dynamic computational graphs and Autograd"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2010,
+     "topic": "Debugging and ease of use"
+    },
+    {
+     "start_s": 2010,
+     "end_s": 2400,
+     "topic": "GPU utilization and data parallelism"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 3050,
+     "topic": "Model serialization and TorchScript"
+    },
+    {
+     "start_s": 3050,
+     "end_s": 3550,
+     "topic": "Production deployment and PyTorch 1.0 features"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "kUkGR5Lu3DU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q2"
+   ]
+  },
+  "wnK3uWv_WkU": {
+   "spoken_language": "en",
+   "summary": "This video demonstrates how to build a convolutional neural network (CNN) in PyTorch for the MNIST dataset, replacing a simple fully connected network. The instructor walks through defining a CNN class with convolutional layers, pooling, and a fully connected layer, explains the concept of \"same convolution\" using the output dimension formula, and trains the network to achieve 98.58% training and 98.36% test accuracy.",
+   "topics_covered": [
+    "cnn architecture",
+    "conv2d layers",
+    "maxpooling",
+    "pytorch nn.module",
+    "forward pass",
+    "training loop",
+    "model evaluation"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "MNIST image classifier using convolutional neural network in PyTorch",
+   "tools_and_versions": [
+    "pytorch",
+    "mnist dataset"
+   ],
+   "red_flags": [
+    "surface_intro",
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 34,
+     "text": "instead of using a simple fully connected neural network, we want to modify the code and create so that we use a convolutional neural network instead"
+    },
+    {
+     "id": "q2",
+     "t": 326,
+     "text": "using these specific ones, it's actually going to turn out that we keep the same dimensions. So when we send in the input, it's going to be 28x28"
+    },
+    {
+     "id": "q3",
+     "t": 546,
+     "text": "we're going to use two uh max pooling layers. Um, so we're going to have the input two times, so 28 becomes 14 and then half again, become seven"
+    },
+    {
+     "id": "q4",
+     "t": 943,
+     "text": "on the training data, this got 98.58% and on the test data 98.36"
+    },
+    {
+     "id": "q5",
+     "t": 204,
+     "text": "I'm not going to go into depth on how those work or how convolutions work, just the implementation of it"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 100,
+     "topic": "Introduction and comparison of fully connected vs CNN"
+    },
+    {
+     "start_s": 100,
+     "end_s": 400,
+     "topic": "CNN class definition and convolutional layer setup"
+    },
+    {
+     "start_s": 400,
+     "end_s": 700,
+     "topic": "Same convolution concept and output dimension formula"
+    },
+    {
+     "start_s": 700,
+     "end_s": 950,
+     "topic": "Pooling layers and fully connected layer implementation"
+    },
+    {
+     "start_s": 950,
+     "end_s": 1020,
+     "topic": "Forward pass and training results"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 2
+    }
+   ],
+   "video_id": "wnK3uWv_WkU",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5"
+   ]
+  },
+  "pNI4N6GWdME": {
+   "spoken_language": "en",
+   "summary": "This video builds and trains a convolutional neural network using Keras to classify clothing images from the Fashion MNIST dataset. The instructor implements Conv2D layers, max pooling, flattening, dense layers, and compiles the model with sparse categorical cross-entropy loss and Adam optimizer, achieving 89% accuracy on test data.",
+   "topics_covered": [
+    "cnn architecture",
+    "conv2d layers",
+    "max pooling",
+    "flatten layer",
+    "dense layers",
+    "keras sequential model",
+    "loss functions",
+    "adam optimizer",
+    "model compilation",
+    "model training",
+    "model evaluation"
+   ],
+   "level": "beginner",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Convolutional neural network to classify clothing images from Fashion MNIST dataset",
+   "tools_and_versions": [
+    "keras",
+    "python"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 25,
+     "text": "we're going to be using that to build the neural network. So let's start doing that. So let's call our neural network, uh, CNN"
+    },
+    {
+     "id": "q2",
+     "t": 236,
+     "text": "what we do in convolution is we take a smaller grid and we pass it through the entire image like this, and using that, we multiply each value with the weight"
+    },
+    {
+     "id": "q3",
+     "t": 329,
+     "text": "max pooling what it does is. So finally, after convolution, let's say you your matrix looks like this, obviously, it'll be much bigger"
+    },
+    {
+     "id": "q4",
+     "t": 603,
+     "text": "we're going to set it to something called sparse categorical cross entropy. Okay. And I'll explain what that is in just a second."
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 44,
+     "topic": "introduction and context from part 1"
+    },
+    {
+     "start_s": 44,
+     "end_s": 426,
+     "topic": "building conv2d and max pooling layers with explanations"
+    },
+    {
+     "start_s": 426,
+     "end_s": 532,
+     "topic": "flatten and dense layer implementation"
+    },
+    {
+     "start_s": 532,
+     "end_s": 1028,
+     "topic": "model compilation with loss function and optimizer"
+    },
+    {
+     "start_s": 1028,
+     "end_s": 602,
+     "topic": "model training, validation, and test evaluation"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 2
+    }
+   ],
+   "video_id": "pNI4N6GWdME",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "4b4MUYve_U8": {
+   "spoken_language": "en",
+   "summary": "This Stanford lecture covers supervised learning and linear regression, introducing the mathematical foundations of a learning algorithm including the hypothesis function, cost function (ordinary least squares), and two approaches to optimization: gradient descent and the normal equations. The instructor derives the gradient descent update rule and demonstrates how to minimize the squared error loss through iterative parameter updates, as well as providing a closed-form solution via the normal equations.",
+   "topics_covered": [
+    "supervised learning",
+    "linear regression",
+    "cost function",
+    "gradient descent",
+    "normal equations",
+    "loss minimization",
+    "hypothesis function",
+    "derivatives and calculus"
+   ],
+   "level": "beginner",
+   "format": "lecture",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [],
+   "red_flags": [
+    "pure_theory"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 3,
+     "text": "the first in-depth discussion of a learning algorithm, linear regression, and in particular, over the next, what, hour and a bit"
+    },
+    {
+     "id": "q2",
+     "t": 1500,
+     "text": "minimize the square difference between what the hypothesis outputs, H sub-script theta of X, minus Y, squared, right"
+    },
+    {
+     "id": "q3",
+     "t": 1827,
+     "text": "gradient descent, we are going to start with some value of theta, um, and it could be, you know, theta equals the vector of all zeros"
+    },
+    {
+     "id": "q4",
+     "t": 3416,
+     "text": "you end up with a formula that lets you say theta equals some stuff, where you just set theta equal to that and in one step"
+    },
+    {
+     "id": "q5",
+     "t": 133,
+     "text": "supervised learning and regression, so, I think the simplest, maybe the simplest possible learning algorithm"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 245,
+     "topic": "Introduction and motivation for linear regression"
+    },
+    {
+     "start_s": 245,
+     "end_s": 1086,
+     "topic": "Supervised learning, regression problem, house price example"
+    },
+    {
+     "start_s": 1086,
+     "end_s": 1500,
+     "topic": "Hypothesis function and notation"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1800,
+     "topic": "Training data indexing and representation"
+    },
+    {
+     "start_s": 1800,
+     "end_s": 2400,
+     "topic": "Cost function: ordinary least squares and squared error"
+    },
+    {
+     "start_s": 2400,
+     "end_s": 3000,
+     "topic": "Gradient descent initialization and algorithm"
+    },
+    {
+     "start_s": 3000,
+     "end_s": 3600,
+     "topic": "Local minima in linear regression"
+    },
+    {
+     "start_s": 3600,
+     "end_s": 4300,
+     "topic": "Batch gradient descent and learning rate selection"
+    },
+    {
+     "start_s": 4300,
+     "end_s": 4800,
+     "topic": "Stochastic gradient descent"
+    },
+    {
+     "start_s": 4800,
+     "end_s": 5400,
+     "topic": "Derivative calculation and partial derivatives"
+    },
+    {
+     "start_s": 5400,
+     "end_s": 6200,
+     "topic": "Normal equations as closed-form solution"
+    },
+    {
+     "start_s": 6200,
+     "end_s": 6900,
+     "topic": "Matrix derivatives and traces"
+    },
+    {
+     "start_s": 6900,
+     "end_s": 4697,
+     "topic": "Derivation of normal equations and handling non-invertible matrices"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "4b4MUYve_U8",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5"
+   ]
+  },
+  "FHdlXe1bSe4": {
+   "spoken_language": "en",
+   "summary": "This video walks through building a simple neural network from scratch in PyTorch, starting with a pre-defined architecture that fits a drug-dose effectiveness dataset using ReLU activations. It covers creating tensors and parameters, building a forward pass, graphing predictions, and then optimizing a single bias parameter using backpropagation and stochastic gradient descent with a training loop.",
+   "topics_covered": [
+    "pytorch tensors",
+    "neural network parameters",
+    "relu activation",
+    "forward pass",
+    "loss functions",
+    "backpropagation",
+    "gradient descent",
+    "optimization loop",
+    "training loop"
+   ],
+   "level": "beginner",
+   "format": "concept_explainer",
+   "is_project_based": false,
+   "project_built": "",
+   "tools_and_versions": [
+    "pytorch",
+    "matplotlib",
+    "seaborn"
+   ],
+   "red_flags": [
+    "surface_intro"
+   ],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 31,
+     "text": "Note: This StatQuest assumes that you already understand the main ideas behind neural networks"
+    },
+    {
+     "id": "q2",
+     "t": 419,
+     "text": "So we create a new variable called w00, and make it a neural network Parameter."
+    },
+    {
+     "id": "q3",
+     "t": 1701,
+     "text": "Next we use loss.backward() to calculate the derivative of the loss function with respect to the parameter"
+    },
+    {
+     "id": "q4",
+     "t": 2023,
+     "text": "optimizer.step() also has access to the derivatives stored in model and can use them to step in the correct direction"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 240,
+     "topic": "Introduction and prerequisites"
+    },
+    {
+     "start_s": 240,
+     "end_s": 480,
+     "topic": "Setting up PyTorch, importing modules and dataset"
+    },
+    {
+     "start_s": 480,
+     "end_s": 900,
+     "topic": "Creating neural network class with parameters and forward pass"
+    },
+    {
+     "start_s": 900,
+     "end_s": 1200,
+     "topic": "Graphing neural network output predictions"
+    },
+    {
+     "start_s": 1200,
+     "end_s": 1403,
+     "topic": "Setting up for optimization and loss calculation"
+    },
+    {
+     "start_s": 1403,
+     "end_s": 1802,
+     "topic": "Training loop with backpropagation and gradient descent"
+    },
+    {
+     "start_s": 1802,
+     "end_s": 2242,
+     "topic": "Verifying optimized model and conclusion"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 2
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 0
+    }
+   ],
+   "video_id": "FHdlXe1bSe4",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  },
+  "r6yRAxDpamQ": {
+   "spoken_language": "en",
+   "summary": "Builds a PyTorch convolutional neural network model class with two convolutional layers, pooling, and three fully connected layers. Implements the forward pass including ReLU activations, flattening, and log softmax output. Sets up the loss function (CrossEntropyLoss) and Adam optimizer with learning rate 0.001.",
+   "topics_covered": [
+    "cnn_architecture",
+    "convolutional_layers",
+    "fully_connected_layers",
+    "forward_pass",
+    "pooling",
+    "flatten",
+    "relu_activation",
+    "log_softmax",
+    "loss_function",
+    "optimizer"
+   ],
+   "level": "intermediate",
+   "format": "project_build",
+   "is_project_based": true,
+   "project_built": "Convolutional neural network model for image classification on CIFAR-10 dataset",
+   "tools_and_versions": [
+    "pytorch",
+    "python",
+    "google colab"
+   ],
+   "red_flags": [],
+   "quotes": [
+    {
+     "id": "q1",
+     "t": 128,
+     "text": "we need to define underscore underscore init underscore underscore and then pass in self"
+    },
+    {
+     "id": "q2",
+     "t": 231,
+     "text": "self.conv1 is going to be nn.conv2d, and then again, this is going to be six, 16, three and one"
+    },
+    {
+     "id": "q3",
+     "t": 501,
+     "text": "now, we need a forward function. You know, anytime you're in a neural network, you need something pushing things forward"
+    },
+    {
+     "id": "q4",
+     "t": 828,
+     "text": "we just need to return all this stuff, so we want to return this as an f.log_softmax of X"
+    }
+   ],
+   "segments": [
+    {
+     "start_s": 0,
+     "end_s": 100,
+     "topic": "Introduction and overview"
+    },
+    {
+     "start_s": 100,
+     "end_s": 350,
+     "topic": "Define model class and inheritance from nn.Module"
+    },
+    {
+     "start_s": 350,
+     "end_s": 500,
+     "topic": "Define convolutional layers (conv1, conv2)"
+    },
+    {
+     "start_s": 500,
+     "end_s": 800,
+     "topic": "Define fully connected layers (FC1, FC2, FC3)"
+    },
+    {
+     "start_s": 800,
+     "end_s": 1050,
+     "topic": "Implement forward function with ReLU and pooling"
+    },
+    {
+     "start_s": 1050,
+     "end_s": 1300,
+     "topic": "Flatten layer in forward pass"
+    },
+    {
+     "start_s": 1300,
+     "end_s": 1500,
+     "topic": "Add fully connected layers to forward pass and log softmax output"
+    },
+    {
+     "start_s": 1500,
+     "end_s": 1700,
+     "topic": "Create model instance and set manual seed"
+    },
+    {
+     "start_s": 1700,
+     "end_s": 1900,
+     "topic": "Define loss function and optimizer"
+    }
+   ],
+   "relevance": [
+    {
+     "sub_topic_id": "ml_basics",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "gradient_descent_backprop",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "pytorch_tensors_autograd",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "nn_training_loop",
+     "score": 1
+    },
+    {
+     "sub_topic_id": "cnn_fundamentals",
+     "score": 3
+    },
+    {
+     "sub_topic_id": "evaluation_overfitting",
+     "score": 0
+    },
+    {
+     "sub_topic_id": "image_classifier_project",
+     "score": 2
+    }
+   ],
+   "video_id": "r6yRAxDpamQ",
+   "evidence_source": "transcript",
+   "verified_quote_ids": [
+    "q1",
+    "q2",
+    "q3",
+    "q4"
+   ]
+  }
+ },
+ "dup_clusters": [],
+ "selector_raw": {
+  "picks": [
+   {
+    "video_id": "TH8cvKLSXGg",
+    "covers": [
+     "ml_basics"
+    ],
+    "reason": "Gives the supervised-learning framing: prediction equation, loss (MSE), feature vectors, gradient descent and the train/validation/test split. It is pitched at someone with linear algebra who needs the ML vocabulary first.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.8,
+    "confidence_note": "Content matches the slot and level. The upload date (2026) looks odd and the segment map runs past the stated length."
+   },
+   {
+    "video_id": "EuBBz3bI-aA",
+    "covers": [
+     "ml_basics",
+     "evaluation_overfitting"
+    ],
+    "reason": "Short, intuitive treatment of train/test split, bias, variance and overfitting. It sets up the later evaluation material.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.8,
+    "confidence_note": "Clear on the concepts, but it is theory only."
+   },
+   {
+    "video_id": "4b4MUYve_U8",
+    "covers": [
+     "ml_basics",
+     "gradient_descent_backprop"
+    ],
+    "reason": "A full lecture that derives the squared-error cost and the gradient descent update rule, including batch vs stochastic. It suits a learner who wants the math behind training and already has calculus and linear algebra.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.6,
+    "confidence_note": "The segment map is inconsistent with the 78-minute length. The normal-equation part is less needed. It fits in one 90-minute sitting."
+   },
+   {
+    "video_id": "vsWrXfO3wWw",
+    "covers": [
+     "gradient_descent_backprop"
+    ],
+    "reason": "Code-along that implements gradient descent in plain Python on a linear regression cost function. It shows partial derivatives, learning rate and the update loop in code the learner can already read.",
+    "evidence_quote_ids": [
+     "q2",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.75,
+    "confidence_note": "Linear regression only, not a neural network. It is a good bridge to the PyTorch loop."
+   },
+   {
+    "video_id": "IHZwWFHWa-w",
+    "covers": [
+     "gradient_descent_backprop"
+    ],
+    "reason": "Visual explanation of cost functions, the negative gradient as steepest descent, and how this trains a digit-recognizing network. It builds the intuition the learner asked for.",
+    "evidence_quote_ids": [
+     "q1",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "Pure theory, but that is what this learner wants for this slot."
+   },
+   {
+    "video_id": "Ilg3gGewQ5U",
+    "covers": [
+     "gradient_descent_backprop"
+    ],
+    "reason": "Explains backpropagation intuitively: how each weight's effect on the cost is computed, and mini-batch stochastic gradient descent. It prepares the learner for what loss.backward() does.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2",
+     "q5"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "The segment timestamps are messy, but the quotes confirm the content."
+   },
+   {
+    "video_id": "tIeHLnjs5U8",
+    "covers": [
+     "gradient_descent_backprop"
+    ],
+    "reason": "Formal chain-rule derivation of the gradients of cost with respect to weights and biases. It gives the math side of backprop and fits a learner with a calculus background.",
+    "evidence_quote_ids": [
+     "q2",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.85,
+    "confidence_note": "The level is right for someone who knows calculus."
+   },
+   {
+    "video_id": "fZtjO2cs3VQ",
+    "covers": [
+     "gradient_descent_backprop"
+    ],
+    "reason": "Works backprop through a two-layer network with real numbers, checks the gradients numerically, and ends with weight updates. It makes the earlier intuition concrete just before autograd.",
+    "evidence_quote_ids": [
+     "q2",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.7,
+    "confidence_note": "Pure theory but short and concrete. The upload date looks odd."
+   },
+   {
+    "video_id": "FHdlXe1bSe4",
+    "covers": [
+     "pytorch_tensors_autograd",
+     "nn_training_loop"
+    ],
+    "reason": "Code-along that builds a small network from tensors and nn.Parameter, then runs a training loop with loss.backward() and optimizer.step(). It is the best coded link between backprop and PyTorch autograd in the pool. It is flagged surface_intro, but no unflagged candidate covers tensors and autograd in code.",
+    "evidence_quote_ids": [
+     "q2",
+     "q3",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.7,
+    "confidence_note": "It assumes you know neural network basics, which the earlier picks supply. It uses a toy dataset, not images."
+   },
+   {
+    "video_id": "JHWqWIoac2I",
+    "covers": [
+     "nn_training_loop"
+    ],
+    "reason": "Builds an nn.Module with fully connected layers and a forward pass with ReLU, with live debugging. It shows how a PyTorch model class is structured before moving to CNNs.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.7,
+    "confidence_note": "Covers model definition but not the training loop. The loop comes from the StatQuest and CNN code-alongs."
+   },
+   {
+    "video_id": "zfiSAzpy9NM",
+    "covers": [
+     "cnn_fundamentals"
+    ],
+    "reason": "Visual intuition for convolution filters, feature maps, ReLU, pooling and the full conv-pool-dense architecture. It is flagged surface_intro and pure_theory, but the learner wants concept intuition. It uses TensorFlow only for naming.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.75,
+    "confidence_note": "Conceptual and framework-agnostic. The segment map has gaps."
+   },
+   {
+    "video_id": "jDe5BAsT2-Y",
+    "covers": [
+     "cnn_fundamentals"
+    ],
+    "reason": "Walks through the actual arithmetic of convolution, max pooling, flattening and the fully connected output in a trained MNIST CNN. It supplies the math view of CNNs for a learner who wants more than the diagram.",
+    "evidence_quote_ids": [
+     "q1",
+     "q4",
+     "q5"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.75,
+    "confidence_note": "Forward pass only, with no training code."
+   },
+   {
+    "video_id": "pDdP0TFzsoQ",
+    "covers": [
+     "cnn_fundamentals",
+     "nn_training_loop"
+    ],
+    "reason": "Code-along that implements a CIFAR-10 CNN in PyTorch with Conv2d, pooling, flattening, a training loop and accuracy evaluation. It is the first end-to-end PyTorch CNN, straight after the CNN concepts.",
+    "evidence_quote_ids": [
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.8,
+    "confidence_note": "Content is clearly on target, but only one quote is available on the card."
+   },
+   {
+    "video_id": "fRqQwCXSeqo",
+    "covers": [
+     "evaluation_overfitting"
+    ],
+    "reason": "Explains how to detect overfitting with validation data and covers early stopping, augmentation, L1/L2 and dropout. It shows nn.Dropout and weight_decay in PyTorch.",
+    "evidence_quote_ids": [
+     "q2",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.8,
+    "confidence_note": "Good mix of concept and PyTorch code."
+   },
+   {
+    "video_id": "8rqSbzap8oo",
+    "covers": [
+     "evaluation_overfitting"
+    ],
+    "reason": "Demonstrates an overfitting gap between training and validation loss on a Fashion-MNIST CNN in PyTorch. It then reduces the gap with batch norm, spatial dropout and augmentation.",
+    "evidence_quote_ids": [
+     "q3",
+     "q4"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.7,
+    "confidence_note": "Very short, so it works as a demonstration after the datahacker video rather than as a standalone lesson."
+   },
+   {
+    "video_id": "hkiBZLRFvO4",
+    "covers": [
+     "image_classifier_project",
+     "cnn_fundamentals"
+    ],
+    "reason": "Builds a Fashion-MNIST CNN in PyTorch, reaching 92% test accuracy while noticing about 99.9% training accuracy (overfitting). This ties the project back to the evaluation lessons.",
+    "evidence_quote_ids": [
+     "q1",
+     "q2"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.75,
+    "confidence_note": "Taught in Hinglish with English technical terms, which may affect comprehension. The content fit is strong."
+   },
+   {
+    "video_id": "CtzfbUwrYGI",
+    "covers": [
+     "image_classifier_project"
+    ],
+    "reason": "Complete CIFAR-10 pipeline in PyTorch: transforms, a Conv2d/pool/linear CNN, a training loop with zero_grad, and test accuracy. It is a second full project to consolidate everything.",
+    "evidence_quote_ids": [
+     "q1",
+     "q3"
+    ],
+    "watch_from_s": null,
+    "watch_until_s": null,
+    "confidence": 0.75,
+    "confidence_note": "It overlaps with the Loeber video on CIFAR-10. It is kept as the capstone because it covers the full train/evaluate/inference workflow."
+   }
+  ],
+  "dropped": [
+   {
+    "video_id": "7HPwo4wnJeA",
+    "reason": "Strong CNN/CIFAR-10 content, but it is TensorFlow/Keras and flagged wrong_language for a PyTorch goal."
+   },
+   {
+    "video_id": "hpFzuMSYg9k",
+    "reason": "Good regularization math, but it duplicates the datahacker video's topics and has no PyTorch code."
+   },
+   {
+    "video_id": "EehRcPo1M-Q",
+    "reason": "Conceptual regularization overview that adds little beyond the datahacker and ByteQuest-style content, with no code."
+   },
+   {
+    "video_id": "r6yRAxDpamQ",
+    "reason": "Only defines the CNN class and optimizer with no training or evaluation, and the CNN model-building is already covered by Loeber and CampusX."
+   },
+   {
+    "video_id": "BZyKufPCKdI",
+    "reason": "Lecture on PyTorch's design (define-by-run) rather than a code-along. It is flagged pure_theory/surface_intro, and the StatQuest video covers autograd in code."
+   },
+   {
+    "video_id": "kUkGR5Lu3DU",
+    "reason": "Overview talk heavy on deployment (TorchScript, ONNX) with little hands-on tensor or autograd teaching."
+   },
+   {
+    "video_id": "wnK3uWv_WkU",
+    "reason": "Short MNIST CNN code-along, but it explicitly skips how convolutions work and is flagged surface_intro. Other candidates cover CNNs more fully."
+   },
+   {
+    "video_id": "CRB266Eyjkg",
+    "reason": "Chain-rule backprop explanation that duplicates the 3Blue1Brown chapters, which are clearer for this learner."
+   },
+   {
+    "video_id": "lSDhp0kr1ZE",
+    "reason": "Covers tensors and autograd but is flagged wrong_language (Sinhala)."
+   },
+   {
+    "video_id": "DK1GBJ-yWgw",
+    "reason": "Flagged too_advanced_for_learner and off_topic (adversarial PGD attack debugging)."
+   }
+  ],
+  "near_duplicates": [
+   {
+    "kept": "fRqQwCXSeqo",
+    "dropped": "hpFzuMSYg9k",
+    "shared_topics": [
+     "evaluation_overfitting"
+    ],
+    "why_kept": "Shows validation-based overfitting detection and implements dropout and weight_decay in PyTorch, which suits a code-along learner."
+   },
+   {
+    "kept": "pDdP0TFzsoQ",
+    "dropped": "r6yRAxDpamQ",
+    "shared_topics": [
+     "cnn_fundamentals",
+     "nn_training_loop"
+    ],
+    "why_kept": "Includes the training loop and evaluation as well as the CNN class, whereas the other stops after defining the model and optimizer."
+   }
+  ],
+  "warnings": [
+   "Picks total about 359 minutes of the 1200-minute budget (about 30%). About 841 minutes are unused because the pool has no more good, non-redundant PyTorch material, and I did not pad with weak or redundant videos.",
+   "Every pick is under 90 minutes, so the 90-minute sitting limit is met without splitting. The longest is the Stanford lecture at 78 minutes.",
+   "Duration is taken from the 'minutes' field, but several transcripts' segment maps run longer than that. Real lengths may differ, so check the total against your sittings.",
+   "Tensor and autograd coverage is thin: only the StatQuest video teaches them in code, and the other candidates are flagged lectures or overviews. Practice tensor operations and requires_grad yourself in the PyTorch docs.",
+   "The two foundations videos and the later 3Blue1Brown/backprop videos are theory-heavy, and the curriculum has no dedicated tensor-basics tutorial or batch/DataLoader walkthrough beyond what the CNN code-alongs show.",
+   "The CampusX video is taught in Hinglish with English technical terms.",
+   "Some candidate upload dates (2026) look implausible. I assumed they are valid and that you set no date floor."
+  ]
+ },
+ "fixes": []
+}

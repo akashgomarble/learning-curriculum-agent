@@ -1,0 +1,615 @@
+{
+  "persona_id": "weekend_react_dev",
+  "goal": "Build a small React app this weekend, something like a habit tracker with local storage",
+  "budget_minutes": 360,
+  "total_minutes": 171.5,
+  "interpretation": "By the end of the weekend, the learner has built and run a working habit tracker in React (Vite) that persists data to localStorage, and understands the hooks and component patterns behind it.",
+  "assumptions": [
+    "The 360 minutes is video viewing time only, so the plan fits about 6 hours of videos with no time reserved for practice.",
+    "Learner is comfortable with modern JS (ES6 modules, arrow functions, destructuring, array methods) given 'JavaScript fundamentals', so these are not re-taught.",
+    "A habit tracker means adding, completing and deleting habits, with daily or streak tracking and data persisted in localStorage.",
+    "Plain JavaScript React is preferred over TypeScript since only JS fundamentals are known.",
+    "Functional components and hooks are taught, not legacy class components."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "react_mental_model_jsx",
+      "title": "React mental model and JSX",
+      "why": "As a backend engineer who knows JS, they need to learn the declarative UI, components, props and JSX syntax, and how these differ from DOM scripting.",
+      "prereqs": [],
+      "minutes_share": 0.12
+    },
+    {
+      "id": "vite_setup",
+      "title": "Vite project setup and project structure",
+      "why": "They know npm, so they only need Vite scaffolding, the dev server, file layout and how the entry point mounts the app.",
+      "prereqs": [],
+      "minutes_share": 0.06
+    },
+    {
+      "id": "components_props",
+      "title": "Components, props and composition patterns",
+      "why": "A habit tracker needs a list, items, a form and a header, so they need to split the UI into reusable components and pass data and callbacks down.",
+      "prereqs": [
+        "react_mental_model_jsx",
+        "vite_setup"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "state_events_forms",
+      "title": "useState, event handling, controlled forms and rendering lists",
+      "why": "Adding, toggling and deleting habits requires state updates, controlled inputs, keys and immutable updates to arrays and objects.",
+      "prereqs": [
+        "components_props"
+      ],
+      "minutes_share": 0.17
+    },
+    {
+      "id": "effects_localstorage",
+      "title": "useEffect and persisting state to localStorage",
+      "why": "Saving and loading habits needs side effects, dependency arrays, lazy state initialization and JSON serialization, which they already know. A custom useLocalStorage hook is a good fit.",
+      "prereqs": [
+        "state_events_forms"
+      ],
+      "minutes_share": 0.15
+    },
+    {
+      "id": "custom_hooks_patterns",
+      "title": "Custom hooks, lifting state up and component patterns",
+      "why": "Structuring the app cleanly means extracting reusable logic and deciding where state lives, a step toward maintainable code.",
+      "prereqs": [
+        "effects_localstorage"
+      ],
+      "minutes_share": 0.1
+    },
+    {
+      "id": "build_habit_tracker",
+      "title": "Build a habit tracker app in React end to end",
+      "why": "A project video that builds a similar app with local storage ties all the concepts together and is the backbone of the plan.",
+      "prereqs": [
+        "effects_localstorage"
+      ],
+      "minutes_share": 0.25
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "SqcY0GlETPk",
+      "title": "React Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "url": "https://www.youtube.com/watch?v=SqcY0GlETPk",
+      "duration_min": 80.1,
+      "minutes_counted": 19.9,
+      "watch_from": "00:00",
+      "watch_until": "19:55",
+      "covers": [
+        "react_mental_model_jsx"
+      ],
+      "reason": "The opening segment covers what React is and how a dev environment is set up, which is the mental model the learner lacks. The card lists a 'what is react' section and a dev environment setup, so this is the framing before any code.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Build amazing front-end apps with this beginner-friendly tutorial.",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.4,
+      "confidence_note": "Transcript was unavailable, so this rests on chapter titles only. Only the first 20 minutes are used. The setup may use create-react-app or TypeScript rather than Vite, and the card has just one generic quote.",
+      "level": "beginner",
+      "format": "lecture"
+    },
+    {
+      "rank": 2,
+      "video_id": "do62-z3z6FM",
+      "title": "Vite Crash Course – Frontend Build Tool",
+      "channel": "freeCodeCamp.org",
+      "url": "https://www.youtube.com/watch?v=do62-z3z6FM",
+      "duration_min": 40.2,
+      "minutes_counted": 3.7,
+      "watch_from": "02:48",
+      "watch_until": "06:28",
+      "covers": [
+        "vite_setup"
+      ],
+      "reason": "The 02:48-06:28 segment is the one part of this tooling overview that creates a first React project with Vite, which fills the Vite gap in the plan. Static assets, environment variables, TypeScript and plugins are skipped because they are not needed for a plain JavaScript habit tracker.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "02:48",
+          "quote": "Create your first React project with Vite",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.45,
+      "confidence_note": "No transcript, so the timestamps come from the chapter map only. Confidence would rise if the segment is confirmed to be a hands-on scaffold rather than a slideshow.",
+      "level": "beginner",
+      "format": "crash_course"
+    },
+    {
+      "rank": 3,
+      "video_id": "SqcY0GlETPk",
+      "title": "React Tutorial for Beginners",
+      "channel": "Programming with Mosh",
+      "url": "https://www.youtube.com/watch?v=SqcY0GlETPk",
+      "duration_min": 80.1,
+      "minutes_counted": 60.1,
+      "watch_from": "19:55",
+      "watch_until": "1:20:00",
+      "covers": [
+        "components_props",
+        "state_events_forms"
+      ],
+      "reason": "The main block covers components, JSX, rendering lists, handling events, managing state and passing props, which matches the components and state sub-topics. The card's segments list these as sequential sections with code, so the learner gets the core React patterns used in a habit tracker.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "Build amazing front-end apps with this beginner-friendly tutorial.",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.45,
+      "confidence_note": "Based on segment titles only. The sub-topics are covered at beginner depth, and the course may use TypeScript. Confidence would rise with a transcript showing live code for lists and controlled inputs.",
+      "level": "beginner",
+      "format": "lecture"
+    },
+    {
+      "rank": 4,
+      "video_id": "HT0SMABqHAQ",
+      "title": "Todo List Using React Js Hook Component And React-Spring For Animation Tutorial | 2020 HD",
+      "channel": "THE SHOW",
+      "url": "https://www.youtube.com/watch?v=HT0SMABqHAQ",
+      "duration_min": 36.4,
+      "minutes_counted": 20.7,
+      "watch_from": "03:00",
+      "watch_until": "23:44",
+      "covers": [
+        "state_events_forms",
+        "build_habit_tracker"
+      ],
+      "reason": "The 03:00-23:44 segment builds a card component and a form component, then covers useState to add and remove todos. That is the form and list-state pattern a habit tracker needs. The react-spring animation section that follows is skipped.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "In this React Js Hooks Crash Course video tutorial you will learn to code your first React app using React Hooks and then animate the app using React Spring!",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "We will do this by building a simple todo application which is perfect for beginners and will allow you to understand the fundamentals of React Hooks.",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.35,
+      "confidence_note": "Unverified, since no transcript was available. The video uses yarn and TypeScript tooling, and the animation library is out of scope. It is a crash course, so depth is uncertain.",
+      "level": "beginner",
+      "format": "crash_course"
+    },
+    {
+      "rank": 5,
+      "video_id": "UKgT7SuiieE",
+      "title": "React To-Do App Part 2: Local Storage + useEffect — Save Tasks Even After Refresh!",
+      "channel": "Learn the Tech",
+      "url": "https://www.youtube.com/watch?v=UKgT7SuiieE",
+      "duration_min": 25.2,
+      "minutes_counted": 25.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "effects_localstorage"
+      ],
+      "reason": "The video is about syncing React state to localStorage with useEffect so tasks survive a page refresh. That is exactly the effects-plus-persistence step the habit tracker needs, and it is hands-on, because it modifies a to-do app.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "Restore data when the page refreshes",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "Understand how React state + localStorage work together",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.4,
+      "confidence_note": "This is Part 2 of a series, and Part 1 is not in the pool, so the learner may need the earlier setup. The description was the only evidence, so the teaching depth is unverified.",
+      "level": "beginner",
+      "format": "other"
+    },
+    {
+      "rank": 6,
+      "video_id": "N7rs5F4f6FA",
+      "title": "Learn How to Use Local Storage in React With an Easy-to-Understand Example",
+      "channel": "Max Programming",
+      "url": "https://www.youtube.com/watch?v=N7rs5F4f6FA",
+      "duration_min": 8.9,
+      "minutes_counted": 8.9,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "effects_localstorage",
+        "custom_hooks_patterns"
+      ],
+      "reason": "The video shows how to inspect localStorage in devtools, fix a setter bug, read saved data back, and use a custom hook. This covers persistence and the first custom hook pattern in one short video. It is the kept member of the localStorage cluster.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "In this video, we cover how you can use local storage in your React app!",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q2",
+          "t": "00:00",
+          "quote": "The proper way to do it is the second way...",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.4,
+      "confidence_note": "Chapter list only, so the bug fix and the custom hook depth are unverified. The custom hook section relies on a third-party library, so the learner does not get to write the hook from scratch here.",
+      "level": "intermediate",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 7,
+      "video_id": "RDAFJ5ToMmQ",
+      "title": "Persist State to localStorage in React (Complete Tutorial)",
+      "channel": "Cosden Solutions",
+      "url": "https://www.youtube.com/watch?v=RDAFJ5ToMmQ",
+      "duration_min": 19.0,
+      "minutes_counted": 6.0,
+      "watch_from": "13:01",
+      "watch_until": "19:00",
+      "covers": [
+        "custom_hooks_patterns"
+      ],
+      "reason": "The 13:01-19:00 segment wraps localStorage logic in a reusable usePersistedState hook, which teaches the custom hook pattern the plan requires. Earlier utility-function sections are skipped to avoid repeating N7rs5F4f6FA.",
+      "evidence": [
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "putting all of that into a custom hook that we can easily re-use across any component in our application",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.3,
+      "confidence_note": "This is an intermediate video flagged too_advanced_for_learner and has no transcript, so the segment may be harder to follow than expected. Confidence would rise if the hook is written step by step rather than just presented.",
+      "level": "intermediate",
+      "format": "other"
+    },
+    {
+      "rank": 8,
+      "video_id": "X92kk5iT8CM",
+      "title": "Build a Complete To-Do List App with React + Vite | Dashboard, Reminders & Local Storage Tutorial",
+      "channel": "DevCrafted Learn-Build-Deploy",
+      "url": "https://www.youtube.com/watch?v=X92kk5iT8CM",
+      "duration_min": 27.0,
+      "minutes_counted": 27.0,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "build_habit_tracker",
+        "custom_hooks_patterns",
+        "effects_localstorage"
+      ],
+      "reason": "The video builds a React and Vite app with add, edit, delete, complete and localStorage persistence through a useLocalStorage hook. That is the closest match in the pool to the end-to-end habit tracker, so the learner ends with a working project to adapt.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "In this comprehensive tutorial, we'll create a feature-rich task management app with a modern dashboard, reminder notifications, and persistent storage.",
+          "source": "chapters/description"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:00",
+          "quote": "Custom Hook Creation (useLocalStorage)",
+          "source": "chapters/description"
+        }
+      ],
+      "confidence": 0.35,
+      "confidence_note": "Based on the description and feature list only. It is a to-do app rather than a habit tracker, and it adds dashboard, Tailwind and reminder features that are out of scope, so the learner will need to adapt it.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "wWpwLyAiibo",
+      "title": "React Project | Habit Tracker",
+      "stage": "prefilter",
+      "reason": "too short (23s)"
+    },
+    {
+      "video_id": "Gp2ivWvLTyY",
+      "title": "How to Update LocalStorage Automatically in React When State Changes",
+      "stage": "prefilter",
+      "reason": "too short (105s)"
+    },
+    {
+      "video_id": "eILUmCJhl64",
+      "title": "🚀🔥 React & Redux Complete Course (2024) with Projects | Notes | Free Certification",
+      "stage": "prefilter",
+      "reason": "1194 min, far beyond the 360-min budget"
+    },
+    {
+      "video_id": "9aTRnV6g0eQ",
+      "title": "Learn React With This One Project",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "ECNjAEvVkKo",
+      "title": "React JS Components & Props in Hindi | Beginner to Practical Project",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "bwNDVHgblSY",
+      "title": "How To Make a To Do List Using React - useState/Hooks [Part 1/3]",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "hgts_74JjVM",
+      "title": "Creating a Custom React Hook for Local Storage: Persisting State Effortlessly",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "bO7n1PJM094",
+      "title": "Fullstack Nextjs15 Habit Tracker | local storage & stage-management | overview",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "_xO3BkiWdJI",
+      "title": "Build a React To-Do App with Local Storage (Hooks)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "DXCI60Bbuow",
+      "title": "React js 19 tutorial in Hindi #7 Make First Component",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "U2nEBTSZ3xI",
+      "title": "#48: Registration Forms in React: Handling Multiple Input Fields with useState – The Hard Way",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "CsHy0gJbkeI",
+      "title": "useEffect Dependency Array Explained: Persisting React Native State with AsyncStorage",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "5uHikv1oBEI",
+      "title": "LocalStorage in React Using Custom Hook | The Complete React Course | Ep.41",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "2YWtOIVPM6Y",
+      "title": "Habit-Tracker App in React",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "JXdIHGnLTuw",
+      "title": "Todo List App with React & Tailwind Tutorial",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "TMYSeKi_MnI",
+      "title": "React Course For Beginners (Build a Project)",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "yDolkB1SH_8",
+      "title": "ReactJS Component & JSX Tutorial in Hindi / Urdu",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "RxPF47orKzo",
+      "title": "Todo List Application using React JS in Hindi | React Projects for beginners in Hindi",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "HAjngN_3-yA",
+      "title": "How to Persist Data in localStorage with React After Page Refresh?",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "Z6CRl6b7rRM",
+      "title": "React  Habit Tracker",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "TdiJ5Rbq5bo",
+      "title": "🚀 React JS ToDo App Tutorial for 2024 | Edit Task Functionality | Hindi 🧑‍💻",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "zQFzFsbRiB8",
+      "title": "Build TODO List App with React JS from Scratch - React JS Mini Project [2026]",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "t5omB6952zs",
+      "title": "#34: React Project - Build a Complete Todo App from Scratch with Advanced Features",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "RGKi6LSPDLU",
+      "title": "React Tutorial in Hindi 🔥🔥",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "HKX__TQ9ff0",
+      "title": "Learning Components/Props/JSX in React 2024",
+      "stage": "language",
+      "reason": "transcript is 'hi', learner needs 'en'"
+    },
+    {
+      "video_id": "3qmUoOC0wUU",
+      "title": "Habit-tracker app with the help of react and redux",
+      "stage": "prefilter",
+      "reason": "video is unavailable (private or removed)"
+    },
+    {
+      "video_id": "7VPULX3WcGE",
+      "title": "A Habit Tracker App Using React Redux",
+      "stage": "prefilter",
+      "reason": "video is unavailable (private or removed)"
+    },
+    {
+      "video_id": "MVs1QMoz7ME",
+      "title": "Sign-in Backend + Logout: Building a Habit Tracker with React/Redux/Express Part 10",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "SBuZSalHLe0",
+      "title": "TodoList App using React, Tailwind & React Icons | Sigma Web Development Course - Tutorial #114",
+      "stage": "prefilter",
+      "reason": "pool cap reached"
+    },
+    {
+      "video_id": "G6D9cBaLViA",
+      "title": "Learn React With This ONE Project",
+      "stage": "select",
+      "reason": "Tech With Tim's 99.5-minute movie-browsing app is off_topic for a habit tracker and does not cover localStorage. It is also poor_transcript, so the useful parts cannot be confirmed."
+    },
+    {
+      "video_id": "dCLhUialKPQ",
+      "title": "React JS 19 Full Course 2025 | Build an App and Master React in 2 Hours",
+      "stage": "select",
+      "reason": "JavaScript Mastery's 127-minute intermediate course builds a movie app with Tailwind and an API. It covers props, state and useEffect, but the useful segments are much shorter than the full video, and adding a second creator on unverified material is not worth it here."
+    },
+    {
+      "video_id": "JdFUNKGwWLw",
+      "title": "React JSX , Babel, React Components & Props Explained from Scratch | ReactJS Full Course #2",
+      "stage": "select",
+      "reason": "Coder Army's 66-minute JSX and Babel session is a concept explainer with no project. Its focus on why React works is useful background but is mostly theory, and the learner wants hands-on work."
+    },
+    {
+      "video_id": "wIyHSOugGGw",
+      "title": "Every React Concept Explained in 12 Minutes",
+      "stage": "select",
+      "reason": "Code Bootcamp's 12-minute overview is a surface_intro that touches about 20 concepts without building anything, so it cannot teach the sub-topics in depth."
+    },
+    {
+      "video_id": "1uiNxQIpcLU",
+      "title": "React Custom Hooks: useLocalStorage - Simply Explained!",
+      "stage": "select",
+      "reason": "Cosden's useLocalStorage hook video is a near-duplicate of N7rs5F4f6FA. It covers only the hook, is flagged too_advanced_for_learner, and comes before the learner has the persistence basics."
+    },
+    {
+      "video_id": "tjLXot9FsGE",
+      "title": "#13: Props in React JS - Making Netflix Cards Reusable🔥React Tutorial in Hindi",
+      "stage": "select",
+      "reason": "The Thapa Technical props video is in Hindi (wrong_language), so the learner would not be able to follow it."
+    },
+    {
+      "video_id": "2W-y7ze2k9M",
+      "title": "React Todo List App Tutorial with TypeScript & Tailwind CSS | Beginner React.js Project",
+      "stage": "select",
+      "reason": "EgbonTech's to-do app is built in TypeScript with Tailwind, which conflicts with the plain-JavaScript preference. It also does not cover localStorage."
+    },
+    {
+      "video_id": "fsyfL33soRQ",
+      "title": "React To-Do App Tutorial | Build a Todo List with CRUD in React JS | Frontend Project",
+      "stage": "select",
+      "reason": "CodeFlow's CRUD to-do app with localStorage is a strong topical match, but it uses create-react-app and Tailwind (outdated_tooling), and at 67.7 minutes it is too long for the slot it would fill."
+    },
+    {
+      "video_id": "6ThXsUwLWvc",
+      "title": "Learn Custom Hooks In 10 Minutes",
+      "stage": "select",
+      "reason": "Web Dev Simplified's 10-minute custom hooks video is flagged too_advanced_for_learner. It is an intermediate-level primer on hook design, which comes after the basics the learner still needs."
+    },
+    {
+      "video_id": "35LuyXrByPM",
+      "title": "localStorage + Sign-in Frontend: Building a Habit Tracker with React/Redux/Express Part 9",
+      "stage": "select",
+      "reason": "Taha Khan's part 9 of a habit tracker series depends on Redux, Express and sign-in, and is too_advanced_for_learner. The series would also need parts 1 to 8 to make sense."
+    },
+    {
+      "video_id": "Uy74FxBnQEk",
+      "title": "I am building an open-source habit tracker app!",
+      "stage": "select",
+      "reason": "The React Native and SQLite vlog is off_topic, since it covers neither React web nor the hooks and localStorage the learner needs."
+    },
+    {
+      "video_id": "9wiWzu_tRB0",
+      "title": "Build this to-do-list app with React! ☝",
+      "stage": "select",
+      "reason": "Bro Code's useState-only to-do app is mostly HTML and CSS plus plain JS functions, and the card gives no evidence of real React component work, so it is a weak fit."
+    }
+  ],
+  "near_duplicates": [
+    {
+      "kept": "N7rs5F4f6FA",
+      "dropped": "1uiNxQIpcLU",
+      "shared_topics": [
+        "custom hook",
+        "localstorage",
+        "localstorage in devtools"
+      ],
+      "why_kept": "For this learner, N7rs5F4f6FA covers the full persistence story (devtools inspection, a setter bug fix, reading data back) and then a custom hook. 1uiNxQIpcLU covers only the hook and is flagged too_advanced_for_learner, so it would come before the persistence basics."
+    },
+    {
+      "kept": "zUV_f5j4NzI",
+      "dropped": "tjLXot9FsGE",
+      "shared_topics": [
+        "component reuse",
+        "components",
+        "passing props",
+        "props"
+      ],
+      "why_kept": "tjLXot9FsGE is in Hindi, so it is excluded. zUV_f5j4NzI is the only English option and is a short beginner explainer, but it is not added because the Programming with Mosh segment already covers props and components."
+    }
+  ],
+  "warnings": [
+    "None of the 36 candidates has a transcript, so every pick rests on titles, chapters and descriptions. Expect low confidence throughout, and treat each reason as a hypothesis to check while watching.",
+    "The curriculum uses about 172 of the 360 minutes (roughly 48%), leaving about 188 unused. The pool has no good habit-tracker video, and the long courses either contain off-topic projects or are heavier than the learner needs. Adding JavaScript Mastery's props, state and useEffect chapters (26:15-42:40) would fill about 16 more minutes, but it adds a new creator with no transcript to check.",
+    "Sub-topic coverage is thin for custom hooks and component patterns, and there is no source for lifting state up. The learner may need to add material from official React documentation or a transcript-verified video.",
+    "Programming with Mosh is used in two non-overlapping parts, with the Vite video between them. Its setup section may use different tooling, and the course may use TypeScript. Skip any TypeScript-specific detail.",
+    "Learn the Tech's localStorage video is Part 2 of a series, and Part 1 is not in the pool. If the learner has not seen the to-do basics, the setup may be missing.",
+    "HT0SMABqHAQ uses react-spring, yarn and TypeScript tooling. Skip the animation section and use plain JavaScript and npm.",
+    "X92kk5iT8CM builds a to-do app with a dashboard and Tailwind. Treat it as a reference build, and adapt it to a habit model with daily check-ins and streaks rather than copying it.",
+    "Assumes the 360-minute budget is viewing time only, so no time is reserved for practice. Plan on spending extra time coding the habit tracker yourself."
+  ],
+  "pool_size": 36,
+  "models": {
+    "plan": "anthropic/claude-sonnet-5.5",
+    "assess": "anthropic/claude-haiku-5.5",
+    "select": "anthropic/claude-haiku-5.5"
+  },
+  "cost_usd": 0.0212,
+  "latency_s": 151.2,
+  "mode": "select=anthropic/claude-haiku-5.5"
+}

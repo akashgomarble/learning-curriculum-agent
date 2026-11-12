@@ -1,0 +1,1302 @@
+{
+ "persona_id": "go_dev_rust_ownership",
+ "budget": 240,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 11,
+    "total_min": 178.8,
+    "utilisation": 0.74,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 11,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "pDM_5HT2UlU: red flags ['surface_intro']",
+     "CHRNj5oubwc: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "ownership and moves": true,
+     "borrowing and references": true,
+     "lifetimes": true,
+     "traits": true,
+     "error handling with Result": true,
+     "Result-based error handling": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.31,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "below_level_list": [],
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.72,
+    "cost_usd": 0.17201,
+    "latency_s": 80.7,
+    "hard_failures": [
+     "constraint_violations"
+    ],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "pDM_5HT2UlU",
+    "VFIOSWy93H0",
+    "zo6yZisg7N0",
+    "hmefR4tE_H4",
+    "178uniabkag",
+    "CHRNj5oubwc",
+    "AnsRR-i5UWQ",
+    "s5S2Ed5T-dc",
+    "-c9JEexiHPE",
+    "uvP1bKTfa_Q",
+    "OcaerPp59Gs"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum strongly reflects the learner's Go background by starting with a Go-to-Rust bridge, explicitly connecting Rust traits to Go interfaces, and omitting basic programming tutorials.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately describe the pedagogical mechanisms (e.g., zero-copy parsing, borrow checker rules, Result composition) matching the reference summaries.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner wants to build a CLI tool; the curriculum concludes with two practical CLI builds utilizing standard crates (clap, anyhow) and applying the ownership concepts directly.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The progression is excellent: ownership and borrowing flow into lifetimes, followed by traits (required for Error bounds), and concluding with Result integration and CLI application.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The strict constraints for deep dive into the borrow checker, idiomatic error handling with `?` and skipping fundamentals are strictly adhered to.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "At 179 minutes, it respects the 240-minute limit. The remaining time is wisely left as a buffer for the learner to practice or pause effectively rather than padding with redundant videos.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The rationales for dropping videos correctly filter out content that is redundant, excessively long, off-topic, or suffers from bad metadata (unreliable watch ranges).",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is a meticulously crafted, highly-targeted curriculum for a Senior Go developer that balances theory, language mechanics, and practical CLI builds perfectly.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "pDM_5HT2UlU",
+      "critique": "A concise, perfectly tailored bridge from Go to Rust that frames the new concepts through familiar paradigms.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "VFIOSWy93H0",
+      "critique": "Deep-dives into ownership, stack vs heap, and moves without talking down to an experienced developer.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zo6yZisg7N0",
+      "critique": "Provides the requested depth on the borrow checker, explicitly contrasting it with Go's GC.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "hmefR4tE_H4",
+      "critique": "A brief but useful drill on specific borrow checker error cases to reinforce the rules before introducing lifetimes.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "178uniabkag",
+      "critique": "Covers lifetimes comprehensively, including elision and structs, fulfilling a core learning goal.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "CHRNj5oubwc",
+      "critique": "Introduces traits (interfaces) as a necessary prerequisite to understanding Rust's error bounds.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "AnsRR-i5UWQ",
+      "critique": "Provides crucial trait mechanics and bounds required for error type architectures.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "s5S2Ed5T-dc",
+      "critique": "Directly hits the constraint to learn `Result` and the `?` operator for idiomatic error propagation.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "-c9JEexiHPE",
+      "critique": "Helps the learner understand architectural choices in Rust error handling (thiserror vs anyhow) vital for real-world projects.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "uvP1bKTfa_Q",
+      "critique": "A practical CLI build that puts ownership, anyhow, and zero-copy string references to work in context.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "OcaerPp59Gs",
+      "critique": "Expands on the previous CLI build with a targeted watch segment focusing on config references and advanced error propagation.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.92,
+    "claims": {
+     "pDM_5HT2UlU": [
+      {
+       "claim": "The video is an orientation written for Go developers.",
+       "supported": true
+      },
+      {
+       "claim": "The video maps ownership and borrowing onto what a Go engineer already knows.",
+       "supported": true
+      },
+      {
+       "claim": "The video maps Result, Option, and the ? operator onto what a Go engineer already knows.",
+       "supported": true
+      },
+      {
+       "claim": "The video frames the compiler as a teaching tool.",
+       "supported": true
+      },
+      {
+       "claim": "The video contains sections on async/Tokio and the crate ecosystem.",
+       "supported": true
+      }
+     ],
+     "VFIOSWy93H0": [
+      {
+       "claim": "Walks through the ownership rules",
+       "supported": true
+      },
+      {
+       "claim": "Covers move vs Copy",
+       "supported": true
+      },
+      {
+       "claim": "Covers Drop",
+       "supported": true
+      },
+      {
+       "claim": "Covers passing and returning ownership",
+       "supported": true
+      },
+      {
+       "claim": "Covers references and the one-mutable-reference rule",
+       "supported": true
+      },
+      {
+       "claim": "Shows compiler errors",
+       "supported": true
+      }
+     ],
+     "zo6yZisg7N0": [
+      {
+       "claim": "Contrasts Rust's moves and borrows with Go and JavaScript semantics.",
+       "supported": true
+      },
+      {
+       "claim": "Explains the aliasing-XOR-mutability rule behind the borrow checker.",
+       "supported": true
+      },
+      {
+       "claim": "Explains where the borrow checker is too conservative.",
+       "supported": true
+      },
+      {
+       "claim": "Covers the Rc/RefCell and Arc/Mutex escape hatches.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes a sponsored segment.",
+       "supported": true
+      }
+     ],
+     "hmefR4tE_H4": [
+      {
+       "claim": "The video covers the borrow checker's one-mutable-or-many-immutable rule.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers scoped borrows.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers dangling references.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers common errors with fixes.",
+       "supported": true
+      },
+      {
+       "claim": "The video consolidates the rules before lifetimes and bridges into reference lifetime tracking.",
+       "supported": true
+      }
+     ],
+     "178uniabkag": [
+      {
+       "claim": "Frames lifetime annotations as describing relationships between references, not controlling memory.",
+       "supported": true
+      },
+      {
+       "claim": "Covers the longest() problem.",
+       "supported": true
+      },
+      {
+       "claim": "Covers the three elision rules.",
+       "supported": true
+      },
+      {
+       "claim": "Covers struct lifetimes.",
+       "supported": true
+      },
+      {
+       "claim": "Covers 'static and higher-ranked bounds.",
+       "supported": true
+      },
+      {
+       "claim": "It is the unflagged member of its near-duplicate cluster.",
+       "supported": false
+      }
+     ],
+     "CHRNj5oubwc": [
+      {
+       "claim": "The video explains traits as Rust's analogue of interfaces.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers default implementations in traits.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers static dispatch with generics vs dynamic dispatch with dyn.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers supertraits.",
+       "supported": true
+      }
+     ],
+     "AnsRR-i5UWQ": [
+      {
+       "claim": "The video covers generic functions.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers trait bounds.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers why the compiler demands bounds like Copy/Add (or AddAssign).",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how to implement traits manually.",
+       "supported": true
+      }
+     ],
+     "s5S2Ed5T-dc": [
+      {
+       "claim": "Builds Result from sum types",
+       "supported": true
+      },
+      {
+       "claim": "Covers the ? operator",
+       "supported": true
+      },
+      {
+       "claim": "Covers collecting Results",
+       "supported": true
+      },
+      {
+       "claim": "Covers designing custom error types",
+       "supported": true
+      },
+      {
+       "claim": "Covers combining errors with From",
+       "supported": true
+      },
+      {
+       "claim": "Shows thiserror and anyhow",
+       "supported": true
+      }
+     ],
+     "-c9JEexiHPE": [
+      {
+       "claim": "The video compares thiserror (typed enum errors for libraries) with anyhow (context-based errors for applications).",
+       "supported": true
+      },
+      {
+       "claim": "The video provides examples for thiserror and anyhow.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides a rule of thumb for choosing between thiserror and anyhow.",
+       "supported": true
+      }
+     ],
+     "uvP1bKTfa_Q": [
+      {
+       "claim": "Builds a log-analysis CLI with clap and anyhow",
+       "supported": true
+      },
+      {
+       "claim": "Uses zero-copy parsing with &str lifetimes",
+       "supported": true
+      },
+      {
+       "claim": "Confronts a real borrow-checker error (E0515)",
+       "supported": true
+      },
+      {
+       "claim": "Fixes the borrow-checker error by moving ownership up to the caller",
+       "supported": true
+      }
+     ],
+     "OcaerPp59Gs": [
+      {
+       "claim": "The video shows config-handling commands taking references to an AppConfig (ownership in practice).",
+       "supported": true
+      },
+      {
+       "claim": "The video shows Result and anyhow error propagation with ? in a clap CLI.",
+       "supported": false
+      },
+      {
+       "claim": "The video presents project code after a compact logscan example.",
+       "supported": false
+      },
+      {
+       "claim": "The setup and async/Tokio parts are skipped.",
+       "supported": false
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 9,
+    "total_min": 203.9,
+    "utilisation": 0.85,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 9,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "CHRNj5oubwc: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "ownership and moves": true,
+     "borrowing and references": true,
+     "lifetimes": true,
+     "traits": true,
+     "error handling with Result": true,
+     "Result-based error handling": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.25,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "below_level_list": [],
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.76,
+    "cost_usd": 0.11726,
+    "latency_s": 42.1,
+    "hard_failures": [
+     "constraint_violations"
+    ],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "VFIOSWy93H0",
+    "zfb1y8yn8QI",
+    "juIINGuZyBc",
+    "gRAVZv7V91Q",
+    "CHRNj5oubwc",
+    "AnsRR-i5UWQ",
+    "s5S2Ed5T-dc",
+    "sZV6sz4P6QY",
+    "uvP1bKTfa_Q"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum explicitly targets the learner's background as a Go developer, selecting videos that map Rust traits to Go interfaces, compare the borrow checker to GC, and focus heavily on replacing Go-style error handling with Rust's Result.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons provided accurately describe the content of the videos based on the reference summaries, without relying on superficial metrics.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The final video directly mirrors the learner's goal of building a Rust CLI tool, handling real borrow-checker errors and utilizing practical crates like clap and anyhow.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The sequence builds logically from ownership to lifetimes, then traits (which are needed for error handling), and finally Result and practical CLI building.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum avoids beginner programming concepts, dives deep into the borrow checker, and provides thorough coverage of idiomatic error handling with Result and the ? operator.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The total time is 204 minutes out of 240, using the budget effectively without padding with weak content.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons clearly explain why those videos are either too basic or too surface-level for a senior developer wanting depth.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is an excellent, well-curated list that perfectly targets a senior Go developer moving to Rust. It respects their time and constraints while delivering deep dives where requested.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "VFIOSWy93H0",
+      "critique": "Provides a solid foundation in Rust's ownership model and borrowing rules.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zfb1y8yn8QI",
+      "critique": "A great conference talk that contextualizes the borrow checker for developers used to garbage collection.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "juIINGuZyBc",
+      "critique": "Covers the mechanics of lifetime annotations and elision rules clearly.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gRAVZv7V91Q",
+      "critique": "Provides the requested deeper intuition and mental model for lifetimes.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "CHRNj5oubwc",
+      "critique": "Effectively maps Rust traits to the interfaces the learner knows from Go.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "AnsRR-i5UWQ",
+      "critique": "Expands on traits with bounds and manual implementation, tying back to compiler enforcement.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "s5S2Ed5T-dc",
+      "critique": "Introduces Result and the ? operator, which is essential for replacing Go's error handling.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "sZV6sz4P6QY",
+      "critique": "Provides practical, idiomatic error handling patterns using thiserror and anyhow in a CLI context.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "uvP1bKTfa_Q",
+      "critique": "A perfect capstone project that builds a CLI tool and confronts real borrow-checker errors.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.91,
+    "claims": {
+     "VFIOSWy93H0": [
+      {
+       "claim": "The video walks through moves and the Copy trait.",
+       "supported": true
+      },
+      {
+       "claim": "The video walks through shared and mutable references.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers borrow-checker rules with compiler error demos.",
+       "supported": true
+      },
+      {
+       "claim": "The video includes an early section on the stack and heap.",
+       "supported": true
+      }
+     ],
+     "zfb1y8yn8QI": [
+      {
+       "claim": "The talk frames the compiler as a deterministic garbage collector.",
+       "supported": true
+      },
+      {
+       "claim": "The talk covers lifetimes.",
+       "supported": true
+      },
+      {
+       "claim": "The talk covers Drop.",
+       "supported": true
+      },
+      {
+       "claim": "The talk covers Box.",
+       "supported": true
+      },
+      {
+       "claim": "The talk covers Rc.",
+       "supported": true
+      },
+      {
+       "claim": "The talk covers Send and Sync.",
+       "supported": true
+      }
+     ],
+     "juIINGuZyBc": [
+      {
+       "claim": "Covers lifetime annotations.",
+       "supported": true
+      },
+      {
+       "claim": "Covers the three elision rules.",
+       "supported": true
+      },
+      {
+       "claim": "Covers structs holding references.",
+       "supported": true
+      },
+      {
+       "claim": "Covers 'static.",
+       "supported": true
+      },
+      {
+       "claim": "Includes worked examples.",
+       "supported": true
+      }
+     ],
+     "gRAVZv7V91Q": [
+      {
+       "claim": "The video gives a deeper mental model of what 'a means using regions.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses liveness to explain lifetimes.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses subtyping to explain lifetimes.",
+       "supported": false
+      },
+      {
+       "claim": "The video addresses gaps left by official learning resources regarding lifetimes.",
+       "supported": true
+      }
+     ],
+     "CHRNj5oubwc": [
+      {
+       "claim": "The video provides a comparison of traits with interfaces.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers static dispatch with generics versus dyn dispatch.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers default methods.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers supertraits.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how these concepts map onto Go interfaces.",
+       "supported": false
+      }
+     ],
+     "AnsRR-i5UWQ": [
+      {
+       "claim": "The video adds trait bounds.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Copy and Clone.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers implementing traits manually.",
+       "supported": true
+      },
+      {
+       "claim": "The video ties trait bounds and Copy/Clone back to what the compiler enforces.",
+       "supported": true
+      }
+     ],
+     "s5S2Ed5T-dc": [
+      {
+       "claim": "Presents Result as a sum type",
+       "supported": true
+      },
+      {
+       "claim": "Covers the ? operator",
+       "supported": true
+      },
+      {
+       "claim": "Covers collecting Results",
+       "supported": true
+      },
+      {
+       "claim": "Covers error type design",
+       "supported": true
+      },
+      {
+       "claim": "Covers From trait",
+       "supported": true
+      },
+      {
+       "claim": "Covers thiserror and anyhow",
+       "supported": true
+      },
+      {
+       "claim": "Provides a mental model for replacing Go's err returns",
+       "supported": false
+      }
+     ],
+     "sZV6sz4P6QY": [
+      {
+       "claim": "The video is a webinar that builds a CLI application.",
+       "supported": false
+      },
+      {
+       "claim": "The video covers using Result, the ? operator, and a custom error enum.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers adding thiserror and anyhow context.",
+       "supported": true
+      }
+     ],
+     "uvP1bKTfa_Q": [
+      {
+       "claim": "The video is a CLI build in Rust.",
+       "supported": true
+      },
+      {
+       "claim": "The video encounters a real E0515 borrow error with zero-copy parsing.",
+       "supported": true
+      },
+      {
+       "claim": "The video fixes the borrow error by moving ownership up.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows anyhow.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows clap.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 14,
+    "total_min": 238.9,
+    "utilisation": 1.0,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 14,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "5C_HPTJg5ek: title matches forbidden pattern",
+     "5C_HPTJg5ek: red flags ['surface_intro']",
+     "0y6RKiIk6cs: red flags ['surface_intro']",
+     "CHRNj5oubwc: red flags ['surface_intro']",
+     "DhiHhQimSa4: red flags ['surface_intro']",
+     "1NJ-sFA4lMI: red flags ['surface_intro']",
+     "ebaYftHhIq4: red flags ['surface_intro', 'too_basic_for_learner']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "ownership and moves": true,
+     "borrowing and references": true,
+     "lifetimes": true,
+     "traits": true,
+     "error handling with Result": true,
+     "Result-based error handling": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.46,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "5C_HPTJg5ek",
+     "0y6RKiIk6cs",
+     "VFIOSWy93H0",
+     "juIINGuZyBc",
+     "s5S2Ed5T-dc",
+     "CHRNj5oubwc",
+     "gRAVZv7V91Q",
+     "wM6o70NAWUI",
+     "DhiHhQimSa4",
+     "zo6yZisg7N0",
+     "JLfEiJhpTbE",
+     "1NJ-sFA4lMI",
+     "zfb1y8yn8QI",
+     "ebaYftHhIq4"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "below_level_list": [
+     "5C_HPTJg5ek",
+     "0y6RKiIk6cs",
+     "DhiHhQimSa4",
+     "1NJ-sFA4lMI",
+     "ebaYftHhIq4"
+    ],
+    "level_floor": false,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified",
+     "level_floor"
+    ],
+    "soft_misses": [
+     "pick_count_ok",
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "5C_HPTJg5ek",
+    "0y6RKiIk6cs",
+    "VFIOSWy93H0",
+    "juIINGuZyBc",
+    "s5S2Ed5T-dc",
+    "CHRNj5oubwc",
+    "gRAVZv7V91Q",
+    "wM6o70NAWUI",
+    "DhiHhQimSa4",
+    "zo6yZisg7N0",
+    "JLfEiJhpTbE",
+    "1NJ-sFA4lMI",
+    "zfb1y8yn8QI",
+    "ebaYftHhIq4"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum treats a senior systems developer like an absolute beginner, including 'for dummies' videos, 100-second summaries, and reaction vlogs instead of advanced deep dives.",
+     "verdict": "fail"
+    },
+    "content_grounded_reasons": {
+     "critique": "Every reason justifies the pick based on search popularity and view counts rather than the actual educational content of the video.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The final video builds a CLI tool using clap, which structurally mirrors the learner's goal of porting a CLI tool, even though the video is too basic.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "Video 4 uses traits and generics in its examples before they are actually taught in videos 6 and 11.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum fails to skip basic programming concepts, padding the list with beginner-level overviews and vlogs instead of the requested borrow checker depth.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "The time budget is heavily squandered on highly redundant videos covering the same basic ownership concepts, plus off-topic vlogs and reaction content.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped list or reasons were provided.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "This is an uncurated keyword-search dump that completely ignores the learner's 8 years of systems programming experience and specific requests for depth.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "5C_HPTJg5ek",
+      "critique": "A 100-second surface-level overview is useless for a senior developer wanting depth.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "0y6RKiIk6cs",
+      "critique": "A 'for dummies' video explaining basic concepts is inappropriate for an 8-year Go veteran.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "VFIOSWy93H0",
+      "critique": "Provides the comprehensive deep dive into ownership and borrowing the learner requested.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "juIINGuZyBc",
+      "critique": "Good topic, but it relies on traits and generics before they are introduced in the curriculum.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "s5S2Ed5T-dc",
+      "critique": "Directly addresses the learner's constraint for idiomatic error handling with Result and the ? operator.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "CHRNj5oubwc",
+      "critique": "Covers traits effectively, which the learner needs to understand Rust polymorphism.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gRAVZv7V91Q",
+      "critique": "Provides the advanced mental models for the borrow checker the learner specifically asked for.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wM6o70NAWUI",
+      "critique": "Redundant with the earlier error handling video which already covered Result and error crates.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "DhiHhQimSa4",
+      "critique": "An off-topic motivational vlog that wastes the learner's time budget.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "zo6yZisg7N0",
+      "critique": "Re-teaches the basic value proposition of ownership and borrowing already covered in video 3.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "JLfEiJhpTbE",
+      "critique": "Highly redundant with earlier videos on traits and lifetimes.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "1NJ-sFA4lMI",
+      "critique": "A 2-minute comedy reaction video is completely inappropriate for a focused technical curriculum.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "zfb1y8yn8QI",
+      "critique": "Another redundant conference talk covering the same basics of the borrow checker.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "ebaYftHhIq4",
+      "critique": "A 4-minute surface-level CLI tutorial is far too basic for a senior developer porting a real tool.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 9,
+    "total_min": 191.4,
+    "utilisation": 0.8,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 9,
+    "pick_count_ok": false,
+    "constraint_violation_list": [
+     "pDM_5HT2UlU: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "ownership and moves": true,
+     "borrowing and references": true,
+     "lifetimes": true,
+     "traits": true,
+     "error handling with Result": true,
+     "Result-based error handling": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.4,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "pDM_5HT2UlU",
+     "VFIOSWy93H0",
+     "zfb1y8yn8QI",
+     "gRAVZv7V91Q",
+     "S-SkEA4QWWE",
+     "p2uAN6SJorA",
+     "AnsRR-i5UWQ",
+     "6WykcOk78sc",
+     "uvP1bKTfa_Q"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "below_level_list": [],
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.45,
+    "cost_usd": 0.1017,
+    "latency_s": 45.8,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "pick_count_ok"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "pDM_5HT2UlU",
+    "VFIOSWy93H0",
+    "zfb1y8yn8QI",
+    "gRAVZv7V91Q",
+    "S-SkEA4QWWE",
+    "p2uAN6SJorA",
+    "AnsRR-i5UWQ",
+    "6WykcOk78sc",
+    "uvP1bKTfa_Q"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum targets the learner's Go background directly in the first video, skips basic syntax, and focuses heavily on the requested deep dives into ownership, the borrow checker, and CLI development.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The curriculum's reason for Video 8 claims it covers the `?` operator, custom error types, and `thiserror`/`anyhow`. However, the reference summary reveals Video 8 is actually about advanced systems architecture, high-throughput event processing, and atomics, contradicting the stated reason.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "Video 9 explicitly builds a Rust CLI tool (logscan), handles a real borrow-checker error, and uses tools like `clap` and `anyhow`. This perfectly mirrors the learner's goal of porting a Go CLI tool.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "Video 6 refactors a project using generics, traits, and lifetimes. However, the foundational introduction to generics and traits is inexplicably placed afterward in Video 7, causing a prerequisite inversion.",
+     "verdict": "fail"
+    },
+    "constraints_respected": {
+     "critique": "The learner strictly requested idiomatic error handling with `Result` and the `?` operator. Because Video 8 is actually an advanced systems architecture lecture (and is flagged too advanced), the curriculum fails to adequately teach the requested error handling. Furthermore, it subjects the learner to material that is unnecessarily complex.",
+     "verdict": "fail"
+    },
+    "budget_well_used": {
+     "critique": "While the total time is within budget, 39 minutes are wasted on a highly advanced event processing lecture (Video 8) that doesn't deliver the required error handling concepts, leaving a critical learning gap despite having room in the budget.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The curriculum dropped 'Mastering Error Handling in Rust' on the premise that Video 8 covers the `?` operator and custom errors. Since Video 8 does not actually cover these topics, the justification for dropping a dedicated error handling video is flawed.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "I cannot hand this to the learner. The ordering of generics/traits is backward, and it completely botches the error handling requirement by hallucinating the contents of Video 8 based on its title, skipping the actual error handling resources in the dropped list.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "pDM_5HT2UlU",
+      "critique": "An excellent orientation specifically mapped to developers coming from Go.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "VFIOSWy93H0",
+      "critique": "A solid, intermediate-level foundation on ownership and moves.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "zfb1y8yn8QI",
+      "critique": "Satisfies the learner's request for a deep dive into the borrow checker from a systems perspective.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "gRAVZv7V91Q",
+      "critique": "Provides a strong conceptual mental model for lifetimes suited for experienced systems programmers.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "S-SkEA4QWWE",
+      "critique": "A practical follow-up that teaches how to actually annotate lifetimes in code.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "p2uAN6SJorA",
+      "critique": "This project implementation of generics and traits is placed before the actual introduction to those concepts.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "AnsRR-i5UWQ",
+      "critique": "This foundational introduction to generics and traits should have appeared before Video 6.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "6WykcOk78sc",
+      "critique": "The reference summary shows this is an advanced systems architecture lecture, failing to teach the promised error handling.",
+      "verdict": "fail"
+     },
+     {
+      "video_id": "uvP1bKTfa_Q",
+      "critique": "Perfectly aligns with the goal by building a CLI tool with standard Rust ecosystem crates.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.7,
+    "claims": {
+     "pDM_5HT2UlU": [
+      {
+       "claim": "The video maps Rust concepts onto Go.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers ownership and borrowing.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Result and Option.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers compiler feedback.",
+       "supported": true
+      },
+      {
+       "claim": "The video is aimed at Go developers.",
+       "supported": true
+      }
+     ],
+     "VFIOSWy93H0": [
+      {
+       "claim": "The video covers ownership in Rust.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers moves.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Copy vs Clone.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers Drop (dropping values).",
+       "supported": true
+      },
+      {
+       "claim": "The video builds a move-semantics foundation before covering borrowing.",
+       "supported": true
+      }
+     ],
+     "zfb1y8yn8QI": [
+      {
+       "claim": "The video is a conference talk aimed at understanding the borrow checker.",
+       "supported": true
+      }
+     ],
+     "gRAVZv7V91Q": [
+      {
+       "claim": "The video explains what a lifetime is as a way of reasoning about references.",
+       "supported": true
+      },
+      {
+       "claim": "The video presents a mental model suited to an experienced systems programmer.",
+       "supported": false
+      },
+      {
+       "claim": "The video comes before annotation-focused videos.",
+       "supported": false
+      }
+     ],
+     "S-SkEA4QWWE": [
+      {
+       "claim": "The video covers lifetime annotations.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers how the borrow checker validates references.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers when explicit lifetime parameters are needed in function signatures.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers when explicit lifetime parameters are needed in structs.",
+       "supported": true
+      }
+     ],
+     "p2uAN6SJorA": [
+      {
+       "claim": "Works through generics, traits and lifetimes on a Rust Book Chapter 10 project",
+       "supported": true
+      },
+      {
+       "claim": "Shows lifetimes in structs and function signatures alongside trait bounds",
+       "supported": false
+      },
+      {
+       "claim": "Sets up the trait knowledge that error handling needs",
+       "supported": false
+      }
+     ],
+     "AnsRR-i5UWQ": [
+      {
+       "claim": "Introduces trait definitions and generic type parameters as Rust's alternative to inheritance.",
+       "supported": false
+      },
+      {
+       "claim": "Gives the trait and bounds grounding that From, Display and the Error trait build on.",
+       "supported": false
+      }
+     ],
+     "6WykcOk78sc": [
+      {
+       "claim": "Directly covers the ? operator",
+       "supported": true
+      },
+      {
+       "claim": "Directly covers custom error types",
+       "supported": false
+      },
+      {
+       "claim": "Directly covers From conversions",
+       "supported": false
+      },
+      {
+       "claim": "Directly covers thiserror vs anyhow (libraries vs applications)",
+       "supported": false
+      }
+     ],
+     "uvP1bKTfa_Q": [
+      {
+       "claim": "The video builds a log-analysis CLI using clap, serde, and anyhow.",
+       "supported": true
+      },
+      {
+       "claim": "The video works through a real borrow-checker error (E0515) during development.",
+       "supported": true
+      },
+      {
+       "claim": "The video shows ownership, borrowing, and error propagation.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A is better tailored to the learner's senior background and explicit constraints. It includes a specific 'Rust for Go Developers' mapping video, which provides an efficient conceptual bridge for this learner. A also uses concise, dense modules for error handling (separating `thiserror` vs `anyhow` cleanly in 16 minutes) and the borrow checker, rather than Curriculum B's reliance on a 42-minute conference talk and a 47-minute webinar. Curriculum A also provides two distinct CLI building exercises that directly show Clap, Anyhow, and real borrow-checker errors like E0515 being resolved idiomatically, which perfectly hits the learner's goal.",
+    "Curriculum B is exceptionally well-tailored to the learner's background. It specifically targets their Go experience with orientation material ('Rust for Go Developers') and videos that contrast Rust's ownership model directly with Go's GC semantics. Furthermore, B provides a sharper, more focused path for error handling by specifically comparing `thiserror` and `anyhow` (crucial for CLI development), and provides two CLI-specific build videos rather than relying on a long, potentially slow webinar like Curriculum A. Curriculum A relies heavily on pure theory conference talks which might be less efficient for a hands-on systems programmer."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A is perfectly tailored to the learner's background and constraints. It builds from a Go-specific orientation to deep dives in ownership, lifetimes, and error handling, concluding with practical, intermediate-level CLI projects using `clap` and `anyhow`. Curriculum B struggles with relevance and repetition, padded with 'surface_intro' and 'vlog' videos (like 100-second overviews, motivational talks, and reaction videos) that waste a senior developer's time.",
+    "Curriculum A includes a lot of fluff and violates the learner's constraints by including beginner videos that explain basic programming concepts, vlog/reaction videos, and off-topic meta-discussions. Curriculum B does an excellent job of respecting the learner's senior background. It bridges the gap from Go to Rust effectively, provides deep dives into the borrow checker and lifetimes, and specifically targets the learner's goal by covering `thiserror` vs `anyhow` for idiomatic error handling. Finally, B culminates in practical CLI builds using `clap` and `anyhow` that perfectly align with the learner's objective to port a Go CLI."
+   ]
+  },
+  "no_transcript": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A provides a highly targeted progression for a senior Go developer, cleanly covering ownership, the borrow checker, lifetimes, and traits, before moving into excellent, specific videos on `Result`, the `?` operator, and `anyhow` vs `thiserror`. Finally, it ties everything together with two CLI build videos. Curriculum B contains a fatal flaw: video 8 (`6WykcOk78sc`) was chosen for error handling based on its title, but the reference summary reveals it is actually an advanced systems architecture video covering Tokio, atomics, and channels, which is flagged as 'too_advanced_for_learner'. Curriculum A is much more accurate and aligns perfectly with the learner's goals.",
+    "Curriculum B is vastly superior for this learner's specific goals. It thoroughly addresses their need for idiomatic error handling (Result, the ? operator, thiserror/anyhow) through specifically focused videos, whereas Curriculum A's error handling video (Video 8) is actually a heavily mismatched, advanced systems architecture lecture with no relation to its title. Curriculum B also continuously relates concepts back to the learner's Go background, clearly covers the borrow checker's rules without getting bogged down in 42-minute theoretical conference talks, and concludes with highly relevant CLI project builds that integrate argument parsing, lifetimes, and error chaining."
+   ]
+  }
+ }
+}

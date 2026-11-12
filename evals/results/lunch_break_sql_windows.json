@@ -1,0 +1,603 @@
+{
+ "persona_id": "lunch_break_sql_windows",
+ "budget": 30,
+ "systems": {
+  "agent": {
+   "checks": {
+    "n_picks": 2,
+    "total_min": 23.1,
+    "utilisation": 0.77,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 2,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "window functions": true,
+     "PARTITION BY": true,
+     "ROW_NUMBER / RANK": true,
+     "running totals with window frames": true,
+     "LAG / LEAD": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.15,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.73,
+    "cost_usd": 0.09916,
+    "latency_s": 31.5,
+    "hard_failures": [],
+    "soft_misses": [],
+    "pass": true
+   },
+   "picks": [
+    "dUzivpyLK1s",
+    "-JtMlZI6MZE"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum selects videos that match the learner's time constraints, tool (PostgreSQL), and specifically requested concepts like LAG/LEAD and running totals.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The stated reasons accurately reflect the content of the videos as described in their reference summaries.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner's primary goal is to rewrite self-join reports. As the curriculum explicitly admits, neither selected video shows a self-join being rewritten as a window query side-by-side, failing to provide a structurally similar walkthrough.",
+     "verdict": "fail"
+    },
+    "prereq_order_sensible": {
+     "critique": "The first video introduces the fundamental OVER and PARTITION BY clauses before moving into specific functions and frames, which is the correct logical order.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum strictly adheres to the lunch break time limit, the maximum of two videos, and ensures the content is practical rather than a theoretical course.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The curriculum uses 24 out of 30 minutes, leaving a small buffer. It fits well within the time limit without padding with overly long content.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The curriculum drops a video that directly contrasts window functions with self-joins because it claims the second pick 'covers more of the gaps'. However, the first pick already covered all requested functions (including LAG/LEAD), meaning there were no gaps left and the chosen second pick was merely redundant.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "While the curriculum successfully teaches the syntax of the requested window functions, it actively drops a video that perfectly mirrors the learner's core goal of replacing self-joins in favor of a redundant second video. This poor decision makes the curriculum significantly less useful than it could have been.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "dUzivpyLK1s",
+      "critique": "This is an excellent, comprehensive foundational video that covers all the specific window functions and clauses the learner requested.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "-JtMlZI6MZE",
+      "critique": "This video largely repeats the concepts already covered in the first pick, taking up space that should have been used for the dropped video that directly tackled the learner's self-join rewriting goal.",
+      "verdict": "fail"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 1.0,
+    "claims": {
+     "dUzivpyLK1s": [
+      {
+       "claim": "The video covers OVER and PARTITION BY.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers ROW_NUMBER, RANK, DENSE_RANK, and top-N per group.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers LAG and LEAD for month-over-month growth.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers running totals with ROWS BETWEEN.",
+       "supported": true
+      },
+      {
+       "claim": "The video ends with common mistakes such as a missing ORDER BY inside OVER.",
+       "supported": true
+      }
+     ],
+     "-JtMlZI6MZE": [
+      {
+       "claim": "The video covers running totals restarting per partition.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers month-over-month change with LAG/LEAD.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers moving averages with explicit frames.",
+       "supported": true
+      },
+      {
+       "claim": "The video warns about the ROWS vs RANGE frame trap.",
+       "supported": true
+      }
+     ]
+    }
+   }
+  },
+  "agent_loop": {
+   "checks": {
+    "n_picks": 2,
+    "total_min": 29.9,
+    "utilisation": 1.0,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 2,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "window functions": true,
+     "PARTITION BY": true,
+     "ROW_NUMBER / RANK": true,
+     "running totals with window frames": true,
+     "LAG / LEAD": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.22,
+    "near_dup_respected": true,
+    "quote_verifiability": 1.0,
+    "picks_without_evidence": [],
+    "evidence_verified": true,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.72,
+    "cost_usd": 0.08514,
+    "latency_s": 27.7,
+    "hard_failures": [],
+    "soft_misses": [],
+    "pass": true
+   },
+   "picks": [
+    "dUzivpyLK1s",
+    "wp8f2ShK9Ro"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum explicitly targets the learner's known background (PostgreSQL) and addresses all of their stated gaps (PARTITION BY, ranking, frames, running totals, LAG/LEAD) within the tight lunch-break constraint.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, noting exactly which functions, syntax, and conceptual comparisons are taught in each video.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "While neither video explicitly demonstrates rewriting a self-join query step-by-step, the first video covers month-over-month growth using LAG/LEAD, which is structurally identical to the most common self-join use cases, allowing the learner to achieve their goal.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The first video introduces the concepts from scratch, and the second serves as an environment-specific reinforcement. The order is logical.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum stays within the two-video maximum, fits exactly into the 30-minute budget, focuses on practical examples, and avoids full courses.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "The 30-minute budget is completely utilized. While there is no slack for pausing, the curriculum explicitly warns the learner of this and offers a sensible fallback (watch only the first video) if time runs short.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The rejected videos are dropped for valid reasons: they either miss stated gaps (running totals, frames), take up too much of the budget to allow pairing, or are duplicates of stronger options.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "This is a highly efficient, well-targeted curriculum that hits every requested technical gap in exactly the time allowed, while providing a safety net if the 30-minute limit proves too tight.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "dUzivpyLK1s",
+      "critique": "An excellent, comprehensive video that covers every single one of the learner's knowledge gaps in just 16 minutes while demonstrating the exact report patterns they need.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "wp8f2ShK9Ro",
+      "critique": "A strong follow-up that reinforces the concepts within the learner's specific environment (PostgreSQL) and fits perfectly into the remaining time budget.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.91,
+    "claims": {
+     "dUzivpyLK1s": [
+      {
+       "claim": "The video covers OVER and PARTITION BY.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers ranking functions.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers LAG and LEAD.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers running totals.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers ROWS BETWEEN window frames.",
+       "supported": true
+      },
+      {
+       "claim": "The video demonstrates report-style patterns such as top-N per group and month-over-month growth.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers common mistakes.",
+       "supported": true
+      },
+      {
+       "claim": "The video uses a store database for its examples.",
+       "supported": true
+      }
+     ],
+     "wp8f2ShK9Ro": [
+      {
+       "claim": "The video is a walkthrough in PostgreSQL.",
+       "supported": true
+      },
+      {
+       "claim": "The video reinforces the comparison between GROUP BY and PARTITION BY.",
+       "supported": true
+      },
+      {
+       "claim": "The video works through running and rolling sums with window frames.",
+       "supported": false
+      }
+     ]
+    }
+   }
+  },
+  "top_n_by_views": {
+   "checks": {
+    "n_picks": 2,
+    "total_min": 28.6,
+    "utilisation": 0.95,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 2,
+    "pick_count_ok": true,
+    "constraint_violation_list": [
+     "Ubni4qPP2zQ: red flags ['surface_intro']"
+    ],
+    "constraint_violations": false,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "window functions": true,
+     "PARTITION BY": true,
+     "ROW_NUMBER / RANK": true,
+     "running totals with window frames": false,
+     "LAG / LEAD": true
+    },
+    "unknown_coverage": 0.8,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.17,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "Ww71knvhQ-s",
+     "Ubni4qPP2zQ"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": false,
+    "mean_confidence": 0.5,
+    "cost_usd": 0.0,
+    "latency_s": 0.0,
+    "hard_failures": [
+     "constraint_violations",
+     "evidence_verified"
+    ],
+    "soft_misses": [
+     "has_dropped_list"
+    ],
+    "pass": false
+   },
+   "picks": [
+    "Ww71knvhQ-s",
+    "Ubni4qPP2zQ"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum targets the learner's existing intermediate SQL knowledge by skipping basics and focusing directly on window functions, though it unfortunately misses one specific requested topic (running totals).",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The provided reasons rely entirely on view counts and search queries, completely failing to describe the actual educational content of the videos.",
+     "verdict": "fail"
+    },
+    "goal_mirroring": {
+     "critique": "The first video explicitly demonstrates how to solve complex analytical queries without self-joins, perfectly mirroring the learner's goal to rewrite their self-join reports.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The curriculum correctly starts with a comprehensive 25-minute explainer that links new concepts to the learner's known concepts (GROUP BY) before moving to supplementary examples.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "The curriculum strictly follows the constraints: it stays under the 30-minute time budget, uses exactly two videos to avoid context switching, avoids full courses, and relies on practical examples.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "While the total time is within budget, the second video is a redundant surface-level introduction to LAG and LEAD (already covered in video 1) and completely fails to teach the requested topic of running totals and window frames.",
+     "verdict": "fail"
+    },
+    "dropped_reasons_sound": {
+     "critique": "No dropped videos list was provided to explain why other options were excluded.",
+     "verdict": "fail"
+    },
+    "overall": {
+     "critique": "The curriculum fails because it uses generic popularity-based reasons instead of content-based ones, misses the running totals requirement by selecting a redundant second video, and lacks a dropped list.",
+     "verdict": "fail"
+    },
+    "per_pick": [
+     {
+      "video_id": "Ww71knvhQ-s",
+      "critique": "An excellent primary choice that teaches the core requested window functions and explicitly shows how to use them as an alternative to self-joins.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "Ubni4qPP2zQ",
+      "critique": "A poor choice that redundantly re-teaches LAG and LEAD at a surface level while failing to provide the missing instruction on running totals and window frames.",
+      "verdict": "fail"
+     }
+    ]
+   }
+  },
+  "no_transcript": {
+   "checks": {
+    "n_picks": 2,
+    "total_min": 18.9,
+    "utilisation": 0.63,
+    "no_hallucinated_videos": true,
+    "budget_fit": true,
+    "utilisation_ok": true,
+    "n_videos": 2,
+    "pick_count_ok": true,
+    "constraint_violation_list": [],
+    "constraint_violations": true,
+    "language_violation_list": [],
+    "language": true,
+    "known_leak_list": [],
+    "known_leakage": true,
+    "unknown_covered": {
+     "window functions": true,
+     "PARTITION BY": true,
+     "ROW_NUMBER / RANK": true,
+     "running totals with window frames": true,
+     "LAG / LEAD": true
+    },
+    "unknown_coverage": 1.0,
+    "order_violation_list": [],
+    "order_ok": true,
+    "max_redundancy": 0.27,
+    "near_dup_respected": true,
+    "quote_verifiability": 0.0,
+    "picks_without_evidence": [
+     "Kd64mv2kjX8",
+     "UkFjJ0Wvtjs"
+    ],
+    "evidence_verified": false,
+    "transcript_backed_share": 1.0,
+    "project_based": true,
+    "level_floor": true,
+    "too_old_list": [],
+    "recency_ok": true,
+    "too_long_list": [],
+    "sitting_ok": true,
+    "creator_issue_list": [],
+    "creators_ok": true,
+    "infeasibility_flagged": true,
+    "assumptions_stated": true,
+    "has_dropped_list": true,
+    "mean_confidence": 0.6,
+    "cost_usd": 0.19071,
+    "latency_s": 35.2,
+    "hard_failures": [
+     "evidence_verified"
+    ],
+    "soft_misses": [],
+    "pass": false
+   },
+   "picks": [
+    "Kd64mv2kjX8",
+    "UkFjJ0Wvtjs"
+   ],
+   "rubric": {
+    "tailored": {
+     "critique": "The curriculum perfectly matches the learner's very specific constraints: exactly two videos, focusing specifically on window functions in PostgreSQL, and tying directly into the background of replacing self-joins.",
+     "verdict": "pass"
+    },
+    "content_grounded_reasons": {
+     "critique": "The reasons accurately reflect the reference summaries, noting the specific window functions covered in the first video and the self-join replacement focus of the second.",
+     "verdict": "pass"
+    },
+    "goal_mirroring": {
+     "critique": "The learner's goal of rewriting self-join reports using window functions is directly addressed by the second video, which explicitly demonstrates how window functions outperform self-joins for analytical queries.",
+     "verdict": "pass"
+    },
+    "prereq_order_sensible": {
+     "critique": "The order is logical, introducing the syntax and concepts of window functions in the first video before applying them specifically as performance upgrades over self-joins in the second.",
+     "verdict": "pass"
+    },
+    "constraints_respected": {
+     "critique": "All constraints are strictly followed: the videos total under 30 minutes, there are exactly two videos, the examples are practical, and the dialect is PostgreSQL.",
+     "verdict": "pass"
+    },
+    "budget_well_used": {
+     "critique": "Using 19 out of 30 minutes is an excellent use of the lunch break constraint, as it leaves time to process the information without violating the 'max two videos' rule.",
+     "verdict": "pass"
+    },
+    "dropped_reasons_sound": {
+     "critique": "The dropped reasons clearly explain why other videos were excluded based on the strict budget, the two-video limit, lack of PostgreSQL focus, or redundancy.",
+     "verdict": "pass"
+    },
+    "overall": {
+     "critique": "An excellent, highly-focused curriculum that respects a tight time budget and strict constraints while directly addressing the learner's goal of optimizing existing SQL knowledge.",
+     "verdict": "pass"
+    },
+    "per_pick": [
+     {
+      "video_id": "Kd64mv2kjX8",
+      "critique": "Provides a comprehensive, practical introduction to all the specific window functions the learner requested.",
+      "verdict": "pass"
+     },
+     {
+      "video_id": "UkFjJ0Wvtjs",
+      "critique": "Perfectly bridges the gap between learning window functions and applying them to the learner's specific goal of replacing self-joins in PostgreSQL.",
+      "verdict": "pass"
+     }
+    ]
+   },
+   "faithfulness": {
+    "reason_faithfulness": 0.78,
+    "claims": {
+     "Kd64mv2kjX8": [
+      {
+       "claim": "The video covers OVER and PARTITION BY.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers ROW_NUMBER, RANK, and DENSE_RANK.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers LAG and LEAD.",
+       "supported": true
+      },
+      {
+       "claim": "The video covers running totals and window frames.",
+       "supported": true
+      },
+      {
+       "claim": "The video provides an example of ranking sales reps per region without losing rows.",
+       "supported": true
+      }
+     ],
+     "UkFjJ0Wvtjs": [
+      {
+       "claim": "Presents PostgreSQL window functions as a replacement for self-joins and subqueries",
+       "supported": false
+      },
+      {
+       "claim": "Covers running totals with PostgreSQL window functions",
+       "supported": true
+      },
+      {
+       "claim": "Covers rolling averages with PostgreSQL window functions",
+       "supported": true
+      },
+      {
+       "claim": "Covers ranking with PostgreSQL window functions",
+       "supported": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "pairwise": {
+  "agent_loop": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Both curricula correctly select the same excellent first video that covers all the required fundamentals. Curriculum A is better because its second video reinforces the specific patterns needed to replace self-joins (such as LAG/LEAD for previous-row comparisons) and tackles practical pitfalls like the ROWS vs RANGE trap. Curriculum B's second video mostly just repeats ranking and running totals without touching LAG/LEAD. Additionally, Curriculum A leaves a few minutes of slack in the 30-minute budget for pausing and digesting, whereas B maxes out the time completely.",
+    "Both curricula correctly select the same excellent foundation video that covers all the learner's knowledge gaps in 16 minutes. For the second video, Curriculum B makes a much better choice. Curriculum B selects a shorter, highly practical video focusing on running totals, moving averages, and LAG/LEAD—the exact concepts the learner needs to replace self-joins for period-over-period reporting. Curriculum A's second video mostly repeats the basics of PARTITION BY and ranking, ignoring LAG/LEAD entirely. Furthermore, Curriculum B leaves a 6-minute buffer, which is much more realistic for a lunch break than Curriculum A's tight 30-minute runtime."
+   ]
+  },
+  "top_n_by_views": {
+   "winner": "a",
+   "orders": [
+    "a",
+    "a"
+   ],
+   "critiques": [
+    "Curriculum A hits every single concept the learner asked for, specifically including running totals and window frames (ROWS vs RANGE), which are absent from Curriculum B's summaries. Curriculum A also fits perfectly within the time limit and two-video constraint, offering a solid foundational explainer followed by practical interview-style examples that directly apply to rewriting complex reports.",
+    "Curriculum B perfectly addresses the learner's missing concepts, explicitly covering running totals and window frames (ROWS vs RANGE), which Curriculum A misses. Curriculum B's video choices are practical, fit the 30-minute budget well, and complement each other without unnecessary repetition, whereas Curriculum A's second video is flagged as a surface intro and overlaps heavily with the first."
+   ]
+  },
+  "no_transcript": {
+   "winner": "b",
+   "orders": [
+    "b",
+    "b"
+   ],
+   "critiques": [
+    "Both curricula stay within the 30-minute budget and two-video limit while covering the requested window function concepts. However, Curriculum B is vastly superior for this specific learner. The second video in Curriculum B directly addresses the learner's primary goal by explicitly demonstrating how to use PostgreSQL window functions as a replacement for self-joins and subqueries. In contrast, Curriculum A's second video simply repeats the concepts from its first video using interview questions, without directly addressing the self-join rewrite use case.",
+    "Both curricula provide excellent, concise coverage of the requested window functions (OVER, PARTITION BY, RANK, LAG/LEAD, running totals) within the 30-minute, two-video constraints. However, Curriculum A specifically includes a video (UkFjJ0Wvtjs) that directly addresses the learner's core goal: demonstrating how PostgreSQL window functions outperform and replace self-joins for analytical queries. Curriculum B's second video focuses on interview questions rather than the practical application of replacing self-joins."
+   ]
+  }
+ }
+}

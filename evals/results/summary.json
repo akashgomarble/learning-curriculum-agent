@@ -1,0 +1,202 @@
+{
+ "personas": 8,
+ "by_system": {
+  "agent": {
+   "layer1_pass": "6/8",
+   "unknown_coverage": 1.0,
+   "utilisation": 0.72,
+   "quote_verifiability": 1.0,
+   "max_redundancy": 0.32,
+   "failures": [
+    "constraint_violations",
+    "language"
+   ],
+   "soft_misses": [
+    "order_ok",
+    "pick_count_ok",
+    "utilisation_ok"
+   ],
+   "judge_overall_pass": "6/8",
+   "judge_criteria_pass_rate": {
+    "tailored": 1.0,
+    "content_grounded_reasons": 1.0,
+    "goal_mirroring": 0.88,
+    "prereq_order_sensible": 1.0,
+    "constraints_respected": 0.88,
+    "budget_well_used": 1.0,
+    "dropped_reasons_sound": 0.88,
+    "overall": 0.75
+   },
+   "judge_pick_pass_rate": 0.97,
+   "reason_faithfulness": 0.95
+  },
+  "agent_loop": {
+   "layer1_pass": "5/8",
+   "unknown_coverage": 1.0,
+   "utilisation": 0.74,
+   "quote_verifiability": 1.0,
+   "max_redundancy": 0.26,
+   "failures": [
+    "constraint_violations",
+    "recency_ok"
+   ],
+   "soft_misses": [
+    "has_dropped_list",
+    "order_ok",
+    "pick_count_ok",
+    "utilisation_ok"
+   ],
+   "judge_overall_pass": "7/8",
+   "judge_criteria_pass_rate": {
+    "tailored": 1.0,
+    "content_grounded_reasons": 1.0,
+    "goal_mirroring": 1.0,
+    "prereq_order_sensible": 1.0,
+    "constraints_respected": 1.0,
+    "budget_well_used": 1.0,
+    "dropped_reasons_sound": 0.88,
+    "overall": 0.88
+   },
+   "judge_pick_pass_rate": 1.0,
+   "reason_faithfulness": 0.93
+  },
+  "top_n_by_views": {
+   "layer1_pass": "0/8",
+   "unknown_coverage": 0.9,
+   "utilisation": 0.93,
+   "quote_verifiability": 0.0,
+   "max_redundancy": 0.42,
+   "failures": [
+    "assumptions_stated",
+    "constraint_violations",
+    "creators_ok",
+    "evidence_verified",
+    "infeasibility_flagged",
+    "language",
+    "level_floor",
+    "near_dup_respected",
+    "recency_ok"
+   ],
+   "soft_misses": [
+    "has_dropped_list",
+    "pick_count_ok",
+    "utilisation_ok"
+   ],
+   "judge_overall_pass": "0/8",
+   "judge_criteria_pass_rate": {
+    "tailored": 0.12,
+    "content_grounded_reasons": 0.0,
+    "goal_mirroring": 0.75,
+    "prereq_order_sensible": 0.12,
+    "constraints_respected": 0.25,
+    "budget_well_used": 0.0,
+    "dropped_reasons_sound": 0.0,
+    "overall": 0.0
+   },
+   "judge_pick_pass_rate": 0.23
+  },
+  "no_transcript": {
+   "layer1_pass": "0/8",
+   "unknown_coverage": 1.0,
+   "utilisation": 0.67,
+   "quote_verifiability": 0.0,
+   "max_redundancy": 0.29,
+   "failures": [
+    "constraint_violations",
+    "evidence_verified"
+   ],
+   "soft_misses": [
+    "order_ok",
+    "pick_count_ok",
+    "utilisation_ok"
+   ],
+   "judge_overall_pass": "6/8",
+   "judge_criteria_pass_rate": {
+    "tailored": 1.0,
+    "content_grounded_reasons": 0.88,
+    "goal_mirroring": 1.0,
+    "prereq_order_sensible": 0.88,
+    "constraints_respected": 0.75,
+    "budget_well_used": 0.88,
+    "dropped_reasons_sound": 0.88,
+    "overall": 0.75
+   },
+   "judge_pick_pass_rate": 0.93,
+   "reason_faithfulness": 0.79
+  }
+ },
+ "pairwise": {
+  "agent_vs_agent_loop": {
+   "agent_wins": 3,
+   "baseline_wins": 2,
+   "ties": 3
+  },
+  "agent_vs_top_n_by_views": {
+   "agent_wins": 8,
+   "baseline_wins": 0,
+   "ties": 0
+  },
+  "agent_vs_no_transcript": {
+   "agent_wins": 6,
+   "baseline_wins": 2,
+   "ties": 0
+  }
+ },
+ "human_agreement": {
+  "overall": {
+   "n": 32,
+   "agreement": 0.91,
+   "kappa": 0.803,
+   "kappa_ci95": [
+    0.55,
+    1.0
+   ],
+   "tpr": 0.9,
+   "tnr": 0.92,
+   "confusion": {
+    "tp": 18,
+    "tn": 11,
+    "fp_judge_too_lenient": 1,
+    "fn_judge_too_strict": 2
+   }
+  },
+  "per_pick": null,
+  "disagreements": [
+   {
+    "persona_id": "career_switch_ml_foundations",
+    "system": "agent_loop",
+    "item": "overall",
+    "title": "(whole curriculum)",
+    "human": "pass",
+    "human_critique": "",
+    "judge": "fail",
+    "judge_critique": "While the content selection is strong and wonderfully tailored to an engineer who wants deep math alongside working code, the lack of a dropped videos list violates the requirements and leaves the learner without context on what was excluded."
+   },
+   {
+    "persona_id": "impossible_k8s_in_45",
+    "system": "agent_loop",
+    "item": "overall",
+    "title": "(whole curriculum)",
+    "human": "fail",
+    "human_critique": "One pick (the KodeKloud architecture lecture) has an unverified upload date and reads as pre-2023 course material against an explicit nothing-before-2023 constraint.",
+    "judge": "pass",
+    "judge_critique": "An excellent foundation curriculum that sets realistic expectations, targets the learner's skill gap efficiently, and strictly addresses their goals."
+   },
+   {
+    "persona_id": "lunch_break_sql_windows",
+    "system": "agent",
+    "item": "overall",
+    "title": "(whole curriculum)",
+    "human": "pass",
+    "human_critique": "",
+    "judge": "fail",
+    "judge_critique": "While the curriculum successfully teaches the syntax of the requested window functions, it actively drops a video that perfectly mirrors the learner's core goal of replacing self-joins in favor of a redundant second video. This poor decision makes the curriculum significantly less useful than it could have been."
+   }
+  ]
+ },
+ "eval_cost_usd": 0,
+ "judge_models": {
+  "rubric_and_pairwise": "google/gemini-3.1-pro-preview",
+  "faithfulness": "google/gemini-3.7-flash"
+ }
+}

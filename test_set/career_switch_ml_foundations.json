@@ -1,0 +1,80 @@
+{
+  "persona_id": "career_switch_ml_foundations",
+  "goal": "Go from zero ML knowledge to training and evaluating a small image classifier in PyTorch",
+  "time_budget_minutes": 1200,
+  "user_context": {
+    "background": "Mechanical engineer moving into ML; comfortable with Python scripting, numpy and linear algebra from university",
+    "known": [
+      "Python",
+      "numpy",
+      "basic linear algebra",
+      "calculus"
+    ],
+    "unknown": [
+      "machine learning basics",
+      "gradient descent and backpropagation",
+      "PyTorch tensors and autograd",
+      "training loops",
+      "convolutional neural networks",
+      "model evaluation and overfitting"
+    ],
+    "constraints": "I learn best from code-along videos but I want to understand the math intuition too. Long courses are fine. I can only study 90 minutes at a sitting, so split long courses into parts."
+  },
+  "expectations": {
+    "notes": "Huge budget: should use most of 20 hours with a prerequisite chain (ML basics -> gradients -> tensors/autograd -> training loop -> CNN -> evaluation); long courses legitimate.",
+    "pick_count": [
+      4,
+      10
+    ],
+    "min_utilisation": 0.6,
+    "forbidden_title_regex": "(?i)in \\d+ seconds|tensorflow|keras",
+    "forbidden_flags": [
+      "surface_intro",
+      "off_topic"
+    ],
+    "unknown_synonyms": {
+      "machine learning basics": [
+        "machine learning",
+        "supervised",
+        "loss function",
+        "regression",
+        "classification"
+      ],
+      "gradient descent and backpropagation": [
+        "gradient descent",
+        "backprop",
+        "gradient"
+      ],
+      "PyTorch tensors and autograd": [
+        "tensor",
+        "autograd"
+      ],
+      "training loops": [
+        "training loop",
+        "optimizer",
+        "epoch",
+        "training"
+      ],
+      "convolutional neural networks": [
+        "cnn",
+        "convolution",
+        "conv2d"
+      ],
+      "model evaluation and overfitting": [
+        "evaluation",
+        "overfitting",
+        "validation",
+        "accuracy",
+        "test set"
+      ]
+    },
+    "known_topics": [
+      "python basics",
+      "numpy",
+      "linear algebra"
+    ],
+    "require_project_based": true,
+    "required_language": "en",
+    "max_sitting_minutes": 90
+  }
+}

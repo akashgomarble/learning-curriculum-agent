@@ -1,0 +1,276 @@
+{
+  "persona_id": "hindi_excel_pivots",
+  "goal": "Learn pivot tables and lookups well enough to build a monthly sales dashboard in Excel",
+  "budget_minutes": 90,
+  "total_minutes": 64.7,
+  "interpretation": "In about 65 minutes of Hindi videos (each under 25 minutes), the learner can build a pivot table, pull data in with VLOOKUP/XLOOKUP, make pivot charts, and put together a slicer-driven monthly sales dashboard in Excel.",
+  "assumptions": [
+    "Hindi or Hinglish videos are acceptable, since the learner understands Hindi better than English.",
+    "The learner has a modern Excel version (2016 or later, ideally 365) so that XLOOKUP and slicers are available.",
+    "The dashboard builder video is the practice project, and the learner follows along with their own sales data."
+  ],
+  "feasible": true,
+  "feasibility_note": "",
+  "sub_topics": [
+    {
+      "id": "pivot_basics",
+      "title": "Pivot table basics: rows, columns, values, refresh, first slicer",
+      "why": "This is the core skill, and the learner has never used a pivot table.",
+      "prereqs": [],
+      "minutes_share": 22.0
+    },
+    {
+      "id": "lookups",
+      "title": "VLOOKUP and XLOOKUP for pulling data into a sales sheet",
+      "why": "Lookups fill in product, price or city columns before the data is summarised.",
+      "prereqs": [],
+      "minutes_share": 28.0
+    },
+    {
+      "id": "pivot_charts",
+      "title": "Pivot charts",
+      "why": "These turn pivot summaries into visuals for the dashboard.",
+      "prereqs": [
+        "pivot_basics"
+      ],
+      "minutes_share": 15.0
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard build: KPI cards, charts, connected slicers, layout",
+      "why": "This is the end goal: a monthly sales dashboard.",
+      "prereqs": [
+        "pivot_basics",
+        "pivot_charts"
+      ],
+      "minutes_share": 35.0
+    }
+  ],
+  "picks": [
+    {
+      "rank": 1,
+      "video_id": "4A6hjD-61gM",
+      "title": "pivot table for beginners in excel in Hindi || Microsoft excel 2007,2010,2016",
+      "channel": "Deepak EduWorld",
+      "url": "https://www.youtube.com/watch?v=4A6hjD-61gM",
+      "duration_min": 14.2,
+      "minutes_counted": 14.2,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "pivot_basics"
+      ],
+      "reason": "A beginner Hindi walkthrough of sales-data pivot tables. It covers inserting one, dragging fields to rows, columns and values, refreshing when records change, and adding a first slicer.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "02:13",
+          "quote": "आप अपना टेबल के अंदर कहीं भी क्लिक कर लीजिए जो रिकॉर्ड आपका है और पिवट टेबल पे क्लिक कीजिए",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "18:21",
+          "quote": "स्लाइसर की हेल्प से हम डाटा को आसानी से ड्रॉप डाउन लिस्ट क्रिएट होगी एक उस पे क्लिक करने से हम डाटा को आसानी से देख सकते हैं",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Level and language fit well. Its transcript quotes are sparse.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 2,
+      "video_id": "hmygrQMcHyU",
+      "title": "Vlookup का सबसे आसान Example || What is Vlookup in Excel (in Hindi)",
+      "channel": "BUSINESS EXCEL",
+      "url": "https://www.youtube.com/watch?v=hmygrQMcHyU",
+      "duration_min": 5.5,
+      "minutes_counted": 5.5,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "lookups"
+      ],
+      "reason": "A gentle Hindi VLOOKUP introduction that explains each argument: lookup value, table array, column index and range lookup. It uses a name, city and sales example.",
+      "evidence": [
+        {
+          "quote_id": "q2",
+          "t": "03:25",
+          "quote": "इक्वल टू Vlookup, lookup वैल्यू, अब ये कह रहा है कि क्या ढूंढना है",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "03:48",
+          "quote": "कॉलम इंडेक्स नंबर अगर यह नाम जो हमने ढूंढना है वो इस लिस्ट में मिल जाए",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "06:01",
+          "quote": "बड़ा डाटा अगर हमारे पास है और उसमें से छोटा डाटा की बेस पर हमें वैल्यू निकालनी है",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.8,
+      "confidence_note": "Short and clear. It is VLOOKUP only.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 3,
+      "video_id": "gAY9is-ahQY",
+      "title": "How To Apply VLOOKUP and XLOOKUP Formula on Large Data in Excel [Hindi] #excel",
+      "channel": "Computer Gyan",
+      "url": "https://www.youtube.com/watch?v=gAY9is-ahQY",
+      "duration_min": 12.7,
+      "minutes_counted": 12.7,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "lookups"
+      ],
+      "reason": "Builds on the basic VLOOKUP video. It applies VLOOKUP and XLOOKUP to large data, using MATCH to find the column number and named ranges to simplify formulas.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:00",
+          "quote": "अगर आपके पास एक लार्ज डाटा है तो उस पर आप VLOOKUP या XLOOKUP कैसे अप्लाई करेंगे",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "00:41",
+          "quote": "हमें क्या लिखना है यहां पर लुकअप अरे यानी कि एक अरे हम डालेंगे यहां पर जिसका डाटा हम ढूंढ रहे हैं",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.75,
+      "confidence_note": "Hindi, beginner level and under 25 minutes. It runs a little fast for a complete beginner.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 4,
+      "video_id": "htOIqJGeewE",
+      "title": "How to Create Pivot Charts? | Excel Pivot Table in Hindi | Excel Pivot Table Series - Part - 2",
+      "channel": "Excel Tutorial by SkillCourse",
+      "url": "https://www.youtube.com/watch?v=htOIqJGeewE",
+      "duration_min": 9.6,
+      "minutes_counted": 9.6,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "pivot_charts"
+      ],
+      "reason": "A Hindi walkthrough of creating a pivot chart together with its pivot table. It covers changing chart type, data labels and formatting, ready for the dashboard.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:26",
+          "quote": "Pivot Chart हम यहां पे बनाने वाले है, तो सबसे पहले मैं Control A बटन प्रेस करूंगा।",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q2",
+          "t": "02:08",
+          "quote": "Pivot Chart में क्या होता है बेसिकली खाली Chart ही नहीं बनेगा, यहां पे Table भी बनेगा, Chart भी बनेगा।",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "12:04",
+          "quote": "बेसिकली Pivot Table जो होता है उसी का ही Pivot Chart होता है। Table यहां पे आएगा-आएगा और Chart आएगा।",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "Directly covers the pivot chart gap.",
+      "level": "beginner",
+      "format": "concept_explainer"
+    },
+    {
+      "rank": 5,
+      "video_id": "_JtEWpUJPVY",
+      "title": "“📊 Excel Dashboard Tutorial (Hindi) | Pivot Table से Dashboard बनाएं | Next-Level Reporting 🚀”",
+      "channel": "My Computer $kill",
+      "url": "https://www.youtube.com/watch?v=_JtEWpUJPVY",
+      "duration_min": 22.7,
+      "minutes_counted": 22.7,
+      "watch_from": null,
+      "watch_until": null,
+      "covers": [
+        "dashboard",
+        "pivot_charts"
+      ],
+      "reason": "A Hindi project build of an interactive monthly sales dashboard. It has KPI cards, product, region and month-trend charts, and slicers connected across all of them. This matches the learner's end goal.",
+      "evidence": [
+        {
+          "quote_id": "q1",
+          "t": "00:21",
+          "quote": "एक्सेल के अंदर एक मिनी सेल्स डाटा डैशबोर्ड बनाने सिखाने जा रहा हूं वो भी एकदम सिंपल और बिगिनर फ्रेंडली मेथड के साथ",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q3",
+          "t": "07:18",
+          "quote": "अब हम इन रिपोर्ट्स की हेल्प से हम बनाएंगे डैशबोर्ड इन सभी रिपोर्ट्स की हेल्प से अब हम डैशबोर्ड बनाने जा रहे हैं",
+          "source": "transcript"
+        },
+        {
+          "quote_id": "q4",
+          "t": "33:20",
+          "quote": "किसी भी आपको चार्ट पर सेलेक्ट करने के बाद एनालाइज वाले ऑप्शन पे जाएंगे और यहां इंसर्ट स्लाइसर पे जाएंगे",
+          "source": "transcript"
+        }
+      ],
+      "confidence": 0.85,
+      "confidence_note": "At 22.7 minutes it is under the 25-minute limit. Pause and follow along with your own data.",
+      "level": "beginner",
+      "format": "project_build"
+    }
+  ],
+  "dropped": [
+    {
+      "video_id": "oKdBEjcgzyw",
+      "title": "How to make Dashboard in excel ( Interactive + Simple )",
+      "stage": "select",
+      "reason": "This is a good Hinglish dashboard build, but it is a near-duplicate of the chosen one. It focuses on region and seller percentages and has no monthly view or KPI cards."
+    },
+    {
+      "video_id": "RdA04dRgF44",
+      "title": "XLOOKUP Function in MS Excel | MS Excel Advanced Tutorial | [Hindi] #ms excel",
+      "stage": "select",
+      "reason": "It has a good XLOOKUP explanation, but the read returned no quotes to cite and it is flagged pure_theory. It is also intermediate level."
+    },
+    {
+      "video_id": "d9yXBRbNuho",
+      "title": "How to Use VLOOKUP, HLOOKUP, XLOOKUP || Detailed Explaination with examples || Advance Excel Formula",
+      "stage": "select",
+      "reason": "It is mostly English and flagged pure_theory. It overlaps with the Hindi VLOOKUP videos I picked."
+    },
+    {
+      "video_id": "hro6_y7R310",
+      "title": "Pivot Table Mastery in Excel | Pivot Table Tutorial in Hindi | Part - 01",
+      "stage": "select",
+      "reason": "It is flagged surface_intro and is about 22 minutes. It duplicates the shorter pivot basics video and returned no quotes."
+    }
+  ],
+  "near_duplicates": [],
+  "warnings": [
+    "The plan uses about 65 of the 90 minutes. I left the rest unused rather than add redundant videos.",
+    "A second dashboard build (oKdBEjcgzyw, 20.7 min) exists. It is a near-duplicate of the one I chose, so I did not pick it. The chosen one is monthly, has KPI cards and has a date slicer. You could watch the other one as optional extra practice.",
+    "No Hindi video gave a full, quoted XLOOKUP-only lesson. Both lookup videos are mostly VLOOKUP with some XLOOKUP, so practise XLOOKUP yourself.",
+    "The learner may need to pause and rewatch, since the dashboard video moves quickly.",
+    "Watch order: pivot basics, then lookups, then pivot charts, then the dashboard. If your sales sheet already has all columns filled, you can skip the lookups until you need them."
+  ],
+  "pool_size": 36,
+  "models": {
+    "agent_loop": "anthropic/claude-sonnet-5.5"
+  },
+  "cost_usd": 0.1424,
+  "latency_s": 40.7,
+  "mode": "agent_loop"
+}
